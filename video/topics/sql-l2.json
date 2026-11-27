@@ -1,0 +1,71 @@
+{
+  "id": "sql-l2",
+  "title": "SQL: GROUP BY, HAVING & Aggregates",
+  "keys": [
+    "GROUP BY",
+    "HAVING",
+    "Aggregate",
+    "WHERE"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-groupby-why",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "How do you group and filter data?",
+      "line2": "WHERE or HAVING?",
+      "say": "When should you use WHERE, and when should you use HAVING to filter results in SQL?"
+    },
+    {
+      "id": "1-chip-groupby",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "GROUP BY",
+      "sub": "Groups rows by column values for aggregation",
+      "say": "Group By lets you organize rows into groups based on column values. This is the first step to summarizing data."
+    },
+    {
+      "id": "2-code-aggregate",
+      "type": "code",
+      "kicker": "Aggregate Example",
+      "lang": "sql",
+      "code": "SELECT department_id,\n       COUNT(*)\nFROM employees\nGROUP BY department_id;",
+      "say": "Here, we count how many employees are in each department. Count is just one of several aggregate functions you can use."
+    },
+    {
+      "id": "3-compare-where-having",
+      "type": "compare",
+      "kicker": "WHERE vs HAVING",
+      "left": {
+        "title": "WHERE",
+        "items": [
+          "Filters rows",
+          "Before grouping"
+        ]
+      },
+      "right": {
+        "title": "HAVING",
+        "items": [
+          "Filters groups",
+          "After aggregation"
+        ]
+      },
+      "say": "Where filters rows before grouping. Having filters groups after you've calculated aggregates. Use Having when your condition depends on the result of an aggregate function."
+    },
+    {
+      "id": "4-trap-where-having-tr",
+      "type": "trap",
+      "question": "Where do you filter by COUNT(*)?",
+      "wrong": "Use WHERE COUNT(*) > 10",
+      "right": "Use HAVING COUNT(*) > 10 to filter groups after aggregation.",
+      "say": "Don't trip up: you can't use Where to filter by count. You need Having for that."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:00:34.210Z"
+}
