@@ -1,0 +1,92 @@
+{
+  "id": "system-design-l5",
+  "title": "Async Processing: Queues & Pub/Sub",
+  "keys": [
+    "queue",
+    "pub/sub",
+    "idempotency",
+    "dead-letter"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-queues",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "How do async queues boost reliability?",
+      "line2": "And what about failures?",
+      "say": "How do async queues make systems more reliable, and what happens when things fail?"
+    },
+    {
+      "id": "1-chip-queue-basics",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Queues",
+      "sub": "Decouple producers and consumers for background jobs.",
+      "say": "Queues let you separate producers from consumers, so background jobs don't block your main flow."
+    },
+    {
+      "id": "2-compare-queue-pubsub",
+      "type": "compare",
+      "kicker": "Architecture",
+      "left": {
+        "title": "Queue",
+        "items": [
+          "One consumer",
+          "Each message processed once"
+        ]
+      },
+      "right": {
+        "title": "Pub/Sub",
+        "items": [
+          "Many consumers",
+          "All get the same message"
+        ]
+      },
+      "say": "With a queue, one worker handles each job. With publish-subscribe, every subscriber gets a copy of the message."
+    },
+    {
+      "id": "3-rows-retries-deadlet",
+      "type": "rows",
+      "kicker": "Failure Handling",
+      "rows": [
+        {
+          "a": "1",
+          "b": "Try processing the job"
+        },
+        {
+          "a": "2",
+          "b": "If it fails, retry up to 3 times"
+        },
+        {
+          "a": "3",
+          "b": "Still fails? Move to dead-letter queue"
+        }
+      ],
+      "walk": true,
+      "say": "If a job fails, retry it a few times. Still no luck? Send it to a dead-letter queue so it doesn't block everything else."
+    },
+    {
+      "id": "4-chip-idempotency",
+      "type": "chip",
+      "kicker": "Reliability",
+      "label": "Idempotency",
+      "sub": "Processing the same job twice is safe.",
+      "say": "Idempotency means if you process the same job more than once, it won't break things."
+    },
+    {
+      "id": "5-trap-mistake",
+      "type": "trap",
+      "question": "What happens if you skip idempotency?",
+      "wrong": "Jobs run faster with fewer checks.",
+      "right": "You risk duplicate processing and data errors.",
+      "say": "Don't skip idempotency. Without it, retries can cause duplicate work or bad data."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:14:13.363Z"
+}
