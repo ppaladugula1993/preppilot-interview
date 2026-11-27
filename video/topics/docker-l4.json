@@ -1,0 +1,78 @@
+{
+  "id": "docker-l4",
+  "title": "Docker Volumes vs Bind Mounts",
+  "keys": [
+    "volumes",
+    "bind mounts",
+    "data persistence",
+    "docker run"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-storage-puzzle",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "Where does your container's data go?",
+      "line2": "What keeps it safe?",
+      "say": "Where does your container's data actually go? And how do you keep it safe from disappearing?"
+    },
+    {
+      "id": "1-chip-volume-basics",
+      "type": "chip",
+      "kicker": "Core idea",
+      "label": "Volumes",
+      "sub": "Docker volumes store data outside the container.",
+      "say": "Docker volumes store your data outside the container, so it survives even if the container is deleted."
+    },
+    {
+      "id": "2-compare-volume-mount",
+      "type": "compare",
+      "kicker": "Two options",
+      "left": {
+        "title": "Volumes",
+        "items": [
+          "Managed by Docker",
+          "Great for databases",
+          "Easy to back up"
+        ]
+      },
+      "right": {
+        "title": "Bind Mounts",
+        "items": [
+          "Host folder is used",
+          "Good for configs",
+          "Can be read-only"
+        ]
+      },
+      "say": "You have two options: volumes, managed by Docker, best for databases and backups. Or bind mounts, which use a host folder—great for configs and can be set read-only."
+    },
+    {
+      "id": "3-terminal-volume-comm",
+      "type": "terminal",
+      "kicker": "Try it",
+      "title": "Create and use a volume",
+      "lines": [
+        "$ docker volume create pgdata",
+        "$ docker run -d --name db \\",
+        "  -v pgdata:/var/lib/postgresql/data postgres:16",
+        "$ docker volume ls"
+      ],
+      "say": "Here's how you create a volume and attach it to a database container. The data now lives in the volume, not the container."
+    },
+    {
+      "id": "4-trap-data-loss",
+      "type": "trap",
+      "question": "Why did your data disappear?",
+      "wrong": "Because the image was updated.",
+      "right": "Data in the container's writable layer is deleted when the container is removed. Use a volume or bind mount.",
+      "say": "Classic interview trap: Why did your data disappear after recreating the container? It's because data inside the container's writable layer gets deleted. Always use a volume or bind mount to keep it safe."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:57:01.435Z"
+}
