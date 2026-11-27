@@ -4,8 +4,10 @@ import React from 'react';
 import { AbsoluteFill, Audio, Img, Sequence, staticFile, useVideoConfig, useCurrentFrame, interpolate, spring } from 'remotion';
 import type { SceneSpec, Timing } from './Topic';
 
-export type ShortScene = SceneSpec & { image?: string; emoji?: string };
-export type ShortProps = { id: string; title: string; scenes: ShortScene[]; timing: Timing; audio: string; keys?: string[]; theme?: number; loop?: number };
+export type Actor = { who: string; x?: number; y?: number; size?: number; enter?: string; motion?: string; count?: number; flip?: boolean };
+export type ShortScene = SceneSpec & { image?: string; emoji?: string; set?: string; camera?: string; actors?: Actor[] };
+type Asset = { name: string; image?: string };
+export type ShortProps = { id: string; title: string; scenes: ShortScene[]; timing: Timing; audio: string; keys?: string[]; theme?: number; loop?: number; sets?: Asset[]; cast?: Asset[] };
 
 const SANS = '"Inter", "Arial Black", Impact, sans-serif';
 const MONO = '"JetBrains Mono", Menlo, monospace';
@@ -138,6 +140,68 @@ const Panel: React.FC<{ s: ShortScene; dur: number; th: Th; i: number; title: st
   );
 };
 
+
+/* ---------- animated stage: set + cut-out actors with motion, camera and particles ---------- */
+const W = 1080;
+const ActorView: React.FC<{ a: Actor; img: string; k: number; dur: number }> = ({ a, img, k, dur }) => {
+  const f = useCurrentFrame(); const { fps } = useVideoConfig();
+  const count = Math.max(1, Math.min(6, a.count || 1)), size = Math.max(0.15, Math.min(0.65, a.size || 0.35)) * W;
+  const baseX = (a.x ?? 0.5) * W, baseY = (a.y ?? 0.5) * TOP;
+  return <>{Array.from({ length: count }, (_, c) => {
+    const delay = k * 7 + c * (a.motion === 'drop' ? 9 : 5);
+    const t = f - delay; if (t < 0) return null;
+    const e = spring({ frame: t, fps, config: { damping: 11, stiffness: 120, mass: 0.8 } });
+    const ph = t / fps, seed = k * 7 + c;
+    let x = baseX + (count > 1 && a.motion !== 'drop' ? (c - (count - 1) / 2) * size * 0.75 : 0), y = baseY, rot = 0, sx = 1, sy = 1;
+    if (a.motion === 'drop') { y = baseY - c * size * 0.62; const land = spring({ frame: t, fps, config: { damping: 9, stiffness: 160 } }); y = interpolate(land, [0, 1], [-size, y]); const sq = Math.max(0, 1 - Math.abs(t - 12) / 6) * 0.18; sx = 1 + sq; sy = 1 - sq; }
+    // entrance
+    const from = { left: [-W * 0.7, 0], right: [W * 0.7, 0], top: [0, -TOP], bottom: [0, TOP] }[a.enter || 'pop'] as number[] | undefined;
+    if (from && a.motion !== 'drop') { x += from[0] * (1 - e); y += from[1] * (1 - e); }
+    const pop = a.enter === 'pop' || !from ? e : 1;
+    switch (a.motion) {
+      case 'bob': y += Math.sin(ph * 5 + seed) * 18; rot = Math.sin(ph * 2.5 + seed) * 4; break;
+      case 'sway': rot = Math.sin(ph * 4 + seed) * 12; break;
+      case 'spin': rot = t * 9; break;
+      case 'bounce': { const b = Math.abs(Math.sin(ph * 6 + seed)); y -= b * 110; const sq = b < 0.15 ? (0.15 - b) * 2 : 0; sx = 1 + sq; sy = 1 - sq; break; }
+      case 'float': y += Math.sin(ph * 2 + seed) * 30; x += Math.cos(ph * 1.5 + seed) * 25; break;
+      case 'drive': x += interpolate(t, [0, dur], [0, (a.flip ? -1 : 1) * W * 0.35]); y += Math.abs(Math.sin(ph * 14)) * -8; break;
+      case 'shake': x += Math.sin(t * 2.7) * 12; rot = Math.sin(t * 3.1) * 5; break;
+      case 'pulse': { const p = 1 + Math.sin(ph * 7 + seed) * 0.08; sx *= p; sy *= p; break; }
+      case 'fly': x += interpolate(t, [0, dur], [-W * 0.3, W * 0.3]) * (a.flip ? -1 : 1); y += Math.sin(ph * 3) * 60 - interpolate(t, [0, dur], [0, 120]); rot = Math.sin(ph * 3) * 10; break;
+    }
+    return <Img key={c} src={staticFile(img)} style={{ position: 'absolute', left: x - size / 2, top: y - size, width: size, height: size, objectFit: 'contain',
+      transform: `scale(${(a.flip ? -1 : 1) * sx * pop}, ${sy * pop}) rotate(${rot}deg)`, transformOrigin: '50% 100%', filter: 'drop-shadow(0 18px 14px #0008)' }} />;
+  })}</>;
+};
+const Particles: React.FC<{ th: Th; seed: number }> = ({ th, seed }) => {
+  const f = useCurrentFrame();
+  return <>{Array.from({ length: 14 }, (_, i) => { const r = rnd(seed * 31 + i), y = ((r * TOP + f * (2 + r * 4)) % TOP), x = rnd(i + seed) * W + Math.sin(f / 20 + i) * 30;
+    return <div key={i} style={{ position: 'absolute', left: x, top: TOP - y, width: 10 + r * 14, height: 10 + r * 14, borderRadius: '50%', background: i % 2 ? th.a : th.b, opacity: 0.55 }} />; })}</>;
+};
+const Stage: React.FC<{ s: ShortScene; dur: number; th: Th; i: number; sets: Asset[]; cast: Asset[] }> = ({ s, dur, th, i, sets, cast }) => {
+  const f = useCurrentFrame();
+  const set = sets.find(x => x.name === s.set)?.image || sets[i % Math.max(1, sets.length)]?.image;
+  const p = f / dur; const cam = s.camera || ['push', 'panL', 'pull', 'panR'][i % 4];
+  const z = cam === 'push' ? 1.05 + p * 0.18 : cam === 'pull' ? 1.23 - p * 0.18 : 1.12;
+  const px = cam === 'panL' ? interpolate(p, [0, 1], [40, -40]) : cam === 'panR' ? interpolate(p, [0, 1], [-40, 40]) : 0;
+  const shake = cam === 'shake' ? Math.sin(f * 2.3) * 8 : 0;
+  const cut = interpolate(f, [0, 4], [1.25, 1], { extrapolateRight: 'clamp' }); // punch-in cut
+  const flash = interpolate(f, [0, 3], [0.6, 0], { extrapolateRight: 'clamp' });
+  return (
+    <AbsoluteFill style={{ overflow: 'hidden' }}>
+      <AbsoluteFill style={{ background: `linear-gradient(135deg, ${th.bg1}, ${th.bg2})` }} />
+      {set ? <Img src={staticFile(set)} style={{ position: 'absolute', inset: -60, width: W + 120, height: TOP + 120, objectFit: 'cover', transform: `scale(${z * cut}) translate(${px * 0.6 + shake}px, ${shake}px)` }} /> : null}
+      <AbsoluteFill style={{ transform: `scale(${(1 + (z - 1) * 1.6) * cut}) translate(${px * 1.4 + shake * 1.5}px, ${shake}px)` }}>
+        {(s.actors || []).slice(0, 4).map((a, k) => { const img = cast.find(c => c.name === a.who)?.image; return img ? <ActorView key={k} a={a} img={img} k={k} dur={dur} /> : null; })}
+      </AbsoluteFill>
+      <Particles th={th} seed={i} />
+      <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0000 55%, #000a 100%)' }} />
+      <AbsoluteFill style={{ background: '#fff', opacity: flash }} />
+      <Card s={s} th={th} />
+    </AbsoluteFill>
+  );
+};
+
 /* ---------- captions: 1-3 words, huge, outlined, popping ---------- */
 const Caps: React.FC<{ words: Timing['words']; keys: string[]; th: Th; emojis: { t: number; e: string }[] }> = ({ words, keys, th, emojis }) => {
   const f = useCurrentFrame(); const { fps } = useVideoConfig(); const now = f / fps;
@@ -161,7 +225,7 @@ const Caps: React.FC<{ words: Timing['words']; keys: string[]; th: Th; emojis: {
   );
 };
 
-export const Short: React.FC<ShortProps> = ({ title, scenes, timing, audio, keys = [], theme = 0, loop = 0 }) => {
+export const Short: React.FC<ShortProps> = ({ title, scenes, timing, audio, keys = [], theme = 0, loop = 0, sets = [], cast = [] }) => {
   const { fps, durationInFrames } = useVideoConfig(); const f = useCurrentFrame();
   const th = THEMES[theme % THEMES.length]; const Loop = LOOPS[loop % LOOPS.length];
   const starts = scenes.map(s => timing.marks.find(m => m.id === s.id)?.t ?? 0);
@@ -182,7 +246,7 @@ export const Short: React.FC<ShortProps> = ({ title, scenes, timing, audio, keys
       <div style={{ position: 'absolute', top: TOP, left: 0, width: 1080, height: MID, background: th.bg1 }} />
       {/* top: pictures, one per scene */}
       <div style={{ position: 'absolute', top: 0, left: 0, width: 1080, height: TOP, overflow: 'hidden' }}>
-        {scenes.map((s, i) => <Sequence key={s.id} {...seq(i)}><Panel s={s} dur={seq(i).durationInFrames} th={th} i={i} title={title} /></Sequence>)}
+        {scenes.map((s, i) => <Sequence key={s.id} {...seq(i)}>{s.type !== 'end' && s.actors?.length && cast.some(c => c.image) ? <Stage s={s} dur={seq(i).durationInFrames} th={th} i={i} sets={sets} cast={cast} /> : <Panel s={s} dur={seq(i).durationInFrames} th={th} i={i} title={title} />}</Sequence>)}
         <div style={{ position: 'absolute', top: 40, left: 40, right: 40, height: 14, borderRadius: 7, background: '#0006' }}><div style={{ width: `${(f / fps / total) * 100}%`, height: '100%', borderRadius: 7, background: th.a }} /></div>
         <div style={{ position: 'absolute', top: 72, left: 40, padding: '6px 16px', borderRadius: 12, background: '#000a', font: `900 34px ${SANS}`, color: '#fff' }}>Prep<span style={{ color: th.a }}>Pilot</span></div>
       </div>

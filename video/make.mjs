@@ -65,9 +65,12 @@ Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|co
 Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types, and put ONE picture scene right after the hook: pick a real-world metaphor that makes this idea click (e.g. Docker = cargo ship with containers; JVM garbage collection = warehouse forklift clearing unused boxes; event loop = one chef juggling orders; class vs object = blueprint vs houses; index = library card catalogue; Git branches = a tree; React components = LEGO bricks; Kafka = post office sorting mail; CI/CD or ETL = factory assembly line; auth = bank vault with ID badges; LLM RAG = librarian looking up books before answering). Pick the best fit for THIS topic, not these examples by default. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
-EVERY scene except end ALSO has "img": an illustration prompt showing that moment inside ONE consistent real-world metaphor world for the whole video (same characters and setting, different action per scene, exaggerated and fun; no words, letters, screens or logos), and "emoji": one emoji that fits the line.
+This is an ANIMATED cartoon, not a slideshow. Build ONE real-world metaphor world for the whole video:
+- "sets": 2 backgrounds [{"name": slug, "prompt": wide empty environment, no characters, e.g. "busy harbour at sunset with cranes and calm sea"}]
+- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single object or character, full body, fun and expressive, e.g. "cheerful cartoon cargo ship", "orange shipping container", "dock worker with hard hat"}]
+EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-4 cast members DOING something that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|sway|spin|bounce|float|drive|drop|shake|pulse|fly, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Make it lively: things arrive, collide, stack, fly away, multiply.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
-Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "scenes": [...]}.
+Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "sets": [...], "cast": [...], "scenes": [...]}.
 
 Lessons:
 ${lessons}
@@ -97,9 +100,12 @@ Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|co
 Use at least 2 different teaching scene types, and put ONE picture scene right after the hook with a real-world metaphor that makes this lesson click (e.g. cargo ship for containers, warehouse forklift for garbage collection, chef juggling orders for an event loop, blueprint vs houses for class vs object, library catalogue for indexes, factory line for pipelines). Pick the best fit for THIS lesson. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
-EVERY scene except end ALSO has "img": an illustration prompt showing that moment inside ONE consistent real-world metaphor world for the whole video (same characters and setting, different action per scene, exaggerated and fun; no words, letters, screens or logos), and "emoji": one emoji that fits the line.
+This is an ANIMATED cartoon, not a slideshow. Build ONE real-world metaphor world for the whole video:
+- "sets": 2 backgrounds [{"name": slug, "prompt": wide empty environment, no characters, e.g. "busy harbour at sunset with cranes and calm sea"}]
+- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single object or character, full body, fun and expressive, e.g. "cheerful cartoon cargo ship", "orange shipping container", "dock worker with hard hat"}]
+EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-4 cast members DOING something that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|sway|spin|bounce|float|drive|drop|shake|pulse|fly, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Make it lively: things arrive, collide, stack, fly away, multiply.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
-Return {"title": "max 40 chars", "keys": [2-5 key terms], "scenes": [...]}.
+Return {"title": "max 40 chars", "keys": [2-5 key terms], "sets": [...], "cast": [...], "scenes": [...]}.
 
 Lesson:
 ${lesson.t}: ${lesson.what}${lesson.why ? `\nWhy it matters: ${lesson.why}` : ''}${lesson.ex ? `\nExample: ${lesson.ex}` : ''}${lesson.tip ? `\nTip: ${lesson.tip}` : ''}
@@ -121,7 +127,7 @@ if (!script) {
     const s = await writeScript(fb);
     (s?.scenes || []).forEach(x => { if (!x.say && x.type === 'hook') x.say = `${x.line1} ${x.line2}`; if (!x.say && x.type === 'end') x.say = 'Get interview ready with PrepPilot.'; });
     if (!valid(s)) { log('invalid: ' + (s?.scenes || []).filter(x => !x.say).map(x => x.type).join(',')); fb = 'Follow the scene structure exactly (hook first, end last, every scene has id and say).'; continue; }
-    if (s.scenes.some(x => x.type !== 'end' && !x.img)) log('note: some scenes have no img');
+    if (!s.cast?.length || !s.sets?.length) { fb = 'Include sets and cast, and actors in every scene.'; log('no cast'); continue; }
     s.scenes.forEach((x, i) => { x.id = `${i}-${String(x.id).replace(/[^a-z0-9-]/gi, '').slice(0, 20) || 's'}`; });
     const c = await check(s);
     if (c.ok === true || c.ok === 'true') script = s; else { fb = c.problems || 'facts'; log(`review: ${fb}`); }
@@ -144,24 +150,24 @@ if (force || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
 // ---------- 2b. pictures: one per scene, art style + theme + loop picked per video so they all look different ----------
 const hash = str => [...str].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
 const ART = ['playful 3D clay render, soft studio light', 'bold comic book art, thick ink outlines, halftone shading', 'vibrant isometric low-poly 3D', 'colorful anime cel-shaded illustration', 'papercut collage, layered paper, bright colors', 'glossy Pixar-style 3D cartoon', 'retro 80s synthwave neon illustration', 'cute chunky vector cartoon with bold shapes', 'detailed pixel art, 16-bit game style', 'whimsical gouache storybook painting'];
-const H = hash(id), STYLE = `${ART[H % ART.length]}, exaggerated fun expressions, dynamic camera angle, saturated colors, no text, no letters, no numbers, no logos, no screens, square composition, subject centered.`;
-{
-  const sf = JSON.parse(readFileSync(scriptFile, 'utf8')); let changed = false;
-  const jobs = sf.scenes.filter(x => x.type !== 'end' && (x.img || x.prompt));
-  for (const sc of jobs) {
-    const name = `${id}-${sc.id}.jpg`, file = resolve(here, 'public', name);
-    for (let a = 0; a < 6 && !existsSync(file); a++) {
-      const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
-        body: JSON.stringify({ prompt: `${sc.img || sc.prompt}. ${STYLE}`, size: '1024x1024', quality: 'low', n: 1 }), signal: AbortSignal.timeout(180000) });
-      if (!r.ok) { log(`image retry ${r.status}`); await new Promise(x => setTimeout(x, 12000 * (a + 1))); continue; }
-      const png = resolve(here, 'public', `${id}-${sc.id}.png`);
-      writeFileSync(png, Buffer.from((await r.json()).data[0].b64_json, 'base64'));
-      run('ffmpeg', ['-loglevel', 'error', '-y', '-i', png, '-q:v', '3', file]);
-    }
-    if (existsSync(file)) { sc.image = name; changed = true; }
+const H = hash(id), STYLE = `${ART[H % ART.length]}, exaggerated fun expressions, dynamic camera angle, saturated colors, no text, no letters, no numbers, no logos, no screens,`;
+async function draw(prompt, file, transparent) {
+  for (let a = 0; a < 6 && !existsSync(file); a++) {
+    const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
+      body: JSON.stringify({ prompt, size: transparent ? '1024x1024' : '1024x1536', quality: 'low', n: 1, ...(transparent ? { background: 'transparent', output_format: 'png' } : {}) }), signal: AbortSignal.timeout(180000) });
+    if (!r.ok) { log(`image retry ${r.status} ${r.status === 400 ? (await r.text()).slice(0, 160) : ''}`); await new Promise(x => setTimeout(x, 12000 * (a + 1))); continue; }
+    const raw = resolve(here, 'public', `raw-${file.split('/').pop()}.png`);
+    writeFileSync(raw, Buffer.from((await r.json()).data[0].b64_json, 'base64'));
+    run('ffmpeg', ['-loglevel', 'error', '-y', '-i', raw, ...(transparent ? ['-vf', 'scale=512:-1', file] : ['-q:v', '3', file])]);
   }
-  if (changed) writeFileSync(scriptFile, JSON.stringify(sf, null, 2));
-  log(`pictures: ${sf.scenes.filter(x => x.image).length}`);
+  return existsSync(file);
+}
+{
+  const sf = JSON.parse(readFileSync(scriptFile, 'utf8')); let n = 0;
+  for (const st of sf.sets || []) { const name = `${id}-set-${st.name}.jpg`; if (await draw(`${st.prompt}. Wide empty background scene for an animation, no characters in front. ${STYLE}`, resolve(here, 'public', name), false)) { st.image = name; n++; } }
+  for (const c of sf.cast || []) { const name = `${id}-cast-${c.name}.png`; if (await draw(`${c.prompt}. Single isolated cut-out sprite on a fully transparent background, whole object visible, centered, bold outline. ${STYLE}`, resolve(here, 'public', name), true)) { c.image = name; n++; } }
+  writeFileSync(scriptFile, JSON.stringify(sf, null, 2));
+  log(`pictures: ${n} of ${(sf.sets || []).length + (sf.cast || []).length}`);
 }
 
 // ---------- 3. render + compress ----------
@@ -170,7 +176,7 @@ const final = resolve(out, `${id}.mp4`), poster = resolve(out, `${id}.jpg`);
 if (force || !existsSync(final)) {
   const s = JSON.parse(readFileSync(scriptFile, 'utf8'));
   const timing = JSON.parse(readFileSync(resolve(here, 'public', `${id}.timing.json`), 'utf8'));
-  writeFileSync(resolve(here, `.props-${id}.json`), JSON.stringify({ id, title: s.title, scenes: s.scenes, timing, audio: `${id}.mp3`, keys: s.keys || [], theme: H % 8, loop: (H >> 3) % 5 }));
+  writeFileSync(resolve(here, `.props-${id}.json`), JSON.stringify({ id, title: s.title, scenes: s.scenes, sets: s.sets || [], cast: s.cast || [], timing, audio: `${id}.mp3`, keys: s.keys || [], theme: H % 8, loop: (H >> 3) % 5 }));
   run('npx', ['remotion', 'render', 'src/index.ts', 'short', `out/${id}.raw.mp4`, `--props=.props-${id}.json`, ...(process.env.CHROME_PATH ? [`--browser-executable=${process.env.CHROME_PATH}`] : []), '--log=error'], { timeout: 1800000 });
   run('ffmpeg', ['-loglevel', 'error', '-y', '-i', `out/${id}.raw.mp4`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', `out/${id}.mp4`]);
   run('ffmpeg', ['-loglevel', 'error', '-y', '-ss', '1.2', '-i', `out/${id}.mp4`, '-frames:v', '1', '-vf', 'scale=540:-1', '-q:v', '5', `out/${id}.jpg`]);
