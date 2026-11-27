@@ -1,0 +1,89 @@
+{
+  "id": "html-css",
+  "title": "HTML & CSS · The Box Model Decoded",
+  "keys": [
+    "box model",
+    "padding",
+    "margin",
+    "border",
+    "responsive"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-box-model",
+      "type": "hook",
+      "kicker": "HTML & CSS · 45 seconds",
+      "line1": "Why do layouts break so often?",
+      "line2": "What’s the real culprit?",
+      "say": "Ever wonder why your layout suddenly breaks? What’s really causing those weird spacing issues?"
+    },
+    {
+      "id": "1-chip-box-model",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Box",
+      "sub": "Every element is a box: content, padding, border, margin.",
+      "say": "The answer is the box model. Every element on a page is a box made of content, padding, border, and margin."
+    },
+    {
+      "id": "2-rows-box-parts",
+      "type": "rows",
+      "kicker": "Step-by-Step",
+      "rows": [
+        {
+          "a": "Content",
+          "b": "The actual text or image"
+        },
+        {
+          "a": "Padding",
+          "b": "Space inside the border"
+        },
+        {
+          "a": "Border",
+          "b": "The visible edge"
+        },
+        {
+          "a": "Margin",
+          "b": "Space outside the border"
+        }
+      ],
+      "walk": true,
+      "say": "Let’s break it down. First, you have the content. Next comes padding, then the border, and finally the margin outside."
+    },
+    {
+      "id": "3-compare-box-sizing",
+      "type": "compare",
+      "kicker": "Sizing",
+      "left": {
+        "title": "Default",
+        "items": [
+          "Width is content only",
+          "Padding and border add extra size"
+        ]
+      },
+      "right": {
+        "title": "box-sizing: border-box",
+        "items": [
+          "Width includes padding and border",
+          "Easier for responsive layouts"
+        ]
+      },
+      "say": "By default, width only covers the content. But with border-box, width includes padding and border. This makes responsive design way easier."
+    },
+    {
+      "id": "4-trap-margin-padding",
+      "type": "trap",
+      "question": "Does margin affect element width?",
+      "wrong": "Yes, margin is part of width.",
+      "right": "No, margin adds space outside the box, not to its width.",
+      "say": "Here’s a classic interview trap: Does margin affect the width of an element? Nope. Margin adds space outside the box, not to its actual width."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:20:14.848Z"
+}
