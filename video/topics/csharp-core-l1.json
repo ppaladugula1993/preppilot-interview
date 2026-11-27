@@ -1,0 +1,71 @@
+{
+  "id": "csharp-core-l1",
+  "title": "C# Generics and Constraints, Fast",
+  "keys": [
+    "Generics",
+    "Constraints",
+    "Type Safety",
+    "Compile-time"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-generics",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "How do you make code reusable?",
+      "line2": "And still type-safe?",
+      "say": "How do you make your code reusable, but still keep it type safe?"
+    },
+    {
+      "id": "1-chip-generics",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Generics",
+      "sub": "Write code that works for any type, safely.",
+      "say": "Generics let you write code that works for any type, without losing type safety."
+    },
+    {
+      "id": "2-compare-constraints",
+      "type": "compare",
+      "kicker": "Constraints",
+      "left": {
+        "title": "No Constraints",
+        "items": [
+          "Any type allowed",
+          "Risk: missing methods"
+        ]
+      },
+      "right": {
+        "title": "With Constraints",
+        "items": [
+          "Limit to interfaces or classes",
+          "Safe to call required members"
+        ]
+      },
+      "say": "Constraints limit which types you can use. Without them, any type goes, but you risk missing members. With constraints, you can safely use required methods or properties."
+    },
+    {
+      "id": "3-code-generic-repo",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "public class Repository<T>\n  where T : IEntity, new()\n{\n  public T Create() => new T();\n}",
+      "say": "Here's a generic repository. The constraints make sure T implements an entity interface and has a parameterless constructor."
+    },
+    {
+      "id": "4-trap-compile-safety",
+      "type": "trap",
+      "question": "Why use constraints in generics?",
+      "wrong": "To allow any type, for flexibility.",
+      "right": "To enforce compile-time safety and enable required operations.",
+      "say": "Here's a common interview trap. Constraints aren't about flexibility. They're for compile-time safety and letting you use required operations."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:11:18.271Z"
+}
