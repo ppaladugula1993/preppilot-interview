@@ -1,0 +1,71 @@
+{
+  "id": "go-core-l2",
+  "title": "Go Slices vs Arrays: What’s the Difference?",
+  "keys": [
+    "slice",
+    "array",
+    "capacity",
+    "append"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-slice-array",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "Slices or arrays?",
+      "line2": "Which should you use?",
+      "say": "Ever wonder when to use a slice versus an array in Go? Let’s clear that up."
+    },
+    {
+      "id": "1-compare-basics",
+      "type": "compare",
+      "kicker": "Quick Compare",
+      "left": {
+        "title": "Arrays",
+        "items": [
+          "Fixed length",
+          "Value type"
+        ]
+      },
+      "right": {
+        "title": "Slices",
+        "items": [
+          "Dynamic length",
+          "Reference type"
+        ]
+      },
+      "say": "Arrays have a fixed length and are value types. Slices are dynamic and act as references to arrays."
+    },
+    {
+      "id": "2-chip-capacity",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "Capacity",
+      "sub": "Slice capacity is the size of its backing array.",
+      "say": "A slice’s capacity is set by the size of its underlying array. That controls how much you can append before Go moves your data."
+    },
+    {
+      "id": "3-code-append",
+      "type": "code",
+      "kicker": "Append Example",
+      "lang": "go",
+      "code": "a := [3]int{1,2,3}\ns := a[:2]\ns = append(s, 4)\n// s now has its own array",
+      "say": "If you append beyond a slice’s capacity, Go creates a new array. The original array stays unchanged."
+    },
+    {
+      "id": "4-trap-sharing",
+      "type": "trap",
+      "question": "What happens if two slices share an array?",
+      "wrong": "They always see each other's changes.",
+      "right": "Only until one slice is appended past capacity—then it gets a new array.",
+      "say": "Here’s a trap: two slices share data only until one appends past its capacity. After that, they’re independent."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:42:39.020Z"
+}
