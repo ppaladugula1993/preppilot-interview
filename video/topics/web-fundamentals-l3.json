@@ -1,0 +1,78 @@
+{
+  "id": "web-fundamentals-l3",
+  "title": "CORS and Preflight: What, Why, How",
+  "keys": [
+    "CORS",
+    "Preflight",
+    "OPTIONS",
+    "Headers"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cors-preflight",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Why do browsers block some requests?",
+      "line2": "What triggers preflight?",
+      "say": "Ever wonder why your API call fails, even when the endpoint exists? Let's dig into CORS and preflight requests."
+    },
+    {
+      "id": "1-chip-cors",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "CORS",
+      "sub": "Controls which domains can access your API.",
+      "say": "CORS is what lets your server decide which websites can use its data. It's a browser security feature."
+    },
+    {
+      "id": "2-rows-preflight-trigg",
+      "type": "rows",
+      "kicker": "Preflight Triggers",
+      "rows": [
+        {
+          "a": "Method",
+          "b": "Not GET or POST"
+        },
+        {
+          "a": "Headers",
+          "b": "Custom or non-simple headers"
+        },
+        {
+          "a": "Content-Type",
+          "b": "Not form or plain text"
+        }
+      ],
+      "walk": true,
+      "say": "A preflight happens when your request uses a method other than GET or POST, sets custom headers, or uses a content type like JSON."
+    },
+    {
+      "id": "3-terminal-options-req",
+      "type": "terminal",
+      "kicker": "Browser Example",
+      "title": "Preflight in Action",
+      "lines": [
+        "$ OPTIONS /api/data HTTP/1.1",
+        "Origin: app.example.com",
+        "",
+        "Access-Control-Allow-Origin: app.example.com",
+        "Access-Control-Allow-Methods: GET, POST"
+      ],
+      "say": "The browser sends an OPTIONS request first. The server replies with headers saying which domains and methods are allowed."
+    },
+    {
+      "id": "4-trap-preflight-myth",
+      "type": "trap",
+      "question": "Do all POST requests skip preflight?",
+      "wrong": "Yes, POST never triggers preflight.",
+      "right": "No—POST can trigger preflight if it uses custom headers or non-simple content types, like JSON.",
+      "say": "Careful! Not every POST skips preflight. If you add custom headers or send JSON, the browser checks first."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:24:00.954Z"
+}
