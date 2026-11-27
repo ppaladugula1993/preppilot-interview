@@ -1,0 +1,76 @@
+{
+  "id": "scripting-l5",
+  "title": "JSON on the Command Line: jq & az --query",
+  "keys": [
+    "jq",
+    "az --query",
+    "JMESPath",
+    "JSON",
+    "scripting"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-json-cli",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "Cloud tools love JSON.",
+      "line2": "How do you script with it?",
+      "say": "Cloud tools spit out JSON everywhere. But how do you actually use that in your scripts?"
+    },
+    {
+      "id": "1-chip-jq",
+      "type": "chip",
+      "kicker": "Tool",
+      "label": "jq",
+      "sub": "jq filters and reshapes JSON from any command.",
+      "say": "First up: jq. It's your Swiss Army knife for slicing and dicing JSON right in the terminal."
+    },
+    {
+      "id": "2-terminal-jq-examples",
+      "type": "terminal",
+      "kicker": "jq in action",
+      "title": "Filter API and k8s output",
+      "lines": [
+        "$ curl ... | jq '.items[] | {name, status}'",
+        "$ kubectl get pods -o json | \\",
+        "  jq -r '.items[] | select(.status.phase!=\"Running\") | .metadata.name'"
+      ],
+      "say": "You can pull just what you need from API responses or Kubernetes with simple jq filters."
+    },
+    {
+      "id": "3-chip-az-query",
+      "type": "chip",
+      "kicker": "Azure CLI",
+      "label": "az --query",
+      "sub": "az uses JMESPath to filter JSON from Azure.",
+      "say": "For Azure, use az dash dash query. It speaks JMESPath, a powerful JSON query language."
+    },
+    {
+      "id": "4-terminal-az-examples",
+      "type": "terminal",
+      "kicker": "az --query",
+      "title": "Filter Azure VM & NSG rules",
+      "lines": [
+        "$ az vm list -d --query ... -o table",
+        "$ az network nsg rule list ... \\",
+        "  --query \"[?access=='Allow']...\" -o table"
+      ],
+      "say": "With az, you can filter for running VMs or allowed network rules, all before the data hits your script."
+    },
+    {
+      "id": "5-trap-dont-grep-json",
+      "type": "trap",
+      "question": "How should you parse JSON in bash?",
+      "wrong": "Just grep for the values you need.",
+      "right": "Use jq or az --query. Grep breaks easily and isn't safe for JSON.",
+      "say": "Here's a trap: Don't ever grep JSON. Always use jq or az dash dash query. Grep will break and miss edge cases."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:53:09.050Z"
+}
