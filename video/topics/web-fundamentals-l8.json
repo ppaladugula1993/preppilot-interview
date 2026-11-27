@@ -1,0 +1,73 @@
+{
+  "id": "web-fundamentals-l8",
+  "title": "WebSockets vs Server-Sent Events",
+  "keys": [
+    "WebSockets",
+    "SSE",
+    "real-time",
+    "HTTP"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-websockets-sse",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "How do websites send real-time updates?",
+      "line2": "Which tech fits each case?",
+      "say": "How do websites push live updates? Which technology should you use for different real-time scenarios?"
+    },
+    {
+      "id": "1-chip-websockets",
+      "type": "chip",
+      "kicker": "Core Feature",
+      "label": "WebSockets",
+      "sub": "Full-duplex, persistent connection for real-time chat and gaming.",
+      "say": "WebSockets create a persistent link, letting both client and server talk freely. Great for chat apps or multiplayer games."
+    },
+    {
+      "id": "2-chip-sse",
+      "type": "chip",
+      "kicker": "Core Feature",
+      "label": "SSE",
+      "sub": "Server pushes updates to browser over HTTP. One-way only.",
+      "say": "Server-Sent Events let the server push updates to the browser, but only one way. Perfect for live feeds or notifications."
+    },
+    {
+      "id": "3-compare-websockets-s",
+      "type": "compare",
+      "kicker": "Choose Wisely",
+      "left": {
+        "title": "WebSockets",
+        "items": [
+          "Bidirectional",
+          "Persistent",
+          "Real-time apps"
+        ]
+      },
+      "right": {
+        "title": "SSE",
+        "items": [
+          "Server-to-client",
+          "HTTP-based",
+          "Simple updates"
+        ]
+      },
+      "say": "Pick WebSockets for two-way, real-time communication. Go with Server-Sent Events when you just need the server to send updates."
+    },
+    {
+      "id": "4-trap-sse-bidirection",
+      "type": "trap",
+      "question": "Can SSE send data from client to server?",
+      "wrong": "Yes, SSE supports two-way messaging.",
+      "right": "No, SSE only lets the server push data to the client. For two-way, use WebSockets.",
+      "say": "Here's a common interview trap: Can Server-Sent Events send data back to the server? Remember, it's one-way only. If you need two-way, use WebSockets."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:32:54.053Z"
+}
