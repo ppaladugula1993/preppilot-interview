@@ -1457,8 +1457,8 @@ button.news-tile { text-align: left; font: inherit; color: inherit; cursor: poin
 button.news-tile:hover { border-color: var(--accent); }
 
 /* Watch */
-.watch .w-frame { position: relative; width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 9 / 16; max-height: 74vh; border-radius: 18px; overflow: hidden; background: #0a0a0f; }
-.watch .w-frame video { width: 100%; height: 100%; object-fit: contain; background: #0a0a0f; display: block; }
+.watch .w-frame { position: relative; width: 100%; max-width: 420px; margin: 0 auto; aspect-ratio: 9 / 16; max-height: 74vh; border-radius: 18px; overflow: hidden; background: #0b1113; }
+.watch .w-frame video { width: 100%; height: 100%; object-fit: contain; background: #0b1113; display: block; }
 .w-locked { background-size: cover; background-position: center; display: grid; place-items: center; }
 .w-locked > div { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; padding: 24px; margin: 16px; border-radius: 16px; background: #0a0a0fe0; color: #fff; }
 .w-locked svg { width: 28px; height: 28px; }
@@ -1471,14 +1471,14 @@ button.news-tile:hover { border-color: var(--accent); }
 .w-thumb span svg { width: 14px; height: 14px; flex: none; margin-top: 1px; }
 .w-cta { align-self: flex-start; }
 
-/* Watch is immersive: the whole screen takes the videos' palette (#0A0A0F, white, yellow #FFE500). */
+/* Watch is immersive: the whole screen takes the videos' palette (dark teal #0b1113, mint #4fd1a5). */
 body.watch-mode {
-  --desk: #0A0A0F; --paper: #14141c; --sunk: #1c1c26; --ink: #ffffff; --ink-soft: #e4e4ea; --muted: #9b9ba8;
-  --line: #262632; --line-strong: #363644; --accent: #FFE500; --accent-soft: #2e2a0a; --warn: #ff7b72; --warn-soft: #2a1414;
-  --btn: #FFE500; --btn-ink: #0A0A0F; --code-bg: #1c1c26; --shadow: none;
-  background: #0A0A0F; color: #fff;
+  --desk: #0b1113; --paper: #111a1c; --sunk: #162224; --ink: #f1f6f4; --ink-soft: #dbe5e2; --muted: #8ea3a0;
+  --line: #23302f; --line-strong: #2f3f3d; --accent: #4fd1a5; --accent-soft: #143329; --warn: #ffb45c; --warn-soft: #2a2014;
+  --btn: #4fd1a5; --btn-ink: #0b1113; --code-bg: #162224; --shadow: none;
+  background: #0b1113; color: #f1f6f4;
 }
 body.watch-mode .watch .w-frame { border-radius: 0; max-width: 460px; }
 body.watch-mode .card.stacked::before, body.watch-mode .card.stacked::after { display: none; }
 body.watch-mode .w-meta b { font-weight: 900; text-transform: uppercase; letter-spacing: .01em; }
-body.watch-mode .btn:not(.primary) { background: transparent; color: #fff; border-color: #363644; }
+body.watch-mode .btn:not(.primary) { background: transparent; color: #f1f6f4; border-color: #2f3f3d; }

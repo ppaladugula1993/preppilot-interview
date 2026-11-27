@@ -1,5 +1,5 @@
 // App-shell cache for offline study. AI calls (/api) always go to the network.
-const VERSION = 'pp-v91';
+const VERSION = 'pp-v92';
 // Packs are fetched on demand (content/packs/<id>.json?v=...) and cached by the fetch handler below.
 const SHELL = ['./', 'index.html', 'app.css', 'manifest.webmanifest', 'js/app.js', 'js/plan.js', 'js/content.js', 'js/store.js', 'js/ai.js', 'js/auth.js', 'js/voice.js', 'js/realtime.js', 'js/config.js', 'js/diagrams.js', 'js/diagram-data.js', 'js/animate.js', 'js/pip.js', 'content/roles.json', 'content/packs/index.json', 'fonts/newsreader.woff2', 'fonts/instrument-sans.woff2', 'icons/icon.svg', 'icons/icon-192.png'];
 

@@ -52,25 +52,19 @@ async function writeScript(feedback = '') {
   const user = `Topic: ${topic.name} (${topic.blurb || ''})
 Make ONE video that explains the single most important idea of this topic so it sticks, using only facts from the material below.
 Structure: hook question → 4 to 6 teaching scenes that build up the idea → one interview trap → end card. Total narration 105 to 130 words.
-Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
+Each scene: {"id": short-slug, "type": one of hook|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
 - hook: kicker (e.g. "${topic.name} · 45 seconds"), line1 (max 40 chars), line2 (max 22 chars, the question)
 - chip: kicker, label (1 word, max 8 chars, e.g. "API" or "Pod"), sub (max 70 chars)
 - terminal: kicker, title, lines (2-5 real commands/output lines, max 34 chars each, commands start with "$ ")
 - rows: kicker, rows (3-5 items {a: max 18 chars, b: max 28 chars}), walk (true for ordered steps)
 - compare: kicker, left {title, items: 2-3 short items}, right {title, items}
 - code: kicker, lang, code (max 8 lines, max 34 chars per line, real and correct)
-- picture: kicker, prompt (a vivid REAL-WORLD scene that works as a metaphor for the idea, described for an illustrator: objects, action, setting; no words, letters or screens in the image), map (2-3 items {thing: object in the picture, max 14 chars, means: the tech idea it stands for, max 24 chars})
 - trap: question (max 40 chars), wrong (the common wrong answer, max 40 chars), right (max 60 chars)
 - end: say must be exactly "Get interview ready with PrepPilot."
-Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types, and put ONE picture scene right after the hook: pick a real-world metaphor that makes this idea click (e.g. Docker = cargo ship with containers; JVM garbage collection = warehouse forklift clearing unused boxes; event loop = one chef juggling orders; class vs object = blueprint vs houses; index = library card catalogue; Git branches = a tree; React components = LEGO bricks; Kafka = post office sorting mail; CI/CD or ETL = factory assembly line; auth = bank vault with ID badges; LLM RAG = librarian looking up books before answering). Pick the best fit for THIS topic, not these examples by default. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
+Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
-Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
-This is an ANIMATED cartoon, not a slideshow. Build ONE real-world metaphor world for the whole video:
-- "sets": 2 backgrounds [{"name": slug, "prompt": wide empty environment, no characters, e.g. "busy harbour at sunset with cranes and calm sea"}]
-- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single simple object, whole and clearly visible, e.g. "simple cargo ship", "orange shipping container", "crane"; plain objects, no faces}]
-EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-2 cast members doing ONE simple, clear action that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|float|drive|drop|pulse, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Keep it calm and readable: one idea per scene, little clutter.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
-Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "sets": [...], "cast": [...], "scenes": [...]}.
+Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "scenes": [...]}.
 
 Lessons:
 ${lessons}
@@ -113,7 +107,7 @@ async function check(script) {
     `Topic: ${topic.name}\nScript:\n${JSON.stringify(script)}`, 600, 0);
   return r;
 }
-const VSTYLE = process.env.VIDEO_STYLE || (lesson ? 'topic' : 'brain'), BRAIN = VSTYLE === 'brain';
+const VSTYLE = process.env.VIDEO_STYLE || 'topic', BRAIN = VSTYLE === 'brain';
 const BRAIN_STYLE = 'Flat vector motion graphics style, dark background #0A0A0F, minimal 2D illustration, thick outlines, electric yellow #FFE500 accent and cyan #00E5FF for diagram lines, no shadows, no photorealism, clean infographic, no text, no letters, no numbers';
 async function writeBrain(feedback) {
   const words = lesson ? (lesson.t || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 3) : [];

@@ -1,15 +1,6 @@
 {
- "updated": "2026-11-27T20:06:56.489Z",
+ "updated": "2026-11-27T20:07:01.706Z",
  "videos": [
-  {
-   "id": "behavioral",
-   "topic": "behavioral",
-   "title": "Nail Your Story in Interviews",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/behavioral.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/behavioral.jpg",
-   "duration": 62,
-   "quiz": 0
-  },
   {
    "id": "behavioral-l0",
    "topic": "behavioral",
@@ -121,15 +112,6 @@
    "quiz": 0
   },
   {
-   "id": "data-modeling",
-   "topic": "data-modeling",
-   "title": "Data Modeling: OLTP vs OLAP Explained",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling.jpg",
-   "duration": 92,
-   "quiz": 0
-  },
-  {
    "id": "data-modeling-l0",
    "topic": "data-modeling",
    "lesson": 0,
@@ -152,15 +134,6 @@
    "quiz": 0
   },
   {
-   "id": "dsa",
-   "topic": "dsa",
-   "title": "Data Structures: Fast or Slow?",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/dsa.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/dsa.jpg",
-   "duration": 94,
-   "quiz": 0
-  },
-  {
    "id": "dsa-l0",
    "topic": "dsa",
    "lesson": 0,
@@ -169,15 +142,6 @@
    "url": "https://ppvideos7k2.blob.core.windows.net/videos/dsa-l0.mp4",
    "poster": "https://ppvideos7k2.blob.core.windows.net/videos/dsa-l0.jpg",
    "duration": 36,
-   "quiz": 0
-  },
-  {
-   "id": "oop-design-patterns",
-   "topic": "oop-design-patterns",
-   "title": "OOP Secrets Every Engineer Needs",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/oop-design-patterns.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/oop-design-patterns.jpg",
-   "duration": 91,
    "quiz": 0
   },
   {
@@ -398,15 +362,6 @@
    "url": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l8.mp4",
    "poster": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l8.jpg",
    "duration": 28,
-   "quiz": 0
-  },
-  {
-   "id": "web-fundamentals",
-   "topic": "web-fundamentals",
-   "title": "What Happens When You Enter a URL?",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/web-fundamentals.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/web-fundamentals.jpg",
-   "duration": 71,
    "quiz": 0
   }
  ]
