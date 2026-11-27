@@ -1,0 +1,62 @@
+{
+  "id": "docker-l5",
+  "title": "Docker Networking & Ports Explained",
+  "keys": [
+    "bridge network",
+    "user-defined network",
+    "DNS",
+    "port mapping"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-docker-ports",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "How do containers talk?",
+      "line2": "What about ports?",
+      "say": "Ever wondered how Docker containers find each other, or how your app gets traffic from outside? Let’s break down Docker networking and ports."
+    },
+    {
+      "id": "1-chip-bridge-network",
+      "type": "chip",
+      "kicker": "Default",
+      "label": "Bridge",
+      "sub": "Each container gets a private I.P. address.",
+      "say": "By default, Docker puts containers on a bridge network. Each one gets a private I.P. address, isolated from others."
+    },
+    {
+      "id": "2-chip-user-network",
+      "type": "chip",
+      "kicker": "Custom",
+      "label": "UserNet",
+      "sub": "User networks add DNS—containers use names.",
+      "say": "Create a user-defined network, and Docker gives you DNS. Now containers can reach each other by name, not just by I.P."
+    },
+    {
+      "id": "3-terminal-port-mappin",
+      "type": "terminal",
+      "kicker": "Ports",
+      "title": "Expose your app",
+      "lines": [
+        "$ docker run -p 8080:8000 myapp",
+        "# Host:8080 → Container:8000"
+      ],
+      "say": "To let outside traffic in, publish a port. Dash p, host port, colon, container port. Traffic to host port 8080 goes to your app inside."
+    },
+    {
+      "id": "4-trap-port-trap",
+      "type": "trap",
+      "question": "What does -p 8080:80 do?",
+      "wrong": "Opens port 80 on the host.",
+      "right": "Maps host port 8080 to container port 80.",
+      "say": "Watch out: dash p eight zero eight zero colon eighty maps host port 8080 to port 80 inside your container, not the other way around."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:59:10.928Z"
+}
