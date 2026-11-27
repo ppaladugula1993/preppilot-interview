@@ -1,0 +1,80 @@
+{
+  "id": "scripting-l0",
+  "title": "Bash Essentials for Automation",
+  "keys": [
+    "shebang",
+    "safe mode",
+    "variables",
+    "loops"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-bash",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "Could you write a safe Bash script?",
+      "line2": "What are the must-know basics?",
+      "say": "Ever freeze up when asked to write a Bash script live? Let's lock down the essentials so you don't."
+    },
+    {
+      "id": "1-chip-shebang-safe",
+      "type": "chip",
+      "kicker": "Start strong",
+      "label": "Shebang",
+      "sub": "Always start with a shebang and safe mode.",
+      "say": "Start every script with a shebang and safe mode. This tells the system to use Bash and stops your script if anything goes wrong."
+    },
+    {
+      "id": "2-terminal-vars-quotes",
+      "type": "terminal",
+      "kicker": "Variables",
+      "title": "Quoting matters",
+      "lines": [
+        "$ LOG=/var/log/check.log",
+        "$ THRESHOLD=${1:-90}",
+        "$ echo \"$THRESHOLD\""
+      ],
+      "say": "Always quote your variables. Unquoted variables are the number one source of bugs, especially with spaces or empty values."
+    },
+    {
+      "id": "3-rows-logic-loops",
+      "type": "rows",
+      "kicker": "Logic & Loops",
+      "rows": [
+        {
+          "a": "Conditionals",
+          "b": "if, then, else"
+        },
+        {
+          "a": "Loops",
+          "b": "for, while"
+        },
+        {
+          "a": "Functions",
+          "b": "Reusable code blocks"
+        },
+        {
+          "a": "Exit codes",
+          "b": "Check command success"
+        }
+      ],
+      "walk": false,
+      "say": "Use conditionals for decisions, loops to repeat tasks, functions for reusable code, and always check exit codes to handle errors."
+    },
+    {
+      "id": "4-trap-unquoted-vars",
+      "type": "trap",
+      "question": "What breaks most Bash scripts?",
+      "wrong": "Forgetting the shebang line",
+      "right": "Forgetting to quote variables causes scripts to fail on spaces or empty values. Always quote them.",
+      "say": "Interviewers see unquoted variables as a red flag. Always quote them, or risk breaking your script in weird ways."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:57:22.782Z"
+}
