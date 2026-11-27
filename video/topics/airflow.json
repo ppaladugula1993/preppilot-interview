@@ -1,0 +1,73 @@
+{
+  "id": "airflow",
+  "title": "The Core Idea: Airflow DAGs & Dependencies",
+  "keys": [
+    "DAG",
+    "task",
+    "dependencies",
+    "workflow",
+    "Airflow"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dag-order",
+      "type": "hook",
+      "kicker": "Orchestration (Airflow) · 45 sec",
+      "line1": "How does Airflow know",
+      "line2": "what runs, and when?",
+      "say": "How does Airflow know what to run, and in what order? Let's break down the core idea."
+    },
+    {
+      "id": "1-chip-dag",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "DAG",
+      "sub": "Directed Acyclic Graph defines workflow steps",
+      "say": "In Airflow, the backbone is the D A G—a Directed Acyclic Graph. It maps out every step in your workflow."
+    },
+    {
+      "id": "2-rows-tasks-deps",
+      "type": "rows",
+      "kicker": "Building Blocks",
+      "rows": [
+        {
+          "a": "Tasks",
+          "b": "Each step in your pipeline"
+        },
+        {
+          "a": "Operators",
+          "b": "Define what each task does"
+        },
+        {
+          "a": "Dependencies",
+          "b": "Set the order of execution"
+        }
+      ],
+      "walk": true,
+      "say": "You create tasks for each step, pick operators for what they do, and set dependencies to control the run order."
+    },
+    {
+      "id": "3-code-deps",
+      "type": "code",
+      "kicker": "How To",
+      "lang": "python",
+      "code": "task_a >> task_b\n# or\n\ntask_b.set_upstream(task_a)",
+      "say": "You link tasks using double greater-than or set_upstream. This tells Airflow exactly what runs after what."
+    },
+    {
+      "id": "4-trap-dag-deps",
+      "type": "trap",
+      "question": "Can tasks run in any order in a DAG?",
+      "wrong": "Yes, Airflow decides for you.",
+      "right": "No. You must define dependencies so tasks run in the right order.",
+      "say": "Here's a trap: Can tasks run in any order in a D A G? No—they only run in the order you define with dependencies."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:58:30.140Z"
+}
