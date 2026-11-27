@@ -1,0 +1,76 @@
+{
+  "id": "warehouses-l4",
+  "title": "Delta Lake: ACID, Time Travel, OPTIMIZE",
+  "keys": [
+    "Delta Lake",
+    "ACID",
+    "Time Travel",
+    "OPTIMIZE",
+    "Z-order"
+  ],
+  "scenes": [
+    {
+      "id": "0-acid-hook",
+      "type": "hook",
+      "kicker": "Databricks & Delta Lake · lesson",
+      "line1": "How reliable is your data lake?",
+      "line2": "Can you query old versions?",
+      "say": "Ever wondered if your data lake can guarantee consistency and let you see past data versions?"
+    },
+    {
+      "id": "1-acid-chip",
+      "type": "chip",
+      "kicker": "Delta Lake",
+      "label": "ACID",
+      "sub": "Delta Lake uses transactions for reliable updates.",
+      "say": "Delta Lake brings atomicity, consistency, isolation, and durability—so updates and deletes are always reliable."
+    },
+    {
+      "id": "2-time-travel-terminal",
+      "type": "terminal",
+      "kicker": "Time Travel",
+      "title": "Query old table versions",
+      "lines": [
+        "$ SELECT * FROM events",
+        "$ VERSION AS OF 5;"
+      ],
+      "say": "Time travel lets you query historical table versions. Great for auditing or debugging changes."
+    },
+    {
+      "id": "3-optimize-rows",
+      "type": "rows",
+      "kicker": "Performance",
+      "rows": [
+        {
+          "a": "OPTIMIZE",
+          "b": "Compacts small files"
+        },
+        {
+          "a": "Z-order",
+          "b": "Organizes by columns"
+        },
+        {
+          "a": "Faster queries",
+          "b": "Efficient filtering"
+        }
+      ],
+      "walk": true,
+      "say": "Use OPTIMIZE to compact files. Z-order arranges data for faster filtering on multiple columns."
+    },
+    {
+      "id": "4-acid-trap",
+      "type": "trap",
+      "question": "Why does Delta Lake enable time travel?",
+      "wrong": "For faster queries only",
+      "right": "To audit, debug, and recover old data versions",
+      "say": "Don’t confuse time travel with just performance. It’s key for auditing, debugging, and recovering old data."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:23:29.002Z"
+}
