@@ -1,0 +1,72 @@
+{
+  "id": "angular-l6",
+  "title": "Angular HttpClient & Interceptors",
+  "keys": [
+    "HttpClient",
+    "Interceptors",
+    "Observables",
+    "API"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-httpclient",
+      "type": "hook",
+      "kicker": "Angular · lesson",
+      "line1": "How does Angular handle HTTP calls?",
+      "line2": "And why use interceptors?",
+      "say": "How does Angular handle HTTP requests, and why do interceptors matter for clean code?"
+    },
+    {
+      "id": "1-chip-httpclient",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "HttpClient",
+      "sub": "Makes HTTP calls, returns observables.",
+      "say": "Angular's HttpClient makes HTTP requests and returns observables, so you can subscribe and react to responses."
+    },
+    {
+      "id": "2-code-interceptor",
+      "type": "code",
+      "kicker": "Example Interceptor",
+      "lang": "typescript",
+      "code": "intercept(req, next) {\n  const cloned = req.clone({\n    setHeaders: {\n      Authorization: 'Bearer token'\n    }\n  });\n  return next.handle(cloned);\n}",
+      "say": "Interceptors let you modify requests or responses globally. For example, add an authorization token to every request with this code."
+    },
+    {
+      "id": "3-rows-interceptor-use",
+      "type": "rows",
+      "kicker": "Why Use Interceptors?",
+      "rows": [
+        {
+          "a": "Authentication",
+          "b": "Attach tokens to requests"
+        },
+        {
+          "a": "Logging",
+          "b": "Track API usage"
+        },
+        {
+          "a": "Error Handling",
+          "b": "Handle errors in one place"
+        }
+      ],
+      "walk": true,
+      "say": "I use interceptors for authentication, logging, and error handling. This keeps my components clean and focused."
+    },
+    {
+      "id": "4-trap-interceptor-sco",
+      "type": "trap",
+      "question": "Where should you provide an interceptor?",
+      "wrong": "In each component",
+      "right": "In the app module, so it works globally.",
+      "say": "Trap: Don't provide interceptors in individual components. Register them in the app module to apply them everywhere."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:20:08.071Z"
+}
