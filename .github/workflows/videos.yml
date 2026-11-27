@@ -1,0 +1,91 @@
+name: Make explainer videos
+
+# Runs unattended: makes every topic and lesson video (script -> fact check -> voice -> render -> upload),
+# saving each finished video's script and timing to the repo right away, then rebuilds the video list.
+# Safe to rerun: finished videos are skipped. Start from Actions > "Make explainer videos" > Run workflow.
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Optional: space-separated ids to make (e.g. "docker linux:0"). Empty = everything.'
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: videos
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      chunks: ${{ steps.list.outputs.chunks }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - id: list
+        working-directory: video
+        run: |
+          if [ -n "${{ inputs.only }}" ]; then echo "chunks=[\"${{ inputs.only }}\"]" >> "$GITHUB_OUTPUT"
+          else echo "chunks=$(node list.mjs 20)" >> "$GITHUB_OUTPUT"; fi
+
+  make:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        chunk: ${{ fromJson(needs.plan.outputs.chunks) }}
+    env:
+      AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+      AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+      AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+      AZURE_SPEECH_REGION: eastus
+      VIDEO_STORAGE: ${{ secrets.VIDEO_STORAGE }}
+      NO_MANIFEST: '1'
+    defaults:
+      run:
+        working-directory: video
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-inter > /dev/null || sudo apt-get install -y -qq ffmpeg > /dev/null
+          npm ci --silent
+          npx remotion browser ensure
+      - name: Make videos (save each one as it finishes)
+        run: |
+          git config user.name "preppilot-videos"; git config user.email "videos@users.noreply.github.com"
+          for id in ${{ matrix.chunk }}; do
+            safe=$(echo "$id" | sed 's/:/-l/')
+            if [ -f "topics/$safe.json" ] && grep -q '"rendered"' "topics/$safe.json"; then echo "skip $id"; continue; fi
+            if node make.mjs "$id"; then
+              git add "topics/$safe.json" "public/$safe.timing.json" "public/$safe.mp3"
+              git commit -qm "Video: $id" || true
+              for t in 1 2 3 4 5; do git pull -q --rebase origin "$GITHUB_REF_NAME" && git push -q origin "HEAD:$GITHUB_REF_NAME" && break; sleep $((t * 7)); done
+            else echo "::warning::video $id failed"; fi
+          done
+
+  manifest:
+    needs: make
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.ref_name }}' }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Rebuild the video list
+        working-directory: video
+        run: |
+          git pull -q origin "$GITHUB_REF_NAME"
+          node manifest.mjs
+          git config user.name "preppilot-videos"; git config user.email "videos@users.noreply.github.com"
+          git add ../web/content/videos.json && git commit -qm "Video list updated" && git push -q origin "HEAD:$GITHUB_REF_NAME" || echo "no change"
