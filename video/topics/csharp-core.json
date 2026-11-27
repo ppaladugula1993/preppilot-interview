@@ -1,0 +1,80 @@
+{
+  "id": "csharp-core",
+  "title": "Value vs Reference Types in C#",
+  "keys": [
+    "value type",
+    "reference type",
+    "struct",
+    "class",
+    "boxing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-core-types",
+      "type": "hook",
+      "kicker": "Core C# · 50 seconds",
+      "line1": "Why do structs and classes behave",
+      "line2": "so differently?",
+      "say": "Ever wonder why structs and classes in C sharp act so differently? Let's break down value and reference types."
+    },
+    {
+      "id": "1-chip-value",
+      "type": "chip",
+      "kicker": "Type",
+      "label": "Value",
+      "sub": "Structs store data directly. Copies make new, independent values.",
+      "say": "Structs are value types. They store data directly, and copying them creates a new, independent value."
+    },
+    {
+      "id": "2-chip-reference",
+      "type": "chip",
+      "kicker": "Type",
+      "label": "Reference",
+      "sub": "Classes store references to data on the heap.",
+      "say": "Classes are reference types. They store a reference to data on the heap. Assigning a class just copies the reference, not the data."
+    },
+    {
+      "id": "3-compare-boxing",
+      "type": "compare",
+      "kicker": "Boxing",
+      "left": {
+        "title": "Value Type",
+        "items": [
+          "int x = 5;",
+          "Stored on stack"
+        ]
+      },
+      "right": {
+        "title": "Boxed",
+        "items": [
+          "object o = x;",
+          "Copied to heap"
+        ]
+      },
+      "say": "When you assign a value type like an int to an object, C sharp copies it to the heap. This is called boxing."
+    },
+    {
+      "id": "4-code-record",
+      "type": "code",
+      "kicker": "Records",
+      "lang": "csharp",
+      "code": "record Person(string Name);\nvar p1 = new Person(\"Sam\");\nvar p2 = new Person(\"Sam\");\nConsole.WriteLine(p1 == p2); // True",
+      "say": "Records are reference types, but they compare by value. That means two records with the same data are equal."
+    },
+    {
+      "id": "5-trap-nullability",
+      "type": "trap",
+      "question": "Are structs nullable by default?",
+      "wrong": "Yes, all types are nullable.",
+      "right": "No. Only reference types are nullable by default. Use Nullable<T> for structs.",
+      "say": "Here's a common interview trap: Are structs nullable by default? No. Only reference types are. Use Nullable of T for structs."
+    },
+    {
+      "id": "6-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:04:00.469Z"
+}
