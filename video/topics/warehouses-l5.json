@@ -1,0 +1,84 @@
+{
+  "id": "warehouses-l5",
+  "title": "Cost Control & Query Optimization",
+  "keys": [
+    "partitioning",
+    "clustering",
+    "query plan",
+    "billing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cost-query",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "How do you cut cloud costs fast?",
+      "line2": "What really works?",
+      "say": "Ever wonder how to keep cloud bills low while making your queries run faster? Let’s break down the essentials."
+    },
+    {
+      "id": "1-chip-partition",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "Partition",
+      "sub": "Partition tables by date or integer columns to scan only what’s needed.",
+      "say": "Partitioning tables by date or integer columns is a game changer. It helps scan only the data you need, not the whole table."
+    },
+    {
+      "id": "2-compare-cluster",
+      "type": "compare",
+      "kicker": "Clustering",
+      "left": {
+        "title": "BigQuery",
+        "items": [
+          "Improves filtering",
+          "Speeds up sorting"
+        ]
+      },
+      "right": {
+        "title": "Snowflake",
+        "items": [
+          "Reduces scan size",
+          "Boosts frequent queries"
+        ]
+      },
+      "say": "Clustering works differently in each platform. In BigQuery, it speeds up filtering and sorting. In Snowflake, it cuts scan size for columns you filter often."
+    },
+    {
+      "id": "3-rows-query-tips",
+      "type": "rows",
+      "kicker": "Query Tips",
+      "rows": [
+        {
+          "a": "Select only needed",
+          "b": "Skip unused columns"
+        },
+        {
+          "a": "Filter early",
+          "b": "Reduce scanned rows"
+        },
+        {
+          "a": "Schedule wisely",
+          "b": "Run jobs off-peak"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how to optimize: only select the columns you need, filter as early as possible, and schedule heavy jobs during off-peak hours."
+    },
+    {
+      "id": "4-trap-billing",
+      "type": "trap",
+      "question": "What’s the best way to spot costly queries?",
+      "wrong": "Just check query logs.",
+      "right": "Review query plans and billing reports to find expensive scans and improve performance.",
+      "say": "Interviewers want more than log checks. Always review query plans and billing reports to spot expensive scans and fix them."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:18:53.199Z"
+}
