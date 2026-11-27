@@ -1,0 +1,86 @@
+{
+  "id": "system-design-l3",
+  "title": "Caching Strategies Explained Fast",
+  "keys": [
+    "cache-aside",
+    "write-through",
+    "TTL",
+    "invalidation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-caching",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "How do caches boost performance?",
+      "line2": "Which strategy fits your system?",
+      "say": "Caching can cut load times and save costs, but which strategy should you use?"
+    },
+    {
+      "id": "1-chip-cache-aside",
+      "type": "chip",
+      "kicker": "Strategy",
+      "label": "Cache-aside",
+      "sub": "App loads data into cache only when needed.",
+      "say": "Cache-aside means your app grabs data from the cache when it’s there, or loads it from the database if it’s not."
+    },
+    {
+      "id": "2-compare-strategies",
+      "type": "compare",
+      "kicker": "Pick the Right Strategy",
+      "left": {
+        "title": "Cache-aside",
+        "items": [
+          "On demand",
+          "Good for reads",
+          "Manual invalidation"
+        ]
+      },
+      "right": {
+        "title": "Write-through",
+        "items": [
+          "Always updates cache",
+          "Syncs with DB",
+          "Higher write latency"
+        ]
+      },
+      "say": "Cache-aside works well for read-heavy workloads. Write-through keeps cache and database synced, but can slow down writes."
+    },
+    {
+      "id": "3-rows-ttl-invalidatio",
+      "type": "rows",
+      "kicker": "Freshness Control",
+      "rows": [
+        {
+          "a": "TTL",
+          "b": "Sets cache expiry time"
+        },
+        {
+          "a": "Invalidation",
+          "b": "Removes stale cache entries"
+        },
+        {
+          "a": "CDN",
+          "b": "Caches content near users"
+        }
+      ],
+      "walk": true,
+      "say": "Set time-to-live to expire cache keys. Use invalidation to clear outdated data. CDNs cache content closer to users for speed."
+    },
+    {
+      "id": "4-trap-cache-miss",
+      "type": "trap",
+      "question": "What happens on a cache miss?",
+      "wrong": "Return error or empty response.",
+      "right": "Read from database, store in cache, return to user.",
+      "say": "If you miss in the cache, don’t just fail. Fetch from the database, update the cache, and send the data back."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:08:43.418Z"
+}
