@@ -1,0 +1,72 @@
+{
+  "id": "go-core-l7",
+  "title": "Defer, Panic, Recover in Go",
+  "keys": [
+    "defer",
+    "panic",
+    "recover",
+    "control flow"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-defer-panic-rec",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "How does Go handle errors?",
+      "line2": "What’s defer, panic, recover?",
+      "say": "How does Go handle errors and cleanup? What’s the deal with defer, panic, and recover?"
+    },
+    {
+      "id": "1-chip-defer",
+      "type": "chip",
+      "kicker": "Keyword",
+      "label": "defer",
+      "sub": "Runs after the function returns; great for cleanup.",
+      "say": "Defer schedules a function to run after the current one returns. It’s perfect for cleanup tasks."
+    },
+    {
+      "id": "2-rows-panic-recover",
+      "type": "rows",
+      "kicker": "Error Handling",
+      "rows": [
+        {
+          "a": "panic",
+          "b": "Raises a runtime error"
+        },
+        {
+          "a": "recover",
+          "b": "Catches panic in defer"
+        },
+        {
+          "a": "use sparingly",
+          "b": "Only for unexpected errors"
+        }
+      ],
+      "walk": true,
+      "say": "Panic raises a runtime error. Recover, used inside a deferred function, catches the panic. Use recover only when you need to handle unexpected errors."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "func f() {\n  defer func() {\n    if r := recover(); r != nil {\n      fmt.Println(\"Recovered\")\n    }\n  }()\n  panic(\"fail\")\n}",
+      "say": "Here’s how you combine defer, panic, and recover. The deferred function catches the panic and prints 'Recovered'."
+    },
+    {
+      "id": "4-trap-nil-map",
+      "type": "trap",
+      "question": "What happens if you write to a nil map?",
+      "wrong": "It works fine; map is auto-created.",
+      "right": "Writing to a nil map causes a runtime panic. Always initialize maps before use.",
+      "say": "Interview trap: What happens if you write to a nil map? It causes a runtime panic, so always initialize your maps."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:41:14.241Z"
+}
