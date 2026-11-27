@@ -1,0 +1,72 @@
+{
+  "id": "angular-l1",
+  "title": "Angular Dependency Injection & Services",
+  "keys": [
+    "dependency injection",
+    "services",
+    "singleton",
+    "injector"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-di-services",
+      "type": "hook",
+      "kicker": "Angular · lesson",
+      "line1": "How does Angular inject services?",
+      "line2": "Why use dependency injection?",
+      "say": "Ever wondered how Angular gets your services into components? Why is dependency injection so important?"
+    },
+    {
+      "id": "1-chip-di",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "DI",
+      "sub": "Dependency injection lets Angular provide services to components or other services.",
+      "say": "Dependency injection lets Angular provide services to components or other services, so you don’t have to manually create them."
+    },
+    {
+      "id": "2-rows-service-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Create service",
+          "b": "Write logic in a class"
+        },
+        {
+          "a": "Provide service",
+          "b": "Add to root or module"
+        },
+        {
+          "a": "Inject service",
+          "b": "Use constructor injection"
+        }
+      ],
+      "walk": true,
+      "say": "First, create a service class for your logic. Then, provide it in the root or a module. Finally, inject it into a component using the constructor."
+    },
+    {
+      "id": "3-code-inject-service",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "typescript",
+      "code": "constructor(private userService: UserService) {}",
+      "say": "Here’s how you inject a service in a component: use the constructor and Angular handles the rest."
+    },
+    {
+      "id": "4-trap-scope",
+      "type": "trap",
+      "question": "Where should you provide services?",
+      "wrong": "Always in every component.",
+      "right": "Usually in the root injector, unless you need a specific scope to avoid multiple instances.",
+      "say": "Don’t provide services in every component. Use the root injector unless you need a specific scope, or you might get unexpected multiple instances."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:06:47.207Z"
+}
