@@ -1,0 +1,72 @@
+{
+  "id": "streaming-l4",
+  "title": "Windows, Watermarks & State in Streams",
+  "keys": [
+    "windows",
+    "watermarks",
+    "state",
+    "Kafka"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-streaming-basic",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How do streams handle late data?",
+      "line2": "What keeps results accurate?",
+      "say": "Ever wonder how stream processing deals with late data and keeps analytics accurate? Let’s break it down."
+    },
+    {
+      "id": "1-chip-windows",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Windows",
+      "sub": "Group events by time or count, like 5-min user clicks.",
+      "say": "First up: windows. These group events by time or count. Think of a five-minute window for user clicks."
+    },
+    {
+      "id": "2-chip-watermarks",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Watermarks",
+      "sub": "Track event time progress, allow late events.",
+      "say": "Next, watermarks. They track event time progress and let you handle late-arriving events without missing data."
+    },
+    {
+      "id": "3-rows-stateful-proces",
+      "type": "rows",
+      "kicker": "State in Streams",
+      "rows": [
+        {
+          "a": "Store results",
+          "b": "Running sum per user"
+        },
+        {
+          "a": "Enable joins",
+          "b": "Match events across streams"
+        },
+        {
+          "a": "Support recovery",
+          "b": "Restore after failures"
+        }
+      ],
+      "walk": true,
+      "say": "State stores things like running sums, helps with joins, and lets you recover after failures."
+    },
+    {
+      "id": "4-trap-watermark-trick",
+      "type": "trap",
+      "question": "What closes a window in stream processing?",
+      "wrong": "When the last event arrives",
+      "right": "A watermark signals when a window can close, even if some late events might still show up.",
+      "say": "Here’s a common trap: windows don’t close when the last event arrives. They close when a watermark says it’s safe, even if some late events could still show up."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:55:23.837Z"
+}
