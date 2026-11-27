@@ -1,0 +1,93 @@
+{
+  "id": "web-fundamentals-l2",
+  "title": "Cookies, Sessions, and Tokens Demystified",
+  "keys": [
+    "cookies",
+    "sessions",
+    "tokens",
+    "HttpOnly",
+    "SameSite"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cookies-or-toke",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Cookies, sessions, or tokens?",
+      "line2": "Which keeps you logged in?",
+      "say": "Which keeps you logged in—a cookie, a session, or a token? Let's break down the basics."
+    },
+    {
+      "id": "1-chip-cookies",
+      "type": "chip",
+      "kicker": "Storage",
+      "label": "Cookies",
+      "sub": "Small data stored in your browser, often for session IDs.",
+      "say": "Cookies are small pieces of data stored in your browser, often holding session IDs."
+    },
+    {
+      "id": "2-chip-sessions",
+      "type": "chip",
+      "kicker": "Server State",
+      "label": "Sessions",
+      "sub": "Session data lives on the server, linked by a session ID.",
+      "say": "Sessions keep your state on the server, linked by a session ID in your cookie."
+    },
+    {
+      "id": "3-chip-tokens",
+      "type": "chip",
+      "kicker": "Stateless",
+      "label": "Tokens",
+      "sub": "Tokens like JWTs are self-contained and stored client-side.",
+      "say": "Tokens, like JSON Web Tokens, are self-contained and usually stored on the client."
+    },
+    {
+      "id": "4-terminal-cookie-flag",
+      "type": "terminal",
+      "kicker": "Security Flags",
+      "title": "Set-Cookie Example",
+      "lines": [
+        "$ Set-Cookie:",
+        "sessionId=abc123;",
+        "HttpOnly; Secure;",
+        "SameSite=Strict"
+      ],
+      "say": "Always set HttpOnly and Secure on auth cookies. SameSite adds protection against cross-site attacks."
+    },
+    {
+      "id": "5-compare-sessions-vs-",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "Sessions",
+        "items": [
+          "Server stores state",
+          "Harder to scale"
+        ]
+      },
+      "right": {
+        "title": "Tokens",
+        "items": [
+          "Stateless, scalable",
+          "Revocation is tricky"
+        ]
+      },
+      "say": "Sessions are secure but harder to scale. Tokens scale well, but revoking them is tougher."
+    },
+    {
+      "id": "6-trap-session-token",
+      "type": "trap",
+      "question": "Are JWTs always more secure than sessions?",
+      "wrong": "Yes, JWTs are always safer.",
+      "right": "No—security depends on use and handling, not just the method.",
+      "say": "Don't assume JWTs are always safer. Security depends on how you use and protect them."
+    },
+    {
+      "id": "7-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:20:43.457Z"
+}
