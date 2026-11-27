@@ -1,0 +1,94 @@
+{
+  "id": "react-l0",
+  "title": "React: Components, Props, State, Data Flow",
+  "keys": [
+    "components",
+    "props",
+    "state",
+    "data flow"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-components-prop",
+      "type": "hook",
+      "kicker": "React · lesson",
+      "line1": "Why does React use one-way data flow?",
+      "line2": "How does it help your UI?",
+      "say": "Why does React force data to flow in one direction? And how does that make your UI easier to manage?"
+    },
+    {
+      "id": "1-chip-component-props",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Component",
+      "sub": "Reusable UI block; takes props as input.",
+      "say": "A React component is a reusable block of user interface that takes input called props."
+    },
+    {
+      "id": "2-compare-props-state",
+      "type": "compare",
+      "kicker": "Props vs State",
+      "left": {
+        "title": "Props",
+        "items": [
+          "Read-only",
+          "Passed from parent",
+          "Input to child"
+        ]
+      },
+      "right": {
+        "title": "State",
+        "items": [
+          "Local",
+          "Mutable",
+          "Managed by component"
+        ]
+      },
+      "say": "Props are read-only and flow from parent to child. State is local and can be changed inside the component."
+    },
+    {
+      "id": "3-code-greeting-exampl",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "jsx",
+      "code": "function Greeting({ name }) {\n  const [count, setCount] = useState(0);\n  return <div>\n    Hello {name}, clicked {count} times\n  </div>;\n}",
+      "say": "Here's a component. Props provide the name. State tracks how many times you've clicked."
+    },
+    {
+      "id": "4-rows-data-flow",
+      "type": "rows",
+      "kicker": "One-way Data Flow",
+      "rows": [
+        {
+          "a": "Parent",
+          "b": "Passes props down"
+        },
+        {
+          "a": "Child",
+          "b": "Receives props"
+        },
+        {
+          "a": "State",
+          "b": "Local to each component"
+        }
+      ],
+      "walk": true,
+      "say": "Data always flows from parent to child using props. State stays local, keeping updates predictable."
+    },
+    {
+      "id": "5-trap-props-state",
+      "type": "trap",
+      "question": "Can a child change its own props?",
+      "wrong": "Yes, it can update props directly.",
+      "right": "No, props are read-only. Only state can be changed locally.",
+      "say": "Here's a trap: Can a child component change its own props? No, props are read-only. Only state can be changed locally."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:17:40.253Z"
+}
