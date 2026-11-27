@@ -1,0 +1,59 @@
+{
+  "id": "oop-design-patterns-l3",
+  "title": "Creational Patterns: The Basics",
+  "keys": [
+    "Factory",
+    "Builder",
+    "Singleton",
+    "object creation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-creational",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "How do you control object creation?",
+      "line2": "Which pattern fits best?",
+      "say": "How do you control object creation in your code? Which pattern fits best for the job?"
+    },
+    {
+      "id": "1-chip-factory",
+      "type": "chip",
+      "kicker": "Creational",
+      "label": "Factory",
+      "sub": "Hides instantiation logic. Returns objects by type.",
+      "say": "First up, the Factory pattern. It hides the instantiation details and returns objects based on type."
+    },
+    {
+      "id": "2-chip-builder",
+      "type": "chip",
+      "kicker": "Creational",
+      "label": "Builder",
+      "sub": "Separates object construction from its representation.",
+      "say": "Next, Builder separates how an object is constructed from how it looks or works. Great for complex objects."
+    },
+    {
+      "id": "3-code-singleton",
+      "type": "code",
+      "kicker": "Singleton",
+      "lang": "java",
+      "code": "class Logger {\n  private static Logger instance;\n  private Logger() {}\n  public static Logger getInstance() {\n    if (instance == null) {\n      instance = new Logger();\n    }\n    return instance;\n  }\n}",
+      "say": "Singleton restricts a class to one instance. Here's a standard Logger example with a private constructor and static accessor."
+    },
+    {
+      "id": "4-trap-singleton",
+      "type": "trap",
+      "question": "When should you use Singleton?",
+      "wrong": "Whenever you want easy access.",
+      "right": "Only when one instance is truly required, since singletons can cause global state and testing headaches.",
+      "say": "Here's a trap: When should you use Singleton? Only when one instance is truly needed. Otherwise, it can cause global state and make testing harder."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:17:37.400Z"
+}
