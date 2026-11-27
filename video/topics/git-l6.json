@@ -1,0 +1,90 @@
+{
+  "id": "git-l6",
+  "title": "Pull Requests & Code Review Essentials",
+  "keys": [
+    "pull request",
+    "code review",
+    "collaboration",
+    "feedback"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pull-request",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "How do you merge code safely?",
+      "line2": "What’s a pull request?",
+      "say": "Ever wonder how teams merge code without breaking things? What exactly is a pull request?"
+    },
+    {
+      "id": "1-chip-pr-definition",
+      "type": "chip",
+      "kicker": "Pull Request",
+      "label": "Proposal",
+      "sub": "A pull request suggests merging your changes. It opens the door for review and discussion.",
+      "say": "A pull request is your proposal to merge changes. It lets teammates review and discuss before anything lands."
+    },
+    {
+      "id": "2-rows-review-pr",
+      "type": "rows",
+      "kicker": "Code Review Steps",
+      "rows": [
+        {
+          "a": "Title",
+          "b": "Summarize the change"
+        },
+        {
+          "a": "Description",
+          "b": "Explain edge cases"
+        },
+        {
+          "a": "Feedback",
+          "b": "Review comments and suggestions"
+        },
+        {
+          "a": "Tests",
+          "b": "Add or update tests"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how a good pull request goes: start with a clear title, explain your changes, respond to feedback, and always cover tests."
+    },
+    {
+      "id": "3-compare-good-bad-rev",
+      "type": "compare",
+      "kicker": "Review Practices",
+      "left": {
+        "title": "Good",
+        "items": [
+          "Small changes",
+          "Clear description",
+          "Constructive feedback"
+        ]
+      },
+      "right": {
+        "title": "Bad",
+        "items": [
+          "Huge PRs",
+          "Vague details",
+          "Unhelpful comments"
+        ]
+      },
+      "say": "Interviewers love small, clear pull requests and constructive review comments. Avoid massive changes or vague details."
+    },
+    {
+      "id": "4-trap-pr-interview",
+      "type": "trap",
+      "question": "What’s a common PR mistake?",
+      "wrong": "Skipping descriptions and tests.",
+      "right": "Not linking to tickets or requesting reviews from the right teammates is a frequent oversight.",
+      "say": "A common mistake? Forgetting to link your pull request to tickets or skipping reviews from relevant teammates."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:27:27.073Z"
+}
