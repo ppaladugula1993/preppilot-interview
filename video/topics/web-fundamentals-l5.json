@@ -1,0 +1,76 @@
+{
+  "id": "web-fundamentals-l5",
+  "title": "HTTP Caching: Speed Up Your Web Apps",
+  "keys": [
+    "HTTP",
+    "Cache-Control",
+    "ETag",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cache-question",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Why do browsers cache files?",
+      "line2": "How does it work?",
+      "say": "Why do browsers cache files, and how does it actually work?"
+    },
+    {
+      "id": "1-chip-cache-control",
+      "type": "chip",
+      "kicker": "Key Header",
+      "label": "Cache",
+      "sub": "Cache-Control sets rules for browser and CDN caching.",
+      "say": "Cache-Control is the main header that sets rules for browser and CDN caching."
+    },
+    {
+      "id": "2-rows-headers",
+      "type": "rows",
+      "kicker": "Caching Headers",
+      "rows": [
+        {
+          "a": "Cache-Control",
+          "b": "Sets cache rules and duration"
+        },
+        {
+          "a": "ETag",
+          "b": "Unique version ID for a resource"
+        },
+        {
+          "a": "Expires",
+          "b": "Absolute expiry date and time"
+        }
+      ],
+      "walk": true,
+      "say": "The big three headers: Cache-Control sets rules, ETag gives each resource a version, and Expires sets a hard expiry date."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Cache Headers in Action",
+      "lines": [
+        "$ curl -I https://site.com/app.js",
+        "Cache-Control: public, max-age=3600",
+        "ETag: \"abc123\""
+      ],
+      "say": "Here’s a real example. Cache-Control tells the browser and CDN to cache for an hour. ETag marks the file version."
+    },
+    {
+      "id": "4-trap-etag",
+      "type": "trap",
+      "question": "What does ETag do?",
+      "wrong": "Sets how long to cache a file",
+      "right": "It gives each file version a unique ID, so the server knows if the file changed.",
+      "say": "Don’t mix these up: ETag doesn’t set cache time. It gives each file version a unique ID, so the server knows if it changed."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:29:00.556Z"
+}
