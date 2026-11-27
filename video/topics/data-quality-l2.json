@@ -1,0 +1,82 @@
+{
+  "id": "data-quality-l2",
+  "title": "Data Observability: Trust Your Pipeline",
+  "keys": [
+    "data observability",
+    "freshness",
+    "volume",
+    "schema",
+    "anomalies"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-care",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "Can you spot pipeline issues fast?",
+      "line2": "How do you know?",
+      "say": "Can you spot pipeline issues before users do? How do you know your data is trustworthy?"
+    },
+    {
+      "id": "1-chip-freshness",
+      "type": "chip",
+      "kicker": "Metric",
+      "label": "Freshness",
+      "sub": "Tracks when data was last updated.",
+      "say": "Freshness tracks when your data was last updated. It's key to knowing if your pipeline is on time."
+    },
+    {
+      "id": "2-rows-metrics",
+      "type": "rows",
+      "kicker": "Core Metrics",
+      "rows": [
+        {
+          "a": "Freshness",
+          "b": "Last update timestamp"
+        },
+        {
+          "a": "Volume",
+          "b": "Row count trends"
+        },
+        {
+          "a": "Schema",
+          "b": "Changes in structure"
+        },
+        {
+          "a": "Distribution",
+          "b": "Statistical profiles"
+        }
+      ],
+      "walk": true,
+      "say": "Data observability tracks four main metrics: freshness, volume, schema changes, and distribution."
+    },
+    {
+      "id": "3-terminal-alerts",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Automated Alert",
+      "lines": [
+        "$ check_freshness sales_data",
+        "Alert: Data not updated by 8am!",
+        "$ check_volume sales_data",
+        "Warning: Row count dropped 40%"
+      ],
+      "say": "Automated checks can alert you if sales data isn't updated by 8am, or if row counts suddenly drop."
+    },
+    {
+      "id": "4-trap-schema",
+      "type": "trap",
+      "question": "What does schema drift mean?",
+      "wrong": "Data is out of date",
+      "right": "Schema drift means the structure changed unexpectedly—like a missing column.",
+      "say": "Here's a trap: What does schema drift mean? It's not just out-of-date data. Schema drift means the data structure changed, like a missing or renamed column."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:44:57.260Z"
+}
