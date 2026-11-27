@@ -1,0 +1,92 @@
+{
+  "id": "data-modeling-l2",
+  "title": "Facts, Dimensions, and Grain Basics",
+  "keys": [
+    "facts",
+    "dimensions",
+    "grain",
+    "star schema"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-facts-dimension",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "What makes a fact table effective?",
+      "line2": "How do grain and context fit in?",
+      "say": "Ever wondered what makes a fact table actually useful? How do we decide its detail and context?"
+    },
+    {
+      "id": "1-chip-fact",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Fact",
+      "sub": "Facts are measurable business events, like sales.",
+      "say": "Facts are the measurable events, like sales or revenue, that drive analysis."
+    },
+    {
+      "id": "2-chip-dimension",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Dimension",
+      "sub": "Dimensions add context, like product or date.",
+      "say": "Dimensions add context—think product names or dates—so your facts make sense."
+    },
+    {
+      "id": "3-rows-grain",
+      "type": "rows",
+      "kicker": "Grain Example",
+      "rows": [
+        {
+          "a": "Product",
+          "b": "Widget A"
+        },
+        {
+          "a": "Date",
+          "b": "2024-06-01"
+        },
+        {
+          "a": "Sales Amount",
+          "b": "100"
+        }
+      ],
+      "walk": true,
+      "say": "Grain is the level of detail. Here, each row shows one product sale per day. Defining grain first keeps your fact table clear."
+    },
+    {
+      "id": "4-compare-star-snowfla",
+      "type": "compare",
+      "kicker": "Schema Types",
+      "left": {
+        "title": "Star Schema",
+        "items": [
+          "Facts link directly",
+          "Simple structure"
+        ]
+      },
+      "right": {
+        "title": "Snowflake Schema",
+        "items": [
+          "Normalized dimensions",
+          "More complex"
+        ]
+      },
+      "say": "Star schema connects facts straight to dimensions. Snowflake schema breaks dimensions down further, making things more normalized."
+    },
+    {
+      "id": "5-trap-grain-mistake",
+      "type": "trap",
+      "question": "What happens if you skip defining grain?",
+      "wrong": "You can always fix it later.",
+      "right": "Ambiguous grain leads to confusion and bad queries. Set grain first to avoid mistakes.",
+      "say": "Here's a trap: skipping grain. You can't just fix it later. Ambiguous grain means messy queries and confusion. Always set the grain up front."
+    },
+    {
+      "id": "6-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:20:52.955Z"
+}
