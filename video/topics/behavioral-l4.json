@@ -1,0 +1,69 @@
+{
+  "id": "behavioral-l4",
+  "title": "Habits That Cost Offers",
+  "keys": [
+    "habits",
+    "behavioral",
+    "numbers",
+    "context",
+    "blame"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bad-habits",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "Which habits lose you offers?",
+      "line2": "Ready to fix them?",
+      "say": "Ever wonder which habits quietly cost you job offers? Let's spot them and fix your answers."
+    },
+    {
+      "id": "1-rows-costly-patterns",
+      "type": "rows",
+      "kicker": "Patterns to avoid",
+      "rows": [
+        {
+          "a": "Using 'we' only",
+          "b": "Show your own impact"
+        },
+        {
+          "a": "Listing tools",
+          "b": "Explain your actions"
+        },
+        {
+          "a": "No numbers",
+          "b": "Add clear results"
+        },
+        {
+          "a": "Blaming others",
+          "b": "Describe your fix"
+        }
+      ],
+      "walk": true,
+      "say": "First, stop saying 'we' for everything. Share what you did. Don't just list tools—explain how you used one. Always add numbers to show results. And never blame other teams; focus on your fix."
+    },
+    {
+      "id": "2-chip-record-yourself",
+      "type": "chip",
+      "kicker": "Easy fix",
+      "label": "Record",
+      "sub": "Record one answer a day and listen back.",
+      "say": "Here's a quick fix: record one answer a day on your phone and listen to spot weak habits."
+    },
+    {
+      "id": "3-trap-blame-trap",
+      "type": "trap",
+      "question": "What if you disagreed with another team?",
+      "wrong": "Say they messed up and blame them.",
+      "right": "Explain how you focused on the solution and kept things positive.",
+      "say": "In interviews, don't blame. Instead, show how you focused on solutions and kept relationships strong."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:19:59.512Z"
+}
