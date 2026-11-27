@@ -1,0 +1,81 @@
+{
+  "id": "dotnet-runtime-l8",
+  "title": "Profiling .NET Apps for Performance",
+  "keys": [
+    "profiling",
+    "dotnet-counters",
+    "dotnet-trace",
+    "GC"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-profile-better",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "How do you spot slow code?",
+      "line2": "Profiling makes it clear.",
+      "say": "How do you spot slow code in your dot net apps? Profiling makes it clear."
+    },
+    {
+      "id": "1-chip-why-profile",
+      "type": "chip",
+      "kicker": "Why Profile?",
+      "label": "Bottlenecks",
+      "sub": "Profiling finds CPU, memory, and GC issues fast.",
+      "say": "Profiling helps you find CPU, memory, and garbage collection issues before they become real problems."
+    },
+    {
+      "id": "2-terminal-dotnet-coun",
+      "type": "terminal",
+      "kicker": "Real-Time Metrics",
+      "title": "dotnet-counters",
+      "lines": [
+        "$ dotnet-counters monitor MyApp",
+        "GC Pause Time: 12 ms",
+        "CPU Usage: 78%",
+        "Allocated MB: 150"
+      ],
+      "say": "With dotnet counters, you can watch garbage collection pauses, CPU usage, and memory in real time."
+    },
+    {
+      "id": "3-rows-trace-steps",
+      "type": "rows",
+      "kicker": "Deeper Analysis",
+      "rows": [
+        {
+          "a": "Start trace",
+          "b": "dotnet-trace collect"
+        },
+        {
+          "a": "Run scenario",
+          "b": "Exercise your app"
+        },
+        {
+          "a": "Stop trace",
+          "b": "Ctrl+C to end"
+        },
+        {
+          "a": "Analyze results",
+          "b": "Find slow methods"
+        }
+      ],
+      "walk": true,
+      "say": "For deeper analysis, use dotnet trace. Start the trace, run your scenario, stop recording, then dig into which methods slow things down."
+    },
+    {
+      "id": "4-trap-misconception",
+      "type": "trap",
+      "question": "Is profiling only for bugs?",
+      "wrong": "Yes, only when fixing bugs.",
+      "right": "No, profiling is for optimization and catching regressions early.",
+      "say": "Is profiling only for fixing bugs? Nope. It's also for optimization and catching regressions before they hit production."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:52:19.235Z"
+}
