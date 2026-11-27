@@ -1,0 +1,71 @@
+{
+  "id": "sql-advanced-l1",
+  "title": "Mastering LAG & LEAD in SQL",
+  "keys": [
+    "LAG",
+    "LEAD",
+    "window functions",
+    "time-series"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lag-lead",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you compare rows in SQL?",
+      "line2": "What if you need yesterday's value?",
+      "say": "Ever needed to compare today's data with yesterday's in SQL? Let's see how LAG and LEAD make it easy."
+    },
+    {
+      "id": "1-chip-lag-lead",
+      "type": "chip",
+      "kicker": "Window Functions",
+      "label": "LAG/LEAD",
+      "sub": "Access values from previous or next rows.",
+      "say": "LAG and LEAD are window functions that let you access values from earlier or later rows in your result set."
+    },
+    {
+      "id": "2-code-lag-example",
+      "type": "code",
+      "kicker": "Compare Sales",
+      "lang": "sql",
+      "code": "SELECT date, sales,\n  LAG(sales, 1) OVER (ORDER BY date) AS prev_sales\nFROM daily_sales;",
+      "say": "Here's how you grab yesterday's sales for each day using LAG. LEAD works the same way, but looks forward."
+    },
+    {
+      "id": "3-compare-lag-lead",
+      "type": "compare",
+      "kicker": "How They Differ",
+      "left": {
+        "title": "LAG",
+        "items": [
+          "Looks backward",
+          "Gets prior row value"
+        ]
+      },
+      "right": {
+        "title": "LEAD",
+        "items": [
+          "Looks forward",
+          "Gets next row value"
+        ]
+      },
+      "say": "LAG looks backward to fetch previous values. LEAD looks forward to fetch upcoming values. Both are handy for time-series analysis."
+    },
+    {
+      "id": "4-trap-lag-lead",
+      "type": "trap",
+      "question": "Does LAG remove rows from the output?",
+      "wrong": "Yes, it collapses rows like SUM.",
+      "right": "No, LAG keeps all rows and adds a new column.",
+      "say": "Don't confuse LAG with aggregate functions. It keeps every row and just adds a new column."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:45:58.105Z"
+}
