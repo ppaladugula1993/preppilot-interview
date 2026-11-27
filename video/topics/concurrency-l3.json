@@ -1,0 +1,72 @@
+{
+  "id": "concurrency-l3",
+  "title": "Deadlock, Livelock, Starvation Explained",
+  "keys": [
+    "deadlock",
+    "livelock",
+    "starvation",
+    "locks"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-deadlock-trio",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "Ever heard of deadlock, livelock,",
+      "line2": "or starvation?",
+      "say": "Ever heard of deadlock, livelock, or starvation? Let’s break down what they mean and why you should care."
+    },
+    {
+      "id": "1-chip-deadlock",
+      "type": "chip",
+      "kicker": "Key Issue",
+      "label": "Deadlock",
+      "sub": "Threads wait forever, stuck on resources.",
+      "say": "Deadlock happens when threads are stuck waiting for each other forever, and nothing moves forward."
+    },
+    {
+      "id": "2-rows-examples",
+      "type": "rows",
+      "kicker": "Examples",
+      "rows": [
+        {
+          "a": "Deadlock",
+          "b": "Thread A and B hold each other’s locks"
+        },
+        {
+          "a": "Livelock",
+          "b": "Threads keep changing state, no progress"
+        },
+        {
+          "a": "Starvation",
+          "b": "A thread never gets scheduled"
+        }
+      ],
+      "walk": false,
+      "say": "Here’s how they look: Deadlock is two threads holding each other’s locks. Livelock is when threads keep reacting but get nowhere. Starvation is when a thread never gets a turn."
+    },
+    {
+      "id": "3-code-deadlock",
+      "type": "code",
+      "kicker": "Classic Deadlock",
+      "lang": "python",
+      "code": "lock1.acquire()\nlock2.acquire()\n# ...\nlock2.release()\nlock1.release()",
+      "say": "A classic deadlock looks like this: each thread grabs one lock and waits for the other, causing both to freeze."
+    },
+    {
+      "id": "4-trap-ordering",
+      "type": "trap",
+      "question": "How do you avoid deadlock?",
+      "wrong": "Just add more locks.",
+      "right": "Acquire locks in a consistent order and keep lock scope as small as possible.",
+      "say": "Interview trap: How do you avoid deadlock? Don’t just add more locks. Instead, always acquire locks in a consistent order and keep lock scope small."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:40:06.263Z"
+}
