@@ -1,0 +1,72 @@
+{
+  "id": "go-concurrency-l0",
+  "title": "Goroutines & Go Scheduler Explained",
+  "keys": [
+    "goroutine",
+    "scheduler",
+    "OS thread",
+    "concurrency"
+  ],
+  "scenes": [
+    {
+      "id": "0-go-concurrency-hook",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How does Go run thousands of tasks?",
+      "line2": "What makes goroutines special?",
+      "say": "How does Go run thousands of tasks at once? What makes goroutines so special?"
+    },
+    {
+      "id": "1-goroutine-chip",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Goroutine",
+      "sub": "A lightweight thread managed by Go's runtime.",
+      "say": "A goroutine is a lightweight thread managed by the Go runtime, not the operating system."
+    },
+    {
+      "id": "2-scheduler-rows",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "You start a goroutine",
+          "b": "go func() { ... }"
+        },
+        {
+          "a": "Scheduler steps in",
+          "b": "Maps goroutines to OS threads"
+        },
+        {
+          "a": "Transparent scheduling",
+          "b": "Handles lifecycle & execution"
+        }
+      ],
+      "walk": true,
+      "say": "You start a goroutine with the go keyword. The scheduler maps thousands of goroutines onto a few operating system threads, handling their lifecycle and scheduling behind the scenes."
+    },
+    {
+      "id": "3-goroutine-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "go func() {\n  fmt.Println(\"Hello from a goroutine\")\n}()",
+      "say": "Here's an example. This code launches a new goroutine that prints a message."
+    },
+    {
+      "id": "4-interview-trap",
+      "type": "trap",
+      "question": "Are goroutines the same as OS threads?",
+      "wrong": "Yes, they're just threads.",
+      "right": "No. Goroutines are managed by Go, not the OS. They're much lighter.",
+      "say": "Interview trap: Are goroutines the same as operating system threads? No. Goroutines are managed by Go, not the OS, and are much lighter."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:46:42.100Z"
+}
