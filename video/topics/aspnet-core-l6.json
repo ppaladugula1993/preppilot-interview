@@ -1,0 +1,77 @@
+{
+  "id": "aspnet-core-l6",
+  "title": "ASP.NET Core: Health Checks & Observability",
+  "keys": [
+    "health checks",
+    "logging",
+    "OpenTelemetry",
+    "observability"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-health-observab",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "Is your app production-ready?",
+      "line2": "How do you prove it?",
+      "say": "Is your app actually ready for production? How can you show it’s healthy and observable?"
+    },
+    {
+      "id": "1-chip-health-checks",
+      "type": "chip",
+      "kicker": "Monitoring",
+      "label": "Health",
+      "sub": "Add health checks and map a health endpoint.",
+      "say": "Start with health checks. Register them and map a health endpoint so monitoring tools can track your app’s status."
+    },
+    {
+      "id": "2-rows-logging-otel",
+      "type": "rows",
+      "kicker": "Diagnostics",
+      "rows": [
+        {
+          "a": "Structured logs",
+          "b": "Use ILogger for clear diagnostics"
+        },
+        {
+          "a": "Tracing",
+          "b": "Add OpenTelemetry for distributed tracing"
+        },
+        {
+          "a": "Metrics",
+          "b": "Expose app metrics for monitoring"
+        }
+      ],
+      "walk": true,
+      "say": "Next, use structured logging for diagnostics, add distributed tracing with OpenTelemetry, and expose metrics to monitor your app."
+    },
+    {
+      "id": "3-terminal-health-logg",
+      "type": "terminal",
+      "kicker": "Setup",
+      "title": "Health & Logging in Startup",
+      "lines": [
+        "$ services.AddHealthChecks()",
+        "$ app.MapHealthChecks('/health')",
+        "$ services.AddLogging()",
+        "$ services.AddOpenTelemetryTracing(...)"
+      ],
+      "say": "In your setup, register health checks, map the health endpoint, enable logging, and add OpenTelemetry tracing."
+    },
+    {
+      "id": "4-trap-health-endpoint",
+      "type": "trap",
+      "question": "How do you expose a health endpoint?",
+      "wrong": "Just add logging and tracing.",
+      "right": "Register health checks and map a health endpoint for monitoring tools.",
+      "say": "Don’t forget: you need to register health checks and actually map the endpoint. Logging and tracing alone aren’t enough."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:10:39.890Z"
+}
