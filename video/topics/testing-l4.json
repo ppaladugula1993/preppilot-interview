@@ -1,0 +1,72 @@
+{
+  "id": "testing-l4",
+  "title": "End-to-End Tests & Flakiness Explained",
+  "keys": [
+    "E2E",
+    "flakiness",
+    "test suite",
+    "reliability"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-e2e-flaky",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Why do end-to-end tests go flaky?",
+      "line2": "What causes it?",
+      "say": "Ever wonder why end-to-end tests sometimes fail for no clear reason? What makes them so unreliable?"
+    },
+    {
+      "id": "1-chip-e2e",
+      "type": "chip",
+      "kicker": "E2E Tests",
+      "label": "Scope",
+      "sub": "Simulate real user flows across the whole system.",
+      "say": "End-to-end tests cover the full user journey, checking how everything works together."
+    },
+    {
+      "id": "2-rows-flaky-causes",
+      "type": "rows",
+      "kicker": "Flakiness",
+      "rows": [
+        {
+          "a": "Timing",
+          "b": "Async actions finish unpredictably"
+        },
+        {
+          "a": "Network",
+          "b": "Slow or unstable connections"
+        },
+        {
+          "a": "External",
+          "b": "Third-party services fail"
+        }
+      ],
+      "walk": false,
+      "say": "Flaky tests usually happen because of timing issues, unreliable networks, or external systems that aren't always available."
+    },
+    {
+      "id": "3-code-cypress-fail",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "cy.visit('/dashboard')\ncy.get('.user-info').should('exist')\n// fails if API is slow",
+      "say": "Here's a Cypress test that sometimes fails if the API responds slowly. That’s classic flakiness."
+    },
+    {
+      "id": "4-trap-interview-flaky",
+      "type": "trap",
+      "question": "How do you fix flaky E2E tests?",
+      "wrong": "Just add retries everywhere.",
+      "right": "Control test data, minimize dependencies, and use retries only when needed.",
+      "say": "Interviewers want more than just adding retries. You should control your test data, reduce dependencies, and use retries carefully."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:08:30.499Z"
+}
