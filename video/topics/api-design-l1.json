@@ -1,0 +1,69 @@
+{
+  "id": "api-design-l1",
+  "title": "HTTP Status Codes for APIs",
+  "keys": [
+    "HTTP",
+    "status codes",
+    "API",
+    "errors",
+    "success"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-status-matters",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "Why do status codes matter?",
+      "line2": "How do you pick the right one?",
+      "say": "Ever wonder why APIs use all those status codes? How do you know which one to return?"
+    },
+    {
+      "id": "1-chip-success-codes",
+      "type": "chip",
+      "kicker": "Success",
+      "label": "201",
+      "sub": "Created means your POST worked—new resource made.",
+      "say": "When you create a new resource, always return two hundred one. It tells clients their post worked and something new was created."
+    },
+    {
+      "id": "2-rows-common-errors",
+      "type": "rows",
+      "kicker": "Common Errors",
+      "rows": [
+        {
+          "a": "400",
+          "b": "Bad Request—invalid input"
+        },
+        {
+          "a": "409",
+          "b": "Conflict—resource exists"
+        },
+        {
+          "a": "422",
+          "b": "Unprocessable—bad data"
+        },
+        {
+          "a": "503",
+          "b": "Service Unavailable"
+        }
+      ],
+      "walk": false,
+      "say": "For errors, pick the most specific code. Four hundred for bad input, four oh nine if the user exists, four twenty two for validation fails, and five oh three if your service is down."
+    },
+    {
+      "id": "3-trap-generic-vs-spec",
+      "type": "trap",
+      "question": "Should you always return 400 for errors?",
+      "wrong": "Yes, 400 covers all client errors.",
+      "right": "No, use the most specific code—like 409 for conflicts or 422 for validation.",
+      "say": "Here's a common trap: don't just return four hundred for every error. Be as specific as possible to help clients debug faster."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:31:02.823Z"
+}
