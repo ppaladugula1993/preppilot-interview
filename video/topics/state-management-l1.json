@@ -1,0 +1,93 @@
+{
+  "id": "state-management-l1",
+  "title": "Redux & Redux Toolkit Principles",
+  "keys": [
+    "redux",
+    "toolkit",
+    "store",
+    "actions",
+    "reducers"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-redux-state",
+      "type": "hook",
+      "kicker": "Frontend State Management · lesson",
+      "line1": "Why does Redux use a single store?",
+      "line2": "What makes Toolkit easier?",
+      "say": "Ever wondered why Redux uses just one store for all app state—and how Redux Toolkit makes it simpler?"
+    },
+    {
+      "id": "1-chip-store",
+      "type": "chip",
+      "kicker": "Core Principle",
+      "label": "Store",
+      "sub": "Redux keeps all app state in one immutable store.",
+      "say": "Redux keeps your entire app's state in a single, immutable store. This makes state changes predictable."
+    },
+    {
+      "id": "2-rows-actions-reducer",
+      "type": "rows",
+      "kicker": "How Redux Works",
+      "rows": [
+        {
+          "a": "Actions",
+          "b": "Describe what happened"
+        },
+        {
+          "a": "Reducers",
+          "b": "Update state based on actions"
+        },
+        {
+          "a": "Immutable",
+          "b": "State never mutated directly"
+        }
+      ],
+      "walk": true,
+      "say": "You dispatch actions to describe changes. Reducers handle those actions and update the state, always immutably."
+    },
+    {
+      "id": "3-compare-toolkit",
+      "type": "compare",
+      "kicker": "Toolkit vs Classic Redux",
+      "left": {
+        "title": "Classic Redux",
+        "items": [
+          "Manual reducers",
+          "Lots of boilerplate"
+        ]
+      },
+      "right": {
+        "title": "Redux Toolkit",
+        "items": [
+          "createSlice utility",
+          "Less code, best practices"
+        ]
+      },
+      "say": "Redux Toolkit cuts boilerplate with utilities like createSlice. It enforces best practices and makes your code concise."
+    },
+    {
+      "id": "4-code-slice",
+      "type": "code",
+      "kicker": "Toolkit Example",
+      "lang": "js",
+      "code": "const todosSlice = createSlice({\n  name: 'todos',\n  initialState: [],\n  reducers: {\n    addTodo: (state, action) => {\n      state.push(action.payload);\n    }\n  }\n})",
+      "say": "Here's a real example: createSlice lets you define state and reducers in one place, and handles immutable updates for you."
+    },
+    {
+      "id": "5-trap-server-state",
+      "type": "trap",
+      "question": "Should you use Redux for server state?",
+      "wrong": "Yes, always manage API data in Redux.",
+      "right": "No. For mostly remote data, use React Query to avoid extra complexity and boilerplate.",
+      "say": "Interview trap: Don't use Redux for mostly server state. React Query is better for handling remote data efficiently."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:39:30.253Z"
+}
