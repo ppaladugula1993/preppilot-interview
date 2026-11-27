@@ -24,6 +24,7 @@ export async function upsertUser(ident, now = Date.now()) {
 export async function deleteUser(key, now = Date.now()) {
   await (await getDb()).update('users', key, u => (u ? { key, deleted: true, deletedAt: now, free: u.free || { msgs: 0, voiceSec: 0 } } : undefined));
   await (await getDb()).update('prefs', key, d => (d ? { deleted: true, at: now } : undefined)); // saved profile and progress go too
+  await (await getDb()).update('prefs', `${key}~prog`, d => (d ? { deleted: true, at: now } : undefined));
 }
 
 export async function loadUser(ident) {

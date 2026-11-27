@@ -516,7 +516,7 @@ export async function handleProfileSuggest(req, log) {
 /* ---------- your profile and card progress, kept with the account ---------- */
 // Signing out clears the device; signing back in restores these. Progress is compressed so a
 // full deck history fits in one Table Storage cell (64 KB).
-const SYNC_MAX_PROFILE = 8000, SYNC_MAX_PROGRESS_KEYS = 5000, SYNC_MAX_PACKED = 60000;
+const SYNC_MAX_PROFILE = 8000, SYNC_MAX_PROGRESS_KEYS = 5000, SYNC_MAX_PACKED = 28000;
 const lastSync = new Map();
 const cleanProgress = p => {
   if (!p || typeof p !== 'object' || Array.isArray(p)) return null;
@@ -529,11 +529,13 @@ const cleanProgress = p => {
 export async function handleGetMyData(req) {
   const w = who(req);
   if (w.error) return w.error;
-  const d = await (await getDb()).get('prefs', w.ident.key);
-  if (!d) return json(200, {});
+  const db = await getDb();
+  const [d, pd] = await Promise.all([db.get('prefs', w.ident.key), db.get('prefs', `${w.ident.key}~prog`)]);
+  if (!d && !pd) return json(200, {});
+  const packed = pd?.prog || d?.prog;
   let progress = null;
-  try { progress = d.prog ? JSON.parse(inflateSync(Buffer.from(d.prog, 'base64')).toString()) : null; } catch { progress = null; }
-  return json(200, { profile: d.profile || null, progress, at: d.at || 0 });
+  try { progress = packed ? JSON.parse(inflateSync(Buffer.from(packed, 'base64')).toString()) : null; } catch { progress = null; }
+  return json(200, { profile: d?.profile || null, progress, at: Math.max(d?.at || 0, pd?.at || 0) });
 }
 export async function handleSaveMyData(req, now = Date.now()) {
   const w = who(req);
@@ -544,10 +546,19 @@ export async function handleSaveMyData(req, now = Date.now()) {
   const b = req.body || {};
   const profile = b.profile && typeof b.profile === 'object' && !Array.isArray(b.profile) ? b.profile : undefined;
   if (profile && JSON.stringify(profile).length > SYNC_MAX_PROFILE) return json(413, { error: 'Profile too large.' });
-  const progress = b.progress === undefined ? undefined : cleanProgress(b.progress);
-  const prog = progress ? deflateSync(JSON.stringify(progress)).toString('base64') : undefined;
-  if (prog && prog.length > SYNC_MAX_PACKED) return json(413, { error: 'Progress too large.' });
-  await (await getDb()).update('prefs', w.ident.key, d => ({ ...(d || {}), ...(profile ? { profile } : {}), ...(prog ? { prog } : {}), at: now }));
+  let progress = b.progress === undefined ? undefined : cleanProgress(b.progress);
+  // One Table Storage text field holds at most ~32k characters: keep the most recently reviewed cards if needed.
+  const pack = o => deflateSync(JSON.stringify(o)).toString('base64');
+  let prog = progress ? pack(progress) : undefined;
+  while (prog && prog.length > SYNC_MAX_PACKED) {
+    const keep = Object.entries(progress).sort((x, y) => (y[1].due || y[1].t || 0) - (x[1].due || x[1].t || 0));
+    progress = Object.fromEntries(keep.slice(0, Math.floor(keep.length * 0.75)));
+    prog = pack(progress);
+  }
+  const db = await getDb();
+  // Profile and progress are stored apart, so a large progress can never stop the profile from saving.
+  if (profile) await db.update('prefs', w.ident.key, d => ({ ...(d || {}), profile, ...(prog ? { prog: undefined } : {}), at: now }));
+  if (prog) await db.update('prefs', `${w.ident.key}~prog`, () => ({ prog, at: now }));
   return json(200, { ok: true, at: now });
 }
 
