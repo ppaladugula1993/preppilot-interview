@@ -1,0 +1,77 @@
+{
+  "id": "aspnet-core",
+  "title": "ASP.NET Core: The Middleware Pipeline",
+  "keys": [
+    "middleware",
+    "pipeline",
+    "order",
+    "request",
+    "response"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pipeline-order",
+      "type": "hook",
+      "kicker": "ASP.NET Core · 45 seconds",
+      "line1": "Why does middleware order matter?",
+      "line2": "Could it break your app?",
+      "say": "Ever wonder why the order of middleware in ASP.NET Core is such a big deal? Let's see how it can make or break your app."
+    },
+    {
+      "id": "1-chip-request-pipelin",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Pipeline",
+      "sub": "Requests flow through middleware, each can change or handle them.",
+      "say": "ASP.NET Core handles every request through a pipeline. Each middleware can inspect, change, or even end the request right there."
+    },
+    {
+      "id": "2-rows-middleware-orde",
+      "type": "rows",
+      "kicker": "Step-by-Step",
+      "rows": [
+        {
+          "a": "Incoming request",
+          "b": "Hits first middleware"
+        },
+        {
+          "a": "Auth runs early",
+          "b": "Checks identity"
+        },
+        {
+          "a": "Authorization next",
+          "b": "Checks permissions"
+        },
+        {
+          "a": "Custom logic",
+          "b": "Modifies request or response"
+        }
+      ],
+      "walk": true,
+      "say": "Order matters. For example, authentication must run before authorization, or users won't be recognized. Custom logic goes after security checks."
+    },
+    {
+      "id": "3-code-middleware-exam",
+      "type": "code",
+      "kicker": "In Program.cs",
+      "lang": "csharp",
+      "code": "app.UseAuthentication();\napp.UseAuthorization();\napp.UseEndpoints(...);",
+      "say": "In your startup file, you add authentication, then authorization, then your endpoints. Get this order wrong, and your app might let anyone in—or lock everyone out."
+    },
+    {
+      "id": "4-trap-middleware-trap",
+      "type": "trap",
+      "question": "Where should auth middleware go?",
+      "wrong": "Anywhere in the pipeline",
+      "right": "Authentication must run before authorization, or access checks will fail.",
+      "say": "Here's a classic interview trap: put authentication after authorization, and your access checks will always fail. Always run authentication first."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:28:52.087Z"
+}
