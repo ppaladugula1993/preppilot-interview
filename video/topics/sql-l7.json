@@ -1,0 +1,64 @@
+{
+  "id": "sql-l7",
+  "title": "SQL Transactions & ACID: Interview Essentials",
+  "keys": [
+    "transactions",
+    "ACID",
+    "isolation",
+    "deadlocks"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-acid-transactio",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "How does SQL keep your data safe?",
+      "line2": "What can break it?",
+      "say": "Ever wonder how SQL protects your data, and what can mess it up? Let’s break down the essentials."
+    },
+    {
+      "id": "1-chip-acid",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "ACID",
+      "sub": "Atomicity, Consistency, Isolation, Durability",
+      "say": "ACID is the foundation: atomicity, consistency, isolation, and durability. Each keeps your data reliable and safe."
+    },
+    {
+      "id": "2-rows-isolation-level",
+      "type": "rows",
+      "kicker": "Isolation Levels",
+      "rows": [
+        {
+          "a": "Read Committed",
+          "b": "Prevents dirty reads"
+        },
+        {
+          "a": "Repeatable Read",
+          "b": "Prevents non-repeatable reads"
+        },
+        {
+          "a": "Serializable",
+          "b": "Prevents phantom reads"
+        }
+      ],
+      "walk": true,
+      "say": "Isolation levels control what data you see and how transactions interact. Higher levels mean more safety, but less speed."
+    },
+    {
+      "id": "3-trap-deadlocks",
+      "type": "trap",
+      "question": "How can you prevent deadlocks?",
+      "wrong": "Always use the highest isolation level.",
+      "right": "Keep transactions short and access resources in a consistent order. Use lower isolation levels when possible.",
+      "say": "Deadlocks happen when transactions block each other. Interviewers love to ask how you prevent them—so don’t just say higher isolation. Keep transactions short and consistent."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:13:22.013Z"
+}
