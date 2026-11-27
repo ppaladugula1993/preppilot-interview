@@ -1,0 +1,77 @@
+{
+  "id": "git-l4",
+  "title": "Undoing Mistakes: Reset, Revert & More",
+  "keys": [
+    "reset",
+    "revert",
+    "restore",
+    "reflog"
+  ],
+  "scenes": [
+    {
+      "id": "0-undo-hook",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "Ever deleted a commit by accident?",
+      "line2": "How do you get it back?",
+      "say": "Ever deleted a commit by accident? How do you get it back in Git?"
+    },
+    {
+      "id": "1-reset-vs-revert",
+      "type": "compare",
+      "kicker": "Undoing in Git",
+      "left": {
+        "title": "Reset",
+        "items": [
+          "Moves HEAD",
+          "Can erase commits",
+          "May change files"
+        ]
+      },
+      "right": {
+        "title": "Revert",
+        "items": [
+          "Creates new commit",
+          "Undoes changes safely",
+          "Best for shared history"
+        ]
+      },
+      "say": "Reset moves your branch pointer and can erase commits. Revert makes a new commit that undoes changes, which is safer when others share your branch."
+    },
+    {
+      "id": "2-restore-chip",
+      "type": "chip",
+      "kicker": "Quick Fix",
+      "label": "Restore",
+      "sub": "Recovers files or branches you lost.",
+      "say": "Restore brings back files or even entire branches that you accidentally removed."
+    },
+    {
+      "id": "3-reflog-terminal",
+      "type": "terminal",
+      "kicker": "Recover Lost Commits",
+      "title": "Using Reflog",
+      "lines": [
+        "$ git reflog",
+        "a1b2c3d HEAD@{0}: reset: moving",
+        "e4f5g6h HEAD@{1}: commit: fix bug"
+      ],
+      "say": "Reflog shows every move your branch made, so you can find and recover lost commits even after a reset."
+    },
+    {
+      "id": "4-undo-trap",
+      "type": "trap",
+      "question": "Is reset safe for shared branches?",
+      "wrong": "Yes, it's always safe.",
+      "right": "No, use revert for shared history to avoid trouble.",
+      "say": "Here's a trap: Is reset safe for shared branches? No way. Use revert instead to keep everyone in sync."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:24:33.250Z"
+}
