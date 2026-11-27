@@ -1,0 +1,64 @@
+{
+  "id": "api-design-l4",
+  "title": "API Auth: Identity vs Permissions",
+  "keys": [
+    "authentication",
+    "authorization",
+    "OAuth 2.0",
+    "JWT"
+  ],
+  "scenes": [
+    {
+      "id": "0-auth-vs-authz-hook",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "Who are you, and what can you do?",
+      "line2": "How do APIs check both?",
+      "say": "Who are you, and what can you do? How do APIs check both? Let's break down authentication and authorization."
+    },
+    {
+      "id": "1-auth-compare",
+      "type": "compare",
+      "kicker": "Key Concepts",
+      "left": {
+        "title": "Authentication",
+        "items": [
+          "API keys",
+          "OAuth 2.0",
+          "JWT tokens"
+        ]
+      },
+      "right": {
+        "title": "Authorization",
+        "items": [
+          "Scopes",
+          "Roles"
+        ]
+      },
+      "say": "Authentication asks, who is making the request? Authorization checks, what are they allowed to do? Both are essential for secure APIs."
+    },
+    {
+      "id": "2-oauth-jwt-chip",
+      "type": "chip",
+      "kicker": "Common Tools",
+      "label": "OAuth 2.0",
+      "sub": "Delegates access to third parties. Often uses JWT tokens for stateless auth.",
+      "say": "OAuth version two lets users grant limited access to apps. JSON Web Tokens are often used to carry permissions, and they're stateless, which helps APIs scale."
+    },
+    {
+      "id": "3-trap-auth-mixup",
+      "type": "trap",
+      "question": "What does authentication check?",
+      "wrong": "It checks what actions you can do.",
+      "right": "It checks who you are. Authorization checks what you can do.",
+      "say": "Here's a common mixup: authentication checks who you are, not what you can do. Permissions come after identity."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:39:05.658Z"
+}
