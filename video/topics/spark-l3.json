@@ -1,0 +1,84 @@
+{
+  "id": "spark-l3",
+  "title": "Partitioning & Skew in Apache Spark",
+  "keys": [
+    "partitioning",
+    "repartition",
+    "coalesce",
+    "skew"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-partitioning",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Why do partitions matter?",
+      "line2": "How do you fix skew?",
+      "say": "Ever wonder why Spark jobs slow down? Let’s talk partitioning and how to handle skew."
+    },
+    {
+      "id": "1-chip-partitioning",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Partitioning",
+      "sub": "Splits data across tasks for parallelism.",
+      "say": "Partitioning splits your data across tasks. It’s key for parallel processing and performance."
+    },
+    {
+      "id": "2-compare-repartition-",
+      "type": "compare",
+      "kicker": "Methods",
+      "left": {
+        "title": "repartition",
+        "items": [
+          "Increases or decreases partitions",
+          "Triggers a full shuffle"
+        ]
+      },
+      "right": {
+        "title": "coalesce",
+        "items": [
+          "Only reduces partitions",
+          "No full shuffle"
+        ]
+      },
+      "say": "Use repartition to increase or decrease partitions with a shuffle. Coalesce only reduces them, skipping a full shuffle."
+    },
+    {
+      "id": "3-rows-skew-handling",
+      "type": "rows",
+      "kicker": "Skew Handling",
+      "rows": [
+        {
+          "a": "Analyze Spark UI",
+          "b": "Check for uneven partition sizes"
+        },
+        {
+          "a": "Salt keys",
+          "b": "Add prefixes to distribute data"
+        },
+        {
+          "a": "Repartition",
+          "b": "Balance data before joins"
+        }
+      ],
+      "walk": true,
+      "say": "To handle skew, I check the Spark UI for uneven partitions, salt keys to spread data out, or repartition before joins."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "When should you use coalesce?",
+      "wrong": "To increase partitions",
+      "right": "To efficiently reduce partitions without a full shuffle",
+      "say": "Don’t say coalesce when you want more partitions. It only reduces them, and skips a full shuffle."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:48:25.688Z"
+}
