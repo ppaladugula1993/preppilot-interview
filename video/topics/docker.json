@@ -1,266 +1,127 @@
 {
   "id": "docker",
-  "title": "Docker Images vs Containers: The Core Idea",
-  "keys": [
-    "image",
-    "container",
-    "layer",
-    "volume",
-    "writable"
-  ],
-  "sets": [
-    {
-      "name": "shipyard",
-      "prompt": "busy cartoon shipyard at sunrise, with rows of identical shipping containers stacked on the dock, cranes, and a calm sea",
-      "image": "docker-set-shipyard.jpg"
-    },
-    {
-      "name": "deck",
-      "prompt": "close-up cartoon cargo ship deck with containers being loaded, ocean in background, bright morning",
-      "image": "docker-set-deck.jpg"
-    }
-  ],
-  "cast": [
-    {
-      "name": "cargo-image",
-      "prompt": "cheerful cartoon shipping container, shiny and pristine, with a blank label",
-      "image": "docker-cast-cargo-image.png"
-    },
-    {
-      "name": "running-container",
-      "prompt": "cartoon shipping container with a glowing door, tools and data spilling out, looks busy",
-      "image": "docker-cast-running-container.png"
-    },
-    {
-      "name": "dock-crane",
-      "prompt": "big friendly cartoon dock crane, waving hook arm",
-      "image": "docker-cast-dock-crane.png"
-    },
-    {
-      "name": "data-box",
-      "prompt": "small cartoon cardboard box with a 'DATA' sticker, slightly messy",
-      "image": "docker-cast-data-box.png"
-    }
-  ],
+  "title": "Docker: Containers in 60 Seconds",
   "scenes": [
     {
-      "id": "0-hook-core",
+      "id": "s0",
       "type": "hook",
-      "kicker": "Docker · 45 seconds",
-      "line1": "What's the real difference?",
-      "line2": "Image vs container?",
-      "say": "Docker interview coming up? Wait, what IS the difference between an image and a container?",
-      "emoji": "🧐",
-      "set": "shipyard",
-      "camera": "push",
-      "actors": [
-        {
-          "who": "cargo-image",
-          "x": 0.5,
-          "y": 0.5,
-          "size": 0.4,
-          "enter": "left",
-          "motion": "bob",
-          "count": 2
-        },
-        {
-          "who": "dock-crane",
-          "x": 0.8,
-          "y": 0.4,
-          "size": 0.3,
-          "enter": "right",
-          "motion": "sway"
-        }
-      ]
+      "say": "Ever wondered how apps run anywhere, fast? That’s Docker magic.",
+      "title": "HOOK: FAST APPS",
+      "accent": "FAST",
+      "subtitle": "Why is Docker so quick?",
+      "prompt": "a flat vector illustration of a magician pulling apps from a hat",
+      "image": "docker-s0.jpg"
     },
     {
-      "id": "1-picture-metaphor",
-      "type": "picture",
-      "kicker": "Metaphor",
-      "prompt": "A cartoon shipyard: identical sealed shipping containers stacked on the dock (images), a dock crane lifts one onto a ship, where it opens and workers bustle inside (container running), small boxes labeled 'DATA' pile up next to the ship.",
-      "map": [
-        {
-          "thing": "sealed container",
-          "means": "Image: template, not running"
-        },
-        {
-          "thing": "opened container",
-          "means": "Container: running instance"
-        },
-        {
-          "thing": "data box",
-          "means": "Writable layer/volume"
-        }
-      ],
-      "say": "Think of images as sealed containers on the dock—templates, not doing anything. The crane loads one onto a ship, opens it, and now it's alive: that's your running container.",
-      "emoji": "🚢",
-      "set": "shipyard",
-      "camera": "panR",
-      "actors": [
-        {
-          "who": "cargo-image",
-          "x": 0.2,
-          "y": 0.5,
-          "size": 0.3,
-          "enter": "left",
-          "motion": "bob",
-          "count": 2
-        },
-        {
-          "who": "dock-crane",
-          "x": 0.5,
-          "y": 0.4,
-          "size": 0.3,
-          "enter": "top",
-          "motion": "sway"
-        },
-        {
-          "who": "running-container",
-          "x": 0.8,
-          "y": 0.5,
-          "size": 0.35,
-          "enter": "right",
-          "motion": "pulse"
-        },
-        {
-          "who": "data-box",
-          "x": 0.85,
-          "y": 0.6,
-          "size": 0.15,
-          "enter": "bottom",
-          "motion": "bounce",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "id": "2-chip-image",
+      "id": "s1",
       "type": "chip",
-      "kicker": "Core",
-      "label": "Image",
-      "sub": "A read-only template, built in layers.",
-      "say": "An image is read-only, built up in layers—like a recipe frozen in time.",
-      "emoji": "🧊",
-      "set": "deck",
-      "camera": "push",
-      "actors": [
-        {
-          "who": "cargo-image",
-          "x": 0.4,
-          "y": 0.45,
-          "size": 0.35,
-          "enter": "left",
-          "motion": "bob"
-        }
-      ]
+      "say": "But what’s the difference between a container and a virtual machine?",
+      "title": "PROBLEM: VM VS CONTAINER",
+      "accent": "CONTAINER",
+      "subtitle": "VMs vs containers explained",
+      "prompt": "a clean diagram comparing a VM and a container side by side",
+      "image": "docker-s1.jpg"
     },
     {
-      "id": "3-chip-container",
+      "id": "s2",
       "type": "chip",
-      "kicker": "Core",
-      "label": "Container",
-      "sub": "A running instance with a writable layer.",
-      "say": "A container is what you get when you run that image. It adds a thin writable layer on top.",
-      "emoji": "🤖",
-      "set": "deck",
-      "camera": "pull",
-      "actors": [
-        {
-          "who": "running-container",
-          "x": 0.6,
-          "y": 0.45,
-          "size": 0.38,
-          "enter": "right",
-          "motion": "pulse"
-        },
-        {
-          "who": "data-box",
-          "x": 0.7,
-          "y": 0.6,
-          "size": 0.15,
-          "enter": "bottom",
-          "motion": "bounce"
-        }
-      ]
+      "say": "Step one: Containers share the host’s kernel, so they start in seconds and use less memory.",
+      "title": "STEP 1: SHARED KERNEL",
+      "accent": "SHARED",
+      "subtitle": "Containers use less memory",
+      "prompt": "a simple diagram showing containers sharing a central kernel",
+      "image": "docker-s2.jpg"
     },
     {
-      "id": "4-rows-write",
-      "type": "rows",
-      "kicker": "Write Data?",
-      "rows": [
-        {
-          "a": "Image",
-          "b": "Nope, read-only."
-        },
-        {
-          "a": "Container",
-          "b": "Yes, but data is lost if removed!"
-        },
-        {
-          "a": "Volume",
-          "b": "Keeps data safe outside container."
-        }
-      ],
-      "walk": true,
-      "say": "Here's the trick nobody tells you: containers lose their changes when deleted. Use a volume or bind mount to keep your data safe.",
-      "emoji": "💾",
-      "set": "deck",
-      "camera": "panL",
-      "actors": [
-        {
-          "who": "running-container",
-          "x": 0.5,
-          "y": 0.45,
-          "size": 0.35,
-          "enter": "left",
-          "motion": "bob"
-        },
-        {
-          "who": "data-box",
-          "x": 0.7,
-          "y": 0.6,
-          "size": 0.15,
-          "enter": "bottom",
-          "motion": "bounce",
-          "count": 2
-        }
-      ]
+      "id": "s3",
+      "type": "chip",
+      "say": "Step two: Each container runs from an image—a layered, read-only template.",
+      "title": "STEP 2: IMAGE TEMPLATE",
+      "accent": "IMAGE",
+      "subtitle": "Images are read-only templates",
+      "prompt": "a flat illustration of stacked layers labeled 'Image'",
+      "image": "docker-s3.jpg"
     },
     {
-      "id": "5-trap-mixup",
-      "type": "trap",
-      "question": "Is an image the running thing?",
-      "wrong": "Yes, image means it's running.",
-      "right": "Nope! Image is just the template. Container is the running thing.",
-      "say": "Interview trap: Don't mix them up! Image is the blueprint. Container is the thing actually running.",
-      "emoji": "⚠️",
-      "set": "deck",
-      "camera": "shake",
-      "actors": [
-        {
-          "who": "cargo-image",
-          "x": 0.3,
-          "y": 0.5,
-          "size": 0.25,
-          "enter": "left",
-          "motion": "shake"
-        },
-        {
-          "who": "running-container",
-          "x": 0.7,
-          "y": 0.5,
-          "size": 0.3,
-          "enter": "right",
-          "motion": "pulse"
-        }
-      ]
+      "id": "s4",
+      "type": "chip",
+      "say": "Step three: Containers add a thin writable layer on top, so each can have its own data.",
+      "title": "STEP 3: WRITABLE LAYER",
+      "accent": "WRITABLE",
+      "subtitle": "Containers can write data",
+      "prompt": "a diagram showing a writable layer on top of an image stack",
+      "image": "docker-s4.jpg"
     },
     {
-      "id": "6-end",
+      "id": "s5",
+      "type": "chip",
+      "say": "Here’s the twist: Delete a container, and its writable layer vanishes. Oops, data gone!",
+      "title": "TWIST: DATA VANISHES",
+      "accent": "DATA",
+      "subtitle": "Container data can disappear",
+      "prompt": "a flat illustration of a folder vanishing as a container is deleted",
+      "image": "docker-s5.jpg"
+    },
+    {
+      "id": "s6",
+      "type": "chip",
+      "say": "To keep your data safe, use volumes or bind mounts. They store data outside containers.",
+      "title": "FIX: VOLUMES & MOUNTS",
+      "accent": "VOLUMES",
+      "subtitle": "Store data outside containers",
+      "prompt": "a diagram showing a container with an external volume attached",
+      "image": "docker-s6.jpg"
+    },
+    {
+      "id": "s7",
+      "type": "chip",
+      "say": "Want containers to talk to each other? Use networks and publish ports with dash p.",
+      "title": "NETWORK: PORTS & DNS",
+      "accent": "PORTS",
+      "subtitle": "Connect containers easily",
+      "prompt": "a flat vector of containers connected by network lines",
+      "image": "docker-s7.jpg"
+    },
+    {
+      "id": "s8",
+      "type": "chip",
+      "say": "Docker Compose lets you run multi-container apps with one YAML file and one command.",
+      "title": "COMPOSE: ONE COMMAND",
+      "accent": "ONE",
+      "subtitle": "Multi-container made easy",
+      "prompt": "a clean diagram of a YAML file launching multiple containers",
+      "image": "docker-s8.jpg"
+    },
+    {
+      "id": "s9",
+      "type": "chip",
+      "say": "Interview trap: If your container exits fast, check logs and exit codes. Main process must stay running!",
+      "title": "TRAP: EXIT FAST",
+      "accent": "EXIT",
+      "subtitle": "Troubleshoot with logs",
+      "prompt": "a flat illustration of a container with a warning sign and log files",
+      "image": "docker-s9.jpg"
+    },
+    {
+      "id": "s10",
+      "type": "chip",
+      "say": "Docker is lighter than VMs, but you must manage data, networking, and troubleshooting.",
+      "title": "WHY IT MATTERS",
+      "accent": "LIGHTER",
+      "subtitle": "Docker needs smart handling",
+      "prompt": "a diagram showing Docker containers vs heavy VMs on a scale",
+      "image": "docker-s10.jpg"
+    },
+    {
+      "id": "s11",
       "type": "end",
-      "say": "Get interview ready with PrepPilot."
+      "say": "Get interview ready with PrepPilot.",
+      "title": "PREP PILOT",
+      "accent": "PREP",
+      "subtitle": "Ace your next interview",
+      "prompt": "a simple vector of a rocket labeled PrepPilot taking off"
     }
   ],
-  "voice": "en-US-AndrewMultilingualNeural",
-  "rendered": "2026-11-27T19:17:50.879Z"
+  "voice": "en-US-ChristopherNeural",
+  "rendered": "2026-11-27T19:32:35.040Z"
 }

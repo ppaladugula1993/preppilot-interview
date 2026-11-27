@@ -132,7 +132,7 @@ async function writeBrain(feedback) {
 Write ONE explainer video using only facts from the material below. ${n}, each scene 4-6 seconds (about 2.5 words per second).
 Tone: simple, punchy, curious; explain like to a smart 15-year-old; explain any jargon. Narration must be speakable word-for-word: no brackets, no emojis.
 Structure: Hook -> Problem -> How it works in 3 steps -> Twist / interview trap / why it matters -> End line. The last scene's narration is exactly "Get interview ready with PrepPilot."
-Return {"title": "short viral title, max 40 chars", "scenes": [{"narration_text": "...", "on_screen_title": "ALL CAPS, max 5 words", "accent_word": "ONE word or number that appears in on_screen_title", "subtitle": "max 6 words", "image_prompt": "a simple flat vector illustration of [concrete visual for this scene: an everyday metaphor or a clean diagram]"}]}
+Return {"title": "short viral title, max 40 chars", "scenes": [{"narration_text": "...", "on_screen_title": "ALL CAPS, max 5 words, never a section label like HOOK, STEP 1 or TWIST", "accent_word": "ONE word or number that appears in on_screen_title", "subtitle": "max 6 words", "image_prompt": "a simple flat vector illustration of [concrete visual for this scene: an everyday metaphor or a clean diagram]"}]}
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Material:
 ${material}
@@ -191,7 +191,7 @@ async function draw(prompt, file, transparent, square) {
   for (const st of sf.sets || []) { const name = `${id}-set-${st.name}.jpg`; if (await draw(`${st.prompt}. Wide empty background scene for an animation, no characters in front. ${STYLE}`, resolve(here, 'public', name), false)) { st.image = name; n++; } }
   for (const c of sf.cast || []) { const name = `${id}-cast-${c.name}.png`; if (await draw(`${c.prompt}. Single isolated cut-out sprite on a fully transparent background, whole object visible, centered, bold outline. ${STYLE}`, resolve(here, 'public', name), true)) { c.image = name; n++; } }
   writeFileSync(scriptFile, JSON.stringify(sf, null, 2));
-  log(`pictures: ${n} of ${(sf.sets || []).length + (sf.cast || []).length}`);
+  log(`pictures: ${n}`);
 }
 
 // ---------- 3. render + compress ----------
