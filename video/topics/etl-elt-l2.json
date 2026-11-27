@@ -1,0 +1,76 @@
+{
+  "id": "etl-elt-l2",
+  "title": "Watermarks & CDC in ETL/ELT Pipelines",
+  "keys": [
+    "watermark",
+    "CDC",
+    "incremental",
+    "Debezium",
+    "durable store"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-watermark-cdc",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "How do you track data changes?",
+      "line2": "What’s a watermark or CDC?",
+      "say": "How do you keep your ETL or ELT pipelines efficient when data keeps changing? What’s a watermark or change data capture?"
+    },
+    {
+      "id": "1-chip-watermark",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Watermark",
+      "sub": "A marker like a timestamp or ID to track the latest processed data.",
+      "say": "A watermark is just a marker, like a timestamp or an ID, that tracks the latest data your pipeline has processed."
+    },
+    {
+      "id": "2-rows-cdc",
+      "type": "rows",
+      "kicker": "Change Data Capture",
+      "rows": [
+        {
+          "a": "Insert",
+          "b": "New row added"
+        },
+        {
+          "a": "Update",
+          "b": "Row modified"
+        },
+        {
+          "a": "Delete",
+          "b": "Row removed"
+        }
+      ],
+      "walk": true,
+      "say": "Change data capture means you only grab the inserts, updates, and deletes since your last run. No need to reprocess everything."
+    },
+    {
+      "id": "3-terminal-watermark-e",
+      "type": "terminal",
+      "kicker": "Example Query",
+      "title": "Using a Watermark",
+      "lines": [
+        "$ SELECT * FROM users",
+        "$ WHERE updated_at > last_watermark"
+      ],
+      "say": "For example, you store the highest updated time from your last run, then query for anything newer next time."
+    },
+    {
+      "id": "4-trap-durable-waterma",
+      "type": "trap",
+      "question": "Where should you store watermarks?",
+      "wrong": "Just keep it in memory",
+      "right": "Always persist watermarks in a durable store so you never lose your place if your pipeline restarts.",
+      "say": "Here’s a common mistake: storing watermarks in memory. Always keep them in a durable place so you can recover after a restart."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:37:05.999Z"
+}
