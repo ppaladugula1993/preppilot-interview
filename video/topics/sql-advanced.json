@@ -1,0 +1,80 @@
+{
+  "id": "sql-advanced",
+  "title": "Window Functions: The SQL Power Move",
+  "keys": [
+    "window function",
+    "OVER",
+    "PARTITION BY",
+    "ROW_NUMBER",
+    "CTE"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-window-magic",
+      "type": "hook",
+      "kicker": "Advanced SQL · 45 seconds",
+      "line1": "How do you rank rows",
+      "line2": "without losing any data?",
+      "say": "Ever needed to rank or compare rows in SQL, but keep every row in your results? There's a trick for that."
+    },
+    {
+      "id": "1-chip-window-func",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Window",
+      "sub": "Window functions calculate across related rows, but keep each row.",
+      "say": "Window functions let you run calculations across groups of rows, but unlike aggregates, you never lose the original details."
+    },
+    {
+      "id": "2-code-row-number",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "SELECT name, salary,\n  ROW_NUMBER() OVER (\n    PARTITION BY department\n    ORDER BY salary DESC\n  ) AS dept_rank\nFROM employees;",
+      "say": "Here, we're ranking employees by salary within each department. The PARTITION BY clause groups them, and ORDER BY sorts the salaries."
+    },
+    {
+      "id": "3-rows-compare-agg-win",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Aggregate",
+        "items": [
+          "Collapses rows",
+          "One result per group"
+        ]
+      },
+      "right": {
+        "title": "Window",
+        "items": [
+          "Keeps all rows",
+          "Adds computed columns"
+        ]
+      },
+      "say": "Aggregates like sum or average collapse rows into a single result. Window functions add new columns, but keep every row."
+    },
+    {
+      "id": "4-chip-lag-lead",
+      "type": "chip",
+      "kicker": "Pro Tip",
+      "label": "LAG/LEAD",
+      "sub": "Compare each row to previous or next values easily.",
+      "say": "Need to compare current and previous values? Use LAG or LEAD to look across rows, perfect for trends and changes."
+    },
+    {
+      "id": "5-trap-over-vs-group",
+      "type": "trap",
+      "question": "Does OVER() remove rows like GROUP BY?",
+      "wrong": "Yes, it collapses rows.",
+      "right": "Nope! OVER keeps every row, just adds a new column.",
+      "say": "A common mistake: thinking OVER works like GROUP BY. It doesn't. OVER keeps all your rows and just adds extra info."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:34:55.501Z"
+}
