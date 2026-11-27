@@ -1,0 +1,77 @@
+{
+  "id": "linux-l7",
+  "title": "SSH Key-Based Login: Secure Remote Access",
+  "keys": [
+    "SSH",
+    "authorized_keys",
+    "ssh-keygen",
+    "permissions"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ssh-login",
+      "type": "hook",
+      "kicker": "Linux · SSH",
+      "line1": "How do you log in securely?",
+      "line2": "Why use SSH keys?",
+      "say": "How do you log in to a Linux server securely? Why use SSH keys instead of passwords?"
+    },
+    {
+      "id": "1-chip-key-pair",
+      "type": "chip",
+      "kicker": "SSH",
+      "label": "Keys",
+      "sub": "Private key stays with you; public key goes on the server.",
+      "say": "SSH uses a key pair. Your private key stays with you. The public key goes on the server."
+    },
+    {
+      "id": "2-terminal-setup-ssh",
+      "type": "terminal",
+      "kicker": "Setup",
+      "title": "Key-based login steps",
+      "lines": [
+        "$ ssh-keygen -t ed25519",
+        "$ ssh-copy-id user@host",
+        "$ chmod 700 ~/.ssh",
+        "$ chmod 600 ~/.ssh/authorized_keys"
+      ],
+      "say": "Generate a key with ssh-keygen. Copy your public key to the server. Set strict permissions on your .ssh folder and authorized_keys file."
+    },
+    {
+      "id": "3-rows-permissions-tip",
+      "type": "rows",
+      "kicker": "Tip",
+      "rows": [
+        {
+          "a": ".ssh folder",
+          "b": "chmod 700"
+        },
+        {
+          "a": "authorized_keys",
+          "b": "chmod 600"
+        },
+        {
+          "a": "Wrong permissions",
+          "b": "Key login silently fails"
+        }
+      ],
+      "walk": false,
+      "say": "Permissions matter. .ssh should be 700, authorized_keys 600. Wrong permissions break key login without errors."
+    },
+    {
+      "id": "4-trap-root-login",
+      "type": "trap",
+      "question": "How do you block root SSH login?",
+      "wrong": "Delete root's keys",
+      "right": "Set PermitRootLogin no in sshd_config",
+      "say": "If asked how to block root SSH login, don't just delete root's keys. Set PermitRootLogin to no in the SSH configuration."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:53:18.485Z"
+}
