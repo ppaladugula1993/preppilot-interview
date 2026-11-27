@@ -1,0 +1,72 @@
+{
+  "id": "csharp-core-l4",
+  "title": "Delegates, Events, Lambdas in C#",
+  "keys": [
+    "delegate",
+    "event",
+    "lambda",
+    "callback"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-delegates",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "How does C# handle callbacks?",
+      "line2": "What about events?",
+      "say": "How does C Sharp handle callbacks and events? Let's break down delegates, events, and lambdas."
+    },
+    {
+      "id": "1-chip-delegate",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Delegate",
+      "sub": "Type-safe reference to a method",
+      "say": "A delegate is a type-safe reference to a method. It lets you call methods indirectly."
+    },
+    {
+      "id": "2-rows-events",
+      "type": "rows",
+      "kicker": "Events",
+      "rows": [
+        {
+          "a": "Use delegates",
+          "b": "for publish-subscribe"
+        },
+        {
+          "a": "Raise event",
+          "b": "to notify subscribers"
+        },
+        {
+          "a": "Common in UI",
+          "b": "and async code"
+        }
+      ],
+      "walk": true,
+      "say": "Events use delegates to implement publish and subscribe. When you raise an event, all subscribers get notified. This is common in user interfaces and asynchronous code."
+    },
+    {
+      "id": "3-code-lambda",
+      "type": "code",
+      "kicker": "Lambdas",
+      "lang": "csharp",
+      "code": "OnNotify += msg =>\n  Console.WriteLine(msg);",
+      "say": "Lambdas are concise anonymous functions. They're great for simple, self-contained event handlers."
+    },
+    {
+      "id": "4-trap-delegate",
+      "type": "trap",
+      "question": "Are events and delegates the same?",
+      "wrong": "Yes, they're interchangeable.",
+      "right": "No. Events use delegates, but add publish-subscribe rules.",
+      "say": "Here's a trap: Are events and delegates the same? No. Events use delegates, but add extra rules for publish and subscribe."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:16:51.380Z"
+}
