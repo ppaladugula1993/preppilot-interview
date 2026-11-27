@@ -1,0 +1,73 @@
+{
+  "id": "concurrency-l0",
+  "title": "Concurrency vs Parallelism Explained",
+  "keys": [
+    "concurrency",
+    "parallelism",
+    "threads",
+    "processes"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-concurrency-par",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "Are concurrency and parallelism",
+      "line2": "the same thing?",
+      "say": "Are concurrency and parallelism just two words for the same thing? Let's clear that up."
+    },
+    {
+      "id": "1-chip-concurrency",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Concurrency",
+      "sub": "Tasks make progress together, but not always at the exact same time.",
+      "say": "Concurrency means multiple tasks are making progress together, but not always at the exact same time."
+    },
+    {
+      "id": "2-chip-parallelism",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Parallelism",
+      "sub": "Tasks run truly simultaneously, usually on multiple CPU cores.",
+      "say": "Parallelism is when tasks are actually running at the same time, usually on multiple CPU cores."
+    },
+    {
+      "id": "3-compare-conc-vs-par",
+      "type": "compare",
+      "kicker": "Spot the Difference",
+      "left": {
+        "title": "Concurrency",
+        "items": [
+          "Tasks interleaved",
+          "May use threads",
+          "Not always simultaneous"
+        ]
+      },
+      "right": {
+        "title": "Parallelism",
+        "items": [
+          "Tasks run together",
+          "Needs multiple cores",
+          "Truly simultaneous"
+        ]
+      },
+      "say": "Concurrency is about interleaving tasks, while parallelism is about running tasks at the exact same time."
+    },
+    {
+      "id": "4-trap-interview-catch",
+      "type": "trap",
+      "question": "Are threads always parallel?",
+      "wrong": "Yes, threads always run in parallel.",
+      "right": "No, threads can be concurrent without being parallel.",
+      "say": "Here's a common interview trap: are threads always parallel? No—they can be concurrent without actually running at the same time."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:33:52.562Z"
+}
