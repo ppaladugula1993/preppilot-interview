@@ -1,0 +1,80 @@
+{
+  "id": "aspnet-core-l0",
+  "title": "ASP.NET Core Middleware Order",
+  "keys": [
+    "middleware",
+    "pipeline",
+    "order",
+    "authentication"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pipeline-order",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "Why does middleware order matter?",
+      "line2": "How does it affect requests?",
+      "say": "Why does the order of middleware in your ASP.NET Core request pipeline matter? How does it impact what happens to each request?"
+    },
+    {
+      "id": "1-chip-pipeline",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Pipeline",
+      "sub": "Requests flow through middleware in the order they're added.",
+      "say": "Requests flow through middleware in the exact order they're added. Each one can handle or modify the request and response."
+    },
+    {
+      "id": "2-rows-middleware-orde",
+      "type": "rows",
+      "kicker": "Sequence",
+      "rows": [
+        {
+          "a": "ExceptionHandler",
+          "b": "Handles errors early"
+        },
+        {
+          "a": "Routing",
+          "b": "Maps URLs to endpoints"
+        },
+        {
+          "a": "Authentication",
+          "b": "Validates user identity"
+        },
+        {
+          "a": "Authorization",
+          "b": "Checks user permissions"
+        },
+        {
+          "a": "Endpoints",
+          "b": "Executes final logic"
+        }
+      ],
+      "walk": true,
+      "say": "Here's a typical order. Error handling comes first, then routing, authentication, authorization, and finally endpoints."
+    },
+    {
+      "id": "3-code-middleware-exam",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "app.UseExceptionHandler();\napp.UseRouting();\napp.UseAuthentication();\napp.UseAuthorization();\napp.UseEndpoints(...);",
+      "say": "In Program dot C S, the order you add middleware like this directly controls how each request is processed."
+    },
+    {
+      "id": "4-trap-auth-order",
+      "type": "trap",
+      "question": "Where should authentication go?",
+      "wrong": "After authorization",
+      "right": "Before authorization, so user identity is checked first.",
+      "say": "Interviewers love to ask: Where should authentication go? If you put it after authorization, user identity won't be checked before permissions. Always add authentication first."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:29:17.223Z"
+}
