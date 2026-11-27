@@ -1,0 +1,73 @@
+{
+  "id": "html-css-l3",
+  "title": "Flexbox: Mastering One-Dimensional Layouts",
+  "keys": [
+    "Flexbox",
+    "display",
+    "justify-content",
+    "align-items"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-flexbox",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "Ever struggled to align items?",
+      "line2": "How does Flexbox help?",
+      "say": "Ever spent too long trying to line up elements? Let's see how Flexbox makes layouts easy."
+    },
+    {
+      "id": "1-chip-flexbox-basics",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Flexbox",
+      "sub": "A one-dimensional layout tool for rows or columns.",
+      "say": "Flexbox is built for arranging items in a row or a column. It's perfect for simple, flexible layouts."
+    },
+    {
+      "id": "2-code-flexbox-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "css",
+      "code": ".container {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}",
+      "say": "Here, display flex turns your container into a flexbox. Justify content spreads out the items, and align items centers them along the cross axis."
+    },
+    {
+      "id": "3-compare-flexbox-vs-g",
+      "type": "compare",
+      "kicker": "Flexbox vs Grid",
+      "left": {
+        "title": "Flexbox",
+        "items": [
+          "One direction",
+          "Nav bars",
+          "Simple alignment"
+        ]
+      },
+      "right": {
+        "title": "Grid",
+        "items": [
+          "Two directions",
+          "Dashboards",
+          "Complex layouts"
+        ]
+      },
+      "say": "Use Flexbox when you only need to control one direction. For both rows and columns, switch to Grid."
+    },
+    {
+      "id": "4-trap-flexbox-mistake",
+      "type": "trap",
+      "question": "When is Flexbox NOT the best choice?",
+      "wrong": "For multi-row and column layouts",
+      "right": "Use Grid for two-dimensional layouts. Flexbox shines in one direction only.",
+      "say": "A common trap: using Flexbox for complex grids. Remember, stick to Flexbox for single-axis layouts."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:28:36.411Z"
+}
