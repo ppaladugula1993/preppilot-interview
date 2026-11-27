@@ -1,0 +1,80 @@
+{
+  "id": "network-l2",
+  "title": "DNS: How Domain Names Get Resolved",
+  "keys": [
+    "DNS",
+    "resolver",
+    "TTL",
+    "dig"
+  ],
+  "scenes": [
+    {
+      "id": "0-dns-why-care",
+      "type": "hook",
+      "kicker": "Networking · DNS",
+      "line1": "Why does DNS break so often?",
+      "line2": "What really happens?",
+      "say": "Why does DNS break so often? Let's see what really happens when you look up a domain name."
+    },
+    {
+      "id": "1-dns-steps",
+      "type": "rows",
+      "kicker": "How DNS Resolves a Name",
+      "rows": [
+        {
+          "a": "1. Root server",
+          "b": "Points to TLD server"
+        },
+        {
+          "a": "2. TLD server",
+          "b": "Points to domain's server"
+        },
+        {
+          "a": "3. Authoritative",
+          "b": "Gives the final answer"
+        },
+        {
+          "a": "4. Cache",
+          "b": "Stores result for TTL seconds"
+        }
+      ],
+      "walk": true,
+      "say": "Your resolver asks a root server, then the top-level domain server, then the authoritative server for the domain. The answer is cached for the record's time to live, or TTL."
+    },
+    {
+      "id": "2-dns-types",
+      "type": "chip",
+      "kicker": "Record Types",
+      "label": "A, CNAME",
+      "sub": "A maps name to IPv4. CNAME is an alias.",
+      "say": "Common DNS records: A maps a name to an I-P-v-4 address. CNAME is just an alias for another name."
+    },
+    {
+      "id": "3-dig-demo",
+      "type": "terminal",
+      "kicker": "Try It",
+      "title": "dig app.example.com",
+      "lines": [
+        "$ dig app.example.com",
+        "$ dig +trace app.example.com",
+        "$ dig -x 10.0.0.5"
+      ],
+      "say": "Test DNS with dig. Use plus trace to see the full lookup path, or dash x for reverse lookups."
+    },
+    {
+      "id": "4-dns-trap",
+      "type": "trap",
+      "question": "What does TTL control in DNS?",
+      "wrong": "How long a server is online",
+      "right": "How long a DNS answer is cached",
+      "say": "Interview trap: What does TTL control in DNS? It's not server uptime. TTL sets how long a DNS answer is cached."
+    },
+    {
+      "id": "5-dns-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:47:26.200Z"
+}
