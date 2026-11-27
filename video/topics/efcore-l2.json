@@ -1,0 +1,76 @@
+{
+  "id": "efcore-l2",
+  "title": "EF Core Migrations Workflow",
+  "keys": [
+    "EF Core",
+    "migrations",
+    "schema",
+    "database",
+    "workflow"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-migrations",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "How do you evolve your database?",
+      "line2": "What's the safe workflow?",
+      "say": "How do you safely update your database schema as your app changes? Let's walk through the Entity Framework Core migrations workflow."
+    },
+    {
+      "id": "1-chip-why-matters",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Safety",
+      "sub": "Migrations help you manage schema changes without breaking production.",
+      "say": "Migrations help you manage changes without breaking production. That's why interviewers care about this workflow."
+    },
+    {
+      "id": "2-rows-migration-steps",
+      "type": "rows",
+      "kicker": "Migrations Workflow",
+      "rows": [
+        {
+          "a": "Create migration",
+          "b": "Add a new migration for your changes"
+        },
+        {
+          "a": "Review code",
+          "b": "Check the generated migration for accuracy"
+        },
+        {
+          "a": "Apply migration",
+          "b": "Update the database schema"
+        }
+      ],
+      "walk": true,
+      "say": "There are three steps: create a migration, review the generated code, and then apply it to update your database."
+    },
+    {
+      "id": "3-terminal-commands",
+      "type": "terminal",
+      "kicker": "Sample Commands",
+      "title": "Add & Apply a Migration",
+      "lines": [
+        "$ dotnet ef migrations add AddIsActiveToUser",
+        "$ dotnet ef database update"
+      ],
+      "say": "First, add a migration for your schema change. Then, update the database to match your model."
+    },
+    {
+      "id": "4-trap-skip-review",
+      "type": "trap",
+      "question": "Should you skip reviewing migration code?",
+      "wrong": "Yes, the tool handles it all.",
+      "right": "No, always review to catch mistakes before applying changes.",
+      "say": "Never skip reviewing migration code. The tool helps, but you need to catch mistakes before they hit production."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:22:22.916Z"
+}
