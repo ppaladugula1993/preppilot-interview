@@ -1,0 +1,84 @@
+{
+  "id": "api-design-l8",
+  "title": "gRPC, GraphQL, Webhooks: API Choices",
+  "keys": [
+    "gRPC",
+    "GraphQL",
+    "Webhooks",
+    "API Design"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-api-design",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "gRPC, GraphQL, Webhooks",
+      "line2": "When should you use each?",
+      "say": "Ever wondered when to use gRPC, GraphQL, or webhooks? Let's break down the differences so you can ace your interview."
+    },
+    {
+      "id": "1-chip-grpc",
+      "type": "chip",
+      "kicker": "High Performance",
+      "label": "gRPC",
+      "sub": "Contract-based RPC, best for internal calls.",
+      "say": "gRPC is fast and strongly typed. It's perfect for internal microservice communication."
+    },
+    {
+      "id": "2-compare-graphql-rest",
+      "type": "compare",
+      "kicker": "Client Queries",
+      "left": {
+        "title": "GraphQL",
+        "items": [
+          "Flexible queries",
+          "Avoids over-fetching"
+        ]
+      },
+      "right": {
+        "title": "REST",
+        "items": [
+          "Simple CRUD",
+          "Broad compatibility"
+        ]
+      },
+      "say": "GraphQL lets clients ask for just what they need, while REST is great for simple operations and wide support."
+    },
+    {
+      "id": "3-rows-webhooks",
+      "type": "rows",
+      "kicker": "Reliability",
+      "rows": [
+        {
+          "a": "Sign payloads",
+          "b": "Verify authenticity"
+        },
+        {
+          "a": "Retry logic",
+          "b": "Use exponential backoff"
+        },
+        {
+          "a": "Ordering",
+          "b": "Sequence numbers or event IDs"
+        }
+      ],
+      "walk": true,
+      "say": "For webhooks, sign your payloads, retry with backoff, and use event IDs to guarantee order and deduplication."
+    },
+    {
+      "id": "4-trap-mixup",
+      "type": "trap",
+      "question": "Should you use webhooks for internal APIs?",
+      "wrong": "Yes, webhooks are fine for internal calls.",
+      "right": "No, webhooks are best for external event notifications. Use gRPC for internal APIs.",
+      "say": "Don't mix up webhooks and gRPC. Webhooks are for notifying external clients, not internal service calls."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:50:18.306Z"
+}
