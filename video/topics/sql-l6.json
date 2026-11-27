@@ -1,0 +1,77 @@
+{
+  "id": "sql-l6",
+  "title": "SQL Execution Plans with EXPLAIN",
+  "keys": [
+    "execution plan",
+    "EXPLAIN",
+    "query",
+    "index",
+    "optimization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-explain",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "Ever wonder how your query runs?",
+      "line2": "How does EXPLAIN help?",
+      "say": "Ever wonder how your database actually runs your query? Let's see how EXPLAIN can help."
+    },
+    {
+      "id": "1-chip-plan",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Plan",
+      "sub": "Execution plans reveal how queries are processed.",
+      "say": "Execution plans show you exactly how the database processes your query, step by step."
+    },
+    {
+      "id": "2-terminal-explain",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "EXPLAIN in action",
+      "lines": [
+        "$ EXPLAIN SELECT * FROM employees",
+        "-> Index scan on department_id",
+        "-> Filter: department_id = 5"
+      ],
+      "say": "Here's an example. Running EXPLAIN on a select from employees shows if indexes are used or if a full scan happens."
+    },
+    {
+      "id": "3-rows-why",
+      "type": "rows",
+      "kicker": "Why it matters",
+      "rows": [
+        {
+          "a": "Find bottlenecks",
+          "b": "Spot slow scans or joins"
+        },
+        {
+          "a": "Optimize queries",
+          "b": "Rewrite for better performance"
+        },
+        {
+          "a": "Interview edge",
+          "b": "Show you can tune SQL"
+        }
+      ],
+      "walk": true,
+      "say": "Why care? You can find bottlenecks, optimize queries, and prove to interviewers that you know how to tune SQL."
+    },
+    {
+      "id": "4-trap-table-scan",
+      "type": "trap",
+      "question": "How do you spot a slow query?",
+      "wrong": "Just look at the query text.",
+      "right": "Check the execution plan for full table scans or missing indexes.",
+      "say": "Here's a common trap: Don't just read the query text. Always check the execution plan for things like full table scans or missing indexes."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:11:58.148Z"
+}
