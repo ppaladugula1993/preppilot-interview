@@ -1,0 +1,80 @@
+{
+  "id": "state-management",
+  "title": "Local vs Global vs Server State: Key Idea",
+  "keys": [
+    "local state",
+    "global state",
+    "server state",
+    "Redux",
+    "React Query"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-state-split",
+      "type": "hook",
+      "kicker": "Frontend State Management · 45 seconds",
+      "line1": "Why split state into local, global, and server?",
+      "line2": "What’s the real difference?",
+      "say": "Ever wonder why React apps talk about local, global, and server state? Let’s clear up when each one matters most."
+    },
+    {
+      "id": "1-chip-local",
+      "type": "chip",
+      "kicker": "Local",
+      "label": "Local",
+      "sub": "State inside one component, like a text input value.",
+      "say": "Local state lives inside a single component. Think of a form input or a toggle switch. No one else needs to know about it."
+    },
+    {
+      "id": "2-chip-global",
+      "type": "chip",
+      "kicker": "Global",
+      "label": "Global",
+      "sub": "State shared by many components, like user info.",
+      "say": "Global state is for data many components need, like the logged-in user or the app’s theme."
+    },
+    {
+      "id": "3-chip-server",
+      "type": "chip",
+      "kicker": "Server",
+      "label": "Server",
+      "sub": "Data fetched from APIs, needs syncing and caching.",
+      "say": "Server state comes from APIs. It changes outside your app, so you need to fetch and sync it."
+    },
+    {
+      "id": "4-compare-tools",
+      "type": "compare",
+      "kicker": "Choosing Tools",
+      "left": {
+        "title": "Redux & Context",
+        "items": [
+          "Global state",
+          "Predictable updates"
+        ]
+      },
+      "right": {
+        "title": "React Query & SWR",
+        "items": [
+          "Server state",
+          "Caching, refetching"
+        ]
+      },
+      "say": "Redux and Context help with global state. React Query or SWR handle server state, with caching and refetching built in."
+    },
+    {
+      "id": "5-trap-overuse-redux",
+      "type": "trap",
+      "question": "Should you use Redux for all state?",
+      "wrong": "Yes, one store for everything.",
+      "right": "No. Use local state for isolated data, Redux for shared client state, and React Query for server data.",
+      "say": "Here’s a trap: should you use Redux for everything? Nope. Use local state where possible, Redux for shared client data, and React Query for anything from the server."
+    },
+    {
+      "id": "6-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:58:40.641Z"
+}
