@@ -1,0 +1,75 @@
+{
+  "id": "go-core-l6",
+  "title": "Go Packages & Modules: Structure & Manage",
+  "keys": [
+    "package",
+    "module",
+    "go.mod",
+    "dependency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-packages-module",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "How does Go organize code?",
+      "line2": "And manage dependencies?",
+      "say": "Ever wonder how Go keeps your code tidy and handles dependencies? Let’s break it down."
+    },
+    {
+      "id": "1-chip-package",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Package",
+      "sub": "A package is a collection of Go files. It’s how Go groups related code.",
+      "say": "Packages are just collections of Go files, grouped together so your code stays organized."
+    },
+    {
+      "id": "2-terminal-modules",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "Go modules in action",
+      "lines": [
+        "$ go mod init github.com/example/project",
+        "$ go get github.com/pkg/errors",
+        "// go.mod lists dependencies"
+      ],
+      "say": "Modules manage dependencies and versions. The module file tracks everything your project needs."
+    },
+    {
+      "id": "3-compare-package-modu",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Package",
+        "items": [
+          "Groups code",
+          "Shared logic"
+        ]
+      },
+      "right": {
+        "title": "Module",
+        "items": [
+          "Manages dependencies",
+          "Tracks versions"
+        ]
+      },
+      "say": "Packages group code. Modules handle dependencies and versions. Both are core to modern Go."
+    },
+    {
+      "id": "4-trap-go-mod",
+      "type": "trap",
+      "question": "What does go.mod do?",
+      "wrong": "It organizes Go files.",
+      "right": "It declares your module path and lists dependencies for reproducible builds.",
+      "say": "Don’t confuse go.mod with packages. It’s all about tracking dependencies and module info."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:50:03.033Z"
+}
