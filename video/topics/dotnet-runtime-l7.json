@@ -1,0 +1,68 @@
+{
+  "id": "dotnet-runtime-l7",
+  "title": "Tiered Compilation in .NET Explained",
+  "keys": [
+    "tiered compilation",
+    "JIT",
+    "startup",
+    "optimization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-tiered-jit",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Why does .NET start fast, yet run faster?",
+      "line2": "What’s the trick?",
+      "say": "Ever wonder how dot net apps launch quickly, but seem to get even faster as they run? What's the secret sauce behind that?"
+    },
+    {
+      "id": "1-chip-tiered-compile",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Tiered",
+      "sub": "Tiered compilation lets the JIT compile methods twice for speed and optimization.",
+      "say": "It's called tiered compilation. The just-in-time compiler first compiles your code quickly for a fast start, then goes back and optimizes the busy parts."
+    },
+    {
+      "id": "2-rows-tiered-steps",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Startup",
+          "b": "JIT compiles methods quickly"
+        },
+        {
+          "a": "Hot Methods",
+          "b": "JIT detects frequently used code"
+        },
+        {
+          "a": "Recompilation",
+          "b": "Optimizes those hot methods"
+        },
+        {
+          "a": "Result",
+          "b": "Fast startup and better throughput"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works: At startup, the JIT compiles methods as fast as possible. When it spots methods that run a lot, it recompiles them with more optimizations. The result? You get both quick launches and great long-term performance."
+    },
+    {
+      "id": "3-trap-tiered-trick",
+      "type": "trap",
+      "question": "Does tiered compilation slow startup?",
+      "wrong": "Yes, it adds overhead at launch.",
+      "right": "Nope. It speeds up startup by compiling quickly, then optimizes later.",
+      "say": "Here's a common trap: Does tiered compilation make startup slower? Actually, no. It does the opposite—startup gets faster, and optimizations happen as the app runs."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:15:40.764Z"
+}
