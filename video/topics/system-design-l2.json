@@ -1,0 +1,84 @@
+{
+  "id": "system-design-l2",
+  "title": "Load Balancing & Stateless Services",
+  "keys": [
+    "load balancer",
+    "stateless",
+    "scaling",
+    "reliability"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lb-stateless",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "How do big apps handle tons of users?",
+      "line2": "What's the secret?",
+      "say": "How do huge web apps stay fast and reliable, even with millions of users? What's the secret to scaling out?"
+    },
+    {
+      "id": "1-chip-load-balancer",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Balancer",
+      "sub": "Distributes requests across servers for reliability.",
+      "say": "A load balancer sits in front of your servers. It spreads incoming requests across multiple machines, keeping things reliable and smooth."
+    },
+    {
+      "id": "2-rows-stateless-scali",
+      "type": "rows",
+      "kicker": "Stateless Services",
+      "rows": [
+        {
+          "a": "No session data",
+          "b": "Server doesn't remember users"
+        },
+        {
+          "a": "Easy to add servers",
+          "b": "Just spin up more instances"
+        },
+        {
+          "a": "Horizontal scaling",
+          "b": "Grow by adding more machines"
+        }
+      ],
+      "walk": true,
+      "say": "Stateless services don't keep user data between requests. That means you can add more servers whenever you need, making it easy to scale horizontally."
+    },
+    {
+      "id": "3-compare-stateful-sta",
+      "type": "compare",
+      "kicker": "Design Choice",
+      "left": {
+        "title": "Stateful",
+        "items": [
+          "Tracks sessions",
+          "Harder to scale"
+        ]
+      },
+      "right": {
+        "title": "Stateless",
+        "items": [
+          "No sessions",
+          "Easy scaling"
+        ]
+      },
+      "say": "Stateful services remember users, which makes scaling tough. Stateless services forget everything—so you can add or remove servers without hassle."
+    },
+    {
+      "id": "4-trap-session-trap",
+      "type": "trap",
+      "question": "Can you store sessions on the server?",
+      "wrong": "Yes, that's fine for scaling.",
+      "right": "No. Storing sessions breaks statelessness and limits scaling.",
+      "say": "Here's a common trap: Can you store sessions on the server? No! That breaks statelessness and kills your ability to scale easily."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:42:17.752Z"
+}
