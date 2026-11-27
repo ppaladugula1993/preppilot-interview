@@ -1,0 +1,97 @@
+{
+  "id": "linux-l9",
+  "title": "Linux Patching: The Daily Routine",
+  "keys": [
+    "patching",
+    "dnf",
+    "apt",
+    "change window",
+    "reboot"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-patching",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "How do you safely patch Linux?",
+      "line2": "What's the daily routine?",
+      "say": "How do you safely patch Linux systems? What does the daily routine look like?"
+    },
+    {
+      "id": "1-chip-importance",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Patching",
+      "sub": "Half of infra ops is patching. It's daily work.",
+      "say": "Patching is half of infrastructure operations. It's daily work in most infra roles."
+    },
+    {
+      "id": "2-compare-patch-tools",
+      "type": "compare",
+      "kicker": "Patch Tools",
+      "left": {
+        "title": "RHEL",
+        "items": [
+          "dnf",
+          "yum"
+        ]
+      },
+      "right": {
+        "title": "Ubuntu",
+        "items": [
+          "apt"
+        ]
+      },
+      "say": "Red Hat uses D-N-F or yum. Ubuntu uses apt. Know which tool fits your distro."
+    },
+    {
+      "id": "3-rows-patch-flow",
+      "type": "rows",
+      "kicker": "Patch Flow",
+      "rows": [
+        {
+          "a": "Non-prod first",
+          "b": "Test updates safely"
+        },
+        {
+          "a": "Prod in waves",
+          "b": "Minimize risk"
+        },
+        {
+          "a": "Change window",
+          "b": "Schedule downtime"
+        }
+      ],
+      "walk": true,
+      "say": "Always patch non-production first. Then, patch production in waves during a change window to minimize risk."
+    },
+    {
+      "id": "4-terminal-commands",
+      "type": "terminal",
+      "kicker": "Patch Commands",
+      "title": "RHEL vs Ubuntu",
+      "lines": [
+        "$ dnf update -y",
+        "$ apt update && apt upgrade -y",
+        "$ needs-restarting -r",
+        "$ ls /var/run/reboot-required"
+      ],
+      "say": "On Red Hat, run dnf update. On Ubuntu, use apt update and apt upgrade. Check if a reboot is needed after patching."
+    },
+    {
+      "id": "5-trap-patch-trap",
+      "type": "trap",
+      "question": "Can you skip 'apt update' before 'upgrade'?",
+      "wrong": "Yes, it's optional.",
+      "right": "No. 'apt update' refreshes the package list. You need both.",
+      "say": "Can you skip apt update before upgrade? No. Apt update refreshes the package list. You need both steps."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:57:18.566Z"
+}
