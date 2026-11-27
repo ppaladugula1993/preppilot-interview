@@ -1,0 +1,72 @@
+{
+  "id": "go-concurrency-l8",
+  "title": "Go Goroutine Management Best Practices",
+  "keys": [
+    "goroutine",
+    "context",
+    "WaitGroup",
+    "leak"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-goroutine-mgmt",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How do you manage goroutines?",
+      "line2": "What keeps them under control?",
+      "say": "How do you keep goroutines from running wild in Go? What keeps them under control?"
+    },
+    {
+      "id": "1-chip-limit",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "Limit",
+      "sub": "Too many goroutines can overwhelm memory and CPU.",
+      "say": "Always limit the number of concurrent goroutines. Too many can overwhelm memory and CPU."
+    },
+    {
+      "id": "2-code-wg-context",
+      "type": "code",
+      "kicker": "Coordinate Goroutines",
+      "lang": "go",
+      "code": "wg := sync.WaitGroup{}\nfor i := 0; i < n; i++ {\n  wg.Add(1)\n  go func() {\n    defer wg.Done()\n    // work\n  }()\n}\nwg.Wait()",
+      "say": "Use WaitGroups to coordinate goroutines. Combine with context for cancellation and clean exits."
+    },
+    {
+      "id": "3-rows-clean-exit",
+      "type": "rows",
+      "kicker": "Clean Exit",
+      "rows": [
+        {
+          "a": "Monitor leaks",
+          "b": "Check for goroutines left running"
+        },
+        {
+          "a": "Profile",
+          "b": "Use pprof for runtime analysis"
+        },
+        {
+          "a": "Exit cleanly",
+          "b": "Always signal goroutines to stop"
+        }
+      ],
+      "walk": true,
+      "say": "Monitor for leaks, profile with pprof, and always ensure goroutines exit cleanly."
+    },
+    {
+      "id": "4-trap-leak",
+      "type": "trap",
+      "question": "What happens if you forget to cancel?",
+      "wrong": "Goroutines just finish on their own.",
+      "right": "Uncanceled goroutines can leak, wasting resources and causing bugs.",
+      "say": "If you forget to cancel, goroutines can leak. That wastes resources and causes bugs."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:59:12.188Z"
+}
