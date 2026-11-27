@@ -1,0 +1,90 @@
+{
+  "id": "docker-l1",
+  "title": "Container vs VM: What's the Difference?",
+  "keys": [
+    "container",
+    "VM",
+    "kernel",
+    "isolation",
+    "namespaces"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vs",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "Container vs Virtual Machine:",
+      "line2": "What's the real difference?",
+      "say": "Containers and virtual machines sound similar. But how are they really different?"
+    },
+    {
+      "id": "1-compare-arch",
+      "type": "compare",
+      "kicker": "Architecture",
+      "left": {
+        "title": "VM",
+        "items": [
+          "Own kernel",
+          "Guest OS",
+          "Hypervisor"
+        ]
+      },
+      "right": {
+        "title": "Container",
+        "items": [
+          "Shares host kernel",
+          "Container runtime"
+        ]
+      },
+      "say": "A virtual machine runs its own operating system and kernel on a hypervisor. A container shares the host's kernel and uses a container runtime."
+    },
+    {
+      "id": "2-chip-speed",
+      "type": "chip",
+      "kicker": "Startup",
+      "label": "Speed",
+      "sub": "VMs: minutes to boot. Containers: seconds.",
+      "say": "VMs can take minutes to start. Containers launch in seconds."
+    },
+    {
+      "id": "3-chip-size",
+      "type": "chip",
+      "kicker": "Size",
+      "label": "Resources",
+      "sub": "VMs: gigabytes. Containers: megabytes.",
+      "say": "VMs are heavy, often gigabytes in size. Containers are much lighter, usually just megabytes."
+    },
+    {
+      "id": "4-rows-isolation",
+      "type": "rows",
+      "kicker": "Isolation",
+      "rows": [
+        {
+          "a": "VMs",
+          "b": "Strong isolation, legacy apps"
+        },
+        {
+          "a": "Containers",
+          "b": "Great for scaling apps"
+        }
+      ],
+      "walk": false,
+      "say": "Choose VMs for strong isolation or legacy apps. Use containers to package and scale modern apps."
+    },
+    {
+      "id": "5-trap-kernel",
+      "type": "trap",
+      "question": "Do containers run their own kernel?",
+      "wrong": "Yes, each has its own kernel.",
+      "right": "No, containers share the host's kernel using namespaces and cgroups.",
+      "say": "Interview trap: Do containers run their own kernel? No—they share the host's kernel and isolate processes with namespaces and cgroups."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:50:18.323Z"
+}
