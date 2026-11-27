@@ -1,0 +1,84 @@
+{
+  "id": "api-design-l5",
+  "title": "Error Response Design for APIs",
+  "keys": [
+    "error response",
+    "RFC 7807",
+    "structured",
+    "debugging"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-error-responses",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "How do you make errors easy to fix?",
+      "line2": "What should APIs return?",
+      "say": "Ever wonder what makes an API error actually helpful? Let's break down how to design error responses that clients love."
+    },
+    {
+      "id": "1-chip-why-structured",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Clarity",
+      "sub": "Structured errors help clients debug fast.",
+      "say": "Clear, structured errors make it way easier for clients to debug and handle problems gracefully."
+    },
+    {
+      "id": "2-rows-rfc7807-fields",
+      "type": "rows",
+      "kicker": "RFC 7807 fields",
+      "rows": [
+        {
+          "a": "type",
+          "b": "A link to error details"
+        },
+        {
+          "a": "title",
+          "b": "Short, human-friendly summary"
+        },
+        {
+          "a": "status",
+          "b": "HTTP status code"
+        },
+        {
+          "a": "detail",
+          "b": "More info about the error"
+        }
+      ],
+      "walk": true,
+      "say": "The standard way is RFC 7807. It uses fields like type, title, status, and detail to give clients all the context they need."
+    },
+    {
+      "id": "3-terminal-error-examp",
+      "type": "terminal",
+      "kicker": "Example error response",
+      "title": "Out of credit",
+      "lines": [
+        "$ GET /purchase",
+        "{",
+        "  type: example.com/probs/out-of-credit",
+        "  title: Not enough credit",
+        "  status: 403",
+        "  detail: Balance is 30, needs 50",
+        "}"
+      ],
+      "say": "Here's a real example. The client sees exactly what went wrong and why, so they can respond or show a clear message."
+    },
+    {
+      "id": "4-trap-missing-fields",
+      "type": "trap",
+      "question": "What's wrong with just sending status codes?",
+      "wrong": "Clients can always figure it out.",
+      "right": "Without details, clients can't debug or show users helpful info.",
+      "say": "Don't fall for this: just sending a status code isn't enough. Clients need details to actually handle errors well."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:41:40.745Z"
+}
