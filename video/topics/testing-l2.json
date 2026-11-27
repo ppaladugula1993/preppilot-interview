@@ -1,0 +1,88 @@
+{
+  "id": "testing-l2",
+  "title": "Mocks, Stubs, Fakes, Spies Explained",
+  "keys": [
+    "mock",
+    "stub",
+    "fake",
+    "spy"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-choose-tool",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Mocks, Stubs, Fakes, Spies:",
+      "line2": "What’s the difference?",
+      "say": "Ever wonder which test double to use—mock, stub, fake, or spy? Let’s break them down so you never mix them up."
+    },
+    {
+      "id": "1-chip-mock",
+      "type": "chip",
+      "kicker": "Test Double",
+      "label": "Mock",
+      "sub": "Simulates and verifies interactions",
+      "say": "Mocks simulate dependencies and let you verify if your code called them the right way."
+    },
+    {
+      "id": "2-chip-stub",
+      "type": "chip",
+      "kicker": "Test Double",
+      "label": "Stub",
+      "sub": "Returns fixed, canned responses",
+      "say": "Stubs just return fixed responses—no logic, just output control."
+    },
+    {
+      "id": "3-rows-fake-spy",
+      "type": "rows",
+      "kicker": "Quick Guide",
+      "rows": [
+        {
+          "a": "Fake",
+          "b": "Lightweight, real logic"
+        },
+        {
+          "a": "Spy",
+          "b": "Records calls, no behavior change"
+        }
+      ],
+      "walk": false,
+      "say": "Fakes are simple, working versions, like an in-memory database. Spies track how functions are called, but don’t change what they do."
+    },
+    {
+      "id": "4-compare-when-to-use",
+      "type": "compare",
+      "kicker": "When to Use",
+      "left": {
+        "title": "Mocks & Stubs",
+        "items": [
+          "Mocks: check interactions",
+          "Stubs: control outputs"
+        ]
+      },
+      "right": {
+        "title": "Fakes & Spies",
+        "items": [
+          "Fakes: simple logic",
+          "Spies: call tracking"
+        ]
+      },
+      "say": "Mocks are for verifying interactions, stubs for fixed outputs. Fakes handle simple logic, and spies just watch calls."
+    },
+    {
+      "id": "5-trap-common-mixup",
+      "type": "trap",
+      "question": "Is a stub used to verify calls?",
+      "wrong": "Yes, stubs verify calls.",
+      "right": "No, stubs only provide outputs. Use mocks or spies to verify calls.",
+      "say": "Don’t confuse stubs with mocks or spies. Only mocks and spies verify interactions—stubs just provide outputs."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:41:27.725Z"
+}
