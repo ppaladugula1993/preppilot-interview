@@ -1,0 +1,76 @@
+{
+  "id": "efcore-l5",
+  "title": "EF Core: Concurrency Tokens Explained",
+  "keys": [
+    "Concurrency",
+    "RowVersion",
+    "DbUpdateConcurrencyException",
+    "Conflict"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-concurrency-que",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "How does EF Core spot update conflicts?",
+      "line2": "What are concurrency tokens?",
+      "say": "Ever wonder how Entity Framework Core knows when two users try to update the same data at once? Let's talk about concurrency tokens."
+    },
+    {
+      "id": "1-chip-rowversion",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "RowVersion",
+      "sub": "A special column that tracks changes to a row.",
+      "say": "A common concurrency token is a RowVersion column. It helps track changes to each row in your database."
+    },
+    {
+      "id": "2-code-setup",
+      "type": "code",
+      "kicker": "How to Set Up",
+      "lang": "csharp",
+      "code": "modelBuilder.Entity<User>()\n  .Property(u => u.RowVersion)\n  .IsRowVersion();",
+      "say": "In your model configuration, you can set up RowVersion as a concurrency token. This tells EF Core to watch for changes."
+    },
+    {
+      "id": "3-rows-exception",
+      "type": "rows",
+      "kicker": "What Happens",
+      "rows": [
+        {
+          "a": "User loads data",
+          "b": "RowVersion is stored"
+        },
+        {
+          "a": "Another update happens",
+          "b": "RowVersion changes"
+        },
+        {
+          "a": "User tries to save",
+          "b": "EF Core sees mismatch"
+        },
+        {
+          "a": "Exception thrown",
+          "b": "DbUpdateConcurrencyException"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works: you load a row, someone else updates it, and when you try to save, EF Core spots the mismatch and throws a concurrency exception."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "What does EF Core do if token changed?",
+      "wrong": "It silently overwrites the row.",
+      "right": "It throws a concurrency exception so you can resolve the conflict.",
+      "say": "Don't get tripped up: EF Core won't just overwrite changes if the token is different. It throws an exception so you can handle the conflict."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:28:54.027Z"
+}
