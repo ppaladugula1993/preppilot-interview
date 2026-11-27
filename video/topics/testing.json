@@ -1,0 +1,85 @@
+{
+  "id": "testing",
+  "title": "Why the Test Pyramid Matters Most",
+  "keys": [
+    "unit test",
+    "integration",
+    "E2E",
+    "mock",
+    "flakiness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pyramid",
+      "type": "hook",
+      "kicker": "Software Testing · 45 seconds",
+      "line1": "How should you balance your tests?",
+      "line2": "What’s the pyramid for?",
+      "say": "Ever wonder why interviewers love asking about the test pyramid? Let’s break down why it’s the single most important idea in software testing."
+    },
+    {
+      "id": "1-chip-unit",
+      "type": "chip",
+      "kicker": "Step 1 · Unit",
+      "label": "Unit",
+      "sub": "Fast, isolated tests for small pieces of code.",
+      "say": "Unit tests are your foundation. They're fast, cheap, and focus on tiny chunks of code in isolation."
+    },
+    {
+      "id": "2-compare-types",
+      "type": "compare",
+      "kicker": "Step 2 · Trade-offs",
+      "left": {
+        "title": "Integration",
+        "items": [
+          "Slower",
+          "Complex setup"
+        ]
+      },
+      "right": {
+        "title": "E2E",
+        "items": [
+          "Slowest",
+          "Most brittle"
+        ]
+      },
+      "say": "Integration tests check how parts work together, but they're slower. End-to-end tests cover user flows, but are slowest and most fragile."
+    },
+    {
+      "id": "3-rows-pyramid",
+      "type": "rows",
+      "kicker": "Step 3 · Pyramid",
+      "rows": [
+        {
+          "a": "Unit",
+          "b": "Many, fast, reliable"
+        },
+        {
+          "a": "Integration",
+          "b": "Some, realistic, slower"
+        },
+        {
+          "a": "E2E",
+          "b": "Few, broad, flaky"
+        }
+      ],
+      "walk": true,
+      "say": "The pyramid means: lots of unit tests, fewer integration, and just a handful of end-to-end tests. This keeps your suite fast and trustworthy."
+    },
+    {
+      "id": "4-trap-flaky",
+      "type": "trap",
+      "question": "Should you rely on E2E tests for coverage?",
+      "wrong": "Yes, they cover everything.",
+      "right": "No. E2E tests are flaky and slow. Rely on unit and integration tests for coverage.",
+      "say": "Here’s the interview trap: don’t rely on end-to-end tests for coverage. They’re flaky and slow. Unit and integration tests are your real safety net."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:33:40.226Z"
+}
