@@ -1,0 +1,81 @@
+{
+  "id": "sql-l3",
+  "title": "Subqueries vs CTEs: SQL Essentials",
+  "keys": [
+    "subquery",
+    "CTE",
+    "WITH",
+    "readability",
+    "recursion"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-compare-sql",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "Subquery or CTE?",
+      "line2": "Which should you use?",
+      "say": "Ever wonder when to use a subquery versus a CTE? Let’s break it down for your next interview."
+    },
+    {
+      "id": "1-chip-subquery",
+      "type": "chip",
+      "kicker": "Quick Fact",
+      "label": "Subquery",
+      "sub": "A query inside SELECT, WHERE, or FROM.",
+      "say": "A subquery is just a query inside another query. You’ll find them in select, where, or from clauses."
+    },
+    {
+      "id": "2-chip-cte",
+      "type": "chip",
+      "kicker": "Quick Fact",
+      "label": "CTE",
+      "sub": "Uses WITH to create a temp result set.",
+      "say": "A CTE, or common table expression, uses the with keyword to create a temporary result set. It makes your queries easier to read."
+    },
+    {
+      "id": "3-compare-readability",
+      "type": "compare",
+      "kicker": "Why Use CTEs?",
+      "left": {
+        "title": "Subquery",
+        "items": [
+          "Can get deeply nested",
+          "Harder to debug"
+        ]
+      },
+      "right": {
+        "title": "CTE",
+        "items": [
+          "Cleaner for complex logic",
+          "Easier to maintain",
+          "Supports recursion"
+        ]
+      },
+      "say": "Subqueries can get messy and hard to debug. CTEs keep things clean, support recursion, and make complex logic easier to maintain."
+    },
+    {
+      "id": "4-code-cte-example",
+      "type": "code",
+      "kicker": "Sample CTE",
+      "lang": "sql",
+      "code": "WITH top_departments AS (\n  SELECT department_id\n  FROM employees\n  GROUP BY department_id\n  HAVING COUNT(*) > 10\n)\nSELECT * FROM top_departments;",
+      "say": "Here’s a CTE in action. It grabs departments with more than ten employees, then selects from that temporary result."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "Why pick a CTE over a subquery?",
+      "wrong": "CTEs always run faster.",
+      "right": "CTEs improve readability and are better for complex logic.",
+      "say": "Don’t say CTEs are always faster. The real win is readability and handling complex logic."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:07:32.352Z"
+}
