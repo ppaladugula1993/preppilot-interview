@@ -1,0 +1,89 @@
+{
+  "id": "behavioral",
+  "title": "Nail Behavioral Interviews with STAR Stories",
+  "keys": [
+    "STAR",
+    "story",
+    "own",
+    "result",
+    "weakness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-star",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · 45 sec",
+      "line1": "What makes a story stick?",
+      "line2": "Why STAR matters?",
+      "say": "Ever wonder why some interview answers just click for hiring managers? What makes your story stick?"
+    },
+    {
+      "id": "1-chip-star",
+      "type": "chip",
+      "kicker": "Step 1 · STAR",
+      "label": "STAR",
+      "sub": "Situation, Task, Action, Result. It's the backbone.",
+      "say": "The STAR method—situation, task, action, result—is the backbone of every strong behavioral answer."
+    },
+    {
+      "id": "2-rows-own",
+      "type": "rows",
+      "kicker": "Step 2 · Own It",
+      "rows": [
+        {
+          "a": "Situation",
+          "b": "What happened"
+        },
+        {
+          "a": "Task",
+          "b": "What you needed to do"
+        },
+        {
+          "a": "Action",
+          "b": "What you did"
+        },
+        {
+          "a": "Result",
+          "b": "What changed"
+        }
+      ],
+      "walk": true,
+      "say": "Walk through each step. Set the scene, explain your goal, show what you did, and highlight the outcome. Always say what you owned."
+    },
+    {
+      "id": "3-compare-weakness",
+      "type": "compare",
+      "kicker": "Step 3 · Weakness",
+      "left": {
+        "title": "Fake",
+        "items": [
+          "Too hardworking",
+          "Perfectionist"
+        ]
+      },
+      "right": {
+        "title": "Real",
+        "items": [
+          "Skill gap",
+          "How you're fixing it"
+        ]
+      },
+      "say": "When asked about weaknesses, skip fake answers like 'I work too hard.' Share a real gap and what you’re doing to improve."
+    },
+    {
+      "id": "4-trap-habit",
+      "type": "trap",
+      "question": "What habit costs strong people offers?",
+      "wrong": "Blaming others or vague answers",
+      "right": "Not owning your part or skipping results makes you look weak. Always own your story.",
+      "say": "A common trap? Blaming others or skipping your own impact. If you don’t own your story, you look weak."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:08:44.503Z"
+}
