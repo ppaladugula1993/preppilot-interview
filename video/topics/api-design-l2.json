@@ -1,0 +1,77 @@
+{
+  "id": "api-design-l2",
+  "title": "API Pagination, Filtering, Sorting",
+  "keys": [
+    "pagination",
+    "filtering",
+    "sorting",
+    "cursor"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pagination",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "How do you handle huge data lists?",
+      "line2": "What's the best way?",
+      "say": "When your API returns thousands of items, how do you keep things fast and usable? What's the best way to handle huge data lists?"
+    },
+    {
+      "id": "1-chip-pagination",
+      "type": "chip",
+      "kicker": "Essentials",
+      "label": "Pagination",
+      "sub": "Break results into pages with limit and offset.",
+      "say": "Pagination breaks big results into pages, using parameters like limit and offset."
+    },
+    {
+      "id": "2-rows-filter-sort",
+      "type": "rows",
+      "kicker": "Features",
+      "rows": [
+        {
+          "a": "Filtering",
+          "b": "Request only needed data"
+        },
+        {
+          "a": "Sorting",
+          "b": "Order results by a field"
+        },
+        {
+          "a": "Cursor-based",
+          "b": "Efficient for big datasets"
+        }
+      ],
+      "walk": true,
+      "say": "Filtering lets clients request just what they need. Sorting orders results by a field. For large or changing data, cursor-based pagination is more efficient than offset."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Products API Call",
+      "lines": [
+        "$ GET /products?",
+        "  limit=20&offset=40",
+        "  &sort=price_desc",
+        "  &category=books"
+      ],
+      "say": "Here's an example: get 20 books, starting at item 40, sorted by price."
+    },
+    {
+      "id": "4-trap-pagination",
+      "type": "trap",
+      "question": "Offset or cursor for huge datasets?",
+      "wrong": "Offset is always fine.",
+      "right": "Cursor-based is better for large or changing data.",
+      "say": "Don't fall for this trap: offset works, but for huge or dynamic datasets, cursor-based pagination avoids missing or duplicate results."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:20:40.791Z"
+}
