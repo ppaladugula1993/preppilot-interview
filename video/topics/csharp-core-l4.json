@@ -1,0 +1,72 @@
+{
+  "id": "csharp-core-l4",
+  "title": "Delegates, Events, Lambdas in C#",
+  "keys": [
+    "delegate",
+    "event",
+    "lambda",
+    "callback"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-delegates-event",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "How do C# callbacks work?",
+      "line2": "What links delegates, events, lambdas?",
+      "say": "Ever wondered how C sharp handles callbacks? What connects delegates, events, and lambdas?"
+    },
+    {
+      "id": "1-chip-delegate",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Delegate",
+      "sub": "Type-safe reference to a method.",
+      "say": "A delegate is a type-safe way to reference a method. Think of it as a pointer, but safe and specific to a method signature."
+    },
+    {
+      "id": "2-rows-events",
+      "type": "rows",
+      "kicker": "Events in action",
+      "rows": [
+        {
+          "a": "Declare delegate",
+          "b": "Defines allowed method signature"
+        },
+        {
+          "a": "Create event",
+          "b": "Uses delegate for pub-sub"
+        },
+        {
+          "a": "Subscribe handler",
+          "b": "Attach method or lambda"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how events work. First, declare a delegate to set the method signature. Then, create an event using that delegate. Finally, subscribe a handler, either a method or a lambda."
+    },
+    {
+      "id": "3-code-lambda-handler",
+      "type": "code",
+      "kicker": "Lambdas for handlers",
+      "lang": "csharp",
+      "code": "public delegate void Notify(string msg);\npublic event Notify OnNotify;\nOnNotify += msg => Console.WriteLine(msg);",
+      "say": "I like using lambdas for event handlers. They keep simple logic right where you need it, clear and compact."
+    },
+    {
+      "id": "4-trap-lambda",
+      "type": "trap",
+      "question": "Can a lambda be used as an event handler?",
+      "wrong": "No, only named methods work.",
+      "right": "Yes, lambdas are often used for simple event logic.",
+      "say": "Quick check: Can you use a lambda as an event handler? Many think only named methods work, but lambdas are perfect for simple, inline event logic."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:19:09.610Z"
+}
