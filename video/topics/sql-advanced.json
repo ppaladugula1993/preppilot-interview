@@ -1,0 +1,81 @@
+{
+  "id": "sql-advanced",
+  "title": "Window Functions: The SQL Superpower",
+  "keys": [
+    "window function",
+    "OVER()",
+    "PARTITION BY",
+    "LAG",
+    "ROW_NUMBER"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-window-vs-aggre",
+      "type": "hook",
+      "kicker": "Advanced SQL · 45 seconds",
+      "line1": "Why use window functions?",
+      "line2": "How are they different?",
+      "say": "Ever wondered how window functions in SQL let you analyze data in ways regular aggregates can't?"
+    },
+    {
+      "id": "1-chip-window-func",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Window",
+      "sub": "Calculates across rows, keeps all rows.",
+      "say": "A window function performs calculations across related rows, but unlike aggregates, it keeps every row in your result."
+    },
+    {
+      "id": "2-code-over-example",
+      "type": "code",
+      "kicker": "Syntax",
+      "lang": "sql",
+      "code": "SELECT\n  sales,\n  SUM(sales) OVER () AS total\nFROM orders;",
+      "say": "See this example: SUM over all sales, but each row still shows up. The OVER clause defines the window."
+    },
+    {
+      "id": "3-chip-partition-by",
+      "type": "chip",
+      "kicker": "Grouping",
+      "label": "Partition",
+      "sub": "PARTITION BY splits rows into groups.",
+      "say": "Use PARTITION BY to group rows, like running totals per user or rankings per department."
+    },
+    {
+      "id": "4-rows-top-n-pattern",
+      "type": "rows",
+      "kicker": "Analytics",
+      "rows": [
+        {
+          "a": "ROW_NUMBER()",
+          "b": "Ranks rows in each group"
+        },
+        {
+          "a": "LAG()",
+          "b": "Gets previous row's value"
+        },
+        {
+          "a": "LEAD()",
+          "b": "Gets next row's value"
+        }
+      ],
+      "walk": true,
+      "say": "Window functions power analytics patterns: ranking, comparing rows, and finding top-N per group."
+    },
+    {
+      "id": "5-trap-collapse-mistak",
+      "type": "trap",
+      "question": "Does a window function collapse rows?",
+      "wrong": "Yes, like SUM() does.",
+      "right": "No. It adds a column, keeping all original rows.",
+      "say": "Don't confuse window functions with aggregates. Window functions never collapse rows—they just add new columns."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:40:37.388Z"
+}
