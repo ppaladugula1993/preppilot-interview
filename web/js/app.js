@@ -606,6 +606,7 @@ function landingView() {
       </div>
     </section>
 
+    ${newsHtml(false)}
     <section class="l-why">
       <p class="l-tag">## why it works</p>
       <h2 class="l-h2">Built for the night before, not a semester</h2>
@@ -911,6 +912,23 @@ function newTopicsNote() {
   </section>`;
 }
 
+// "New in PrepPilot": the same four updates on Home (signed in, with a profile) and on the landing page.
+function newsHtml(home) {
+  const p = home ? profile() : null;
+  const stack = p ? migrateProfile(p).roleIds.map(id => id === 'other' ? p.otherRole : roleName(id)).filter(Boolean)[0] : '';
+  const tile = (icon, title, body, act, tag) => home && act
+    ? `<button class="l-tile news-tile" data-act="${act}">${ic(icon)}<b>${title}${tag ? ` <span class="tag">${tag}</span>` : ''}</b><span>${body}</span></button>`
+    : `<div class="l-tile">${ic(icon)}<b>${title}${tag ? ` <span class="tag">${tag}</span>` : ''}</b><span>${body}</span></div>`;
+  return `<section class="${home ? 'news' : 'l-why'}" aria-label="New in PrepPilot">
+    ${home ? '<div class="sec-head"><h3>New in PrepPilot</h3></div>' : '<p class="l-tag">## new in preppilot</p><h2 class="l-h2">Fresh this month</h2>'}
+    <div class="l-grid news-grid">
+      ${tile('book', 'Interview Lab', stack ? `Worked answers for ${esc(stack)} interviews: system design, coding, SQL and behavioral. Try it first, then see the strong answer.` : '82 worked answers: system design, coding, SQL, low-level design and behavioral. Try it first, then see the strong answer.', 'openlab')}
+      ${tile('play', '45-second videos', 'Short explainers for every topic and lesson, with a quick question after each one so it sticks.', '', 'Coming soon')}
+      ${tile('spark', 'Role Ready', 'Paste a job post or type a role and get the top 5 skills it will test, with flashcards.', 'jobfocus', 'Pro')}
+      ${tile('cards', 'Floating cards', 'Keep a card floating over your other apps; it moves to the next one on its own.', pipSupport() ? 'popout' : '')}
+    </div>
+  </section>`;
+}
 function homeView() {
   const p = profile();
   const relevant = rankTopics(topics(), p);
@@ -960,6 +978,7 @@ function homeView() {
       <div class="sw-promo-cards" aria-hidden="true"><i></i><i></i><i></i></div>
       <div><span class="tag">New</span><b>Swipe right on what you know</b><span class="muted small">Like Tinder, but for your next job. Cards from all your skills, mixed.</span>
       <div class="row"><button class="btn primary" data-act="swipedeck">Try swipe mode</button><button class="link quiet small" data-act="swipenah">Keep steady</button></div></div></section>`}
+    ${newsHtml(true)}
     ${jobFocusEntry()}
     ${roleIds.includes('other') ? `<section class="panel stack"><h3>Make it specific to ${esc(p.otherRole)}</h3>
       <p class="muted">Your plan starts from the closest listed role. AI can write topics for your exact role. This uses 5 AI messages.</p>
@@ -3003,6 +3022,7 @@ document.addEventListener('click', async e => {
   else if (a === 'quick') sendChat(b.dataset.q);
   else if (a === 'rtstart') startVoice(b.dataset.mode);
   else if (a === 'plans') { S.showPlans = true; render(); }
+  else if (a === 'openlab') { S.view = 'lab'; render(); scrollToY(0); }
   else if (a === 'jobfocus') { S.view = 'focus'; render(); }
   else if (a === 'jfgo') jobFocusGo();
   else if (a === 'jfpick') { S.jf.sel = Number(b.dataset.i) || 0; render(); }

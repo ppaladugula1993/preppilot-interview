@@ -1451,3 +1451,7 @@ html { background: var(--desk); color-scheme: light dark; }
 .tip-ic .ic { width: 18px; height: 18px; }
 /* The side panel is the only navigation; the old bottom tabs never show (pricing screen included). */
 nav.tabs { display: none !important; }
+
+.news-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+button.news-tile { text-align: left; font: inherit; color: inherit; cursor: pointer; }
+button.news-tile:hover { border-color: var(--accent); }
