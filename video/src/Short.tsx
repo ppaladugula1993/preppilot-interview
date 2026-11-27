@@ -79,7 +79,7 @@ const Slicer: React.FC<{ th: Th; h: number }> = ({ th, h }) => {
   );
 };
 const Stack: React.FC<{ th: Th; h: number }> = ({ th, h }) => {
-  const f = useCurrentFrame(); const P = 22, n = Math.floor(f / P), ph = (f % P) / P, bh = 70;
+  const f = useCurrentFrame(); const P = 40, n = Math.floor(f / P), ph = (f % P) / P, bh = 70;
   const cam = Math.max(0, n - 5) * bh + (n >= 5 ? ph * bh : 0);
   const blocks = Array.from({ length: n + 1 }, (_, i) => {
     const w = 520 - (i % 7) * 30, sway = Math.sin(i * 1.7) * 60;
@@ -94,17 +94,17 @@ const Orbit: React.FC<{ th: Th; h: number }> = ({ th, h }) => {
   const f = useCurrentFrame();
   return (
     <svg width={1080} height={h}>
-      {Array.from({ length: 18 }, (_, i) => Array.from({ length: 10 }, (_, k) => {
-        const t = (f - k * 1.6) / 30, a = t * (0.7 + i * 0.09) + i, r = 60 + i * 17;
+      {Array.from({ length: 6 }, (_, i) => Array.from({ length: 8 }, (_, k) => {
+        const t = (f - k * 2) / 30, a = t * (0.35 + i * 0.05) + i, r = 70 + i * 40;
         return <circle key={`${i}-${k}`} cx={540 + Math.cos(a) * r * 1.7} cy={h / 2 + Math.sin(a * 1.3) * r} r={k ? 16 - k : 20} fill={i % 2 ? th.a : th.b} opacity={1 - k / 10} />;
       }))}
     </svg>
   );
 };
-const LOOPS = [Runner, Plinko, Slicer, Stack, Orbit];
+const LOOPS = [Stack, Orbit];
 
 /* ---------- top panel ---------- */
-const Card: React.FC<{ s: ShortScene; th: Th }> = ({ s, th }) => {
+export const Card: React.FC<{ s: ShortScene; th: Th }> = ({ s, th }) => {
   const f = useCurrentFrame(); const { fps } = useVideoConfig(); const e = spring({ frame: f - 6, fps, config: { damping: 12, stiffness: 160 } });
   const box = (children: React.ReactNode, bg = '#000000d0') => (
     <div style={{ position: 'absolute', left: 50, right: 50, bottom: 40, padding: '26px 32px', borderRadius: 28, background: bg, border: `5px solid ${th.a}`, boxShadow: `10px 10px 0 ${th.b}`, transform: `translateY(${(1 - e) * 300}px) rotate(${(1 - e) * -6}deg)`, color: '#fff' }}>{children}</div>);
@@ -159,18 +159,18 @@ const ActorView: React.FC<{ a: Actor; img: string; k: number; dur: number }> = (
     if (from && a.motion !== 'drop') { x += from[0] * (1 - e); y += from[1] * (1 - e); }
     const pop = a.enter === 'pop' || !from ? e : 1;
     switch (a.motion) {
-      case 'bob': y += Math.sin(ph * 5 + seed) * 18; rot = Math.sin(ph * 2.5 + seed) * 4; break;
-      case 'sway': rot = Math.sin(ph * 4 + seed) * 12; break;
-      case 'spin': rot = t * 9; break;
-      case 'bounce': { const b = Math.abs(Math.sin(ph * 6 + seed)); y -= b * 110; const sq = b < 0.15 ? (0.15 - b) * 2 : 0; sx = 1 + sq; sy = 1 - sq; break; }
-      case 'float': y += Math.sin(ph * 2 + seed) * 30; x += Math.cos(ph * 1.5 + seed) * 25; break;
-      case 'drive': x += interpolate(t, [0, dur], [0, (a.flip ? -1 : 1) * W * 0.35]); y += Math.abs(Math.sin(ph * 14)) * -8; break;
-      case 'shake': x += Math.sin(t * 2.7) * 12; rot = Math.sin(t * 3.1) * 5; break;
-      case 'pulse': { const p = 1 + Math.sin(ph * 7 + seed) * 0.08; sx *= p; sy *= p; break; }
-      case 'fly': x += interpolate(t, [0, dur], [-W * 0.3, W * 0.3]) * (a.flip ? -1 : 1); y += Math.sin(ph * 3) * 60 - interpolate(t, [0, dur], [0, 120]); rot = Math.sin(ph * 3) * 10; break;
+      case 'bob': y += Math.sin(ph * 3 + seed) * 8; break;
+      case 'sway': rot = Math.sin(ph * 2 + seed) * 3; break;
+      case 'spin': y += Math.sin(ph * 3 + seed) * 8; break;
+      case 'bounce': { const b = Math.abs(Math.sin(ph * 3 + seed)); y -= b * 30; const sq = b < 0.15 ? (0.15 - b) * 2 : 0; sx = 1 + sq; sy = 1 - sq; break; }
+      case 'float': y += Math.sin(ph * 1.5 + seed) * 12; break;
+      case 'drive': x += interpolate(t, [0, dur], [0, (a.flip ? -1 : 1) * W * 0.35]); break;
+      case 'shake': y += Math.sin(ph * 3 + seed) * 8; break;
+      case 'pulse': { const p = 1 + Math.sin(ph * 3 + seed) * 0.03; sx *= p; sy *= p; break; }
+      case 'fly': x += interpolate(t, [0, dur], [-W * 0.3, W * 0.3]) * (a.flip ? -1 : 1); y -= interpolate(t, [0, dur], [0, 60]); break;
     }
     return <Img key={c} src={staticFile(img)} style={{ position: 'absolute', left: x - size / 2, top: y - size, width: size, height: size, objectFit: 'contain',
-      transform: `scale(${(a.flip ? -1 : 1) * sx * pop}, ${sy * pop}) rotate(${rot}deg)`, transformOrigin: '50% 100%', filter: 'drop-shadow(0 18px 14px #0008)' }} />;
+      transform: `scale(${(a.flip ? -1 : 1) * sx * pop}, ${sy * pop}) rotate(${rot}deg)`, transformOrigin: '50% 100%', filter: 'drop-shadow(0 10px 10px #0006)' }} />;
   })}</>;
 };
 const Particles: React.FC<{ th: Th; seed: number }> = ({ th, seed }) => {
@@ -178,25 +178,23 @@ const Particles: React.FC<{ th: Th; seed: number }> = ({ th, seed }) => {
   return <>{Array.from({ length: 14 }, (_, i) => { const r = rnd(seed * 31 + i), y = ((r * TOP + f * (2 + r * 4)) % TOP), x = rnd(i + seed) * W + Math.sin(f / 20 + i) * 30;
     return <div key={i} style={{ position: 'absolute', left: x, top: TOP - y, width: 10 + r * 14, height: 10 + r * 14, borderRadius: '50%', background: i % 2 ? th.a : th.b, opacity: 0.55 }} />; })}</>;
 };
-const Stage: React.FC<{ s: ShortScene; dur: number; th: Th; i: number; sets: Asset[]; cast: Asset[] }> = ({ s, dur, th, i, sets, cast }) => {
+export const Stage: React.FC<{ s: ShortScene; dur: number; th: Th; i: number; sets: Asset[]; cast: Asset[] }> = ({ s, dur, th, i, sets, cast }) => {
   const f = useCurrentFrame();
   const set = sets.find(x => x.name === s.set)?.image || sets[i % Math.max(1, sets.length)]?.image;
   const p = f / dur; const cam = s.camera || ['push', 'panL', 'pull', 'panR'][i % 4];
-  const z = cam === 'push' ? 1.05 + p * 0.18 : cam === 'pull' ? 1.23 - p * 0.18 : 1.12;
-  const px = cam === 'panL' ? interpolate(p, [0, 1], [40, -40]) : cam === 'panR' ? interpolate(p, [0, 1], [-40, 40]) : 0;
-  const shake = cam === 'shake' ? Math.sin(f * 2.3) * 8 : 0;
-  const cut = interpolate(f, [0, 4], [1.25, 1], { extrapolateRight: 'clamp' }); // punch-in cut
+  const z = cam === 'pull' ? 1.1 - p * 0.06 : 1.04 + p * 0.06;
+  const px = cam === 'panL' ? interpolate(p, [0, 1], [15, -15]) : cam === 'panR' ? interpolate(p, [0, 1], [-15, 15]) : 0;
+  const shake = 0;
+  const cut = 1;
   const flash = interpolate(f, [0, 3], [0.6, 0], { extrapolateRight: 'clamp' });
   return (
     <AbsoluteFill style={{ overflow: 'hidden' }}>
       <AbsoluteFill style={{ background: `linear-gradient(135deg, ${th.bg1}, ${th.bg2})` }} />
       {set ? <Img src={staticFile(set)} style={{ position: 'absolute', inset: -60, width: W + 120, height: TOP + 120, objectFit: 'cover', transform: `scale(${z * cut}) translate(${px * 0.6 + shake}px, ${shake}px)` }} /> : null}
       <AbsoluteFill style={{ transform: `scale(${(1 + (z - 1) * 1.6) * cut}) translate(${px * 1.4 + shake * 1.5}px, ${shake}px)` }}>
-        {(s.actors || []).slice(0, 4).map((a, k) => { const img = cast.find(c => c.name === a.who)?.image; return img ? <ActorView key={k} a={a} img={img} k={k} dur={dur} /> : null; })}
+        {(s.actors || []).slice(0, 2).map((a, k) => { const img = cast.find(c => c.name === a.who)?.image; return img ? <ActorView key={k} a={a} img={img} k={k} dur={dur} /> : null; })}
       </AbsoluteFill>
-      <Particles th={th} seed={i} />
       <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0000 55%, #000a 100%)' }} />
-      <AbsoluteFill style={{ background: '#fff', opacity: flash }} />
       <Card s={s} th={th} />
     </AbsoluteFill>
   );
@@ -215,8 +213,8 @@ const Caps: React.FC<{ words: Timing['words']; keys: string[]; th: Th; emojis: {
   const emP = em ? spring({ frame: Math.round((now - em.t) * fps), fps, config: { damping: 8, stiffness: 200 } }) : 0;
   return (
     <AbsoluteFill style={{ top: TOP, height: MID, alignItems: 'center', justifyContent: 'center' }}>
-      {gi >= 0 ? (() => { const g = groups[gi]; const t0 = ws[g[0]].t; const pop = interpolate(now - t0, [0, 0.1], [1.35, 1], { extrapolateRight: 'clamp' });
-        return <div style={{ display: 'flex', gap: 22, transform: `scale(${pop}) rotate(${(gi % 3 - 1) * 2.5}deg)`, font: `900 104px/1 ${SANS}`, textTransform: 'uppercase', letterSpacing: '-.02em', WebkitTextStroke: '10px #000', paintOrder: 'stroke fill', filter: 'drop-shadow(0 8px 0 #000)' }}>
+      {gi >= 0 ? (() => { const g = groups[gi]; const t0 = ws[g[0]].t; const pop = interpolate(now - t0, [0, 0.1], [1.12, 1], { extrapolateRight: 'clamp' });
+        return <div style={{ display: 'flex', gap: 22, transform: `scale(${pop})`, font: `900 104px/1 ${SANS}`, textTransform: 'uppercase', letterSpacing: '-.02em', WebkitTextStroke: '10px #000', paintOrder: 'stroke fill', filter: 'drop-shadow(0 8px 0 #000)' }}>
           {g.map(i => { const w = ws[i].w.replace(/[.,!?;:]$/, ''); const key = keys.some(k => w.toLowerCase().includes(k)); const on = now >= ws[i].t;
             return <span key={i} style={{ color: key ? th.a : on ? '#fff' : '#ffffff88' }}>{w}</span>; })}
         </div>; })() : null}
@@ -231,14 +229,14 @@ export const Short: React.FC<ShortProps> = ({ title, scenes, timing, audio, keys
   const starts = scenes.map(s => timing.marks.find(m => m.id === s.id)?.t ?? 0);
   const seq = (i: number) => { const from = Math.round(starts[i] * fps); const to = Math.round((starts[i + 1] ?? durationInFrames / fps) * fps); return { from, durationInFrames: Math.max(1, to - from) }; };
   const lowH = 1920 - TOP - MID;
-  const emojis = scenes.map((s, i) => ({ t: starts[i] + 0.3, e: s.emoji || '' })).filter(x => x.e);
+  const emojis: { t: number; e: string }[] = [];
   const total = durationInFrames / fps;
   return (
     <AbsoluteFill style={{ background: '#000', fontFamily: SANS }}>
-      <Audio src={staticFile('beat.mp3')} volume={0.13} loop />
+      <Audio src={staticFile('beat.mp3')} volume={0.06} loop />
       <Audio src={staticFile(audio)} />
       {scenes.slice(1).map((s, i) => <Sequence key={'w' + s.id} from={seq(i + 1).from} durationInFrames={14}><Audio src={staticFile('whoosh.mp3')} volume={0.35} /></Sequence>)}
-      {emojis.map((e, i) => <Sequence key={'p' + i} from={Math.round(e.t * fps)} durationInFrames={10}><Audio src={staticFile('pop.mp3')} volume={0.4} /></Sequence>)}
+      
       {scenes.map((s, i) => s.type === 'trap' ? <Sequence key={'d' + i} from={seq(i).from + 40} durationInFrames={20}><Audio src={staticFile('ding.mp3')} volume={0.4} /></Sequence> : null)}
       {/* bottom: satisfying loop */}
       <div style={{ position: 'absolute', top: TOP + MID, left: 0, width: 1080, height: lowH, overflow: 'hidden', background: `linear-gradient(180deg, ${th.bg2}, ${th.bg1})` }}><Loop th={th} h={lowH} /></div>

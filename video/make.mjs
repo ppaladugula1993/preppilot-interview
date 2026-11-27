@@ -67,8 +67,8 @@ ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
 This is an ANIMATED cartoon, not a slideshow. Build ONE real-world metaphor world for the whole video:
 - "sets": 2 backgrounds [{"name": slug, "prompt": wide empty environment, no characters, e.g. "busy harbour at sunset with cranes and calm sea"}]
-- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single object or character, full body, fun and expressive, e.g. "cheerful cartoon cargo ship", "orange shipping container", "dock worker with hard hat"}]
-EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-4 cast members DOING something that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|sway|spin|bounce|float|drive|drop|shake|pulse|fly, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Make it lively: things arrive, collide, stack, fly away, multiply.
+- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single simple object, whole and clearly visible, e.g. "simple cargo ship", "orange shipping container", "crane"; plain objects, no faces}]
+EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-2 cast members doing ONE simple, clear action that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|float|drive|drop|pulse, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Keep it calm and readable: one idea per scene, little clutter.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "sets": [...], "cast": [...], "scenes": [...]}.
 
@@ -102,8 +102,8 @@ ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
 This is an ANIMATED cartoon, not a slideshow. Build ONE real-world metaphor world for the whole video:
 - "sets": 2 backgrounds [{"name": slug, "prompt": wide empty environment, no characters, e.g. "busy harbour at sunset with cranes and calm sea"}]
-- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single object or character, full body, fun and expressive, e.g. "cheerful cartoon cargo ship", "orange shipping container", "dock worker with hard hat"}]
-EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-4 cast members DOING something that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|sway|spin|bounce|float|drive|drop|shake|pulse|fly, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Make it lively: things arrive, collide, stack, fly away, multiply.
+- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single simple object, whole and clearly visible, e.g. "simple cargo ship", "orange shipping container", "crane"; plain objects, no faces}]
+EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-2 cast members doing ONE simple, clear action that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|float|drive|drop|pulse, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Keep it calm and readable: one idea per scene, little clutter.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "max 40 chars", "keys": [2-5 key terms], "sets": [...], "cast": [...], "scenes": [...]}.
 
@@ -149,8 +149,7 @@ if (force || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
 
 // ---------- 2b. pictures: one per scene, art style + theme + loop picked per video so they all look different ----------
 const hash = str => [...str].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
-const ART = ['playful 3D clay render, soft studio light', 'bold comic book art, thick ink outlines, halftone shading', 'vibrant isometric low-poly 3D', 'colorful anime cel-shaded illustration', 'papercut collage, layered paper, bright colors', 'glossy Pixar-style 3D cartoon', 'retro 80s synthwave neon illustration', 'cute chunky vector cartoon with bold shapes', 'detailed pixel art, 16-bit game style', 'whimsical gouache storybook painting'];
-const H = hash(id), STYLE = `${ART[H % ART.length]}, exaggerated fun expressions, dynamic camera angle, saturated colors, no text, no letters, no numbers, no logos, no screens,`;
+const H = hash(id), STYLE = 'soft flat 2D pastel illustration, simple rounded shapes, minimal detail, calm muted colours, gentle lighting, clean and uncluttered, friendly but not exaggerated, no faces on objects, no text, no letters, no numbers, no logos, no screens.';
 async function draw(prompt, file, transparent) {
   for (let a = 0; a < 6 && !existsSync(file); a++) {
     const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
@@ -177,7 +176,7 @@ if (force || !existsSync(final)) {
   const s = JSON.parse(readFileSync(scriptFile, 'utf8'));
   const timing = JSON.parse(readFileSync(resolve(here, 'public', `${id}.timing.json`), 'utf8'));
   writeFileSync(resolve(here, `.props-${id}.json`), JSON.stringify({ id, title: s.title, scenes: s.scenes, sets: s.sets || [], cast: s.cast || [], timing, audio: `${id}.mp3`, keys: s.keys || [], theme: H % 8, loop: (H >> 3) % 5 }));
-  run('npx', ['remotion', 'render', 'src/index.ts', 'short', `out/${id}.raw.mp4`, `--props=.props-${id}.json`, ...(process.env.CHROME_PATH ? [`--browser-executable=${process.env.CHROME_PATH}`] : []), '--log=error'], { timeout: 1800000 });
+  run('npx', ['remotion', 'render', 'src/index.ts', process.env.VIDEO_STYLE || 'host', `out/${id}.raw.mp4`, `--props=.props-${id}.json`, ...(process.env.CHROME_PATH ? [`--browser-executable=${process.env.CHROME_PATH}`] : []), '--log=error'], { timeout: 1800000 });
   run('ffmpeg', ['-loglevel', 'error', '-y', '-i', `out/${id}.raw.mp4`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', `out/${id}.mp4`]);
   run('ffmpeg', ['-loglevel', 'error', '-y', '-ss', '1.2', '-i', `out/${id}.mp4`, '-frames:v', '1', '-vf', 'scale=540:-1', '-q:v', '5', `out/${id}.jpg`]);
   log(`rendered ${(statSync(final).size / 1e6).toFixed(1)} MB`);
