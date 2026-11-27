@@ -822,7 +822,6 @@ function lsPicksHtml() {
   const n = newCards().length;
   const has = k => fieldCards(k).length;
   const picks = [
-    ['ndgo', 'trend', 'bolt', 'What’s new in tech', 'Short reads from this week’s releases and engineering blogs'],
     n ? ['newdeck', '', 'spark', `New this month`, `${n} fresh question${n === 1 ? '' : 's'} from what developers are hitting now`] : null,
     has('trouble') ? ['fielddeck', 'trouble', 'alert', 'Troubleshooting', 'Real errors, the cause and the fix'] : null,
     has('scenarios') ? ['fielddeck', 'scenarios', 'target', 'Real scenarios', 'What interviewers ask about actual work'] : null,
@@ -1773,7 +1772,6 @@ function navDrawerHtml(key) {
       ${item('deck', 'Cards', 'cards', key === 'deck')}
       ${item('jobfocus', 'Role Ready', 'target', key === 'focus')}
       ${item('lab', 'Interview Lab', 'book', key === 'lab')}
-      ${item('trend', 'What’s new in tech', 'bolt', key === 'trend')}
       ${item('live', 'Live AI interview', 'mic', false)}
       ${item('custom', 'Custom subjects', 'plus', key === 'custom')}
       ${hasPro() || isAdmin() ? '' : item('plans', 'Pricing', 'spark', false)}
@@ -2428,7 +2426,6 @@ function render() {
     : key === 'custom' ? customView()
     : key === 'focus' ? jobFocusView()
     : key === 'lab' ? labView()
-    : key === 'trend' ? trendView()
     : key === 'settings' ? settingsView()
     : homeView();
   app.innerHTML = `<div class="${changed ? 'view' : ''}">${html}</div>`;

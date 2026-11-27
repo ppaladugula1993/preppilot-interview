@@ -3,8 +3,9 @@ name: Refresh tech feed
 # Every 6 hours: new stories for "What's new in tech" (~50 a day), then deploy.
 # Needs AZURE_OPENAI_ENDPOINT and AZURE_OPENAI_API_KEY secrets. Scheduled runs start once on main.
 on:
-  schedule:
-    - cron: '23 */6 * * *'
+  # Feed is switched off in the app for now, so the 6-hourly refresh is off too.
+  # schedule:
+  #   - cron: '23 */6 * * *'
   workflow_dispatch:
 
 permissions:
