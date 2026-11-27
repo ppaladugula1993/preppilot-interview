@@ -1,0 +1,79 @@
+{
+  "id": "dotnet-runtime-l8",
+  "title": "Profiling .NET Apps for Performance",
+  "keys": [
+    ".NET",
+    "profiling",
+    "GC",
+    "dotnet-counters"
+  ],
+  "scenes": [
+    {
+      "id": "0-why-profile",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "How do you spot slowdowns?",
+      "line2": "What tools find bottlenecks?",
+      "say": "Ever wonder how to catch performance issues before users do? Let's see how profiling .NET apps reveals bottlenecks fast."
+    },
+    {
+      "id": "1-what-is-profiling",
+      "type": "chip",
+      "kicker": "Profiling Basics",
+      "label": "Profiling",
+      "sub": "Measuring CPU, memory, and garbage collection to find slow spots.",
+      "say": "Profiling means tracking things like CPU, memory, and garbage collection. The goal? Spot what’s slowing your app down."
+    },
+    {
+      "id": "2-tools-terminal",
+      "type": "terminal",
+      "kicker": "Tools in Action",
+      "title": "Quick Profiling Commands",
+      "lines": [
+        "$ dotnet-counters monitor",
+        "$ dotnet-trace collect"
+      ],
+      "say": "Use dotnet counters to watch real-time metrics, like garbage collection pauses. Dotnet trace digs into method timings for deeper analysis."
+    },
+    {
+      "id": "3-profiling-steps",
+      "type": "rows",
+      "kicker": "How to Profile",
+      "rows": [
+        {
+          "a": "Pick a tool",
+          "b": "Like Visual Studio Profiler"
+        },
+        {
+          "a": "Run your app",
+          "b": "Start with real workloads"
+        },
+        {
+          "a": "Collect metrics",
+          "b": "Watch CPU, memory, GC"
+        },
+        {
+          "a": "Analyze results",
+          "b": "Find and fix bottlenecks"
+        }
+      ],
+      "walk": true,
+      "say": "Here's my usual flow: choose a profiler, run the app under real conditions, gather metrics, then dig into the results to fix issues."
+    },
+    {
+      "id": "4-trap-metrics",
+      "type": "trap",
+      "question": "Is profiling just for memory leaks?",
+      "wrong": "Yes, it's only for memory issues.",
+      "right": "No, profiling covers CPU, memory, and more. It's key for finding all kinds of bottlenecks.",
+      "say": "Don't fall for this one—profiling isn't just about memory leaks. It helps you catch slow code, garbage collection hiccups, and other performance problems."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:17:59.856Z"
+}
