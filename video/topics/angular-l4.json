@@ -1,0 +1,72 @@
+{
+  "id": "angular-l4",
+  "title": "Angular Routing, Guards & Lazy Loading",
+  "keys": [
+    "Router",
+    "Guards",
+    "Lazy Loading",
+    "loadChildren"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-routing-guards-",
+      "type": "hook",
+      "kicker": "Angular · lesson",
+      "line1": "How does Angular load views securely?",
+      "line2": "What boosts speed?",
+      "say": "How does Angular keep your app fast and routes secure? Let’s break down routing, guards, and lazy loading."
+    },
+    {
+      "id": "1-chip-router",
+      "type": "chip",
+      "kicker": "Core",
+      "label": "Router",
+      "sub": "Navigates between views in your app.",
+      "say": "The Angular Router lets users jump between different screens or components in your app."
+    },
+    {
+      "id": "2-rows-guards",
+      "type": "rows",
+      "kicker": "Guards",
+      "rows": [
+        {
+          "a": "CanActivate",
+          "b": "Blocks access to routes"
+        },
+        {
+          "a": "CanLoad",
+          "b": "Prevents lazy module loading"
+        },
+        {
+          "a": "Use cases",
+          "b": "Auth, permissions, data checks"
+        }
+      ],
+      "walk": true,
+      "say": "Route guards like CanActivate and CanLoad protect routes. Use them for authentication, permissions, or data checks before showing a page."
+    },
+    {
+      "id": "3-code-lazy",
+      "type": "code",
+      "kicker": "Lazy Loading",
+      "lang": "js",
+      "code": "path: 'admin',\nloadChildren: () =>\n  import('./admin/admin.module')\n    .then(m => m.AdminModule),\ncanActivate: [AdminGuard]",
+      "say": "Lazy loading loads modules only when needed. This keeps your initial bundle small and speeds up load times."
+    },
+    {
+      "id": "4-trap-guards",
+      "type": "trap",
+      "question": "What does CanActivate guard do?",
+      "wrong": "Loads modules on demand",
+      "right": "Blocks or allows access to a route based on logic",
+      "say": "Watch out: CanActivate doesn’t load modules. It decides if a user can access a route."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:14:48.724Z"
+}
