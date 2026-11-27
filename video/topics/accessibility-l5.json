@@ -1,0 +1,77 @@
+{
+  "id": "accessibility-l5",
+  "title": "Automated Accessibility Tools & Limits",
+  "keys": [
+    "axe",
+    "Lighthouse",
+    "manual testing",
+    "ARIA labels",
+    "focus order"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-accessibility-t",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Can tools catch every accessibility bug?",
+      "line2": "What do they miss?",
+      "say": "Automated accessibility tools are fast, but can they spot every issue? Let's find out what they miss."
+    },
+    {
+      "id": "1-chip-axe-lighthouse",
+      "type": "chip",
+      "kicker": "Tool Spotlight",
+      "label": "axe",
+      "sub": "axe, Lighthouse, and WAVE scan for missing alt text or contrast problems.",
+      "say": "Tools like axe, Lighthouse, and WAVE quickly scan for missing alt text and contrast issues."
+    },
+    {
+      "id": "2-terminal-axe-demo",
+      "type": "terminal",
+      "kicker": "Quick Check",
+      "title": "axe output",
+      "lines": [
+        "$ npx axe",
+        "Missing ARIA label",
+        "Insufficient color contrast",
+        "No alt text on image"
+      ],
+      "say": "Running axe highlights missing ARIA labels, color contrast problems, and absent alt text."
+    },
+    {
+      "id": "3-compare-tool-vs-huma",
+      "type": "compare",
+      "kicker": "Limits",
+      "left": {
+        "title": "Automated Tools",
+        "items": [
+          "Find missing alt text",
+          "Flag low contrast"
+        ]
+      },
+      "right": {
+        "title": "Manual Checks",
+        "items": [
+          "Logical focus order",
+          "Descriptive labels"
+        ]
+      },
+      "say": "Automated tools catch surface issues, but only manual checks can judge focus order or label meaning."
+    },
+    {
+      "id": "4-trap-interview-mista",
+      "type": "trap",
+      "question": "Are automated tools enough for accessibility?",
+      "wrong": "Yes, they catch everything.",
+      "right": "No, manual testing is needed for usability and context.",
+      "say": "Interviewers want to hear that you supplement tools with manual and screen reader testing."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:49:43.762Z"
+}
