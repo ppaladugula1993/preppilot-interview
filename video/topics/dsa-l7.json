@@ -1,0 +1,76 @@
+{
+  "id": "dsa-l7",
+  "title": "Binary Search & Answer Search",
+  "keys": [
+    "binary search",
+    "optimization",
+    "O(log n)",
+    "boundaries"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bsearch",
+      "type": "hook",
+      "kicker": "Data Structures & Algorithms · lesson",
+      "line1": "Can you use binary search for more",
+      "line2": "than just finding numbers?",
+      "say": "Can you use binary search for more than just finding numbers? Let's find out."
+    },
+    {
+      "id": "1-chip-bsearch",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Binary",
+      "sub": "Search sorted data or boundaries in log n time.",
+      "say": "Binary search finds elements or boundaries in sorted data in O log n time."
+    },
+    {
+      "id": "2-rows-answersearch",
+      "type": "rows",
+      "kicker": "Answer Search Steps",
+      "rows": [
+        {
+          "a": "1",
+          "b": "Set left and right bounds"
+        },
+        {
+          "a": "2",
+          "b": "While left < right, get mid"
+        },
+        {
+          "a": "3",
+          "b": "Check if mid is feasible"
+        },
+        {
+          "a": "4",
+          "b": "Adjust bounds and repeat"
+        }
+      ],
+      "walk": true,
+      "say": "To search for an answer, set your bounds, check the middle value, and narrow the range until you find the minimum or maximum that works."
+    },
+    {
+      "id": "3-code-ship",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "left, right = max(weights), sum(weights)\nwhile left < right:\n    mid = (left + right) // 2\n    if can_ship(mid):\n        right = mid\n    else:\n        left = mid + 1",
+      "say": "For example, to find the minimum capacity to ship packages in D days, binary search the capacity and check feasibility with a helper function."
+    },
+    {
+      "id": "4-trap-distract",
+      "type": "trap",
+      "question": "Is binary search only for arrays?",
+      "wrong": "Yes, just for sorted arrays.",
+      "right": "No, use it for boundaries and optimization too.",
+      "say": "Don't fall for this trap: binary search isn't just for arrays. Use it to find boundaries or optimize answers in many problems."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:29:44.290Z"
+}
