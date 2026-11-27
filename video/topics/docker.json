@@ -1,0 +1,82 @@
+{
+  "id": "docker",
+  "title": "Docker: Image vs Container, Demystified",
+  "keys": [
+    "image",
+    "container",
+    "layer",
+    "writable",
+    "template"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-image-or-contai",
+      "type": "hook",
+      "kicker": "Docker · 45 seconds",
+      "line1": "Image or container?",
+      "line2": "Why does it matter?",
+      "say": "You keep hearing about Docker images and containers. But what's the difference, and why does it matter?"
+    },
+    {
+      "id": "1-chip-image",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Image",
+      "sub": "A read-only template, built in layers.",
+      "say": "A Docker image is a read-only template, built up in layers. Think of it like a golden master copy."
+    },
+    {
+      "id": "2-chip-container",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Container",
+      "sub": "A running instance with its own writable layer.",
+      "say": "A container is a running instance of an image. It gets its own thin writable layer on top, so it can change files as it runs."
+    },
+    {
+      "id": "3-code-run-container",
+      "type": "code",
+      "kicker": "Try It",
+      "lang": "bash",
+      "code": "docker run -it ubuntu bash\n# Now you're in a container\n",
+      "say": "When you run an image, Docker creates a container. Now you can write files, install packages, and run commands—just in your container."
+    },
+    {
+      "id": "4-compare-image-contai",
+      "type": "compare",
+      "kicker": "Quick Recap",
+      "left": {
+        "title": "Image",
+        "items": [
+          "Read-only",
+          "Reusable",
+          "Template"
+        ]
+      },
+      "right": {
+        "title": "Container",
+        "items": [
+          "Running",
+          "Writable layer",
+          "Ephemeral"
+        ]
+      },
+      "say": "Images are reusable, read-only templates. Containers are live, writable, and ephemeral—meaning they vanish when stopped unless you save data outside."
+    },
+    {
+      "id": "5-trap-image-edit",
+      "type": "trap",
+      "question": "Can you edit an image by running a container?",
+      "wrong": "Yes, just change files inside.",
+      "right": "No—changes stay in the container's writable layer. The image itself never changes.",
+      "say": "Interview trap: You can't edit an image by running a container. Changes only live in the container's writable layer, not the image."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T17:41:57.311Z"
+}
