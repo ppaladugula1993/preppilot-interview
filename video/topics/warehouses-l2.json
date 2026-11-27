@@ -1,0 +1,75 @@
+{
+  "id": "warehouses-l2",
+  "title": "Snowflake: Warehouses & Clustering",
+  "keys": [
+    "virtual warehouse",
+    "micro-partition",
+    "clustering",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-snowflake-f",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "Why is Snowflake so fast?",
+      "line2": "What’s the secret?",
+      "say": "Ever wonder why Snowflake queries are so quick? Let's break down the pieces that make it fly."
+    },
+    {
+      "id": "1-chip-virtual-warehou",
+      "type": "chip",
+      "kicker": "Compute",
+      "label": "Warehouse",
+      "sub": "Virtual warehouses are clusters you can scale or pause anytime.",
+      "say": "First up, virtual warehouses. They're clusters you can scale up or pause to control both speed and cost."
+    },
+    {
+      "id": "2-rows-micro-partition",
+      "type": "rows",
+      "kicker": "Storage",
+      "rows": [
+        {
+          "a": "Micro-partitions",
+          "b": "Tiny, immutable data chunks"
+        },
+        {
+          "a": "Efficient Access",
+          "b": "Fast reads, less storage"
+        },
+        {
+          "a": "Pruning",
+          "b": "Skips irrelevant data"
+        }
+      ],
+      "walk": true,
+      "say": "Next, Snowflake stores your data in micro-partitions. These are tiny, unchangeable chunks that make reads fast and storage efficient. Snowflake can skip scanning chunks you don't need."
+    },
+    {
+      "id": "3-terminal-clustering",
+      "type": "terminal",
+      "kicker": "Query Boost",
+      "title": "Clustering Example",
+      "lines": [
+        "$ ALTER TABLE sales",
+        "$ CLUSTER BY (customer_id);"
+      ],
+      "say": "Clustering lets you organize data by columns you filter on a lot. For example, clustering sales by customer ID speeds up those queries."
+    },
+    {
+      "id": "4-trap-cost-control",
+      "type": "trap",
+      "question": "How do you control Snowflake costs?",
+      "wrong": "Only by deleting data",
+      "right": "Resize or pause warehouses, and use clustering to scan less data.",
+      "say": "Here's a common interview trap. Cost control isn't just about deleting data. You can resize or pause warehouses, and use clustering to scan less data and save money."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:12:06.899Z"
+}
