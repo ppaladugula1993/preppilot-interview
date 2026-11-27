@@ -1,0 +1,72 @@
+{
+  "id": "concurrency-l1",
+  "title": "Race Conditions & Critical Sections",
+  "keys": [
+    "race condition",
+    "critical section",
+    "lock",
+    "atomic"
+  ],
+  "scenes": [
+    {
+      "id": "0-race-cond-hook",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "Can two threads break your code?",
+      "line2": "What's a race condition?",
+      "say": "Ever wonder how two threads can mess up your code? What exactly is a race condition?"
+    },
+    {
+      "id": "1-race-cond-chip",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Race",
+      "sub": "When timing of threads changes shared data outcome.",
+      "say": "A race condition happens when the timing of threads changes the outcome of shared data."
+    },
+    {
+      "id": "2-critical-section-row",
+      "type": "rows",
+      "kicker": "Critical Section Steps",
+      "rows": [
+        {
+          "a": "Identify",
+          "b": "Find code using shared resources"
+        },
+        {
+          "a": "Protect",
+          "b": "Use locks or atomic ops"
+        },
+        {
+          "a": "Verify",
+          "b": "Check for thread safety"
+        }
+      ],
+      "walk": true,
+      "say": "To avoid races, identify critical sections, protect them with locks or atomic operations, and always verify thread safety."
+    },
+    {
+      "id": "3-counter-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "counter = 0\nfor t in threads:\n    t.start()\n# Without lock:\n# counter += 1\n# Final value may be wrong",
+      "say": "If two threads increment a shared counter without a lock, the final value could be wrong."
+    },
+    {
+      "id": "4-race-trap",
+      "type": "trap",
+      "question": "How do you prevent race conditions?",
+      "wrong": "Just avoid using threads.",
+      "right": "Protect critical sections with locks or atomic operations.",
+      "say": "Interview trap: How do you prevent race conditions? Avoiding threads isn’t enough. Protect critical sections with locks or atomic operations."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:35:50.284Z"
+}
