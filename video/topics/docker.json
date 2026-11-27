@@ -1,78 +1,108 @@
 {
   "id": "docker",
-  "title": "Docker: Images vs Containers",
+  "title": "Docker: Image vs Container, Nailed",
   "keys": [
     "image",
     "container",
     "layer",
-    "writable",
-    "instance"
+    "run",
+    "template"
   ],
   "scenes": [
     {
-      "id": "0-hook-image-container",
+      "id": "0-hook-image-or-contai",
       "type": "hook",
       "kicker": "Docker · 45 seconds",
-      "line1": "What’s the real difference?",
-      "line2": "Image or container?",
-      "say": "Docker talks about images and containers, but what’s the key difference you need to know?"
+      "line1": "Image or container?",
+      "line2": "Why does it matter?",
+      "say": "Wait—what's the real difference between a Docker image and a container? This one sticks if you get the picture.",
+      "img": "A giant cargo ship at a busy port, with stacks of identical sealed shipping containers waiting to be loaded. Dock workers point at a blueprint, then at the containers.",
+      "emoji": "🚢",
+      "image": "docker-0-hook-image-or-contai.jpg"
     },
     {
-      "id": "1-picture-cargo-metaph",
+      "id": "1-picture-blueprint-vs",
       "type": "picture",
       "kicker": "Metaphor · Shipping",
-      "prompt": "A cargo ship stacked with identical sealed containers, dock workers unloading containers onto the port, each container being opened and used. Sunny port, cranes, busy workers.",
+      "prompt": "A dock worker holds up a detailed blueprint (image) next to a physical shipping container (container) being loaded onto the ship. The blueprint is crisp and clean; the container is scuffed and has stickers from travel.",
       "map": [
         {
-          "thing": "sealed container",
-          "means": "Docker image"
+          "thing": "blueprint",
+          "means": "image template"
         },
         {
-          "thing": "opened container",
-          "means": "Running container"
+          "thing": "container",
+          "means": "running instance"
         }
       ],
-      "say": "Think of a cargo ship: images are sealed containers, ready to ship. Running containers are those opened and used on the dock.",
-      "image": "docker-1-picture-cargo-metaph.jpg"
+      "say": "Think of an image as the blueprint, and a container as the actual box shipped out. One blueprint, many boxes.",
+      "img": "A dock worker holds a crisp blueprint next to a scuffed shipping container being loaded onto a ship. Stickers and dents show the container's unique journey.",
+      "emoji": "📦",
+      "image": "docker-1-picture-blueprint-vs.jpg"
     },
     {
-      "id": "2-chip-image",
+      "id": "2-chip-image-layers",
       "type": "chip",
-      "kicker": "Step 1 · Template",
+      "kicker": "Layers",
       "label": "Image",
-      "sub": "A read-only template built in layers.",
-      "say": "An image is a read-only template, built in layers. It’s not running yet."
+      "sub": "A read-only template, built in layers.",
+      "say": "An image is read-only. It's built in layers, like stacking blueprints for each step.",
+      "img": "Dock workers stacking transparent blueprints on a table, each layer adding details to the final design.",
+      "emoji": "🧱"
     },
     {
-      "id": "3-chip-container",
+      "id": "3-chip-container-run",
       "type": "chip",
-      "kicker": "Step 2 · Instance",
+      "kicker": "Instance",
       "label": "Container",
-      "sub": "A running instance with its own writable layer.",
-      "say": "A container is a running instance of that image, with its own thin writable layer on top."
+      "sub": "A running copy with its own changes.",
+      "say": "A container is a running copy. It gets its own writable layer—stickers, dents, whatever happens on the trip.",
+      "img": "A shipping container with new stickers and dents being rolled onto the ship, dock workers waving it off.",
+      "emoji": "🚚",
+      "image": "docker-3-chip-container-run.jpg"
     },
     {
-      "id": "4-code-docker-run",
-      "type": "code",
-      "kicker": "Step 3 · Launch",
-      "lang": "bash",
-      "code": "$ docker run nginx\n# Starts a container from the image",
-      "say": "When you run an image, Docker creates a container. One image can run many containers."
+      "id": "4-rows-many-from-one",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Build image",
+          "b": "Stack up the blueprints"
+        },
+        {
+          "a": "Run container",
+          "b": "Create a real box"
+        },
+        {
+          "a": "Make changes",
+          "b": "Write on the box, not the plan"
+        }
+      ],
+      "walk": true,
+      "say": "Build an image, run as many containers as you want. Each can scribble on its own box, but the blueprint stays clean.",
+      "img": "Dock workers assembling boxes from blueprints, each box getting unique marks as it's loaded onto the ship.",
+      "emoji": "✏️"
     },
     {
       "id": "5-trap-image-vs-contai",
       "type": "trap",
-      "question": "Is an image a running container?",
-      "wrong": "Yes, they’re the same.",
-      "right": "No. An image is the template; a container is the running instance with its own writable layer.",
-      "say": "Don’t confuse the two. An image is just the template. A container is the running instance, with its own writable layer."
+      "question": "Is an image a running app?",
+      "wrong": "Yes, it's the running thing.",
+      "right": "Nope! It's just the template. The container is the running app.",
+      "say": "Interview trap: Is an image a running app? Nope! It's just the template. The container is the running app.",
+      "img": "A confused dock worker tries to drive a blueprint, while another drives an actual container onto the ship.",
+      "emoji": "❌",
+      "image": "docker-5-trap-image-vs-contai.jpg"
     },
     {
-      "id": "6-end-preppilot",
+      "id": "6-end",
       "type": "end",
-      "say": "Get interview ready with PrepPilot."
+      "say": "Get interview ready with PrepPilot.",
+      "img": "A proud dock worker gives a thumbs-up in front of a ship loaded with containers, blueprints tucked under their arm.",
+      "emoji": "🎯"
     }
   ],
   "voice": "en-US-AndrewMultilingualNeural",
-  "rendered": "2026-11-27T18:32:01.036Z"
+  "rendered": "2026-11-27T18:52:51.381Z"
 }
