@@ -1,0 +1,72 @@
+{
+  "id": "sql-advanced-l0",
+  "title": "Mastering SQL Window Functions",
+  "keys": [
+    "window function",
+    "OVER",
+    "PARTITION BY",
+    "running total"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-window",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "Why use window functions?",
+      "line2": "How are they different?",
+      "say": "Ever wondered how to calculate running totals or rankings in SQL without losing row details? Let's break down window functions."
+    },
+    {
+      "id": "1-chip-over",
+      "type": "chip",
+      "kicker": "Window Function",
+      "label": "OVER",
+      "sub": "Calculates across related rows, keeps all rows.",
+      "say": "Window functions use the OVER clause to calculate across sets of rows related to the current row, but keep every row in the result."
+    },
+    {
+      "id": "2-rows-partition",
+      "type": "rows",
+      "kicker": "PARTITION BY",
+      "rows": [
+        {
+          "a": "user_id",
+          "b": "Groups by each user"
+        },
+        {
+          "a": "order_date",
+          "b": "Orders rows within group"
+        },
+        {
+          "a": "ROWS BETWEEN",
+          "b": "Limits the window frame"
+        }
+      ],
+      "walk": true,
+      "say": "You can use PARTITION BY to group, ORDER BY to sort, and ROWS BETWEEN to frame your calculations."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Running Total",
+      "lang": "sql",
+      "code": "SELECT user_id, order_date,\nSUM(amount) OVER (\n  PARTITION BY user_id\n  ORDER BY order_date\n) AS running_total\nFROM orders;",
+      "say": "Here's a real example. This query calculates a running total of amounts per user, ordered by date, and keeps every row."
+    },
+    {
+      "id": "4-trap-collapse",
+      "type": "trap",
+      "question": "Does a window function collapse rows?",
+      "wrong": "Yes, like SUM() does.",
+      "right": "No, it keeps all rows and adds a computed column.",
+      "say": "Interviewers love to ask: Does a window function collapse rows like a regular aggregate? The answer is no—it keeps all rows and adds a new column."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:43:23.024Z"
+}
