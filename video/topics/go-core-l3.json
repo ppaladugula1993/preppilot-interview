@@ -1,0 +1,60 @@
+{
+  "id": "go-core-l3",
+  "title": "Go Maps: Key Facts for Interviews",
+  "keys": [
+    "map",
+    "reference type",
+    "zero value",
+    "nil",
+    "concurrency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-maps",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "How do Go maps really work?",
+      "line2": "What catches devs off guard?",
+      "say": "How do Go maps really work? And what catches developers off guard in interviews?"
+    },
+    {
+      "id": "1-chip-reference",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Reference",
+      "sub": "Maps are reference types for key-value pairs.",
+      "say": "Maps in Go are reference types. They store key-value pairs, and the map itself is a reference, not a copy."
+    },
+    {
+      "id": "2-code-init-access",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "m := map[string]int{}\nm[\"foo\"] = 42\nv, ok := m[\"bar\"]",
+      "say": "Always initialize a map before use. If you access a missing key, Go returns the zero value for the type, and a boolean shows if the key existed."
+    },
+    {
+      "id": "3-chip-nil",
+      "type": "chip",
+      "kicker": "Warning",
+      "label": "Nil",
+      "sub": "A nil map can't be written to—only read.",
+      "say": "A nil map can't be written to. You can read from it, but any write will panic."
+    },
+    {
+      "id": "4-trap-concurrency",
+      "type": "trap",
+      "question": "Are Go maps safe for concurrent writes?",
+      "wrong": "Yes, Go handles it for you.",
+      "right": "No. Concurrent writes cause a runtime panic.",
+      "say": "Are Go maps safe for concurrent writes? No—they are not. Concurrent writes will cause a runtime panic."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:35:22.717Z"
+}
