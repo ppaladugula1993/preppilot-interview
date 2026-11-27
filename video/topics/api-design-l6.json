@@ -1,0 +1,76 @@
+{
+  "id": "api-design-l6",
+  "title": "API Reliability: Idempotency & Limits",
+  "keys": [
+    "idempotency",
+    "retries",
+    "rate limits",
+    "POST"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-retry-safety",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "How can APIs avoid duplicate POSTs?",
+      "line2": "What keeps things reliable?",
+      "say": "Ever wondered how APIs avoid creating duplicate payments when clients retry requests? Let’s break down the key features that keep things reliable."
+    },
+    {
+      "id": "1-chip-idempotency",
+      "type": "chip",
+      "kicker": "Key Feature",
+      "label": "Idempotency",
+      "sub": "Unique keys let servers ignore repeated POSTs.",
+      "say": "Idempotency keys are unique values sent with POST requests. They let servers recognize and ignore duplicates, so only one payment gets created even if you retry."
+    },
+    {
+      "id": "2-terminal-retry-rate-",
+      "type": "terminal",
+      "kicker": "API Response",
+      "title": "Retries & Rate Limits",
+      "lines": [
+        "$ POST /payments",
+        "$ Idempotency-Key: abc123",
+        "$ 429 Too Many Requests"
+      ],
+      "say": "When clients retry, APIs should handle it gracefully. Rate limits protect resources, and a status code like four two nine warns clients when they’ve gone over the limit."
+    },
+    {
+      "id": "3-rows-best-practices",
+      "type": "rows",
+      "kicker": "Best Practices",
+      "rows": [
+        {
+          "a": "Use keys",
+          "b": "Prevent duplicate POSTs"
+        },
+        {
+          "a": "Handle retries",
+          "b": "Respond safely to repeats"
+        },
+        {
+          "a": "Enforce limits",
+          "b": "Protect against abuse"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how I design APIs: I use idempotency keys to prevent duplicates, handle retries safely, and always enforce rate limits to protect against abuse."
+    },
+    {
+      "id": "4-trap-missing-keys",
+      "type": "trap",
+      "question": "What happens if you skip idempotency?",
+      "wrong": "Clients can retry safely anyway.",
+      "right": "Skipping keys risks duplicate resources on retries.",
+      "say": "Interview trap: If you skip idempotency keys, clients can accidentally create duplicate resources when they retry. Always include them for non-idempotent operations."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:44:58.788Z"
+}
