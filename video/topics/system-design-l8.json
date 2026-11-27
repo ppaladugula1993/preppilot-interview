@@ -1,0 +1,77 @@
+{
+  "id": "system-design-l8",
+  "title": "Observability & Failure Modes in System Design",
+  "keys": [
+    "observability",
+    "logging",
+    "circuit breaker",
+    "graceful degradation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-observability",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "How do you spot failures fast?",
+      "line2": "What keeps systems reliable?",
+      "say": "Ever wonder how big systems catch failures before users notice? Let's break down observability and failure modes."
+    },
+    {
+      "id": "1-chip-observability",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Logging",
+      "sub": "Logs, metrics, and tracing help you monitor system health and spot issues.",
+      "say": "Observability means using logs, metrics, and traces to track how your system is doing. It's how you catch problems early."
+    },
+    {
+      "id": "2-rows-failure-modes",
+      "type": "rows",
+      "kicker": "Failure Modes",
+      "rows": [
+        {
+          "a": "Timeouts",
+          "b": "Stop requests from hanging forever"
+        },
+        {
+          "a": "Circuit Breakers",
+          "b": "Block requests after repeated failures"
+        },
+        {
+          "a": "Graceful Degradation",
+          "b": "Serve partial features if dependencies fail"
+        }
+      ],
+      "walk": true,
+      "say": "To handle failures, use timeouts to avoid stuck requests, circuit breakers to prevent overload, and graceful degradation to keep some features working even when parts break."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "API fallback when DB fails",
+      "lines": [
+        "$ DB down",
+        "$ API returns cached data",
+        "$ Warning: Data may be stale",
+        "$ Circuit breaker opens after 5 fails"
+      ],
+      "say": "If your database goes down, your API can return cached data with a warning. After several failures, a circuit breaker stops more requests to let things recover."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s a common interview mistake here?",
+      "wrong": "Just add logs and move on.",
+      "right": "Logs alone aren’t enough. You need metrics, tracing, and failure handling patterns like circuit breakers and timeouts to build a reliable system.",
+      "say": "A lot of candidates just mention logging. But interviewers want to hear about metrics, tracing, and patterns like circuit breakers and timeouts."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:22:20.024Z"
+}
