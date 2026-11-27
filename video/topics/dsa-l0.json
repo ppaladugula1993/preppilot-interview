@@ -1,0 +1,77 @@
+{
+  "id": "dsa-l0",
+  "title": "Big-O Notation & Complexity Basics",
+  "keys": [
+    "Big-O",
+    "complexity",
+    "amortized",
+    "efficiency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-big-o",
+      "type": "hook",
+      "kicker": "Data Structures & Algorithms · lesson",
+      "line1": "How fast is your code, really?",
+      "line2": "Can you prove it?",
+      "say": "How fast is your code, really? Can you prove it in an interview?"
+    },
+    {
+      "id": "1-chip-big-o",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Big-O",
+      "sub": "Describes the upper bound of time or space as input grows.",
+      "say": "Big O describes the upper bound of your algorithm's time or space as the input grows."
+    },
+    {
+      "id": "2-rows-complexity",
+      "type": "rows",
+      "kicker": "Interview Musts",
+      "rows": [
+        {
+          "a": "State time complexity",
+          "b": "How long does it take?"
+        },
+        {
+          "a": "State space complexity",
+          "b": "How much memory is used?"
+        },
+        {
+          "a": "Say worst, average, or amortized",
+          "b": "Be specific!"
+        }
+      ],
+      "walk": true,
+      "say": "In interviews, always state both time and space complexity. Say if it's worst case, average, or amortized."
+    },
+    {
+      "id": "3-terminal-list-append",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Python List Append",
+      "lines": [
+        "$ my_list = []",
+        "$ my_list.append(5)",
+        "$ my_list.append(7)",
+        "$ # O(1) most times, O(n) when resizing"
+      ],
+      "say": "For example, appending to a Python list is usually constant time, but resizing can make it linear in rare cases. That's why we call it amortized constant time."
+    },
+    {
+      "id": "4-trap-big-o-wrong",
+      "type": "trap",
+      "question": "What does Big-O actually describe?",
+      "wrong": "The exact running time.",
+      "right": "Big O shows how time or space grows as input gets larger.",
+      "say": "Here's a trap: Big O does not give the exact running time. It shows how time or space grows as input gets larger."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:25:45.154Z"
+}
