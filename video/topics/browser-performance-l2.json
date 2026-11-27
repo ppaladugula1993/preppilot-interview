@@ -1,0 +1,91 @@
+{
+  "id": "browser-performance-l2",
+  "title": "Core Web Vitals for Frontend Engineers",
+  "keys": [
+    "LCP",
+    "INP",
+    "CLS",
+    "Web Vitals"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-core-web-vitals",
+      "type": "hook",
+      "kicker": "Browser & Web Performance · lesson",
+      "line1": "What are Core Web Vitals?",
+      "line2": "Why do they matter?",
+      "say": "Core Web Vitals are key metrics for web performance. But why are they so important for frontend engineers?"
+    },
+    {
+      "id": "1-chip-lcp",
+      "type": "chip",
+      "kicker": "Metric",
+      "label": "LCP",
+      "sub": "Largest Contentful Paint: measures loading speed.",
+      "say": "LCP stands for Largest Contentful Paint. It tracks how quickly the main content loads."
+    },
+    {
+      "id": "2-chip-inp",
+      "type": "chip",
+      "kicker": "Metric",
+      "label": "INP",
+      "sub": "Interaction to Next Paint: measures input delay.",
+      "say": "INP means Interaction to Next Paint. It measures how fast the page responds to user input."
+    },
+    {
+      "id": "3-chip-cls",
+      "type": "chip",
+      "kicker": "Metric",
+      "label": "CLS",
+      "sub": "Cumulative Layout Shift: measures visual stability.",
+      "say": "CLS is Cumulative Layout Shift. It checks if elements move unexpectedly while loading."
+    },
+    {
+      "id": "4-rows-good-scores",
+      "type": "rows",
+      "kicker": "Good Scores",
+      "rows": [
+        {
+          "a": "LCP",
+          "b": "< 2.5 seconds"
+        },
+        {
+          "a": "INP",
+          "b": "< 200 milliseconds"
+        },
+        {
+          "a": "CLS",
+          "b": "< 0.1"
+        }
+      ],
+      "walk": true,
+      "say": "For a great user experience, aim for LCP under two point five seconds, INP under two hundred milliseconds, and CLS below zero point one."
+    },
+    {
+      "id": "5-terminal-monitoring",
+      "type": "terminal",
+      "kicker": "Tools",
+      "title": "Monitor Core Web Vitals",
+      "lines": [
+        "$ lighthouse",
+        "$ npm install web-vitals"
+      ],
+      "say": "Use tools like Lighthouse or the Web Vitals library to monitor and improve your scores."
+    },
+    {
+      "id": "6-trap-interview",
+      "type": "trap",
+      "question": "What does CLS measure?",
+      "wrong": "Loading speed",
+      "right": "Visual stability—if elements shift during load",
+      "say": "In interviews, don’t confuse CLS with loading speed. It measures visual stability, not how fast content loads."
+    },
+    {
+      "id": "7-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:36:36.901Z"
+}
