@@ -1,0 +1,72 @@
+{
+  "id": "angular-l0",
+  "title": "Angular Components & Data Binding",
+  "keys": [
+    "component",
+    "binding",
+    "property",
+    "event"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-components-bind",
+      "type": "hook",
+      "kicker": "Angular · lesson",
+      "line1": "How does Angular connect data and UI?",
+      "line2": "Why do interviewers care?",
+      "say": "Ever wonder how Angular links your data to the interface—and why interviewers always ask about it?"
+    },
+    {
+      "id": "1-chip-component",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Component",
+      "sub": "UI building block with class, template, and style",
+      "say": "First up, components. They're the building blocks of every Angular app, each defined by a class, a template, and optional styles."
+    },
+    {
+      "id": "2-rows-bindings",
+      "type": "rows",
+      "kicker": "Data Binding Types",
+      "rows": [
+        {
+          "a": "Property",
+          "b": "Sends data to the view"
+        },
+        {
+          "a": "Event",
+          "b": "Handles user actions"
+        },
+        {
+          "a": "Two-way",
+          "b": "Keeps data and UI in sync"
+        }
+      ],
+      "walk": true,
+      "say": "Data binding comes in three flavors: property binding sends data from your logic to the view, event binding handles user actions, and two-way binding keeps everything in sync."
+    },
+    {
+      "id": "3-code-binding-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "html",
+      "code": "<app-user [user]=\"selectedUser\"\n          (save)=\"onSave($event)\">\n</app-user>",
+      "say": "Here's a real example. We pass a user into a component with property binding, and listen for a save event with event binding."
+    },
+    {
+      "id": "4-trap-binding-directi",
+      "type": "trap",
+      "question": "Does event binding send data to the view?",
+      "wrong": "Yes, it updates the view.",
+      "right": "No, event binding sends data from the view to your logic—property binding updates the view.",
+      "say": "Quick check: does event binding send data to the view? Actually, it works the other way—event binding sends data from the view to your logic."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:27:14.787Z"
+}
