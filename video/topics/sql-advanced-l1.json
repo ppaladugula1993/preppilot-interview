@@ -1,0 +1,71 @@
+{
+  "id": "sql-advanced-l1",
+  "title": "Mastering LAG & LEAD in SQL",
+  "keys": [
+    "LAG",
+    "LEAD",
+    "window function",
+    "comparison"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lag-lead",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you compare rows in SQL?",
+      "line2": "What if you need yesterday’s value?",
+      "say": "Ever needed to compare today’s data with yesterday’s in SQL? Let’s see how to do that efficiently."
+    },
+    {
+      "id": "1-chip-window-func",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Window",
+      "sub": "Window functions let you look across rows without collapsing them.",
+      "say": "Window functions let you look across rows without losing any data. That’s perfect for running comparisons."
+    },
+    {
+      "id": "2-compare-lag-lead",
+      "type": "compare",
+      "kicker": "LAG vs LEAD",
+      "left": {
+        "title": "LAG",
+        "items": [
+          "Access previous row",
+          "Great for day-over-day"
+        ]
+      },
+      "right": {
+        "title": "LEAD",
+        "items": [
+          "Access next row",
+          "Useful for forecasting"
+        ]
+      },
+      "say": "LAG grabs the previous row. LEAD grabs the next one. Both help you compare values across time or sequence."
+    },
+    {
+      "id": "3-code-lag-example",
+      "type": "code",
+      "kicker": "Sample Query",
+      "lang": "sql",
+      "code": "SELECT date, sales,\nLAG(sales, 1)\nOVER (ORDER BY date) AS prev_sales\nFROM daily_sales;",
+      "say": "Here’s how I pull yesterday’s sales alongside today’s. It’s simple and keeps all the rows."
+    },
+    {
+      "id": "4-trap-lag-lead",
+      "type": "trap",
+      "question": "What does LAG do in SQL?",
+      "wrong": "It aggregates all rows.",
+      "right": "It fetches data from an earlier row for comparison.",
+      "say": "Don’t confuse LAG with an aggregate. It fetches data from an earlier row, not collapsing anything."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:37:59.484Z"
+}
