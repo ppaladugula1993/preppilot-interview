@@ -1,0 +1,95 @@
+{
+  "id": "data-modeling",
+  "title": "OLTP vs OLAP: Why Data Models Matter",
+  "keys": [
+    "OLTP",
+    "OLAP",
+    "dimensional",
+    "facts",
+    "dimensions"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-oltp-olap",
+      "type": "hook",
+      "kicker": "Data Modeling · 45 seconds",
+      "line1": "Why do OLTP and OLAP need",
+      "line2": "different data models?",
+      "say": "Ever wonder why databases for transactions and analytics look so different? Let’s break down why the data model matters."
+    },
+    {
+      "id": "1-chip-oltp",
+      "type": "chip",
+      "kicker": "OLTP",
+      "label": "OLTP",
+      "sub": "Handles fast inserts, updates, and deletes",
+      "say": "OLTP systems are built for speed and reliability. Think banking apps—lots of quick updates, and data must stay consistent."
+    },
+    {
+      "id": "2-chip-olap",
+      "type": "chip",
+      "kicker": "OLAP",
+      "label": "OLAP",
+      "sub": "Optimized for big queries and reporting",
+      "say": "OLAP systems, on the other hand, are all about crunching huge datasets for analysis and reporting. They’re built for complex questions, not quick edits."
+    },
+    {
+      "id": "3-compare-models",
+      "type": "compare",
+      "kicker": "Modeling",
+      "left": {
+        "title": "OLTP",
+        "items": [
+          "Normalized tables",
+          "Data integrity",
+          "Minimal redundancy"
+        ]
+      },
+      "right": {
+        "title": "OLAP",
+        "items": [
+          "Dimensional model",
+          "Facts & dimensions",
+          "Denormalized for speed"
+        ]
+      },
+      "say": "OLTP uses normalized tables to reduce redundancy and keep data clean. OLAP uses dimensional models—facts and dimensions—often denormalized for fast queries."
+    },
+    {
+      "id": "4-rows-fact-dim",
+      "type": "rows",
+      "kicker": "Key Concepts",
+      "rows": [
+        {
+          "a": "Fact",
+          "b": "Measurable event, like a sale"
+        },
+        {
+          "a": "Dimension",
+          "b": "Context, like date or product"
+        },
+        {
+          "a": "Grain",
+          "b": "Level of detail in facts"
+        }
+      ],
+      "walk": true,
+      "say": "In OLAP, facts are the numbers you measure, dimensions are the details you slice by, and grain is the level of detail for each record."
+    },
+    {
+      "id": "5-trap-schema",
+      "type": "trap",
+      "question": "Should OLAP always be normalized?",
+      "wrong": "Yes, normalization is always best.",
+      "right": "No—OLAP denormalizes for performance. Normalization is key for OLTP.",
+      "say": "Don’t fall for this: OLAP systems usually denormalize to make queries faster. Normalization is great for OLTP, but not for analytics."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:15:05.171Z"
+}
