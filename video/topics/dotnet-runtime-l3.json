@@ -1,0 +1,82 @@
+{
+  "id": "dotnet-runtime-l3",
+  "title": "Server vs Workstation GC in .NET",
+  "keys": [
+    "Server GC",
+    "Workstation GC",
+    "throughput",
+    "responsiveness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-gc-choice",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Which GC mode boosts your app?",
+      "line2": "Server or Workstation?",
+      "say": "Do you know which garbage collector mode makes your app faster—server or workstation?"
+    },
+    {
+      "id": "1-compare-gc-modes",
+      "type": "compare",
+      "kicker": "GC Modes Compared",
+      "left": {
+        "title": "Server GC",
+        "items": [
+          "Parallel collection",
+          "Uses many threads",
+          "Great for multi-core servers"
+        ]
+      },
+      "right": {
+        "title": "Workstation GC",
+        "items": [
+          "Fewer threads",
+          "Optimized for quick response",
+          "Best for desktops"
+        ]
+      },
+      "say": "Server garbage collection runs in parallel using lots of threads, perfect for multi-core servers. Workstation garbage collection uses fewer threads, making desktop apps feel snappy."
+    },
+    {
+      "id": "2-chip-why-matters",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Impact",
+      "sub": "GC mode affects scalability and latency.",
+      "say": "Picking the right mode changes how your app scales and how quickly it responds."
+    },
+    {
+      "id": "3-rows-examples",
+      "type": "rows",
+      "kicker": "Real-World Defaults",
+      "rows": [
+        {
+          "a": "ASP.NET Core app",
+          "b": "Defaults to server GC"
+        },
+        {
+          "a": "WPF desktop app",
+          "b": "Uses workstation GC"
+        }
+      ],
+      "walk": false,
+      "say": "For example, web apps like ASP Net Core use server garbage collection by default. Desktop apps like WPF stick with workstation."
+    },
+    {
+      "id": "4-trap-gc-choice",
+      "type": "trap",
+      "question": "Which GC for a web server?",
+      "wrong": "Workstation GC for more responsiveness",
+      "right": "Server GC for parallel, high-throughput workloads",
+      "say": "Interview trap: Which garbage collector do you pick for a web server? It's server garbage collection, since web servers need parallel, high-throughput processing."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:43:58.312Z"
+}
