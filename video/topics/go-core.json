@@ -1,0 +1,73 @@
+{
+  "id": "go-core",
+  "title": "The #1 Go Interview Insight: Interfaces",
+  "keys": [
+    "interface",
+    "implicit",
+    "method",
+    "struct",
+    "implementation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-interfaces",
+      "type": "hook",
+      "kicker": "Core Go · 45 seconds",
+      "line1": "How do Go interfaces work?",
+      "line2": "No explicit keyword?",
+      "say": "Ever wonder how Go interfaces just work—without any explicit implements keyword?"
+    },
+    {
+      "id": "1-chip-interface",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Interface",
+      "sub": "Any type that implements the methods is an interface—no declaration needed.",
+      "say": "In Go, if a type has all the methods an interface requires, it satisfies that interface automatically."
+    },
+    {
+      "id": "2-code-implicit",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "type Reader interface {\n  Read([]byte) int\n}\n\ntype File struct{}\nfunc (f File) Read(b []byte) int { return 0 }",
+      "say": "Here, File defines a Read method. That means File implicitly satisfies the Reader interface—no extra code needed."
+    },
+    {
+      "id": "3-rows-benefits",
+      "type": "rows",
+      "kicker": "Why It Matters",
+      "rows": [
+        {
+          "a": "Flexible",
+          "b": "No rigid type hierarchies"
+        },
+        {
+          "a": "Decoupled",
+          "b": "Swap implementations easily"
+        },
+        {
+          "a": "Simple",
+          "b": "Just match method sets"
+        }
+      ],
+      "walk": false,
+      "say": "This makes your code flexible, decoupled, and simple. You can swap implementations without changing interface code."
+    },
+    {
+      "id": "4-trap-explicit",
+      "type": "trap",
+      "question": "How do you declare a type implements an interface?",
+      "wrong": "With an explicit implements keyword",
+      "right": "Just by matching the interface's methods—no keyword needed.",
+      "say": "Don't fall for this: Go doesn't need an explicit implements keyword. Just match the interface's methods and you're done."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:52:54.837Z"
+}
