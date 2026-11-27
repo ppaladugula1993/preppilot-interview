@@ -1,0 +1,77 @@
+{
+  "id": "dotnet-runtime-l5",
+  "title": "Diagnosing Thread Pool Starvation in .NET",
+  "keys": [
+    "thread pool",
+    "starvation",
+    "async",
+    "metrics",
+    "diagnosis"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-starvation",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Ever seen your app slow to a crawl?",
+      "line2": "What's thread pool starvation?",
+      "say": "Ever noticed your app slowing way down under load? What causes thread pool starvation, and how can you spot it?"
+    },
+    {
+      "id": "1-chip-threadpool",
+      "type": "chip",
+      "kicker": "Core Fact",
+      "label": "Starvation",
+      "sub": "All threads are busy, tasks get delayed.",
+      "say": "Thread pool starvation means every thread is busy, so new tasks have to wait. This tanks performance fast."
+    },
+    {
+      "id": "2-rows-diagnosis",
+      "type": "rows",
+      "kicker": "Diagnosis Steps",
+      "rows": [
+        {
+          "a": "Monitor metrics",
+          "b": "Check thread pool usage live"
+        },
+        {
+          "a": "Spot blocking",
+          "b": "Find synchronous or blocking calls"
+        },
+        {
+          "a": "Analyze patterns",
+          "b": "Look for recurring delays"
+        }
+      ],
+      "walk": true,
+      "say": "To diagnose, first monitor thread pool metrics. Next, hunt for blocking or synchronous calls. Finally, analyze patterns to see if delays repeat."
+    },
+    {
+      "id": "3-terminal-getthreads",
+      "type": "terminal",
+      "kicker": "Quick Check",
+      "title": "Available Thread Pool Threads",
+      "lines": [
+        "$ ThreadPool.GetAvailableThreads(out worker, out io)",
+        "Worker threads: 5",
+        "IO threads: 10"
+      ],
+      "say": "You can check how many threads are available using a built-in method. Low numbers mean your pool is close to starvation."
+    },
+    {
+      "id": "4-trap-blocking",
+      "type": "trap",
+      "question": "How should you handle blocking calls?",
+      "wrong": "Just increase thread pool size.",
+      "right": "Refactor to async. Avoid blocking in thread pool tasks.",
+      "say": "If you see blocking calls, don't just bump up the thread pool size. Refactor to use async patterns and keep threads free."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:48:30.078Z"
+}
