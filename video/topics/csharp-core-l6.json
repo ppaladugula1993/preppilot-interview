@@ -1,0 +1,71 @@
+{
+  "id": "csharp-core-l6",
+  "title": "Exceptions & IDisposable in C#",
+  "keys": [
+    "exceptions",
+    "IDisposable",
+    "using",
+    "resource leaks"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-exceptions-disp",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "How does C# prevent resource leaks?",
+      "line2": "What happens if errors occur?",
+      "say": "Ever wondered how C Sharp keeps your resources safe, even when errors pop up?"
+    },
+    {
+      "id": "1-chip-exceptions",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Exceptions",
+      "sub": "Exceptions handle errors and keep code robust.",
+      "say": "Exceptions help you deal with errors and keep your code running smoothly."
+    },
+    {
+      "id": "2-compare-using-dispos",
+      "type": "compare",
+      "kicker": "Resource Management",
+      "left": {
+        "title": "using statement",
+        "items": [
+          "auto-disposes",
+          "works with IDisposable"
+        ]
+      },
+      "right": {
+        "title": "manual dispose",
+        "items": [
+          "must call Dispose",
+          "risk of leaks"
+        ]
+      },
+      "say": "Using statements automatically clean up resources. Manual disposal means you have to remember to call Dispose, or you risk leaks."
+    },
+    {
+      "id": "3-code-using-declarati",
+      "type": "code",
+      "kicker": "Modern C#",
+      "lang": "csharp",
+      "code": "using var stream = new FileStream(\n  \"file.txt\", FileMode.Open);\ntry {\n  // use stream\n} catch (IOException ex) {\n  // handle error\n}",
+      "say": "With modern C Sharp, using declarations make your code cleaner and ensure files or streams are released, even if an error happens."
+    },
+    {
+      "id": "4-trap-interview-mista",
+      "type": "trap",
+      "question": "What happens if you forget Dispose?",
+      "wrong": "The object is cleaned up automatically.",
+      "right": "You risk memory leaks or locked resources.",
+      "say": "If you skip Dispose, you could leave memory or files hanging around, which can cause real headaches."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:23:37.940Z"
+}
