@@ -1,0 +1,72 @@
+{
+  "id": "concurrency-l5",
+  "title": "Thread Pools, Executors & Work Queues",
+  "keys": [
+    "thread pool",
+    "executor",
+    "work queue",
+    "resource management"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-thread-pool",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "How do systems run lots of tasks fast?",
+      "line2": "What's the secret?",
+      "say": "Ever wonder how servers handle tons of tasks at once without slowing down? What's the trick behind their speed?"
+    },
+    {
+      "id": "1-chip-thread-pool",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "ThreadPool",
+      "sub": "Manages reusable threads for efficient task execution.",
+      "say": "A thread pool keeps a bunch of threads ready to work, so you don’t waste time creating new ones for every single task."
+    },
+    {
+      "id": "2-rows-executor-work-q",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Executor",
+          "b": "Handles thread management for you"
+        },
+        {
+          "a": "Work Queue",
+          "b": "Stores tasks waiting for threads"
+        },
+        {
+          "a": "Worker Thread",
+          "b": "Processes tasks from the queue"
+        }
+      ],
+      "walk": true,
+      "say": "Executors handle the thread setup. Tasks go into a work queue, and worker threads pull jobs from there to run. It’s all automated."
+    },
+    {
+      "id": "3-code-python-threadpo",
+      "type": "code",
+      "kicker": "Python Example",
+      "lang": "python",
+      "code": "from concurrent.futures import ThreadPoolExecutor\nwith ThreadPoolExecutor(max_workers=4) as executor:\n    executor.submit(my_task)\n",
+      "say": "In Python, you can use a thread pool executor to run tasks. This lets you control how many threads are working at once."
+    },
+    {
+      "id": "4-trap-thread-pool-ove",
+      "type": "trap",
+      "question": "Why not create a new thread for each task?",
+      "wrong": "Threads are cheap, so it's fine.",
+      "right": "Creating threads is expensive. Pools reuse threads, saving resources and boosting performance.",
+      "say": "Interviewers love to ask why you shouldn’t just make a new thread for every job. Remember, thread pools avoid the overhead and keep things efficient."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:09:16.368Z"
+}
