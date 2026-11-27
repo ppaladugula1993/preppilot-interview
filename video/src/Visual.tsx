@@ -41,48 +41,49 @@ export const Visual: React.FC<{ v: VSpec; dur: number }> = ({ v, dur }) => {
     case 'flow': {
       const vertical = n > 3;
       return <div style={{ ...box, flexDirection: vertical ? 'column' : 'row', gap: vertical ? 10 : 18 }}>
-        {items.map((it, i) => <React.Fragment key={i}>{i ? <Arrow delay={i * 12 - 4} vertical={vertical} /> : null}<Node it={it} size={vertical ? 120 : 190} delay={i * 12} on={i === active} /></React.Fragment>)}
+        {items.map((it, i) => <React.Fragment key={i}>{i ? <Arrow delay={i * 12 - 4} vertical={vertical} /> : null}<Node it={it} size={vertical ? 150 : n === 2 ? 280 : 230} delay={i * 12} on={i === active} /></React.Fragment>)}
       </div>;
     }
     case 'stack':
       return <div style={{ ...box, flexDirection: 'column-reverse', gap: 18 }}>
         {items.map((it, i) => { const p = useIn(i * 10);
-          return <div key={i} style={{ width: 720 - i * 40, padding: '22px 34px', borderRadius: 26, border: `5px solid ${i === n - 1 ? YEL : CYAN}`, display: 'flex', alignItems: 'center', gap: 26, opacity: p, transform: `translateY(${(1 - p) * 80}px)` }}>
-            <IconBy name={it.icon} size={64} color={i === n - 1 ? YEL : '#fff'} /><span style={{ font: `800 42px ${FONT}`, color: '#fff', textTransform: 'uppercase' }}>{it.label}</span></div>; })}
+          return <div key={i} style={{ width: 880 - i * 40, padding: '28px 40px', borderRadius: 26, border: `5px solid ${i === n - 1 ? YEL : CYAN}`, display: 'flex', alignItems: 'center', gap: 26, opacity: p, transform: `translateY(${(1 - p) * 80}px)` }}>
+            <IconBy name={it.icon} size={84} color={i === n - 1 ? YEL : '#fff'} /><span style={{ font: `800 54px ${FONT}`, color: '#fff', textTransform: 'uppercase' }}>{it.label}</span></div>; })}
       </div>;
     case 'compare': {
       const vs = useIn(10, { stiffness: 200, damping: 14 });
       return <div style={{ ...box, gap: 40 }}>
-        <Node it={items[0] || {}} size={250} delay={0} on={f > dur / 2 ? false : true} dim={f > dur / 2} />
+        <Node it={items[0] || {}} size={300} delay={0} on={f > dur / 2 ? false : true} dim={f > dur / 2} />
         <div style={{ font: `900 64px ${FONT}`, color: YEL, transform: `scale(${vs})` }}>VS</div>
-        <Node it={items[1] || {}} size={250} delay={8} on={f > dur / 2} dim={f <= dur / 2} />
+        <Node it={items[1] || {}} size={300} delay={8} on={f > dur / 2} dim={f <= dur / 2} />
       </div>;
     }
     case 'hub': {
-      const R = 290, rest = items.slice(1);
+      const R = 310, rest = items.slice(1);
+      if (rest.length < 3) return <Visual v={{ layout: 'flow', items }} dur={dur} />;
       return <div style={box}><div style={{ position: 'relative', width: 0, height: 0 }}>
         <svg style={{ position: 'absolute', left: -R - 120, top: -R - 120, overflow: 'visible' }} width={2 * R + 240} height={2 * R + 240}>
           {rest.map((_, i) => { const a = (i / rest.length) * Math.PI * 2 - Math.PI / 2; const p = interpolate(f, [8 + i * 6, 24 + i * 6], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
             const c = R + 120; return <line key={i} x1={c} y1={c} x2={c + Math.cos(a) * R * p} y2={c + Math.sin(a) * R * p} stroke={CYAN} strokeWidth={6} strokeLinecap="round" />; })}
         </svg>
-        <div style={{ position: 'absolute', transform: 'translate(-50%, -50%)' }}><Node it={items[0] || {}} size={200} delay={0} on /></div>
-        {rest.map((it, i) => { const a = (i / rest.length) * Math.PI * 2 - Math.PI / 2; return <div key={i} style={{ position: 'absolute', left: Math.cos(a) * R, top: Math.sin(a) * R, transform: 'translate(-50%, -50%)' }}><Node it={{ icon: it.icon }} size={130} delay={14 + i * 6} /></div>; })}
+        <div style={{ position: 'absolute', transform: 'translate(-50%, -50%)' }}><Node it={items[0] || {}} size={240} delay={0} on /></div>
+        {rest.map((it, i) => { const a = (i / rest.length) * Math.PI * 2 - Math.PI / 2; return <div key={i} style={{ position: 'absolute', left: Math.cos(a) * R, top: Math.sin(a) * R, transform: 'translate(-50%, -50%)' }}><Node it={{ icon: it.icon }} size={160} delay={14 + i * 6} /></div>; })}
       </div></div>;
     }
     case 'list':
       return <div style={{ ...box, flexDirection: 'column', alignItems: 'stretch', gap: 26, padding: '0 40px' }}>
         {items.map((it, i) => { const p = useIn(i * 12);
           return <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 28, opacity: p, transform: `translateX(${(1 - p) * -60}px)` }}>
-            <div style={{ width: 84, height: 84, borderRadius: 42, display: 'grid', placeItems: 'center', background: it.good === false ? '#ffffff22' : YEL }}><IconBy name={it.good === false ? 'x' : 'check'} size={50} color={it.good === false ? '#fff' : '#0A0A0F'} /></div>
-            <IconBy name={it.icon} size={70} color={CYAN} /><span style={{ font: `800 44px ${FONT}`, color: it.good === false ? '#ffffff88' : '#fff', textTransform: 'uppercase' }}>{it.label}</span></div>; })}
+            <div style={{ width: 100, height: 100, borderRadius: 50, display: 'grid', placeItems: 'center', background: it.good === false ? '#ffffff22' : YEL }}><IconBy name={it.good === false ? 'x' : 'check'} size={60} color={it.good === false ? '#fff' : '#0A0A0F'} /></div>
+            <IconBy name={it.icon} size={86} color={CYAN} /><span style={{ font: `800 54px ${FONT}`, color: it.good === false ? '#ffffff88' : '#fff', textTransform: 'uppercase' }}>{it.label}</span></div>; })}
       </div>;
     case 'grid':
       return <div style={{ ...box, flexWrap: 'wrap', gap: 40, alignContent: 'center' }}>
-        {items.map((it, i) => <Node key={i} it={it} size={n > 4 ? 170 : 210} delay={i * 7} on={i === active} />)}
+        {items.map((it, i) => <Node key={i} it={it} size={n > 4 ? 210 : 260} delay={i * 7} on={i === active} />)}
       </div>;
     default: {
       const pulse = 1 + Math.sin(f / 12) * 0.02;
-      return <div style={{ ...box, transform: `scale(${pulse})` }}><Node it={items[0] || {}} size={380} delay={0} on /></div>;
+      return <div style={{ ...box, transform: `scale(${pulse})` }}><Node it={items[0] || {}} size={470} delay={0} on /></div>;
     }
   }
 };

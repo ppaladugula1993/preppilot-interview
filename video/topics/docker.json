@@ -240,7 +240,7 @@
     {
       "id": "s10",
       "type": "chip",
-      "say": "Docker is everywhere in interviews. Know the traps, and you’ll stand out.",
+      "say": "Docker is everywhere in interviews. Know the traps, and you\u2019ll stand out.",
       "title": "STAND OUT",
       "accent": "OUT",
       "subtitle": "Ace interviews",
@@ -274,6 +274,5 @@
       }
     }
   ],
-  "voice": "en-US-ChristopherNeural",
-  "rendered": "2026-11-27T19:43:23.617Z"
+  "voice": "en-US-ChristopherNeural"
 }

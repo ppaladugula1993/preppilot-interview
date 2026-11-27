@@ -87,25 +87,19 @@ async function writeLessonScript(feedback) {
   const user = `Topic: ${topic.name}. Lesson: ${lesson.t}
 Make ONE short video that teaches exactly this lesson so it sticks, using only facts from the material below.
 Structure: hook question → 3 to 4 teaching scenes → one interview trap → end card. Total narration 80 to 105 words.
-Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
+Each scene: {"id": short-slug, "type": one of hook|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
 - hook: kicker (e.g. "${topic.name} · lesson"), line1 (max 40 chars), line2 (max 22 chars, the question)
 - chip: kicker, label (1 word, max 8 chars), sub (max 70 chars)
 - terminal: kicker, title, lines (2-5 real commands/output lines, max 34 chars each, commands start with "$ ")
 - rows: kicker, rows (3-5 items {a: max 18 chars, b: max 28 chars}), walk (true for ordered steps)
 - compare: kicker, left {title, items: 2-3 short items}, right {title, items}
 - code: kicker, lang, code (max 8 lines, max 34 chars per line, real and correct)
-- picture: kicker, prompt (a vivid REAL-WORLD scene that works as a metaphor for the idea, described for an illustrator: objects, action, setting; no words, letters or screens in the image), map (2-3 items {thing: object in the picture, max 14 chars, means: the tech idea it stands for, max 24 chars})
 - trap: question (max 40 chars), wrong (max 40 chars), right (max 60 chars)
 - end: say must be exactly "Get interview ready with PrepPilot."
-Use at least 2 different teaching scene types, and put ONE picture scene right after the hook with a real-world metaphor that makes this lesson click (e.g. cargo ship for containers, warehouse forklift for garbage collection, chef juggling orders for an event loop, blueprint vs houses for class vs object, library catalogue for indexes, factory line for pipelines). Pick the best fit for THIS lesson. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
+Use at least 2 different teaching scene types. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
-Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
-This is an ANIMATED cartoon, not a slideshow. Build ONE real-world metaphor world for the whole video:
-- "sets": 2 backgrounds [{"name": slug, "prompt": wide empty environment, no characters, e.g. "busy harbour at sunset with cranes and calm sea"}]
-- "cast": 4-6 cut-out characters/objects that act in it [{"name": slug, "prompt": one single simple object, whole and clearly visible, e.g. "simple cargo ship", "orange shipping container", "crane"; plain objects, no faces}]
-EVERY scene except end ALSO has "emoji" (one emoji that fits the line), "set" (a set name), "camera" (push|pull|panL|panR|shake) and "actors": 1-2 cast members doing ONE simple, clear action that shows exactly what the narration says: [{"who": cast name, "x": 0.1-0.9, "y": 0.15-0.6 (vertical position of the feet; the lower part of the frame is covered by text), "size": 0.2-0.6 (fraction of frame width), "enter": left|right|top|bottom|pop, "motion": bob|float|drive|drop|pulse, "count": 1-6 (copies, e.g. 4 containers stacking with motion drop), "flip": true to face left}]. Keep it calm and readable: one idea per scene, little clutter.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
-Return {"title": "max 40 chars", "keys": [2-5 key terms], "sets": [...], "cast": [...], "scenes": [...]}.
+Return {"title": "max 40 chars", "keys": [2-5 key terms], "scenes": [...]}.
 
 Lesson:
 ${lesson.t}: ${lesson.what}${lesson.why ? `\nWhy it matters: ${lesson.why}` : ''}${lesson.ex ? `\nExample: ${lesson.ex}` : ''}${lesson.tip ? `\nTip: ${lesson.tip}` : ''}
@@ -119,7 +113,7 @@ async function check(script) {
     `Topic: ${topic.name}\nScript:\n${JSON.stringify(script)}`, 600, 0);
   return r;
 }
-const VSTYLE = process.env.VIDEO_STYLE || 'brain', BRAIN = VSTYLE === 'brain';
+const VSTYLE = process.env.VIDEO_STYLE || (lesson ? 'topic' : 'brain'), BRAIN = VSTYLE === 'brain';
 const BRAIN_STYLE = 'Flat vector motion graphics style, dark background #0A0A0F, minimal 2D illustration, thick outlines, electric yellow #FFE500 accent and cyan #00E5FF for diagram lines, no shadows, no photorealism, clean infographic, no text, no letters, no numbers';
 async function writeBrain(feedback) {
   const words = lesson ? (lesson.t || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 3) : [];
@@ -155,7 +149,7 @@ if (!script) {
     const s = BRAIN ? await writeBrain(fb) : await writeScript(fb);
     (s?.scenes || []).forEach(x => { if (!x.say && x.type === 'hook') x.say = `${x.line1} ${x.line2}`; if (!x.say && x.type === 'end') x.say = 'Get interview ready with PrepPilot.'; });
     if (!valid(s)) { log('invalid: ' + (s?.scenes || []).filter(x => !x.say).map(x => x.type).join(',')); fb = 'Follow the scene structure exactly (hook first, end last, every scene has id and say).'; continue; }
-    if (!BRAIN && (!s.cast?.length || !s.sets?.length)) { fb = 'Include sets and cast, and actors in every scene.'; log('no cast'); continue; }
+    if (VSTYLE !== 'topic' && !BRAIN && (!s.cast?.length || !s.sets?.length)) { fb = 'Include sets and cast, and actors in every scene.'; log('no cast'); continue; }
     if (!BRAIN) s.scenes.forEach((x, i) => { x.id = `${i}-${String(x.id).replace(/[^a-z0-9-]/gi, '').slice(0, 20) || 's'}`; });
     const c = await check(s);
     if (c.ok === true || c.ok === 'true') script = s; else { fb = c.problems || 'facts'; log(`review: ${fb}`); }
@@ -171,7 +165,7 @@ if (!script) {
 const run = (cmd, args, opts = {}) => execFileSync(cmd, args, { cwd: here, stdio: ['ignore', 'pipe', 'pipe'], ...opts }).toString();
 if (force || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
   const tts = JSON.parse(readFileSync(scriptFile, 'utf8'));
-  writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, rate: BRAIN ? '+0%' : '+14%', voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
+  writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, rate: BRAIN ? '+0%' : VSTYLE === 'topic' ? '+6%' : '+14%', voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
   log(run('node', ['tts.mjs', `.tts-${id}.json`]).trim());
 }
 
