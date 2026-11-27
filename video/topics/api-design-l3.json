@@ -1,0 +1,75 @@
+{
+  "id": "api-design-l3",
+  "title": "API Versioning & Backward Compatibility",
+  "keys": [
+    "versioning",
+    "backward compatibility",
+    "breaking changes",
+    "REST"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-api-versions",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "How do APIs evolve safely?",
+      "line2": "What keeps old clients working?",
+      "say": "Ever wonder how APIs can change without breaking everything for old users? Let's break down versioning and backward compatibility."
+    },
+    {
+      "id": "1-chip-versioning",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Versioning",
+      "sub": "Lets APIs add features or fix bugs, without breaking existing clients.",
+      "say": "Versioning lets you improve your API, fix bugs, or add features, all without breaking what your users already rely on."
+    },
+    {
+      "id": "2-rows-strategies",
+      "type": "rows",
+      "kicker": "Versioning Strategies",
+      "rows": [
+        {
+          "a": "URI",
+          "b": "Add version to endpoint path"
+        },
+        {
+          "a": "Header",
+          "b": "Specify version in request header"
+        },
+        {
+          "a": "Media Type",
+          "b": "Use custom content type for version"
+        }
+      ],
+      "walk": false,
+      "say": "You can version your API in a few ways: put the version in the path, in a request header, or in the content type. Each has its pros and cons."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Versioned API Call",
+      "lines": [
+        "$ GET /v2/users/123",
+        "Accept: application/vnd.myapi.v2+json"
+      ],
+      "say": "Here's a real example. The version appears in both the path and the content type, so clients know exactly what they're getting."
+    },
+    {
+      "id": "4-trap-break",
+      "type": "trap",
+      "question": "What breaks backward compatibility?",
+      "wrong": "Adding new fields to responses",
+      "right": "Removing fields or changing response formats",
+      "say": "Here's a common trap. Adding new fields is usually safe. But removing fields or changing how data is returned? That breaks backward compatibility."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:36:30.867Z"
+}
