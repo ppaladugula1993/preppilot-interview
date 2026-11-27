@@ -1,0 +1,88 @@
+{
+  "id": "linux-l20",
+  "title": "Linux Logging Stack: Journald, Rsyslog, Central Logs",
+  "keys": [
+    "journald",
+    "rsyslog",
+    "central logs",
+    "log forwarding"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-centralize",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "How do you handle logs from 500 servers?",
+      "line2": "Why central logs?",
+      "say": "Ever wonder how you keep track of logs from hundreds of Linux servers? Why bother with central logs anyway?"
+    },
+    {
+      "id": "1-chip-journald",
+      "type": "chip",
+      "kicker": "Stack",
+      "label": "journald",
+      "sub": "Captures logs from services and the kernel.",
+      "say": "Journald grabs logs from every service and the kernel, storing them in a structured format."
+    },
+    {
+      "id": "2-chip-rsyslog",
+      "type": "chip",
+      "kicker": "Stack",
+      "label": "rsyslog",
+      "sub": "Writes classic text files, forwards logs out.",
+      "say": "Rsyslog takes those logs and writes them to classic text files, like messages or auth logs. It can also send logs to a central system."
+    },
+    {
+      "id": "3-rows-central",
+      "type": "rows",
+      "kicker": "Central Logs",
+      "rows": [
+        {
+          "a": "Splunk",
+          "b": "Search and analyze logs"
+        },
+        {
+          "a": "ELK",
+          "b": "Elastic, Logstash, Kibana stack"
+        },
+        {
+          "a": "Loki",
+          "b": "Grafana's log aggregator"
+        },
+        {
+          "a": "Azure Monitor",
+          "b": "Cloud log analytics"
+        }
+      ],
+      "walk": false,
+      "say": "Central log systems like Splunk, ELK, Loki, or Azure Monitor let you search and analyze logs from all your servers in one place."
+    },
+    {
+      "id": "4-terminal-forward",
+      "type": "terminal",
+      "kicker": "Forwarding",
+      "title": "Send logs to a central server",
+      "lines": [
+        "$ echo '*.*  @@logserver:514' > /etc/rsyslog.d/50-forward.conf",
+        "$ systemctl restart rsyslog",
+        "$ logger -p user.err 'test from hostname'"
+      ],
+      "say": "To forward logs, set up rsyslog with a central server address, restart rsyslog, and test with a logger command."
+    },
+    {
+      "id": "5-trap-local",
+      "type": "trap",
+      "question": "Why not just keep logs local?",
+      "wrong": "Local logs are always safe.",
+      "right": "Servers can die, attackers can wipe logs, and you need to search across all hosts for incidents.",
+      "say": "Why not keep logs local? Because servers can die, attackers can wipe logs, and you need to search across all hosts during an incident."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:51:47.544Z"
+}
