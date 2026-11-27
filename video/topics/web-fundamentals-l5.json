@@ -1,0 +1,75 @@
+{
+  "id": "web-fundamentals-l5",
+  "title": "HTTP Caching: Speed Up Your Web Apps",
+  "keys": [
+    "HTTP",
+    "Cache-Control",
+    "ETag",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-caching",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Why do some pages load instantly?",
+      "line2": "How does HTTP caching work?",
+      "say": "Ever notice some sites load in a flash? Let's see how HTTP caching makes that happen."
+    },
+    {
+      "id": "1-chip-cache-headers",
+      "type": "chip",
+      "kicker": "Key Headers",
+      "label": "Cache",
+      "sub": "Cache-Control, ETag, and Expires set caching rules.",
+      "say": "Browsers and CDNs use headers like Cache-Control, ETag, and Expires to decide when to reuse a response."
+    },
+    {
+      "id": "2-rows-caching-benefit",
+      "type": "rows",
+      "kicker": "Why It Matters",
+      "rows": [
+        {
+          "a": "Less Server Load",
+          "b": "Cached files skip the backend"
+        },
+        {
+          "a": "Lower Latency",
+          "b": "Faster delivery from local cache"
+        },
+        {
+          "a": "Scalability",
+          "b": "More users, less stress"
+        }
+      ],
+      "walk": true,
+      "say": "Efficient caching means less work for your servers, faster load times for users, and better scaling as your app grows."
+    },
+    {
+      "id": "3-terminal-cache-examp",
+      "type": "terminal",
+      "kicker": "Example Headers",
+      "title": "CDN Cache for 1 Hour",
+      "lines": [
+        "$ Cache-Control: public, max-age=3600",
+        "$ ETag: \"abc123\""
+      ],
+      "say": "Here's a real-world example. Cache-Control with max age set to one hour, and an ETag for version tracking."
+    },
+    {
+      "id": "4-trap-cache-trick",
+      "type": "trap",
+      "question": "Does ETag alone cache a resource?",
+      "wrong": "Yes, ETag stores the file in cache.",
+      "right": "No, ETag just helps validate if the resource changed. Cache-Control actually sets caching.",
+      "say": "Watch out: ETag doesn't cache by itself. It just checks if a file changed. Cache-Control is what lets browsers store responses."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:27:32.958Z"
+}
