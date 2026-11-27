@@ -1,0 +1,85 @@
+{
+  "id": "behavioral-l0",
+  "title": "Nail Your 60-Second Interview Intro",
+  "keys": [
+    "intro",
+    "present role",
+    "metrics",
+    "past role",
+    "next step"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-60sec-intro",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "Can you sum up your story?",
+      "line2": "In just 60 seconds?",
+      "say": "Can you sum up your story in just sixty seconds? Let’s make your answer shine."
+    },
+    {
+      "id": "1-chip-present-role",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Present",
+      "sub": "State your current role and years of experience.",
+      "say": "Start with your current role and how many years you’ve been doing it."
+    },
+    {
+      "id": "2-rows-own-today",
+      "type": "rows",
+      "kicker": "Step 2",
+      "rows": [
+        {
+          "a": "What you own",
+          "b": "Pick 2 things you lead today"
+        },
+        {
+          "a": "Use numbers",
+          "b": "Add a metric to each"
+        },
+        {
+          "a": "Be concise",
+          "b": "Keep it to one line each"
+        }
+      ],
+      "walk": true,
+      "say": "Next, share two things you own today, each with a number. Be concise—one line each."
+    },
+    {
+      "id": "3-chip-past-role",
+      "type": "chip",
+      "kicker": "Step 3",
+      "label": "Past",
+      "sub": "One sentence on a previous role or experience.",
+      "say": "Now, give a single sentence about a past role or experience."
+    },
+    {
+      "id": "4-terminal-what-next",
+      "type": "terminal",
+      "kicker": "Step 4",
+      "title": "What’s next?",
+      "lines": [
+        "$ Tie your goal to this job",
+        "$ Rewrite for each posting",
+        "$ Practice until it’s 60 sec"
+      ],
+      "say": "Finish with what you want next, and link it to this job. Rewrite for each posting and practice until it’s a smooth sixty seconds."
+    },
+    {
+      "id": "5-trap-mistake",
+      "type": "trap",
+      "question": "What’s a common intro mistake?",
+      "wrong": "Listing your whole resume",
+      "right": "Rambling, or missing metrics and goals",
+      "say": "A common trap is rambling or missing numbers and goals. Don’t just list your whole resume."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T19:54:39.326Z"
+}
