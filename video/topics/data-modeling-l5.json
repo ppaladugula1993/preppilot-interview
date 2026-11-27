@@ -1,0 +1,82 @@
+{
+  "id": "data-modeling-l5",
+  "title": "Data Vault Basics for Interviews",
+  "keys": [
+    "Data Vault",
+    "Hubs",
+    "Links",
+    "Satellites",
+    "Agile"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vault",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "What makes Data Vault unique?",
+      "line2": "Why use it over star schema?",
+      "say": "What makes Data Vault stand out, and why would you use it instead of a classic star schema?"
+    },
+    {
+      "id": "1-chip-hub",
+      "type": "chip",
+      "kicker": "Core Part",
+      "label": "Hubs",
+      "sub": "Store unique business keys, like customer IDs.",
+      "say": "First, Hubs store unique business keys. Think customer IDs or order numbers."
+    },
+    {
+      "id": "2-rows-link-sat",
+      "type": "rows",
+      "kicker": "Structure",
+      "rows": [
+        {
+          "a": "Links",
+          "b": "Connect hubs to show relationships"
+        },
+        {
+          "a": "Satellites",
+          "b": "Hold context and history details"
+        }
+      ],
+      "walk": true,
+      "say": "Links connect those hubs—like customers to orders. Satellites hold context and track changes over time."
+    },
+    {
+      "id": "3-compare-vault-star",
+      "type": "compare",
+      "kicker": "Why Data Vault?",
+      "left": {
+        "title": "Data Vault",
+        "items": [
+          "Highly scalable",
+          "Great for audit trails",
+          "Handles multiple sources"
+        ]
+      },
+      "right": {
+        "title": "Star Schema",
+        "items": [
+          "Simple queries",
+          "Fast analytics"
+        ]
+      },
+      "say": "Data Vault is highly scalable, great for audit trails, and handles data from many sources. Star schema is simpler and fast for analytics, but less flexible."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Are satellites used for business keys?",
+      "wrong": "Yes, satellites store keys.",
+      "right": "No, satellites store context and history. Hubs hold business keys.",
+      "say": "Here's a common trap: Are satellites used for business keys? No—they store context and history. Hubs hold the business keys."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:17:35.115Z"
+}
