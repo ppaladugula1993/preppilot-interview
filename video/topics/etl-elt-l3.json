@@ -1,0 +1,76 @@
+{
+  "id": "etl-elt-l3",
+  "title": "Idempotency & Backfills in ETL/ELT",
+  "keys": [
+    "idempotency",
+    "backfill",
+    "upsert",
+    "merge"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-idempotency-bac",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "Can you rerun your pipeline safely?",
+      "line2": "What about old data fixes?",
+      "say": "When you rerun your ETL pipeline, will it break things or keep data clean? And what happens when you need to fix historical records?"
+    },
+    {
+      "id": "1-chip-idempotency",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Idempotent",
+      "sub": "Running the same job multiple times gives the same result.",
+      "say": "Idempotency means running your job again with the same input always produces the same output. No duplicates, no mess."
+    },
+    {
+      "id": "2-compare-idempotent-b",
+      "type": "compare",
+      "kicker": "Pipeline Design",
+      "left": {
+        "title": "Idempotent",
+        "items": [
+          "Upsert rows",
+          "Merge data",
+          "No duplicates"
+        ]
+      },
+      "right": {
+        "title": "Backfill",
+        "items": [
+          "Rerun for date range",
+          "Fix old bugs",
+          "Safe corrections"
+        ]
+      },
+      "say": "To be robust, use upserts or merges for idempotency. For backfills, rerun the pipeline on specific dates to fix past errors."
+    },
+    {
+      "id": "3-terminal-upsert-exam",
+      "type": "terminal",
+      "kicker": "Real Command",
+      "title": "Upsert in Action",
+      "lines": [
+        "$ MERGE INTO users USING updates",
+        "$ INSERT ... ON CONFLICT DO UPDATE"
+      ],
+      "say": "Upserts and merge commands help you avoid duplicates when reprocessing data. They keep your tables clean."
+    },
+    {
+      "id": "4-trap-idempotency-bac",
+      "type": "trap",
+      "question": "What happens if a pipeline isn't idempotent?",
+      "wrong": "Backfills always work without issues.",
+      "right": "Reruns and backfills can create duplicates or corrupt data.",
+      "say": "If your pipeline isn't idempotent, reruns or backfills can mess up your data with duplicates or errors. That's a big interview red flag."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:38:53.674Z"
+}
