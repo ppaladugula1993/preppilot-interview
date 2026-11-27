@@ -1,0 +1,89 @@
+{
+  "id": "dsa",
+  "title": "The Core Idea: Big-O & Efficient Thinking",
+  "keys": [
+    "Big-O",
+    "arrays",
+    "hashing",
+    "trees",
+    "graphs"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-big-o-question",
+      "type": "hook",
+      "kicker": "Data Structures & Algorithms",
+      "line1": "Why do interviewers always ask",
+      "line2": "about Big-O notation?",
+      "say": "Ever wonder why every interview starts with, 'What's the time complexity?' Let's break down why Big-O is the backbone of all data structures and algorithms."
+    },
+    {
+      "id": "1-chip-big-o",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Big-O",
+      "sub": "Describes how runtime or space grows as input gets bigger.",
+      "say": "Big-O tells you how your code scales as the data grows. It's not about exact speed, but how performance changes with size."
+    },
+    {
+      "id": "2-rows-complexity-exam",
+      "type": "rows",
+      "kicker": "Examples",
+      "rows": [
+        {
+          "a": "Array lookup",
+          "b": "O(1) — instant access"
+        },
+        {
+          "a": "Linear search",
+          "b": "O(n) — checks each item"
+        },
+        {
+          "a": "Binary search",
+          "b": "O(log n) — halves each time"
+        },
+        {
+          "a": "Hash map insert",
+          "b": "O(1) — average case"
+        }
+      ],
+      "walk": true,
+      "say": "For example, arrays give you instant access. Linear search checks every item. Binary search halves the search space each time. Hash maps usually find things instantly."
+    },
+    {
+      "id": "3-compare-data-structu",
+      "type": "compare",
+      "kicker": "Choose Wisely",
+      "left": {
+        "title": "Arrays",
+        "items": [
+          "Fast lookup",
+          "Slow insert/delete"
+        ]
+      },
+      "right": {
+        "title": "Hash Maps",
+        "items": [
+          "Fast lookup",
+          "Fast insert/delete"
+        ]
+      },
+      "say": "Choosing the right structure matters. Arrays are great for fast lookup, but slow for inserts. Hash maps are fast for both, but need more memory."
+    },
+    {
+      "id": "4-trap-big-o-trap",
+      "type": "trap",
+      "question": "Is O(n) always fast enough?",
+      "wrong": "Yes, it's usually fine.",
+      "right": "For huge data, even linear time can be slow. Always consider input size.",
+      "say": "Here's the trap: just because something is linear time doesn't mean it's always fast enough. For massive data, even O(n) can be a dealbreaker."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:23:20.180Z"
+}
