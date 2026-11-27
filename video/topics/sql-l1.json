@@ -1,0 +1,77 @@
+{
+  "id": "sql-l1",
+  "title": "SQL Joins & Common Mistakes Explained",
+  "keys": [
+    "INNER JOIN",
+    "LEFT JOIN",
+    "NULL",
+    "Cartesian"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-joins",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "Why are SQL joins tricky?",
+      "line2": "What do NULLs really mean?",
+      "say": "Ever wonder why SQL joins trip up so many engineers? And what do those NULLs really tell you?"
+    },
+    {
+      "id": "1-chip-inner",
+      "type": "chip",
+      "kicker": "Join Type",
+      "label": "INNER",
+      "sub": "Only rows with matching keys in both tables.",
+      "say": "An inner join gives you just the rows where both tables have matching keys."
+    },
+    {
+      "id": "2-compare-outer",
+      "type": "compare",
+      "kicker": "Outer Joins",
+      "left": {
+        "title": "LEFT JOIN",
+        "items": [
+          "All left table rows",
+          "NULLs for missing matches"
+        ]
+      },
+      "right": {
+        "title": "RIGHT JOIN",
+        "items": [
+          "All right table rows",
+          "NULLs for missing matches"
+        ]
+      },
+      "say": "Left join keeps every row from the left table, filling in blanks with NULLs if there's no match. Right join does the same, but for the right table."
+    },
+    {
+      "id": "3-terminal-full",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "FULL JOIN Example",
+      "lines": [
+        "$ SELECT * FROM a FULL JOIN b",
+        "id  name   dept",
+        "1   Alice  NULL",
+        "2   Bob    Sales",
+        "3   NULL   HR"
+      ],
+      "say": "A full join returns every row from both tables. If there's no match, you'll see NULLs in the missing columns."
+    },
+    {
+      "id": "4-trap-cartesian",
+      "type": "trap",
+      "question": "What happens if you skip the ON clause?",
+      "wrong": "You get no results.",
+      "right": "You get a Cartesian product—every row from the first table paired with every row from the second. That can mean millions of rows by accident.",
+      "say": "Here's a classic interview trap: forget the join condition, and you'll accidentally multiply your rows with a Cartesian product."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:58:07.246Z"
+}
