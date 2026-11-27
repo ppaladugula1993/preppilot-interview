@@ -1,0 +1,73 @@
+{
+  "id": "spark-l0",
+  "title": "Spark: Driver, Executors, Jobs, Stages, Tasks",
+  "keys": [
+    "driver",
+    "executor",
+    "job",
+    "stage",
+    "task"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-driver-executor",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Who runs your code in Spark?",
+      "line2": "Driver or executor?",
+      "say": "Ever wonder who actually runs your code in Apache Spark? Is it the driver, or the executors?"
+    },
+    {
+      "id": "1-chip-driver",
+      "type": "chip",
+      "kicker": "Core Role",
+      "label": "Driver",
+      "sub": "Coordinates jobs, plans, and schedules tasks.",
+      "say": "The driver is Spark's boss. It plans your job and tells everyone what to do."
+    },
+    {
+      "id": "2-chip-executor",
+      "type": "chip",
+      "kicker": "Core Role",
+      "label": "Executor",
+      "sub": "Runs tasks and processes data on workers.",
+      "say": "Executors are the workers. They actually run the tasks and process your data."
+    },
+    {
+      "id": "3-rows-job-breakdown",
+      "type": "rows",
+      "kicker": "Job Breakdown",
+      "rows": [
+        {
+          "a": "Job",
+          "b": "Created by an action, like count()"
+        },
+        {
+          "a": "Stage",
+          "b": "Split by shuffles in your job"
+        },
+        {
+          "a": "Task",
+          "b": "Runs on a single partition"
+        }
+      ],
+      "walk": true,
+      "say": "When you run an action like count, the driver creates a job, splits it into stages wherever data shuffles, and then breaks those stages into tasks—one per partition."
+    },
+    {
+      "id": "4-trap-driver-vs-execu",
+      "type": "trap",
+      "question": "Who runs the tasks in Spark?",
+      "wrong": "The driver runs all tasks.",
+      "right": "Executors run tasks. The driver only coordinates.",
+      "say": "Don't get tripped up: the driver coordinates, but executors actually run the tasks."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:42:22.168Z"
+}
