@@ -1,0 +1,88 @@
+{
+  "id": "oop-design-patterns-l7",
+  "title": "Spotting Code Smells & Refactoring",
+  "keys": [
+    "code smell",
+    "refactoring",
+    "coupling",
+    "maintainability"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-smell",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "Can you spot code smells?",
+      "line2": "Why does it matter?",
+      "say": "Can you spot code smells before they become a problem? Why does it matter in interviews?"
+    },
+    {
+      "id": "1-chip-smell",
+      "type": "chip",
+      "kicker": "Code Smells",
+      "label": "Warning",
+      "sub": "Long methods, duplicated code, or tight coupling signal trouble.",
+      "say": "Code smells are warning signs. Long methods, duplicated code, or tight coupling signal trouble in your codebase."
+    },
+    {
+      "id": "2-rows-refactor",
+      "type": "rows",
+      "kicker": "Refactoring Steps",
+      "rows": [
+        {
+          "a": "Spot the smell",
+          "b": "Find patterns that hurt maintainability"
+        },
+        {
+          "a": "Plan a fix",
+          "b": "Choose a refactor strategy"
+        },
+        {
+          "a": "Split classes",
+          "b": "Make small, focused classes"
+        },
+        {
+          "a": "Test behavior",
+          "b": "Ensure nothing breaks"
+        }
+      ],
+      "walk": true,
+      "say": "Refactoring means improving structure without changing behavior. Spot the smell, plan a fix, split classes, and always test."
+    },
+    {
+      "id": "3-compare-smell-refact",
+      "type": "compare",
+      "kicker": "Example",
+      "left": {
+        "title": "Smell",
+        "items": [
+          "Large class",
+          "Unrelated methods"
+        ]
+      },
+      "right": {
+        "title": "Refactor",
+        "items": [
+          "Split into smaller classes",
+          "Each class has one focus"
+        ]
+      },
+      "say": "For example, a large class with unrelated methods is a code smell. Refactor by splitting it into smaller, focused classes."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s the risk of ignoring code smells?",
+      "wrong": "It only affects performance.",
+      "right": "It leads to technical debt and harder maintenance.",
+      "say": "Interviewers may ask: What's the risk of ignoring code smells? It's not just performance—it's technical debt and harder maintenance."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:26:30.414Z"
+}
