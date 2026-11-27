@@ -1,0 +1,59 @@
+{
+  "id": "go-core-l5",
+  "title": "Go Generics: Type-Safe Reuse",
+  "keys": [
+    "generics",
+    "type parameters",
+    "constraints",
+    "reusable code"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-generics",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "Can Go functions work with any type?",
+      "line2": "How do generics fit in?",
+      "say": "Can Go functions work with any type? How do generics fit into this?"
+    },
+    {
+      "id": "1-chip-intro",
+      "type": "chip",
+      "kicker": "Go 1.18+",
+      "label": "Generics",
+      "sub": "Type parameters let code work with any type.",
+      "say": "Go version one point eighteen introduced generics. Type parameters let your code work with any type."
+    },
+    {
+      "id": "2-code-sum",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "func Sum[T int | float64](a, b T) T {\n    return a + b\n}",
+      "say": "Here's a generic sum function. The type parameter T can be int or float sixty-four. This keeps your code reusable and type safe."
+    },
+    {
+      "id": "3-chip-tip",
+      "type": "chip",
+      "kicker": "Pro tip",
+      "label": "Constraints",
+      "sub": "Keep constraints simple for readability.",
+      "say": "Keep your constraints simple for readability. Overcomplicating them makes code harder to maintain."
+    },
+    {
+      "id": "4-trap-syntax",
+      "type": "trap",
+      "question": "Can generics detect embedded types?",
+      "wrong": "Yes, with type sets.",
+      "right": "No, Go generics can't directly detect embedded types. Use method sets or marker interfaces instead.",
+      "say": "Here's a common interview trap. Can generics detect embedded types? No, Go generics can't do this directly. Use method sets or marker interfaces instead."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:38:16.615Z"
+}
