@@ -119,21 +119,45 @@ async function check(script) {
     `Topic: ${topic.name}\nScript:\n${JSON.stringify(script)}`, 600, 0);
   return r;
 }
+const VSTYLE = process.env.VIDEO_STYLE || 'brain', BRAIN = VSTYLE === 'brain';
+const BRAIN_STYLE = 'Flat vector motion graphics style, dark background #0A0A0F, minimal 2D illustration, thick outlines, electric yellow #FFE500 accent and cyan #00E5FF for diagram lines, no shadows, no photorealism, clean infographic, no text, no letters, no numbers';
+async function writeBrain(feedback) {
+  const words = lesson ? (lesson.t || '').toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 3) : [];
+  const pool = lesson ? topic.qa.filter(q => words.some(w => q.q.toLowerCase().includes(w) || q.a.toLowerCase().includes(w))).slice(0, 6) : topic.qa.slice(0, 16);
+  const cards = (pool.length ? pool : topic.qa.slice(0, 4)).map(q => `Q: ${q.q}\nA: ${q.a}${q.trap ? `\nTrap: ${q.trap}` : ''}`).join('\n\n');
+  const material = lesson ? `Lesson: ${lesson.t}: ${lesson.what}${lesson.why ? `\nWhy: ${lesson.why}` : ''}${lesson.ex ? `\nExample: ${lesson.ex}` : ''}` : (topic.concepts || []).slice(0, 8).map(c => `${c.t}: ${c.what}`).join('\n');
+  const n = lesson ? '7-9 scenes, about 40 seconds, 95-110 words' : '10-12 scenes, about 60 seconds, 145-160 words';
+  const sys = 'You are a motion-graphics explainer studio in the BrainrotShorts style for software engineers preparing for interviews. Output ONLY JSON.';
+  const user = `Topic: ${topic.name}${lesson ? ` · lesson: ${lesson.t}` : ''}
+Write ONE explainer video using only facts from the material below. ${n}, each scene 4-6 seconds (about 2.5 words per second).
+Tone: simple, punchy, curious; explain like to a smart 15-year-old; explain any jargon. Narration must be speakable word-for-word: no brackets, no emojis.
+Structure: Hook -> Problem -> How it works in 3 steps -> Twist / interview trap / why it matters -> End line. The last scene's narration is exactly "Get interview ready with PrepPilot."
+Return {"title": "short viral title, max 40 chars", "scenes": [{"narration_text": "...", "on_screen_title": "ALL CAPS, max 5 words", "accent_word": "ONE word or number that appears in on_screen_title", "subtitle": "max 6 words", "image_prompt": "a simple flat vector illustration of [concrete visual for this scene: an everyday metaphor or a clean diagram]"}]}
+${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
+Material:
+${material}
+
+Cards:
+${cards}`;
+  const r = await ask(sys, user, 3000);
+  const scenes = (r?.scenes || []).map((x, i) => ({ id: `s${i}`, type: i === 0 ? 'hook' : i === (r.scenes.length - 1) ? 'end' : 'chip', say: String(x.narration_text || '').replace(/[\[\]]/g, ''), title: x.on_screen_title || '', accent: x.accent_word || '', subtitle: x.subtitle || '', prompt: x.image_prompt || '' }));
+  return { title: r?.title, scenes };
+}
 const valid = s => Array.isArray(s?.scenes) && s.scenes.length >= (lesson ? 4 : 5) && s.scenes[0].type === 'hook' && s.scenes.at(-1).type === 'end' && s.scenes.every(x => x.id && x.say);
 let script = !force && existsSync(scriptFile) ? JSON.parse(readFileSync(scriptFile, 'utf8')) : null;
 if (!script) {
   let fb = '';
   for (let k = 0; k < 4 && !script; k++) {
-    const s = await writeScript(fb);
+    const s = BRAIN ? await writeBrain(fb) : await writeScript(fb);
     (s?.scenes || []).forEach(x => { if (!x.say && x.type === 'hook') x.say = `${x.line1} ${x.line2}`; if (!x.say && x.type === 'end') x.say = 'Get interview ready with PrepPilot.'; });
     if (!valid(s)) { log('invalid: ' + (s?.scenes || []).filter(x => !x.say).map(x => x.type).join(',')); fb = 'Follow the scene structure exactly (hook first, end last, every scene has id and say).'; continue; }
-    if (!s.cast?.length || !s.sets?.length) { fb = 'Include sets and cast, and actors in every scene.'; log('no cast'); continue; }
-    s.scenes.forEach((x, i) => { x.id = `${i}-${String(x.id).replace(/[^a-z0-9-]/gi, '').slice(0, 20) || 's'}`; });
+    if (!BRAIN && (!s.cast?.length || !s.sets?.length)) { fb = 'Include sets and cast, and actors in every scene.'; log('no cast'); continue; }
+    if (!BRAIN) s.scenes.forEach((x, i) => { x.id = `${i}-${String(x.id).replace(/[^a-z0-9-]/gi, '').slice(0, 20) || 's'}`; });
     const c = await check(s);
     if (c.ok === true || c.ok === 'true') script = s; else { fb = c.problems || 'facts'; log(`review: ${fb}`); }
   }
   if (!script) throw new Error('no script passed review');
-  script.voice = 'en-US-AndrewMultilingualNeural';
+  script.voice = BRAIN ? 'en-US-ChristopherNeural' : 'en-US-AndrewMultilingualNeural';
   mkdirSync(resolve(here, 'topics'), { recursive: true });
   writeFileSync(scriptFile, JSON.stringify({ id, ...script }, null, 2));
   log(`script ok: ${script.title}`);
@@ -143,17 +167,17 @@ if (!script) {
 const run = (cmd, args, opts = {}) => execFileSync(cmd, args, { cwd: here, stdio: ['ignore', 'pipe', 'pipe'], ...opts }).toString();
 if (force || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
   const tts = JSON.parse(readFileSync(scriptFile, 'utf8'));
-  writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, rate: '+14%', voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
+  writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, rate: BRAIN ? '+0%' : '+14%', voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
   log(run('node', ['tts.mjs', `.tts-${id}.json`]).trim());
 }
 
 // ---------- 2b. pictures: one per scene, art style + theme + loop picked per video so they all look different ----------
 const hash = str => [...str].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
 const H = hash(id), STYLE = 'soft flat 2D pastel illustration, simple rounded shapes, minimal detail, calm muted colours, gentle lighting, clean and uncluttered, friendly but not exaggerated, no faces on objects, no text, no letters, no numbers, no logos, no screens.';
-async function draw(prompt, file, transparent) {
+async function draw(prompt, file, transparent, square) {
   for (let a = 0; a < 6 && !existsSync(file); a++) {
     const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
-      body: JSON.stringify({ prompt, size: transparent ? '1024x1024' : '1024x1536', quality: 'low', n: 1, ...(transparent ? { background: 'transparent', output_format: 'png' } : {}) }), signal: AbortSignal.timeout(180000) });
+      body: JSON.stringify({ prompt, size: transparent || square ? '1024x1024' : '1024x1536', quality: 'low', n: 1, ...(transparent ? { background: 'transparent', output_format: 'png' } : {}) }), signal: AbortSignal.timeout(180000) });
     if (!r.ok) { log(`image retry ${r.status} ${r.status === 400 ? (await r.text()).slice(0, 160) : ''}`); await new Promise(x => setTimeout(x, 12000 * (a + 1))); continue; }
     const raw = resolve(here, 'public', `raw-${file.split('/').pop()}.png`);
     writeFileSync(raw, Buffer.from((await r.json()).data[0].b64_json, 'base64'));
@@ -163,6 +187,7 @@ async function draw(prompt, file, transparent) {
 }
 {
   const sf = JSON.parse(readFileSync(scriptFile, 'utf8')); let n = 0;
+  if (BRAIN) for (const sc of sf.scenes.filter(x => x.prompt && x.type !== 'end')) { const name = `${id}-${sc.id}.jpg`; if (await draw(`${sc.prompt}. ${BRAIN_STYLE}. Single centered subject, plenty of empty #0A0A0F space around it.`, resolve(here, 'public', name), false, true)) { sc.image = name; n++; } }
   for (const st of sf.sets || []) { const name = `${id}-set-${st.name}.jpg`; if (await draw(`${st.prompt}. Wide empty background scene for an animation, no characters in front. ${STYLE}`, resolve(here, 'public', name), false)) { st.image = name; n++; } }
   for (const c of sf.cast || []) { const name = `${id}-cast-${c.name}.png`; if (await draw(`${c.prompt}. Single isolated cut-out sprite on a fully transparent background, whole object visible, centered, bold outline. ${STYLE}`, resolve(here, 'public', name), true)) { c.image = name; n++; } }
   writeFileSync(scriptFile, JSON.stringify(sf, null, 2));
@@ -176,7 +201,7 @@ if (force || !existsSync(final)) {
   const s = JSON.parse(readFileSync(scriptFile, 'utf8'));
   const timing = JSON.parse(readFileSync(resolve(here, 'public', `${id}.timing.json`), 'utf8'));
   writeFileSync(resolve(here, `.props-${id}.json`), JSON.stringify({ id, title: s.title, scenes: s.scenes, sets: s.sets || [], cast: s.cast || [], timing, audio: `${id}.mp3`, keys: s.keys || [], theme: H % 8, loop: (H >> 3) % 5 }));
-  run('npx', ['remotion', 'render', 'src/index.ts', process.env.VIDEO_STYLE || 'host', `out/${id}.raw.mp4`, `--props=.props-${id}.json`, ...(process.env.CHROME_PATH ? [`--browser-executable=${process.env.CHROME_PATH}`] : []), '--log=error'], { timeout: 1800000 });
+  run('npx', ['remotion', 'render', 'src/index.ts', BRAIN ? 'brain' : VSTYLE, `out/${id}.raw.mp4`, `--props=.props-${id}.json`, ...(process.env.CHROME_PATH ? [`--browser-executable=${process.env.CHROME_PATH}`] : []), '--log=error'], { timeout: 1800000 });
   run('ffmpeg', ['-loglevel', 'error', '-y', '-i', `out/${id}.raw.mp4`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', `out/${id}.mp4`]);
   run('ffmpeg', ['-loglevel', 'error', '-y', '-ss', '1.2', '-i', `out/${id}.mp4`, '-frames:v', '1', '-vf', 'scale=540:-1', '-q:v', '5', `out/${id}.jpg`]);
   log(`rendered ${(statSync(final).size / 1e6).toFixed(1)} MB`);
