@@ -1,0 +1,77 @@
+{
+  "id": "sql-l6",
+  "title": "SQL Execution Plans: EXPLAIN",
+  "keys": [
+    "execution plan",
+    "EXPLAIN",
+    "indexes",
+    "query optimization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-explain-plan",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "How does SQL run your query?",
+      "line2": "Why should you care?",
+      "say": "Ever wonder what happens when you run a SQL query? Why should you care about the execution plan?"
+    },
+    {
+      "id": "1-chip-what-explain-do",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "EXPLAIN",
+      "sub": "Shows how the database processes your query",
+      "say": "EXPLAIN shows you exactly how the database processes your query, step by step."
+    },
+    {
+      "id": "2-terminal-explain-exa",
+      "type": "terminal",
+      "kicker": "Hands-On",
+      "title": "EXPLAIN Example",
+      "lines": [
+        "$ EXPLAIN SELECT *",
+        "$ FROM employees",
+        "$ WHERE department_id = 5;",
+        "-> Index scan or table scan"
+      ],
+      "say": "Here's how you use EXPLAIN. It reveals if your query uses an index or scans the whole table."
+    },
+    {
+      "id": "3-rows-plan-details",
+      "type": "rows",
+      "kicker": "Plan Details",
+      "rows": [
+        {
+          "a": "Index usage",
+          "b": "Speeds up data access"
+        },
+        {
+          "a": "Join method",
+          "b": "Affects performance"
+        },
+        {
+          "a": "Scan type",
+          "b": "Full table or indexed"
+        }
+      ],
+      "walk": true,
+      "say": "Execution plans show index usage, join methods, and scan types. All impact performance."
+    },
+    {
+      "id": "4-trap-table-scan-trap",
+      "type": "trap",
+      "question": "What causes slow queries?",
+      "wrong": "Just bad syntax.",
+      "right": "Full table scans and missing indexes are common bottlenecks.",
+      "say": "Interviewers may ask what causes slow queries. It's not just bad syntax—full table scans and missing indexes are big culprits."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:01:31.872Z"
+}
