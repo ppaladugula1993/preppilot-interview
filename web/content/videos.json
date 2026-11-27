@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T19:58:47.845Z",
+ "updated": "2026-11-27T20:06:56.489Z",
  "videos": [
   {
    "id": "behavioral",
@@ -44,6 +44,28 @@
    "quiz": 0
   },
   {
+   "id": "behavioral-l3",
+   "topic": "behavioral",
+   "lesson": 3,
+   "lessonTitle": "Questions to ask them",
+   "title": "Smart Questions to Ask Interviewers",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/behavioral-l3.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/behavioral-l3.jpg",
+   "duration": 28,
+   "quiz": 0
+  },
+  {
+   "id": "behavioral-l4",
+   "topic": "behavioral",
+   "lesson": 4,
+   "lessonTitle": "Habits that cost offers",
+   "title": "Habits That Cost Offers: Fix Weak Patterns",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/behavioral-l4.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/behavioral-l4.jpg",
+   "duration": 26,
+   "quiz": 0
+  },
+  {
    "id": "concurrency-l4",
    "topic": "concurrency",
    "lesson": 4,
@@ -77,6 +99,99 @@
    "quiz": 0
   },
   {
+   "id": "concurrency-l7",
+   "topic": "concurrency",
+   "lesson": 7,
+   "lessonTitle": "Immutability and Message Passing",
+   "title": "Immutability & Message Passing Basics",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/concurrency-l7.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/concurrency-l7.jpg",
+   "duration": 47,
+   "quiz": 0
+  },
+  {
+   "id": "concurrency-l8",
+   "topic": "concurrency",
+   "lesson": 8,
+   "lessonTitle": "Producer-Consumer Problem",
+   "title": "Producer-Consumer Problem Explained",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/concurrency-l8.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/concurrency-l8.jpg",
+   "duration": 32,
+   "quiz": 0
+  },
+  {
+   "id": "data-modeling",
+   "topic": "data-modeling",
+   "title": "Data Modeling: OLTP vs OLAP Explained",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling.jpg",
+   "duration": 92,
+   "quiz": 0
+  },
+  {
+   "id": "data-modeling-l0",
+   "topic": "data-modeling",
+   "lesson": 0,
+   "lessonTitle": "OLTP vs OLAP",
+   "title": "OLTP vs OLAP: Transactional vs Analytical",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling-l0.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling-l0.jpg",
+   "duration": 48,
+   "quiz": 0
+  },
+  {
+   "id": "data-modeling-l1",
+   "topic": "data-modeling",
+   "lesson": 1,
+   "lessonTitle": "Normalization vs Dimensional Modeling",
+   "title": "Normalization vs Dimensional Modeling",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling-l1.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/data-modeling-l1.jpg",
+   "duration": 44,
+   "quiz": 0
+  },
+  {
+   "id": "dsa",
+   "topic": "dsa",
+   "title": "Data Structures: Fast or Slow?",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/dsa.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/dsa.jpg",
+   "duration": 94,
+   "quiz": 0
+  },
+  {
+   "id": "dsa-l0",
+   "topic": "dsa",
+   "lesson": 0,
+   "lessonTitle": "Big-O Notation & Complexity",
+   "title": "Big-O Notation & Complexity Basics",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/dsa-l0.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/dsa-l0.jpg",
+   "duration": 36,
+   "quiz": 0
+  },
+  {
+   "id": "oop-design-patterns",
+   "topic": "oop-design-patterns",
+   "title": "OOP Secrets Every Engineer Needs",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/oop-design-patterns.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/oop-design-patterns.jpg",
+   "duration": 91,
+   "quiz": 0
+  },
+  {
+   "id": "oop-design-patterns-l0",
+   "topic": "oop-design-patterns",
+   "lesson": 0,
+   "lessonTitle": "OOP Fundamentals",
+   "title": "OOP Fundamentals: The Four Pillars",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/oop-design-patterns-l0.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/oop-design-patterns-l0.jpg",
+   "duration": 41,
+   "quiz": 0
+  },
+  {
    "id": "sql-l3",
    "topic": "sql",
    "lesson": 3,
@@ -96,6 +211,39 @@
    "url": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l4.mp4",
    "poster": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l4.jpg",
    "duration": 37,
+   "quiz": 0
+  },
+  {
+   "id": "sql-l5",
+   "topic": "sql",
+   "lesson": 5,
+   "lessonTitle": "Indexes: B-tree, Composite, Covering, Index Pitfalls",
+   "title": "Indexes: B-tree, Composite, Covering",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l5.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l5.jpg",
+   "duration": 46,
+   "quiz": 0
+  },
+  {
+   "id": "sql-l6",
+   "topic": "sql",
+   "lesson": 6,
+   "lessonTitle": "Execution Plans (EXPLAIN)",
+   "title": "SQL Execution Plans: EXPLAIN",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l6.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l6.jpg",
+   "duration": 34,
+   "quiz": 0
+  },
+  {
+   "id": "sql-l7",
+   "topic": "sql",
+   "lesson": 7,
+   "lessonTitle": "Transactions, ACID, Isolation Levels, Deadlocks",
+   "title": "SQL Transactions & ACID Explained",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l7.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/sql-l7.jpg",
+   "duration": 46,
    "quiz": 0
   },
   {
@@ -132,6 +280,17 @@
    "quiz": 0
   },
   {
+   "id": "sql-advanced-l7",
+   "topic": "sql-advanced",
+   "lesson": 7,
+   "lessonTitle": "Slowly Changing Data and MERGE/Upsert",
+   "title": "Mastering MERGE for Slowly Changing Data",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/sql-advanced-l7.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/sql-advanced-l7.jpg",
+   "duration": 40,
+   "quiz": 0
+  },
+  {
    "id": "system-design-l3",
    "topic": "system-design",
    "lesson": 3,
@@ -151,6 +310,39 @@
    "url": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l4.mp4",
    "poster": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l4.jpg",
    "duration": 41,
+   "quiz": 0
+  },
+  {
+   "id": "system-design-l5",
+   "topic": "system-design",
+   "lesson": 5,
+   "lessonTitle": "Async Processing: Queues and Pub/Sub",
+   "title": "Async Processing: Queues & Pub/Sub",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l5.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l5.jpg",
+   "duration": 44,
+   "quiz": 0
+  },
+  {
+   "id": "system-design-l6",
+   "topic": "system-design",
+   "lesson": 6,
+   "lessonTitle": "Consistency and CAP Theorem",
+   "title": "Consistency & CAP Theorem Explained",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l6.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l6.jpg",
+   "duration": 33,
+   "quiz": 0
+  },
+  {
+   "id": "system-design-l7",
+   "topic": "system-design",
+   "lesson": 7,
+   "lessonTitle": "Rate Limiting and API Gateways",
+   "title": "Rate Limiting & API Gateways Explained",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l7.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/system-design-l7.jpg",
+   "duration": 46,
    "quiz": 0
   },
   {
@@ -184,6 +376,37 @@
    "url": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l6.mp4",
    "poster": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l6.jpg",
    "duration": 29,
+   "quiz": 0
+  },
+  {
+   "id": "testing-l7",
+   "topic": "testing",
+   "lesson": 7,
+   "lessonTitle": "Contract Testing for Services",
+   "title": "Contract Testing for Services Explained",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l7.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l7.jpg",
+   "duration": 46,
+   "quiz": 0
+  },
+  {
+   "id": "testing-l8",
+   "topic": "testing",
+   "lesson": 8,
+   "lessonTitle": "Testing Legacy Code Safely",
+   "title": "Testing Legacy Code Safely",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l8.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l8.jpg",
+   "duration": 28,
+   "quiz": 0
+  },
+  {
+   "id": "web-fundamentals",
+   "topic": "web-fundamentals",
+   "title": "What Happens When You Enter a URL?",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/web-fundamentals.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/web-fundamentals.jpg",
+   "duration": 71,
    "quiz": 0
   }
  ]
