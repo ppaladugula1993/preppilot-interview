@@ -1,0 +1,87 @@
+{
+  "id": "data-modeling-l6",
+  "title": "Medallion Architecture: Bronze, Silver, Gold",
+  "keys": [
+    "medallion",
+    "bronze",
+    "silver",
+    "gold",
+    "pipeline"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-medallion",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "Why split data pipelines into layers?",
+      "line2": "What does bronze, silver, gold mean?",
+      "say": "Ever wonder why data pipelines use bronze, silver, and gold layers? What do those terms actually mean?"
+    },
+    {
+      "id": "1-rows-medallion-layer",
+      "type": "rows",
+      "kicker": "Medallion Layers",
+      "rows": [
+        {
+          "a": "Bronze",
+          "b": "Raw ingested data, like JSON logs"
+        },
+        {
+          "a": "Silver",
+          "b": "Cleaned, deduplicated, joined tables"
+        },
+        {
+          "a": "Gold",
+          "b": "Business-level, analytics-ready data"
+        }
+      ],
+      "walk": true,
+      "say": "The medallion architecture has three layers. Bronze is raw ingested data, like JSON logs. Silver is cleaned and joined tables. Gold is business-level, analytics-ready data."
+    },
+    {
+      "id": "2-chip-quality",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Quality",
+      "sub": "Each layer adds structure and improves data quality.",
+      "say": "Each layer adds structure and improves data quality. This makes analytics more reliable and easier to maintain."
+    },
+    {
+      "id": "3-compare-bronze-gold",
+      "type": "compare",
+      "kicker": "Layer Differences",
+      "left": {
+        "title": "Bronze",
+        "items": [
+          "Raw logs",
+          "No cleaning",
+          "Flexible schema"
+        ]
+      },
+      "right": {
+        "title": "Gold",
+        "items": [
+          "Aggregated sales",
+          "Business logic",
+          "Analytics-ready"
+        ]
+      },
+      "say": "Bronze holds raw logs with no cleaning and flexible schema. Gold contains aggregated sales, business logic, and is analytics-ready."
+    },
+    {
+      "id": "4-trap-layer-mixup",
+      "type": "trap",
+      "question": "What layer should analytics use?",
+      "wrong": "Silver, since it's cleaned.",
+      "right": "Gold, because it's business-ready and supports analytics.",
+      "say": "Interview trap: Which layer should analytics use? It's gold, not silver. Gold is business-ready and supports analytics."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:19:40.547Z"
+}
