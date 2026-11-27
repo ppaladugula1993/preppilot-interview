@@ -1,0 +1,84 @@
+{
+  "id": "behavioral-l1",
+  "title": "STAR Stories: Nail Behavioral Rounds",
+  "keys": [
+    "STAR",
+    "story",
+    "numbers",
+    "behavioral",
+    "interview"
+  ],
+  "scenes": [
+    {
+      "id": "0-star-hook",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "Struggle with behavioral questions?",
+      "line2": "How do you prep STAR stories?",
+      "say": "Ever freeze when they ask for a story? Let’s make STAR stories your secret weapon."
+    },
+    {
+      "id": "1-star-rows",
+      "type": "rows",
+      "kicker": "STAR Framework",
+      "rows": [
+        {
+          "a": "Situation",
+          "b": "Set the scene in one line"
+        },
+        {
+          "a": "Task",
+          "b": "What you needed to achieve"
+        },
+        {
+          "a": "Action",
+          "b": "What you did, step by step"
+        },
+        {
+          "a": "Result",
+          "b": "Share a number or outcome"
+        }
+      ],
+      "walk": true,
+      "say": "STAR stands for Situation, Task, Action, and Result. Start with the context, name your goal, describe what you did, and finish with a number."
+    },
+    {
+      "id": "2-star-chip",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Stories",
+      "sub": "Five stories can answer almost any behavioral question.",
+      "say": "With just five stories, you can answer almost any behavioral question they throw at you."
+    },
+    {
+      "id": "3-star-terminal",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Automated a manual task",
+      "lines": [
+        "$ Situation: Manual server checks",
+        "$ Task: Save team time",
+        "$ Action: I wrote scripts,",
+        "$ set up alerts, and",
+        "$ trained the team",
+        "$ Result: 10 hours saved weekly"
+      ],
+      "say": "Here’s a quick example. I automated server checks, saving my team ten hours every week. Numbers make your story real."
+    },
+    {
+      "id": "4-star-trap",
+      "type": "trap",
+      "question": "What’s a common STAR mistake?",
+      "wrong": "Leaving out numbers",
+      "right": "Leaving out numbers makes your story forgettable. Always include results with real numbers.",
+      "say": "The classic mistake? Forgetting numbers. Always end with a real, measurable result."
+    },
+    {
+      "id": "5-star-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:13:40.911Z"
+}
