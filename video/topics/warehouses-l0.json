@@ -1,0 +1,71 @@
+{
+  "id": "warehouses-l0",
+  "title": "Warehouse vs Lake vs Lakehouse",
+  "keys": [
+    "warehouse",
+    "lake",
+    "lakehouse",
+    "analytics"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-compare",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "Warehouse, Lake, or Lakehouse?",
+      "line2": "What's the real difference?",
+      "say": "Warehouse, lake, or lakehouse? What’s the real difference, and why do interviewers care?"
+    },
+    {
+      "id": "1-chip-warehouse",
+      "type": "chip",
+      "kicker": "Warehouse",
+      "label": "Structured",
+      "sub": "Stores clean, tabular data for analytics, using SQL.",
+      "say": "A warehouse stores structured, cleaned data. It’s optimized for analytics and uses SQL with strict schemas."
+    },
+    {
+      "id": "2-chip-lake",
+      "type": "chip",
+      "kicker": "Lake",
+      "label": "Flexible",
+      "sub": "Holds raw, unstructured or semi-structured data.",
+      "say": "A data lake is all about flexibility. It keeps raw, unstructured, or semi-structured data, ready for any future use."
+    },
+    {
+      "id": "3-compare-lakehouse",
+      "type": "compare",
+      "kicker": "Lakehouse",
+      "left": {
+        "title": "Warehouse",
+        "items": [
+          "Fast analytics",
+          "Strict schemas"
+        ]
+      },
+      "right": {
+        "title": "Lake",
+        "items": [
+          "Raw data",
+          "Flexible formats"
+        ]
+      },
+      "say": "A lakehouse blends both worlds. You get analytics and transactions like a warehouse, with the flexibility and scale of a lake."
+    },
+    {
+      "id": "4-trap-tradeoff",
+      "type": "trap",
+      "question": "Why are lakehouses popular?",
+      "wrong": "They're just cheaper than lakes.",
+      "right": "Lakehouses offer analytics, ACID guarantees, and flexibility, all in one platform.",
+      "say": "Don’t just say lakehouses are cheaper. The real reason? They deliver analytics, reliability, and flexibility together."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:07:14.736Z"
+}
