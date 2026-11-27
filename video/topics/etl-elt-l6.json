@@ -1,0 +1,78 @@
+{
+  "id": "etl-elt-l6",
+  "title": "dbt Models, Tests, Sources, Incremental",
+  "keys": [
+    "dbt",
+    "models",
+    "tests",
+    "sources",
+    "incremental"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dbt-pipelines",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "How does dbt boost data pipelines?",
+      "line2": "What makes it efficient?",
+      "say": "How does dbt help you build fast, reliable data pipelines? What makes it so efficient for modern teams?"
+    },
+    {
+      "id": "1-chip-models",
+      "type": "chip",
+      "kicker": "dbt",
+      "label": "Models",
+      "sub": "Define SQL-based views and tables for transformations.",
+      "say": "In dbt, models are SQL files that create views or tables. They let you transform raw data into useful formats."
+    },
+    {
+      "id": "2-rows-sources-tests",
+      "type": "rows",
+      "kicker": "dbt",
+      "rows": [
+        {
+          "a": "Sources",
+          "b": "Connect to raw data tables"
+        },
+        {
+          "a": "Tests",
+          "b": "Check data quality automatically"
+        },
+        {
+          "a": "Dependencies",
+          "b": "Manage model relationships"
+        }
+      ],
+      "walk": true,
+      "say": "You can declare sources for raw data, set up tests to check data quality, and dbt handles dependencies between models for you."
+    },
+    {
+      "id": "3-terminal-incremental",
+      "type": "terminal",
+      "kicker": "dbt",
+      "title": "Incremental Model Example",
+      "lines": [
+        "$ {{ config(materialized='incremental') }}",
+        "$ SELECT * FROM source",
+        "$ WHERE updated_at > (SELECT MAX(updated_at)",
+        "$ FROM {{ this }})"
+      ],
+      "say": "Incremental models in dbt process only new or changed rows. This keeps your pipeline fast and efficient."
+    },
+    {
+      "id": "4-trap-tests",
+      "type": "trap",
+      "question": "Can dbt only test for nulls?",
+      "wrong": "Yes, dbt tests only nulls.",
+      "right": "No, dbt tests for uniqueness, referential integrity, and custom checks too.",
+      "say": "Don’t get trapped! dbt does more than just null checks. It supports tests for uniqueness, referential integrity, and custom SQL-based checks."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:35:36.913Z"
+}
