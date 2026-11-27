@@ -1,0 +1,71 @@
+{
+  "id": "concurrency-l5",
+  "title": "Thread Pools, Executors & Work Queues",
+  "keys": [
+    "thread pool",
+    "executor",
+    "work queue",
+    "resource"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-thread-pool",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "How do you run tasks efficiently?",
+      "line2": "What keeps it scalable?",
+      "say": "How do you run lots of tasks efficiently without wasting resources? What keeps your code scalable?"
+    },
+    {
+      "id": "1-chip-thread-pool",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Threads",
+      "sub": "Thread pools reuse threads to run tasks fast.",
+      "say": "Thread pools manage a set of reusable threads. They run tasks without creating new threads each time, saving overhead."
+    },
+    {
+      "id": "2-compare-executor-que",
+      "type": "compare",
+      "kicker": "Roles",
+      "left": {
+        "title": "Executor",
+        "items": [
+          "Abstracts thread mgmt",
+          "Submits tasks"
+        ]
+      },
+      "right": {
+        "title": "Work Queue",
+        "items": [
+          "Holds tasks",
+          "Feeds worker threads"
+        ]
+      },
+      "say": "Executors handle thread management and task submission. Work queues store tasks and feed them to worker threads."
+    },
+    {
+      "id": "3-code-thread-pool-pyt",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "from concurrent.futures import ThreadPoolExecutor\nwith ThreadPoolExecutor(max_workers=4) as pool:\n    pool.submit(my_task)\n",
+      "say": "In Python, ThreadPoolExecutor lets you run tasks with a fixed number of threads, avoiding the overhead of creating new ones."
+    },
+    {
+      "id": "4-trap-thread-pool-ove",
+      "type": "trap",
+      "question": "Why not create a new thread for each task?",
+      "wrong": "It's always faster and simpler.",
+      "right": "Creating threads for each task adds overhead and wastes resources. Thread pools avoid this and boost efficiency.",
+      "say": "Why not just create a new thread for every task? It adds overhead and wastes resources. Thread pools avoid this and keep things efficient."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T19:56:04.991Z"
+}
