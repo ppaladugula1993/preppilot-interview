@@ -1,0 +1,72 @@
+{
+  "id": "go-core-l1",
+  "title": "Go Interfaces & Implicit Implementation",
+  "keys": [
+    "interface",
+    "method set",
+    "implicit",
+    "polymorphism"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-implicit",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "How do Go interfaces work?",
+      "line2": "No explicit keyword?",
+      "say": "Ever wonder why Go doesn't need an implements keyword for interfaces?"
+    },
+    {
+      "id": "1-chip-methodset",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Method Set",
+      "sub": "A type matches an interface if it has all the interface's methods.",
+      "say": "In Go, a type matches an interface if it has all the methods the interface requires."
+    },
+    {
+      "id": "2-code-implicit",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "type Reader interface {\n  Read([]byte) (int, error)\n}\ntype File struct{}\nfunc (f *File) Read(b []byte) (int, error) {\n  return 0, nil\n}",
+      "say": "Here, File has a Read method. So it automatically satisfies the Reader interface—no extra code needed."
+    },
+    {
+      "id": "3-rows-benefits",
+      "type": "rows",
+      "kicker": "Why it matters",
+      "rows": [
+        {
+          "a": "Less boilerplate",
+          "b": "No implements keyword needed"
+        },
+        {
+          "a": "Flexible code",
+          "b": "Swap types easily"
+        },
+        {
+          "a": "Decoupled design",
+          "b": "No tight coupling"
+        }
+      ],
+      "walk": true,
+      "say": "This keeps your code flexible, decoupled, and free from boilerplate. You can swap in any type that fits the interface."
+    },
+    {
+      "id": "4-trap-explicit",
+      "type": "trap",
+      "question": "How do you declare a type implements an interface?",
+      "wrong": "You use an explicit implements keyword.",
+      "right": "You just match the method set—no explicit declaration needed.",
+      "say": "Don't say you use an explicit implements keyword. In Go, just matching the method set is enough."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:40:43.491Z"
+}
