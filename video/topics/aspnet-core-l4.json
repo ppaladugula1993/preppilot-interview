@@ -1,0 +1,76 @@
+{
+  "id": "aspnet-core-l4",
+  "title": "ASP.NET Core: Auth in a Nutshell",
+  "keys": [
+    "authentication",
+    "authorization",
+    "JWT",
+    "policies"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-auth-why",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "Who can access your API?",
+      "line2": "How does ASP.NET Core decide?",
+      "say": "Who gets through your API gates? How does ASP.NET Core decide who’s in or out?"
+    },
+    {
+      "id": "1-chip-authn",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "AuthN",
+      "sub": "Authentication checks who the user is.",
+      "say": "First up, authentication. That’s how the app checks who someone actually is."
+    },
+    {
+      "id": "2-chip-authz",
+      "type": "chip",
+      "kicker": "Step 2",
+      "label": "AuthZ",
+      "sub": "Authorization checks what they can do.",
+      "say": "Next, authorization. That’s how you decide what they can do once they're in."
+    },
+    {
+      "id": "3-code-jwt-policy",
+      "type": "code",
+      "kicker": "Setup",
+      "lang": "csharp",
+      "code": "services.AddAuthentication(\n  JwtBearerDefaults.AuthenticationScheme)\n  .AddJwtBearer(...);\nservices.AddAuthorization(options => {\n  options.AddPolicy(\"AdminOnly\",\n    policy => policy.RequireRole(\"Admin\"));\n});",
+      "say": "You set up token authentication with JWT, then add policies or roles to lock down access."
+    },
+    {
+      "id": "4-rows-middleware-orde",
+      "type": "rows",
+      "kicker": "Order matters",
+      "rows": [
+        {
+          "a": "1. Authentication",
+          "b": "Identify the user"
+        },
+        {
+          "a": "2. Authorization",
+          "b": "Check their permissions"
+        }
+      ],
+      "walk": true,
+      "say": "Always run authentication before authorization middleware. Otherwise, the app won’t know who’s making the request."
+    },
+    {
+      "id": "5-trap-middleware-trap",
+      "type": "trap",
+      "question": "What happens if you swap the order?",
+      "wrong": "Authorization works fine.",
+      "right": "Authorization fails because no user is identified.",
+      "say": "Here’s a common trap: if you run authorization before authentication, nobody gets access. The app doesn’t know who you are!"
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:06:17.058Z"
+}
