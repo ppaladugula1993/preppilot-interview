@@ -1,0 +1,72 @@
+{
+  "id": "testing-l1",
+  "title": "Unit Tests: Arrange-Act-Assert & Isolation",
+  "keys": [
+    "unit test",
+    "isolation",
+    "arrange-act-assert",
+    "reliable"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-unit-test-basic",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "How do you write a solid unit test?",
+      "line2": "What makes it reliable?",
+      "say": "Ever wonder what makes a unit test truly reliable? Let's break it down."
+    },
+    {
+      "id": "1-rows-aaa-pattern",
+      "type": "rows",
+      "kicker": "Arrange-Act-Assert",
+      "rows": [
+        {
+          "a": "Arrange",
+          "b": "Set up your test data"
+        },
+        {
+          "a": "Act",
+          "b": "Run the code you want to test"
+        },
+        {
+          "a": "Assert",
+          "b": "Check if the result is correct"
+        }
+      ],
+      "walk": true,
+      "say": "Unit tests follow a simple pattern: arrange your data, act by calling your code, and assert the result. This keeps tests clear and focused."
+    },
+    {
+      "id": "2-chip-isolation",
+      "type": "chip",
+      "kicker": "Key Principle",
+      "label": "Isolation",
+      "sub": "Tests should not rely on external systems or shared state.",
+      "say": "Isolation is key. Your tests shouldn't depend on databases, networks, or anything outside the code you're testing."
+    },
+    {
+      "id": "3-code-unit-test-examp",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "def test_add():\n    a, b = 2, 3\n    result = add(a, b)\n    assert result == 5",
+      "say": "Here's a classic example. Set up the numbers, call the add function, then check if the result is five. No outside dependencies."
+    },
+    {
+      "id": "4-trap-shared-state",
+      "type": "trap",
+      "question": "What's a common unit test mistake?",
+      "wrong": "Letting tests share state",
+      "right": "Unit tests must stay isolated to avoid flaky results and make failures easy to debug.",
+      "say": "A common trap? Letting tests share state. Always keep them isolated to avoid flaky results and make failures easy to debug."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:34:01.101Z"
+}
