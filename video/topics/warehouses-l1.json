@@ -1,0 +1,89 @@
+{
+  "id": "warehouses-l1",
+  "title": "Separation of Storage & Compute",
+  "keys": [
+    "storage",
+    "compute",
+    "scaling",
+    "cloud",
+    "Snowflake"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-storage-compute",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "Why split storage and compute?",
+      "line2": "What’s the real benefit?",
+      "say": "Ever wonder why cloud warehouses and lakehouses split storage from compute? What’s the big deal?"
+    },
+    {
+      "id": "1-chip-elasticity",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Elasticity",
+      "sub": "Scale compute up or down without touching stored data.",
+      "say": "With separation, you can scale compute up or down without messing with your stored data. That’s real elasticity."
+    },
+    {
+      "id": "2-compare-cost-perform",
+      "type": "compare",
+      "kicker": "Optimize",
+      "left": {
+        "title": "Storage",
+        "items": [
+          "Persists data",
+          "Cheap, reliable"
+        ]
+      },
+      "right": {
+        "title": "Compute",
+        "items": [
+          "Runs queries",
+          "Flexible, scalable"
+        ]
+      },
+      "say": "Storage keeps your data safe and cheap. Compute handles queries and can flex as needed. You optimize each for cost and performance."
+    },
+    {
+      "id": "3-rows-snowflake-examp",
+      "type": "rows",
+      "kicker": "Snowflake Example",
+      "rows": [
+        {
+          "a": "Data stored",
+          "b": "Cloud storage"
+        },
+        {
+          "a": "Compute",
+          "b": "Virtual warehouses"
+        },
+        {
+          "a": "Scale",
+          "b": "Resize or pause compute"
+        },
+        {
+          "a": "Availability",
+          "b": "No impact on stored data"
+        }
+      ],
+      "walk": true,
+      "say": "In Snowflake, your data sits in cloud storage. Compute happens in virtual warehouses you can resize or pause anytime. Data stays safe no matter what."
+    },
+    {
+      "id": "4-trap-common-misconce",
+      "type": "trap",
+      "question": "Does scaling compute affect stored data?",
+      "wrong": "Yes, resizing compute changes storage.",
+      "right": "No, storage and compute are independent. Resizing compute doesn’t touch your stored data.",
+      "say": "Here’s a common interview trap: Does scaling compute affect your stored data? The answer is no. Storage and compute are totally independent."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:09:43.826Z"
+}
