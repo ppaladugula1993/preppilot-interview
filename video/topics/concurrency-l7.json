@@ -1,0 +1,59 @@
+{
+  "id": "concurrency-l7",
+  "title": "Immutability & Message Passing for Concurrency",
+  "keys": [
+    "immutability",
+    "message passing",
+    "concurrency",
+    "thread safety"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-immutable-messa",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "How do you avoid race conditions?",
+      "line2": "What’s your safest bet?",
+      "say": "How do you avoid race conditions when threads share data? What's your safest bet?"
+    },
+    {
+      "id": "1-chip-immutability",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Immutable",
+      "sub": "Objects stay unchanged after creation.",
+      "say": "Immutability means once you create an object, it never changes. That keeps things safe between threads."
+    },
+    {
+      "id": "2-chip-message-passing",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Messages",
+      "sub": "Threads talk by sending data, not sharing it.",
+      "say": "Message passing is when threads communicate by sending data instead of sharing it directly. That means less chance for bugs."
+    },
+    {
+      "id": "3-code-py-queue",
+      "type": "code",
+      "kicker": "Python Example",
+      "lang": "python",
+      "code": "from queue import Queue\nq = Queue()\nq.put('data')\nitem = q.get()",
+      "say": "For example, in Python, you can use a queue to send data safely between threads. No shared state, no worries."
+    },
+    {
+      "id": "4-trap-shared-state",
+      "type": "trap",
+      "question": "Is sharing mutable data safe with threads?",
+      "wrong": "Yes, if you’re careful.",
+      "right": "No, it risks race conditions. Use immutability or message passing.",
+      "say": "Here's a common trap: Is it safe to share mutable data between threads if you're careful? Not really. Even careful code can hit race conditions. Immutability or message passing is safer."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:12:52.554Z"
+}
