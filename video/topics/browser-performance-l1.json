@@ -1,0 +1,71 @@
+{
+  "id": "browser-performance-l1",
+  "title": "Reflow vs Repaint: Know the Difference",
+  "keys": [
+    "reflow",
+    "repaint",
+    "layout",
+    "performance",
+    "DOM"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-reflow-repaint",
+      "type": "hook",
+      "kicker": "Browser & Web Performance · lesson",
+      "line1": "Why does changing width slow pages?",
+      "line2": "Reflow or repaint?",
+      "say": "Ever wonder why changing an element's width can slow down your web page? Is it a reflow or a repaint?"
+    },
+    {
+      "id": "1-chip-reflow",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Reflow",
+      "sub": "Recalculates layout and geometry of elements.",
+      "say": "Reflow means the browser recalculates the layout and geometry of elements. It's a heavy operation."
+    },
+    {
+      "id": "2-chip-repaint",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Repaint",
+      "sub": "Updates pixels without changing layout.",
+      "say": "Repaint updates the pixels on the screen, like color changes, but doesn't affect layout."
+    },
+    {
+      "id": "3-compare-example",
+      "type": "compare",
+      "kicker": "Example",
+      "left": {
+        "title": "Reflow",
+        "items": [
+          "Change width",
+          "Move element"
+        ]
+      },
+      "right": {
+        "title": "Repaint",
+        "items": [
+          "Change background color"
+        ]
+      },
+      "say": "Changing width triggers reflow. Changing background color triggers repaint. Layout changes are always more expensive."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Does changing color cause reflow?",
+      "wrong": "Yes, it recalculates layout.",
+      "right": "No, it only triggers repaint. Layout stays the same.",
+      "say": "Interview trap: Does changing color cause a reflow? No, it only triggers repaint. Layout stays the same."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:33:16.754Z"
+}
