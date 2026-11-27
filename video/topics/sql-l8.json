@@ -1,0 +1,91 @@
+{
+  "id": "sql-l8",
+  "title": "Normalization vs Denormalization",
+  "keys": [
+    "normalization",
+    "denormalization",
+    "redundancy",
+    "integrity",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-norm-vs-denorm",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "Why normalize or denormalize data?",
+      "line2": "Which should you pick?",
+      "say": "Why do we normalize or denormalize data? Which approach is best for your database?"
+    },
+    {
+      "id": "1-chip-norm",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Normalize",
+      "sub": "Organizes data, cuts redundancy, boosts integrity.",
+      "say": "Normalization organizes your data, cuts redundancy, and improves integrity."
+    },
+    {
+      "id": "2-chip-denorm",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Denormalize",
+      "sub": "Combines tables for speed, adds redundancy.",
+      "say": "Denormalization combines tables for speed, but adds some redundancy."
+    },
+    {
+      "id": "3-compare-norm-vs-deno",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "Normalize",
+        "items": [
+          "Less redundancy",
+          "Better consistency",
+          "Slower queries"
+        ]
+      },
+      "right": {
+        "title": "Denormalize",
+        "items": [
+          "Faster reads",
+          "More redundancy",
+          "Risk of anomalies"
+        ]
+      },
+      "say": "Normalize for less redundancy and better consistency, but expect slower queries. Denormalize for faster reads, but watch for data anomalies."
+    },
+    {
+      "id": "4-rows-use-cases",
+      "type": "rows",
+      "kicker": "When to use",
+      "rows": [
+        {
+          "a": "OLTP",
+          "b": "Normalize for transactions"
+        },
+        {
+          "a": "OLAP",
+          "b": "Denormalize for reporting"
+        }
+      ],
+      "walk": true,
+      "say": "Normalize for online transaction processing. Denormalize for analytics and reporting workloads."
+    },
+    {
+      "id": "5-trap-joins",
+      "type": "trap",
+      "question": "Why not always normalize?",
+      "wrong": "It always boosts performance.",
+      "right": "Too much normalization can slow queries with complex joins.",
+      "say": "Why not always normalize? Too much normalization can slow down queries that need lots of joins."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:10:52.885Z"
+}
