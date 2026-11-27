@@ -1,0 +1,72 @@
+{
+  "id": "streaming-l6",
+  "title": "Batch vs Streaming: Key Trade-offs",
+  "keys": [
+    "batch",
+    "streaming",
+    "latency",
+    "complexity",
+    "Kafka"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-batch-streaming",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "Batch or streaming?",
+      "line2": "Which fits your use case?",
+      "say": "Should you use batch or streaming for your next data pipeline? Let’s break down the trade-offs."
+    },
+    {
+      "id": "1-chip-batch",
+      "type": "chip",
+      "kicker": "Batch",
+      "label": "Throughput",
+      "sub": "Processes large volumes at intervals, simpler consistency.",
+      "say": "Batch processing handles big data sets at scheduled intervals. It’s efficient and easier to keep data consistent."
+    },
+    {
+      "id": "2-chip-streaming",
+      "type": "chip",
+      "kicker": "Streaming",
+      "label": "Latency",
+      "sub": "Real-time data, lower latency, but higher complexity.",
+      "say": "Streaming processes data as it arrives. You get low latency, but the setup and maintenance are more complex."
+    },
+    {
+      "id": "3-compare-examples",
+      "type": "compare",
+      "kicker": "Use Cases",
+      "left": {
+        "title": "Batch",
+        "items": [
+          "Nightly ETL job",
+          "Bulk analytics"
+        ]
+      },
+      "right": {
+        "title": "Streaming",
+        "items": [
+          "Fraud detection",
+          "Live metrics"
+        ]
+      },
+      "say": "For example, batch works well for nightly ETL jobs. Streaming is ideal for real-time fraud detection or live metrics."
+    },
+    {
+      "id": "4-trap-latency",
+      "type": "trap",
+      "question": "Is streaming always better for speed?",
+      "wrong": "Yes, always use streaming.",
+      "right": "Streaming is faster, but adds complexity and overhead. Choose it only if low latency truly matters.",
+      "say": "Don’t assume streaming is always better. It’s faster, but the complexity and operational overhead can outweigh the benefits unless low latency is critical."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:00:47.610Z"
+}
