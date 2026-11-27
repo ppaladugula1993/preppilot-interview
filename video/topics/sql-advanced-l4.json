@@ -1,0 +1,71 @@
+{
+  "id": "sql-advanced-l4",
+  "title": "Pivoting & Conditional Aggregation in SQL",
+  "keys": [
+    "pivot",
+    "CASE",
+    "aggregation",
+    "columns"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pivot-power",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "Turn rows into columns?",
+      "line2": "How does SQL do it?",
+      "say": "Ever wondered how to flip rows into columns in SQL? Let’s break down pivoting and conditional aggregation."
+    },
+    {
+      "id": "1-chip-pivoting",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Pivoting",
+      "sub": "Transforms row data into columns for easier reporting.",
+      "say": "Pivoting means transforming row data into columns. It’s great for building reports or dashboards."
+    },
+    {
+      "id": "2-code-conditional-agg",
+      "type": "code",
+      "kicker": "Technique",
+      "lang": "sql",
+      "code": "SELECT department,\n  SUM(CASE WHEN gender = 'F' THEN 1 ELSE 0 END) AS female_count\nFROM employees\nGROUP BY department;",
+      "say": "Here’s a classic move: count females per department using a sum with a case statement inside."
+    },
+    {
+      "id": "3-compare-pivot-method",
+      "type": "compare",
+      "kicker": "Methods",
+      "left": {
+        "title": "CASE + Aggregation",
+        "items": [
+          "Works everywhere",
+          "Flexible"
+        ]
+      },
+      "right": {
+        "title": "PIVOT Operator",
+        "items": [
+          "Shorter syntax",
+          "Not always supported"
+        ]
+      },
+      "say": "You can use case with aggregation for custom pivots, or the pivot operator if your database supports it."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Is procedural code needed for pivots?",
+      "wrong": "Yes, use loops or scripts.",
+      "right": "Nope. SQL pivots data with aggregation and case.",
+      "say": "Don’t fall for this: you don’t need procedural code to pivot data in SQL. Aggregation and case statements do the job."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:07:46.584Z"
+}
