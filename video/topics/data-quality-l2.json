@@ -1,0 +1,75 @@
+{
+  "id": "data-quality-l2",
+  "title": "Data Observability: Stay Ahead of Issues",
+  "keys": [
+    "freshness",
+    "volume",
+    "schema",
+    "distribution"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-obs",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "How do you catch data issues early?",
+      "line2": "What is data observability?",
+      "say": "How do you spot data pipeline issues before users complain? That's where data observability comes in."
+    },
+    {
+      "id": "1-chip-freshness",
+      "type": "chip",
+      "kicker": "Key Metric",
+      "label": "Freshness",
+      "sub": "Tracks when data was last updated.",
+      "say": "First up, freshness. This tracks when your data was last updated, so you know if you're working with the latest info."
+    },
+    {
+      "id": "2-rows-metrics",
+      "type": "rows",
+      "kicker": "Main Metrics",
+      "rows": [
+        {
+          "a": "Volume",
+          "b": "Counts rows to spot drops or spikes"
+        },
+        {
+          "a": "Schema",
+          "b": "Flags changes to columns or types"
+        },
+        {
+          "a": "Distribution",
+          "b": "Checks for unusual patterns"
+        }
+      ],
+      "walk": false,
+      "say": "Other key metrics? Volume counts rows to catch sudden drops. Schema checks for unexpected changes. Distribution looks for weird patterns in the data."
+    },
+    {
+      "id": "3-terminal-freshness-a",
+      "type": "terminal",
+      "kicker": "Example Alert",
+      "title": "Freshness Check",
+      "lines": [
+        "$ check_freshness sales_data",
+        "ALERT: Data not updated by 8am"
+      ],
+      "say": "Picture this: a freshness check pings you if yesterday's sales data hasn't landed by eight in the morning. You catch issues fast."
+    },
+    {
+      "id": "4-trap-dims",
+      "type": "trap",
+      "question": "Is uniqueness a data observability metric?",
+      "wrong": "Yes, it's a core observability metric.",
+      "right": "Nope. Uniqueness is a data quality dimension, not an observability metric.",
+      "say": "Watch out: uniqueness is a data quality dimension, not a direct observability metric. Don't mix them up in interviews."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:46:14.055Z"
+}
