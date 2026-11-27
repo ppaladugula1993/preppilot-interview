@@ -1,0 +1,14 @@
+{
+ "updated": "2026-11-27T17:42:08.120Z",
+ "videos": [
+  {
+   "id": "docker",
+   "topic": "docker",
+   "title": "Docker: Image vs Container, Demystified",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/docker.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/docker.jpg",
+   "duration": 50,
+   "quiz": 0
+  }
+ ]
+}
