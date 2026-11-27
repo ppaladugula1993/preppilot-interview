@@ -1,0 +1,76 @@
+{
+  "id": "react-l6",
+  "title": "React Server Components & Next.js Basics",
+  "keys": [
+    "server components",
+    "Next.js",
+    "SSR",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-server-nextjs",
+      "type": "hook",
+      "kicker": "React · lesson",
+      "line1": "Why use server components?",
+      "line2": "How does Next.js help?",
+      "say": "Want faster React apps? Let's see how server components and Next.js make that happen."
+    },
+    {
+      "id": "1-chip-server-comp",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Server",
+      "sub": "Server components render UI on the backend, cutting client-side JavaScript.",
+      "say": "Server components let you render parts of your UI on the backend, so your browser loads less JavaScript."
+    },
+    {
+      "id": "2-rows-nextjs-features",
+      "type": "rows",
+      "kicker": "Next.js Powers",
+      "rows": [
+        {
+          "a": "SSR",
+          "b": "Renders pages on the server"
+        },
+        {
+          "a": "Static Gen",
+          "b": "Pre-builds pages at deploy"
+        },
+        {
+          "a": "Routing",
+          "b": "Handles navigation easily"
+        },
+        {
+          "a": "API Routes",
+          "b": "Build backend endpoints"
+        }
+      ],
+      "walk": true,
+      "say": "Next.js gives you server-side rendering, static generation, routing, and API routes—all built in."
+    },
+    {
+      "id": "3-code-nextjs-page",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "jsx",
+      "code": "export default function Home() {\n  return <div>Welcome to Next.js 13</div>;\n}",
+      "say": "Here's a simple Next.js page. It renders on the server, boosting performance and search engine visibility."
+    },
+    {
+      "id": "4-trap-server-comp-lim",
+      "type": "trap",
+      "question": "Can server components use browser APIs?",
+      "wrong": "Yes, they can access everything.",
+      "right": "No, server components can't access browser APIs or local state.",
+      "say": "Don't forget: server components can't use browser APIs or manage local state. That's a common interview gotcha."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:17:34.403Z"
+}
