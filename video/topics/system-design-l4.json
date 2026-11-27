@@ -1,0 +1,79 @@
+{
+  "id": "system-design-l4",
+  "title": "SQL vs NoSQL: Scaling Strategies",
+  "keys": [
+    "SQL",
+    "NoSQL",
+    "Scaling",
+    "Sharding",
+    "Indexes"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-sql-nosql-scali",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "SQL or NoSQL?",
+      "line2": "How do you scale them?",
+      "say": "SQL or NoSQL? How do you scale them for real-world workloads?"
+    },
+    {
+      "id": "1-compare-sql-nosql",
+      "type": "compare",
+      "kicker": "Databases",
+      "left": {
+        "title": "SQL",
+        "items": [
+          "ACID transactions",
+          "Flexible queries",
+          "Relational data"
+        ]
+      },
+      "right": {
+        "title": "NoSQL",
+        "items": [
+          "Horizontal scaling",
+          "Schema flexibility",
+          "Unstructured data"
+        ]
+      },
+      "say": "SQL gives you strong consistency and flexible queries. NoSQL is built for horizontal scaling and handles flexible, unstructured data."
+    },
+    {
+      "id": "2-rows-scaling-methods",
+      "type": "rows",
+      "kicker": "Scaling Techniques",
+      "rows": [
+        {
+          "a": "Replication",
+          "b": "Copies data for high availability"
+        },
+        {
+          "a": "Sharding",
+          "b": "Splits data by key for scale"
+        },
+        {
+          "a": "Indexes",
+          "b": "Speeds up lookups, slows writes"
+        }
+      ],
+      "walk": true,
+      "say": "Replication copies your data for reliability. Sharding splits it by key to scale out. Indexes make reads faster, but slow down writes."
+    },
+    {
+      "id": "3-trap-sql-nosql-choic",
+      "type": "trap",
+      "question": "When should you use NoSQL over SQL?",
+      "wrong": "Always pick NoSQL for speed.",
+      "right": "Choose NoSQL for high-scale, flexible, or unstructured workloads.",
+      "say": "Here's a trap: when should you use NoSQL instead of SQL? It's not always about speed—pick NoSQL for high-scale or flexible workloads."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:11:18.077Z"
+}
