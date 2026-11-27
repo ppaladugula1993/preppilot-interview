@@ -1,0 +1,84 @@
+{
+  "id": "csharp-core-l0",
+  "title": "Value vs Reference Types in C#",
+  "keys": [
+    "struct",
+    "class",
+    "boxing",
+    "heap"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-value-ref",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "Struct or class?",
+      "line2": "What's the real difference?",
+      "say": "Struct or class in C sharp? What's the real difference? Let's break it down."
+    },
+    {
+      "id": "1-rows-value-ref",
+      "type": "rows",
+      "kicker": "How they store data",
+      "rows": [
+        {
+          "a": "Struct",
+          "b": "Value type, data stored directly"
+        },
+        {
+          "a": "Class",
+          "b": "Reference type, data on heap"
+        },
+        {
+          "a": "Record",
+          "b": "Reference type, value equality"
+        }
+      ],
+      "walk": true,
+      "say": "Structs are value types, storing data directly. Classes are reference types, storing data on the heap. Records? They're reference types too, but focus on value-based equality."
+    },
+    {
+      "id": "2-code-boxing",
+      "type": "code",
+      "kicker": "Boxing in action",
+      "lang": "csharp",
+      "code": "int x = 5;\nobject o = x; // Boxing",
+      "say": "When you assign an integer to an object, that's called boxing. C sharp wraps the value type as a reference type."
+    },
+    {
+      "id": "3-compare-copy",
+      "type": "compare",
+      "kicker": "Assignment difference",
+      "left": {
+        "title": "Struct",
+        "items": [
+          "Copies data",
+          "Independent values"
+        ]
+      },
+      "right": {
+        "title": "Class",
+        "items": [
+          "Copies reference",
+          "Shares data"
+        ]
+      },
+      "say": "Assign a struct, and you copy the data. Assign a class, and you copy the reference—both variables point to the same object."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What happens when you assign a struct?",
+      "wrong": "The reference is copied.",
+      "right": "The data is copied, making two independent values.",
+      "say": "Interview trap: What happens when you assign a struct? It's not just a reference—you're copying the actual data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:06:50.820Z"
+}
