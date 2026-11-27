@@ -1,0 +1,84 @@
+{
+  "id": "web-fundamentals-l7",
+  "title": "Common Web Vulnerabilities Explained",
+  "keys": [
+    "XSS",
+    "CSRF",
+    "SQL Injection",
+    "Mitigation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-web-vuln",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Can you spot risky web bugs?",
+      "line2": "Which attacks matter most?",
+      "say": "Web apps face real threats. Which vulnerabilities do interviewers care about most?"
+    },
+    {
+      "id": "1-chip-xss",
+      "type": "chip",
+      "kicker": "Vulnerability",
+      "label": "XSS",
+      "sub": "Lets attackers run scripts in your pages.",
+      "say": "First up, cross-site scripting. It lets attackers inject scripts right into your site."
+    },
+    {
+      "id": "2-compare-csrf-sqli",
+      "type": "compare",
+      "kicker": "Attack Types",
+      "left": {
+        "title": "CSRF",
+        "items": [
+          "Tricks users",
+          "Uses their cookies"
+        ]
+      },
+      "right": {
+        "title": "SQL Injection",
+        "items": [
+          "Manipulates queries",
+          "Accesses data"
+        ]
+      },
+      "say": "Next, cross-site request forgery tricks users into actions. SQL injection manipulates database queries to steal or change data."
+    },
+    {
+      "id": "3-rows-mitigations",
+      "type": "rows",
+      "kicker": "Mitigation",
+      "rows": [
+        {
+          "a": "Validate input",
+          "b": "Check user data carefully"
+        },
+        {
+          "a": "Encode output",
+          "b": "Prevent script injection"
+        },
+        {
+          "a": "Use tokens",
+          "b": "Stop CSRF attacks"
+        }
+      ],
+      "walk": true,
+      "say": "To defend, validate all input, encode output to block scripts, and use tokens to prevent forgery."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you prevent SQL injection?",
+      "wrong": "Just sanitize input fields.",
+      "right": "Use parameterized queries and sanitize inputs.",
+      "say": "If asked about stopping SQL injection, don’t just mention sanitizing. Always use parameterized queries for real protection."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:31:07.619Z"
+}
