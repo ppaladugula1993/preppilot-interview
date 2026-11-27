@@ -1,0 +1,71 @@
+{
+  "id": "dsa-l6",
+  "title": "Graphs & Key Algorithms in Interviews",
+  "keys": [
+    "graph",
+    "BFS",
+    "DFS",
+    "Dijkstra"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-graphs",
+      "type": "hook",
+      "kicker": "Data Structures & Algorithms · lesson",
+      "line1": "How do you pick the right graph algorithm?",
+      "line2": "What should you ask first?",
+      "say": "How do you pick the right graph algorithm in interviews? What should you ask first?"
+    },
+    {
+      "id": "1-chip-types",
+      "type": "chip",
+      "kicker": "Graph Basics",
+      "label": "Types",
+      "sub": "Graphs use nodes and edges; can be directed, undirected, weighted, or unweighted.",
+      "say": "Graphs are made of nodes and edges. They can be directed or undirected, weighted or unweighted."
+    },
+    {
+      "id": "2-compare-bfs-dfs",
+      "type": "compare",
+      "kicker": "Traversal",
+      "left": {
+        "title": "BFS",
+        "items": [
+          "Shortest paths",
+          "Uses queue"
+        ]
+      },
+      "right": {
+        "title": "DFS",
+        "items": [
+          "Connectivity",
+          "Uses stack or recursion"
+        ]
+      },
+      "say": "Breadth-first search finds shortest paths in unweighted graphs using a queue. Depth-first search explores connectivity with a stack or recursion."
+    },
+    {
+      "id": "3-code-bfs",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "queue = [start]\nvisited = set()\nwhile queue:\n    node = queue.pop(0)\n    for neighbor in graph[node]:\n        if neighbor not in visited:\n            queue.append(neighbor)\n            visited.add(neighbor)",
+      "say": "Here's a basic breadth-first search in Python. It uses a queue and a visited set to avoid cycles."
+    },
+    {
+      "id": "4-trap-directed",
+      "type": "trap",
+      "question": "What do you ask before choosing an algorithm?",
+      "wrong": "Always use BFS for shortest paths.",
+      "right": "Clarify if the graph is directed or weighted.",
+      "say": "Interview trap: Before picking an algorithm, clarify if the graph is directed or weighted. This changes your approach."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:27:25.245Z"
+}
