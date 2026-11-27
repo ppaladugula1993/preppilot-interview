@@ -64,7 +64,6 @@ export const Host: React.FC<ShortProps> = ({ title, scenes, timing, audio, keys 
   const scale = BOARD.w / 1080;
   return (
     <AbsoluteFill style={{ background: `linear-gradient(180deg, ${c.bg}, ${c.bg2})`, fontFamily: SANS }}>
-      <Audio src={staticFile('beat.mp3')} volume={0.04} loop />
       <Audio src={staticFile(audio)} />
       <div style={{ position: 'absolute', top: 60, left: 60, font: `800 40px ${SANS}`, color: c.ink }}>Prep<span style={{ color: c.a }}>Pilot</span></div>
       <div style={{ position: 'absolute', top: 76, right: 60, width: 300, height: 10, borderRadius: 5, background: c.ink + '18' }}><div style={{ width: `${(f / durationInFrames) * 100}%`, height: '100%', borderRadius: 5, background: c.a }} /></div>
