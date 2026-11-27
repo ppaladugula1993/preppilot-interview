@@ -1,0 +1,84 @@
+{
+  "id": "efcore-l3",
+  "title": "EF Core Loading & N+1 Problem Explained",
+  "keys": [
+    "eager loading",
+    "lazy loading",
+    "explicit loading",
+    "N+1 problem"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-efcore-loading",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "How does loading data affect speed?",
+      "line2": "Which method avoids slowdowns?",
+      "say": "Ever wonder why your app slows down when loading related data? Let's see which loading method keeps things fast."
+    },
+    {
+      "id": "1-chip-eager",
+      "type": "chip",
+      "kicker": "Loading Methods",
+      "label": "Eager",
+      "sub": "Fetches related data up front using Include.",
+      "say": "Eager loading grabs all related data in one go, using the Include method."
+    },
+    {
+      "id": "2-rows-loading-types",
+      "type": "rows",
+      "kicker": "Three Ways to Load",
+      "rows": [
+        {
+          "a": "Eager",
+          "b": "Loads related data with Include"
+        },
+        {
+          "a": "Lazy",
+          "b": "Loads related data when accessed"
+        },
+        {
+          "a": "Explicit",
+          "b": "Loads with Entry and Load"
+        }
+      ],
+      "walk": true,
+      "say": "You can load related data eagerly, lazily, or explicitly. Each has its own pros and cons."
+    },
+    {
+      "id": "3-compare-nplus1",
+      "type": "compare",
+      "kicker": "N+1 Problem",
+      "left": {
+        "title": "Eager Loading",
+        "items": [
+          "Single query",
+          "All data at once"
+        ]
+      },
+      "right": {
+        "title": "Lazy Loading",
+        "items": [
+          "Many small queries",
+          "Slower performance"
+        ]
+      },
+      "say": "Eager loading uses one query for everything. Lazy loading can trigger lots of small queries, causing the N plus one problem."
+    },
+    {
+      "id": "4-trap-loading-trap",
+      "type": "trap",
+      "question": "How do you avoid N+1 in EF Core?",
+      "wrong": "Just use lazy loading everywhere.",
+      "right": "Use eager loading with Include to fetch related data in one query.",
+      "say": "Here's a classic interview trap: Avoiding N plus one isn't about using lazy loading everywhere. You want eager loading with Include to grab all data together."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:24:33.728Z"
+}
