@@ -1,0 +1,72 @@
+{
+  "id": "aspnet-core-l3",
+  "title": "ASP.NET Core: Config & Options Pattern",
+  "keys": [
+    "configuration",
+    "options pattern",
+    "IOptions",
+    "appsettings"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-options-config",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "How do you keep config clean?",
+      "line2": "What’s the options pattern?",
+      "say": "How do you keep your settings clean and flexible across environments? Let’s break down the options pattern in ASP.NET Core."
+    },
+    {
+      "id": "1-chip-hierarchical-co",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Sources",
+      "sub": "ASP.NET Core pulls config from JSON, environment variables, and secrets.",
+      "say": "ASP.NET Core reads configuration from multiple sources, like JSON files, environment variables, and user secrets."
+    },
+    {
+      "id": "2-rows-options-pattern",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "1. Create class",
+          "b": "Define your settings as properties"
+        },
+        {
+          "a": "2. Bind config",
+          "b": "Connect config section to your class"
+        },
+        {
+          "a": "3. Inject options",
+          "b": "Use IOptions to access settings"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the flow: First, make a class for your settings. Then, bind a config section to it. Finally, inject the options interface to use those settings in your code."
+    },
+    {
+      "id": "3-code-options-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "services.Configure<MySettings>(\n  Configuration.GetSection(\"MySettings\")\n);\npublic MyController(\n  IOptions<MySettings> opts\n) { ... }",
+      "say": "In your startup, bind the MySettings section to your class. Then inject IOptions of MySettings into your controller."
+    },
+    {
+      "id": "4-trap-env-specific",
+      "type": "trap",
+      "question": "How do you override config per environment?",
+      "wrong": "Just edit appsettings.json",
+      "right": "Use environment-specific files and variables. ASP.NET Core loads files like appsettings dot Development dot json based on the environment variable.",
+      "say": "Don’t just edit the main settings file. Use environment-specific files and variables so your app adapts to each environment."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:04:00.220Z"
+}
