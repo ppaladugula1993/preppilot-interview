@@ -1,0 +1,73 @@
+{
+  "id": "sql",
+  "title": "SQL Joins: The Key to Data Relationships",
+  "keys": [
+    "INNER JOIN",
+    "LEFT JOIN",
+    "NULL",
+    "Cartesian",
+    "keys"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-joins",
+      "type": "hook",
+      "kicker": "SQL Essentials · 45 seconds",
+      "line1": "Why do SQL joins trip people up?",
+      "line2": "What’s the one rule you must know?",
+      "say": "Ever wondered why SQL joins are a common interview pitfall? What’s the one rule that makes joins click?"
+    },
+    {
+      "id": "1-chip-inner",
+      "type": "chip",
+      "kicker": "Step 1 · Join Types",
+      "label": "INNER",
+      "sub": "Matches rows in both tables using keys.",
+      "say": "First, INNER JOIN only returns rows where keys match in both tables. No match, no row."
+    },
+    {
+      "id": "2-chip-left",
+      "type": "chip",
+      "kicker": "Step 2 · Join Types",
+      "label": "LEFT",
+      "sub": "Keeps all rows from the left table, fills gaps with NULLs.",
+      "say": "LEFT JOIN keeps every row from the left table, even if there’s no match. Missing data is filled in as NULL."
+    },
+    {
+      "id": "3-compare-cartesian-nu",
+      "type": "compare",
+      "kicker": "Step 3 · Common Mistakes",
+      "left": {
+        "title": "Forgot Join",
+        "items": [
+          "Millions of rows",
+          "No key match",
+          "Confusing output"
+        ]
+      },
+      "right": {
+        "title": "Outer Join",
+        "items": [
+          "NULLs for missing keys",
+          "Can mislead results"
+        ]
+      },
+      "say": "If you forget the join condition, you get a huge, confusing result. With outer joins, watch out for NULLs—they can trip up your logic."
+    },
+    {
+      "id": "4-trap-null",
+      "type": "trap",
+      "question": "How do you check for NULL in joins?",
+      "wrong": "Use equals or not equals",
+      "right": "Use IS NULL or IS NOT NULL to check for missing values.",
+      "say": "Here’s a classic trap: don’t use equals or not equals for NULLs. Always use IS NULL or IS NOT NULL when checking for missing values."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:53:02.673Z"
+}
