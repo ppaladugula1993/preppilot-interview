@@ -1,0 +1,65 @@
+{
+  "id": "go-core-l3",
+  "title": "Go Maps: Key Facts for Interviews",
+  "keys": [
+    "map",
+    "reference",
+    "zero value",
+    "nil",
+    "concurrency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-map-basics",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "How do Go maps really work?",
+      "line2": "What’s their biggest gotcha?",
+      "say": "Maps are everywhere in Go code. But do you know the quirks that trip up candidates in interviews?"
+    },
+    {
+      "id": "1-chip-reference-type",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Reference",
+      "sub": "Maps store key-value pairs and are reference types.",
+      "say": "Maps in Go are reference types, which means changes affect all references to the same map."
+    },
+    {
+      "id": "2-rows-zero-nil",
+      "type": "rows",
+      "kicker": "Key Details",
+      "rows": [
+        {
+          "a": "Missing key",
+          "b": "Returns zero value, not error"
+        },
+        {
+          "a": "Nil map",
+          "b": "Can’t write, but reads return zero"
+        },
+        {
+          "a": "Existence check",
+          "b": "Use two-value assignment"
+        }
+      ],
+      "walk": true,
+      "say": "If you read a key that’s not there, you get the zero value. Nil maps can’t be written to, but reads still return zero. Always check if a key exists with two-value assignment."
+    },
+    {
+      "id": "3-trap-concurrency",
+      "type": "trap",
+      "question": "Are Go maps safe for concurrent writes?",
+      "wrong": "Yes, maps handle concurrency.",
+      "right": "No, regular maps are not safe. Use the sync.Map type for concurrent access.",
+      "say": "Here’s a common trap: regular maps aren’t safe for concurrent writes. For that, Go gives you the sync.Map type."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:44:26.164Z"
+}
