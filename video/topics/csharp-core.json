@@ -1,0 +1,80 @@
+{
+  "id": "csharp-core",
+  "title": "Value vs Reference Types: C# Core Idea",
+  "keys": [
+    "value type",
+    "reference type",
+    "boxing",
+    "struct",
+    "class"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-value-or-refere",
+      "type": "hook",
+      "kicker": "Core C# · 50 seconds",
+      "line1": "Struct or class?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder why C Sharp separates structs and classes? Let's break down why value versus reference types matter for every engineer."
+    },
+    {
+      "id": "1-chip-struct",
+      "type": "chip",
+      "kicker": "Type",
+      "label": "Struct",
+      "sub": "Stores its data directly. Copied on assignment.",
+      "say": "A struct is a value type. When you assign it, the data gets copied. It's fast and lives on the stack."
+    },
+    {
+      "id": "2-chip-class",
+      "type": "chip",
+      "kicker": "Type",
+      "label": "Class",
+      "sub": "Holds a reference to data on the heap.",
+      "say": "A class is a reference type. Assigning it copies the reference, not the data itself. The actual data sits on the heap."
+    },
+    {
+      "id": "3-compare-struct-class",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Struct",
+        "items": [
+          "Value type",
+          "Copied on assign"
+        ]
+      },
+      "right": {
+        "title": "Class",
+        "items": [
+          "Reference type",
+          "Reference copied"
+        ]
+      },
+      "say": "So, structs hold their data directly. Classes just point to it. That's a big difference for performance and bugs."
+    },
+    {
+      "id": "4-code-boxing",
+      "type": "code",
+      "kicker": "Boxing",
+      "lang": "csharp",
+      "code": "int x = 5;\nobject o = x; // boxing\n",
+      "say": "When you assign a value type like an int to an object, C Sharp boxes it. That means wrapping the value in a reference type, which adds overhead."
+    },
+    {
+      "id": "5-trap-records",
+      "type": "trap",
+      "question": "Are records value types?",
+      "wrong": "Yes, records are value types.",
+      "right": "No, records are reference types with value-based equality.",
+      "say": "Don't mix this up: records look like value types, but they're actually reference types optimized for immutability and equality."
+    },
+    {
+      "id": "6-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:06:15.586Z"
+}
