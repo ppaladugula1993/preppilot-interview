@@ -1,0 +1,73 @@
+{
+  "id": "oop-design-patterns",
+  "title": "The #1 OOP Rule: Favor Composition",
+  "keys": [
+    "composition",
+    "inheritance",
+    "flexibility",
+    "maintainability",
+    "SOLID"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-composition-vs-",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · 45 seconds",
+      "line1": "Why avoid deep inheritance trees?",
+      "line2": "What's the better way?",
+      "say": "Why do experienced engineers warn against deep inheritance trees? What's the smarter alternative?"
+    },
+    {
+      "id": "1-chip-composition",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Compose",
+      "sub": "Build classes by combining objects, not just inheriting.",
+      "say": "The key idea: favor composition. That means building classes by combining objects, not just relying on inheritance."
+    },
+    {
+      "id": "2-compare-comp-vs-inhe",
+      "type": "compare",
+      "kicker": "Design Choice",
+      "left": {
+        "title": "Inheritance",
+        "items": [
+          "Rigid hierarchy",
+          "Tight coupling"
+        ]
+      },
+      "right": {
+        "title": "Composition",
+        "items": [
+          "Flexible",
+          "Easier to test",
+          "Swappable parts"
+        ]
+      },
+      "say": "Inheritance creates rigid hierarchies and tight coupling. Composition is flexible, easier to test, and lets you swap parts without breaking everything."
+    },
+    {
+      "id": "3-code-composition-exa",
+      "type": "code",
+      "kicker": "Real Example",
+      "lang": "python",
+      "code": "class Engine:\n    def start(self): ...\nclass Car:\n    def __init__(self, engine):\n        self.engine = engine",
+      "say": "See this? Instead of Car inheriting Engine, Car gets an Engine. You can swap engines, test separately, and keep code clean."
+    },
+    {
+      "id": "4-trap-inheritance-tra",
+      "type": "trap",
+      "question": "When should you use inheritance?",
+      "wrong": "Whenever classes share code.",
+      "right": "Only when there's a true 'is-a' relationship and shared state. Otherwise, prefer composition.",
+      "say": "Here's the trap: use inheritance only for true 'is-a' relationships and shared state. Otherwise, composition is almost always better."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:10:27.321Z"
+}
