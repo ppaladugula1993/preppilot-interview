@@ -1,0 +1,79 @@
+{
+  "id": "git-l3",
+  "title": "Branching Strategies in Git",
+  "keys": [
+    "trunk-based",
+    "GitFlow",
+    "feature flags",
+    "collaboration"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-branching",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "How do teams manage code changes?",
+      "line2": "Which strategy fits best?",
+      "say": "Ever wonder how teams keep their code organized? Which branching strategy is right for your project?"
+    },
+    {
+      "id": "1-chip-trunk",
+      "type": "chip",
+      "kicker": "Strategy",
+      "label": "Trunk",
+      "sub": "One main branch, short feature branches merged often.",
+      "say": "Trunk-based development uses a single main branch. Teams work on short-lived feature branches and merge changes back in quickly."
+    },
+    {
+      "id": "2-chip-gitflow",
+      "type": "chip",
+      "kicker": "Strategy",
+      "label": "GitFlow",
+      "sub": "Multiple branches for features, releases, and fixes.",
+      "say": "GitFlow adds more structure. You get separate branches for features, releases, and hotfixes, which helps manage complex release cycles."
+    },
+    {
+      "id": "3-code-feature-flag",
+      "type": "code",
+      "kicker": "Technique",
+      "lang": "js",
+      "code": "if (featureEnabled) {\n  showNewUI();\n}",
+      "say": "Feature flags let you merge unfinished work safely. You can turn features on or off at runtime without breaking the main branch."
+    },
+    {
+      "id": "4-compare-impact",
+      "type": "compare",
+      "kicker": "Impact",
+      "left": {
+        "title": "Trunk-based",
+        "items": [
+          "Fast releases",
+          "Simple workflow"
+        ]
+      },
+      "right": {
+        "title": "GitFlow",
+        "items": [
+          "Organized releases",
+          "Easier hotfixes"
+        ]
+      },
+      "say": "Trunk-based is great for speed and simplicity. GitFlow is better when you need more control over releases and hotfixes."
+    },
+    {
+      "id": "5-trap-strategy",
+      "type": "trap",
+      "question": "Is GitFlow always the best choice?",
+      "wrong": "Yes, more branches are always better.",
+      "right": "Not always. Trunk-based can be faster for small, agile teams.",
+      "say": "Be careful—more branches aren't always better. Sometimes, a simpler strategy like trunk-based is exactly what you need."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:23:08.550Z"
+}
