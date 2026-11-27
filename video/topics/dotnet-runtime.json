@@ -1,0 +1,104 @@
+{
+  "id": "dotnet-runtime",
+  "title": "The Core Idea: .NET's Generational GC",
+  "keys": [
+    ".NET",
+    "CLR",
+    "garbage collection",
+    "Gen 0",
+    "LOH"
+  ],
+  "scenes": [
+    {
+      "id": "0-gc-hook",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · 45 sec",
+      "line1": "Why is .NET's memory so fast?",
+      "line2": "What makes garbage collection work?",
+      "say": "Why does .NET handle memory so efficiently? What makes its garbage collection so effective?"
+    },
+    {
+      "id": "1-clr-chip",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "CLR",
+      "sub": "The Common Language Runtime manages code, memory, and garbage collection.",
+      "say": "The Common Language Runtime, or CLR, manages your code, memory, and garbage collection automatically."
+    },
+    {
+      "id": "2-gc-rows",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Gen 0",
+          "b": "Short-lived objects, quick to collect"
+        },
+        {
+          "a": "Gen 1",
+          "b": "Objects surviving one collection"
+        },
+        {
+          "a": "Gen 2",
+          "b": "Long-lived objects, rare sweeps"
+        },
+        {
+          "a": "LOH",
+          "b": "Large objects, infrequent cleanup"
+        }
+      ],
+      "walk": true,
+      "say": "Garbage collection is split into generations. Gen zero for short-lived objects. Gen one for survivors. Gen two for long-lived data. And the Large Object Heap for really big stuff."
+    },
+    {
+      "id": "3-gc-compare",
+      "type": "compare",
+      "kicker": "Smart Collection",
+      "left": {
+        "title": "Gen 0",
+        "items": [
+          "Fast",
+          "Frequent",
+          "Short-lived"
+        ]
+      },
+      "right": {
+        "title": "Gen 2 & LOH",
+        "items": [
+          "Slow",
+          "Rare",
+          "Long-lived or large"
+        ]
+      },
+      "say": "Most collections happen in Gen zero—fast and frequent. Gen two and the Large Object Heap are slower and less common, saving time by focusing on what matters."
+    },
+    {
+      "id": "4-gc-terminal",
+      "type": "terminal",
+      "kicker": "GC in Action",
+      "title": "dotnet-counters output",
+      "lines": [
+        "$ dotnet-counters monitor",
+        "Gen 0 GC Count    120",
+        "Gen 2 GC Count     4",
+        "LOH Size      40 MB"
+      ],
+      "say": "If you monitor a real app, you'll see Gen zero runs way more often than Gen two. The Large Object Heap can grow if not managed."
+    },
+    {
+      "id": "5-gc-trap",
+      "type": "trap",
+      "question": "Are all objects collected equally?",
+      "wrong": "Yes, every object is checked each time.",
+      "right": "No. Generational GC skips long-lived objects most cycles.",
+      "say": "Interview trap: Are all objects collected equally? Nope. Generational garbage collection skips most long-lived objects on each cycle."
+    },
+    {
+      "id": "6-gc-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:20:52.810Z"
+}
