@@ -1,0 +1,90 @@
+{
+  "id": "api-design",
+  "title": "API Design: Idempotency Makes APIs Safe",
+  "keys": [
+    "REST",
+    "idempotent",
+    "POST",
+    "PUT",
+    "status codes",
+    "retries"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-idempotency",
+      "type": "hook",
+      "kicker": "API Design · 45 seconds",
+      "line1": "Why do some API calls repeat safely?",
+      "line2": "What makes that possible?",
+      "say": "Ever wonder why some API calls can be repeated without causing problems? Let's break down the secret sauce."
+    },
+    {
+      "id": "1-chip-idempotent",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Idempotent",
+      "sub": "Safe to repeat: GET, PUT, DELETE. POST is not.",
+      "say": "The key is idempotency. Actions like get, put, and delete are safe to repeat. Post, though, is not."
+    },
+    {
+      "id": "2-rows-idempotency-ste",
+      "type": "rows",
+      "kicker": "Step-by-Step",
+      "rows": [
+        {
+          "a": "GET",
+          "b": "Read data, no side effects"
+        },
+        {
+          "a": "PUT",
+          "b": "Replace data, same result every time"
+        },
+        {
+          "a": "DELETE",
+          "b": "Remove data, repeat is harmless"
+        },
+        {
+          "a": "POST",
+          "b": "Creates new data, repeats can duplicate"
+        }
+      ],
+      "walk": true,
+      "say": "Get reads data and never changes things. Put always replaces data, so repeating it does nothing new. Delete removes data, and if you try again, nothing breaks. But post creates new stuff, so repeating it can make duplicates."
+    },
+    {
+      "id": "3-compare-idempotency",
+      "type": "compare",
+      "kicker": "Why It Matters",
+      "left": {
+        "title": "Idempotent",
+        "items": [
+          "Safe retries",
+          "Predictable results"
+        ]
+      },
+      "right": {
+        "title": "Not Idempotent",
+        "items": [
+          "Duplicates risk",
+          "Unpredictable state"
+        ]
+      },
+      "say": "Idempotent actions mean you can retry without fear. Not idempotent? You risk duplicates and weird bugs."
+    },
+    {
+      "id": "4-trap-idempotency",
+      "type": "trap",
+      "question": "Can you safely retry POST requests?",
+      "wrong": "Yes, POST is always safe to retry.",
+      "right": "No, POST isn't idempotent. Use idempotency keys to avoid duplicates.",
+      "say": "A common trap: thinking post is always safe to retry. It's not. You need idempotency keys to make repeated posts safe."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:25:50.972Z"
+}
