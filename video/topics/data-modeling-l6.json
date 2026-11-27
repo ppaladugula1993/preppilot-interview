@@ -1,0 +1,83 @@
+{
+  "id": "data-modeling-l6",
+  "title": "Medallion Architecture: Bronze/Silver/Gold",
+  "keys": [
+    "medallion",
+    "bronze",
+    "silver",
+    "gold",
+    "pipeline"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-medallion",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "Why split data into bronze, silver, gold?",
+      "line2": "What do these layers do?",
+      "say": "Ever wonder why data pipelines use bronze, silver, and gold layers? What’s the point of splitting data like that?"
+    },
+    {
+      "id": "1-rows-medallion-layer",
+      "type": "rows",
+      "kicker": "Medallion Layers",
+      "rows": [
+        {
+          "a": "Bronze",
+          "b": "Raw ingested logs, untouched"
+        },
+        {
+          "a": "Silver",
+          "b": "Cleaned, deduplicated tables"
+        },
+        {
+          "a": "Gold",
+          "b": "Aggregated, analytics-ready data"
+        }
+      ],
+      "walk": true,
+      "say": "Bronze holds raw logs straight from the source. Silver cleans and joins that data into usable tables. Gold is where you find business-level, analytics-ready info."
+    },
+    {
+      "id": "2-chip-pipeline-benefi",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Quality",
+      "sub": "Each layer isolates issues and improves reliability",
+      "say": "Each layer isolates data quality issues. That means you can fix problems early and make analytics more reliable."
+    },
+    {
+      "id": "3-compare-medallion-ex",
+      "type": "compare",
+      "kicker": "Example Pipeline",
+      "left": {
+        "title": "Bronze",
+        "items": [
+          "Raw JSON logs"
+        ]
+      },
+      "right": {
+        "title": "Gold",
+        "items": [
+          "Sales totals by region"
+        ]
+      },
+      "say": "Picture raw JSON logs at the start. By the end, you’ve got sales totals by region, ready for business use."
+    },
+    {
+      "id": "4-trap-medallion-mista",
+      "type": "trap",
+      "question": "Is gold data always raw and unprocessed?",
+      "wrong": "Yes, gold is untouched data.",
+      "right": "No, gold is cleaned, aggregated, and ready for analytics.",
+      "say": "Don’t mix up the layers! Gold isn’t raw—it’s the most refined, business-ready data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:28:13.056Z"
+}
