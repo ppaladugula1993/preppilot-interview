@@ -1,0 +1,68 @@
+{
+  "id": "accessibility-l4",
+  "title": "Screen Reader Testing for Accessibility",
+  "keys": [
+    "screen reader",
+    "logical order",
+    "ARIA",
+    "labels"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-accessibility",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Ever tested your site with a screen reader?",
+      "line2": "How does your code sound?",
+      "say": "Have you ever checked how your site sounds to someone using a screen reader? How would your code hold up?"
+    },
+    {
+      "id": "1-chip-tools",
+      "type": "chip",
+      "kicker": "Key Tools",
+      "label": "NVDA",
+      "sub": "NVDA, JAWS, and VoiceOver help test how your site is read aloud.",
+      "say": "Tools like NVDA, JAWS, and VoiceOver let us hear how our content is read out loud. They're essential for real accessibility checks."
+    },
+    {
+      "id": "2-rows-testing",
+      "type": "rows",
+      "kicker": "Manual Testing Steps",
+      "rows": [
+        {
+          "a": "Start screen reader",
+          "b": "Turn on VoiceOver or NVDA"
+        },
+        {
+          "a": "Tab through form",
+          "b": "Listen for field labels"
+        },
+        {
+          "a": "Check error messages",
+          "b": "Confirm they're announced"
+        },
+        {
+          "a": "Verify ARIA",
+          "b": "See if updates are spoken"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how I test: I turn on a screen reader, tab through forms, listen for clear field labels and error messages, and check if ARIA updates are actually spoken."
+    },
+    {
+      "id": "3-trap-auto-vs-manual",
+      "type": "trap",
+      "question": "Can automated tools fully test accessibility?",
+      "wrong": "Yes, they catch everything.",
+      "right": "No, manual screen reader testing is needed for real usability.",
+      "say": "Automated tools catch basics, but only manual screen reader testing shows how real users experience your site."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:47:31.599Z"
+}
