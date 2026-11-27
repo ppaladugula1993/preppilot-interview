@@ -1,0 +1,72 @@
+{
+  "id": "concurrency-l6",
+  "title": "Async/Await vs Threads: Event Loops",
+  "keys": [
+    "async",
+    "await",
+    "event loop",
+    "threads",
+    "I/O-bound"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-or-thread",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "Async or threads?",
+      "line2": "Which should you use?",
+      "say": "Async or threads? Which should you use for your next project?"
+    },
+    {
+      "id": "1-chip-async-await",
+      "type": "chip",
+      "kicker": "Async/Await",
+      "label": "EventLoop",
+      "sub": "Handles many I/O tasks without threads.",
+      "say": "Async and await use an event loop to handle many input and output tasks without spinning up threads."
+    },
+    {
+      "id": "2-compare-async-vs-thr",
+      "type": "compare",
+      "kicker": "How They Work",
+      "left": {
+        "title": "Event Loops",
+        "items": [
+          "Cooperative multitasking",
+          "Great for I/O-bound tasks"
+        ]
+      },
+      "right": {
+        "title": "Threads",
+        "items": [
+          "Preemptive multitasking",
+          "Best for CPU-bound or blocking work"
+        ]
+      },
+      "say": "Event loops rely on cooperative multitasking, perfect for I/O-bound jobs. Threads use preemptive multitasking, so they're best for CPU-heavy or blocking tasks."
+    },
+    {
+      "id": "3-code-nodejs-python",
+      "type": "code",
+      "kicker": "Real Example",
+      "lang": "js/py",
+      "code": "async function fetchData() {\n  await fetch(url);\n}\n# Python's asyncio\nimport asyncio",
+      "say": "In Node, async functions with await use the event loop. In Python, asyncio does the same for async input and output."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Should you use threads for I/O tasks?",
+      "wrong": "Yes, always use threads.",
+      "right": "No, async is better for I/O-bound work.",
+      "say": "Here's a classic interview trap: Should you always use threads for input and output tasks? No—async is usually the better choice."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:11:05.968Z"
+}
