@@ -1,0 +1,73 @@
+{
+  "id": "efcore-l4",
+  "title": "EF Core: Raw SQL & Compiled Queries",
+  "keys": [
+    "FromSqlRaw",
+    "Compiled Query",
+    "Optimization",
+    "Performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-rawsql-compiled",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "Can you optimize EF Core queries?",
+      "line2": "When is raw SQL better?",
+      "say": "Entity Framework Core lets you run raw SQL and compiled queries. Do you know when to use each for best performance?"
+    },
+    {
+      "id": "1-chip-rawsql",
+      "type": "chip",
+      "kicker": "Raw SQL",
+      "label": "FromSqlRaw",
+      "sub": "Use raw SQL for complex queries or when LINQ can't express what you need.",
+      "say": "FromSqlRaw lets you run direct SQL for cases where LINQ falls short, like complex joins or custom logic."
+    },
+    {
+      "id": "2-code-compiled",
+      "type": "code",
+      "kicker": "Compiled Queries",
+      "lang": "csharp",
+      "code": "var query = EF.CompileQuery(\n  (ctx, isActive) =>\n    ctx.Users.Where(u => u.IsActive == isActive)\n);\nvar users = query(context, true);",
+      "say": "Compiled queries cache the query plan. This speeds up repeated executions with different parameters."
+    },
+    {
+      "id": "3-compare-raw-vs-compi",
+      "type": "compare",
+      "kicker": "Performance",
+      "left": {
+        "title": "Raw SQL",
+        "items": [
+          "Flexible",
+          "Direct control",
+          "Bypasses LINQ"
+        ]
+      },
+      "right": {
+        "title": "Compiled Query",
+        "items": [
+          "Fast for repeats",
+          "Less parsing",
+          "Great for endpoints"
+        ]
+      },
+      "say": "Raw SQL gives flexibility and control. Compiled queries shine when you need speed on frequent requests."
+    },
+    {
+      "id": "4-trap-when-use-compil",
+      "type": "trap",
+      "question": "When should you use compiled queries?",
+      "wrong": "Whenever you write a query.",
+      "right": "When a query runs often with different parameters, compiled queries cut overhead.",
+      "say": "Don't use compiled queries for every query. They're best for high-traffic paths with changing parameters."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:12:36.228Z"
+}
