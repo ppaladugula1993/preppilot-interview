@@ -1,0 +1,73 @@
+{
+  "id": "streaming-l1",
+  "title": "Kafka Producers: Keys & Idempotence",
+  "keys": [
+    "producer",
+    "key",
+    "ordering",
+    "acks",
+    "idempotent"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-kafka-prod",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How do Kafka producers keep data safe?",
+      "line2": "And in order?",
+      "say": "Ever wonder how Kafka producers keep your data consistent and ordered, even when things go wrong?"
+    },
+    {
+      "id": "1-chip-key",
+      "type": "chip",
+      "kicker": "Producer Keys",
+      "label": "Key",
+      "sub": "A key decides which partition gets your record.",
+      "say": "When you set a key, Kafka uses it to pick a partition. That keeps all events for the same key in order."
+    },
+    {
+      "id": "2-rows-acks",
+      "type": "rows",
+      "kicker": "Durability Options",
+      "rows": [
+        {
+          "a": "acks=0",
+          "b": "No durability guarantee"
+        },
+        {
+          "a": "acks=1",
+          "b": "Leader confirms write"
+        },
+        {
+          "a": "acks=all",
+          "b": "All replicas confirm write"
+        }
+      ],
+      "walk": true,
+      "say": "The acks setting controls how safe your data is. Zero means no guarantee, one is leader only, and all is strongest."
+    },
+    {
+      "id": "3-chip-idempotent",
+      "type": "chip",
+      "kicker": "Producer Reliability",
+      "label": "Idempotent",
+      "sub": "Avoids duplicates on retries since version 0.11.",
+      "say": "Idempotent producers make sure retries never create duplicate records. That's a must for exactly-once delivery."
+    },
+    {
+      "id": "4-trap-order",
+      "type": "trap",
+      "question": "How does Kafka guarantee ordering?",
+      "wrong": "Kafka keeps all messages in order.",
+      "right": "Kafka only guarantees ordering within a partition. Use keys to keep related events together.",
+      "say": "Here's a common interview trap: Kafka doesn't keep all messages in order, only within each partition. Use keys to group related events."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:46:55.027Z"
+}
