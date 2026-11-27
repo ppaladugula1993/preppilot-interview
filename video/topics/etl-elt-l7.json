@@ -1,0 +1,88 @@
+{
+  "id": "etl-elt-l7",
+  "title": "ETL Pipelines: Handling Schema Changes",
+  "keys": [
+    "schema evolution",
+    "dbt",
+    "Avro",
+    "compatibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-schema-changes",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "What happens when your data schema shifts?",
+      "line2": "How do you avoid breakage?",
+      "say": "What happens when your data schema shifts? How do you keep your pipelines running smoothly?"
+    },
+    {
+      "id": "1-chip-schema-evolutio",
+      "type": "chip",
+      "kicker": "Schema Change",
+      "label": "Evolution",
+      "sub": "Avro and Parquet let you add or drop columns safely.",
+      "say": "Formats like Avro and Parquet support schema evolution, so you can add or drop columns without breaking your pipeline."
+    },
+    {
+      "id": "2-rows-adapt-pipelines",
+      "type": "rows",
+      "kicker": "Adapt Steps",
+      "rows": [
+        {
+          "a": "Detect",
+          "b": "Monitor for schema changes"
+        },
+        {
+          "a": "Design",
+          "b": "Use versioned models or mapping"
+        },
+        {
+          "a": "Test",
+          "b": "Check backward compatibility"
+        },
+        {
+          "a": "Alert",
+          "b": "Automate notifications"
+        }
+      ],
+      "walk": true,
+      "say": "To handle schema changes: monitor for them, design versioned models or dynamic mapping, test for compatibility, and set up alerts."
+    },
+    {
+      "id": "3-compare-dbt-strategi",
+      "type": "compare",
+      "kicker": "dbt Approaches",
+      "left": {
+        "title": "Versioned Models",
+        "items": [
+          "Create new model files",
+          "Document changes"
+        ]
+      },
+      "right": {
+        "title": "Contracts",
+        "items": [
+          "Enforce column types",
+          "Catch mismatches early"
+        ]
+      },
+      "say": "With dbt, use versioned models to track schema changes, or contracts to enforce column types and catch mismatches early."
+    },
+    {
+      "id": "4-trap-break-pipeline",
+      "type": "trap",
+      "question": "What breaks a pipeline after schema changes?",
+      "wrong": "Just adding a column breaks everything.",
+      "right": "Ignoring compatibility or not updating models causes failures.",
+      "say": "What actually breaks a pipeline after schema changes? It's not just adding a column—it's ignoring compatibility or failing to update your models."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:38:04.355Z"
+}
