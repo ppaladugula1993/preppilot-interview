@@ -1,0 +1,72 @@
+{
+  "id": "go-core-l0",
+  "title": "Go Structs and Methods: Receivers",
+  "keys": [
+    "struct",
+    "method",
+    "receiver",
+    "pointer",
+    "value"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-structs-methods",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "Can Go structs act like objects?",
+      "line2": "What makes methods special?",
+      "say": "Can Go structs act like objects? What makes methods on structs so important in interviews?"
+    },
+    {
+      "id": "1-chip-struct-basics",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Structs",
+      "sub": "Group related fields together in Go.",
+      "say": "Structs in Go group related fields together. They're the building blocks for custom data types."
+    },
+    {
+      "id": "2-code-methods-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "type User struct { Name string }\nfunc (u User) GetName() string {\n  return u.Name\n}\nfunc (u *User) SetName(name string) {\n  u.Name = name\n}",
+      "say": "You can define methods on structs. Use a value receiver for GetName, and a pointer receiver for SetName to actually change the Name field."
+    },
+    {
+      "id": "3-compare-receivers",
+      "type": "compare",
+      "kicker": "Receivers",
+      "left": {
+        "title": "Value",
+        "items": [
+          "Works on a copy",
+          "Can't change original"
+        ]
+      },
+      "right": {
+        "title": "Pointer",
+        "items": [
+          "Works on original",
+          "Can modify fields"
+        ]
+      },
+      "say": "Value receivers work on a copy of the struct, so changes don't stick. Pointer receivers work on the original, letting you modify its fields."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "When should you use a pointer receiver?",
+      "wrong": "Always use value receivers.",
+      "right": "Use pointer receivers to modify data or avoid copying big structs.",
+      "say": "Interview trap: When should you use a pointer receiver? It's not always. Use them when you need to change the struct or avoid copying large data."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:29:59.728Z"
+}
