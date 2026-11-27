@@ -1,0 +1,76 @@
+{
+  "id": "system-design-l8",
+  "title": "Observability & Failure Modes in System Design",
+  "keys": [
+    "observability",
+    "failure modes",
+    "circuit breaker",
+    "graceful degradation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-observability",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "How do you spot and handle failures?",
+      "line2": "What keeps systems reliable?",
+      "say": "How do you spot and handle failures in a system? What keeps software reliable when things break?"
+    },
+    {
+      "id": "1-chip-observability",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Logging",
+      "sub": "Logs record events for debugging and diagnosis.",
+      "say": "Logging records every event, so you can debug and diagnose issues fast."
+    },
+    {
+      "id": "2-rows-failure-modes",
+      "type": "rows",
+      "kicker": "Failure Modes",
+      "rows": [
+        {
+          "a": "Timeouts",
+          "b": "Prevent requests from hanging"
+        },
+        {
+          "a": "Circuit Breakers",
+          "b": "Block requests after repeated failures"
+        },
+        {
+          "a": "Graceful Degradation",
+          "b": "Serve partial features if dependencies fail"
+        }
+      ],
+      "walk": true,
+      "say": "Timeouts prevent requests from hanging. Circuit breakers block requests after repeated failures. Graceful degradation keeps some features working when dependencies fail."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "API fallback when DB is down",
+      "lines": [
+        "$ GET /data",
+        "Warning: DB unavailable",
+        "Serving cached response"
+      ],
+      "say": "If the database is down, the API serves cached data and warns the client. This keeps the system usable."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you design for reliability?",
+      "wrong": "Just add retries and hope for the best.",
+      "right": "Use logging, timeouts, circuit breakers, and degrade gracefully.",
+      "say": "In interviews, don’t just say you’ll add retries. Mention logging, timeouts, circuit breakers, and graceful degradation for real reliability."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:10:21.001Z"
+}
