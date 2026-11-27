@@ -1,0 +1,74 @@
+{
+  "id": "git-l0",
+  "title": "Git: Commits, Branches, HEAD & Remotes",
+  "keys": [
+    "commit",
+    "branch",
+    "HEAD",
+    "remote tracking"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-git-basics",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "How does Git track your code?",
+      "line2": "What is HEAD?",
+      "say": "Ever wonder how Git keeps your code organized and lets teams collaborate smoothly? Let's break down commits, branches, HEAD, and remote tracking."
+    },
+    {
+      "id": "1-chip-commit",
+      "type": "chip",
+      "kicker": "Building Blocks",
+      "label": "Commit",
+      "sub": "A commit is a snapshot of your code at a moment.",
+      "say": "A commit is simply a snapshot of your code at a specific point in time. It marks progress and lets you roll back if needed."
+    },
+    {
+      "id": "2-compare-branch-head",
+      "type": "compare",
+      "kicker": "Pointers in Git",
+      "left": {
+        "title": "Branch",
+        "items": [
+          "Points to a commit",
+          "Enables parallel work"
+        ]
+      },
+      "right": {
+        "title": "HEAD",
+        "items": [
+          "Current branch/commit",
+          "Where new commits go"
+        ]
+      },
+      "say": "Branches are pointers to commits, letting you develop features separately. HEAD is the reference to your current branch and commit—where new changes land."
+    },
+    {
+      "id": "3-terminal-remote-trac",
+      "type": "terminal",
+      "kicker": "Remote Tracking",
+      "title": "Fetching Updates",
+      "lines": [
+        "$ git fetch origin",
+        "Updates local tracking branches"
+      ],
+      "say": "Remote tracking branches show the state of branches on remote repositories. Use git fetch origin to update your local tracking branches."
+    },
+    {
+      "id": "4-trap-head-pointer",
+      "type": "trap",
+      "question": "What does HEAD point to?",
+      "wrong": "HEAD points to the remote branch.",
+      "right": "HEAD points to your current branch and commit.",
+      "say": "Interview trap: HEAD does not point to the remote branch. It points to your current branch and commit. That's where new commits are added."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:15:55.021Z"
+}
