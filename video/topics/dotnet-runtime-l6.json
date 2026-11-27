@@ -1,0 +1,77 @@
+{
+  "id": "dotnet-runtime-l6",
+  "title": ".NET Diagnostic Tools: Counters, Trace, Dump",
+  "keys": [
+    "dotnet-counters",
+    "dotnet-trace",
+    "dotnet-dump",
+    "performance",
+    "diagnostics"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-diagnostics",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "How do you debug .NET apps in production?",
+      "line2": "Which tool for which job?",
+      "say": "Ever wonder how to quickly spot and fix .NET issues in production? Which tool do you grab first?"
+    },
+    {
+      "id": "1-chip-counters",
+      "type": "chip",
+      "kicker": "Live Metrics",
+      "label": "Counters",
+      "sub": "dotnet-counters shows live CPU, memory, and thread stats.",
+      "say": "Start with dotnet-counters. It streams live stats like CPU, memory, and thread usage, so you can spot trouble as it happens."
+    },
+    {
+      "id": "2-terminal-trace",
+      "type": "terminal",
+      "kicker": "Performance Deep Dive",
+      "title": "dotnet-trace Example",
+      "lines": [
+        "$ dotnet-trace collect -p 12345",
+        "Tracing process 12345...",
+        "Saving trace to trace.nettrace"
+      ],
+      "say": "Need more detail? Use dotnet-trace to record what the app is doing over time. It helps you find slow code and bottlenecks."
+    },
+    {
+      "id": "3-rows-dump",
+      "type": "rows",
+      "kicker": "Crash Debugging",
+      "rows": [
+        {
+          "a": "dotnet-dump",
+          "b": "Captures process memory dump"
+        },
+        {
+          "a": "Analyze offline",
+          "b": "Find leaks or crash causes"
+        },
+        {
+          "a": "Works post-mortem",
+          "b": "No app restart needed"
+        }
+      ],
+      "walk": true,
+      "say": "If the app crashes or leaks memory, dotnet-dump grabs a snapshot of its memory. You can analyze it offline, no restart needed."
+    },
+    {
+      "id": "4-trap-mixup",
+      "type": "trap",
+      "question": "Which tool gives live metrics?",
+      "wrong": "dotnet-dump",
+      "right": "dotnet-counters streams live metrics. dotnet-dump is for memory snapshots.",
+      "say": "Don't mix them up! Only dotnet-counters shows live metrics. Dotnet-dump is for memory snapshots and offline analysis."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:13:03.794Z"
+}
