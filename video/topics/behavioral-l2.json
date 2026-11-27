@@ -1,0 +1,64 @@
+{
+  "id": "behavioral-l2",
+  "title": "When the Honest Answer Is 'Only a Little'",
+  "keys": [
+    "honesty",
+    "limits",
+    "reasoning",
+    "behavioral"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-honest-little",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "What if you only know a little?",
+      "line2": "How do you answer?",
+      "say": "Ever get asked about something you barely touched? Here's how to handle it honestly and stand out."
+    },
+    {
+      "id": "1-chip-done-notdone",
+      "type": "chip",
+      "kicker": "Key Move",
+      "label": "Honesty",
+      "sub": "Say what you've done, what you haven't, and your approach.",
+      "say": "First, say what you have done, what you haven't, and how you would tackle it if given the chance."
+    },
+    {
+      "id": "2-rows-example",
+      "type": "rows",
+      "kicker": "Sample Answer",
+      "rows": [
+        {
+          "a": "What I've done",
+          "b": "Worked alongside the system"
+        },
+        {
+          "a": "What I haven't",
+          "b": "Owned it end to end"
+        },
+        {
+          "a": "My approach",
+          "b": "I'd break it down, ask for context, and design a plan"
+        }
+      ],
+      "walk": true,
+      "say": "For example: I've worked alongside the system. I haven't owned it end to end. But I'd break it down, ask for context, and design a plan."
+    },
+    {
+      "id": "3-trap-bluff",
+      "type": "trap",
+      "question": "Should you bluff if you know only a little?",
+      "wrong": "Yes, fake it till you make it.",
+      "right": "No. Bluffing gets caught fast. Honest reasoning scores better.",
+      "say": "Don't bluff. Interviewers spot it quick and follow up. Honest reasoning shows self-awareness and earns respect."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:15:43.815Z"
+}
