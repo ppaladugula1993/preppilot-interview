@@ -1,0 +1,65 @@
+{
+  "id": "web-fundamentals-l1",
+  "title": "HTTP Methods and Versions Explained",
+  "keys": [
+    "GET",
+    "POST",
+    "HTTP/2",
+    "HTTP/3",
+    "QUIC"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-http-methods",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Why do APIs care about HTTP versions?",
+      "line2": "And what do those methods mean?",
+      "say": "Ever wondered why APIs care about HTTP versions, or what those GET and POST methods really mean?"
+    },
+    {
+      "id": "1-chip-methods",
+      "type": "chip",
+      "kicker": "HTTP Methods",
+      "label": "Methods",
+      "sub": "GET fetches data, POST submits, PUT replaces, DELETE removes.",
+      "say": "HTTP methods signal your intent. GET fetches data, POST submits new info, PUT replaces a resource, and DELETE removes it."
+    },
+    {
+      "id": "2-compare-versions",
+      "type": "compare",
+      "kicker": "HTTP Versions",
+      "left": {
+        "title": "HTTP/1.1",
+        "items": [
+          "Text-based",
+          "One request at a time"
+        ]
+      },
+      "right": {
+        "title": "HTTP/2 & HTTP/3",
+        "items": [
+          "Multiplexing",
+          "Header compression",
+          "HTTP/3 uses QUIC"
+        ]
+      },
+      "say": "HTTP one point one sends text and handles one request at a time. HTTP two brings multiplexing and header compression. HTTP three runs over QUIC for even faster connections."
+    },
+    {
+      "id": "3-trap-methods",
+      "type": "trap",
+      "question": "What's PUT usually used for?",
+      "wrong": "Partial updates to a resource",
+      "right": "PUT is for replacing a resource, not partial updates. PATCH is for partial changes.",
+      "say": "Here's a classic interview trap. PUT is for replacing a resource, not partial updates. PATCH handles partial changes."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:20:07.578Z"
+}
