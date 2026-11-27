@@ -1,0 +1,72 @@
+{
+  "id": "react-l7",
+  "title": "React Testing Library: User-Focused Tests",
+  "keys": [
+    "testing",
+    "React",
+    "user events",
+    "assertions"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-testing-ui",
+      "type": "hook",
+      "kicker": "React · lesson",
+      "line1": "How do you test React like a user?",
+      "line2": "What matters most?",
+      "say": "How do you test React components so it actually reflects what users see and do?"
+    },
+    {
+      "id": "1-chip-user-perspectiv",
+      "type": "chip",
+      "kicker": "Focus",
+      "label": "User",
+      "sub": "React Testing Library tests UI as users interact with it.",
+      "say": "React Testing Library is all about testing from the user's perspective, not the internals."
+    },
+    {
+      "id": "2-code-basic-test",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "render(<Button />);\nfireEvent.click(screen.getByText('Submit'));\nexpect(screen.getByText('Submitted'))\n  .toBeInTheDocument();",
+      "say": "Here's a classic test. Render your button, simulate a real click, and check if the expected text appears."
+    },
+    {
+      "id": "3-rows-best-practices",
+      "type": "rows",
+      "kicker": "Best Practices",
+      "rows": [
+        {
+          "a": "Query by text or role",
+          "b": "Matches how users find elements"
+        },
+        {
+          "a": "Simulate real events",
+          "b": "Use fireEvent or userEvent"
+        },
+        {
+          "a": "Assert visible changes",
+          "b": "Check what users actually see"
+        }
+      ],
+      "walk": true,
+      "say": "Query elements by text or role, simulate real user events, and always assert what the user would actually see."
+    },
+    {
+      "id": "4-trap-implementation-",
+      "type": "trap",
+      "question": "What's a common mistake in testing?",
+      "wrong": "Testing component internals",
+      "right": "Focus on user behavior, not implementation details.",
+      "say": "A common trap? Testing component internals. In interviews, always focus your tests on user behavior, not how things work under the hood."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:56:51.169Z"
+}
