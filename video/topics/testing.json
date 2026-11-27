@@ -1,0 +1,87 @@
+{
+  "id": "testing",
+  "title": "The Test Pyramid: Your Testing Strategy",
+  "keys": [
+    "unit tests",
+    "integration",
+    "E2E",
+    "test pyramid",
+    "flakiness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pyramid",
+      "type": "hook",
+      "kicker": "Software Testing · 45 seconds",
+      "line1": "Why do some tests fail more often?",
+      "line2": "What’s the real reason?",
+      "say": "Ever notice some tests break all the time while others never do? What’s behind that difference?"
+    },
+    {
+      "id": "1-chip-unit",
+      "type": "chip",
+      "kicker": "Step 1 · Unit",
+      "label": "Unit",
+      "sub": "Small, fast, isolated tests. No external systems.",
+      "say": "Unit tests are quick and focus on tiny pieces of code. They don’t touch databases or outside services."
+    },
+    {
+      "id": "2-compare-pyramid",
+      "type": "compare",
+      "kicker": "Step 2 · Pyramid",
+      "left": {
+        "title": "Unit Tests",
+        "items": [
+          "Many",
+          "Fast",
+          "Cheap"
+        ]
+      },
+      "right": {
+        "title": "E2E Tests",
+        "items": [
+          "Few",
+          "Slow",
+          "Brittle"
+        ]
+      },
+      "say": "The test pyramid says you should have lots of unit tests and only a handful of end-to-end tests. Unit tests run fast and rarely break. End-to-end tests are slow and fragile."
+    },
+    {
+      "id": "3-rows-integration",
+      "type": "rows",
+      "kicker": "Step 3 · Integration",
+      "rows": [
+        {
+          "a": "Integration",
+          "b": "Checks how parts work together"
+        },
+        {
+          "a": "Testcontainers",
+          "b": "Uses real databases safely"
+        },
+        {
+          "a": "Isolation",
+          "b": "Keeps tests reliable"
+        }
+      ],
+      "walk": true,
+      "say": "Integration tests check if components play nicely. Tools like Testcontainers let you use real databases without messing up production. Keeping tests isolated makes them more reliable."
+    },
+    {
+      "id": "4-trap-flaky",
+      "type": "trap",
+      "question": "Why do E2E tests break so often?",
+      "wrong": "Because they test everything.",
+      "right": "They rely on timing, networks, and external systems, which makes them fragile and flaky.",
+      "say": "Here’s a classic interview trap: Why do end-to-end tests fail so much? It’s not just because they cover everything—they’re fragile because they depend on timing, networks, and outside systems."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:30:47.526Z"
+}
