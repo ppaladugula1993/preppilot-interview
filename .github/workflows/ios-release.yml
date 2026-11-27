@@ -10,6 +10,10 @@ on:
         description: Upload the finished build to TestFlight
         type: boolean
         default: true
+      upload_only:
+        description: Skip the build and upload the newest finished build to TestFlight
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -35,12 +39,13 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
       - run: npm ci
       - name: Build on EAS
+        if: ${{ !inputs.upload_only }}
         # With upload: wait for the build, so the next step can send it to TestFlight.
         run: |
           if [ "${{ inputs.submit }}" = "true" ]; then eas build -p ios --profile production --non-interactive --wait
           else eas build -p ios --profile production --non-interactive --no-wait; fi
       - name: Upload to TestFlight
-        if: ${{ inputs.submit }}
+        if: ${{ inputs.submit || inputs.upload_only }}
         env:
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
