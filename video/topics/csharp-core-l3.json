@@ -1,0 +1,72 @@
+{
+  "id": "csharp-core-l3",
+  "title": "Async/Await: Task vs ValueTask in C#",
+  "keys": [
+    "async",
+    "await",
+    "Task",
+    "ValueTask",
+    "ConfigureAwait"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-csharp",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "Async in C# looks easy...",
+      "line2": "But when do you use ValueTask?",
+      "say": "Async programming in C sharp seems simple, but do you know when to use ValueTask instead of Task?"
+    },
+    {
+      "id": "1-chip-task",
+      "type": "chip",
+      "kicker": "Async Basics",
+      "label": "Task",
+      "sub": "Represents an async operation. Most async APIs use Task.",
+      "say": "Task is the standard for representing asynchronous work. Most async methods return a Task."
+    },
+    {
+      "id": "2-chip-valuetask",
+      "type": "chip",
+      "kicker": "Performance",
+      "label": "ValueTask",
+      "sub": "Used when results may be ready synchronously. Avoids extra allocation.",
+      "say": "ValueTask is handy when your method often finishes right away, so you skip creating a new Task object."
+    },
+    {
+      "id": "3-compare-configureawa",
+      "type": "compare",
+      "kicker": "Avoid Deadlocks",
+      "left": {
+        "title": "With Context",
+        "items": [
+          "Can deadlock in UI",
+          "Slower in libraries"
+        ]
+      },
+      "right": {
+        "title": "ConfigureAwait(false)",
+        "items": [
+          "No context captured",
+          "Safer, faster"
+        ]
+      },
+      "say": "Using ConfigureAwait with false avoids capturing the synchronization context. This prevents deadlocks and speeds up library code."
+    },
+    {
+      "id": "4-trap-deadlock",
+      "type": "trap",
+      "question": "What causes deadlocks in async code?",
+      "wrong": "Forgetting to use async/await",
+      "right": "Blocking on async results without ConfigureAwait can deadlock UI or web threads.",
+      "say": "Here's a common trap: blocking on async results without ConfigureAwait can freeze your UI or web thread."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:16:18.316Z"
+}
