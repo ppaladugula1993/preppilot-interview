@@ -1,0 +1,72 @@
+{
+  "id": "system-design-l7",
+  "title": "Rate Limiting & API Gateways Explained",
+  "keys": [
+    "rate limiting",
+    "API gateway",
+    "back-pressure",
+    "overload"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-rate-limits",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "How do you stop API abuse?",
+      "line2": "What protects your backend?",
+      "say": "How do you stop someone from hammering your API and crashing your services? What keeps your backend safe from overload?"
+    },
+    {
+      "id": "1-chip-limit-reqs",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Limits",
+      "sub": "Rate limiting blocks excess requests to protect APIs.",
+      "say": "Rate limiting puts a cap on how often clients can call your API. It's your first line of defense against abuse."
+    },
+    {
+      "id": "2-rows-gateway-steps",
+      "type": "rows",
+      "kicker": "API Gateway",
+      "rows": [
+        {
+          "a": "Authenticate",
+          "b": "Checks user identity"
+        },
+        {
+          "a": "Route",
+          "b": "Sends traffic to right service"
+        },
+        {
+          "a": "Rate Limit",
+          "b": "Enforces request limits"
+        }
+      ],
+      "walk": true,
+      "say": "API gateways do more than just route traffic. They handle authentication, direct requests, and enforce rate limits all in one place."
+    },
+    {
+      "id": "3-chip-back-pressure",
+      "type": "chip",
+      "kicker": "Reliability",
+      "label": "Back-pressure",
+      "sub": "Signals clients to slow down if overloaded.",
+      "say": "When things get too busy, back-pressure tells clients to chill out and send fewer requests. This keeps your system stable."
+    },
+    {
+      "id": "4-trap-limit-placement",
+      "type": "trap",
+      "question": "Where should you enforce rate limits?",
+      "wrong": "On each backend service separately",
+      "right": "At the API gateway, so all requests are controlled before hitting your services.",
+      "say": "Here's a classic interview trap. Should you rate limit on every backend, or at the gateway? Always do it at the gateway to catch abuse early."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:19:19.533Z"
+}
