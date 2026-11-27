@@ -1,0 +1,85 @@
+{
+  "id": "accessibility-l7",
+  "title": "ARIA Roles & Attributes: Interview Essentials",
+  "keys": [
+    "ARIA",
+    "roles",
+    "attributes",
+    "accessibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-aria-accessibil",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "When should you use ARIA?",
+      "line2": "What’s the rule?",
+      "say": "ARIA roles and attributes boost accessibility, but only when native HTML can't do the job. So, when should you reach for ARIA?"
+    },
+    {
+      "id": "1-chip-aria-role",
+      "type": "chip",
+      "kicker": "Role",
+      "label": "Dialog",
+      "sub": "role=\"dialog\" defines a custom modal",
+      "say": "Use ARIA roles like dialog to explain custom widgets, such as modals, to assistive tech."
+    },
+    {
+      "id": "2-rows-aria-attributes",
+      "type": "rows",
+      "kicker": "Attributes",
+      "rows": [
+        {
+          "a": "aria-label",
+          "b": "Directly names an element"
+        },
+        {
+          "a": "aria-checked",
+          "b": "Shows checked state"
+        },
+        {
+          "a": "aria-live",
+          "b": "Announces dynamic updates"
+        }
+      ],
+      "walk": true,
+      "say": "ARIA attributes clarify state and purpose. For example, aria-label names, aria-checked signals state, and aria-live triggers screen reader updates."
+    },
+    {
+      "id": "3-compare-native-vs-ar",
+      "type": "compare",
+      "kicker": "Native vs ARIA",
+      "left": {
+        "title": "Native HTML",
+        "items": [
+          "button",
+          "input",
+          "select"
+        ]
+      },
+      "right": {
+        "title": "ARIA Roles",
+        "items": [
+          "role=\"alert\"",
+          "role=\"dialog\""
+        ]
+      },
+      "say": "Always pick native HTML first. Only use ARIA roles when native elements can't provide the right semantics."
+    },
+    {
+      "id": "4-trap-misuse",
+      "type": "trap",
+      "question": "Should you add ARIA to every element?",
+      "wrong": "Yes, more ARIA is better.",
+      "right": "No, misuse can confuse assistive tech. Use ARIA only when needed.",
+      "say": "Here's a common trap: adding ARIA everywhere. That actually harms accessibility. Use ARIA only when native HTML falls short."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:33:20.257Z"
+}
