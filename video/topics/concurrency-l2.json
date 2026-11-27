@@ -1,0 +1,72 @@
+{
+  "id": "concurrency-l2",
+  "title": "Locks, Mutexes, Semaphores & RW Locks",
+  "keys": [
+    "lock",
+    "mutex",
+    "semaphore",
+    "read-write lock"
+  ],
+  "scenes": [
+    {
+      "id": "0-sync-primitives-hook",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "How do threads share safely?",
+      "line2": "Which lock fits which job?",
+      "say": "When multiple threads access shared data, which lock should you use? Let's break down the options."
+    },
+    {
+      "id": "1-mutex-chip",
+      "type": "chip",
+      "kicker": "Exclusive Access",
+      "label": "Mutex",
+      "sub": "Only one thread at a time can access the resource.",
+      "say": "A mutex, or mutual exclusion lock, lets only one thread access a resource at a time."
+    },
+    {
+      "id": "2-semaphore-chip",
+      "type": "chip",
+      "kicker": "Limited Access",
+      "label": "Semaphore",
+      "sub": "Allows a fixed number of threads to share a resource.",
+      "say": "A semaphore sets a limit. For example, Semaphore three lets three threads access a resource at once."
+    },
+    {
+      "id": "3-rw-lock-rows",
+      "type": "rows",
+      "kicker": "Concurrent Reads",
+      "rows": [
+        {
+          "a": "Read-Write Lock",
+          "b": "Many readers, one writer"
+        },
+        {
+          "a": "Readers",
+          "b": "Can access at the same time"
+        },
+        {
+          "a": "Writer",
+          "b": "Must have exclusive access"
+        }
+      ],
+      "walk": true,
+      "say": "Read-write locks allow multiple readers to access data at once, but only one writer can make changes."
+    },
+    {
+      "id": "4-trap-sync-choice",
+      "type": "trap",
+      "question": "Which lock for concurrent reads?",
+      "wrong": "Mutex, for all access types",
+      "right": "Read-write lock, for many readers and single writer",
+      "say": "Interviewers might ask which lock to use for concurrent reads. The answer is read-write lock, not mutex."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:37:48.539Z"
+}
