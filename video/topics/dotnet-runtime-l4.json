@@ -1,0 +1,60 @@
+{
+  "id": "dotnet-runtime-l4",
+  "title": "Span<T> & Memory<T>: Cut Heap Allocations",
+  "keys": [
+    "Span<T>",
+    "Memory<T>",
+    "heap",
+    "allocation",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-span-memory",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Want fewer heap allocations?",
+      "line2": "How do Span and Memory help?",
+      "say": "Ever wish your code ran faster with less garbage collection? Let's see how Span and Memory can help you cut down heap allocations."
+    },
+    {
+      "id": "1-chip-span",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "Span<T>",
+      "sub": "Stack-only, fast for slicing arrays or buffers.",
+      "say": "Span lets you work with slices of arrays or buffers, all on the stack. That means no new heap allocations."
+    },
+    {
+      "id": "2-chip-memory",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "Memory<T>",
+      "sub": "Works across methods and async calls.",
+      "say": "Memory is like Span's flexible cousin. It can cross method and async boundaries, making it great for longer-lived data."
+    },
+    {
+      "id": "3-code-sample",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "Span<byte> slice = buffer.AsSpan(10, 20);\nMemory<byte> mem = new Memory<byte>(buffer, 10, 20);",
+      "say": "Here's how you create a Span for fast, in-place processing, and a Memory for async-safe data handling."
+    },
+    {
+      "id": "4-trap-async",
+      "type": "trap",
+      "question": "Can you use Span<T> in async methods?",
+      "wrong": "Yes, it's safe for async.",
+      "right": "No, Span is stack-only and can't cross async boundaries.",
+      "say": "Careful! Span can't be used in async methods because it's stack-only. Use Memory instead when you need to await."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:46:20.553Z"
+}
