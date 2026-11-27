@@ -1,0 +1,93 @@
+{
+  "id": "angular",
+  "title": "The Heart of Angular: Reactive UI Updates",
+  "keys": [
+    "components",
+    "DI",
+    "RxJS",
+    "change detection",
+    "signals"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-angular-reactiv",
+      "type": "hook",
+      "kicker": "Angular · 45 seconds",
+      "line1": "How does Angular keep your UI fresh?",
+      "line2": "What’s the real secret?",
+      "say": "Ever wonder how Angular updates your app instantly when data changes? Let's crack the core idea that powers it all."
+    },
+    {
+      "id": "1-chip-components",
+      "type": "chip",
+      "kicker": "Core",
+      "label": "Component",
+      "sub": "A component is a TypeScript class, template, and optional CSS.",
+      "say": "First up: everything in Angular starts with a component. It's just a class, a template, and maybe some styles."
+    },
+    {
+      "id": "2-rows-data-binding",
+      "type": "rows",
+      "kicker": "Glue",
+      "rows": [
+        {
+          "a": "Property binding",
+          "b": "Sends data to the view"
+        },
+        {
+          "a": "Event binding",
+          "b": "Handles user actions"
+        },
+        {
+          "a": "Two-way binding",
+          "b": "Syncs both ways"
+        }
+      ],
+      "walk": true,
+      "say": "Data binding connects your logic to the view. Properties push data out. Events pull actions in. Two-way binding keeps both in sync."
+    },
+    {
+      "id": "3-compare-reactivity",
+      "type": "compare",
+      "kicker": "Reactivity",
+      "left": {
+        "title": "Observables",
+        "items": [
+          "Async streams",
+          "Manual subscriptions"
+        ]
+      },
+      "right": {
+        "title": "Signals",
+        "items": [
+          "Sync state",
+          "Auto updates"
+        ]
+      },
+      "say": "For reactivity, Angular uses observables for streams, but now signals for local state. Signals update the view automatically, no subscription needed."
+    },
+    {
+      "id": "4-chip-change-detectio",
+      "type": "chip",
+      "kicker": "Engine",
+      "label": "ChangeDetect",
+      "sub": "Default checks all; OnPush checks only on input change.",
+      "say": "Change detection is the engine. By default, Angular checks everything. OnPush only checks when data changes—faster for big apps."
+    },
+    {
+      "id": "5-trap-di",
+      "type": "trap",
+      "question": "Does DI update the view?",
+      "wrong": "Yes, injecting a service triggers updates.",
+      "right": "No, DI just gives you the service. The view updates when data changes, not when a service is injected.",
+      "say": "Watch out: injecting a service doesn’t update your UI. Only data changes or signals do."
+    },
+    {
+      "id": "6-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:24:14.788Z"
+}
