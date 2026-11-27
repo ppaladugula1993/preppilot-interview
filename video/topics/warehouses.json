@@ -1,0 +1,72 @@
+{
+  "id": "warehouses",
+  "title": "Cloud Warehouses vs Lakehouses: One Key Idea",
+  "keys": [
+    "warehouse",
+    "lakehouse",
+    "storage",
+    "compute",
+    "cost"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cloud-choice",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · 45 sec",
+      "line1": "Why do modern platforms split storage?",
+      "line2": "What’s the big benefit?",
+      "say": "Have you noticed that cloud warehouses and lakehouses split storage from compute? Why is that such a game changer?"
+    },
+    {
+      "id": "1-chip-storage",
+      "type": "chip",
+      "kicker": "Step 1 · Storage",
+      "label": "Storage",
+      "sub": "Data stays safe and persistent, even if compute stops.",
+      "say": "First, storage is where your data lives. It’s always available, even if you turn off your compute clusters."
+    },
+    {
+      "id": "2-chip-compute",
+      "type": "chip",
+      "kicker": "Step 2 · Compute",
+      "label": "Compute",
+      "sub": "Compute clusters process queries, can be scaled or paused.",
+      "say": "Compute is all about processing. You can scale up, scale down, or pause it whenever you want, without touching your data."
+    },
+    {
+      "id": "3-compare-cost-flex",
+      "type": "compare",
+      "kicker": "Step 3 · Cost Flexibility",
+      "left": {
+        "title": "Old Way",
+        "items": [
+          "Fixed resources",
+          "Pay for idle time"
+        ]
+      },
+      "right": {
+        "title": "Cloud Way",
+        "items": [
+          "Scale on demand",
+          "Pause to save money"
+        ]
+      },
+      "say": "Before, you paid for everything, even when idle. Now, you only pay for compute when you need it. Storage costs are separate and predictable."
+    },
+    {
+      "id": "4-trap-design",
+      "type": "trap",
+      "question": "Is compute always needed to store data?",
+      "wrong": "Yes, you need compute online.",
+      "right": "No, storage persists independently. Compute is only needed for processing.",
+      "say": "Here’s a common trap: people think compute must run to keep data safe. Actually, storage is independent. Compute is just for processing."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:05:05.084Z"
+}
