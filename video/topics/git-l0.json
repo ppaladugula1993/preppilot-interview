@@ -1,0 +1,76 @@
+{
+  "id": "git-l0",
+  "title": "Git Basics: Commits, Branches & Tracking",
+  "keys": [
+    "commit",
+    "branch",
+    "HEAD",
+    "remote tracking"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-branch-head",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "How does Git track your code?",
+      "line2": "What's HEAD and remote tracking?",
+      "say": "Ever wondered how Git keeps track of your code and changes? What's the deal with HEAD and remote tracking?"
+    },
+    {
+      "id": "1-commit-chip",
+      "type": "chip",
+      "kicker": "Snapshot",
+      "label": "Commit",
+      "sub": "A commit saves your code at a moment in time.",
+      "say": "A commit is a snapshot. It saves your code exactly as it is right now."
+    },
+    {
+      "id": "2-branch-rows",
+      "type": "rows",
+      "kicker": "Pointers",
+      "rows": [
+        {
+          "a": "Branch",
+          "b": "Points to a commit"
+        },
+        {
+          "a": "HEAD",
+          "b": "Marks your current branch"
+        },
+        {
+          "a": "Remote branch",
+          "b": "Tracks code on another repo"
+        }
+      ],
+      "walk": true,
+      "say": "Branches are pointers to commits. HEAD marks the branch you're working on. Remote branches track code on another repository."
+    },
+    {
+      "id": "3-terminal-commands",
+      "type": "terminal",
+      "kicker": "Common Moves",
+      "title": "Branching & Tracking",
+      "lines": [
+        "$ git branch feature/login",
+        "$ git checkout feature/login",
+        "$ git fetch origin"
+      ],
+      "say": "You create a branch, switch to it, and fetch updates from the remote repository. This keeps your local code in sync."
+    },
+    {
+      "id": "4-trap-head-pointer",
+      "type": "trap",
+      "question": "What does HEAD point to in Git?",
+      "wrong": "HEAD is always the latest commit.",
+      "right": "HEAD points to your current branch and commit. It's where new commits go.",
+      "say": "Here's a classic interview trap: What does HEAD point to in Git? It's not always the latest commit. HEAD marks your current branch and commit—where your next changes will land."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:18:14.715Z"
+}
