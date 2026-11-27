@@ -1,0 +1,72 @@
+{
+  "id": "testing-l3",
+  "title": "Integration Tests with Real Databases",
+  "keys": [
+    "integration test",
+    "database",
+    "Testcontainers",
+    "teardown"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-real-db-tests",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Are your integration tests realistic?",
+      "line2": "How do you avoid polluting data?",
+      "say": "Are your integration tests realistic? How do you avoid polluting production data when testing with real databases?"
+    },
+    {
+      "id": "1-chip-testcontainers",
+      "type": "chip",
+      "kicker": "Integration",
+      "label": "Testcontainers",
+      "sub": "Spin up disposable real databases for tests.",
+      "say": "Testcontainers lets you spin up disposable real databases for integration tests, so your environment is realistic and clean."
+    },
+    {
+      "id": "2-code-postgres-exampl",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "from testcontainers.postgres import PostgresContainer\nwith PostgresContainer() as db:\n    # run tests against db.get_connection_url()",
+      "say": "Here's how you use Testcontainers with Postgres: spin up a container, run your tests, and everything gets cleaned up automatically."
+    },
+    {
+      "id": "3-rows-benefits",
+      "type": "rows",
+      "kicker": "Why it matters",
+      "rows": [
+        {
+          "a": "Real-world behavior",
+          "b": "Test with actual database logic"
+        },
+        {
+          "a": "Safe data",
+          "b": "Avoid touching production systems"
+        },
+        {
+          "a": "Clean teardown",
+          "b": "No leftover test data"
+        }
+      ],
+      "walk": true,
+      "say": "Integration tests with real databases give you real-world behavior, keep your production data safe, and ensure clean teardown after each run."
+    },
+    {
+      "id": "4-trap-mock-vs-real",
+      "type": "trap",
+      "question": "Should you use mocks for integration tests?",
+      "wrong": "Yes, always use mocks.",
+      "right": "No, integration tests should use real dependencies for accurate results.",
+      "say": "Here's a trap: Should you use mocks for integration tests? No, integration tests should use real dependencies for accurate results."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:43:54.668Z"
+}
