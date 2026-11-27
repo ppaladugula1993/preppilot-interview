@@ -35,14 +35,18 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
       - run: npm ci
       - name: Build on EAS
-        # Waits for the build so the upload below can use the App Store Connect key in this repo's secrets.
-        run: eas build -p ios --profile production --non-interactive ${{ inputs.submit && '' || '--no-wait' }}
+        # With upload: wait for the build, so the next step can send it to TestFlight.
+        run: |
+          if [ "${{ inputs.submit }}" = "true" ]; then eas build -p ios --profile production --non-interactive --wait
+          else eas build -p ios --profile production --non-interactive --no-wait; fi
       - name: Upload to TestFlight
         if: ${{ inputs.submit }}
         env:
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
-          EXPO_ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
-          EXPO_ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        # eas submit reads the App Store Connect key from eas.json, so add it for this run only.
         run: |
-          printf '%s\n' "$ASC_KEY_P8" > "$RUNNER_TEMP/asc.p8"
-          EXPO_ASC_API_KEY_PATH="$RUNNER_TEMP/asc.p8" eas submit -p ios --profile production --latest --non-interactive --wait
+          printf '%s\n' "$ASC_KEY_P8" > asc-key.p8
+          node -e "const f='eas.json',j=require('./'+f);Object.assign(j.submit.production.ios,{ascApiKeyPath:'./asc-key.p8',ascApiKeyId:process.env.ASC_KEY_ID,ascApiKeyIssuerId:process.env.ASC_ISSUER_ID});require('fs').writeFileSync(f,JSON.stringify(j,null,2))"
+          eas submit -p ios --profile production --latest --non-interactive --wait
