@@ -1,0 +1,72 @@
+{
+  "id": "aspnet-core-l3",
+  "title": "ASP.NET Core: Config & Options Pattern",
+  "keys": [
+    "Configuration",
+    "Options Pattern",
+    "IOptions<T>",
+    "appsettings.json"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-config-options",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "How do you manage app settings?",
+      "line2": "What’s the clean way?",
+      "say": "How do you manage configuration cleanly in ASP dot NET Core? What's the best way to keep settings organized?"
+    },
+    {
+      "id": "1-chip-hierarchical-co",
+      "type": "chip",
+      "kicker": "Config",
+      "label": "Sources",
+      "sub": "appsettings.json, env vars, and secrets combine",
+      "say": "ASP dot NET Core builds configuration from multiple sources: appsettings JSON, environment variables, and user secrets."
+    },
+    {
+      "id": "2-rows-options-pattern",
+      "type": "rows",
+      "kicker": "Options Pattern",
+      "rows": [
+        {
+          "a": "1. Define class",
+          "b": "Make a POCO for your settings"
+        },
+        {
+          "a": "2. Bind section",
+          "b": "services.Configure<T>(...)"
+        },
+        {
+          "a": "3. Inject options",
+          "b": "Use IOptions<T> in your code"
+        }
+      ],
+      "walk": true,
+      "say": "Use the options pattern. First, define a plain class for your settings. Next, bind a config section to it in your services. Finally, inject IOptions of that class wherever you need the settings."
+    },
+    {
+      "id": "3-code-options-injecti",
+      "type": "code",
+      "kicker": "Inject Settings",
+      "lang": "csharp",
+      "code": "services.Configure<MySettings>(\n  Configuration.GetSection(\"MySettings\")\n);\npublic MyController(\n  IOptions<MySettings> opts\n) { ... }",
+      "say": "Here's how it looks in code. Configure binds your section, and you inject IOptions of your settings class into your controller."
+    },
+    {
+      "id": "4-trap-env-specific",
+      "type": "trap",
+      "question": "How to override settings per environment?",
+      "wrong": "Just edit appsettings.json",
+      "right": "Use appsettings.{Environment}.json and env vars for overrides.",
+      "say": "Interview trap: How do you handle environment-specific settings? Don't just edit appsettings JSON. Use environment-specific files and environment variables for overrides."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:46:09.278Z"
+}
