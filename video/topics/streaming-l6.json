@@ -1,0 +1,75 @@
+{
+  "id": "streaming-l6",
+  "title": "Batch vs Streaming: Key Trade-offs",
+  "keys": [
+    "batch",
+    "streaming",
+    "latency",
+    "complexity",
+    "Kafka"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-batch-streaming",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "Batch or streaming?",
+      "line2": "Which should you pick?",
+      "say": "Batch or streaming? Which should you pick for your next project?"
+    },
+    {
+      "id": "1-compare-batch-stream",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "Batch",
+        "items": [
+          "High throughput",
+          "Simple consistency",
+          "Processes in intervals"
+        ]
+      },
+      "right": {
+        "title": "Streaming",
+        "items": [
+          "Low latency",
+          "Higher complexity",
+          "Real-time processing"
+        ]
+      },
+      "say": "Batch handles huge data volumes at set times, keeping things simple and fast. Streaming reacts to data instantly, but adds complexity and overhead."
+    },
+    {
+      "id": "2-rows-examples",
+      "type": "rows",
+      "kicker": "Examples",
+      "rows": [
+        {
+          "a": "Batch",
+          "b": "Nightly ETL job with Spark"
+        },
+        {
+          "a": "Streaming",
+          "b": "Real-time fraud checks with Kafka"
+        }
+      ],
+      "walk": false,
+      "say": "Think of batch as a nightly Spark job crunching numbers. Streaming is like catching fraud as it happens with Kafka Streams."
+    },
+    {
+      "id": "3-trap-interview",
+      "type": "trap",
+      "question": "Is streaming always better than batch?",
+      "wrong": "Yes, real-time is always best.",
+      "right": "No. Batch wins for simplicity and bulk jobs.",
+      "say": "Don't fall for this: streaming isn't always better. Batch is often the right call for simpler, bulk use cases."
+    },
+    {
+      "id": "4-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:58:00.323Z"
+}
