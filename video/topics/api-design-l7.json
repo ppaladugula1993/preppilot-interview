@@ -1,0 +1,83 @@
+{
+  "id": "api-design-l7",
+  "title": "OpenAPI & Contract-First API Design",
+  "keys": [
+    "OpenAPI",
+    "contract-first",
+    "spec",
+    "REST",
+    "codegen"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-openapi-contrac",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "How do you avoid messy APIs?",
+      "line2": "Contract-first?",
+      "say": "How do you avoid messy APIs and make sure everyone’s on the same page? Ever heard of contract-first design?"
+    },
+    {
+      "id": "1-chip-openapi",
+      "type": "chip",
+      "kicker": "Spec",
+      "label": "OpenAPI",
+      "sub": "Describes REST APIs in a standard format.",
+      "say": "OpenAPI, also known as Swagger, describes REST APIs in a standard, machine-readable format."
+    },
+    {
+      "id": "2-rows-contract-first",
+      "type": "rows",
+      "kicker": "Steps",
+      "rows": [
+        {
+          "a": "Define spec",
+          "b": "Write OpenAPI before coding"
+        },
+        {
+          "a": "Share",
+          "b": "Agree on endpoints and data"
+        },
+        {
+          "a": "Generate",
+          "b": "Create code and docs automatically"
+        },
+        {
+          "a": "Implement",
+          "b": "Build to match the contract"
+        }
+      ],
+      "walk": true,
+      "say": "With contract-first, you write the OpenAPI spec first, share it for agreement, generate code and docs, then build your API to match."
+    },
+    {
+      "id": "3-terminal-openapi-exa",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "OpenAPI snippet",
+      "lines": [
+        "$ openapi: 3.0.0",
+        "$ paths:",
+        "$   /users:",
+        "$     get:",
+        "$       summary: List users"
+      ],
+      "say": "Here’s a simple OpenAPI snippet. It defines a GET endpoint for listing users, before any code is written."
+    },
+    {
+      "id": "4-trap-contract-first",
+      "type": "trap",
+      "question": "Why do interviewers love contract-first?",
+      "wrong": "It’s faster to code first.",
+      "right": "It ensures clarity, maintainability, and enables code generation and documentation.",
+      "say": "Why do interviewers love contract-first design? It’s not just about speed—it’s about clarity, maintainability, and powerful tooling."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:31:17.373Z"
+}
