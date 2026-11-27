@@ -1,0 +1,72 @@
+{
+  "id": "dsa-l8",
+  "title": "Recursion, Backtracking & Dynamic Programming",
+  "keys": [
+    "recursion",
+    "backtracking",
+    "dynamic programming",
+    "memoization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-recursion-dp",
+      "type": "hook",
+      "kicker": "Data Structures & Algorithms · lesson",
+      "line1": "How do you solve complex problems?",
+      "line2": "What's your strategy?",
+      "say": "How do you approach tough coding problems? What strategy makes your solution efficient?"
+    },
+    {
+      "id": "1-chip-recursion",
+      "type": "chip",
+      "kicker": "Technique",
+      "label": "Recursion",
+      "sub": "Breaks problems into smaller subproblems.",
+      "say": "Recursion breaks problems into smaller subproblems, solving each piece step by step."
+    },
+    {
+      "id": "2-rows-backtracking-dp",
+      "type": "rows",
+      "kicker": "Approaches",
+      "rows": [
+        {
+          "a": "Backtracking",
+          "b": "Explores all paths, prunes invalid ones"
+        },
+        {
+          "a": "Memoization",
+          "b": "Caches results for reuse"
+        },
+        {
+          "a": "Tabulation",
+          "b": "Builds solutions bottom-up"
+        }
+      ],
+      "walk": true,
+      "say": "Backtracking explores every possibility, pruning paths that don’t work. Dynamic programming optimizes by caching results—either top-down with memoization or bottom-up with tabulation."
+    },
+    {
+      "id": "3-code-memoization-fib",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "def fib(n, memo={}):\n    if n in memo: return memo[n]\n    if n <= 1: return n\n    memo[n] = fib(n-1, memo) + fib(n-2, memo)\n    return memo[n]",
+      "say": "Here’s a memoization example for Fibonacci. It saves previous results to avoid redundant calculations."
+    },
+    {
+      "id": "4-trap-dp-choice",
+      "type": "trap",
+      "question": "When do you use tabulation?",
+      "wrong": "Always for dynamic programming.",
+      "right": "When you prefer iterative solutions or want to avoid recursion stack limits.",
+      "say": "Interviewers ask: When should you use tabulation? It’s best for iterative solutions or when recursion stack limits are an issue."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:32:10.628Z"
+}
