@@ -78,7 +78,7 @@ export const store = {
   // (text size, card mode, install id) stay.
   clearUser() {
     const personal = [K.profile, K.progress, K.custom, K.privatePacks, K.chat, K.chats, K.chatCur, K.liveSettings, K.activity, K.access,
-      'pp.jobs', 'pp.jobfocus', 'pp.resume', 'pp.newTopics', 'pp.freeCards', 'pp.pipAuto', 'pp.pipSpeed'];
+      'pp.jobs', 'pp.jobfocus', 'pp.resume', 'pp.newTopics', 'pp.freeCards', 'pp.pipAuto', 'pp.pipSpeed', 'pp.profileGuest'];
     personal.forEach(k => { try { localStorage.removeItem(k); } catch { /* blocked */ } });
   },
 };

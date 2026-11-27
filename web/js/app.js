@@ -731,6 +731,7 @@ async function saveProfile() {
   p.strong = (p.strong || []).filter(id => roles.some(role => role.topics?.[id]));
   p.weak = (p.weak || []).filter(id => roles.some(role => role.topics?.[id]));
   store.setProfile(p);
+  if (!signedIn()) lsSet('pp.profileGuest', '1'); // set up while signed out: an account's saved profile wins at sign-in
   S.flushUserData?.(); // a new or changed profile goes to the account right away
   S.draft = null;
   if (p.roleIds.includes('other') && p.otherRole !== prev?.otherRole) ai.reportRole(p.otherRole).catch(() => {});
@@ -3131,7 +3132,11 @@ document.addEventListener('click', async e => {
     const who = store.session(); if (!who || restoredFor === who) return; restoredFor = who;
     try {
       const d = await ai.post('/api/me/data', {});
-      if (!profile() && d.profile) {
+      // A profile set up on this device while signed out (Get started before Log in) must not
+      // replace the one saved with the account: the saved one wins.
+      const guestLocal = lsGet('pp.profileGuest', '') === '1';
+      lsSet('pp.profileGuest', '');
+      if (d.profile && (!profile() || guestLocal)) {
         store.setProfile(d.profile);
         if (d.progress) store.setProgress({ ...d.progress, ...store.progress() });
         await ensureForProfile(profile()).catch(() => {});
