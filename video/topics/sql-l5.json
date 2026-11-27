@@ -1,0 +1,71 @@
+{
+  "id": "sql-l5",
+  "title": "SQL Indexes: B-tree, Composite, Pitfalls",
+  "keys": [
+    "B-tree",
+    "Composite",
+    "Covering",
+    "Pitfalls"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-index-power",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "Why do indexes matter in SQL?",
+      "line2": "What can go wrong?",
+      "say": "Think indexes always make queries faster? Let's see how they really work—and where they trip you up."
+    },
+    {
+      "id": "1-chip-btree",
+      "type": "chip",
+      "kicker": "Index Type",
+      "label": "B-tree",
+      "sub": "Speeds up lookups and sorting.",
+      "say": "Most indexes use B-tree structure. It makes finding and sorting data much faster."
+    },
+    {
+      "id": "2-compare-composite-co",
+      "type": "compare",
+      "kicker": "Index Types",
+      "left": {
+        "title": "Composite",
+        "items": [
+          "Covers many columns",
+          "Order of columns matters"
+        ]
+      },
+      "right": {
+        "title": "Covering",
+        "items": [
+          "Includes all query columns",
+          "No need to read the table"
+        ]
+      },
+      "say": "Composite indexes span several columns. Put the most-used columns first. A covering index holds every column your query needs, so the database skips the table."
+    },
+    {
+      "id": "3-code-create-index",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "CREATE INDEX idx_emp_dept_salary\nON employees(department_id, salary);",
+      "say": "Here's how you make a composite index on department and salary. The order here affects performance."
+    },
+    {
+      "id": "4-trap-index-pitfall",
+      "type": "trap",
+      "question": "When do indexes hurt performance?",
+      "wrong": "When used on all columns",
+      "right": "On columns with many updates or few unique values",
+      "say": "Too many indexes slow down writes. Especially avoid them on columns that change a lot, or have only a few unique values."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:10:31.827Z"
+}
