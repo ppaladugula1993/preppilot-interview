@@ -1,0 +1,76 @@
+{
+  "id": "data-quality-l7",
+  "title": "Schema Drift Detection Explained",
+  "keys": [
+    "schema drift",
+    "monitoring",
+    "alerting",
+    "pipeline"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-schema-drift",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "What breaks when data changes?",
+      "line2": "How do you spot schema drift?",
+      "say": "When your data structure shifts, what happens to your pipeline? How do you catch schema drift before it causes trouble?"
+    },
+    {
+      "id": "1-chip-drift",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Drift",
+      "sub": "Schema drift is when source data structure changes unexpectedly.",
+      "say": "Schema drift means the shape of your source data changes without warning. Columns might be added or removed, breaking downstream steps."
+    },
+    {
+      "id": "2-rows-detect",
+      "type": "rows",
+      "kicker": "Detection Steps",
+      "rows": [
+        {
+          "a": "Monitor schema",
+          "b": "Track versions and changes"
+        },
+        {
+          "a": "Alert on change",
+          "b": "Notify when schema shifts"
+        },
+        {
+          "a": "Coordinate fixes",
+          "b": "Update transformations quickly"
+        }
+      ],
+      "walk": true,
+      "say": "To detect drift, monitor schema versions, alert when something changes, and quickly coordinate updates with upstream teams."
+    },
+    {
+      "id": "3-terminal-alert",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "Schema drift alert",
+      "lines": [
+        "$ orders table: column added",
+        "$ Transformation failed",
+        "$ Alert sent to data team"
+      ],
+      "say": "If a new column appears in the orders table, your transformation might fail. An alert goes out so you can fix it fast."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s your first step after drift?",
+      "wrong": "Ignore and rerun the pipeline.",
+      "right": "Check the schema change, alert the team, and update transformations as needed.",
+      "say": "Interviewers may ask what you do when schema drift happens. Don’t just rerun the pipeline—investigate, alert, and adapt your transformations."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:58:28.259Z"
+}
