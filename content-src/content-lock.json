@@ -176,7 +176,8 @@
   "8eab55ca63",
   "bcc95340f4",
   "adeb8ba0a7",
-  "e1b39681c0"
+  "e1b39681c0",
+  "a1f9148899"
  ],
  "web-fundamentals": [
   "6eba5b4965",
@@ -217,7 +218,8 @@
   "e168647359",
   "9bb8526a9d",
   "a25fe9946c",
-  "118ac0d100"
+  "118ac0d100",
+  "6dd223611e"
  ],
  "data-modeling": [
   "730c6bb4fd",
@@ -313,7 +315,8 @@
   "61bd4d8c43",
   "e2ad6cc1bc",
   "56038e7cd6",
-  "4fd25ad407"
+  "4fd25ad407",
+  "a4a3cf78e9"
  ],
  "streaming": [
   "e47850a4e3",
@@ -337,7 +340,8 @@
   "219b2c691a",
   "6852c34f2c",
   "f8eb0a56d5",
-  "89836bfe3d"
+  "89836bfe3d",
+  "3e5505417e"
  ],
  "warehouses": [
   "b1bb757501",
@@ -532,7 +536,8 @@
   "8c36f6efa7",
   "5164a1efa3",
   "173e452cfb",
-  "aca83b9a2e"
+  "aca83b9a2e",
+  "1006772b4c"
  ],
  "browser-performance": [
   "480d0b6a5c",
@@ -555,7 +560,8 @@
   "cd00bcbfd8",
   "489af960d9",
   "177887550f",
-  "91dc1681fd"
+  "91dc1681fd",
+  "11e196c804"
  ],
  "accessibility": [
   "2dcd72ab86",
@@ -618,7 +624,8 @@
   "b1d8515ae7",
   "9e471c32c8",
   "3c4a9a92e1",
-  "ba2e2ac68c"
+  "ba2e2ac68c",
+  "834f02dd16"
  ],
  "go-concurrency": [
   "fed92f0fd1",
@@ -830,7 +837,8 @@
   "f460d44d79",
   "d4690e7da9",
   "04e0a34fbb",
-  "6542c834c4"
+  "6542c834c4",
+  "42ada9b9c1"
  ],
  "cloud": [
   "c3b10a612e",
@@ -988,7 +996,8 @@
   "b01733763f",
   "9d3d06834a",
   "4aeb4db99a",
-  "3b0107d7c1"
+  "3b0107d7c1",
+  "1456a3ecc0"
  ],
  "spring": [
   "4bcc01c169",
@@ -1252,7 +1261,8 @@
   "b63d3fb9a0",
   "a35878f967",
   "16afe4ee3f",
-  "26f80119d5"
+  "26f80119d5",
+  "6d1b7d34ca"
  ],
  "typescript": [
   "9e2e16f306",
@@ -1299,7 +1309,8 @@
   "343febbe0c",
   "fc2c86224b",
   "79aa1bcabe",
-  "24133e3f85"
+  "24133e3f85",
+  "72dc1bb602"
  ],
  "express-nest": [
   "c8b813f9f4",
@@ -1383,7 +1394,8 @@
   "2c33a0af40",
   "d12729efe5",
   "6f978f26ad",
-  "5167fb19df"
+  "5167fb19df",
+  "584cdc85f8"
  ],
  "python-packaging": [
   "599d975ac0",
@@ -1408,7 +1420,8 @@
   "830c94add8",
   "f8580f8e65",
   "8bd336115e",
-  "b13da9bf27"
+  "b13da9bf27",
+  "84b3202f64"
  ],
  "test-strategy": [
   "9c6d26efb6",
@@ -1469,7 +1482,8 @@
   "496a409b37",
   "b44d5477fd",
   "2f800fa0d4",
-  "cafa523e6e"
+  "cafa523e6e",
+  "bc262ba280"
  ],
  "performance-testing": [
   "a0e8d04ee7",
@@ -1495,7 +1509,8 @@
   "b6413300b9",
   "c4a68d139d",
   "4e77e7c160",
-  "c6f430d32e"
+  "c6f430d32e",
+  "29d3caa6bb"
  ],
  "appsec": [
   "04a56e9f40",

@@ -1,96 +1,96 @@
 {
   "month": "2026-11",
-  "at": "2026-11-26T17:04:13.131Z",
+  "at": "2026-11-27T07:31:39.512Z",
   "added": 15,
   "report": [
     {
-      "topic": "sql",
+      "topic": "concurrency",
       "qs": [
-        "How can you optimize a SQL query that uses `ORDER BY` on a timestamp column to avoid empty result sets, especially when filtering with recent data in time-series tables?"
+        "In Python 3.13, what changes should you be aware of when using `multiprocessing.shared_memory` for concurrent access to large NumPy arrays, and how can you ensure safe synchronization between processes?"
       ]
     },
     {
-      "topic": "data-modeling",
+      "topic": "sql-advanced",
       "qs": [
-        "How would you design a dimensional model in a lakehouse architecture to support real-time analytics while ensuring consistency with batch-loaded historical data?"
-      ]
-    },
-    {
-      "topic": "etl-elt",
-      "qs": [
-        "How would you implement and monitor data freshness checks in a dbt pipeline to ensure timely batch loads, and what configuration options are available for alerting on stale data?"
-      ]
-    },
-    {
-      "topic": "spark",
-      "qs": [
-        "What are the trade-offs when using the new `spark.sql.jsonSchemaInference.parallelism` setting in Spark 4.x to speed up schema inference for massive JSON columns, and how can it impact cluster resource usage?"
+        "In PostgreSQL 16 and later, how can you use the `pgvector` extension's HNSW index for efficient nearest neighbor search, and what issues should you watch for regarding result consistency across repeated queries?"
       ]
     },
     {
       "topic": "airflow",
       "qs": [
-        "How can you use Airflow's updated DAG-level concurrency controls to prevent resource contention when running multiple high-frequency DAGs simultaneously?"
+        "How would you use Airflow's new `TaskGroup` feature to improve the readability and maintainability of complex DAGs, and what limitations should you be aware of when nesting groups?"
       ]
     },
     {
-      "topic": "warehouses",
+      "topic": "streaming",
       "qs": [
-        "How would you use Redshift's new auto-copy from Amazon S3 feature to streamline data ingestion, and what are the main configuration steps and security considerations?"
+        "What are the key considerations when configuring Kafka's fetch size settings (`fetch.min.bytes` and `max.partition.fetch.bytes`) for consumer groups reading from topics with high partition counts and variable message sizes?"
       ]
     },
     {
       "topic": "angular",
       "qs": [
-        "In Angular 22+, how would you ensure that a component using signals for state management can handle asynchronous data fetching while avoiding undefined property errors in templates?"
+        "How can you leverage Angular's signal-based change detection to optimize performance in a component that renders a large list, and what APIs would you use to minimize unnecessary DOM updates?"
       ]
     },
     {
-      "topic": "go-concurrency",
+      "topic": "browser-performance",
       "qs": [
-        "With recent improvements in Go's `context` package, how would you propagate cancellation signals across a group of goroutines working on interdependent tasks, ensuring that all goroutines terminate promptly if one fails?"
+        "How would you optimize the caching strategy for a browser-based application that dynamically loads large WASM modules and GPU assets to minimize both initial load time and repeated interaction latency?"
       ]
     },
     {
-      "topic": "statistics",
+      "topic": "go-core",
       "qs": [
-        "What are the advantages of using quantile regression over ordinary least squares regression when analyzing data with outliers or non-normal error distributions?"
+        "How does Go's `encoding/json` package handle large JSON numbers by default, and what approach would you take to avoid precision loss when parsing them?"
       ]
     },
     {
-      "topic": "ml-ops",
+      "topic": "monitoring",
       "qs": [
-        "How would you configure a model monitoring pipeline to distinguish between natural data drift and shifts caused by increased AI-generated web content, using the latest open-source monitoring frameworks?"
+        "How would you configure Prometheus and Grafana to detect and alert on lateral movement or privilege escalation attempts by AI agents within a cloud environment?"
       ]
     },
     {
-      "topic": "react-native",
+      "topic": "jvm",
       "qs": [
-        "How would you address the issue of large AAB files compared to APKs in a React Native project, and what tools or configuration options are available to optimize bundle size?"
+        "How does the JVM's recent support for region-based memory allocation using the Foreign Memory API's arenas impact memory reclamation and GC interaction in applications that use off-heap memory extensively?"
       ]
     },
     {
-      "topic": "typescript",
+      "topic": "js-core",
       "qs": [
-        "How can you use TypeScript's `NonNullable<T>` utility type with generics to ensure that a type excludes `null` and `undefined`, and what are some pitfalls when the generic might resolve to `undefined`?"
+        "How would you use the `Promise.any()` method to handle multiple asynchronous operations where you only need the first successful result, and what should you consider when all promises reject?"
       ]
     },
     {
       "topic": "node-runtime",
       "qs": [
-        "How can you use the `stream.pipeline()` method with async generators in recent Node.js versions to efficiently process and transform large data sets, and what are the main advantages of this approach?"
+        "What are some best practices for managing and monitoring memory usage in Node.js applications that frequently poll external APIs, especially in the context of long-running processes?"
+      ]
+    },
+    {
+      "topic": "python-async",
+      "qs": [
+        "How would you debug and resolve an issue where an asyncio-based Python application freezes or deadlocks when integrating with hardware libraries (e.g., GPIO or BLE) that do not natively support asyncio?"
       ]
     },
     {
       "topic": "python-packaging",
       "qs": [
-        "What is the significance of the `virtualenv` API's new support for cross-platform activation scripts, and how does it improve developer experience compared to previous versions?"
+        "How would you configure `pyproject.toml` to enable both linting with `ruff` and testing with `pytest`, ensuring that all relevant settings are centralized and compatible with modern tooling?"
+      ]
+    },
+    {
+      "topic": "api-testing",
+      "qs": [
+        "How would you test REST APIs for proper handling of fine-grained permissions and scopes in modern OAuth 2.1 setups, especially considering recent changes in scope enforcement policies by popular identity providers?"
       ]
     },
     {
       "topic": "performance-testing",
       "qs": [
-        "How would you design a performance test to evaluate the scalability of a system that dynamically integrates agent skills for code optimization, and what metrics would you track to ensure these skills do not introduce unpredictable latency spikes?"
+        "How would you tailor performance testing for a system using flash-based AI inference accelerators like DeepSeek v4.1, and which metrics would you prioritize to ensure optimal throughput and latency?"
       ]
     }
   ]
