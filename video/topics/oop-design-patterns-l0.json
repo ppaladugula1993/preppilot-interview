@@ -1,0 +1,68 @@
+{
+  "id": "oop-design-patterns-l0",
+  "title": "OOP Fundamentals in Under a Minute",
+  "keys": [
+    "encapsulation",
+    "inheritance",
+    "polymorphism",
+    "abstraction"
+  ],
+  "scenes": [
+    {
+      "id": "0-oop-pillars-hook",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "What are the 4 pillars of OOP?",
+      "line2": "Can you name them?",
+      "say": "Can you name all four pillars of object-oriented programming? Most engineers miss at least one."
+    },
+    {
+      "id": "1-oop-pillars-rows",
+      "type": "rows",
+      "kicker": "The Four Pillars",
+      "rows": [
+        {
+          "a": "Encapsulation",
+          "b": "Keep data and methods together"
+        },
+        {
+          "a": "Inheritance",
+          "b": "Reuse code through class hierarchies"
+        },
+        {
+          "a": "Polymorphism",
+          "b": "One interface, many forms"
+        },
+        {
+          "a": "Abstraction",
+          "b": "Hide complexity, show essentials"
+        }
+      ],
+      "walk": true,
+      "say": "Here they are: encapsulation, inheritance, polymorphism, and abstraction. Each one solves a different problem in code design."
+    },
+    {
+      "id": "2-oop-example-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "java",
+      "code": "class Vehicle {\n  protected int speed;\n  public void accelerate() { speed += 10; }\n}\nclass Car extends Vehicle {\n  public void honk() { System.out.println(\"Beep!\"); }\n}",
+      "say": "For example, a car class can inherit from a vehicle class. The car gets speed and accelerate from vehicle, and adds its own honk method."
+    },
+    {
+      "id": "3-oop-trap",
+      "type": "trap",
+      "question": "Is abstraction just hiding variables?",
+      "wrong": "Yes, it means making fields private.",
+      "right": "No, abstraction hides complex logic, not just variables.",
+      "say": "Here's a common trap: abstraction isn't just about hiding variables. It's about hiding complex logic behind simple interfaces."
+    },
+    {
+      "id": "4-oop-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:24:41.499Z"
+}
