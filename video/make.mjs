@@ -64,6 +64,8 @@ Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|co
 - end: say must be exactly "Get interview ready with PrepPilot."
 Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types, and put ONE picture scene right after the hook: pick a real-world metaphor that makes this idea click (e.g. Docker = cargo ship with containers; JVM garbage collection = warehouse forklift clearing unused boxes; event loop = one chef juggling orders; class vs object = blueprint vs houses; index = library card catalogue; Git branches = a tree; React components = LEGO bricks; Kafka = post office sorting mail; CI/CD or ETL = factory assembly line; auth = bank vault with ID badges; LLM RAG = librarian looking up books before answering). Pick the best fit for THIS topic, not these examples by default. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
+Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
+EVERY scene except end ALSO has "img": an illustration prompt showing that moment inside ONE consistent real-world metaphor world for the whole video (same characters and setting, different action per scene, exaggerated and fun; no words, letters, screens or logos), and "emoji": one emoji that fits the line.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "scenes": [...]}.
 
@@ -94,6 +96,8 @@ Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|co
 - end: say must be exactly "Get interview ready with PrepPilot."
 Use at least 2 different teaching scene types, and put ONE picture scene right after the hook with a real-world metaphor that makes this lesson click (e.g. cargo ship for containers, warehouse forklift for garbage collection, chef juggling orders for an event loop, blueprint vs houses for class vs object, library catalogue for indexes, factory line for pipelines). Pick the best fit for THIS lesson. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
+Brainrot-style short: hype, fast, funny, a little dramatic ("wait, WHAT?", "here's the trick nobody tells you"), but every fact correct. Short punchy spoken lines.
+EVERY scene except end ALSO has "img": an illustration prompt showing that moment inside ONE consistent real-world metaphor world for the whole video (same characters and setting, different action per scene, exaggerated and fun; no words, letters, screens or logos), and "emoji": one emoji that fits the line.
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "max 40 chars", "keys": [2-5 key terms], "scenes": [...]}.
 
@@ -117,6 +121,7 @@ if (!script) {
     const s = await writeScript(fb);
     (s?.scenes || []).forEach(x => { if (!x.say && x.type === 'hook') x.say = `${x.line1} ${x.line2}`; if (!x.say && x.type === 'end') x.say = 'Get interview ready with PrepPilot.'; });
     if (!valid(s)) { log('invalid: ' + (s?.scenes || []).filter(x => !x.say).map(x => x.type).join(',')); fb = 'Follow the scene structure exactly (hook first, end last, every scene has id and say).'; continue; }
+    if (s.scenes.some(x => x.type !== 'end' && !x.img)) log('note: some scenes have no img');
     s.scenes.forEach((x, i) => { x.id = `${i}-${String(x.id).replace(/[^a-z0-9-]/gi, '').slice(0, 20) || 's'}`; });
     const c = await check(s);
     if (c.ok === true || c.ok === 'true') script = s; else { fb = c.problems || 'facts'; log(`review: ${fb}`); }
@@ -132,29 +137,31 @@ if (!script) {
 const run = (cmd, args, opts = {}) => execFileSync(cmd, args, { cwd: here, stdio: ['ignore', 'pipe', 'pipe'], ...opts }).toString();
 if (force || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
   const tts = JSON.parse(readFileSync(scriptFile, 'utf8'));
-  writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
+  writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, rate: '+14%', voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
   log(run('node', ['tts.mjs', `.tts-${id}.json`]).trim());
 }
 
-// ---------- 2b. pictures (AI illustrations, one consistent style) ----------
-const STYLE = 'Flat modern vector illustration, clean shapes, soft gradients, dark teal night background, mint green and warm orange accents, no text, no letters, no numbers, no logos, no screens, vertical composition, main subject in the middle, calm empty space at the top and bottom.';
+// ---------- 2b. pictures: one per scene, art style + theme + loop picked per video so they all look different ----------
+const hash = str => [...str].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 7);
+const ART = ['playful 3D clay render, soft studio light', 'bold comic book art, thick ink outlines, halftone shading', 'vibrant isometric low-poly 3D', 'colorful anime cel-shaded illustration', 'papercut collage, layered paper, bright colors', 'glossy Pixar-style 3D cartoon', 'retro 80s synthwave neon illustration', 'cute chunky vector cartoon with bold shapes', 'detailed pixel art, 16-bit game style', 'whimsical gouache storybook painting'];
+const H = hash(id), STYLE = `${ART[H % ART.length]}, exaggerated fun expressions, dynamic camera angle, saturated colors, no text, no letters, no numbers, no logos, no screens, square composition, subject centered.`;
 {
   const sf = JSON.parse(readFileSync(scriptFile, 'utf8')); let changed = false;
-  for (const sc of sf.scenes.filter(x => x.type === 'picture')) {
+  const jobs = sf.scenes.filter(x => x.type !== 'end' && (x.img || x.prompt));
+  await Promise.all(jobs.map(async sc => {
     const name = `${id}-${sc.id}.jpg`, file = resolve(here, 'public', name);
-    if (!existsSync(file)) {
-      for (let a = 0; a < 3 && !existsSync(file); a++) {
-        const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
-          body: JSON.stringify({ prompt: `${sc.prompt}. ${STYLE}`, size: '1024x1536', quality: 'low', n: 1 }), signal: AbortSignal.timeout(180000) });
-        if (!r.ok) { log(`image retry ${r.status}`); await new Promise(x => setTimeout(x, 6000 * (a + 1))); continue; }
-        const png = resolve(here, 'public', `${id}-${sc.id}.png`);
-        writeFileSync(png, Buffer.from((await r.json()).data[0].b64_json, 'base64'));
-        run('ffmpeg', ['-loglevel', 'error', '-y', '-i', png, '-q:v', '3', file]);
-      }
+    for (let a = 0; a < 3 && !existsSync(file); a++) {
+      const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
+        body: JSON.stringify({ prompt: `${sc.img || sc.prompt}. ${STYLE}`, size: '1024x1024', quality: 'low', n: 1 }), signal: AbortSignal.timeout(180000) });
+      if (!r.ok) { log(`image retry ${r.status}`); await new Promise(x => setTimeout(x, 8000 * (a + 1))); continue; }
+      const png = resolve(here, 'public', `${id}-${sc.id}.png`);
+      writeFileSync(png, Buffer.from((await r.json()).data[0].b64_json, 'base64'));
+      run('ffmpeg', ['-loglevel', 'error', '-y', '-i', png, '-q:v', '3', file]);
     }
-    if (existsSync(file)) { sc.image = name; changed = true; } else { sc.type = 'chip'; sc.label = sc.map?.[0]?.thing?.slice(0, 8) || 'Idea'; sc.sub = sc.map?.map(m => `${m.thing} = ${m.means}`).join(' · ').slice(0, 70) || ''; changed = true; }
-  }
+    if (existsSync(file)) { sc.image = name; changed = true; }
+  }));
   if (changed) writeFileSync(scriptFile, JSON.stringify(sf, null, 2));
+  log(`pictures: ${sf.scenes.filter(x => x.image).length}`);
 }
 
 // ---------- 3. render + compress ----------
@@ -163,8 +170,8 @@ const final = resolve(out, `${id}.mp4`), poster = resolve(out, `${id}.jpg`);
 if (force || !existsSync(final)) {
   const s = JSON.parse(readFileSync(scriptFile, 'utf8'));
   const timing = JSON.parse(readFileSync(resolve(here, 'public', `${id}.timing.json`), 'utf8'));
-  writeFileSync(resolve(here, `.props-${id}.json`), JSON.stringify({ id, title: s.title, scenes: s.scenes, timing, audio: `${id}.mp3`, keys: s.keys || [] }));
-  run('npx', ['remotion', 'render', 'src/index.ts', 'topic', `out/${id}.raw.mp4`, `--props=.props-${id}.json`, ...(process.env.CHROME_PATH ? [`--browser-executable=${process.env.CHROME_PATH}`] : []), '--log=error'], { timeout: 1800000 });
+  writeFileSync(resolve(here, `.props-${id}.json`), JSON.stringify({ id, title: s.title, scenes: s.scenes, timing, audio: `${id}.mp3`, keys: s.keys || [], theme: H % 8, loop: (H >> 3) % 5 }));
+  run('npx', ['remotion', 'render', 'src/index.ts', 'short', `out/${id}.raw.mp4`, `--props=.props-${id}.json`, ...(process.env.CHROME_PATH ? [`--browser-executable=${process.env.CHROME_PATH}`] : []), '--log=error'], { timeout: 1800000 });
   run('ffmpeg', ['-loglevel', 'error', '-y', '-i', `out/${id}.raw.mp4`, '-c:v', 'libx264', '-preset', 'slow', '-crf', '28', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', `out/${id}.mp4`]);
   run('ffmpeg', ['-loglevel', 'error', '-y', '-ss', '1.2', '-i', `out/${id}.mp4`, '-frames:v', '1', '-vf', 'scale=540:-1', '-q:v', '5', `out/${id}.jpg`]);
   log(`rendered ${(statSync(final).size / 1e6).toFixed(1)} MB`);

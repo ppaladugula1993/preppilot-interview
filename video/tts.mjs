@@ -6,7 +6,7 @@ const t = JSON.parse(readFileSync(process.argv[2], 'utf8'));
 const cfg = sdk.SpeechConfig.fromSubscription(process.env.AZURE_SPEECH_KEY, process.env.AZURE_SPEECH_REGION || 'eastus');
 cfg.speechSynthesisOutputFormat = sdk.SpeechSynthesisOutputFormat.Audio48Khz192KBitRateMonoMp3;
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US"><voice name="${t.voice}"><mstts:express-as style="friendly"><prosody rate="+6%">`
+const ssml = `<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US"><voice name="${t.voice}"><mstts:express-as style="friendly"><prosody rate="${t.rate || '+6%'}">`
   + t.scenes.map(s => `<bookmark mark="${s.id}"/>${esc(s.text)}<break time="350ms"/>`).join('') + `</prosody></mstts:express-as></voice></speak>`;
 const synth = new sdk.SpeechSynthesizer(cfg, null);
 const words = [], marks = [];
