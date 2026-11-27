@@ -1,0 +1,81 @@
+{
+  "id": "data-modeling-l1",
+  "title": "Normalization vs Dimensional Modeling",
+  "keys": [
+    "Normalization",
+    "Dimensional",
+    "OLTP",
+    "OLAP",
+    "Trade-offs"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-normalization-o",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "Normalization or Dimensional?",
+      "line2": "Which fits your workload?",
+      "say": "How do you decide between normalization and dimensional modeling? Let’s break down when to use each."
+    },
+    {
+      "id": "1-chip-normalization",
+      "type": "chip",
+      "kicker": "OLTP",
+      "label": "Normalize",
+      "sub": "Reduces redundancy and keeps data clean.",
+      "say": "Normalization is great for transactional systems. It cuts down on duplicate data and keeps everything consistent."
+    },
+    {
+      "id": "2-compare-oltp-vs-olap",
+      "type": "compare",
+      "kicker": "Choose Wisely",
+      "left": {
+        "title": "OLTP",
+        "items": [
+          "Normalized tables",
+          "Data integrity"
+        ]
+      },
+      "right": {
+        "title": "OLAP",
+        "items": [
+          "Dimensional model",
+          "Fast analytics"
+        ]
+      },
+      "say": "For online transaction processing, stick with normalized tables. For analytics and reporting, dimensional models shine."
+    },
+    {
+      "id": "3-rows-example",
+      "type": "rows",
+      "kicker": "Example",
+      "rows": [
+        {
+          "a": "Normalized",
+          "b": "Customers and Orders tables"
+        },
+        {
+          "a": "Dimensional",
+          "b": "Sales Fact with Customer Dim"
+        }
+      ],
+      "walk": false,
+      "say": "Picture this: normalized means separate tables for customers and orders. Dimensional means a sales fact table linked to customer and product dimensions."
+    },
+    {
+      "id": "4-trap-interview-mixup",
+      "type": "trap",
+      "question": "Should you always normalize for analytics?",
+      "wrong": "Yes, normalization is always best.",
+      "right": "No, denormalized dimensional models speed up reporting.",
+      "say": "Don’t fall for this trap: normalization isn’t always the answer. For analytics, denormalized dimensional models are often faster."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:18:56.423Z"
+}
