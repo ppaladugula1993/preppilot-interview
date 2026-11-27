@@ -1,0 +1,76 @@
+{
+  "id": "accessibility-l6",
+  "title": "WCAG Levels: A, AA, or AAA?",
+  "keys": [
+    "WCAG",
+    "conformance",
+    "level AA",
+    "accessibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-wcag-levels",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Do all sites need AAA accessibility?",
+      "line2": "Which WCAG level matters?",
+      "say": "Do you really need the strictest accessibility level for every site? Let's break down what the WCAG levels actually mean."
+    },
+    {
+      "id": "1-rows-wcag-levels",
+      "type": "rows",
+      "kicker": "WCAG Levels",
+      "rows": [
+        {
+          "a": "A",
+          "b": "Basic, minimum requirements"
+        },
+        {
+          "a": "AA",
+          "b": "Recommended for most sites"
+        },
+        {
+          "a": "AAA",
+          "b": "Strict, rarely fully met"
+        }
+      ],
+      "walk": true,
+      "say": "WCAG has three levels. Level A covers the basics. Level AA is the recommended standard, balancing usability and effort. Level AAA is the strictest, but almost no site meets every AAA rule."
+    },
+    {
+      "id": "2-compare-aa-aaa",
+      "type": "compare",
+      "kicker": "Contrast Example",
+      "left": {
+        "title": "AA",
+        "items": [
+          "Contrast 4.5 to 1",
+          "Covers most needs"
+        ]
+      },
+      "right": {
+        "title": "AAA",
+        "items": [
+          "Contrast 7 to 1",
+          "Very strict rules"
+        ]
+      },
+      "say": "For example, AA requires a contrast ratio of four and a half to one for text. AAA bumps that up to seven to one, which is much harder to achieve."
+    },
+    {
+      "id": "3-trap-practical-level",
+      "type": "trap",
+      "question": "Should you always aim for AAA?",
+      "wrong": "Yes, always target AAA.",
+      "right": "No, AA is practical for most sites. Discuss AAA features with stakeholders if needed.",
+      "say": "Here's a common trap: aiming for AAA on every project. In reality, AA is the practical baseline. I talk through any AAA features with the team if they're needed."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:52:55.191Z"
+}
