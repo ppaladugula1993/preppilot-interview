@@ -1,0 +1,71 @@
+{
+  "id": "sql-advanced-l7",
+  "title": "MERGE for Slowly Changing Data",
+  "keys": [
+    "SCD",
+    "MERGE",
+    "upsert",
+    "data warehouse"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-scd-merge",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you track evolving data?",
+      "line2": "Can SQL handle history?",
+      "say": "When your data changes over time, how do you keep track of every version? Can SQL really help you keep history straight?"
+    },
+    {
+      "id": "1-chip-scd",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "SCD",
+      "sub": "Slowly Changing Dimensions record changes over time.",
+      "say": "Slowly Changing Dimensions are a way to capture how your data shifts, so you always know what changed and when."
+    },
+    {
+      "id": "2-compare-merge-upsert",
+      "type": "compare",
+      "kicker": "Technique",
+      "left": {
+        "title": "MERGE",
+        "items": [
+          "Updates rows",
+          "Inserts new data"
+        ]
+      },
+      "right": {
+        "title": "Upsert",
+        "items": [
+          "Atomic operation",
+          "Handles SCD patterns"
+        ]
+      },
+      "say": "MERGE and upsert statements let you update and add records in one step. This is key for tracking changes efficiently."
+    },
+    {
+      "id": "3-code-merge-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "SQL",
+      "code": "MERGE INTO customers t\nUSING updates s ON t.id = s.id\nWHEN MATCHED THEN UPDATE SET t.name = s.name\nWHEN NOT MATCHED THEN INSERT (id, name)\nVALUES (s.id, s.name);",
+      "say": "Here's a real-world example. MERGE lets you update names if the customer exists, or add them if they're new—all in one go."
+    },
+    {
+      "id": "4-trap-scd-type2",
+      "type": "trap",
+      "question": "How do you preserve history with SCD?",
+      "wrong": "Just update the row directly.",
+      "right": "Close out old records and insert a new row with the updated values and a new effective date. This keeps the full history.",
+      "say": "Interviewers want to see you preserve history. Don't just overwrite data—make sure you keep every version."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:12:38.279Z"
+}
