@@ -1,0 +1,75 @@
+{
+  "id": "api-design-l0",
+  "title": "REST Resources & HTTP Verbs Explained",
+  "keys": [
+    "REST",
+    "resources",
+    "HTTP verbs",
+    "idempotent"
+  ],
+  "scenes": [
+    {
+      "id": "0-rest-hook",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "Can you ace REST API questions?",
+      "line2": "Which verb does what?",
+      "say": "Ready to crush REST API interview questions? Do you know which verb does what?"
+    },
+    {
+      "id": "1-resource-chip",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Resource",
+      "sub": "A resource is any object, like a user or order, exposed by your API.",
+      "say": "In REST, a resource is just an object, like a user or an order, that your API exposes."
+    },
+    {
+      "id": "2-verbs-compare",
+      "type": "compare",
+      "kicker": "HTTP Verbs",
+      "left": {
+        "title": "Idempotent",
+        "items": [
+          "GET",
+          "PUT",
+          "DELETE"
+        ]
+      },
+      "right": {
+        "title": "Not Idempotent",
+        "items": [
+          "POST"
+        ]
+      },
+      "say": "The verbs GET, PUT, and DELETE are idempotent. That means repeating them won't change the result. POST is different—run it twice, you might create two things."
+    },
+    {
+      "id": "3-rest-terminal",
+      "type": "terminal",
+      "kicker": "Example Endpoints",
+      "title": "Resource & Verb in Action",
+      "lines": [
+        "$ GET /users/123",
+        "$ POST /orders",
+        "$ PUT /users/123/email"
+      ],
+      "say": "Here are some classic examples. Get user one two three, post to orders, or put to update a user's email."
+    },
+    {
+      "id": "4-trap-idempotency",
+      "type": "trap",
+      "question": "Is POST always safe to retry?",
+      "wrong": "Yes, POST is idempotent.",
+      "right": "Nope! POST is not idempotent. Retrying can create duplicates.",
+      "say": "Watch out: POST is not idempotent. If you retry, you could end up with duplicate data."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:28:32.852Z"
+}
