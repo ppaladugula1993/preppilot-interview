@@ -1,0 +1,65 @@
+{
+  "id": "spark-l6",
+  "title": "Debugging with Spark UI",
+  "keys": [
+    "Spark UI",
+    "stages",
+    "tasks",
+    "debugging",
+    "optimization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-spark-ui-debug",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "How do you spot slow Spark jobs?",
+      "line2": "What does the UI reveal?",
+      "say": "Ever wonder how to quickly find bottlenecks in your Spark jobs? What can the Spark UI actually tell you?"
+    },
+    {
+      "id": "1-chip-ui-overview",
+      "type": "chip",
+      "kicker": "Spark UI",
+      "label": "Overview",
+      "sub": "Shows jobs, stages, tasks, storage, and environment details.",
+      "say": "The Spark UI gives you a dashboard with job progress, stage breakdowns, task stats, storage info, and environment settings."
+    },
+    {
+      "id": "2-rows-stages-tab",
+      "type": "rows",
+      "kicker": "Stages Tab",
+      "rows": [
+        {
+          "a": "Task Duration",
+          "b": "Find slow or long-running tasks"
+        },
+        {
+          "a": "Task Skew",
+          "b": "Spot uneven partition workloads"
+        },
+        {
+          "a": "Failed Tasks",
+          "b": "Identify which tasks crashed"
+        }
+      ],
+      "walk": true,
+      "say": "The stages tab is my go-to. It shows how long tasks run, flags if some partitions are much slower, and highlights any failed tasks."
+    },
+    {
+      "id": "3-trap-ui-mistake",
+      "type": "trap",
+      "question": "What’s a common mistake with Spark UI?",
+      "wrong": "Ignoring task skew warnings.",
+      "right": "Missing skew alerts leads to slow jobs. Always check for uneven task durations in the UI.",
+      "say": "A common trap? Skipping skew warnings. If you miss those alerts, your jobs can crawl. Always check for uneven task times."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:59:17.013Z"
+}
