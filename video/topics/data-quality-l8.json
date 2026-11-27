@@ -1,0 +1,76 @@
+{
+  "id": "data-quality-l8",
+  "title": "Distribution Monitoring Demystified",
+  "keys": [
+    "distribution",
+    "monitoring",
+    "outliers",
+    "alerting"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dist-shift",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "Would you spot a silent data shift?",
+      "line2": "How do you catch it?",
+      "say": "Would you notice if your data quietly changed overnight? How do you catch subtle shifts before they become big problems?"
+    },
+    {
+      "id": "1-chip-why-matter",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Silent",
+      "sub": "Distribution shifts reveal bugs or fraud others miss.",
+      "say": "Distribution shifts can reveal subtle bugs or even fraud that basic checks miss. That's why they matter."
+    },
+    {
+      "id": "2-rows-dist-monitoring",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Track stats",
+          "b": "Mean, median, min, max, histograms"
+        },
+        {
+          "a": "Set thresholds",
+          "b": "Alert on significant changes"
+        },
+        {
+          "a": "Investigate alerts",
+          "b": "Check for bugs or data issues"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works. First, track stats like mean, median, and histograms. Next, set thresholds to alert on big changes. Finally, investigate alerts for bugs or data issues."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Distribution alert in action",
+      "lines": [
+        "$ monitor order_amount",
+        "mean: 100 → 500",
+        "ALERT: Significant shift detected"
+      ],
+      "say": "For example, if the average order amount jumps from one hundred to five hundred, you'll get an alert for a significant shift."
+    },
+    {
+      "id": "4-trap-miss",
+      "type": "trap",
+      "question": "What if you skip distribution checks?",
+      "wrong": "You catch all data bugs anyway.",
+      "right": "You might miss outliers, skew, or silent errors.",
+      "say": "What happens if you skip distribution checks? You might miss outliers, data skew, or silent errors that basic tests can't catch."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:03:07.499Z"
+}
