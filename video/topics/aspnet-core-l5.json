@@ -1,0 +1,80 @@
+{
+  "id": "aspnet-core-l5",
+  "title": "ASP.NET Core Model Binding & Validation",
+  "keys": [
+    "model binding",
+    "validation",
+    "ModelState",
+    "ApiController"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-model-binding",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "How does your controller get data?",
+      "line2": "What keeps it safe?",
+      "say": "Ever wonder how your controller magically gets data from a request? And how bad data gets stopped before it causes trouble?"
+    },
+    {
+      "id": "1-chip-model-binding",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Binding",
+      "sub": "Maps request data to your action method's parameters.",
+      "say": "Model binding takes data from the request and maps it to your method's parameters or objects."
+    },
+    {
+      "id": "2-chip-validation",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Validation",
+      "sub": "Checks if incoming data meets your rules.",
+      "say": "Validation steps in to make sure the data fits your rules, using attributes or custom logic."
+    },
+    {
+      "id": "3-code-dto-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "public class UserDto {\n  [Required]\n  public string Name { get; set; }\n}\npublic IActionResult Post(\n  [FromBody] UserDto dto) { ... }",
+      "say": "Here, a user data object requires a name. The controller grabs it from the request body and checks if it's valid."
+    },
+    {
+      "id": "4-rows-checks",
+      "type": "rows",
+      "kicker": "Validation Steps",
+      "rows": [
+        {
+          "a": "Model binding",
+          "b": "Maps data to parameters"
+        },
+        {
+          "a": "Validation",
+          "b": "Checks data annotations"
+        },
+        {
+          "a": "ModelState",
+          "b": "Tracks if data is valid"
+        }
+      ],
+      "walk": true,
+      "say": "First, model binding maps the data. Next, validation checks the rules. Finally, ModelState tracks if the data passed."
+    },
+    {
+      "id": "5-trap-mistake",
+      "type": "trap",
+      "question": "What if you skip ModelState checks?",
+      "wrong": "The action runs with invalid data.",
+      "right": "With ApiController, invalid models are blocked automatically. Without it, you must check ModelState yourself.",
+      "say": "Here's a trap: skip ModelState checks and your action could run with bad data—unless you use ApiController, which blocks invalid models for you."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:08:43.517Z"
+}
