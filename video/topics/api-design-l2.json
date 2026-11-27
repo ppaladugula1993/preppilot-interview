@@ -1,0 +1,77 @@
+{
+  "id": "api-design-l2",
+  "title": "Pagination, Filtering & Sorting",
+  "keys": [
+    "pagination",
+    "filtering",
+    "sorting",
+    "cursor"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-paging",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "How do you handle huge data lists?",
+      "line2": "What's the best way?",
+      "say": "Ever tried loading thousands of records at once? Let's see how smart APIs keep things fast and tidy."
+    },
+    {
+      "id": "1-chip-pagination",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Pagination",
+      "sub": "Break results into pages using offset or cursor.",
+      "say": "Pagination splits big results into pages. You can use offset and limit, or a cursor for smoother paging."
+    },
+    {
+      "id": "2-compare-paging",
+      "type": "compare",
+      "kicker": "Methods",
+      "left": {
+        "title": "Offset",
+        "items": [
+          "Simple to use",
+          "Best for small, static data"
+        ]
+      },
+      "right": {
+        "title": "Cursor",
+        "items": [
+          "Handles big, changing data",
+          "Prevents missing or duplicate results"
+        ]
+      },
+      "say": "Offset is easy but can get messy if data changes. Cursor-based pagination is my pick for big or busy datasets."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Paging, Filtering, Sorting",
+      "lines": [
+        "$ GET /products",
+        "?limit=20",
+        "&offset=40",
+        "&sort=price_desc",
+        "&category=books"
+      ],
+      "say": "Here's how you fetch page three of books, sorted by price. Limit and offset pick the page, sort and category filter the results."
+    },
+    {
+      "id": "4-trap-mix",
+      "type": "trap",
+      "question": "Is offset always best for paging?",
+      "wrong": "Yes, it's always fine.",
+      "right": "No, use cursor for large or changing data to avoid issues.",
+      "say": "Don't fall for it—offset isn't always best. Cursor-based paging keeps data consistent when things change."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:33:39.791Z"
+}
