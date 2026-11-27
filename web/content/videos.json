@@ -1,4 +1,25 @@
 {
- "updated": "2026-11-27T18:17:50.819Z",
- "videos": []
+ "updated": "2026-11-27T18:35:34.211Z",
+ "videos": [
+  {
+   "id": "docker",
+   "topic": "docker",
+   "title": "Docker: Images vs Containers",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/docker.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/docker.jpg",
+   "duration": 39,
+   "quiz": 0
+  },
+  {
+   "id": "jvm-l1",
+   "topic": "jvm",
+   "lesson": 1,
+   "lessonTitle": "Garbage Collectors and Generational GC",
+   "title": "JVM Garbage Collectors & Generational GC",
+   "url": "https://ppvideos7k2.blob.core.windows.net/videos/jvm-l1.mp4",
+   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/jvm-l1.jpg",
+   "duration": 52,
+   "quiz": 0
+  }
+ ]
 }
