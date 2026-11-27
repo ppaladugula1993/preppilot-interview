@@ -1,0 +1,93 @@
+{
+  "id": "dotnet-runtime",
+  "title": "The Secret to .NET Performance: Generational GC",
+  "keys": [
+    ".NET",
+    "CLR",
+    "Garbage Collection",
+    "Generations",
+    "LOH"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-gen-gc",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · 45 sec",
+      "line1": "Why is .NET memory so fast?",
+      "line2": "How does it stay efficient?",
+      "say": "Ever wonder how .NET apps manage memory so quickly, even under heavy load? Let's break down the secret sauce."
+    },
+    {
+      "id": "1-chip-clr",
+      "type": "chip",
+      "kicker": "Step 1 · CLR",
+      "label": "CLR",
+      "sub": "The Common Language Runtime runs your .NET code.",
+      "say": "First, the Common Language Runtime, or CLR, is the engine that runs your .NET code and manages memory for you."
+    },
+    {
+      "id": "2-rows-gen-gc",
+      "type": "rows",
+      "kicker": "Step 2 · Generations",
+      "rows": [
+        {
+          "a": "Gen 0",
+          "b": "Short-lived objects"
+        },
+        {
+          "a": "Gen 1",
+          "b": "Survivors from Gen 0"
+        },
+        {
+          "a": "Gen 2",
+          "b": "Long-lived objects"
+        }
+      ],
+      "walk": true,
+      "say": "The real trick is generational garbage collection. Objects start in generation zero. If they survive, they move up to generation one, and eventually to generation two."
+    },
+    {
+      "id": "3-chip-loh",
+      "type": "chip",
+      "kicker": "Step 3 · LOH",
+      "label": "LOH",
+      "sub": "Large Object Heap holds big objects over 85 kilobytes.",
+      "say": "Big objects, over eighty-five kilobytes, go straight to the Large Object Heap. This heap is collected less often, which can lead to memory fragmentation."
+    },
+    {
+      "id": "4-compare-gc",
+      "type": "compare",
+      "kicker": "Step 4 · GC Focus",
+      "left": {
+        "title": "Gen 0",
+        "items": [
+          "Fast cleanup",
+          "Most collections"
+        ]
+      },
+      "right": {
+        "title": "Gen 2 & LOH",
+        "items": [
+          "Rarely collected",
+          "Holds long-lived or large data"
+        ]
+      },
+      "say": "Most collections happen in generation zero. It's fast and frequent. Generation two and the Large Object Heap are cleaned up less often, to avoid slowing your app."
+    },
+    {
+      "id": "5-trap-leak",
+      "type": "trap",
+      "question": "Where do memory leaks often hide?",
+      "wrong": "In Gen 0 objects",
+      "right": "In Gen 2 or the Large Object Heap, since they're collected rarely.",
+      "say": "Here's a common trap: memory leaks usually hide in generation two or the Large Object Heap, not in generation zero."
+    },
+    {
+      "id": "6-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:33:51.682Z"
+}
