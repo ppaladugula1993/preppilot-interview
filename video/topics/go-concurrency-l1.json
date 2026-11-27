@@ -1,0 +1,59 @@
+{
+  "id": "go-concurrency-l1",
+  "title": "Buffered vs Unbuffered Channels in Go",
+  "keys": [
+    "concurrency",
+    "channels",
+    "buffered",
+    "unbuffered"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-buf-unbuf",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "Buffered or unbuffered channels?",
+      "line2": "What's the difference?",
+      "say": "Ever wonder when to use buffered versus unbuffered channels in Go? Let’s break it down."
+    },
+    {
+      "id": "1-chip-unbuffered",
+      "type": "chip",
+      "kicker": "Unbuffered",
+      "label": "Blocks",
+      "sub": "Sender waits until receiver is ready.",
+      "say": "With unbuffered channels, the sender blocks until a receiver is ready. This means both goroutines must sync up."
+    },
+    {
+      "id": "2-chip-buffered",
+      "type": "chip",
+      "kicker": "Buffered",
+      "label": "Async",
+      "sub": "Send up to buffer size without blocking.",
+      "say": "Buffered channels let you send messages up to their buffer size without blocking. This allows asynchronous communication."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "ch := make(chan int, 2)\nch <- 1\nch <- 2 // No block yet",
+      "say": "For example, here we create a buffered channel with size two. Both sends succeed immediately, no waiting."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Buffered channels never block, right?",
+      "wrong": "Yes, they never block.",
+      "right": "No, they block once the buffer is full.",
+      "say": "Interview trap: Buffered channels do block, but only when the buffer is full. Don’t forget that."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:48:05.376Z"
+}
