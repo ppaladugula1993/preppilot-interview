@@ -1,0 +1,93 @@
+{
+  "id": "system-design",
+  "title": "The #1 Rule in System Design Interviews",
+  "keys": [
+    "requirements",
+    "trade-offs",
+    "scaling",
+    "APIs",
+    "data"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-clarify",
+      "type": "hook",
+      "kicker": "System Design · 45 seconds",
+      "line1": "What’s the first thing",
+      "line2": "you do in an interview?",
+      "say": "What's the very first thing you should do in a system design interview?"
+    },
+    {
+      "id": "1-chip-requirements",
+      "type": "chip",
+      "kicker": "Step 1 · Success",
+      "label": "Clarify",
+      "sub": "Nail down requirements before you design.",
+      "say": "Always start by clarifying requirements. Get clear on features, constraints, and goals before you draw a single box."
+    },
+    {
+      "id": "2-rows-framework",
+      "type": "rows",
+      "kicker": "Framework",
+      "rows": [
+        {
+          "a": "Clarify",
+          "b": "What does the system do?"
+        },
+        {
+          "a": "Estimate",
+          "b": "How big will it get?"
+        },
+        {
+          "a": "API",
+          "b": "How do clients interact?"
+        },
+        {
+          "a": "Data",
+          "b": "What needs to be stored?"
+        },
+        {
+          "a": "Trade-offs",
+          "b": "What will you sacrifice?"
+        }
+      ],
+      "walk": true,
+      "say": "Use a framework: clarify, estimate scale, define APIs, model data, and discuss trade-offs. This keeps your answer organized."
+    },
+    {
+      "id": "3-compare-tradeoffs",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "Scale Fast",
+        "items": [
+          "NoSQL",
+          "Eventual Consistency"
+        ]
+      },
+      "right": {
+        "title": "Stay Consistent",
+        "items": [
+          "SQL",
+          "Read-Your-Writes"
+        ]
+      },
+      "say": "Every design has trade-offs. For example, NoSQL scales fast but may sacrifice consistency. SQL is consistent but harder to scale."
+    },
+    {
+      "id": "4-trap-miss-clarify",
+      "type": "trap",
+      "question": "What’s the biggest interview mistake?",
+      "wrong": "Jumping into architecture",
+      "right": "Skipping requirements leads to wasted time and missed goals.",
+      "say": "The biggest trap? Jumping straight into architecture. If you skip requirements, you risk solving the wrong problem."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:34:46.778Z"
+}
