@@ -1,0 +1,74 @@
+{
+  "id": "sql-advanced-l5",
+  "title": "Query Plans & Join Algorithms Explained",
+  "keys": [
+    "query plan",
+    "hash join",
+    "merge join",
+    "nested loop join"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-join-strategy",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "Why do query plans matter?",
+      "line2": "How do joins affect speed?",
+      "say": "Ever wonder why your SQL query is slow? Let’s see how join strategies make all the difference."
+    },
+    {
+      "id": "1-chip-query-plan",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Plan",
+      "sub": "Query plans reveal how SQL engines execute joins.",
+      "say": "A query plan shows the steps your database takes to run a query, including which join algorithm it picks."
+    },
+    {
+      "id": "2-compare-join-types",
+      "type": "compare",
+      "kicker": "Join Algorithms",
+      "left": {
+        "title": "Hash Join",
+        "items": [
+          "Large, unsorted",
+          "Builds hash table"
+        ]
+      },
+      "right": {
+        "title": "Merge & Nested Loop",
+        "items": [
+          "Merge: Needs sorted",
+          "Nested: Small tables"
+        ]
+      },
+      "say": "Hash joins work best for big, unsorted data. Merge joins need sorted inputs. Nested loop joins shine with small tables or good indexes."
+    },
+    {
+      "id": "3-terminal-explain-exa",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "Check the Join Algorithm",
+      "lines": [
+        "$ EXPLAIN SELECT * FROM orders",
+        "JOIN customers ON orders.customer_id = customers.id"
+      ],
+      "say": "Run the explain command to see which join algorithm your query uses. It helps you spot performance issues fast."
+    },
+    {
+      "id": "4-trap-index-myth",
+      "type": "trap",
+      "question": "Is a hash join always fastest?",
+      "wrong": "Yes, hash join is always best.",
+      "right": "No, merge join can be faster if data is sorted, and nested loop is best for small tables.",
+      "say": "Don’t assume hash join is always fastest. The best algorithm depends on your data and indexes."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:09:22.576Z"
+}
