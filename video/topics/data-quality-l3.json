@@ -1,0 +1,84 @@
+{
+  "id": "data-quality-l3",
+  "title": "Data Lineage & Catalogs Explained",
+  "keys": [
+    "lineage",
+    "catalog",
+    "metadata",
+    "trace"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lineage-catalog",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "Can you trace where data comes from?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder how data travels and transforms? Why do interviewers care if you can trace its journey?"
+    },
+    {
+      "id": "1-rows-lineage-flow",
+      "type": "rows",
+      "kicker": "Lineage Flow",
+      "rows": [
+        {
+          "a": "Raw Sales",
+          "b": "Initial data source"
+        },
+        {
+          "a": "Cleaned Sales",
+          "b": "Errors removed, standardized"
+        },
+        {
+          "a": "Sales Aggregates",
+          "b": "Summed for reporting"
+        }
+      ],
+      "walk": true,
+      "say": "Data lineage maps each step, from raw sales to cleaned sales, then to sales aggregates. This helps you pinpoint where issues start."
+    },
+    {
+      "id": "2-chip-catalog",
+      "type": "chip",
+      "kicker": "Catalogs",
+      "label": "Metadata",
+      "sub": "Catalogs list columns, data types, owners, and more.",
+      "say": "A data catalog documents every dataset, schema, owner, and metadata. It makes finding and understanding data way easier."
+    },
+    {
+      "id": "3-compare-lineage-cata",
+      "type": "compare",
+      "kicker": "Lineage vs Catalog",
+      "left": {
+        "title": "Lineage",
+        "items": [
+          "Tracks data flow",
+          "Shows transformations"
+        ]
+      },
+      "right": {
+        "title": "Catalog",
+        "items": [
+          "Documents metadata",
+          "Aids discovery"
+        ]
+      },
+      "say": "Lineage tracks how data moves and changes. Catalogs record details, making assets searchable and governed."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s the main benefit of lineage?",
+      "wrong": "It speeds up data processing.",
+      "right": "It helps trace sources and transformations for troubleshooting and compliance.",
+      "say": "Interviewers want you to highlight tracing and troubleshooting, not just performance."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:49:12.622Z"
+}
