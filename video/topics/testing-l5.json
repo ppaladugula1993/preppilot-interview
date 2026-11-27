@@ -1,0 +1,64 @@
+{
+  "id": "testing-l5",
+  "title": "TDD Workflow and Its Limits",
+  "keys": [
+    "TDD",
+    "red-green-refactor",
+    "workflow",
+    "limits"
+  ],
+  "scenes": [
+    {
+      "id": "0-tdd-hook",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Is TDD always the best choice?",
+      "line2": "Where does it fall short?",
+      "say": "Is test-driven development always the best way to build software? Where does it fall short?"
+    },
+    {
+      "id": "1-tdd-steps",
+      "type": "rows",
+      "kicker": "TDD Workflow",
+      "rows": [
+        {
+          "a": "Red",
+          "b": "Write a failing test first"
+        },
+        {
+          "a": "Green",
+          "b": "Code just enough to pass"
+        },
+        {
+          "a": "Refactor",
+          "b": "Clean up code and tests"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the TDD cycle: First, write a failing test. Next, make it pass with minimal code. Finally, refactor for clarity and maintainability."
+    },
+    {
+      "id": "2-tdd-limits",
+      "type": "chip",
+      "kicker": "Limits",
+      "label": "Drawbacks",
+      "sub": "TDD struggles with UIs or complex integrations.",
+      "say": "But TDD isn’t perfect. It works best for logic-heavy code and struggles with user interfaces or complex integrations."
+    },
+    {
+      "id": "3-tdd-trap",
+      "type": "trap",
+      "question": "Is TDD ideal for all code?",
+      "wrong": "Yes, use TDD everywhere.",
+      "right": "No, adapt your approach for UI or integration-heavy features.",
+      "say": "Don’t fall for this trap: TDD isn’t ideal for every situation. Adapt your approach for UI or integration-heavy features."
+    },
+    {
+      "id": "4-tdd-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T17:50:09.619Z"
+}
