@@ -1,0 +1,72 @@
+{
+  "id": "html-css-l0",
+  "title": "Semantic HTML: Why It Matters",
+  "keys": [
+    "semantic",
+    "accessibility",
+    "SEO",
+    "structure"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-semantic-html",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "Can HTML tags boost accessibility?",
+      "line2": "What is semantic HTML?",
+      "say": "Ever wonder if your HTML tags can make your site more accessible and easier to maintain? Let’s talk semantic HTML."
+    },
+    {
+      "id": "1-chip-meaning",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Meaning",
+      "sub": "Semantic elements show what content is about.",
+      "say": "Semantic elements like header or main tell browsers and developers what each part of your page means."
+    },
+    {
+      "id": "2-code-article-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "html",
+      "code": "<article>\n  <h2>News Title</h2>\n  <p>News content...</p>\n</article>",
+      "say": "For example, using article for news content makes it clear this section is a standalone story."
+    },
+    {
+      "id": "3-rows-benefits",
+      "type": "rows",
+      "kicker": "Why Use Semantic HTML?",
+      "rows": [
+        {
+          "a": "Accessibility",
+          "b": "Screen readers understand layout"
+        },
+        {
+          "a": "SEO",
+          "b": "Search engines rank content better"
+        },
+        {
+          "a": "Clarity",
+          "b": "Code is easier to read and maintain"
+        }
+      ],
+      "walk": true,
+      "say": "Semantic HTML improves accessibility, boosts search rankings, and makes your code much clearer."
+    },
+    {
+      "id": "4-trap-div-vs-main",
+      "type": "trap",
+      "question": "Should you use div for main content?",
+      "wrong": "Yes, div works for everything.",
+      "right": "No, use main to show it's the primary content.",
+      "say": "Interviewers might ask if you can use div for main content. Actually, main is better because it signals the primary section to browsers and assistive tech."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:22:13.587Z"
+}
