@@ -1,0 +1,75 @@
+{
+  "id": "warehouses-l6",
+  "title": "Access Control & Data Sharing Essentials",
+  "keys": [
+    "access control",
+    "roles",
+    "permissions",
+    "data sharing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-access-sharing",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "Who gets access to your data?",
+      "line2": "How is sharing secured?",
+      "say": "Ever wonder who can see your data, and how you can share it securely in the cloud?"
+    },
+    {
+      "id": "1-chip-granular-contro",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Access",
+      "sub": "Granular control uses roles and permissions.",
+      "say": "Cloud warehouses use roles and permissions to give fine-grained access. You decide who can read, write, or manage each resource."
+    },
+    {
+      "id": "2-terminal-snowflake-g",
+      "type": "terminal",
+      "kicker": "Example: Snowflake",
+      "title": "Granting Table Access",
+      "lines": [
+        "$ GRANT SELECT ON TABLE sales",
+        "  TO ROLE analyst;"
+      ],
+      "say": "For example, in Snowflake, you grant select access on the sales table to the analyst role. Only users with that role can query sales."
+    },
+    {
+      "id": "3-rows-data-sharing",
+      "type": "rows",
+      "kicker": "Data Sharing",
+      "rows": [
+        {
+          "a": "No Copying",
+          "b": "Share datasets securely"
+        },
+        {
+          "a": "Cross Accounts",
+          "b": "Enable collaboration"
+        },
+        {
+          "a": "IAM Roles",
+          "b": "Control access by project"
+        }
+      ],
+      "walk": false,
+      "say": "Data sharing means you can share datasets across accounts or organizations without copying data. In BigQuery, you use IAM roles to control access by project."
+    },
+    {
+      "id": "4-trap-least-privilege",
+      "type": "trap",
+      "question": "What's the best practice for access?",
+      "wrong": "Give everyone full access.",
+      "right": "Use least-privilege roles and permissions.",
+      "say": "Interview trap: Don’t just give everyone full access. Always use least-privilege roles and permissions to keep data safe."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:21:12.505Z"
+}
