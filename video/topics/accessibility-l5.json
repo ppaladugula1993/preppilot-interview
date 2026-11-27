@@ -1,0 +1,75 @@
+{
+  "id": "accessibility-l5",
+  "title": "Automated Accessibility Tools & Limits",
+  "keys": [
+    "axe",
+    "Lighthouse",
+    "manual testing",
+    "focus order"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-auto-tools",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Can tools catch every issue?",
+      "line2": "What do they miss?",
+      "say": "Automated accessibility tools scan for issues, but can they catch everything? What do they miss?"
+    },
+    {
+      "id": "1-chip-axe",
+      "type": "chip",
+      "kicker": "Popular Tool",
+      "label": "axe",
+      "sub": "Finds missing alt text or ARIA labels fast",
+      "say": "Tools like axe quickly find missing alt text or ARIA labels on your pages."
+    },
+    {
+      "id": "2-terminal-npx-axe",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "Run axe on a page",
+      "lines": [
+        "$ npx axe",
+        "Missing ARIA label on button",
+        "Image missing alt attribute"
+      ],
+      "say": "For example, running n-p-x axe highlights missing ARIA labels or alt attributes."
+    },
+    {
+      "id": "3-compare-auto-manual",
+      "type": "compare",
+      "kicker": "Limits",
+      "left": {
+        "title": "Automated",
+        "items": [
+          "Finds missing text",
+          "Checks color contrast"
+        ]
+      },
+      "right": {
+        "title": "Manual",
+        "items": [
+          "Checks focus order",
+          "Verifies label meaning"
+        ]
+      },
+      "say": "But tools can't judge focus order or if labels are meaningful. Manual testing fills those gaps."
+    },
+    {
+      "id": "4-trap-tool-limit",
+      "type": "trap",
+      "question": "Can tools check all accessibility?",
+      "wrong": "Yes, they catch everything.",
+      "right": "No, manual checks catch logic and meaning issues.",
+      "say": "Here's a common interview trap: Can tools check all accessibility? No—they miss logic and meaning issues. Manual checks are always needed."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:29:32.970Z"
+}
