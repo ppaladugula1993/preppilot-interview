@@ -132,7 +132,11 @@ async function writeBrain(feedback) {
 Write ONE explainer video using only facts from the material below. ${n}, each scene 4-6 seconds (about 2.5 words per second).
 Tone: simple, punchy, curious; explain like to a smart 15-year-old; explain any jargon. Narration must be speakable word-for-word: no brackets, no emojis.
 Structure: Hook -> Problem -> How it works in 3 steps -> Twist / interview trap / why it matters -> End line. The last scene's narration is exactly "Get interview ready with PrepPilot."
-Return {"title": "short viral title, max 40 chars", "scenes": [{"narration_text": "...", "on_screen_title": "ALL CAPS, max 5 words, never a section label like HOOK, STEP 1 or TWIST", "accent_word": "ONE word or number that appears in on_screen_title", "subtitle": "max 6 words", "image_prompt": "a simple flat vector illustration of [concrete visual for this scene: an everyday metaphor or a clean diagram]"}]}
+Return {"title": "short viral title, max 40 chars", "scenes": [{"narration_text": "...", "on_screen_title": "ALL CAPS, max 5 words, never a section label like HOOK, STEP 1 or TWIST", "accent_word": "ONE word or number that appears in on_screen_title", "subtitle": "max 6 words", "visual": {"layout": "single|flow|stack|compare|hub|list|grid", "items": [{"icon": "lucide icon name", "label": "max 12 chars", "good": true}]}}]}
+Visual = a clean animated diagram drawn from icons, chosen to SHOW what the narration says:
+- single: 1 item, one big idea. flow: 2-4 items in order with arrows (steps, request path). stack: 2-5 layers bottom to top. compare: exactly 2 items (X vs Y). hub: first item in the centre, 3-5 around it. list: 2-4 items with good true/false (do / don't). grid: 3-6 items (many of something).
+Icons are Lucide names, e.g. box, boxes, package, container, ship, server, database, cpu, memory-stick, hard-drive, cloud, globe, network, wifi, router, monitor, laptop, smartphone, code, terminal, file, file-code, folder, git-branch, git-merge, layers, layout-grid, cog, settings, wrench, hammer, rocket, zap, timer, clock, gauge, shield, lock, key, user, users, bug, check, x, alert-triangle, search, filter, list, table, chart-bar, trending-up, arrow-right, repeat, refresh-cw, trash-2, copy, link, mail, message-square, bell, coffee, brain, lightbulb, puzzle, sparkles, workflow, binary, braces, hash, image, play, pause, power, plug, cable, flame, snowflake, scale, anchor, truck, factory, warehouse, building, home, book, graduation-cap, trophy, target.
+Use 2-4 different layouts across the video. Labels are short, ALL CAPS friendly.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Material:
 ${material}
@@ -140,7 +144,7 @@ ${material}
 Cards:
 ${cards}`;
   const r = await ask(sys, user, 3000);
-  const scenes = (r?.scenes || []).map((x, i) => ({ id: `s${i}`, type: i === 0 ? 'hook' : i === (r.scenes.length - 1) ? 'end' : 'chip', say: String(x.narration_text || '').replace(/[\[\]]/g, ''), title: x.on_screen_title || '', accent: x.accent_word || '', subtitle: x.subtitle || '', prompt: x.image_prompt || '' }));
+  const scenes = (r?.scenes || []).map((x, i) => ({ id: `s${i}`, type: i === 0 ? 'hook' : i === (r.scenes.length - 1) ? 'end' : 'chip', say: String(x.narration_text || '').replace(/[\[\]]/g, ''), title: x.on_screen_title || '', accent: x.accent_word || '', subtitle: x.subtitle || '', visual: x.visual || { layout: 'single', items: [{ icon: 'box' }] } }));
   return { title: r?.title, scenes };
 }
 const valid = s => Array.isArray(s?.scenes) && s.scenes.length >= (lesson ? 4 : 5) && s.scenes[0].type === 'hook' && s.scenes.at(-1).type === 'end' && s.scenes.every(x => x.id && x.say);
@@ -187,7 +191,7 @@ async function draw(prompt, file, transparent, square) {
 }
 {
   const sf = JSON.parse(readFileSync(scriptFile, 'utf8')); let n = 0;
-  if (BRAIN) for (const sc of sf.scenes.filter(x => x.prompt && x.type !== 'end')) { const name = `${id}-${sc.id}.jpg`; if (await draw(`${sc.prompt}. ${BRAIN_STYLE}. Single centered subject, plenty of empty #0A0A0F space around it.`, resolve(here, 'public', name), false, true)) { sc.image = name; n++; } }
+  if (BRAIN && process.env.BRAIN_IMAGES) for (const sc of sf.scenes.filter(x => x.prompt && x.type !== 'end')) { const name = `${id}-${sc.id}.jpg`; if (await draw(`${sc.prompt}. ${BRAIN_STYLE}. Single centered subject, plenty of empty #0A0A0F space around it.`, resolve(here, 'public', name), false, true)) { sc.image = name; n++; } }
   for (const st of sf.sets || []) { const name = `${id}-set-${st.name}.jpg`; if (await draw(`${st.prompt}. Wide empty background scene for an animation, no characters in front. ${STYLE}`, resolve(here, 'public', name), false)) { st.image = name; n++; } }
   for (const c of sf.cast || []) { const name = `${id}-cast-${c.name}.png`; if (await draw(`${c.prompt}. Single isolated cut-out sprite on a fully transparent background, whole object visible, centered, bold outline. ${STYLE}`, resolve(here, 'public', name), true)) { c.image = name; n++; } }
   writeFileSync(scriptFile, JSON.stringify(sf, null, 2));

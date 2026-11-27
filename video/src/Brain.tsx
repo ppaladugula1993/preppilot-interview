@@ -3,8 +3,9 @@
 import React from 'react';
 import { AbsoluteFill, Audio, Img, Sequence, staticFile, useVideoConfig, useCurrentFrame, interpolate, spring, Easing } from 'remotion';
 import type { Timing } from './Topic';
+import { Visual, type VSpec } from './Visual';
 
-export type BrainScene = { id: string; say: string; title: string; accent?: string; subtitle?: string; image?: string };
+export type BrainScene = { id: string; say: string; title: string; accent?: string; subtitle?: string; image?: string; visual?: VSpec };
 export type BrainProps = { id: string; title: string; scenes: BrainScene[]; timing: Timing; audio: string };
 
 const BG = '#0A0A0F', YEL = '#FFE500', FONT = '"Inter", "Montserrat", "Arial Black", sans-serif';
@@ -33,10 +34,7 @@ const SceneView: React.FC<{ s: BrainScene; dur: number }> = ({ s, dur }) => {
           return <span key={i} style={{ display: 'inline-block', opacity: p, transform: `scale(${0.9 + 0.1 * p})`, color: isAcc ? YEL : '#fff' }}>{/\d/.test(w) ? <Count text={w} f={f - i * 3} /> : w}</span>; })}
       </div>
       {s.subtitle ? <div style={{ position: 'absolute', left: 120, right: 120, top: 700, textAlign: 'center', font: `500 40px/1.3 ${FONT}`, color: '#ffffffb3', opacity: sub, transform: `scale(${0.9 + 0.1 * sub})` }}>{s.subtitle}</div> : null}
-      {s.image ? <div style={{ position: 'absolute', left: 190, top: 800, width: 700, height: 700, transform: `scale(${(0.9 + 0.1 * imgIn) * zoom})`, opacity: Math.min(1, imgIn * 1.5) }}>
-        <Img src={staticFile(s.image)} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-        <div style={{ position: 'absolute', inset: 0, boxShadow: `inset 0 0 60px 40px ${BG}` }} />
-      </div> : null}
+      {s.visual ? <div style={{ position: 'absolute', left: 0, right: 0, top: 790, height: 720, transform: `scale(${(0.9 + 0.1 * imgIn) * zoom})` }}><Visual v={s.visual} dur={dur} /></div> : null}
     </AbsoluteFill>
   );
 };
