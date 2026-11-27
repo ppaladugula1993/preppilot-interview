@@ -1,0 +1,59 @@
+{
+  "id": "dotnet-runtime-l4",
+  "title": "Span<T> & Memory<T>: Cut Allocations Fast",
+  "keys": [
+    "Span<T>",
+    "Memory<T>",
+    "allocation",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-span-memory",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Want faster .NET code?",
+      "line2": "Stack or heap for buffers?",
+      "say": "Want your .NET code to run faster? Should you use the stack or heap for buffers?"
+    },
+    {
+      "id": "1-chip-span",
+      "type": "chip",
+      "kicker": "Key Type",
+      "label": "Span<T>",
+      "sub": "Stack-only, fast, perfect for slicing arrays.",
+      "say": "Span of T is stack-only and super fast. It's perfect for slicing arrays and buffers without heap allocations."
+    },
+    {
+      "id": "2-chip-memory",
+      "type": "chip",
+      "kicker": "Key Type",
+      "label": "Memory<T>",
+      "sub": "Works async, crosses methods, heap-friendly.",
+      "say": "Memory of T works with async code and can cross method boundaries. It's heap-friendly when you need data to last longer."
+    },
+    {
+      "id": "3-code-usage",
+      "type": "code",
+      "kicker": "Usage Example",
+      "lang": "csharp",
+      "code": "Span<byte> slice = buffer.AsSpan(10, 20);\nMemory<byte> mem = new Memory<byte>(buffer, 10, 20);",
+      "say": "Here's how you use them. Span for in-place processing, Memory for async APIs."
+    },
+    {
+      "id": "4-trap-stackonly",
+      "type": "trap",
+      "question": "Can Span<T> be used in async methods?",
+      "wrong": "Yes, it's safe in async.",
+      "right": "Nope! Span of T is stack-only and can't cross async boundaries.",
+      "say": "Here's a common trap: Can Span of T be used in async methods? Nope! It's stack-only and can't cross async boundaries."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:35:39.756Z"
+}
