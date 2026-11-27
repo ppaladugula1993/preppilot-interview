@@ -1,0 +1,80 @@
+{
+  "id": "oop-design-patterns-l2",
+  "title": "SOLID Principles Made Simple",
+  "keys": [
+    "SOLID",
+    "Responsibility",
+    "Extensible",
+    "Modular"
+  ],
+  "scenes": [
+    {
+      "id": "0-solid-hook",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "Want code that's easy to change?",
+      "line2": "What is SOLID?",
+      "say": "Want code that's easy to change and scale? Let's break down the SOLID principles."
+    },
+    {
+      "id": "1-solid-chip",
+      "type": "chip",
+      "kicker": "Principle",
+      "label": "SOLID",
+      "sub": "Five rules for maintainable, robust code.",
+      "say": "SOLID stands for five key rules that make your code maintainable and robust."
+    },
+    {
+      "id": "2-solid-rows",
+      "type": "rows",
+      "kicker": "The Five Principles",
+      "rows": [
+        {
+          "a": "Single Responsibility",
+          "b": "One job per class"
+        },
+        {
+          "a": "Open/Closed",
+          "b": "Open to extend, closed to modify"
+        },
+        {
+          "a": "Liskov Substitution",
+          "b": "Derived classes fit anywhere base does"
+        },
+        {
+          "a": "Interface Segregation",
+          "b": "No forced unused methods"
+        },
+        {
+          "a": "Dependency Inversion",
+          "b": "Depend on abstractions"
+        }
+      ],
+      "walk": true,
+      "say": "Single Responsibility means one job per class. Open/Closed: add features without changing existing code. Liskov: subclasses must honor base contracts. Interface Segregation: don't force unused methods. Dependency Inversion: depend on abstractions, not details."
+    },
+    {
+      "id": "3-solid-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "cpp",
+      "code": "class InvoicePrinter {\n  void print(Invoice inv);\n};\nclass Shape {\n  virtual double area();\n};",
+      "say": "For example, InvoicePrinter only prints invoices, following Single Responsibility. Shape lets you extend with new shapes, showing Open/Closed."
+    },
+    {
+      "id": "4-solid-trap",
+      "type": "trap",
+      "question": "What's the main SOLID benefit?",
+      "wrong": "It makes code run faster.",
+      "right": "It keeps code easy to modify and scale.",
+      "say": "A common trap: SOLID isn't about speed—it's about making code easy to change and scale."
+    },
+    {
+      "id": "5-solid-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:15:32.201Z"
+}
