@@ -1,0 +1,76 @@
+{
+  "id": "data-quality-l7",
+  "title": "Schema Drift Detection Explained",
+  "keys": [
+    "schema drift",
+    "monitoring",
+    "alerting",
+    "pipeline"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-drift-trouble",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "Ever had data pipelines break?",
+      "line2": "What causes schema drift?",
+      "say": "Ever had a data pipeline suddenly fail? What causes schema drift, and how do you catch it before it breaks things?"
+    },
+    {
+      "id": "1-chip-drift",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Drift",
+      "sub": "Schema drift is when your data structure changes unexpectedly.",
+      "say": "Schema drift is when your data structure changes without warning. It can break downstream processes fast."
+    },
+    {
+      "id": "2-rows-detect-drift",
+      "type": "rows",
+      "kicker": "How to Detect Drift",
+      "rows": [
+        {
+          "a": "Monitor schema versions",
+          "b": "Track changes over time"
+        },
+        {
+          "a": "Set up alerts",
+          "b": "Notify on unexpected changes"
+        },
+        {
+          "a": "Coordinate updates",
+          "b": "Work with upstream teams"
+        }
+      ],
+      "walk": true,
+      "say": "To spot drift, monitor schema versions, set up alerts for changes, and coordinate updates with upstream teams."
+    },
+    {
+      "id": "3-terminal-alert-examp",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "Alert on Schema Change",
+      "lines": [
+        "$ schema-monitor check orders",
+        "ALERT: Column 'discount' added",
+        "Action needed: update transformations"
+      ],
+      "say": "Here's a real example. A new column appears in the orders table. The system triggers an alert, so you know to update your transformations."
+    },
+    {
+      "id": "4-trap-why-care",
+      "type": "trap",
+      "question": "Why does schema drift matter?",
+      "wrong": "It only affects raw data storage.",
+      "right": "It can break pipelines and downstream apps, so early detection keeps data flowing.",
+      "say": "Watch out in interviews. Schema drift isn't just about storage. It can break pipelines and dashboards—so early detection is key."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:00:14.187Z"
+}
