@@ -1,0 +1,72 @@
+{
+  "id": "aspnet-core-l6",
+  "title": "Health Checks, Logging & OpenTelemetry",
+  "keys": [
+    "health checks",
+    "logging",
+    "OpenTelemetry",
+    "observability"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-health-checks",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "How do you monitor your app?",
+      "line2": "What makes it observable?",
+      "say": "How do you monitor your ASP.NET Core app? What makes it observable and ready for production?"
+    },
+    {
+      "id": "1-chip-health",
+      "type": "chip",
+      "kicker": "Health",
+      "label": "Checks",
+      "sub": "Use built-in health checks to expose app status at a /health endpoint.",
+      "say": "ASP.NET Core has built-in health checks. Expose app status at a slash health endpoint for easy monitoring."
+    },
+    {
+      "id": "2-code-logging",
+      "type": "code",
+      "kicker": "Logging",
+      "lang": "csharp",
+      "code": "services.AddLogging();\nILogger logger;\nlogger.LogInformation(\n  \"App started successfully.\");",
+      "say": "Add structured logging with ILogger. Log important events for diagnostics and monitoring."
+    },
+    {
+      "id": "3-rows-opentelemetry",
+      "type": "rows",
+      "kicker": "Tracing",
+      "rows": [
+        {
+          "a": "Add SDK",
+          "b": "Install OpenTelemetry packages"
+        },
+        {
+          "a": "Configure",
+          "b": "services.AddOpenTelemetryTracing(...)"
+        },
+        {
+          "a": "Instrument",
+          "b": "Trace requests and enrich with metadata"
+        }
+      ],
+      "walk": true,
+      "say": "To add distributed tracing, install OpenTelemetry, configure tracing, and instrument your app with metadata."
+    },
+    {
+      "id": "4-trap-health-endpoint",
+      "type": "trap",
+      "question": "How do you expose a health check endpoint?",
+      "wrong": "Just add AddHealthChecks().",
+      "right": "Register health checks and map them with MapHealthChecks to a slash health endpoint.",
+      "say": "Interview trap: How do you expose a health check endpoint? Don't just add health checks—map them to a slash health endpoint."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:53:59.892Z"
+}
