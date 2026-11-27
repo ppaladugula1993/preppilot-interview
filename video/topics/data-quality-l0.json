@@ -1,0 +1,86 @@
+{
+  "id": "data-quality-l0",
+  "title": "Dimensions of Data Quality Explained",
+  "keys": [
+    "accuracy",
+    "completeness",
+    "uniqueness",
+    "validity"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dimensions-matt",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "What makes data truly reliable?",
+      "line2": "Which dimensions matter?",
+      "say": "Ever wondered what makes data trustworthy? Let's break down the key dimensions of data quality."
+    },
+    {
+      "id": "1-chip-accuracy",
+      "type": "chip",
+      "kicker": "Dimension",
+      "label": "Accuracy",
+      "sub": "Does the data reflect real-world values?",
+      "say": "First up, accuracy. This checks if your data matches what's actually true in the real world."
+    },
+    {
+      "id": "2-rows-key-dimensions",
+      "type": "rows",
+      "kicker": "Core Dimensions",
+      "rows": [
+        {
+          "a": "Completeness",
+          "b": "No missing or null values"
+        },
+        {
+          "a": "Uniqueness",
+          "b": "No duplicate records"
+        },
+        {
+          "a": "Validity",
+          "b": "Data fits expected formats"
+        }
+      ],
+      "walk": false,
+      "say": "Other key dimensions include completeness, uniqueness, and validity. Each one tackles a different risk."
+    },
+    {
+      "id": "3-compare-good-vs-bad",
+      "type": "compare",
+      "kicker": "Spot the Difference",
+      "left": {
+        "title": "Good Data",
+        "items": [
+          "Unique customer IDs",
+          "All emails present",
+          "Valid email formats"
+        ]
+      },
+      "right": {
+        "title": "Bad Data",
+        "items": [
+          "Duplicate IDs",
+          "Missing emails",
+          "Broken email formats"
+        ]
+      },
+      "say": "Picture a customer table. Good data means every customer has a unique ID, a valid email, and nothing missing. Bad data? Duplicates, blanks, or invalid formats."
+    },
+    {
+      "id": "4-trap-missing-dimensi",
+      "type": "trap",
+      "question": "Which is NOT a quality dimension?",
+      "wrong": "Performance",
+      "right": "Performance isn't a data quality dimension. Focus on accuracy, completeness, uniqueness, timeliness, consistency, and validity.",
+      "say": "Here's a common interview trap: performance isn't a data quality dimension. Stick to the core six."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:26:13.035Z"
+}
