@@ -1,0 +1,93 @@
+{
+  "id": "spark",
+  "title": "Why Spark Shuffles Slow Down Your Jobs",
+  "keys": [
+    "driver",
+    "executors",
+    "shuffle",
+    "partition",
+    "wide transformation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-shuffle-pain",
+      "type": "hook",
+      "kicker": "Apache Spark · 45 seconds",
+      "line1": "Why do Spark jobs slow down?",
+      "line2": "What's a shuffle, really?",
+      "say": "Ever wonder why your Spark job suddenly crawls? Let's talk about shuffles—the number one Spark performance killer."
+    },
+    {
+      "id": "1-chip-architecture",
+      "type": "chip",
+      "kicker": "Big Picture",
+      "label": "Driver",
+      "sub": "Coordinates jobs, splits work into tasks",
+      "say": "The driver coordinates everything, breaking your job into tasks for the executors to run in parallel."
+    },
+    {
+      "id": "2-rows-narrow-wide",
+      "type": "rows",
+      "kicker": "Transformations",
+      "rows": [
+        {
+          "a": "Narrow",
+          "b": "map, filter—no data movement"
+        },
+        {
+          "a": "Wide",
+          "b": "groupBy, join—shuffle needed"
+        }
+      ],
+      "walk": true,
+      "say": "Some transformations are narrow—like map or filter. Others are wide—like groupBy or join. Wide ones trigger shuffles."
+    },
+    {
+      "id": "3-compare-shuffle-cost",
+      "type": "compare",
+      "kicker": "Performance",
+      "left": {
+        "title": "No Shuffle",
+        "items": [
+          "Fast",
+          "Local data"
+        ]
+      },
+      "right": {
+        "title": "With Shuffle",
+        "items": [
+          "Slow",
+          "Data moves across cluster"
+        ]
+      },
+      "say": "No shuffle? Data stays local and fast. Shuffle? Data moves across the cluster—much slower."
+    },
+    {
+      "id": "4-terminal-shuffle-exa",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "groupBy triggers a shuffle",
+      "lines": [
+        "$ df.groupBy('city').count()",
+        "[Stage 1: Shuffle Read]",
+        "[Stage 2: Shuffle Write]"
+      ],
+      "say": "For example, groupBy triggers a shuffle. You’ll see Spark split work into shuffle read and write stages."
+    },
+    {
+      "id": "5-trap-partitioning",
+      "type": "trap",
+      "question": "How do you avoid shuffles?",
+      "wrong": "Just use more executors",
+      "right": "Careful partitioning and using broadcast joins can reduce shuffles.",
+      "say": "Interview trap: Avoiding shuffles isn’t about throwing more executors at the problem. It’s about smart partitioning and join strategies."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:40:30.885Z"
+}
