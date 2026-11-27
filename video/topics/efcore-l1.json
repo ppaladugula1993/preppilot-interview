@@ -1,0 +1,79 @@
+{
+  "id": "efcore-l1",
+  "title": "Change Tracking vs AsNoTracking",
+  "keys": [
+    "Change Tracking",
+    "AsNoTracking",
+    "DbContext",
+    "Performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ct-vs-ant",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "Why use AsNoTracking in EF Core?",
+      "line2": "Is it just about speed?",
+      "say": "Ever wonder why AsNoTracking is a big deal in Entity Framework Core? Is it just a performance trick, or does it change more?"
+    },
+    {
+      "id": "1-chip-track",
+      "type": "chip",
+      "kicker": "Change Tracking",
+      "label": "Tracking",
+      "sub": "EF Core watches entities for changes to save updates.",
+      "say": "With change tracking, Entity Framework Core keeps an eye on your entities. It knows what you change and can save those updates back to the database."
+    },
+    {
+      "id": "2-chip-nontrack",
+      "type": "chip",
+      "kicker": "AsNoTracking",
+      "label": "NoTracking",
+      "sub": "Entities are read-only and updates aren't tracked.",
+      "say": "AsNoTracking flips the switch. Now, entities are just snapshots. No updates are tracked, so you can't save changes later."
+    },
+    {
+      "id": "3-compare-speed",
+      "type": "compare",
+      "kicker": "Performance Impact",
+      "left": {
+        "title": "Tracking",
+        "items": [
+          "Higher memory use",
+          "Tracks changes for updates"
+        ]
+      },
+      "right": {
+        "title": "AsNoTracking",
+        "items": [
+          "Lower memory and CPU",
+          "Faster for read-only queries"
+        ]
+      },
+      "say": "Tracking uses more memory and CPU, since it monitors every entity. AsNoTracking skips all that, making read-heavy queries much faster."
+    },
+    {
+      "id": "4-code-ant",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "var users = context.Users\n  .AsNoTracking()\n  .ToList();",
+      "say": "Here's how I make a query read-only. I add AsNoTracking to the users query, making it faster when I don't need to update anything."
+    },
+    {
+      "id": "5-trap-update",
+      "type": "trap",
+      "question": "Can you update entities from AsNoTracking?",
+      "wrong": "Yes, just call SaveChanges.",
+      "right": "No—you must reattach or track them first.",
+      "say": "Watch out: you can't update entities fetched with AsNoTracking unless you reattach or start tracking them again. SaveChanges won't work on them directly."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:20:26.368Z"
+}
