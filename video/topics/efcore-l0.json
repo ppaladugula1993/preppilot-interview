@@ -1,0 +1,86 @@
+{
+  "id": "efcore-l0",
+  "title": "DbContext Lifetime & Unit of Work",
+  "keys": [
+    "DbContext",
+    "lifetime",
+    "unit of work",
+    "scoped"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lifetime-questi",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "How long should a DbContext live?",
+      "line2": "Why does it matter?",
+      "say": "How long should you keep a database context around in Entity Framework Core? And why does it matter for your app?"
+    },
+    {
+      "id": "1-chip-what-is-dbconte",
+      "type": "chip",
+      "kicker": "Role",
+      "label": "DbContext",
+      "sub": "Manages database connections and tracks changes.",
+      "say": "DbContext is your main gateway to the database. It manages connections and keeps track of changes to your data."
+    },
+    {
+      "id": "2-rows-unit-of-work",
+      "type": "rows",
+      "kicker": "Best Practice",
+      "rows": [
+        {
+          "a": "Create per request",
+          "b": "Scope DbContext to each operation"
+        },
+        {
+          "a": "Track changes",
+          "b": "DbContext collects changes to save"
+        },
+        {
+          "a": "Save once",
+          "b": "Call SaveChanges for one transaction"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the right pattern: create a new context for each operation, let it track your changes, and save everything in one go. This is called the unit of work."
+    },
+    {
+      "id": "3-compare-short-vs-lon",
+      "type": "compare",
+      "kicker": "Lifetime",
+      "left": {
+        "title": "Short-lived",
+        "items": [
+          "Scoped per request",
+          "Fresh data",
+          "No memory leaks"
+        ]
+      },
+      "right": {
+        "title": "Long-lived",
+        "items": [
+          "Risk of leaks",
+          "Stale data",
+          "Side effects"
+        ]
+      },
+      "say": "Short-lived contexts are safe and efficient. Long-lived ones can leak memory, serve stale data, and cause weird bugs."
+    },
+    {
+      "id": "4-trap-lifetime-mistak",
+      "type": "trap",
+      "question": "Is it safe to reuse DbContext across requests?",
+      "wrong": "Yes, it saves resources.",
+      "right": "No. It can leak memory and cause stale data issues.",
+      "say": "Don't fall for this: reusing a context across requests isn't safe. It can leak memory and return outdated data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:17:38.958Z"
+}
