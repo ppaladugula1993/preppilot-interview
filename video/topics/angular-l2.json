@@ -1,0 +1,72 @@
+{
+  "id": "angular-l2",
+  "title": "RxJS Observables & Subscriptions in Angular",
+  "keys": [
+    "RxJS",
+    "Observable",
+    "Subscription",
+    "async"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-observables",
+      "type": "hook",
+      "kicker": "Angular · lesson",
+      "line1": "How do you handle async data?",
+      "line2": "And avoid memory leaks?",
+      "say": "How do you handle asynchronous data in Angular—and make sure you don't leak memory?"
+    },
+    {
+      "id": "1-chip-observable",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Observable",
+      "sub": "Streams async data like HTTP or user input.",
+      "say": "An observable is a stream of asynchronous data—think HTTP requests or user input."
+    },
+    {
+      "id": "2-code-rxjs-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "typescript",
+      "code": "this.subscription =\n  this.userService.getUsers()\n    .subscribe(users => {\n      this.users = users;\n    });",
+      "say": "You subscribe to observables to get their values, like this example fetching users."
+    },
+    {
+      "id": "3-rows-avoid-leaks",
+      "type": "rows",
+      "kicker": "Best Practices",
+      "rows": [
+        {
+          "a": "Manual unsubscribe",
+          "b": "Call in ngOnDestroy"
+        },
+        {
+          "a": "Async pipe",
+          "b": "Auto-unsubscribes in template"
+        },
+        {
+          "a": "takeUntil",
+          "b": "Unsubscribes with a notifier"
+        }
+      ],
+      "walk": true,
+      "say": "To avoid memory leaks, always unsubscribe. Do it manually in ngOnDestroy, use the async pipe, or try the takeUntil operator."
+    },
+    {
+      "id": "4-trap-leak",
+      "type": "trap",
+      "question": "What if you forget to unsubscribe?",
+      "wrong": "Nothing bad happens.",
+      "right": "You risk memory leaks and slowdowns.",
+      "say": "Here's a trap: if you forget to unsubscribe, you risk memory leaks and performance issues."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:09:07.007Z"
+}
