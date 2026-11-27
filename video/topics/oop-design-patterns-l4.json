@@ -1,0 +1,73 @@
+{
+  "id": "oop-design-patterns-l4",
+  "title": "Structural Patterns in OOP Interviews",
+  "keys": [
+    "Structural",
+    "Adapter",
+    "Decorator",
+    "Facade",
+    "Proxy"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-structural",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "How do you organize class relationships?",
+      "line2": "What are structural patterns?",
+      "say": "How do you organize relationships between classes? What are structural patterns and why do interviewers care?"
+    },
+    {
+      "id": "1-chip-adapter",
+      "type": "chip",
+      "kicker": "Pattern",
+      "label": "Adapter",
+      "sub": "Converts one interface to another.",
+      "say": "Adapter converts one interface to another, letting classes work together that otherwise couldn't."
+    },
+    {
+      "id": "2-rows-patterns",
+      "type": "rows",
+      "kicker": "Patterns",
+      "rows": [
+        {
+          "a": "Decorator",
+          "b": "Adds behavior dynamically"
+        },
+        {
+          "a": "Facade",
+          "b": "Simplifies complex subsystems"
+        },
+        {
+          "a": "Proxy",
+          "b": "Controls access or adds features"
+        }
+      ],
+      "walk": true,
+      "say": "Decorator adds behavior dynamically. Facade simplifies complex subsystems. Proxy controls access or adds features."
+    },
+    {
+      "id": "3-code-examples",
+      "type": "code",
+      "kicker": "Examples",
+      "lang": "Java",
+      "code": "class UsbToHdmiAdapter implements HdmiPort {}\nclass LoggingRepository extends Repository {}\nclass PaymentFacade { void pay(); }\nclass CachingProxy implements Service {}",
+      "say": "Here are examples: UsbToHdmiAdapter for Adapter, LoggingRepository for Decorator, PaymentFacade for Facade, and CachingProxy for Proxy."
+    },
+    {
+      "id": "4-trap-mistake",
+      "type": "trap",
+      "question": "What does Facade pattern do?",
+      "wrong": "It adds behavior to objects.",
+      "right": "It simplifies complex subsystems by hiding details.",
+      "say": "Don't mix up Facade with Decorator. Facade simplifies subsystems, not adds behavior."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:19:48.843Z"
+}
