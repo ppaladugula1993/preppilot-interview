@@ -1,0 +1,76 @@
+{
+  "id": "web-fundamentals-l0",
+  "title": "How a URL Loads in the Browser",
+  "keys": [
+    "DNS",
+    "TLS",
+    "HTTP",
+    "Rendering"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-url-load",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "What happens when you load a URL?",
+      "line2": "Can you walk through every step?",
+      "say": "What really happens when you load a URL in your browser? Could you walk through every step if asked in an interview?"
+    },
+    {
+      "id": "1-chip-dns",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "DNS",
+      "sub": "Browser resolves the domain name to an IP.",
+      "say": "First, the browser resolves the domain name to an I-P address using DNS, or Domain Name System."
+    },
+    {
+      "id": "2-rows-network-steps",
+      "type": "rows",
+      "kicker": "Network Steps",
+      "rows": [
+        {
+          "a": "TCP/QUIC",
+          "b": "Connection to the server"
+        },
+        {
+          "a": "TLS",
+          "b": "Secure handshake if HTTPS"
+        },
+        {
+          "a": "HTTP request",
+          "b": "Browser sends GET request"
+        },
+        {
+          "a": "HTTP response",
+          "b": "Server sends back HTML"
+        }
+      ],
+      "walk": true,
+      "say": "Next, the browser opens a connection—using TCP or QUIC—then negotiates TLS for HTTPS. It sends an HTTP request and gets an HTTP response with the page’s HTML."
+    },
+    {
+      "id": "3-chip-render",
+      "type": "chip",
+      "kicker": "Final Step",
+      "label": "Rendering",
+      "sub": "Browser parses HTML, loads resources, renders.",
+      "say": "Finally, the browser parses the HTML, fetches extra resources like CSS and JavaScript, and renders the page you see."
+    },
+    {
+      "id": "4-trap-order",
+      "type": "trap",
+      "question": "Does rendering happen before DNS?",
+      "wrong": "Yes, rendering comes first.",
+      "right": "No, rendering happens after DNS, network, and HTTP steps.",
+      "say": "Interview trap: Does rendering happen before DNS? No, rendering only starts after DNS, network, and HTTP steps are done."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:14:49.590Z"
+}
