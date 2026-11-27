@@ -1,0 +1,73 @@
+{
+  "id": "html-css-l1",
+  "title": "CSS Box Model Basics",
+  "keys": [
+    "box model",
+    "padding",
+    "border",
+    "margin",
+    "box-sizing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-box-model",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "Why do layouts break sometimes?",
+      "line2": "What’s the box model?",
+      "say": "Ever wonder why your web layouts sometimes break or look off? Let's get to the root: the box model."
+    },
+    {
+      "id": "1-chip-content",
+      "type": "chip",
+      "kicker": "Core Part",
+      "label": "Content",
+      "sub": "The actual text or image inside an element.",
+      "say": "First, every element starts with its content. That’s your text, image, or whatever goes inside."
+    },
+    {
+      "id": "2-rows-box-parts",
+      "type": "rows",
+      "kicker": "Layers",
+      "rows": [
+        {
+          "a": "Padding",
+          "b": "Space around the content"
+        },
+        {
+          "a": "Border",
+          "b": "Edge around the padding"
+        },
+        {
+          "a": "Margin",
+          "b": "Space outside the border"
+        }
+      ],
+      "walk": true,
+      "say": "Then come the layers: padding adds space inside, border wraps it, and margin pushes everything away from neighbors."
+    },
+    {
+      "id": "3-code-sample",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "css",
+      "code": "div {\n  width: 200px;\n  padding: 10px;\n  border: 2px solid black;\n  margin: 5px;\n}",
+      "say": "Here’s a sample. The total size is not just the width. Padding, border, and margin all add up."
+    },
+    {
+      "id": "4-trap-sizing",
+      "type": "trap",
+      "question": "Does width include padding and border?",
+      "wrong": "Yes, always included.",
+      "right": "No, unless box-sizing is set to border-box.",
+      "say": "Here's a classic interview trap: does the width property include padding and border? Not unless you use the border-box setting."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:24:06.699Z"
+}
