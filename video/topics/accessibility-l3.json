@@ -1,0 +1,51 @@
+{
+  "id": "accessibility-l3",
+  "title": "Color Contrast & Motion for Accessibility",
+  "keys": [
+    "color contrast",
+    "WCAG",
+    "motion",
+    "prefers-reduced-motion"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-contrast-motion",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Does your UI help or harm?",
+      "line2": "How accessible is your design?",
+      "say": "Ever wondered if your interface could actually make some users dizzy or leave others unable to read your text?"
+    },
+    {
+      "id": "1-chip-contrast",
+      "type": "chip",
+      "kicker": "Key Rule",
+      "label": "Contrast",
+      "sub": "Text needs enough contrast with its background. WCAG AA says at least four point five to one.",
+      "say": "Text must stand out from its background. The rule? At least four point five to one contrast ratio for normal text."
+    },
+    {
+      "id": "2-code-motion",
+      "type": "code",
+      "kicker": "CSS Example",
+      "lang": "css",
+      "code": "body {\n  color: #222;\n  background: #fff;\n}\n@media (prefers-reduced-motion: reduce) {\n  * { animation: none !important; }\n}",
+      "say": "To reduce motion for users who need it, use the prefers reduced motion media query. This disables animations if someone requests less movement."
+    },
+    {
+      "id": "3-trap-interview",
+      "type": "trap",
+      "question": "Is AAA contrast always required?",
+      "wrong": "Yes, AAA is always the goal.",
+      "right": "No, AA is the practical standard; AAA is stricter and not always achievable.",
+      "say": "Here's a common trap: Interviewers might ask if you always need to hit the strictest contrast standard. Remember, AA is the baseline—AAA is nice, but not always practical."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:45:13.977Z"
+}
