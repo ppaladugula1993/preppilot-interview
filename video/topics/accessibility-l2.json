@@ -1,0 +1,73 @@
+{
+  "id": "accessibility-l2",
+  "title": "Keyboard Navigation & Focus Management",
+  "keys": [
+    "keyboard",
+    "focus",
+    "tabindex",
+    "modal",
+    "accessibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-keyboard-access",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Can you use your site without a mouse?",
+      "line2": "Why does keyboard navigation matter?",
+      "say": "Ever tried using your site with just a keyboard? Why is keyboard navigation so important for accessibility?"
+    },
+    {
+      "id": "1-chip-keyboard-nav",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Keyboard",
+      "sub": "Users must reach and use every interactive element.",
+      "say": "Keyboard accessibility means users should be able to reach and use every interactive element without a mouse."
+    },
+    {
+      "id": "2-rows-focus-managemen",
+      "type": "rows",
+      "kicker": "Focus Steps",
+      "rows": [
+        {
+          "a": "Open modal",
+          "b": "Move focus to modal container"
+        },
+        {
+          "a": "Close modal",
+          "b": "Return focus to trigger"
+        },
+        {
+          "a": "Tab",
+          "b": "Check logical focus order"
+        }
+      ],
+      "walk": true,
+      "say": "When you open a modal, move focus to it. When you close it, return focus to the element that triggered it. Always check that tabbing follows a logical order."
+    },
+    {
+      "id": "3-code-tabindex-modal",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "modal.setAttribute('tabindex', '-1');\nmodal.focus();\ntrigger.focus(); // on close",
+      "say": "Here's how you use tabindex minus one to focus a modal when it opens, and return focus to the trigger when it closes."
+    },
+    {
+      "id": "4-trap-focus-trap",
+      "type": "trap",
+      "question": "What happens if focus isn't managed?",
+      "wrong": "Users just tab to the next element.",
+      "right": "Users can get lost or stuck, making the UI unusable.",
+      "say": "If you don't manage focus, users can get lost or stuck, making your interface unusable for keyboard-only users."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:24:32.719Z"
+}
