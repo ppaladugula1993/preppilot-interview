@@ -1,0 +1,84 @@
+{
+  "id": "streaming-l3",
+  "title": "Kafka Delivery Semantics Explained",
+  "keys": [
+    "at-most-once",
+    "at-least-once",
+    "exactly-once",
+    "Kafka"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-delivery-semant",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How does Kafka handle delivery?",
+      "line2": "Which one should you pick?",
+      "say": "Ever wonder how Kafka guarantees your messages arrive? Let's break down the three delivery semantics you need to know."
+    },
+    {
+      "id": "1-compare-semantics",
+      "type": "compare",
+      "kicker": "Delivery Types",
+      "left": {
+        "title": "At-most-once",
+        "items": [
+          "Messages may be lost",
+          "No duplicates"
+        ]
+      },
+      "right": {
+        "title": "At-least-once",
+        "items": [
+          "No data loss",
+          "Possible duplicates"
+        ]
+      },
+      "say": "At-most-once means some messages might be lost, but you'll never see duplicates. At-least-once guarantees no data loss, but you might get the same message more than once."
+    },
+    {
+      "id": "2-chip-exactly-once",
+      "type": "chip",
+      "kicker": "Since Kafka 0.11",
+      "label": "Exactly-once",
+      "sub": "No loss, no duplicates. Needs transactions.",
+      "say": "Exactly-once is the gold standard. No missing data, no repeats. But you need transactions and idempotent producers to pull it off."
+    },
+    {
+      "id": "3-rows-when-to-choose",
+      "type": "rows",
+      "kicker": "Choosing Semantics",
+      "rows": [
+        {
+          "a": "At-most-once",
+          "b": "Low risk if some data is lost"
+        },
+        {
+          "a": "At-least-once",
+          "b": "Duplication is okay, loss is not"
+        },
+        {
+          "a": "Exactly-once",
+          "b": "No loss or duplication allowed"
+        }
+      ],
+      "walk": true,
+      "say": "Pick your delivery semantic based on how critical data loss or duplication is for your business. It's all about trade-offs."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Does at-least-once mean no duplicates?",
+      "wrong": "Yes, it guarantees no duplicates.",
+      "right": "No, at-least-once can cause duplicates if processing fails after offset commit.",
+      "say": "Here's a classic interview trap. At-least-once doesn't mean no duplicates. If processing fails after you commit, you can get repeats."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:51:31.140Z"
+}
