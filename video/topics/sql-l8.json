@@ -1,0 +1,72 @@
+{
+  "id": "sql-l8",
+  "title": "Normalization vs Denormalization",
+  "keys": [
+    "normalization",
+    "denormalization",
+    "redundancy",
+    "integrity",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-norm-vs-denorm",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "Why split or merge your tables?",
+      "line2": "Which one boosts speed?",
+      "say": "Why do some databases split data into many tables, while others stick it all together? Which approach actually makes your queries faster?"
+    },
+    {
+      "id": "1-chip-normalization",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Normalize",
+      "sub": "Organize data to cut redundancy, boost integrity.",
+      "say": "Normalization means organizing your data to avoid repetition and keep things consistent. It's all about clean, reliable data."
+    },
+    {
+      "id": "2-chip-denormalization",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Denormalize",
+      "sub": "Combine tables for speed, accept some redundancy.",
+      "say": "Denormalization flips that. You combine tables to make reads faster, even if you repeat some info. It's a trade-off for performance."
+    },
+    {
+      "id": "3-compare-norm-vs-deno",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "Normalization",
+        "items": [
+          "Less redundancy",
+          "Better consistency"
+        ]
+      },
+      "right": {
+        "title": "Denormalization",
+        "items": [
+          "Faster reads",
+          "More redundancy"
+        ]
+      },
+      "say": "Normalized tables mean less repeated data and fewer mistakes, but queries might be slower. Denormalized tables run faster reads, but you risk data getting out of sync."
+    },
+    {
+      "id": "4-trap-oltp-olap",
+      "type": "trap",
+      "question": "When should you denormalize?",
+      "wrong": "Always, for every workload.",
+      "right": "Denormalize for analytics or reporting, not for transactional systems.",
+      "say": "Here's a classic trap. Should you always denormalize? Nope. Save it for analytics or reporting. For day-to-day transactions, stick with normalization."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:15:11.246Z"
+}
