@@ -6,6 +6,8 @@ import { setProUntil, addSessionCredits } from './account.js';
 const ENTITLEMENT = () => process.env.REVENUECAT_ENTITLEMENT || 'pro';
 // Store product id for the Live AI session. The product keeps its App Store Connect id.
 const LIVE_PRODUCT = () => process.env.REVENUECAT_LIVE_PRODUCT || 'mock_session_60min';
+// Website (Stripe) Live AI session: the Stripe product and its price.
+const LIVE_IDS = () => new Set([LIVE_PRODUCT(), 'prod_VhtqWwLAP2TSrf', 'price_1UgU2OF8LmgwChbnTrBztUiJ']);
 const GRANT = new Set(['INITIAL_PURCHASE', 'RENEWAL', 'PRODUCT_CHANGE', 'UNCANCELLATION', 'NON_RENEWING_PURCHASE', 'SUBSCRIPTION_EXTENDED', 'TEMPORARY_ENTITLEMENT_GRANT']);
 
 export function webhookAuthorized(header) {
@@ -19,7 +21,7 @@ export async function applyWebhook(body, now = Date.now()) {
   const e = body?.event;
   if (!e || e.type === 'TEST') return { ignored: true };
   const productIds = Array.isArray(e.product_ids) ? e.product_ids : [];
-  const isLive = productIds.includes(LIVE_PRODUCT());
+  const isLive = productIds.some(p => LIVE_IDS().has(p));
   if (!isLive && Array.isArray(e.entitlement_ids) && !e.entitlement_ids.includes(ENTITLEMENT())) return { ignored: true };
   const keys = [...new Set([e.app_user_id, e.original_app_user_id, ...(e.aliases || [])].filter(k => typeof k === 'string' && k.includes(':')))];
   if (!keys.length) return { ignored: true };
@@ -62,7 +64,7 @@ export async function refreshFromRevenueCat(key, now = Date.now()) {
       const [ents, prods] = await Promise.all([rcV2('/entitlements?limit=100', secret), rcV2('/products?limit=100', secret)]);
       v2Ids = {
         entitlementId: (ents?.items || []).find(e => e.lookup_key === ENTITLEMENT())?.id || '',
-        liveProductIds: new Set((prods?.items || []).filter(p => p.store_identifier === LIVE_PRODUCT()).map(p => p.id)),
+        liveProductIds: new Set((prods?.items || []).filter(p => LIVE_IDS().has(p.store_identifier)).map(p => p.id)),
       };
     }
     const id = encodeURIComponent(key);

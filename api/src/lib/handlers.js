@@ -10,6 +10,7 @@ import { upsertUser, status, consumeMsgs, refundMsgs, reserveVoice, refundVoice,
 import { COST, limits, proPriceLabel, livePriceLabel, planOf, adminEmails } from './plans.js';
 import { webhookAuthorized, applyWebhook, refreshFromRevenueCat } from './billing.js';
 import { getDb } from './db.js';
+import { stripeConfigured, createCheckout, confirmCheckout, portal } from './stripe.js';
 import { freshFor, ROLE_LIST } from './fresh.js';
 import { createHash, createHmac, randomUUID, timingSafeEqual } from 'node:crypto';
 import { deflateSync, inflateSync } from 'node:zlib';
@@ -551,3 +552,14 @@ export async function handleSaveMyData(req, now = Date.now()) {
   await (await getDb()).update('prefs', w.ident.key, d => ({ ...(d || {}), ...(profile ? { profile } : {}), ...(prog ? { prog } : {}), at: now }));
   return json(200, { ok: true, at: now });
 }
+
+/* ---------- website checkout (Stripe -> RevenueCat) ---------- */
+const stripeCall = fn => async (req, log) => {
+  const w = who(req);
+  if (w.error) return w.error;
+  if (!stripeConfigured()) return json(503, { error: 'Website checkout is not set up yet.' });
+  try { return json(200, await fn(w.ident, req.body || {})); } catch (e) { return fail(e, log); }
+};
+export const handleCheckout = stripeCall((ident, b) => createCheckout(ident, b.kind === 'live' ? 'live' : 'pro'));
+export const handleCheckoutConfirm = stripeCall(async (ident, b) => ({ ...(await confirmCheckout(ident, b.session)), account: await status(ident) }));
+export const handlePortal = stripeCall(ident => portal(ident));

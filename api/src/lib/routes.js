@@ -23,5 +23,8 @@ export const ROUTES = {
   'POST jobfocus/cards': h.handleJobFocusCards,
   'POST jobfocus/brief': h.handleJobBrief,
   'POST billing/refresh': h.handleBillingRefresh,
+  'POST billing/checkout': h.handleCheckout,
+  'POST billing/checkout/confirm': h.handleCheckoutConfirm,
+  'POST billing/portal': h.handlePortal,
   'POST telemetry/role': h.handleRoleTelemetry,
 };

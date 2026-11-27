@@ -200,7 +200,7 @@ function offer() {
     livePrice: P?.live?.price || '$15.99', liveMin: P?.live?.minutes ?? 60,
   };
 }
-const storeName = () => (window.PP_PLATFORM === 'android' ? 'Google Play' : 'App Store');
+const storeName = () => (!native() ? 'checkout' : window.PP_PLATFORM === 'android' ? 'Google Play' : 'App Store');
 const liveState = () => { const a = store.account(); return { credits: a?.sessionCredits || 0, left: a?.liveSecLeft || 0 }; };
 
 /* ---------- badge + daily notification (native app only) ---------- */
@@ -2316,7 +2316,7 @@ function plansView() {
         <div class="tier-name">Pro</div>
         <div class="price">${esc(o.proAmount)}<span>/ ${esc(o.proPer)}</span></div>
         <p class="muted small">Every topic, every card and diagram, and ${o.proLive} Live AI minutes a month, counted only while you talk.${o.perDay ? ` ${esc(o.perDay)}.` : ''}</p>
-        ${isPro ? '<button class="btn block" disabled>Your plan</button>' : `<button class="btn primary block" data-act="buysub" ${dis}>${S.buyBusy === 'pro' ? `Opening the ${storeName()}…` : 'Try Pro free for 3 days'}</button><p class="muted small trial-terms">3 days free, then ${esc(offer().proPrice)}. Cancel anytime in your ${window.PP_PLATFORM === 'android' ? 'Google Play' : 'Apple ID'} subscriptions at least 24 hours before the trial ends and you won't be charged. Free trial for new subscribers only.</p>`}
+        ${isPro ? (native() ? '<button class="btn block" disabled>Your plan</button>' : '<button class="btn block" data-act="managesub">Manage subscription</button>') : `<button class="btn primary block" data-act="buysub" ${dis}>${S.buyBusy === 'pro' ? `Opening the ${storeName()}…` : 'Try Pro free for 3 days'}</button><p class="muted small trial-terms">3 days free, then ${esc(offer().proPrice)}. Cancel anytime ${native() ? `in your ${window.PP_PLATFORM === 'android' ? 'Google Play' : 'Apple ID'} subscriptions` : 'from Manage subscription'} at least 24 hours before the trial ends and you won't be charged. Free trial for new subscribers only.</p>`}
       </section>
       <section class="tier card live-hero">
         <div class="tier-name">Live AI <span class="tier-flag">One-time</span></div>
@@ -2483,10 +2483,32 @@ function storeSheet() {
     <p class="muted">Pro and Live AI sessions are bought through the App Store. Sign in there with this same account and everything unlocks here too, on any device.</p>
     <button class="btn primary block" data-act="closesheet">Got it</button>`);
 }
+// Website: Stripe Checkout (linked to RevenueCat on our server), same Pro and Live AI as the app.
+async function webCheckout(kind) {
+  if (kind === 'restore') return manageSub();
+  S.buyBusy = kind; render();
+  try { const r = await ai.post('/api/billing/checkout', { kind }); location.href = r.url; }
+  catch (e) { S.buyBusy = false; render(); if (/not set up/i.test(e.message || '')) storeSheet(); else oops('Could not open checkout. Try again in a moment.'); }
+}
+async function manageSub() {
+  try { const r = await ai.post('/api/billing/portal', {}); location.href = r.url; }
+  catch { oops('No website subscription found. If you subscribed in the iPhone app, manage it in your Apple ID settings.'); }
+}
+async function confirmWebPurchase() {
+  const id = new URLSearchParams(location.search).get('paid');
+  if (!id) return;
+  history.replaceState(null, '', location.pathname);
+  if (id === 'cancel' || !signedIn()) return;
+  for (const wait of [0, 3000, 8000]) {
+    await new Promise(r => setTimeout(r, wait));
+    try { const r = await ai.post('/api/billing/checkout/confirm', { session: id }); if (r.complete) { await refreshAccount().catch(() => {}); render(); return toast('Thank you! Your purchase is active.'); } } catch { /* retry */ }
+  }
+  oops('Payment received, but it is taking a moment to show. Refresh in a minute.');
+}
 let buyTimer;
 function buy(kind) { // 'pro' | 'live' | 'restore'
   if (!store.session()) return needSignIn(); // beta-code sessions have no account to attach a purchase to
-  if (!native()) return storeSheet();
+  if (!native()) return webCheckout(kind);
   const acc = store.account();
   if (!acc?.key) return oops('Still loading your account. Try again in a moment.');
   S.buying = { kind, credits: acc.sessionCredits || 0 };
@@ -3045,6 +3067,7 @@ document.addEventListener('click', async e => {
   else if (a === 'pickfree') { S.showPlans = false; render(); }
   else if (a === 'unpaywall') { S.paywall = false; render(); }
   else if (a === 'buysub') buy('pro');
+  else if (a === 'managesub') manageSub();
   else if (a === 'buylive') buy('live');
   else if (a === 'livesetup') liveSetupSheet();
   else if (a === 'restore') buy('restore');
@@ -3178,6 +3201,7 @@ document.addEventListener('click', async e => {
     onPurchased,
   });
   refreshAccount().catch(() => {});
+  confirmWebPurchase();
   // Pre-warm the API (avoids a cold start when the user first talks) and learn what's enabled.
   ai.health().then(h => {
     S.voiceServer = !!h.voice; S.googleClientId = h.googleClientId || ''; S.plans = h.plans || null; S.liveInterviewIos = !!h.liveInterviewIos; S.healthLoaded = true;
