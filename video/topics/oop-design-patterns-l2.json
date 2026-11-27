@@ -1,0 +1,73 @@
+{
+  "id": "oop-design-patterns-l2",
+  "title": "SOLID Principles for Interview Success",
+  "keys": [
+    "SOLID",
+    "OOP",
+    "design",
+    "modular",
+    "maintainable"
+  ],
+  "scenes": [
+    {
+      "id": "0-solid-hook",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "Ever heard of SOLID principles?",
+      "line2": "Why do they matter?",
+      "say": "Have you ever wondered why interviewers care so much about SOLID principles? Let’s break down why they matter."
+    },
+    {
+      "id": "1-solid-rows",
+      "type": "rows",
+      "kicker": "SOLID Principles",
+      "rows": [
+        {
+          "a": "Single Responsibility",
+          "b": "One job per class"
+        },
+        {
+          "a": "Open/Closed",
+          "b": "Extend, don’t modify"
+        },
+        {
+          "a": "Liskov Substitution",
+          "b": "Derived classes fit in"
+        },
+        {
+          "a": "Interface Segregation",
+          "b": "Keep interfaces focused"
+        },
+        {
+          "a": "Dependency Inversion",
+          "b": "Depend on abstractions"
+        }
+      ],
+      "walk": true,
+      "say": "SOLID stands for five rules: each class should have one job, be easy to extend, fit neatly into its base type, keep interfaces focused, and rely on abstractions instead of details."
+    },
+    {
+      "id": "2-solid-code",
+      "type": "code",
+      "kicker": "Single Responsibility Example",
+      "lang": "java",
+      "code": "class InvoicePrinter {\n  void print(Invoice inv);\n}",
+      "say": "Here’s an example: InvoicePrinter only prints invoices. That’s single responsibility in action."
+    },
+    {
+      "id": "3-solid-trap",
+      "type": "trap",
+      "question": "What’s the main goal of SOLID?",
+      "wrong": "To write code faster.",
+      "right": "To make code easier to maintain and scale.",
+      "say": "Don’t fall for this trap: SOLID isn’t about speed. It’s about making your code easy to maintain and scale."
+    },
+    {
+      "id": "4-solid-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:29:42.216Z"
+}
