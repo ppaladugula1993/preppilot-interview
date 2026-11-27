@@ -1,0 +1,97 @@
+{
+  "id": "linux-l3",
+  "title": "Linux Permissions: Who Can Do What?",
+  "keys": [
+    "permissions",
+    "owner",
+    "chmod",
+    "chown"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-perms",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "Who can read this file?",
+      "line2": "How do you check?",
+      "say": "Who can read this file? And how do you check? Let's break down Linux permissions."
+    },
+    {
+      "id": "1-rows-perms",
+      "type": "rows",
+      "kicker": "Permission Types",
+      "rows": [
+        {
+          "a": "Owner",
+          "b": "Person who created the file"
+        },
+        {
+          "a": "Group",
+          "b": "Users in the same group"
+        },
+        {
+          "a": "Others",
+          "b": "Everyone else"
+        }
+      ],
+      "walk": false,
+      "say": "Every file has three sets of permissions: owner, group, and others."
+    },
+    {
+      "id": "2-compare-perms",
+      "type": "compare",
+      "kicker": "Permission Values",
+      "left": {
+        "title": "Symbolic",
+        "items": [
+          "rwx",
+          "rw-",
+          "r--"
+        ]
+      },
+      "right": {
+        "title": "Numeric",
+        "items": [
+          "7",
+          "6",
+          "4"
+        ]
+      },
+      "say": "Read, write, and execute map to numbers: read is four, write is two, execute is one. Add them up for each role."
+    },
+    {
+      "id": "3-terminal-ls",
+      "type": "terminal",
+      "kicker": "Check Permissions",
+      "title": "ls -l config.yml",
+      "lines": [
+        "$ ls -l config.yml",
+        "-rw------- 1 root root config.yml"
+      ],
+      "say": "Use ls dash l to see permissions. Here, only root can read or write config dot y m l."
+    },
+    {
+      "id": "4-chip-tip",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "Defaults",
+      "sub": "Scripts: 755, files: 644, private keys: 600",
+      "say": "Remember: use seven fifty five for scripts, six forty four for files, and six hundred for private keys."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "App can't read config. What next?",
+      "wrong": "Change file to 777.",
+      "right": "Check ownership and set mode to 640.",
+      "say": "Interview trap: If your app can't read its config, don't just set permissions wide open. Check the owner and set the mode to six forty."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:45:14.650Z"
+}
