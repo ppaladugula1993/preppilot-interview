@@ -1,0 +1,63 @@
+{
+  "id": "scripting-l4",
+  "title": "Python for Infra Automation",
+  "keys": [
+    "Python",
+    "automation",
+    "API",
+    "error handling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-python-or-bash",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "When does bash fall short?",
+      "line2": "Should you use Python?",
+      "say": "Ever wonder when bash just isn't enough for automation? Should you switch to Python for infra tasks?"
+    },
+    {
+      "id": "1-chip-why-python",
+      "type": "chip",
+      "kicker": "Why Python?",
+      "label": "APIs",
+      "sub": "Python shines for APIs, JSON, retries, and real error handling.",
+      "say": "Python shines when you need to work with APIs, handle JSON, add retries, or manage real error handling."
+    },
+    {
+      "id": "2-terminal-bash-vs-pyt",
+      "type": "terminal",
+      "kicker": "Rule of Thumb",
+      "title": "When to use what",
+      "lines": [
+        "$ # Bash: glue commands",
+        "$ # Python: logic, APIs, JSON",
+        "$ # Ansible: many servers"
+      ],
+      "say": "Here's a quick rule of thumb: use bash to glue commands, Python for logic and APIs, and Ansible to manage many servers."
+    },
+    {
+      "id": "3-code-python-health-c",
+      "type": "code",
+      "kicker": "Python Example",
+      "lang": "python",
+      "code": "#!/usr/bin/env python3\nimport requests\nurls = [\n  'https://app.example.com/health',\n  'https://api.example.com/health'\n]\nfor url in urls:\n  print(requests.get(url).status_code)",
+      "say": "Here's a simple Python script that checks the health of two endpoints. This would be messy in bash, but Python handles it cleanly."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "When should you switch from bash to Python?",
+      "wrong": "Only for web apps",
+      "right": "When logic, retries, or APIs make bash messy or long.",
+      "say": "Interview trap: Don't say Python is just for web apps. Switch when logic, retries, or APIs make bash messy or long."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:50:58.857Z"
+}
