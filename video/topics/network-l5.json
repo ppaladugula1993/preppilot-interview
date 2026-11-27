@@ -1,0 +1,90 @@
+{
+  "id": "network-l5",
+  "title": "TCP Handshake, Teardown & States",
+  "keys": [
+    "TCP",
+    "handshake",
+    "teardown",
+    "states"
+  ],
+  "scenes": [
+    {
+      "id": "0-tcp-handshake-hook",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "How does TCP start and end?",
+      "line2": "What do those states mean?",
+      "say": "How does a TCP connection actually start and end? And what do all those connection states mean?"
+    },
+    {
+      "id": "1-handshake-steps",
+      "type": "rows",
+      "kicker": "3-way handshake",
+      "rows": [
+        {
+          "a": "SYN",
+          "b": "Client asks to connect"
+        },
+        {
+          "a": "SYN-ACK",
+          "b": "Server says 'I'm here'"
+        },
+        {
+          "a": "ACK",
+          "b": "Client confirms, connection up"
+        }
+      ],
+      "walk": true,
+      "say": "The handshake is three steps: client sends SYN, server replies with SYN-ACK, client sends ACK. Now, the connection is established."
+    },
+    {
+      "id": "2-teardown-states",
+      "type": "compare",
+      "kicker": "Closing up",
+      "left": {
+        "title": "Normal",
+        "items": [
+          "FIN/ACK from each side",
+          "TIME_WAIT for closer"
+        ]
+      },
+      "right": {
+        "title": "Abrupt",
+        "items": [
+          "RST = instant reset",
+          "No TIME_WAIT"
+        ]
+      },
+      "say": "To close, each side sends FIN and ACK. The side that closes first waits in TIME_WAIT. If you see RST, that's an abrupt reset—no waiting."
+    },
+    {
+      "id": "3-states-terminal",
+      "type": "terminal",
+      "kicker": "Real world",
+      "title": "Check TCP states",
+      "lines": [
+        "$ ss -tan | awk '{print $1}'",
+        "LISTEN",
+        "ESTAB",
+        "TIME-WAIT",
+        "CLOSE-WAIT"
+      ],
+      "say": "You can see TCP states with this command. Lots of CLOSE_WAIT? The app isn't closing sockets. Lots of SYN_SENT? It can't reach the destination."
+    },
+    {
+      "id": "4-handshake-trap",
+      "type": "trap",
+      "question": "What does a RST after SYN mean?",
+      "wrong": "The connection is established.",
+      "right": "It means nothing is listening, or it was rejected.",
+      "say": "Watch out: if you get a RST after sending SYN, it means nothing is listening or the connection was rejected—not established."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:55:42.306Z"
+}
