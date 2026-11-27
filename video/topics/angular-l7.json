@@ -1,0 +1,72 @@
+{
+  "id": "angular-l7",
+  "title": "Testing Angular with TestBed",
+  "keys": [
+    "TestBed",
+    "Angular",
+    "mocking",
+    "unit tests"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-testbed-angular",
+      "type": "hook",
+      "kicker": "Angular · lesson",
+      "line1": "How do you test Angular code?",
+      "line2": "What is TestBed?",
+      "say": "How do you reliably test Angular components and services? What exactly does TestBed do?"
+    },
+    {
+      "id": "1-chip-testbed-role",
+      "type": "chip",
+      "kicker": "Core API",
+      "label": "TestBed",
+      "sub": "Configures and initializes test environments.",
+      "say": "TestBed is Angular's main tool for setting up and configuring your test environment."
+    },
+    {
+      "id": "2-rows-testbed-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Declare",
+          "b": "List components to test"
+        },
+        {
+          "a": "Provide",
+          "b": "Add services or mocks"
+        },
+        {
+          "a": "Configure",
+          "b": "Set up dependencies"
+        }
+      ],
+      "walk": true,
+      "say": "First, declare the components you want to test. Then, provide services or mock versions. Finally, configure dependencies for isolation."
+    },
+    {
+      "id": "3-code-testbed-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "typescript",
+      "code": "TestBed.configureTestingModule({\n  declarations: [MyComponent],\n  providers: [MyService]\n});",
+      "say": "Here's how you set up TestBed for a component and its service. You can swap in mocks to isolate units."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Should you use real services in tests?",
+      "wrong": "Yes, always use real services.",
+      "right": "No, mock services to isolate and control tests.",
+      "say": "Interview trap: Should you always use real services in tests? No. Mock them to isolate and reliably test your code."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:22:36.563Z"
+}
