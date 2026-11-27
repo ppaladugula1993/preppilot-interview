@@ -1,0 +1,72 @@
+{
+  "id": "testing-l2",
+  "title": "Mocks, Stubs, Fakes, Spies Explained",
+  "keys": [
+    "mock",
+    "stub",
+    "fake",
+    "spy",
+    "testing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-mock-stub-fake-",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Mocks, stubs, fakes, spies—",
+      "line2": "what's the difference?",
+      "say": "Mocks, stubs, fakes, spies—do you know when to use each one?"
+    },
+    {
+      "id": "1-chip-mock",
+      "type": "chip",
+      "kicker": "Key Tool",
+      "label": "Mock",
+      "sub": "Simulates behavior, checks interactions",
+      "say": "Mocks simulate how dependencies behave and let you check if your code interacts with them as expected."
+    },
+    {
+      "id": "2-compare-stub-fake",
+      "type": "compare",
+      "kicker": "Know the Difference",
+      "left": {
+        "title": "Stub",
+        "items": [
+          "Returns fixed values",
+          "Controls test outputs"
+        ]
+      },
+      "right": {
+        "title": "Fake",
+        "items": [
+          "Simple implementation",
+          "Mimics real logic"
+        ]
+      },
+      "say": "Stubs just return canned answers, while fakes are lightweight versions of real dependencies you can use for simple logic."
+    },
+    {
+      "id": "3-chip-spy",
+      "type": "chip",
+      "kicker": "Key Tool",
+      "label": "Spy",
+      "sub": "Records how functions are called",
+      "say": "Spies are great for tracking how often or with what arguments a function is called, without changing its behavior."
+    },
+    {
+      "id": "4-trap-mock-spy",
+      "type": "trap",
+      "question": "When do you use a spy instead of a mock?",
+      "wrong": "To control outputs",
+      "right": "When you only need to observe calls, not control them.",
+      "say": "Don't mix them up—a spy is for watching, a mock is for simulating and verifying."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:35:21.600Z"
+}
