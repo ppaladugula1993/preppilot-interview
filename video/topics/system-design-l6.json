@@ -1,0 +1,63 @@
+{
+  "id": "system-design-l6",
+  "title": "Consistency & CAP Theorem Explained",
+  "keys": [
+    "CAP theorem",
+    "consistency",
+    "availability",
+    "partition tolerance"
+  ],
+  "scenes": [
+    {
+      "id": "0-cap-hook",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "Can you have it all?",
+      "line2": "CAP theorem challenge",
+      "say": "Ever wonder why distributed systems can't guarantee everything at once? Let's crack the CAP theorem."
+    },
+    {
+      "id": "1-cap-chip",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "CAP",
+      "sub": "Only two of Consistency, Availability, or Partition tolerance can be guaranteed at once.",
+      "say": "CAP says you can only pick two out of consistency, availability, and partition tolerance. You can't have all three."
+    },
+    {
+      "id": "2-compare-models",
+      "type": "compare",
+      "kicker": "Consistency Models",
+      "left": {
+        "title": "Eventual",
+        "items": [
+          "Temporary divergence",
+          "Guaranteed convergence"
+        ]
+      },
+      "right": {
+        "title": "Strong",
+        "items": [
+          "Immediate consistency",
+          "No stale reads"
+        ]
+      },
+      "say": "Eventual consistency means data might lag, but catches up. Strong consistency means every read is up to date."
+    },
+    {
+      "id": "3-trap-cap",
+      "type": "trap",
+      "question": "Can a system guarantee all three CAP?",
+      "wrong": "Yes, with enough replicas.",
+      "right": "No, network partitions force a trade-off.",
+      "say": "Don't fall for this classic trap. In a partition, you must choose: consistency or availability. You can't guarantee both."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:16:37.428Z"
+}
