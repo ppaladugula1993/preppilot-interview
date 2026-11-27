@@ -1,0 +1,84 @@
+{
+  "id": "streaming-l3",
+  "title": "Kafka Delivery Semantics Explained",
+  "keys": [
+    "at-most-once",
+    "at-least-once",
+    "exactly-once",
+    "Kafka"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-delivery-semant",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How does Kafka handle message delivery?",
+      "line2": "Which guarantees what?",
+      "say": "Ever wonder how Kafka makes sure your messages arrive, and what happens if they don't?"
+    },
+    {
+      "id": "1-compare-semantics",
+      "type": "compare",
+      "kicker": "Delivery Semantics",
+      "left": {
+        "title": "At-most-once",
+        "items": [
+          "Messages may be lost",
+          "Never duplicated"
+        ]
+      },
+      "right": {
+        "title": "At-least-once",
+        "items": [
+          "No data lost",
+          "Duplicates possible"
+        ]
+      },
+      "say": "There are three main delivery guarantees. At-most-once: messages might be lost, but never duplicated. At-least-once: no loss, but you might see duplicates."
+    },
+    {
+      "id": "2-chip-exactly-once",
+      "type": "chip",
+      "kicker": "Kafka 0.11+",
+      "label": "Exactly-once",
+      "sub": "No loss, no duplicates. Needs transactions.",
+      "say": "Exactly-once is the gold standard—no loss, no duplicates. Kafka supports this with transactions and idempotent producers since version zero point eleven."
+    },
+    {
+      "id": "3-rows-choose",
+      "type": "rows",
+      "kicker": "Choosing Semantics",
+      "rows": [
+        {
+          "a": "At-most-once",
+          "b": "Loss is okay, no duplicates"
+        },
+        {
+          "a": "At-least-once",
+          "b": "No loss, duplicates allowed"
+        },
+        {
+          "a": "Exactly-once",
+          "b": "No loss, no duplicates"
+        }
+      ],
+      "walk": true,
+      "say": "Pick your delivery semantic based on how critical data loss or duplication is for your app."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How to get exactly-once in Kafka?",
+      "wrong": "Just commit the offset after processing.",
+      "right": "Enable idempotent producers and use transactions for atomic message and offset commits.",
+      "say": "Interview trap: Don't just commit offsets after processing. For exactly-once, you need both idempotent producers and transactions."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:52:51.712Z"
+}
