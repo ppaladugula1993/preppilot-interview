@@ -2,3 +2,5 @@ node_modules/
 out/
 .tts-*.json
 .props-*.json
+public/*.png
+public/*-*.jpg

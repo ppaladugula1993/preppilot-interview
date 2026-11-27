@@ -52,16 +52,17 @@ async function writeScript(feedback = '') {
   const user = `Topic: ${topic.name} (${topic.blurb || ''})
 Make ONE video that explains the single most important idea of this topic so it sticks, using only facts from the material below.
 Structure: hook question → 4 to 6 teaching scenes that build up the idea → one interview trap → end card. Total narration 105 to 130 words.
-Each scene: {"id": short-slug, "type": one of hook|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
+Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
 - hook: kicker (e.g. "${topic.name} · 45 seconds"), line1 (max 40 chars), line2 (max 22 chars, the question)
 - chip: kicker, label (1 word, max 8 chars, e.g. "API" or "Pod"), sub (max 70 chars)
 - terminal: kicker, title, lines (2-5 real commands/output lines, max 34 chars each, commands start with "$ ")
 - rows: kicker, rows (3-5 items {a: max 18 chars, b: max 28 chars}), walk (true for ordered steps)
 - compare: kicker, left {title, items: 2-3 short items}, right {title, items}
 - code: kicker, lang, code (max 8 lines, max 34 chars per line, real and correct)
+- picture: kicker, prompt (a vivid REAL-WORLD scene that works as a metaphor for the idea, described for an illustrator: objects, action, setting; no words, letters or screens in the image), map (2-3 items {thing: object in the picture, max 14 chars, means: the tech idea it stands for, max 24 chars})
 - trap: question (max 40 chars), wrong (the common wrong answer, max 40 chars), right (max 60 chars)
 - end: say must be exactly "Get interview ready with PrepPilot."
-Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
+Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types, and put ONE picture scene right after the hook: pick a real-world metaphor that makes this idea click (e.g. Docker = cargo ship with containers; JVM garbage collection = warehouse forklift clearing unused boxes; event loop = one chef juggling orders; class vs object = blueprint vs houses; index = library card catalogue; Git branches = a tree; React components = LEGO bricks; Kafka = post office sorting mail; CI/CD or ETL = factory assembly line; auth = bank vault with ID badges; LLM RAG = librarian looking up books before answering). Pick the best fit for THIS topic, not these examples by default. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "scenes": [...]}.
 
@@ -80,16 +81,17 @@ async function writeLessonScript(feedback) {
   const user = `Topic: ${topic.name}. Lesson: ${lesson.t}
 Make ONE short video that teaches exactly this lesson so it sticks, using only facts from the material below.
 Structure: hook question → 3 to 4 teaching scenes → one interview trap → end card. Total narration 80 to 105 words.
-Each scene: {"id": short-slug, "type": one of hook|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
+Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|compare|code|trap|end, "say": narration for that scene, plus the fields for its type}:
 - hook: kicker (e.g. "${topic.name} · lesson"), line1 (max 40 chars), line2 (max 22 chars, the question)
 - chip: kicker, label (1 word, max 8 chars), sub (max 70 chars)
 - terminal: kicker, title, lines (2-5 real commands/output lines, max 34 chars each, commands start with "$ ")
 - rows: kicker, rows (3-5 items {a: max 18 chars, b: max 28 chars}), walk (true for ordered steps)
 - compare: kicker, left {title, items: 2-3 short items}, right {title, items}
 - code: kicker, lang, code (max 8 lines, max 34 chars per line, real and correct)
+- picture: kicker, prompt (a vivid REAL-WORLD scene that works as a metaphor for the idea, described for an illustrator: objects, action, setting; no words, letters or screens in the image), map (2-3 items {thing: object in the picture, max 14 chars, means: the tech idea it stands for, max 24 chars})
 - trap: question (max 40 chars), wrong (max 40 chars), right (max 60 chars)
 - end: say must be exactly "Get interview ready with PrepPilot."
-Use at least 2 different teaching scene types. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
+Use at least 2 different teaching scene types, and put ONE picture scene right after the hook with a real-world metaphor that makes this lesson click (e.g. cargo ship for containers, warehouse forklift for garbage collection, chef juggling orders for an event loop, blueprint vs houses for class vs object, library catalogue for indexes, factory line for pipelines). Pick the best fit for THIS lesson. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 Return {"title": "max 40 chars", "keys": [2-5 key terms], "scenes": [...]}.
 
@@ -129,6 +131,27 @@ if (force || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
   const tts = JSON.parse(readFileSync(scriptFile, 'utf8'));
   writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
   log(run('node', ['tts.mjs', `.tts-${id}.json`]).trim());
+}
+
+// ---------- 2b. pictures (AI illustrations, one consistent style) ----------
+const STYLE = 'Flat modern vector illustration, clean shapes, soft gradients, dark teal night background, mint green and warm orange accents, no text, no letters, no numbers, no logos, no screens, vertical composition, main subject in the middle, calm empty space at the top and bottom.';
+{
+  const sf = JSON.parse(readFileSync(scriptFile, 'utf8')); let changed = false;
+  for (const sc of sf.scenes.filter(x => x.type === 'picture')) {
+    const name = `${id}-${sc.id}.jpg`, file = resolve(here, 'public', name);
+    if (!existsSync(file)) {
+      for (let a = 0; a < 3 && !existsSync(file); a++) {
+        const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
+          body: JSON.stringify({ prompt: `${sc.prompt}. ${STYLE}`, size: '1024x1536', quality: 'low', n: 1 }), signal: AbortSignal.timeout(180000) });
+        if (!r.ok) { log(`image retry ${r.status}`); await new Promise(x => setTimeout(x, 6000 * (a + 1))); continue; }
+        const png = resolve(here, 'public', `${id}-${sc.id}.png`);
+        writeFileSync(png, Buffer.from((await r.json()).data[0].b64_json, 'base64'));
+        run('ffmpeg', ['-loglevel', 'error', '-y', '-i', png, '-q:v', '3', file]);
+      }
+    }
+    if (existsSync(file)) { sc.image = name; changed = true; } else { sc.type = 'chip'; sc.label = sc.map?.[0]?.thing?.slice(0, 8) || 'Idea'; sc.sub = sc.map?.map(m => `${m.thing} = ${m.means}`).join(' · ').slice(0, 70) || ''; changed = true; }
+  }
+  if (changed) writeFileSync(scriptFile, JSON.stringify(sf, null, 2));
 }
 
 // ---------- 3. render + compress ----------

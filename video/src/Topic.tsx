@@ -1,6 +1,6 @@
 // One composition for every topic: the script (scenes) and the voice timings come in as props.
 import React from 'react';
-import { AbsoluteFill, Audio, Sequence, staticFile, useVideoConfig, useCurrentFrame, interpolate, spring } from 'remotion';
+import { AbsoluteFill, Audio, Img, Sequence, staticFile, useVideoConfig, useCurrentFrame, interpolate, spring } from 'remotion';
 import { C, MONO, SANS, Backdrop, Scene, Kicker, Words, Sub, Chip, Terminal, Rows, Captions, Progress, Brand, useSpring } from './kit';
 
 export type SceneSpec =
@@ -11,6 +11,7 @@ export type SceneSpec =
   | { id: string; type: 'compare'; say: string; kicker: string; left: { title: string; items: string[] }; right: { title: string; items: string[] } }
   | { id: string; type: 'code'; say: string; kicker: string; lang: string; code: string }
   | { id: string; type: 'trap'; say: string; question: string; wrong: string; right: string }
+  | { id: string; type: 'picture'; say: string; kicker: string; prompt: string; image?: string; map: { thing: string; means: string }[] }
   | { id: string; type: 'end'; say: string };
 export type Timing = { duration: number; marks: { id: string; t: number }[]; words: { w: string; t: number; d: number }[] };
 export type TopicProps = { id: string; title: string; scenes: SceneSpec[]; timing: Timing; audio: string; keys?: string[] };
@@ -46,6 +47,31 @@ const Code: React.FC<{ s: Extract<SceneSpec, { type: 'code' }> }> = ({ s }) => {
           return <div key={i} style={{ whiteSpace: 'pre', opacity: p, color: /^\s*(#|\/\/|--)/.test(l) ? C.muted : C.ink }}>{l || ' '}</div>; })}
       </div>
     </div>
+  );
+};
+
+// Real-world picture (AI illustration) with a slow zoom, then a key that maps each thing to the tech idea.
+const Picture: React.FC<{ s: Extract<SceneSpec, { type: 'picture' }>; dur: number }> = ({ s, dur }) => {
+  const f = useCurrentFrame(); const { fps } = useVideoConfig();
+  const zoom = interpolate(f, [0, dur], [1.06, 1.22]);
+  const pan = interpolate(f, [0, dur], [0, -40]);
+  const e = spring({ frame: f, fps, config: { damping: 16 } });
+  return (
+    <AbsoluteFill>
+      {s.image ? <Img src={staticFile(s.image)} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: `scale(${zoom}) translateY(${pan}px)`, opacity: e }} /> : null}
+      <AbsoluteFill style={{ background: 'linear-gradient(180deg, #0b1113ee 0%, #0b111300 28%, #0b111300 55%, #0b1113f2 78%)' }} />
+      <div style={{ position: 'absolute', top: 230, left: 80, right: 80 }}><Kicker>{s.kicker}</Kicker></div>
+      <div style={{ position: 'absolute', left: 70, right: 70, bottom: 470, display: 'flex', flexDirection: 'column', gap: 18 }}>
+        {s.map.slice(0, 3).map((m, i) => { const p = spring({ frame: f - 18 - i * 16, fps, config: { damping: 13, stiffness: 150 } });
+          return (
+            <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 22, padding: '22px 30px', borderRadius: 26, background: '#0b1113d9', border: `3px solid ${i ? C.accent2 : C.accent}`, opacity: p, transform: `translateX(${(1 - p) * -160}px)`, backdropFilter: 'blur(6px)' }}>
+              <span style={{ font: `800 46px ${SANS}`, color: C.ink }}>{m.thing}</span>
+              <span style={{ font: `800 46px ${SANS}`, color: C.warn }}>=</span>
+              <span style={{ font: `700 42px ${SANS}`, color: i ? C.accent2 : C.accent }}>{m.means}</span>
+            </div>
+          ); })}
+      </div>
+    </AbsoluteFill>
   );
 };
 
@@ -100,7 +126,7 @@ export const Topic: React.FC<TopicProps> = ({ title, scenes, timing, audio, keys
       {scenes.slice(1).map((s, i) => <Sequence key={'w' + s.id} from={seq(i + 1).from} durationInFrames={14}><Audio src={staticFile('whoosh.mp3')} volume={0.3} /></Sequence>)}
       {scenes.map((s, i) => (
         <Sequence key={s.id} {...seq(i)}>
-          {s.type === 'end' ? <End title={title} /> : <Scene dur={seq(i).durationInFrames}>{body(s, title)}</Scene>}
+          {s.type === 'end' ? <End title={title} /> : s.type === 'picture' ? <Picture s={s} dur={seq(i).durationInFrames} /> : <Scene dur={seq(i).durationInFrames}>{body(s, title)}</Scene>}
         </Sequence>
       ))}
       <Progress marks={starts} total={durationInFrames / fps} />

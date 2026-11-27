@@ -1,36 +1,4 @@
 {
- "updated": "2026-11-27T17:51:23.468Z",
- "videos": [
-  {
-   "id": "docker",
-   "topic": "docker",
-   "title": "Docker: Image vs Container, Demystified",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/docker.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/docker.jpg",
-   "duration": 50,
-   "quiz": 0
-  },
-  {
-   "id": "sql-advanced-l4",
-   "topic": "sql-advanced",
-   "lesson": 4,
-   "lessonTitle": "Pivoting and Conditional Aggregation",
-   "title": "Pivoting & Conditional Aggregation in SQL",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/sql-advanced-l4.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/sql-advanced-l4.jpg",
-   "duration": 40,
-   "quiz": 0
-  },
-  {
-   "id": "testing-l5",
-   "topic": "testing",
-   "lesson": 5,
-   "lessonTitle": "TDD Workflow and Its Limits",
-   "title": "TDD Workflow and Its Limits",
-   "url": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l5.mp4",
-   "poster": "https://ppvideos7k2.blob.core.windows.net/videos/testing-l5.jpg",
-   "duration": 35,
-   "quiz": 0
-  }
- ]
+ "updated": "2026-11-27T18:16:00.749Z",
+ "videos": []
 }
