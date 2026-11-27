@@ -1,0 +1,98 @@
+{
+  "id": "git",
+  "title": "Why Branching Is Git’s Superpower",
+  "keys": [
+    "commit",
+    "branch",
+    "merge",
+    "rebase",
+    "history"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-branching-power",
+      "type": "hook",
+      "kicker": "Git & Collaboration · 45 seconds",
+      "line1": "Why does branching matter in Git?",
+      "line2": "What’s the big deal?",
+      "say": "Ever wondered why branching is at the heart of Git? Let’s break down why it’s the key to smooth teamwork."
+    },
+    {
+      "id": "1-chip-commit",
+      "type": "chip",
+      "kicker": "Step 1 · Commit",
+      "label": "Commit",
+      "sub": "A commit snapshots your project at a moment.",
+      "say": "A commit is your code’s snapshot. It records changes and keeps your history safe."
+    },
+    {
+      "id": "2-rows-branch-head",
+      "type": "rows",
+      "kicker": "Step 2 · Branches",
+      "rows": [
+        {
+          "a": "Branches",
+          "b": "Parallel lines of development"
+        },
+        {
+          "a": "HEAD",
+          "b": "Pointer to your current branch"
+        },
+        {
+          "a": "Remote tracking",
+          "b": "Keeps tabs on teammates’ progress"
+        }
+      ],
+      "walk": true,
+      "say": "Branches let you work in parallel. HEAD shows where you are. Remote tracking helps you sync with others."
+    },
+    {
+      "id": "3-compare-merge-rebase",
+      "type": "compare",
+      "kicker": "Step 3 · Merge vs Rebase",
+      "left": {
+        "title": "Merge",
+        "items": [
+          "Keeps full history",
+          "Creates merge commit"
+        ]
+      },
+      "right": {
+        "title": "Rebase",
+        "items": [
+          "Linear history",
+          "Rewrites commit order"
+        ]
+      },
+      "say": "Merging preserves all history and adds a merge commit. Rebasing rewrites history for a cleaner timeline."
+    },
+    {
+      "id": "4-terminal-conflict",
+      "type": "terminal",
+      "kicker": "Step 4 · Conflicts",
+      "title": "Resolving Conflicts",
+      "lines": [
+        "$ git status",
+        "Unmerged paths:",
+        "Both modified: app.js",
+        "$ git add app.js"
+      ],
+      "say": "When branches overlap, conflicts pop up. Git flags the files, and you fix them before finishing the merge."
+    },
+    {
+      "id": "5-trap-rebase-shared",
+      "type": "trap",
+      "question": "Should you rebase a shared branch?",
+      "wrong": "Yes, it keeps history clean.",
+      "right": "No, rebasing shared branches rewrites history and can cause confusion or lost commits.",
+      "say": "Here’s a common trap: rebasing shared branches can mess up history for your teammates. Avoid it."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:16:49.909Z"
+}
