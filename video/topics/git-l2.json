@@ -1,0 +1,88 @@
+{
+  "id": "git-l2",
+  "title": "Resolving Merge Conflicts in Git",
+  "keys": [
+    "conflict",
+    "merge",
+    "edit",
+    "resolve"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-conflict",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "Ever seen a Git conflict?",
+      "line2": "What should you do?",
+      "say": "Ever seen Git stop you with a conflict? What should you actually do next?"
+    },
+    {
+      "id": "1-chip-why",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Reality",
+      "sub": "Interviewers want proof you can handle real-world code clashes.",
+      "say": "Interviewers want proof you can handle real-world code clashes. This is a must-have skill."
+    },
+    {
+      "id": "2-terminal-merge",
+      "type": "terminal",
+      "kicker": "What happens",
+      "title": "Git marks conflicts",
+      "lines": [
+        "$ git merge feature/greeting",
+        "Auto-merging greet.js",
+        "CONFLICT (content): Merge conflict"
+      ],
+      "say": "When changes overlap, Git marks the files with a conflict. You'll see a message like this in your terminal."
+    },
+    {
+      "id": "3-code-markers",
+      "type": "code",
+      "kicker": "What to look for",
+      "lang": "js",
+      "code": "<<<<<<< HEAD\nconsole.log('Hello');\n=======\nconsole.log('Hi');\n>>>>>>> feature/greeting",
+      "say": "Open the file. You'll spot clear markers showing both versions. Edit the code to keep what you want."
+    },
+    {
+      "id": "4-rows-steps",
+      "type": "rows",
+      "kicker": "How to resolve",
+      "rows": [
+        {
+          "a": "Open conflicted files",
+          "b": "Look for conflict markers"
+        },
+        {
+          "a": "Edit to resolve",
+          "b": "Keep or combine changes"
+        },
+        {
+          "a": "Stage the file",
+          "b": "Mark as resolved"
+        },
+        {
+          "a": "Commit the merge",
+          "b": "Finish the process"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the process: open the files, find the markers, edit to resolve, stage your changes, and commit. That's it."
+    },
+    {
+      "id": "5-trap-common-mistake",
+      "type": "trap",
+      "question": "What's a common mistake with conflicts?",
+      "wrong": "Ignoring conflict markers and committing",
+      "right": "You must remove all conflict markers before committing, or your code won't work.",
+      "say": "Don't just commit with those markers still in the file. You have to remove them all before finishing up."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:21:15.757Z"
+}
