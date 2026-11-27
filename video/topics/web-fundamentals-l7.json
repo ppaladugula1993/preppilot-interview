@@ -1,0 +1,93 @@
+{
+  "id": "web-fundamentals-l7",
+  "title": "Common Web Vulnerabilities Explained",
+  "keys": [
+    "XSS",
+    "CSRF",
+    "SQL Injection",
+    "Mitigation"
+  ],
+  "scenes": [
+    {
+      "id": "0-vuln-hook",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Can you spot a web security risk?",
+      "line2": "Which attacks matter most?",
+      "say": "Can you spot a web security risk? Which attacks matter most for interviews?"
+    },
+    {
+      "id": "1-vuln-chip-xss",
+      "type": "chip",
+      "kicker": "Vulnerability",
+      "label": "XSS",
+      "sub": "Lets attackers inject scripts into web pages.",
+      "say": "First up, cross-site scripting, or XSS. This lets attackers inject scripts into web pages."
+    },
+    {
+      "id": "2-vuln-chip-csrf",
+      "type": "chip",
+      "kicker": "Vulnerability",
+      "label": "CSRF",
+      "sub": "Tricks users into unwanted actions on sites.",
+      "say": "Next, cross-site request forgery, or CSRF. It tricks users into performing actions they didn't intend."
+    },
+    {
+      "id": "3-vuln-rows-sqli",
+      "type": "rows",
+      "kicker": "SQL Injection",
+      "rows": [
+        {
+          "a": "Attack",
+          "b": "Manipulates database queries"
+        },
+        {
+          "a": "Example",
+          "b": "' OR 1=1 --"
+        },
+        {
+          "a": "Impact",
+          "b": "Can expose or destroy data"
+        }
+      ],
+      "walk": true,
+      "say": "SQL injection manipulates database queries. For example, using single quotes and logic to bypass checks. This can expose or destroy data."
+    },
+    {
+      "id": "4-vuln-compare-mitigat",
+      "type": "compare",
+      "kicker": "Mitigations",
+      "left": {
+        "title": "Bad",
+        "items": [
+          "Trust user input",
+          "No validation"
+        ]
+      },
+      "right": {
+        "title": "Good",
+        "items": [
+          "Sanitize input",
+          "Use tokens",
+          "Parameterized queries"
+        ]
+      },
+      "say": "Don't trust user input or skip validation. Instead, sanitize input, use tokens, and write parameterized queries."
+    },
+    {
+      "id": "5-vuln-trap",
+      "type": "trap",
+      "question": "How do you stop XSS attacks?",
+      "wrong": "Just block all scripts.",
+      "right": "Use output encoding and validate input.",
+      "say": "Here's a common interview trap: How do you stop XSS attacks? Blocking all scripts isn't enough. Use output encoding and validate input."
+    },
+    {
+      "id": "6-vuln-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:34:52.203Z"
+}
