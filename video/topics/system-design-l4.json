@@ -1,0 +1,83 @@
+{
+  "id": "system-design-l4",
+  "title": "SQL vs NoSQL & Scaling Essentials",
+  "keys": [
+    "SQL",
+    "NoSQL",
+    "Scaling",
+    "Sharding",
+    "Indexes"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-sql-nosql",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "SQL or NoSQL?",
+      "line2": "Which scales better?",
+      "say": "SQL or NoSQL—do you know which database scales better for massive workloads?"
+    },
+    {
+      "id": "1-compare-sql-nosql",
+      "type": "compare",
+      "kicker": "Core Differences",
+      "left": {
+        "title": "SQL",
+        "items": [
+          "ACID transactions",
+          "Flexible queries",
+          "Structured schema"
+        ]
+      },
+      "right": {
+        "title": "NoSQL",
+        "items": [
+          "Horizontal scaling",
+          "Schema flexibility",
+          "Great for big data"
+        ]
+      },
+      "say": "SQL databases give you reliable transactions and flexible queries. NoSQL is built for horizontal scaling and handles unstructured data with ease."
+    },
+    {
+      "id": "2-chip-scaling",
+      "type": "chip",
+      "kicker": "Scaling",
+      "label": "Sharding",
+      "sub": "Splits data by key for massive scale",
+      "say": "Sharding splits your data by a key, spreading it across multiple servers to handle huge growth."
+    },
+    {
+      "id": "3-rows-index-replicati",
+      "type": "rows",
+      "kicker": "Performance Tools",
+      "rows": [
+        {
+          "a": "Replication",
+          "b": "Copies data for availability"
+        },
+        {
+          "a": "Indexes",
+          "b": "Speed up lookups, slow writes"
+        }
+      ],
+      "walk": false,
+      "say": "Replication copies your data for higher availability. Indexes make searches fast, but can slow down your writes."
+    },
+    {
+      "id": "4-trap-sql-nosql-choic",
+      "type": "trap",
+      "question": "When should you use NoSQL?",
+      "wrong": "Whenever you need fast queries.",
+      "right": "When you need to scale out or handle flexible data.",
+      "say": "Interview trap: Don't say NoSQL is just for speed. Use it when you need to scale out or handle flexible, changing data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T19:57:19.605Z"
+}
