@@ -1,0 +1,72 @@
+{
+  "id": "html-css-l4",
+  "title": "CSS Grid: Layouts Made Easy",
+  "keys": [
+    "CSS Grid",
+    "layout",
+    "rows",
+    "columns",
+    "responsive"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-grid-power",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "Ever struggled with layouts?",
+      "line2": "What solves it best?",
+      "say": "Ever struggled to make complex layouts in your projects? What tool solves it best?"
+    },
+    {
+      "id": "1-chip-two-dimensions",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Grid",
+      "sub": "Two-dimensional system for rows and columns.",
+      "say": "CSS Grid is a two-dimensional system. It lets you control both rows and columns at the same time."
+    },
+    {
+      "id": "2-code-basic-grid",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "css",
+      "code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 2fr;\n  gap: 20px;\n}",
+      "say": "Here's a basic grid. This code creates two columns: one part to two parts, with a twenty pixel gap."
+    },
+    {
+      "id": "3-compare-grid-flexbox",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Grid",
+        "items": [
+          "Rows & columns",
+          "Dashboards"
+        ]
+      },
+      "right": {
+        "title": "Flexbox",
+        "items": [
+          "One direction",
+          "Nav bars"
+        ]
+      },
+      "say": "Use Grid for layouts needing both rows and columns, like dashboards. Flexbox is better for single direction layouts, such as navigation bars."
+    },
+    {
+      "id": "4-trap-grid-vs-flexbox",
+      "type": "trap",
+      "question": "When should you use CSS Grid?",
+      "wrong": "For any layout, always.",
+      "right": "When you need to control both rows and columns.",
+      "say": "Interview trap: Don't say you use Grid for every layout. Use it when you need to manage both rows and columns."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:04:30.104Z"
+}
