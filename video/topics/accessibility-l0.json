@@ -1,0 +1,88 @@
+{
+  "id": "accessibility-l0",
+  "title": "WCAG Principles: POUR Explained",
+  "keys": [
+    "WCAG",
+    "POUR",
+    "accessibility",
+    "AA"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-wcag-pour",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "What makes a site truly accessible?",
+      "line2": "Know the POUR principles?",
+      "say": "What makes a website truly accessible? Do you know the POUR principles that every engineer should follow?"
+    },
+    {
+      "id": "1-chip-perceivable",
+      "type": "chip",
+      "kicker": "WCAG Principle",
+      "label": "Perceivable",
+      "sub": "Content must be presented so users can sense it.",
+      "say": "First up is perceivable. Content has to be presented in ways that everyone can sense, like adding text for images."
+    },
+    {
+      "id": "2-rows-pour",
+      "type": "rows",
+      "kicker": "The POUR Breakdown",
+      "rows": [
+        {
+          "a": "Perceivable",
+          "b": "Users can see or hear content"
+        },
+        {
+          "a": "Operable",
+          "b": "All features work with a keyboard"
+        },
+        {
+          "a": "Understandable",
+          "b": "Clear labels and instructions"
+        },
+        {
+          "a": "Robust",
+          "b": "Valid code for assistive tech"
+        }
+      ],
+      "walk": true,
+      "say": "The four POUR principles are perceivable, operable, understandable, and robust. Each one covers a different way to make sure everyone can use your site."
+    },
+    {
+      "id": "3-compare-aa-aaa",
+      "type": "compare",
+      "kicker": "Conformance Levels",
+      "left": {
+        "title": "AA",
+        "items": [
+          "Recommended baseline",
+          "Covers most accessibility needs"
+        ]
+      },
+      "right": {
+        "title": "AAA",
+        "items": [
+          "Stricter requirements",
+          "Rarely fully achievable"
+        ]
+      },
+      "say": "Most teams aim for double A compliance. Triple A is even stricter, but it's tough to hit every requirement in real projects."
+    },
+    {
+      "id": "4-trap-pour",
+      "type": "trap",
+      "question": "What does POUR stand for in WCAG?",
+      "wrong": "It's a checklist of UI patterns.",
+      "right": "Perceivable, Operable, Understandable, Robust.",
+      "say": "Here's a common trap: some think POUR is just a checklist of patterns. But it's really about making content perceivable, operable, understandable, and robust."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:37:27.522Z"
+}
