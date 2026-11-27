@@ -1,0 +1,72 @@
+{
+  "id": "testing-l5",
+  "title": "TDD Workflow: How Far Does It Go?",
+  "keys": [
+    "TDD",
+    "workflow",
+    "limits",
+    "testing"
+  ],
+  "scenes": [
+    {
+      "id": "0-tdd-hook",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Does TDD fit every project?",
+      "line2": "Where does it fall short?",
+      "say": "Does test-driven development work for everything? Or does it have limits you should know about?"
+    },
+    {
+      "id": "1-tdd-steps",
+      "type": "rows",
+      "kicker": "TDD Workflow",
+      "rows": [
+        {
+          "a": "Red",
+          "b": "Write a failing test"
+        },
+        {
+          "a": "Green",
+          "b": "Code just enough to pass"
+        },
+        {
+          "a": "Refactor",
+          "b": "Clean up code and tests"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the TDD cycle. First, write a test that fails. Next, add code to make it pass. Then, refactor to keep things clean."
+    },
+    {
+      "id": "2-tdd-sweetspot",
+      "type": "chip",
+      "kicker": "Best For",
+      "label": "Logic",
+      "sub": "TDD shines with logic-heavy code and core features.",
+      "say": "TDD works best for logic-heavy code, like business rules or core algorithms."
+    },
+    {
+      "id": "3-tdd-limits",
+      "type": "chip",
+      "kicker": "Watch Out",
+      "label": "Limits",
+      "sub": "UI and integration-heavy features may need other methods.",
+      "say": "But for user interfaces or complex integrations, TDD can slow you down or miss important details."
+    },
+    {
+      "id": "4-tdd-trap",
+      "type": "trap",
+      "question": "Is TDD always the best choice?",
+      "wrong": "Yes, use it for everything.",
+      "right": "No, adapt your approach for UI or integrations.",
+      "say": "Interview trap: Is test-driven development always the best choice? Not really. Adapt your approach for user interfaces or integration-heavy features."
+    },
+    {
+      "id": "5-tdd-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:11:05.154Z"
+}
