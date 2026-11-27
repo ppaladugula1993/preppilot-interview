@@ -1,0 +1,79 @@
+{
+  "id": "git-l1",
+  "title": "Git Merge vs Rebase: What’s the Difference?",
+  "keys": [
+    "merge",
+    "rebase",
+    "history",
+    "branches",
+    "collaboration"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-merge-rebase",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "Merge or rebase?",
+      "line2": "Which should you use?",
+      "say": "Ever wonder when you should merge, and when you should rebase? Let’s clear it up."
+    },
+    {
+      "id": "1-compare-merge-rebase",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "Merge",
+        "items": [
+          "Combines branches",
+          "Keeps full history",
+          "Creates a merge commit"
+        ]
+      },
+      "right": {
+        "title": "Rebase",
+        "items": [
+          "Moves commits",
+          "Rewrites history",
+          "Makes history linear"
+        ]
+      },
+      "say": "Merging keeps all the messy history and adds a merge commit. Rebasing rewrites your changes onto the latest branch, making history look clean and straight."
+    },
+    {
+      "id": "2-terminal-commands",
+      "type": "terminal",
+      "kicker": "How It Looks",
+      "title": "Merge vs Rebase Commands",
+      "lines": [
+        "$ git merge main",
+        "# creates a merge commit",
+        "$ git rebase main",
+        "# rewrites commits onto main"
+      ],
+      "say": "When you run the merge command, you get a new merge commit. Rebasing instead takes your commits and reapplies them on top of the main branch."
+    },
+    {
+      "id": "3-chip-tip",
+      "type": "chip",
+      "kicker": "Pro Tip",
+      "label": "Strategy",
+      "sub": "Use rebase for local work, merge for shared branches.",
+      "say": "I like to rebase my own feature branches to keep things tidy, but I use merge when bringing shared work together."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Should you rebase a shared branch?",
+      "wrong": "Yes, always rebase for clean history.",
+      "right": "No, rebasing shared branches can rewrite others’ work. Only rebase local, unshared branches.",
+      "say": "Here’s a common interview trap: rebasing a branch others are using can cause big headaches. Only rebase your own local work."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:19:47.638Z"
+}
