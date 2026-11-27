@@ -1,0 +1,85 @@
+{
+  "id": "efcore",
+  "title": "DbContext: The Heart of EF Core",
+  "keys": [
+    "DbContext",
+    "tracking",
+    "unit of work",
+    "lifetime",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dbcontext-core",
+      "type": "hook",
+      "kicker": "Entity Framework Core · 45s",
+      "line1": "Why is DbContext so crucial?",
+      "line2": "What does it really do?",
+      "say": "Why is the DbContext at the heart of Entity Framework Core? What makes it so important for your code?"
+    },
+    {
+      "id": "1-chip-unit-of-work",
+      "type": "chip",
+      "kicker": "Pattern",
+      "label": "Unit",
+      "sub": "DbContext tracks all changes as a single unit.",
+      "say": "DbContext implements the unit of work pattern. It tracks every change you make to your entities as a single unit."
+    },
+    {
+      "id": "2-rows-lifetime",
+      "type": "rows",
+      "kicker": "Best Practice",
+      "rows": [
+        {
+          "a": "Create DbContext",
+          "b": "Per web request or operation"
+        },
+        {
+          "a": "Track changes",
+          "b": "During the context lifetime"
+        },
+        {
+          "a": "SaveChanges",
+          "b": "Commit all at once"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the flow: create a DbContext per request, track changes as you go, then save everything in one transaction."
+    },
+    {
+      "id": "3-compare-tracking",
+      "type": "compare",
+      "kicker": "Tracking",
+      "left": {
+        "title": "Tracking",
+        "items": [
+          "Detects changes",
+          "For updates"
+        ]
+      },
+      "right": {
+        "title": "No Tracking",
+        "items": [
+          "Faster reads",
+          "Read-only data"
+        ]
+      },
+      "say": "DbContext tracks entities by default, so it knows what to update. But for read-only queries, use AsNoTracking for better performance."
+    },
+    {
+      "id": "4-trap-lifetime",
+      "type": "trap",
+      "question": "Should you reuse DbContext across requests?",
+      "wrong": "Yes, to save resources.",
+      "right": "No! It causes memory leaks and stale data.",
+      "say": "Interview trap: Should you reuse a DbContext across requests? No way. That leads to memory leaks and stale data headaches."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:59:50.076Z"
+}
