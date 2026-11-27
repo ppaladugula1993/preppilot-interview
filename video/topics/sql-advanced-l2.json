@@ -1,0 +1,72 @@
+{
+  "id": "sql-advanced-l2",
+  "title": "Mastering Recursive CTEs in SQL",
+  "keys": [
+    "recursive CTE",
+    "hierarchy",
+    "anchor",
+    "UNION ALL"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-recursive",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you query hierarchies?",
+      "line2": "Ever used recursion in SQL?",
+      "say": "How do you query hierarchies in SQL? Ever used recursion inside a query?"
+    },
+    {
+      "id": "1-chip-what-is",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Recursion",
+      "sub": "Recursive CTEs let a query refer to its own output.",
+      "say": "A recursive Common Table Expression lets a query refer to its own output. It's perfect for traversing hierarchies or graphs."
+    },
+    {
+      "id": "2-rows-structure",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Anchor member",
+          "b": "Gets the starting rows"
+        },
+        {
+          "a": "Recursive member",
+          "b": "Builds on anchor results"
+        },
+        {
+          "a": "UNION ALL",
+          "b": "Combines both parts"
+        }
+      ],
+      "walk": true,
+      "say": "There are two parts: the anchor member gets the starting rows, the recursive member builds on those, and UNION ALL combines them."
+    },
+    {
+      "id": "3-code-org-chart",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "WITH RECURSIVE org_chart AS (\n  SELECT id, manager_id, name\n  FROM employees\n  WHERE manager_id IS NULL\n  UNION ALL\n  SELECT e.id, e.manager_id, e.name\n  FROM employees e\n  JOIN org_chart o ON e.manager_id = o.id\n)\nSELECT * FROM org_chart;",
+      "say": "Here's how you'd get an entire org chart. The anchor grabs top managers. The recursive part finds everyone they manage, and repeats."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Do recursive CTEs always stop?",
+      "wrong": "Yes, they always finish.",
+      "right": "No. Without a stop condition, they can loop forever or hit a recursion limit.",
+      "say": "Do recursive CTEs always stop? Actually, no. Without a stop condition, they can loop forever or hit a recursion limit."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:48:38.203Z"
+}
