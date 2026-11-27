@@ -1,0 +1,72 @@
+{
+  "id": "browser-performance-l3",
+  "title": "Bundle Size, Tree Shaking & Splitting",
+  "keys": [
+    "bundle size",
+    "tree shaking",
+    "code splitting",
+    "webpack"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bundle-size",
+      "type": "hook",
+      "kicker": "Browser & Web Performance · lesson",
+      "line1": "Why care about bundle size?",
+      "line2": "Does it really matter?",
+      "say": "Why should software engineers care about bundle size? Does it really matter for web performance?"
+    },
+    {
+      "id": "1-chip-bundle",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Bundle",
+      "sub": "All JavaScript sent to the browser.",
+      "say": "Bundle size is the total amount of JavaScript your site sends to the browser. The bigger it is, the slower your site loads."
+    },
+    {
+      "id": "2-rows-tree-shaking",
+      "type": "rows",
+      "kicker": "How Tree Shaking Works",
+      "rows": [
+        {
+          "a": "Analyze imports",
+          "b": "Find used and unused code"
+        },
+        {
+          "a": "Remove unused",
+          "b": "Delete dead exports"
+        },
+        {
+          "a": "Output clean bundle",
+          "b": "Only needed code stays"
+        }
+      ],
+      "walk": true,
+      "say": "Tree shaking removes unused code. The bundler analyzes your imports, deletes dead exports, and keeps only what's actually used."
+    },
+    {
+      "id": "3-code-code-splitting",
+      "type": "code",
+      "kicker": "Code Splitting Example",
+      "lang": "js",
+      "code": "import('./module')\n  .then(m => m.doSomething());",
+      "say": "Code splitting breaks your code into smaller chunks. With Webpack, you can use dynamic import to load code only when it's needed."
+    },
+    {
+      "id": "4-trap-bundle-analyzer",
+      "type": "trap",
+      "question": "How do you check your bundle size?",
+      "wrong": "Just look at the file list.",
+      "right": "Use tools like Webpack Bundle Analyzer to visualize and optimize your bundle.",
+      "say": "Interview trap: How do you check your bundle size? Don't just eyeball the file list. Use tools like Webpack Bundle Analyzer to really understand what's inside."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:39:14.741Z"
+}
