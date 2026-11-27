@@ -1,0 +1,81 @@
+{
+  "id": "go-concurrency",
+  "title": "Go Concurrency: Goroutines in Action",
+  "keys": [
+    "goroutine",
+    "scheduler",
+    "channel",
+    "select",
+    "context"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-goroutines",
+      "type": "hook",
+      "kicker": "Go Concurrency · 45 seconds",
+      "line1": "How does Go run so many tasks?",
+      "line2": "What's the secret sauce?",
+      "say": "Ever wonder how Go runs thousands of tasks at once without breaking a sweat? What's the secret sauce behind Go's famous concurrency?"
+    },
+    {
+      "id": "1-chip-goroutine",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Goroutine",
+      "sub": "A lightweight thread managed by Go's runtime",
+      "say": "Meet the goroutine. It's a super lightweight thread, managed entirely by Go's runtime, not the operating system."
+    },
+    {
+      "id": "2-rows-scheduler",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "1. You start a goroutine",
+          "b": "Go schedules it automatically"
+        },
+        {
+          "a": "2. Scheduler multiplexes",
+          "b": "Thousands run on few OS threads"
+        },
+        {
+          "a": "3. Handles blocking & I/O",
+          "b": "Keeps things running smoothly"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works. You start a goroutine, and Go's scheduler takes care of the rest. It multiplexes thousands of goroutines onto just a few operating system threads, handling blocking and input output so your app keeps humming."
+    },
+    {
+      "id": "3-code-channel",
+      "type": "code",
+      "kicker": "Communication",
+      "lang": "go",
+      "code": "ch := make(chan int)\ngo func() { ch <- 42 }()\nvalue := <-ch",
+      "say": "But how do these goroutines talk? With channels. You can send and receive values safely between goroutines, like passing a message in a bottle."
+    },
+    {
+      "id": "4-chip-select",
+      "type": "chip",
+      "kicker": "Multiplexing",
+      "label": "Select",
+      "sub": "Wait on multiple channels at once",
+      "say": "Need to juggle multiple channels? Use the select statement. It lets you wait on several channel operations at the same time."
+    },
+    {
+      "id": "5-trap-leak",
+      "type": "trap",
+      "question": "Can goroutines leak if not cancelled?",
+      "wrong": "No, Go cleans them up",
+      "right": "Yes! Always signal cancellation with context",
+      "say": "Here's a common trap: thinking goroutines always clean themselves up. Not true! If you don't signal cancellation, you can leak goroutines and waste resources. Use context to avoid this."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:56:53.491Z"
+}
