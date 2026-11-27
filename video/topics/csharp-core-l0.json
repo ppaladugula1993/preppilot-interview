@@ -1,0 +1,74 @@
+{
+  "id": "csharp-core-l0",
+  "title": "Value vs Reference Types in C#",
+  "keys": [
+    "value type",
+    "reference type",
+    "boxing",
+    "struct",
+    "class"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-value-ref",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "Struct or class?",
+      "line2": "Why does it matter?",
+      "say": "Struct or class? Why does that choice matter in C sharp interviews?"
+    },
+    {
+      "id": "1-compare-value-ref",
+      "type": "compare",
+      "kicker": "Key Difference",
+      "left": {
+        "title": "Value Types",
+        "items": [
+          "struct",
+          "int",
+          "data stored directly"
+        ]
+      },
+      "right": {
+        "title": "Reference Types",
+        "items": [
+          "class",
+          "record",
+          "store reference to data"
+        ]
+      },
+      "say": "Value types like structs and ints store their data directly. Reference types like classes and records just store a reference to the data."
+    },
+    {
+      "id": "2-code-boxing",
+      "type": "code",
+      "kicker": "Boxing Example",
+      "lang": "csharp",
+      "code": "int x = 5;\nobject o = x;\n// Boxing happens here",
+      "say": "When you assign an int to an object, C sharp wraps the value in a reference type. This is called boxing."
+    },
+    {
+      "id": "3-chip-records",
+      "type": "chip",
+      "kicker": "Interview Tip",
+      "label": "Records",
+      "sub": "Records are reference types with value-based equality.",
+      "say": "Records are reference types, but they compare by value, not by reference. That's handy for equality checks."
+    },
+    {
+      "id": "4-trap-boxing",
+      "type": "trap",
+      "question": "Where is a value type stored?",
+      "wrong": "Always on the stack",
+      "right": "It depends—can be stack or heap",
+      "say": "Here's a trap: Value types aren't always on the stack. They can live on the heap too, like inside a class or when boxed."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:08:49.633Z"
+}
