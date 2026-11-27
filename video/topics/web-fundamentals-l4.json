@@ -1,0 +1,72 @@
+{
+  "id": "web-fundamentals-l4",
+  "title": "OAuth 2.0 & OIDC: Secure Auth Flows",
+  "keys": [
+    "OAuth 2.0",
+    "OIDC",
+    "Authorization Code",
+    "PKCE"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-oauth-oidc",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "How do apps handle secure login?",
+      "line2": "What keeps your tokens safe?",
+      "say": "Ever wonder how apps keep your login secure and tokens out of the wrong hands? Let’s break down OAuth and OpenID Connect flows."
+    },
+    {
+      "id": "1-chip-oauth2",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "OAuth 2.0",
+      "sub": "Lets apps ask for access without sharing your password.",
+      "say": "OAuth two lets apps request access to your data without ever seeing your password."
+    },
+    {
+      "id": "2-chip-oidc",
+      "type": "chip",
+      "kicker": "Add-On",
+      "label": "OIDC",
+      "sub": "OpenID Connect adds authentication on top of OAuth.",
+      "say": "OpenID Connect builds on OAuth, adding authentication so apps know who you are."
+    },
+    {
+      "id": "3-rows-auth-code-pkce",
+      "type": "rows",
+      "kicker": "Authorization Code with PKCE",
+      "rows": [
+        {
+          "a": "1. Redirect to server",
+          "b": "User logs in and consents"
+        },
+        {
+          "a": "2. Get code",
+          "b": "Server sends code to the app"
+        },
+        {
+          "a": "3. Exchange code",
+          "b": "App swaps code plus PKCE for tokens"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the secure flow: The app sends you to log in, gets a code back, then trades that code and a secret PKCE value for tokens. This blocks attackers from stealing your tokens."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What does PKCE prevent?",
+      "wrong": "It encrypts tokens.",
+      "right": "It stops attackers from intercepting the code and using it to get tokens.",
+      "say": "Here’s a classic interview trap: PKCE isn’t about encrypting tokens—it’s about stopping code interception attacks."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:25:52.473Z"
+}
