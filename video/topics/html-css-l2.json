@@ -1,0 +1,81 @@
+{
+  "id": "html-css-l2",
+  "title": "Master Display & Positioning in CSS",
+  "keys": [
+    "display",
+    "position",
+    "block",
+    "absolute",
+    "flex"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-display-positio",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "Why do some elements overlap?",
+      "line2": "How does layout really work?",
+      "say": "Ever wonder why some elements stack, while others overlap or float? Let's break down display and positioning."
+    },
+    {
+      "id": "1-chip-display-types",
+      "type": "chip",
+      "kicker": "Display",
+      "label": "Types",
+      "sub": "Block, inline, flex, and grid set how elements arrange themselves.",
+      "say": "Display decides how elements behave in the layout. Block takes up the whole line, inline sits next to others, flex and grid help organize groups."
+    },
+    {
+      "id": "2-rows-position-values",
+      "type": "rows",
+      "kicker": "Position",
+      "rows": [
+        {
+          "a": "static",
+          "b": "default, follows flow"
+        },
+        {
+          "a": "relative",
+          "b": "moves from normal spot"
+        },
+        {
+          "a": "absolute",
+          "b": "placed anywhere, no flow"
+        },
+        {
+          "a": "fixed",
+          "b": "stays on screen when scrolling"
+        },
+        {
+          "a": "sticky",
+          "b": "sticks until a threshold"
+        }
+      ],
+      "walk": true,
+      "say": "Positioning controls where elements sit. Static is default. Relative shifts from its spot. Absolute removes it from flow. Fixed pins it to the screen. Sticky sticks until you scroll past."
+    },
+    {
+      "id": "3-code-example-box",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "css",
+      "code": ".box {\n  display: inline-block;\n  position: absolute;\n  top: 20px;\n  left: 50px;\n}",
+      "say": "Here's a box that sits inline but is absolutely positioned twenty pixels from the top and fifty from the left. It ignores normal flow."
+    },
+    {
+      "id": "4-trap-display-flex",
+      "type": "trap",
+      "question": "What does display flex do?",
+      "wrong": "Makes elements float side by side.",
+      "right": "Turns a container into a flexbox, making child alignment and spacing easy.",
+      "say": "Don't confuse flex with float. Flex turns a container into a flexbox, so its children align and space themselves easily."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:26:31.492Z"
+}
