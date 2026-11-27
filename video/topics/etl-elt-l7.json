@@ -1,0 +1,76 @@
+{
+  "id": "etl-elt-l7",
+  "title": "Schema Changes in ETL/ELT Pipelines",
+  "keys": [
+    "schema evolution",
+    "backward compatibility",
+    "monitoring",
+    "dbt"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-schema-changes",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "What happens when your data changes?",
+      "line2": "Will your pipeline break?",
+      "say": "Ever had a source table change columns overnight? Will your ETL or ELT pipeline break, or can it adapt?"
+    },
+    {
+      "id": "1-chip-schema-evolutio",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Evolution",
+      "sub": "Avro and Parquet support schema evolution for adding, removing, or changing columns.",
+      "say": "File formats like Avro and Parquet are built for schema evolution. They let you add, drop, or change columns without breaking the pipeline."
+    },
+    {
+      "id": "2-rows-schema-strategy",
+      "type": "rows",
+      "kicker": "Strategy",
+      "rows": [
+        {
+          "a": "Monitor changes",
+          "b": "Set up alerts for schema shifts"
+        },
+        {
+          "a": "Version models",
+          "b": "Keep old and new model versions"
+        },
+        {
+          "a": "Compatibility",
+          "b": "Design for backward and forward use"
+        }
+      ],
+      "walk": true,
+      "say": "Here's a solid approach: monitor for schema changes, version your models, and always check for backward and forward compatibility."
+    },
+    {
+      "id": "3-terminal-dbt-alter-t",
+      "type": "terminal",
+      "kicker": "dbt Example",
+      "title": "Handle new columns",
+      "lines": [
+        "$ dbt run",
+        "$ ALTER TABLE add column",
+        "$ dbt build --select versioned_model"
+      ],
+      "say": "With dbt, you can use alter table commands or versioned models to handle new columns in your data source."
+    },
+    {
+      "id": "4-trap-schema-trap",
+      "type": "trap",
+      "question": "What breaks most pipelines?",
+      "wrong": "Dropping unused columns",
+      "right": "Untracked schema changes—like renaming or changing types—can silently break downstream jobs.",
+      "say": "Here's a common trap: pipelines often break not when you drop unused columns, but when you change column names or types without tracking those changes."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:42:26.863Z"
+}
