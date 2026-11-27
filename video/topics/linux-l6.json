@@ -1,0 +1,63 @@
+{
+  "id": "linux-l6",
+  "title": "Linux Logs and Log Rotation",
+  "keys": [
+    "logs",
+    "logrotate",
+    "journalctl",
+    "/var/log"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-logs",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "Why do logs fill up disks?",
+      "line2": "And how do you stop it?",
+      "say": "Why do logs fill up your disk, and how do you keep that from taking down your system?"
+    },
+    {
+      "id": "1-chip-where-logs",
+      "type": "chip",
+      "kicker": "Where logs live",
+      "label": "/var/log",
+      "sub": "System logs are in /var/log and the journal.",
+      "say": "System logs live in slash var slash log, and in the journal. These are your first stop in any incident."
+    },
+    {
+      "id": "2-terminal-log-command",
+      "type": "terminal",
+      "kicker": "Read logs",
+      "title": "Handy log commands",
+      "lines": [
+        "$ journalctl -p err --since \"1 hour ago\"",
+        "$ tail -f /var/log/syslog",
+        "$ dmesg -T | grep -i oom"
+      ],
+      "say": "Use journal control to see recent errors, tail to follow logs live, and dmesg to catch kernel events."
+    },
+    {
+      "id": "3-code-logrotate",
+      "type": "code",
+      "kicker": "Keep logs tidy",
+      "lang": "conf",
+      "code": "/var/log/myapp/*.log {\n  daily\n  rotate 7\n  compress\n  missingok\n}",
+      "say": "Logrotate keeps logs from filling your disk. It rotates, compresses, and deletes old files automatically."
+    },
+    {
+      "id": "4-trap-full-disk",
+      "type": "trap",
+      "question": "Disk is full. What do you fix?",
+      "wrong": "Just delete today's logs.",
+      "right": "Fix logrotate or log level, not just the symptom.",
+      "say": "If your disk fills up, don't just delete logs. Fix logrotate or reduce log levels, or the problem will come back."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:50:54.836Z"
+}
