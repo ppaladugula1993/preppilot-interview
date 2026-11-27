@@ -1,0 +1,72 @@
+{
+  "id": "data-modeling-l7",
+  "title": "Modeling for Analytics in dbt",
+  "keys": [
+    "dbt",
+    "medallion",
+    "ref()",
+    "analytics"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-modeling-dbt",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "How does dbt boost analytics?",
+      "line2": "Why do layers matter?",
+      "say": "Ever wondered how dbt turns messy raw data into clean, useful analytics? Why do layered models make your life easier?"
+    },
+    {
+      "id": "1-chip-layers",
+      "type": "chip",
+      "kicker": "Medallion Layers",
+      "label": "Layers",
+      "sub": "Staging, intermediate, and marts mirror medallion architecture for data quality.",
+      "say": "dbt models are built in layers—staging, intermediate, and marts. This mirrors the medallion architecture, helping you isolate issues and improve data quality step by step."
+    },
+    {
+      "id": "2-rows-dbt-models",
+      "type": "rows",
+      "kicker": "Model Examples",
+      "rows": [
+        {
+          "a": "stg_orders",
+          "b": "Pulls raw order data"
+        },
+        {
+          "a": "int_orders_enriched",
+          "b": "Joins orders with customers"
+        },
+        {
+          "a": "fct_sales",
+          "b": "Aggregates sales by product"
+        }
+      ],
+      "walk": true,
+      "say": "Start with staging to pull raw data, then join and enrich it in intermediate models, and finally aggregate in marts for analytics."
+    },
+    {
+      "id": "3-code-ref-function",
+      "type": "code",
+      "kicker": "Dependency Management",
+      "lang": "sql",
+      "code": "SELECT * FROM {{ ref('stg_orders') }}\nJOIN {{ ref('stg_customers') }}\nON customer_id",
+      "say": "I use dbt's ref function to manage dependencies. It keeps builds reproducible and models maintainable."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What does dbt's ref() do?",
+      "wrong": "It runs SQL faster.",
+      "right": "It manages model dependencies for reliable builds.",
+      "say": "Interviewers love to ask about ref. It doesn't speed up SQL—it manages dependencies so your models build in the right order."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:30:06.032Z"
+}
