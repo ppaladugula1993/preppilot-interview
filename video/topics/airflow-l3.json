@@ -1,0 +1,73 @@
+{
+  "id": "airflow-l3",
+  "title": "Airflow XComs: Passing Data Safely",
+  "keys": [
+    "XComs",
+    "metadata",
+    "push",
+    "pull",
+    "external storage"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-xcoms-data",
+      "type": "hook",
+      "kicker": "Orchestration (Airflow) · lesson",
+      "line1": "How do Airflow tasks share data?",
+      "line2": "What's the safe way?",
+      "say": "Ever wondered how tasks in Airflow pass data between each other? What's the safest way to do it?"
+    },
+    {
+      "id": "1-chip-xcoms",
+      "type": "chip",
+      "kicker": "Airflow Feature",
+      "label": "XComs",
+      "sub": "Lets tasks exchange small data, like strings or JSON.",
+      "say": "XComs, which stands for cross-communications, let tasks exchange small bits of data, like strings or JSON."
+    },
+    {
+      "id": "2-code-xcom-push-pull",
+      "type": "code",
+      "kicker": "How it works",
+      "lang": "python",
+      "code": "def push(**kwargs):\n    kwargs['ti'].xcom_push(key='result', value=42)\ndef pull(**kwargs):\n    x = kwargs['ti'].xcom_pull(key='result', task_ids='push_task')",
+      "say": "You push data with xcom_push, and pull it with xcom_pull. It's simple, but only for small data."
+    },
+    {
+      "id": "3-rows-xcoms-vs-storag",
+      "type": "rows",
+      "kicker": "Best Practice",
+      "rows": [
+        {
+          "a": "XComs",
+          "b": "IDs, metadata, status flags"
+        },
+        {
+          "a": "External Storage",
+          "b": "Large files, big datasets"
+        },
+        {
+          "a": "XComs Limit",
+          "b": "Stored in metadata DB"
+        }
+      ],
+      "walk": true,
+      "say": "Use XComs for IDs or metadata. For anything big, use external storage like S3 or Google Cloud Storage."
+    },
+    {
+      "id": "4-trap-xcom-size",
+      "type": "trap",
+      "question": "Should you pass large data via XComs?",
+      "wrong": "Sure, it's convenient.",
+      "right": "No. Large data bloats the metadata database and slows Airflow. Use external storage for big data.",
+      "say": "Interviewers will ask: Should you pass large data via XComs? Never. It bloats the metadata database and slows Airflow."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:07:38.916Z"
+}
