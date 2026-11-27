@@ -1,0 +1,81 @@
+{
+  "id": "data-modeling-l5",
+  "title": "Data Vault: Hubs, Links, Satellites",
+  "keys": [
+    "Data Vault",
+    "Hub",
+    "Link",
+    "Satellite"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-vault",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "Why not just use star schema?",
+      "line2": "What’s Data Vault?",
+      "say": "Ever wonder why big data teams use Data Vault instead of just star or snowflake models? Let’s break down what makes Data Vault different."
+    },
+    {
+      "id": "1-chip-hub",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Hub",
+      "sub": "Stores unique business keys, like customer IDs.",
+      "say": "First up, the Hub. This is where you store unique business keys, like customer IDs. Think of it as your master list of important entities."
+    },
+    {
+      "id": "2-rows-link-sat",
+      "type": "rows",
+      "kicker": "Key Parts",
+      "rows": [
+        {
+          "a": "Link",
+          "b": "Connects business keys, like customers to orders"
+        },
+        {
+          "a": "Satellite",
+          "b": "Holds attributes and history, tracks changes"
+        }
+      ],
+      "walk": true,
+      "say": "Next, you have Links to show relationships, like connecting customers to orders. And Satellites store all the details and history, so you can track changes over time."
+    },
+    {
+      "id": "3-compare-vault-vs-sta",
+      "type": "compare",
+      "kicker": "Why Use It?",
+      "left": {
+        "title": "Data Vault",
+        "items": [
+          "Scalable for big data",
+          "Easily tracks history",
+          "Great for multiple sources"
+        ]
+      },
+      "right": {
+        "title": "Star Schema",
+        "items": [
+          "Simple queries",
+          "Faster for analytics"
+        ]
+      },
+      "say": "Data Vault is built for scalability and auditability, especially when you have data from lots of sources or need to track changes. Star schema is simpler, but less flexible for big, evolving warehouses."
+    },
+    {
+      "id": "4-trap-mixup",
+      "type": "trap",
+      "question": "Are Satellites for relationships?",
+      "wrong": "Yes, Satellites connect Hubs.",
+      "right": "Nope! Satellites store context and history. Links connect Hubs.",
+      "say": "Don’t mix this up: Satellites aren’t for relationships. They store details and history. Links are what connect your Hubs."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:26:25.855Z"
+}
