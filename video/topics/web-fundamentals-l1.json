@@ -1,0 +1,64 @@
+{
+  "id": "web-fundamentals-l1",
+  "title": "HTTP Methods and Versions Explained",
+  "keys": [
+    "HTTP methods",
+    "HTTP/1.1",
+    "HTTP/2",
+    "HTTP/3"
+  ],
+  "scenes": [
+    {
+      "id": "0-http-hook",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "Why do APIs need different HTTP methods?",
+      "line2": "And what changed in HTTP/2?",
+      "say": "Why do APIs use different HTTP methods, and what makes HTTP version two such a big deal?"
+    },
+    {
+      "id": "1-http-methods-chip",
+      "type": "chip",
+      "kicker": "Core Methods",
+      "label": "GET",
+      "sub": "Retrieves data from the server.",
+      "say": "Let's start with methods. Get fetches data. Post sends new data. Put updates, and Delete removes. Each tells the server your intent."
+    },
+    {
+      "id": "2-http-versions-compar",
+      "type": "compare",
+      "kicker": "Protocol Versions",
+      "left": {
+        "title": "HTTP/1.1",
+        "items": [
+          "Text-based",
+          "One request per connection"
+        ]
+      },
+      "right": {
+        "title": "HTTP/2 & 3",
+        "items": [
+          "Multiplexing",
+          "Header compression",
+          "HTTP/3 uses QUIC"
+        ]
+      },
+      "say": "HTTP version one point one is text-based and handles one request at a time. HTTP two brings multiplexing and header compression. HTTP three runs over QUIC for even faster, more reliable connections."
+    },
+    {
+      "id": "3-http-trap",
+      "type": "trap",
+      "question": "What does HTTP/2 multiplexing mean?",
+      "wrong": "It combines several responses into one.",
+      "right": "It lets multiple requests share a single connection at once.",
+      "say": "Watch out: multiplexing in HTTP two means multiple requests can share one connection, not that responses are merged together."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:17:46.498Z"
+}
