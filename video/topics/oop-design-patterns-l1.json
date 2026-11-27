@@ -1,0 +1,73 @@
+{
+  "id": "oop-design-patterns-l1",
+  "title": "Composition Over Inheritance Explained",
+  "keys": [
+    "composition",
+    "inheritance",
+    "flexibility",
+    "coupling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-composition",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "Why not just use inheritance?",
+      "line2": "What’s composition?",
+      "say": "Ever wondered why interviewers push for composition instead of inheritance? Let’s break down why it matters."
+    },
+    {
+      "id": "1-chip-flexibility",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Flexible",
+      "sub": "Composition lets you combine objects for flexible designs and easier changes.",
+      "say": "With composition, you build classes by combining objects. This keeps your design flexible and makes changes less painful."
+    },
+    {
+      "id": "2-compare-comp-vs-inhe",
+      "type": "compare",
+      "kicker": "Design Choices",
+      "left": {
+        "title": "Inheritance",
+        "items": [
+          "Rigid hierarchy",
+          "Tight coupling",
+          "Fragile base"
+        ]
+      },
+      "right": {
+        "title": "Composition",
+        "items": [
+          "Combine behaviors",
+          "Loose coupling",
+          "Easy to test"
+        ]
+      },
+      "say": "Inheritance creates rigid hierarchies and tight coupling. Composition lets you mix behaviors, keeping things loosely connected and easier to test."
+    },
+    {
+      "id": "3-code-car-engine",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "java",
+      "code": "class Engine {}\nclass Car {\n  private Engine engine;\n  public Car(Engine engine) {\n    this.engine = engine;\n  }\n}",
+      "say": "Here, a car class uses an engine object. This is composition—no inheritance needed, just combining parts."
+    },
+    {
+      "id": "4-trap-inheritance",
+      "type": "trap",
+      "question": "When should you use inheritance?",
+      "wrong": "Whenever you want code reuse.",
+      "right": "Only when there’s a clear 'is-a' relationship, like car and vehicle. Otherwise, prefer composition.",
+      "say": "Don’t use inheritance just for code reuse. Stick to it only when there’s a clear is-a relationship. Otherwise, composition wins."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:27:21.649Z"
+}
