@@ -1,0 +1,62 @@
+{
+  "id": "csharp-core-l7",
+  "title": "Modern C# Features That Matter",
+  "keys": [
+    "pattern matching",
+    "primary constructors",
+    "collection expressions",
+    "idiomatic"
+  ],
+  "scenes": [
+    {
+      "id": "0-modern-csharp-hook",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "Are you using modern C#?",
+      "line2": "What features should you know?",
+      "say": "Are you up-to-date with modern C Sharp? What features make your code stand out in interviews?"
+    },
+    {
+      "id": "1-pattern-matching-chi",
+      "type": "chip",
+      "kicker": "Feature",
+      "label": "Pattern",
+      "sub": "Check types and extract values concisely.",
+      "say": "Pattern matching lets you check types and extract values in one clear statement."
+    },
+    {
+      "id": "2-primary-constructors",
+      "type": "code",
+      "kicker": "Feature",
+      "lang": "csharp",
+      "code": "record Point(int X, int Y);\n// Simple, clear initialization",
+      "say": "Primary constructors make initializing records and classes straightforward and readable."
+    },
+    {
+      "id": "3-collection-expressio",
+      "type": "terminal",
+      "kicker": "Feature",
+      "title": "Collection Expressions",
+      "lines": [
+        "$ var nums = [1, 2, 3];",
+        "// Concise collection creation"
+      ],
+      "say": "Collection expressions let you build lists with less code and more clarity."
+    },
+    {
+      "id": "4-trap-modern-csharp",
+      "type": "trap",
+      "question": "Why use pattern matching in C#?",
+      "wrong": "Only for type checking.",
+      "right": "To check types and extract values concisely.",
+      "say": "Interview trap: Pattern matching is not just for type checking. It also extracts values, making your logic concise."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:23:54.069Z"
+}
