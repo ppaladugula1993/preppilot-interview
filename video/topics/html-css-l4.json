@@ -1,0 +1,74 @@
+{
+  "id": "html-css-l4",
+  "title": "Mastering CSS Grid Layouts",
+  "keys": [
+    "CSS Grid",
+    "layout",
+    "rows",
+    "columns",
+    "responsive"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-grid",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "How do you build complex layouts?",
+      "line2": "Grid or Flexbox?",
+      "say": "Ever wondered how to create layouts with both rows and columns? Let's see why Grid is your best tool."
+    },
+    {
+      "id": "1-chip-what-is-grid",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Grid",
+      "sub": "A two-dimensional layout system for rows and columns.",
+      "say": "CSS Grid lets you design layouts in two directions at once—both rows and columns."
+    },
+    {
+      "id": "2-code-grid-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "css",
+      "code": ".grid {\n  display: grid;\n  grid-template-columns: 1fr 2fr;\n  gap: 20px;\n}",
+      "say": "Here’s a quick example. This sets up a grid with two columns, where the second is twice as wide as the first, and adds a gap between items."
+    },
+    {
+      "id": "3-compare-grid-vs-flex",
+      "type": "compare",
+      "kicker": "Grid vs Flexbox",
+      "left": {
+        "title": "Grid",
+        "items": [
+          "Rows and columns",
+          "Dashboards",
+          "Complex layouts"
+        ]
+      },
+      "right": {
+        "title": "Flexbox",
+        "items": [
+          "One direction",
+          "Nav bars",
+          "Simple alignment"
+        ]
+      },
+      "say": "Use Grid for layouts that need both axes, like dashboards. Flexbox is better for single-row or single-column layouts."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "When should you pick Grid?",
+      "wrong": "For any layout, always use Grid.",
+      "right": "Use Grid when you need control over both rows and columns. For one direction, Flexbox is simpler.",
+      "say": "Don’t reach for Grid every time. Use it when you truly need two-dimensional control."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:30:32.736Z"
+}
