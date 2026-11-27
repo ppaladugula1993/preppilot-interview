@@ -1,0 +1,75 @@
+{
+  "id": "etl-elt-l5",
+  "title": "File Formats: CSV, JSON, Parquet & More",
+  "keys": [
+    "CSV",
+    "Parquet",
+    "Delta",
+    "Iceberg"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-formats-matter",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "Which file format should you use?",
+      "line2": "Does it really matter?",
+      "say": "Which file format should you use for your pipeline? Does it really matter? Let’s break it down."
+    },
+    {
+      "id": "1-chip-csv-json",
+      "type": "chip",
+      "kicker": "Simple Formats",
+      "label": "CSV/JSON",
+      "sub": "Text-based, easy to read, but slow for big data.",
+      "say": "CSV and JSON are text-based and easy to read, but they’re slow and inefficient for large-scale analytics."
+    },
+    {
+      "id": "2-compare-analytics",
+      "type": "compare",
+      "kicker": "Optimized Formats",
+      "left": {
+        "title": "Parquet/Avro",
+        "items": [
+          "Binary, columnar",
+          "Great for analytics"
+        ]
+      },
+      "right": {
+        "title": "Delta/Iceberg",
+        "items": [
+          "ACID transactions",
+          "Schema evolution",
+          "Time travel"
+        ]
+      },
+      "say": "Parquet and Avro are binary, columnar formats—perfect for analytics. Delta and Iceberg build on Parquet, adding ACID transactions, schema evolution, and even time travel."
+    },
+    {
+      "id": "3-terminal-spark-examp",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "Querying Parquet in Spark",
+      "lines": [
+        "$ spark.read.parquet('data/')",
+        "$ df.show()"
+      ],
+      "say": "For example, Spark reads Parquet files efficiently, making columnar queries super fast."
+    },
+    {
+      "id": "4-trap-csv-choice",
+      "type": "trap",
+      "question": "Should you use CSV for big data?",
+      "wrong": "Sure, it's simple and universal.",
+      "right": "No—use Parquet, Delta, or Iceberg for speed and features.",
+      "say": "Interview trap: Should you use CSV for big data? No—choose Parquet, Delta, or Iceberg for better speed and features."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:32:47.997Z"
+}
