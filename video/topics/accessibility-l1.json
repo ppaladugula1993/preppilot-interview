@@ -1,0 +1,73 @@
+{
+  "id": "accessibility-l1",
+  "title": "Semantic HTML vs ARIA: Accessibility First",
+  "keys": [
+    "semantic",
+    "ARIA",
+    "accessibility",
+    "HTML"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-semantic-vs-ari",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Semantic HTML or ARIA?",
+      "line2": "Which comes first?",
+      "say": "When building accessible sites, should you use semantic HTML or ARIA roles first?"
+    },
+    {
+      "id": "1-chip-semantic",
+      "type": "chip",
+      "kicker": "Semantic",
+      "label": "Native",
+      "sub": "Elements like nav, main, and button have built-in meaning.",
+      "say": "Semantic elements like nav, main, and button already tell browsers and assistive tech what they are."
+    },
+    {
+      "id": "2-compare-semantic-vs-",
+      "type": "compare",
+      "kicker": "Approach",
+      "left": {
+        "title": "Semantic HTML",
+        "items": [
+          "Built-in roles",
+          "Keyboard support",
+          "Out-of-the-box accessible"
+        ]
+      },
+      "right": {
+        "title": "ARIA",
+        "items": [
+          "Adds roles or properties",
+          "Needs extra handling",
+          "Use only if needed"
+        ]
+      },
+      "say": "Semantic HTML is accessible by default. ARIA adds roles or properties, but needs extra work and should only fill gaps."
+    },
+    {
+      "id": "3-code-button-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "html",
+      "code": "<button>Submit</button>\n<div role=\"button\" tabindex=\"0\">Submit</div>",
+      "say": "A real button is accessible out of the box. A div pretending to be a button needs ARIA and keyboard handling."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Should you use ARIA instead of semantic HTML?",
+      "wrong": "Yes, ARIA is more flexible.",
+      "right": "No, always use semantic HTML first. ARIA is for cases where HTML alone can't provide needed accessibility.",
+      "say": "Here's a common interview trap: Should you use ARIA instead of semantic HTML? The answer is no—always start with semantic elements, and only use ARIA when you can't get there with HTML alone."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:40:13.482Z"
+}
