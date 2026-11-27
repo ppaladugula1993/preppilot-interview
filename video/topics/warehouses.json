@@ -1,0 +1,85 @@
+{
+  "id": "warehouses",
+  "title": "Cloud Warehouses vs Lakehouses: One Key Idea",
+  "keys": [
+    "warehouse",
+    "lakehouse",
+    "storage",
+    "compute",
+    "cost"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-warehouse-lakeh",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · 45 sec",
+      "line1": "Why are modern data platforms so flexible?",
+      "line2": "What’s the secret?",
+      "say": "Why are cloud warehouses and lakehouses so flexible and cost-effective? What’s the secret behind their design?"
+    },
+    {
+      "id": "1-chip-separation",
+      "type": "chip",
+      "kicker": "Step 1 · Architecture",
+      "label": "Separation",
+      "sub": "Storage and compute are decoupled for scaling.",
+      "say": "The key is separation of storage and compute. Data sits in storage, while compute clusters process queries independently."
+    },
+    {
+      "id": "2-compare-snowflake-bi",
+      "type": "compare",
+      "kicker": "Step 2 · Platforms",
+      "left": {
+        "title": "Snowflake",
+        "items": [
+          "Virtual warehouses",
+          "Micro-partitions"
+        ]
+      },
+      "right": {
+        "title": "BigQuery",
+        "items": [
+          "Slots",
+          "Partitioning"
+        ]
+      },
+      "say": "Snowflake uses virtual warehouses for compute. BigQuery uses slots. Both let you scale up or down without touching your stored data."
+    },
+    {
+      "id": "3-rows-cost-control",
+      "type": "rows",
+      "kicker": "Step 3 · Cost Control",
+      "rows": [
+        {
+          "a": "Pause compute",
+          "b": "No storage cost change"
+        },
+        {
+          "a": "Resize clusters",
+          "b": "Match workload needs"
+        },
+        {
+          "a": "Optimize queries",
+          "b": "Reduce scanned data"
+        }
+      ],
+      "walk": true,
+      "say": "You can pause compute to save money, resize clusters for your workload, and optimize queries to reduce scanned data."
+    },
+    {
+      "id": "4-trap-storage-compute",
+      "type": "trap",
+      "question": "Does scaling storage affect compute?",
+      "wrong": "Yes, they scale together.",
+      "right": "No, storage and compute scale independently.",
+      "say": "Interview trap: Does scaling storage affect compute? No, storage and compute scale independently. That’s the big advantage."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:09:29.393Z"
+}
