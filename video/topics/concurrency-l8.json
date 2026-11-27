@@ -1,0 +1,81 @@
+{
+  "id": "concurrency-l8",
+  "title": "Producer-Consumer Problem Explained",
+  "keys": [
+    "producer",
+    "consumer",
+    "thread-safe",
+    "queue",
+    "synchronization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-producer-consum",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "How do threads share work safely?",
+      "line2": "What’s the producer-consumer problem?",
+      "say": "How do threads share work without messing up? Let's break down the producer-consumer problem."
+    },
+    {
+      "id": "1-chip-producer",
+      "type": "chip",
+      "kicker": "Roles",
+      "label": "Producer",
+      "sub": "Creates data and puts it in a queue.",
+      "say": "The producer creates data and adds it to a queue."
+    },
+    {
+      "id": "2-chip-consumer",
+      "type": "chip",
+      "kicker": "Roles",
+      "label": "Consumer",
+      "sub": "Takes data from the queue and processes it.",
+      "say": "The consumer takes data from the queue and processes it."
+    },
+    {
+      "id": "3-rows-sync-steps",
+      "type": "rows",
+      "kicker": "Synchronization",
+      "rows": [
+        {
+          "a": "Producer adds item",
+          "b": "Queue receives data"
+        },
+        {
+          "a": "Consumer removes item",
+          "b": "Queue provides data"
+        },
+        {
+          "a": "Thread-safe queue",
+          "b": "Prevents race conditions"
+        }
+      ],
+      "walk": true,
+      "say": "Both rely on a thread-safe queue. This prevents race conditions and keeps data flow smooth."
+    },
+    {
+      "id": "4-code-blockingqueue",
+      "type": "code",
+      "kicker": "Java Example",
+      "lang": "java",
+      "code": "BlockingQueue queue = new LinkedBlockingQueue();\nqueue.put(item); // Producer\nqueue.take();    // Consumer",
+      "say": "In Java, BlockingQueue lets producers and consumers safely add and take items."
+    },
+    {
+      "id": "5-trap-sync-mistake",
+      "type": "trap",
+      "question": "What’s a common mistake here?",
+      "wrong": "Using a regular list for the queue.",
+      "right": "Using a non-thread-safe queue causes race conditions and data loss.",
+      "say": "Don’t use a regular list for the queue. That leads to race conditions and lost data."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:03:38.001Z"
+}
