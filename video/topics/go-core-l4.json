@@ -1,0 +1,68 @@
+{
+  "id": "go-core-l4",
+  "title": "Go Error Handling & Wrapping",
+  "keys": [
+    "error",
+    "wrapping",
+    "fmt.Errorf",
+    "errors.Is"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-wrap-or-not",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "Should you wrap errors in Go?",
+      "line2": "How, and why?",
+      "say": "Should you wrap errors in Go? How do you do it, and why does it matter?"
+    },
+    {
+      "id": "1-chip-explicit",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Explicit",
+      "sub": "Go uses explicit error values, not exceptions.",
+      "say": "Go uses explicit error values, not exceptions. You check errors directly after each function call."
+    },
+    {
+      "id": "2-code-wrap",
+      "type": "code",
+      "kicker": "How to wrap",
+      "lang": "go",
+      "code": "if err := foo(); err != nil {\n  return fmt.Errorf(\"foo failed: %w\", err)\n}",
+      "say": "To wrap errors, use F M T dot Error F with percent w. This adds context and preserves the original error."
+    },
+    {
+      "id": "3-rows-checking",
+      "type": "rows",
+      "kicker": "Error checks",
+      "rows": [
+        {
+          "a": "errors.Is",
+          "b": "Checks if error matches a target"
+        },
+        {
+          "a": "errors.As",
+          "b": "Checks if error is a specific type"
+        }
+      ],
+      "walk": true,
+      "say": "Use errors dot Is to check for a specific error in the chain, and errors dot As to check for a specific error type."
+    },
+    {
+      "id": "4-trap-missed-wrap",
+      "type": "trap",
+      "question": "What happens if you forget %w?",
+      "wrong": "The error is always unwrapped.",
+      "right": "You lose the original error, breaking error checks.",
+      "say": "Here's a common trap: If you forget percent w when wrapping, you lose the original error. That breaks error checks later."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:36:49.618Z"
+}
