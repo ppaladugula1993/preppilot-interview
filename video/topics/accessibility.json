@@ -1,0 +1,99 @@
+{
+  "id": "accessibility",
+  "title": "The One Rule of Web Accessibility",
+  "keys": [
+    "WCAG",
+    "semantic",
+    "ARIA",
+    "keyboard",
+    "screen reader"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-wcag-core",
+      "type": "hook",
+      "kicker": "Web Accessibility · 45 seconds",
+      "line1": "What's the golden rule?",
+      "line2": "For accessible web apps?",
+      "say": "What is the single most important rule for building accessible web apps? Let’s break it down."
+    },
+    {
+      "id": "1-chip-pour",
+      "type": "chip",
+      "kicker": "WCAG",
+      "label": "POUR",
+      "sub": "Perceivable, Operable, Understandable, Robust",
+      "say": "Start with the basics: WCAG is built on four principles. Perceivable, operable, understandable, and robust. Think of them as your accessibility checklist."
+    },
+    {
+      "id": "2-compare-semantics-ar",
+      "type": "compare",
+      "kicker": "HTML vs ARIA",
+      "left": {
+        "title": "Semantic HTML",
+        "items": [
+          "nav",
+          "main",
+          "button"
+        ]
+      },
+      "right": {
+        "title": "ARIA",
+        "items": [
+          "role",
+          "aria-label",
+          "aria-live"
+        ]
+      },
+      "say": "Use semantic HTML first, like nav or button. Only reach for ARIA when native elements can’t do the job. ARIA is powerful, but it’s a backup, not a replacement."
+    },
+    {
+      "id": "3-rows-keyboard-focus",
+      "type": "rows",
+      "kicker": "Keyboard",
+      "rows": [
+        {
+          "a": "Tab",
+          "b": "Move focus forward"
+        },
+        {
+          "a": "Shift Tab",
+          "b": "Move focus back"
+        },
+        {
+          "a": "Enter/Space",
+          "b": "Activate buttons"
+        }
+      ],
+      "walk": true,
+      "say": "Next, test everything with just your keyboard. Tab moves you forward, shift tab goes back, and enter or space activates buttons. If you can’t use it without a mouse, it’s not accessible."
+    },
+    {
+      "id": "4-terminal-testing",
+      "type": "terminal",
+      "kicker": "Screen Reader",
+      "title": "Test with NVDA",
+      "lines": [
+        "$ nvda",
+        "Reading: Main navigation",
+        "Reading: Submit button"
+      ],
+      "say": "Finally, try a screen reader. Fire up NVDA or VoiceOver and listen. Does the order make sense? Are labels clear? That’s the real test."
+    },
+    {
+      "id": "5-trap-aria-overuse",
+      "type": "trap",
+      "question": "Should you use ARIA for all UI elements?",
+      "wrong": "Yes, ARIA is always better.",
+      "right": "No, use native HTML first. ARIA only fills gaps.",
+      "say": "Here’s a common trap: should you use ARIA everywhere? No. Native HTML is best. Only use ARIA when you have no other option."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:34:12.256Z"
+}
