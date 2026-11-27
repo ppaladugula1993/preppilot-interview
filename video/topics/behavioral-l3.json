@@ -1,0 +1,64 @@
+{
+  "id": "behavioral-l3",
+  "title": "Great Questions to Ask Interviewers",
+  "keys": [
+    "questions",
+    "interview",
+    "job",
+    "on-call"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ask-back",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "What should you ask them?",
+      "line2": "How do you stand out?",
+      "say": "Ever get to the end and they ask, any questions for us? What you ask next can set you apart."
+    },
+    {
+      "id": "1-chip-oncall",
+      "type": "chip",
+      "kicker": "Sample Q",
+      "label": "On-call",
+      "sub": "What does on-call look like, and how often does it page?",
+      "say": "Try asking about on-call. For example, what does on-call look like here, and how often does it actually page?"
+    },
+    {
+      "id": "2-rows-good-questions",
+      "type": "rows",
+      "kicker": "Strong Questions",
+      "rows": [
+        {
+          "a": "Automation",
+          "b": "How much is automated vs manual?"
+        },
+        {
+          "a": "Tech Challenges",
+          "b": "What's the biggest problem to solve?"
+        },
+        {
+          "a": "Change Approval",
+          "b": "How are changes approved?"
+        }
+      ],
+      "walk": false,
+      "say": "Other great options: ask how much is automated versus manual, what big technical problem they want solved this year, or how changes get approved."
+    },
+    {
+      "id": "3-trap-salary",
+      "type": "trap",
+      "question": "When should you ask about salary?",
+      "wrong": "Right after your questions",
+      "right": "Wait until you have an offer before asking about pay or benefits.",
+      "say": "Here's a trap: don't ask about salary or benefits now. Save those for after you get an offer."
+    },
+    {
+      "id": "4-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:17:47.127Z"
+}
