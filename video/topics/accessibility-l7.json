@@ -1,0 +1,76 @@
+{
+  "id": "accessibility-l7",
+  "title": "ARIA Roles: When and How to Use Them",
+  "keys": [
+    "ARIA",
+    "roles",
+    "attributes",
+    "accessibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-aria-roles",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "When should you use ARIA roles?",
+      "line2": "Do you know the rules?",
+      "say": "Ever wondered when to use ARIA roles and attributes? Let's clear up how they help accessibility—and when to avoid them."
+    },
+    {
+      "id": "1-chip-native-html",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "Native",
+      "sub": "Use semantic HTML first, like buttons or alerts.",
+      "say": "Start with native HTML elements. They already give browsers and screen readers the info they need."
+    },
+    {
+      "id": "2-rows-aria-uses",
+      "type": "rows",
+      "kicker": "ARIA Roles & Attributes",
+      "rows": [
+        {
+          "a": "role",
+          "b": "Defines purpose, like dialog"
+        },
+        {
+          "a": "aria-label",
+          "b": "Gives a custom label"
+        },
+        {
+          "a": "aria-checked",
+          "b": "Shows state, like checked"
+        },
+        {
+          "a": "aria-live",
+          "b": "Announces dynamic updates"
+        }
+      ],
+      "walk": true,
+      "say": "ARIA roles define the purpose of custom widgets. Attributes like label, checked, and live give extra context to screen readers."
+    },
+    {
+      "id": "3-code-custom-alert",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "html",
+      "code": "<div role=\"alert\" aria-live=\"assertive\">\nError occurred\n</div>",
+      "say": "Here's a custom alert. ARIA tells assistive tech this is urgent, so users hear the error right away."
+    },
+    {
+      "id": "4-trap-native-vs-aria",
+      "type": "trap",
+      "question": "Should you use ARIA on a button?",
+      "wrong": "Yes, always add ARIA roles.",
+      "right": "No, native buttons are accessible by default. Use ARIA only when native HTML can't do the job.",
+      "say": "Interviewers want to see you know: don't add ARIA to native elements like buttons. Only use ARIA when HTML doesn't cover accessibility."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:55:30.369Z"
+}
