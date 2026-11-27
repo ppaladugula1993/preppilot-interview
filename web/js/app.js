@@ -2543,6 +2543,7 @@ function render() {
   // Native app: keep the icon badge and the daily reminder in step with the plan.
   if (native() && key === 'home' && profile()) syncNativeHome();
   if (key === 'chat' && profile()) loadFresh();
+  document.body.classList.toggle('watch-mode', key === 'watch');
   if (key === 'watch') bindWatch(); else document.querySelectorAll('video').forEach(x => x.pause());
   if ((key === 'home' || key === 'learn') && !S.videos) loadVideos();
   if (key === 'landing' && !S.demo) loadDemo();

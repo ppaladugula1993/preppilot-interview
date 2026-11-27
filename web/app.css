@@ -1470,3 +1470,15 @@ button.news-tile:hover { border-color: var(--accent); }
 .w-thumb span { position: absolute; left: 0; right: 0; bottom: 0; padding: 8px; font-size: 12px; font-weight: 700; color: #fff; text-align: left; background: linear-gradient(transparent, #000c); display: flex; gap: 4px; align-items: flex-start; }
 .w-thumb span svg { width: 14px; height: 14px; flex: none; margin-top: 1px; }
 .w-cta { align-self: flex-start; }
+
+/* Watch is immersive: the whole screen takes the videos' palette (#0A0A0F, white, yellow #FFE500). */
+body.watch-mode {
+  --desk: #0A0A0F; --paper: #14141c; --sunk: #1c1c26; --ink: #ffffff; --ink-soft: #e4e4ea; --muted: #9b9ba8;
+  --line: #262632; --line-strong: #363644; --accent: #FFE500; --accent-soft: #2e2a0a; --warn: #ff7b72; --warn-soft: #2a1414;
+  --btn: #FFE500; --btn-ink: #0A0A0F; --code-bg: #1c1c26; --shadow: none;
+  background: #0A0A0F; color: #fff;
+}
+body.watch-mode .watch .w-frame { border-radius: 0; max-width: 460px; }
+body.watch-mode .card.stacked::before, body.watch-mode .card.stacked::after { display: none; }
+body.watch-mode .w-meta b { font-weight: 900; text-transform: uppercase; letter-spacing: .01em; }
+body.watch-mode .btn:not(.primary) { background: transparent; color: #fff; border-color: #363644; }
