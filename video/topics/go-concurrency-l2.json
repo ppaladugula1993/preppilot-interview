@@ -1,0 +1,73 @@
+{
+  "id": "go-concurrency-l2",
+  "title": "Go Concurrency: Select & Worker Patterns",
+  "keys": [
+    "select",
+    "timeout",
+    "fan-in",
+    "fan-out",
+    "worker pool"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-select-power",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How do you handle multiple channels?",
+      "line2": "What about timeouts?",
+      "say": "Go makes concurrency easy, but how do you wait on many channels at once, or add a timeout?"
+    },
+    {
+      "id": "1-chip-select",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Select",
+      "sub": "Waits on multiple channels, picks one that's ready.",
+      "say": "The select statement lets you wait for multiple channel operations and picks whichever is ready first."
+    },
+    {
+      "id": "2-code-timeout",
+      "type": "code",
+      "kicker": "Timeout Example",
+      "lang": "go",
+      "code": "select {\ncase v := <-ch1:\n  fmt.Println(v)\ncase <-time.After(time.Second):\n  fmt.Println(\"timeout\")\n}",
+      "say": "Combine select with time dot After to add a timeout. If nothing arrives in time, your code moves on."
+    },
+    {
+      "id": "3-rows-fan-patterns",
+      "type": "rows",
+      "kicker": "Patterns",
+      "rows": [
+        {
+          "a": "Fan-in",
+          "b": "Merge many channels into one"
+        },
+        {
+          "a": "Fan-out",
+          "b": "Split work across goroutines"
+        },
+        {
+          "a": "Worker Pool",
+          "b": "Group of goroutines sharing jobs"
+        }
+      ],
+      "walk": true,
+      "say": "Fan-in merges channels. Fan-out splits work. Worker pools use fan-out to process jobs in parallel."
+    },
+    {
+      "id": "4-trap-leak",
+      "type": "trap",
+      "question": "How do you prevent goroutine leaks?",
+      "wrong": "Just let workers finish naturally.",
+      "right": "Close the job channel or use context to signal workers to exit cleanly.",
+      "say": "Interview trap: letting workers just finish isn't enough. Always close the job channel or use context cancellation to avoid leaks."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:49:30.538Z"
+}
