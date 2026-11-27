@@ -1,0 +1,76 @@
+{
+  "id": "testing-l7",
+  "title": "Contract Testing for Services Explained",
+  "keys": [
+    "contract testing",
+    "Pact",
+    "microservices",
+    "integration"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-contract-testin",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "How do you prevent",
+      "line2": "service mismatches?",
+      "say": "How do you make sure your services always speak the same language and avoid nasty integration bugs?"
+    },
+    {
+      "id": "1-chip-contract-basics",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Contract",
+      "sub": "An agreement on how services interact",
+      "say": "A contract is just an agreement on how two services talk to each other. It defines what requests and responses look like."
+    },
+    {
+      "id": "2-rows-contract-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Consumer writes contract",
+          "b": "Defines expected API calls"
+        },
+        {
+          "a": "Provider tests contract",
+          "b": "Checks real API matches"
+        },
+        {
+          "a": "Automate with Pact",
+          "b": "Runs tests for both sides"
+        }
+      ],
+      "walk": true,
+      "say": "First, the consumer writes a contract describing what it expects. The provider then tests its real API against that contract. Tools like Pact automate this for you."
+    },
+    {
+      "id": "3-terminal-pact-exampl",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Pact test run",
+      "lines": [
+        "$ pact test",
+        "GET /user returns {id, name}",
+        "Provider verified contract"
+      ],
+      "say": "Here's a Pact test in action. It checks that GET user returns the right fields, and the provider confirms the contract matches its implementation."
+    },
+    {
+      "id": "4-trap-contract-testin",
+      "type": "trap",
+      "question": "Does contract testing replace integration tests?",
+      "wrong": "Yes, they're the same thing.",
+      "right": "No. Contract tests check interfaces; integration tests check real interactions.",
+      "say": "Don't fall for this: contract tests don't replace integration tests. Contracts check the interface, but integration tests check real-world interactions."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:00:05.346Z"
+}
