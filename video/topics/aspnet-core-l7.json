@@ -1,0 +1,77 @@
+{
+  "id": "aspnet-core-l7",
+  "title": "ASP.NET Core Hosting: Kestrel, Proxies, Containers",
+  "keys": [
+    "Kestrel",
+    "Reverse Proxy",
+    "Docker",
+    "ForwardedHeaders"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-hosting-choices",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "How does your app reach users?",
+      "line2": "What powers hosting?",
+      "say": "Ever wonder how your ASP.NET Core app actually gets served to real users? Let’s break down the hosting stack."
+    },
+    {
+      "id": "1-chip-kestrel",
+      "type": "chip",
+      "kicker": "Web Server",
+      "label": "Kestrel",
+      "sub": "Cross-platform, fast, and built-in for ASP.NET Core.",
+      "say": "First up, Kestrel is the default web server. It’s cross-platform and super fast, perfect for development and production."
+    },
+    {
+      "id": "2-compare-proxy",
+      "type": "compare",
+      "kicker": "Production Setup",
+      "left": {
+        "title": "Kestrel Only",
+        "items": [
+          "Simple",
+          "Direct traffic",
+          "Limited security"
+        ]
+      },
+      "right": {
+        "title": "With Reverse Proxy",
+        "items": [
+          "SSL termination",
+          "Load balancing",
+          "Better security"
+        ]
+      },
+      "say": "But in production, apps usually sit behind a reverse proxy like Nginx or IIS. This handles SSL, load balancing, and security for you."
+    },
+    {
+      "id": "3-terminal-docker",
+      "type": "terminal",
+      "kicker": "Containerization",
+      "title": "Docker Deployment",
+      "lines": [
+        "$ dotnet publish -c Release",
+        "$ docker build -t myapp .",
+        "$ docker run myapp"
+      ],
+      "say": "Containerizing with Docker makes deployments repeatable and scalable. Just publish, build, and run your app in a container."
+    },
+    {
+      "id": "4-trap-forwarded-heade",
+      "type": "trap",
+      "question": "Why configure forwarded headers?",
+      "wrong": "It’s only for logging.",
+      "right": "It tells your app the original client IP and protocol, crucial for logging, authentication, and generating correct URLs.",
+      "say": "Here’s a common interview trap: why bother with forwarded headers behind a proxy? It’s not just for logs—it’s vital for security and correct behavior."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:12:57.183Z"
+}
