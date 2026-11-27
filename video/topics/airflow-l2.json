@@ -1,0 +1,80 @@
+{
+  "id": "airflow-l2",
+  "title": "Retries, SLAs & Alerts in Airflow",
+  "keys": [
+    "retries",
+    "SLA",
+    "alerting",
+    "failure"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-retry-sla-alert",
+      "type": "hook",
+      "kicker": "Orchestration (Airflow) · lesson",
+      "line1": "What if your task fails at 2 a.m.?",
+      "line2": "How does Airflow handle it?",
+      "say": "What happens when your Airflow task fails in the middle of the night? Can you trust it to recover or alert you in time?"
+    },
+    {
+      "id": "1-chip-retries",
+      "type": "chip",
+      "kicker": "Airflow Basics",
+      "label": "Retries",
+      "sub": "Automatically reruns failed tasks. Set count and delay.",
+      "say": "Airflow retries let your task rerun automatically if it fails. You control how many times and how long to wait between tries."
+    },
+    {
+      "id": "2-chip-sla",
+      "type": "chip",
+      "kicker": "Timeliness",
+      "label": "SLA",
+      "sub": "Set deadlines for tasks. Get alerts if breached.",
+      "say": "Service Level Agreements, or SLAs, define how long a task should take. If it runs late, Airflow can alert you."
+    },
+    {
+      "id": "3-rows-alerting",
+      "type": "rows",
+      "kicker": "Alerting Options",
+      "rows": [
+        {
+          "a": "Email",
+          "b": "Send on failure or SLA miss"
+        },
+        {
+          "a": "Slack",
+          "b": "Instant team notifications"
+        },
+        {
+          "a": "Callback",
+          "b": "Custom alert logic"
+        }
+      ],
+      "walk": false,
+      "say": "For alerting, Airflow supports email, Slack, or even custom callbacks. You’ll know right away if something’s wrong."
+    },
+    {
+      "id": "4-code-retries-sla",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "PythonOperator(\n  task_id='t',\n  retries=3,\n  retry_delay=timedelta(minutes=5),\n  sla=timedelta(hours=1)\n)",
+      "say": "Here’s how you set three retries, a five minute delay, and a one hour SLA on a task."
+    },
+    {
+      "id": "5-trap-common-mistake",
+      "type": "trap",
+      "question": "Does Airflow alert on every retry?",
+      "wrong": "Yes, every retry triggers an alert.",
+      "right": "No, alerts fire on final failure or SLA miss, not every retry.",
+      "say": "Watch out: Airflow only alerts you when a task finally fails or misses its SLA, not on every retry."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:05:34.234Z"
+}
