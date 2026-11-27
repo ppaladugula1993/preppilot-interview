@@ -1,0 +1,72 @@
+{
+  "id": "concurrency-l4",
+  "title": "Atomic Ops & Memory Visibility, Fast",
+  "keys": [
+    "atomic",
+    "memory visibility",
+    "synchronization",
+    "thread safety"
+  ],
+  "scenes": [
+    {
+      "id": "0-atomic-memory-hook",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "What makes an operation atomic?",
+      "line2": "And why should you care?",
+      "say": "What makes an operation atomic, and why does it matter for thread safety?"
+    },
+    {
+      "id": "1-atomic-chip",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Atomic",
+      "sub": "Atomic means one thread can't interrupt another mid-update.",
+      "say": "Atomic means a thread can't interrupt another in the middle of an update. It's all or nothing."
+    },
+    {
+      "id": "2-memory-rows",
+      "type": "rows",
+      "kicker": "Visibility Steps",
+      "rows": [
+        {
+          "a": "Thread A updates",
+          "b": "Changes shared variable"
+        },
+        {
+          "a": "Thread B reads",
+          "b": "Might see old value"
+        },
+        {
+          "a": "Sync needed",
+          "b": "Ensures B sees fresh value"
+        }
+      ],
+      "walk": true,
+      "say": "When one thread updates a shared variable, another might still see the old value. Synchronization makes sure everyone sees the latest change."
+    },
+    {
+      "id": "3-java-code",
+      "type": "code",
+      "kicker": "Java Example",
+      "lang": "java",
+      "code": "AtomicInteger count = new AtomicInteger();\ncount.incrementAndGet();\n// atomic and visible",
+      "say": "In Java, using Atomic Integer's increment method is both atomic and guarantees memory visibility."
+    },
+    {
+      "id": "4-atomic-trap",
+      "type": "trap",
+      "question": "Is volatile enough for thread safety?",
+      "wrong": "Yes, it prevents all races.",
+      "right": "No. Volatile ensures visibility, but not atomicity for compound actions.",
+      "say": "Here's a trap: Is volatile enough for thread safety? Nope. It only ensures visibility, not atomicity for multi-step updates."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:07:37.906Z"
+}
