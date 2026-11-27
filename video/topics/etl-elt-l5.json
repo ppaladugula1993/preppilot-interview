@@ -1,0 +1,73 @@
+{
+  "id": "etl-elt-l5",
+  "title": "Choosing File Formats in ETL Pipelines",
+  "keys": [
+    "CSV",
+    "Parquet",
+    "Delta",
+    "Iceberg"
+  ],
+  "scenes": [
+    {
+      "id": "0-format-hook",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "Why do file formats matter?",
+      "line2": "Which one should you pick?",
+      "say": "Ever wonder why there are so many data file formats? Which one should you actually use in your ETL pipeline?"
+    },
+    {
+      "id": "1-simple-chip",
+      "type": "chip",
+      "kicker": "Basics",
+      "label": "CSV/JSON",
+      "sub": "Text-based, easy to use, but slow for big data.",
+      "say": "CSV and JSON are simple and human-readable. Great for small jobs, but they slow down fast with large data."
+    },
+    {
+      "id": "2-compare-parquet",
+      "type": "compare",
+      "kicker": "Analytics",
+      "left": {
+        "title": "Parquet/Avro",
+        "items": [
+          "Binary, columnar",
+          "Fast queries",
+          "Efficient storage"
+        ]
+      },
+      "right": {
+        "title": "CSV/JSON",
+        "items": [
+          "Text-based",
+          "Slower scans",
+          "Larger files"
+        ]
+      },
+      "say": "For analytics, Parquet and Avro shine. They're binary and columnar, so queries and storage are much more efficient than CSV or JSON."
+    },
+    {
+      "id": "3-delta-chip",
+      "type": "chip",
+      "kicker": "Advanced",
+      "label": "Delta/Iceberg",
+      "sub": "Add ACID transactions and schema evolution.",
+      "say": "Delta and Iceberg take Parquet further. They add ACID transactions and handle schema changes, perfect for production data lakes."
+    },
+    {
+      "id": "4-trap-format",
+      "type": "trap",
+      "question": "Is CSV best for big analytics jobs?",
+      "wrong": "Yes, it's simple and universal.",
+      "right": "Nope! Parquet or Delta are much better for speed and features.",
+      "say": "Don't fall for this one. CSV is simple, but for big analytics, Parquet or Delta are way more efficient."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:42:21.447Z"
+}
