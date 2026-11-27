@@ -1,0 +1,72 @@
+{
+  "id": "html-css-l5",
+  "title": "CSS Specificity & the Cascade",
+  "keys": [
+    "specificity",
+    "cascade",
+    "selectors",
+    "override"
+  ],
+  "scenes": [
+    {
+      "id": "0-css-power-struggle",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "Which CSS rule wins?",
+      "line2": "Why does it matter?",
+      "say": "When two CSS rules target the same element, which one takes control? Let’s break down why this matters for your code."
+    },
+    {
+      "id": "1-specificity-chips",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Specificity",
+      "sub": "More specific selectors override less specific ones.",
+      "say": "Specificity means that more targeted selectors override less specific ones. It’s like a ranking system for your CSS."
+    },
+    {
+      "id": "2-cascade-rows",
+      "type": "rows",
+      "kicker": "How the Cascade Works",
+      "rows": [
+        {
+          "a": "1. Specificity",
+          "b": "Selector types get ranked"
+        },
+        {
+          "a": "2. Importance",
+          "b": "`!important` can override all"
+        },
+        {
+          "a": "3. Source Order",
+          "b": "Last rule wins if tied"
+        }
+      ],
+      "walk": true,
+      "say": "The cascade decides which rule applies by checking specificity, then importance, and finally, which rule comes last in your code."
+    },
+    {
+      "id": "3-specificity-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "css",
+      "code": "p {\n  color: blue;\n}\nbody p.special {\n  color: red;\n}",
+      "say": "Here, a plain paragraph gets blue text. But if it also has the class special, and is inside the body, it turns red. That’s specificity in action."
+    },
+    {
+      "id": "4-trap-question",
+      "type": "trap",
+      "question": "How do you fix a style override bug?",
+      "wrong": "Add !important everywhere.",
+      "right": "Refactor selectors to reduce specificity and avoid !important where possible.",
+      "say": "In interviews, don’t say you’d just use exclamation important everywhere. Instead, explain how you’d refactor selectors to avoid specificity wars."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:06:47.701Z"
+}
