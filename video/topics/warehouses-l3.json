@@ -1,0 +1,69 @@
+{
+  "id": "warehouses-l3",
+  "title": "BigQuery: Slots, Partitioning & Pricing",
+  "keys": [
+    "BigQuery",
+    "slots",
+    "partitioning",
+    "clustering",
+    "pricing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bq-performance",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "How does BigQuery stay fast and cheap?",
+      "line2": "What should you always set?",
+      "say": "How does BigQuery keep queries fast without breaking the bank? And what settings should you always use?"
+    },
+    {
+      "id": "1-chip-slots",
+      "type": "chip",
+      "kicker": "Compute",
+      "label": "Slots",
+      "sub": "Slots are BigQuery's units of compute power.",
+      "say": "First, slots are BigQuery's units of compute. You can pay as you go, or reserve slots for steady workloads."
+    },
+    {
+      "id": "2-rows-partition-clust",
+      "type": "rows",
+      "kicker": "Table Design",
+      "rows": [
+        {
+          "a": "Partitioning",
+          "b": "Splits tables by date or integer"
+        },
+        {
+          "a": "Clustering",
+          "b": "Organizes by columns for fast filters"
+        }
+      ],
+      "walk": true,
+      "say": "Next, partition tables by date or integer to scan less data. Add clustering by columns you filter on—this speeds up queries even more."
+    },
+    {
+      "id": "3-chip-pricing",
+      "type": "chip",
+      "kicker": "Cost",
+      "label": "Pricing",
+      "sub": "Pay per byte scanned, or reserve slots.",
+      "say": "Pricing is simple: pay per byte scanned, or reserve slots for a flat monthly fee. Partitioning and clustering help cut costs."
+    },
+    {
+      "id": "4-trap-optimize",
+      "type": "trap",
+      "question": "How do you lower BigQuery costs?",
+      "wrong": "Just use fewer queries.",
+      "right": "Partition and cluster tables to scan less data.",
+      "say": "Interview trap: Lowering costs isn't just about running fewer queries. Partitioning and clustering are the real cost savers."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:14:24.954Z"
+}
