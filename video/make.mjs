@@ -143,6 +143,8 @@ ${cards}`;
 }
 const valid = s => Array.isArray(s?.scenes) && s.scenes.length >= (lesson ? 4 : 5) && s.scenes[0].type === 'hook' && s.scenes.at(-1).type === 'end' && s.scenes.every(x => x.id && x.say);
 let script = !force && existsSync(scriptFile) ? JSON.parse(readFileSync(scriptFile, 'utf8')) : null;
+if (script && !script.scenes?.every(x => x.say)) script = null; // old hand-made format
+const freshScript = !script;
 if (!script) {
   let fb = '';
   for (let k = 0; k < 4 && !script; k++) {
@@ -163,7 +165,7 @@ if (!script) {
 
 // ---------- 2. voice ----------
 const run = (cmd, args, opts = {}) => execFileSync(cmd, args, { cwd: here, stdio: ['ignore', 'pipe', 'pipe'], ...opts }).toString();
-if (force || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
+if (force || freshScript || !existsSync(resolve(here, 'public', `${id}.timing.json`))) {
   const tts = JSON.parse(readFileSync(scriptFile, 'utf8'));
   writeFileSync(resolve(here, `.tts-${id}.json`), JSON.stringify({ id, rate: BRAIN ? '+0%' : VSTYLE === 'topic' ? '+6%' : '+14%', voice: tts.voice || 'en-US-AndrewMultilingualNeural', scenes: tts.scenes.map(s => ({ id: s.id, text: s.say })) }));
   log(run('node', ['tts.mjs', `.tts-${id}.json`]).trim());
