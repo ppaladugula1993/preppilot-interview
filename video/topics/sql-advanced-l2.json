@@ -1,0 +1,76 @@
+{
+  "id": "sql-advanced-l2",
+  "title": "Mastering Recursive CTEs in SQL",
+  "keys": [
+    "recursive CTE",
+    "hierarchy",
+    "anchor",
+    "UNION ALL"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-recursive-cte",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you query hierarchies?",
+      "line2": "Ever used a recursive CTE?",
+      "say": "How would you pull every employee under a manager in just one query? Ever tried a recursive CTE?"
+    },
+    {
+      "id": "1-chip-cte-basics",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "CTE",
+      "sub": "A CTE can reference itself to solve recursive tasks.",
+      "say": "A recursive CTE is a special query that refers to its own results. It's your tool for handling hierarchies in SQL."
+    },
+    {
+      "id": "2-rows-cte-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Anchor",
+          "b": "Selects the top-level rows"
+        },
+        {
+          "a": "Recursive",
+          "b": "Joins back to the CTE output"
+        },
+        {
+          "a": "UNION ALL",
+          "b": "Combines anchor and recursive"
+        },
+        {
+          "a": "Repeat",
+          "b": "Runs until no new rows"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works: First, you grab the top-level rows. Next, you join back to the CTE's own results. UNION ALL combines them, and the process repeats until done."
+    },
+    {
+      "id": "3-code-org-chart",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "WITH RECURSIVE org_chart AS (\n  SELECT id, manager_id, name\n  FROM employees\n  WHERE manager_id IS NULL\n  UNION ALL\n  SELECT e.id, e.manager_id, e.name\n  FROM employees e\n  JOIN org_chart o ON e.manager_id = o.id\n)\nSELECT * FROM org_chart;",
+      "say": "For example, this query finds every employee under each manager, no matter how deep the org chart goes."
+    },
+    {
+      "id": "4-trap-depth-limit",
+      "type": "trap",
+      "question": "Can recursive CTEs handle any depth?",
+      "wrong": "Yes, they're unlimited.",
+      "right": "No, most databases set a recursion limit, often 100 levels.",
+      "say": "Watch out—recursive CTEs aren't truly unlimited. Most databases stop recursion after about a hundred levels, so super deep hierarchies might need another approach."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:39:54.903Z"
+}
