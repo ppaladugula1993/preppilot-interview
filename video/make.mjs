@@ -148,18 +148,18 @@ const H = hash(id), STYLE = `${ART[H % ART.length]}, exaggerated fun expressions
 {
   const sf = JSON.parse(readFileSync(scriptFile, 'utf8')); let changed = false;
   const jobs = sf.scenes.filter(x => x.type !== 'end' && (x.img || x.prompt));
-  await Promise.all(jobs.map(async sc => {
+  for (const sc of jobs) {
     const name = `${id}-${sc.id}.jpg`, file = resolve(here, 'public', name);
-    for (let a = 0; a < 3 && !existsSync(file); a++) {
+    for (let a = 0; a < 6 && !existsSync(file); a++) {
       const r = await fetch(`${ENDPOINT}/openai/deployments/${process.env.IMAGE_DEPLOYMENT || 'gpt-image-1-mini'}/images/generations?api-version=2025-04-01-preview`, { method: 'POST', headers: { 'content-type': 'application/json', 'api-key': KEY },
         body: JSON.stringify({ prompt: `${sc.img || sc.prompt}. ${STYLE}`, size: '1024x1024', quality: 'low', n: 1 }), signal: AbortSignal.timeout(180000) });
-      if (!r.ok) { log(`image retry ${r.status}`); await new Promise(x => setTimeout(x, 8000 * (a + 1))); continue; }
+      if (!r.ok) { log(`image retry ${r.status}`); await new Promise(x => setTimeout(x, 12000 * (a + 1))); continue; }
       const png = resolve(here, 'public', `${id}-${sc.id}.png`);
       writeFileSync(png, Buffer.from((await r.json()).data[0].b64_json, 'base64'));
       run('ffmpeg', ['-loglevel', 'error', '-y', '-i', png, '-q:v', '3', file]);
     }
     if (existsSync(file)) { sc.image = name; changed = true; }
-  }));
+  }
   if (changed) writeFileSync(scriptFile, JSON.stringify(sf, null, 2));
   log(`pictures: ${sf.scenes.filter(x => x.image).length}`);
 }
