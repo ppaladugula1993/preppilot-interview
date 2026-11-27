@@ -1,0 +1,83 @@
+{
+  "id": "spark-l7",
+  "title": "Structured Streaming in Apache Spark",
+  "keys": [
+    "Structured Streaming",
+    "DataFrame",
+    "event-time",
+    "checkpointing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-what-streaming",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "How does Spark handle real-time data?",
+      "line2": "Streaming or batch?",
+      "say": "How does Spark handle data that never stops coming in? Is it streaming, batch, or both?"
+    },
+    {
+      "id": "1-chip-unbounded-table",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Streams",
+      "sub": "Structured Streaming treats streams as unbounded tables.",
+      "say": "With Structured Streaming, Spark treats a stream like an endless table. Data keeps arriving, and Spark keeps processing."
+    },
+    {
+      "id": "2-rows-key-features",
+      "type": "rows",
+      "kicker": "Key Features",
+      "rows": [
+        {
+          "a": "DataFrame API",
+          "b": "Build streaming pipelines easily"
+        },
+        {
+          "a": "Event-time",
+          "b": "Process data by actual event time"
+        },
+        {
+          "a": "Stateful ops",
+          "b": "Track running counts or windows"
+        }
+      ],
+      "walk": true,
+      "say": "You get the familiar DataFrame API, event-time processing for accuracy, and stateful operations like running counts or windowed aggregations."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Read from Kafka, write to sink",
+      "lines": [
+        "$ spark.readStream.format('kafka').load()",
+        "$ df.writeStream.format('console').start()"
+      ],
+      "say": "For example, you can read from Kafka and write results to a sink, all in real time."
+    },
+    {
+      "id": "4-chip-reliability",
+      "type": "chip",
+      "kicker": "Reliability",
+      "label": "Exactly-once",
+      "sub": "Use watermarking and checkpointing for safety.",
+      "say": "To make sure you never lose or double process data, use watermarking for late events and checkpointing for recovery."
+    },
+    {
+      "id": "5-trap-batch-vs-stream",
+      "type": "trap",
+      "question": "Is Structured Streaming just batch in disguise?",
+      "wrong": "Yes, it just runs batches on streams.",
+      "right": "No, it processes unbounded data, supports event-time, and does stateful ops.",
+      "say": "Careful—Structured Streaming isn't just batch jobs on a loop. It handles unbounded data, tracks event time, and manages state for real-time needs."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:01:41.352Z"
+}
