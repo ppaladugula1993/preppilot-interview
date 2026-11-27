@@ -1,0 +1,75 @@
+{
+  "id": "spark-l5",
+  "title": "Spark Caching & Persistence: Memory vs Speed",
+  "keys": [
+    "cache",
+    "persist",
+    "memory",
+    "disk",
+    "DataFrame"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-caching",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Why cache your DataFrame?",
+      "line2": "Is it always worth it?",
+      "say": "Ever wondered if caching your DataFrame in Spark really speeds things up, or just eats memory? Let's break it down."
+    },
+    {
+      "id": "1-chip-cache",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Cache",
+      "sub": "Stores DataFrame in memory to skip recomputation",
+      "say": "Caching puts your DataFrame in memory, so Spark doesn't have to recalculate it every time you use it."
+    },
+    {
+      "id": "2-compare-cache-persis",
+      "type": "compare",
+      "kicker": "Options",
+      "left": {
+        "title": "Cache",
+        "items": [
+          "In-memory",
+          "Fast reuse"
+        ]
+      },
+      "right": {
+        "title": "Persist",
+        "items": [
+          "Disk or memory",
+          "Flexible storage"
+        ]
+      },
+      "say": "Cache is fast but uses memory. Persist lets you choose disk or memory, which is handy if you need to save RAM."
+    },
+    {
+      "id": "3-terminal-commands",
+      "type": "terminal",
+      "kicker": "Hands-on",
+      "title": "Cache vs Persist",
+      "lines": [
+        "$ df.cache()",
+        "$ df.persist(StorageLevel.DISK_ONLY)"
+      ],
+      "say": "Use cache for quick memory storage. Use persist with disk only if you want to save memory and don't mind slower access."
+    },
+    {
+      "id": "4-trap-overcache",
+      "type": "trap",
+      "question": "Should you cache every DataFrame?",
+      "wrong": "Yes, it's always faster.",
+      "right": "No, only cache reused DataFrames and monitor memory to avoid spills.",
+      "say": "Here's a classic interview trap: caching everything wastes memory. Only cache DataFrames you reuse, and keep an eye on your memory usage."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:57:28.736Z"
+}
