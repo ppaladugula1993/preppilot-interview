@@ -1,0 +1,79 @@
+{
+  "id": "state-management-l0",
+  "title": "Local vs Shared vs Server State",
+  "keys": [
+    "local state",
+    "shared state",
+    "server state",
+    "React"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-state-types",
+      "type": "hook",
+      "kicker": "Frontend State Management · lesson",
+      "line1": "Which state goes where?",
+      "line2": "Can you always tell?",
+      "say": "Which state goes where in your frontend? Can you always tell the difference?"
+    },
+    {
+      "id": "1-chip-local",
+      "type": "chip",
+      "kicker": "Local",
+      "label": "Local",
+      "sub": "Data inside one component, like a form input.",
+      "say": "Local state is data managed inside a single component. Think form inputs or toggles."
+    },
+    {
+      "id": "2-chip-shared",
+      "type": "chip",
+      "kicker": "Shared",
+      "label": "Shared",
+      "sub": "Needed by many components, e.g. user info.",
+      "say": "Shared state, also called global state, is needed by multiple components. For example, user authentication or theme."
+    },
+    {
+      "id": "3-chip-server",
+      "type": "chip",
+      "kicker": "Server",
+      "label": "Server",
+      "sub": "Fetched from backend, like API data.",
+      "say": "Server state is data fetched from your backend. It needs to stay in sync with the server, like API responses."
+    },
+    {
+      "id": "4-compare-examples",
+      "type": "compare",
+      "kicker": "Examples",
+      "left": {
+        "title": "Local",
+        "items": [
+          "useState for input",
+          "Component toggles"
+        ]
+      },
+      "right": {
+        "title": "Shared & Server",
+        "items": [
+          "Redux for user info",
+          "useQuery for todos"
+        ]
+      },
+      "say": "For local state, use React's useState. Shared state? Use Redux or Context. Server state? Tools like React Query handle fetching and caching."
+    },
+    {
+      "id": "5-trap-misclassify",
+      "type": "trap",
+      "question": "Is API data local or server state?",
+      "wrong": "It's local if used in one component.",
+      "right": "It's always server state—fetched and synced with backend.",
+      "say": "Here's a common trap: Is API data local or server state? It's always server state, even if one component uses it."
+    },
+    {
+      "id": "6-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:37:37.136Z"
+}
