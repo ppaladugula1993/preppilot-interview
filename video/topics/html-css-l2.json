@@ -1,0 +1,73 @@
+{
+  "id": "html-css-l2",
+  "title": "Master Display & Positioning in CSS",
+  "keys": [
+    "display",
+    "position",
+    "block",
+    "absolute",
+    "flex"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-display-positio",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "How do layouts really work?",
+      "line2": "What controls element placement?",
+      "say": "Ever wondered how websites control where things appear? Let’s break down display and positioning in CSS."
+    },
+    {
+      "id": "1-chip-display",
+      "type": "chip",
+      "kicker": "Display",
+      "label": "Block",
+      "sub": "Block elements start on a new line and stretch across the container.",
+      "say": "The display property sets layout style. Block elements start new lines and fill the container."
+    },
+    {
+      "id": "2-compare-position-typ",
+      "type": "compare",
+      "kicker": "Position",
+      "left": {
+        "title": "Flow",
+        "items": [
+          "static",
+          "relative"
+        ]
+      },
+      "right": {
+        "title": "Independent",
+        "items": [
+          "absolute",
+          "fixed",
+          "sticky"
+        ]
+      },
+      "say": "Positioning controls placement. Static and relative follow the flow. Absolute, fixed, and sticky break free for custom placement."
+    },
+    {
+      "id": "3-code-flex-example",
+      "type": "code",
+      "kicker": "Flex Layout",
+      "lang": "css",
+      "code": ".container {\n  display: flex;\n}\n.item {\n  flex: 1;\n}",
+      "say": "Display flex turns a container into a flexbox. Its children align and space easily."
+    },
+    {
+      "id": "4-trap-position-flow",
+      "type": "trap",
+      "question": "Does absolute keep elements in flow?",
+      "wrong": "Yes, absolute stays in flow.",
+      "right": "No, absolute removes elements from the document flow, placing them independently.",
+      "say": "Interview trap: Absolute positioning removes elements from the flow. Don’t mix this up."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:00:22.251Z"
+}
