@@ -1,0 +1,76 @@
+{
+  "id": "state-management-l7",
+  "title": "Redux vs Alternatives: Key Trade-offs",
+  "keys": [
+    "Redux",
+    "Zustand",
+    "Context",
+    "state management"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-redux-or-not",
+      "type": "hook",
+      "kicker": "Frontend State Management · lesson",
+      "line1": "Redux or something lighter?",
+      "line2": "When is Redux worth it?",
+      "say": "Redux or something lighter? When is Redux actually worth using?"
+    },
+    {
+      "id": "1-chip-redux-structure",
+      "type": "chip",
+      "kicker": "Redux",
+      "label": "Structured",
+      "sub": "Predictable state, devtools, but verbose setup",
+      "say": "Redux gives you predictable state and powerful developer tools, but it can be verbose to set up."
+    },
+    {
+      "id": "2-compare-alternatives",
+      "type": "compare",
+      "kicker": "Alternatives",
+      "left": {
+        "title": "Zustand & Context",
+        "items": [
+          "Minimal setup",
+          "Great for small apps"
+        ]
+      },
+      "right": {
+        "title": "Redux",
+        "items": [
+          "Advanced features",
+          "Best for complex flows"
+        ]
+      },
+      "say": "Zustand and Context are easy to set up and great for small apps. Redux shines with advanced features for complex flows."
+    },
+    {
+      "id": "3-terminal-setup-diff",
+      "type": "terminal",
+      "kicker": "Setup Example",
+      "title": "Zustand vs Redux",
+      "lines": [
+        "$ touch store.js",
+        "$ npx create-redux-app",
+        "$ add middleware",
+        "$ integrate devtools"
+      ],
+      "say": "With Zustand, setup is often just one file. Redux usually means more files, middleware, and devtools integration."
+    },
+    {
+      "id": "4-trap-overkill",
+      "type": "trap",
+      "question": "Should you always use Redux?",
+      "wrong": "Yes, for all state needs.",
+      "right": "No. Use Redux for complex, shared state—otherwise, lighter tools are better.",
+      "say": "Should you always use Redux? No. Use Redux for complex, shared state. For simple needs, lighter tools are better."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:49:48.911Z"
+}
