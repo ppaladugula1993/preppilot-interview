@@ -1,0 +1,72 @@
+{
+  "id": "spark-l2",
+  "title": "Narrow vs Wide Transformations in Spark",
+  "keys": [
+    "narrow",
+    "wide",
+    "shuffle",
+    "partition",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-transformations",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Why do some Spark jobs run slow?",
+      "line2": "What's a shuffle?",
+      "say": "Ever wonder why some Spark jobs crawl while others fly? Let's talk shuffles and transformations."
+    },
+    {
+      "id": "1-compare-narrow-wide",
+      "type": "compare",
+      "kicker": "Transformation Types",
+      "left": {
+        "title": "Narrow",
+        "items": [
+          "map",
+          "filter"
+        ]
+      },
+      "right": {
+        "title": "Wide",
+        "items": [
+          "groupBy",
+          "join"
+        ]
+      },
+      "say": "Narrow transformations, like map or filter, use data from just one partition. Wide transformations, like groupBy or join, need data from many partitions."
+    },
+    {
+      "id": "2-chip-shuffle",
+      "type": "chip",
+      "kicker": "Performance",
+      "label": "Shuffle",
+      "sub": "Shuffles move data across the cluster and slow things down.",
+      "say": "A shuffle happens when wide transformations move data across the cluster. This can really slow your job down."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "df.map(lambda x: x * 2)\ndf.groupBy('key').count()",
+      "say": "For example, mapping a column is narrow. Grouping and counting triggers a wide transformation and a shuffle."
+    },
+    {
+      "id": "4-trap-wide-trap",
+      "type": "trap",
+      "question": "Does every transformation cause a shuffle?",
+      "wrong": "Yes, all transformations shuffle data.",
+      "right": "No, only wide transformations like join or groupBy cause shuffles.",
+      "say": "Here's a trap: Not every transformation causes a shuffle. Only wide ones do."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:51:02.267Z"
+}
