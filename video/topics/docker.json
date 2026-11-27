@@ -1,127 +1,279 @@
 {
   "id": "docker",
-  "title": "Docker: Containers in 60 Seconds",
+  "title": "Docker: Images, Containers, Traps!",
   "scenes": [
     {
       "id": "s0",
       "type": "hook",
-      "say": "Ever wondered how apps run anywhere, fast? That’s Docker magic.",
-      "title": "HOOK: FAST APPS",
-      "accent": "FAST",
-      "subtitle": "Why is Docker so quick?",
-      "prompt": "a flat vector illustration of a magician pulling apps from a hat",
-      "image": "docker-s0.jpg"
+      "say": "Ever wondered how apps run anywhere, fast? Meet Docker.",
+      "title": "RUN ANYWHERE",
+      "accent": "ANYWHERE",
+      "subtitle": "Apps, no limits",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "rocket",
+            "label": "DOCKER",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s1",
       "type": "chip",
-      "say": "But what’s the difference between a container and a virtual machine?",
-      "title": "PROBLEM: VM VS CONTAINER",
+      "say": "Old-school virtual machines are slow and heavy. Containers are quick and light.",
+      "title": "VM VS CONTAINER",
       "accent": "CONTAINER",
-      "subtitle": "VMs vs containers explained",
-      "prompt": "a clean diagram comparing a VM and a container side by side",
-      "image": "docker-s1.jpg"
+      "subtitle": "Speed vs weight",
+      "visual": {
+        "layout": "compare",
+        "items": [
+          {
+            "icon": "server",
+            "label": "VM",
+            "good": false
+          },
+          {
+            "icon": "container",
+            "label": "CONTAINER",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s2",
       "type": "chip",
-      "say": "Step one: Containers share the host’s kernel, so they start in seconds and use less memory.",
-      "title": "STEP 1: SHARED KERNEL",
-      "accent": "SHARED",
-      "subtitle": "Containers use less memory",
-      "prompt": "a simple diagram showing containers sharing a central kernel",
-      "image": "docker-s2.jpg"
+      "say": "A Docker image is a read-only template. A container is a running instance with its own writable layer.",
+      "title": "IMAGE VS CONTAINER",
+      "accent": "IMAGE",
+      "subtitle": "Template vs instance",
+      "visual": {
+        "layout": "stack",
+        "items": [
+          {
+            "icon": "package",
+            "label": "IMAGE",
+            "good": true
+          },
+          {
+            "icon": "container",
+            "label": "CONTAINER",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s3",
       "type": "chip",
-      "say": "Step two: Each container runs from an image—a layered, read-only template.",
-      "title": "STEP 2: IMAGE TEMPLATE",
-      "accent": "IMAGE",
-      "subtitle": "Images are read-only templates",
-      "prompt": "a flat illustration of stacked layers labeled 'Image'",
-      "image": "docker-s3.jpg"
+      "say": "Docker builds images from a Dockerfile. Each instruction adds a layer.",
+      "title": "BUILD LAYERS",
+      "accent": "LAYERS",
+      "subtitle": "Recipe for images",
+      "visual": {
+        "layout": "flow",
+        "items": [
+          {
+            "icon": "file-code",
+            "label": "DOCKERFILE",
+            "good": true
+          },
+          {
+            "icon": "layers",
+            "label": "LAYERS",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s4",
       "type": "chip",
-      "say": "Step three: Containers add a thin writable layer on top, so each can have its own data.",
-      "title": "STEP 3: WRITABLE LAYER",
-      "accent": "WRITABLE",
-      "subtitle": "Containers can write data",
-      "prompt": "a diagram showing a writable layer on top of an image stack",
-      "image": "docker-s4.jpg"
+      "say": "Multi-stage builds make images smaller. Build, then copy only what you need.",
+      "title": "MULTI-STAGE",
+      "accent": "MULTI-STAGE",
+      "subtitle": "Shrink your image",
+      "visual": {
+        "layout": "flow",
+        "items": [
+          {
+            "icon": "factory",
+            "label": "BUILD",
+            "good": true
+          },
+          {
+            "icon": "package",
+            "label": "COPY",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s5",
       "type": "chip",
-      "say": "Here’s the twist: Delete a container, and its writable layer vanishes. Oops, data gone!",
-      "title": "TWIST: DATA VANISHES",
+      "say": "Containers lose their writable layer when removed. Volumes and bind mounts keep data safe.",
+      "title": "KEEP DATA",
       "accent": "DATA",
-      "subtitle": "Container data can disappear",
-      "prompt": "a flat illustration of a folder vanishing as a container is deleted",
-      "image": "docker-s5.jpg"
+      "subtitle": "Volumes, mounts",
+      "visual": {
+        "layout": "list",
+        "items": [
+          {
+            "icon": "hard-drive",
+            "label": "VOLUME",
+            "good": true
+          },
+          {
+            "icon": "folder",
+            "label": "BIND MOUNT",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s6",
       "type": "chip",
-      "say": "To keep your data safe, use volumes or bind mounts. They store data outside containers.",
-      "title": "FIX: VOLUMES & MOUNTS",
-      "accent": "VOLUMES",
-      "subtitle": "Store data outside containers",
-      "prompt": "a diagram showing a container with an external volume attached",
-      "image": "docker-s6.jpg"
+      "say": "Containers talk over networks. Default bridge gives private IPs. User networks add DNS for names.",
+      "title": "NETWORK MAGIC",
+      "accent": "NETWORK",
+      "subtitle": "Bridge, DNS",
+      "visual": {
+        "layout": "hub",
+        "items": [
+          {
+            "icon": "network",
+            "label": "BRIDGE",
+            "good": true
+          },
+          {
+            "icon": "wifi",
+            "label": "USER NET",
+            "good": true
+          },
+          {
+            "icon": "globe",
+            "label": "DNS",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s7",
       "type": "chip",
-      "say": "Want containers to talk to each other? Use networks and publish ports with dash p.",
-      "title": "NETWORK: PORTS & DNS",
-      "accent": "PORTS",
-      "subtitle": "Connect containers easily",
-      "prompt": "a flat vector of containers connected by network lines",
-      "image": "docker-s7.jpg"
+      "say": "Docker Compose runs multi-container apps with one YAML file and one command.",
+      "title": "COMPOSE POWER",
+      "accent": "COMPOSE",
+      "subtitle": "Easy multi-apps",
+      "visual": {
+        "layout": "grid",
+        "items": [
+          {
+            "icon": "file-code",
+            "label": "YAML",
+            "good": true
+          },
+          {
+            "icon": "boxes",
+            "label": "APPS",
+            "good": true
+          },
+          {
+            "icon": "play",
+            "label": "START",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s8",
       "type": "chip",
-      "say": "Docker Compose lets you run multi-container apps with one YAML file and one command.",
-      "title": "COMPOSE: ONE COMMAND",
-      "accent": "ONE",
-      "subtitle": "Multi-container made easy",
-      "prompt": "a clean diagram of a YAML file launching multiple containers",
-      "image": "docker-s8.jpg"
+      "say": "Interview trap: Data disappears when you recreate a container. Why? The writable layer is gone. Use volumes!",
+      "title": "DATA TRAP",
+      "accent": "TRAP",
+      "subtitle": "Volumes fix it",
+      "visual": {
+        "layout": "stack",
+        "items": [
+          {
+            "icon": "alert-triangle",
+            "label": "LOST DATA",
+            "good": false
+          },
+          {
+            "icon": "hard-drive",
+            "label": "VOLUME",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s9",
       "type": "chip",
-      "say": "Interview trap: If your container exits fast, check logs and exit codes. Main process must stay running!",
-      "title": "TRAP: EXIT FAST",
-      "accent": "EXIT",
-      "subtitle": "Troubleshoot with logs",
-      "prompt": "a flat illustration of a container with a warning sign and log files",
-      "image": "docker-s9.jpg"
+      "say": "Containers isolate processes using namespaces and cgroups. Not hardware, just what you see and use.",
+      "title": "ISOLATION",
+      "accent": "ISOLATION",
+      "subtitle": "Namespaces, cgroups",
+      "visual": {
+        "layout": "list",
+        "items": [
+          {
+            "icon": "shield",
+            "label": "NAMESPACE",
+            "good": true
+          },
+          {
+            "icon": "cpu",
+            "label": "CGROUP",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s10",
       "type": "chip",
-      "say": "Docker is lighter than VMs, but you must manage data, networking, and troubleshooting.",
-      "title": "WHY IT MATTERS",
-      "accent": "LIGHTER",
-      "subtitle": "Docker needs smart handling",
-      "prompt": "a diagram showing Docker containers vs heavy VMs on a scale",
-      "image": "docker-s10.jpg"
+      "say": "Docker is everywhere in interviews. Know the traps, and you’ll stand out.",
+      "title": "STAND OUT",
+      "accent": "OUT",
+      "subtitle": "Ace interviews",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "trophy",
+            "label": "SUCCESS",
+            "good": true
+          }
+        ]
+      }
     },
     {
       "id": "s11",
       "type": "end",
       "say": "Get interview ready with PrepPilot.",
-      "title": "PREP PILOT",
-      "accent": "PREP",
-      "subtitle": "Ace your next interview",
-      "prompt": "a simple vector of a rocket labeled PrepPilot taking off"
+      "title": "PREP READY",
+      "accent": "READY",
+      "subtitle": "PrepPilot",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "graduation-cap",
+            "label": "PREPPILOT",
+            "good": true
+          }
+        ]
+      }
     }
   ],
   "voice": "en-US-ChristopherNeural",
-  "rendered": "2026-11-27T19:32:35.040Z"
+  "rendered": "2026-11-27T19:43:23.617Z"
 }
