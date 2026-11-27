@@ -1,0 +1,81 @@
+{
+  "id": "scripting-l1",
+  "title": "Script: Disk Usage Alert in Bash",
+  "keys": [
+    "bash",
+    "disk usage",
+    "threshold",
+    "exit code"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-disk-alert",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "Ever caught a full disk too late?",
+      "line2": "How do you script a warning?",
+      "say": "Ever found out your disk was full only after things broke? How would you script a warning before that happens?"
+    },
+    {
+      "id": "1-chip-why-matters",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Skills",
+      "sub": "Parsing, loops, thresholds, exit codes—one script.",
+      "say": "This task shows off your ability to parse output, loop through results, set thresholds, and handle exit codes, all in one script."
+    },
+    {
+      "id": "2-terminal-df-script",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Check disk usage with Bash",
+      "lines": [
+        "$ bash disk_alert.sh 85",
+        "WARN /home at 90% (5G free)",
+        "$ echo $?",
+        "1"
+      ],
+      "say": "Here's a script that checks every filesystem. If any go over eighty five percent, it prints a warning and sets the exit code to one."
+    },
+    {
+      "id": "3-rows-script-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Run disk free",
+          "b": "Get usage for all filesystems"
+        },
+        {
+          "a": "Skip temp filesystems",
+          "b": "Ignore tmpfs and devtmpfs"
+        },
+        {
+          "a": "Check each usage",
+          "b": "Compare to your threshold"
+        },
+        {
+          "a": "Warn and exit non-zero",
+          "b": "So cron or monitoring can alert"
+        }
+      ],
+      "walk": true,
+      "say": "First, it runs the disk free command. Then, it skips temporary filesystems. For each one, it checks if usage is above your threshold. If so, it warns and exits non-zero so jobs or monitoring can catch it."
+    },
+    {
+      "id": "4-trap-exit-code",
+      "type": "trap",
+      "question": "Why return a non-zero exit code?",
+      "wrong": "To show the script succeeded",
+      "right": "So monitoring tools or cron jobs can detect a problem and alert you",
+      "say": "Here's a common interview trap: Why does the script return a non-zero exit code? It's so monitoring tools or cron jobs know there's a problem and can alert you."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:59:56.288Z"
+}
