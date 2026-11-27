@@ -1,0 +1,72 @@
+{
+  "id": "csharp-core-l5",
+  "title": "Mastering Nullable Reference Types in C#",
+  "keys": [
+    "nullable",
+    "reference",
+    "string?",
+    "safety"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-null-safety",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "Ever hit a null reference bug?",
+      "line2": "How can C# help?",
+      "say": "Have you ever run into a null reference bug? Let's see how C sharp helps you avoid them."
+    },
+    {
+      "id": "1-chip-nullable",
+      "type": "chip",
+      "kicker": "Feature",
+      "label": "Nullable",
+      "sub": "C# 8 lets you mark references as nullable.",
+      "say": "Starting with C sharp 8, you can mark reference types as nullable. That means the compiler helps you spot potential null issues before you run your code."
+    },
+    {
+      "id": "2-code-enable-nullable",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "#nullable enable\nstring? name = null;\nstring greeting = name ?? \"Hello\";",
+      "say": "Here's how you enable nullable reference types. Notice how string question mark means name can be null, and the compiler warns you if you misuse it."
+    },
+    {
+      "id": "3-rows-benefits",
+      "type": "rows",
+      "kicker": "Why use it?",
+      "rows": [
+        {
+          "a": "Catches bugs early",
+          "b": "Compiler flags risky code"
+        },
+        {
+          "a": "Safer code",
+          "b": "Avoids null dereference errors"
+        },
+        {
+          "a": "Modern standard",
+          "b": "Interviewers expect it"
+        }
+      ],
+      "walk": true,
+      "say": "Using nullable reference types catches bugs early, keeps your code safer, and shows interviewers you know modern C sharp."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you avoid null bugs in C#?",
+      "wrong": "Just check for null at runtime.",
+      "right": "Enable nullable reference types to catch issues at compile time.",
+      "say": "In interviews, don't just say you check for null at runtime. Mention enabling nullable reference types to catch problems before your code runs."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:19:23.773Z"
+}
