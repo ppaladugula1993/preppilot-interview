@@ -1,0 +1,64 @@
+{
+  "id": "streaming-l8",
+  "title": "Kafka Failover & Leader Election Basics",
+  "keys": [
+    "broker",
+    "failover",
+    "leader election",
+    "replica"
+  ],
+  "scenes": [
+    {
+      "id": "0-failover-hook",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "What happens if a Kafka broker dies?",
+      "line2": "Who leads the partition?",
+      "say": "What happens if a Kafka broker suddenly fails? Who takes over as the partition leader?"
+    },
+    {
+      "id": "1-failover-rows",
+      "type": "rows",
+      "kicker": "Failover Steps",
+      "rows": [
+        {
+          "a": "Broker fails",
+          "b": "Leader for its partitions lost"
+        },
+        {
+          "a": "Election triggered",
+          "b": "Kafka picks new leader"
+        },
+        {
+          "a": "Replica promoted",
+          "b": "In-sync replica takes over"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how Kafka handles broker failover. First, a broker fails and its partitions lose their leader. Next, Kafka triggers an election. Finally, an in-sync replica is promoted to leader to keep things running."
+    },
+    {
+      "id": "2-failover-chip",
+      "type": "chip",
+      "kicker": "Example",
+      "label": "Broker 1",
+      "sub": "Partition 0 leader fails, Broker 3 takes over",
+      "say": "For example, if Broker 1 was leading Partition 0 and fails, Broker 3, as an in-sync replica, becomes the new leader."
+    },
+    {
+      "id": "3-failover-trap",
+      "type": "trap",
+      "question": "What ensures failover works?",
+      "wrong": "Just having partitions",
+      "right": "Replication factor and in-sync replicas",
+      "say": "Here's a common interview trap: What actually ensures failover works? It's not just having partitions. You need a proper replication factor and healthy in-sync replicas."
+    },
+    {
+      "id": "4-failover-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:06:38.271Z"
+}
