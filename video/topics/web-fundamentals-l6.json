@@ -1,0 +1,77 @@
+{
+  "id": "web-fundamentals-l6",
+  "title": "TLS and Certificates Explained",
+  "keys": [
+    "TLS",
+    "Certificates",
+    "HTTPS",
+    "CA"
+  ],
+  "scenes": [
+    {
+      "id": "0-tls-hook",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "How does HTTPS keep data safe?",
+      "line2": "What role do certificates play?",
+      "say": "Ever wonder how HTTPS protects your data online? And what do those certificates actually do?"
+    },
+    {
+      "id": "1-tls-chip",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "TLS",
+      "sub": "Encrypts traffic between client and server.",
+      "say": "TLS, or Transport Layer Security, encrypts everything sent between your browser and the website."
+    },
+    {
+      "id": "2-cert-rows",
+      "type": "rows",
+      "kicker": "How Certificates Work",
+      "rows": [
+        {
+          "a": "Server sends certificate",
+          "b": "Includes its public key"
+        },
+        {
+          "a": "Browser checks chain",
+          "b": "Verifies up to trusted authority"
+        },
+        {
+          "a": "Secure connection",
+          "b": "Data is encrypted and trusted"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how it works: The server sends a certificate with its public key. Your browser checks the chain of trust, all the way up to a known authority. If it checks out, your connection is encrypted and authenticated."
+    },
+    {
+      "id": "3-tls-terminal",
+      "type": "terminal",
+      "kicker": "Real World",
+      "title": "Check certificate details",
+      "lines": [
+        "$ openssl s_client -connect",
+        "  example.com:443",
+        "Certificate chain",
+        "Issuer: Let's Encrypt Authority"
+      ],
+      "say": "You can inspect a site’s certificate details with a simple command. Look for the chain and the issuer, like Let's Encrypt."
+    },
+    {
+      "id": "4-tls-trap",
+      "type": "trap",
+      "question": "Is HTTPS optional in production?",
+      "wrong": "Yes, if data isn't sensitive.",
+      "right": "No, always use HTTPS to prevent attacks.",
+      "say": "Here’s a common trap: Is HTTPS optional in production? No way. Always use HTTPS to keep your users safe from attacks."
+    },
+    {
+      "id": "5-tls-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:29:24.543Z"
+}
