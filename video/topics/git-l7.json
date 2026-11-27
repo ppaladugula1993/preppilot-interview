@@ -1,0 +1,76 @@
+{
+  "id": "git-l7",
+  "title": "Signed Commits & Branch Protection",
+  "keys": [
+    "signed commits",
+    "protected branches",
+    "secrets",
+    "git"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-secure-git",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "How do you keep your code safe?",
+      "line2": "What can go wrong?",
+      "say": "How do you keep your code safe in a team? What can go wrong if you don't?"
+    },
+    {
+      "id": "1-chip-signed-commits",
+      "type": "chip",
+      "kicker": "Security",
+      "label": "Signed",
+      "sub": "Signed commits prove who actually made changes.",
+      "say": "Signed commits prove who actually made changes. I use them for important releases."
+    },
+    {
+      "id": "2-rows-protected-branc",
+      "type": "rows",
+      "kicker": "Branch Protection",
+      "rows": [
+        {
+          "a": "Only admins push",
+          "b": "Prevents accidental changes"
+        },
+        {
+          "a": "Requires reviews",
+          "b": "No direct merges"
+        },
+        {
+          "a": "Keeps main stable",
+          "b": "Safer releases"
+        }
+      ],
+      "walk": true,
+      "say": "Protected branches lock down who can push or merge. This keeps your main branch stable and stops surprises."
+    },
+    {
+      "id": "3-terminal-remove-secr",
+      "type": "terminal",
+      "kicker": "Oops: Secret in History",
+      "title": "Remove secrets from Git",
+      "lines": [
+        "$ git filter-branch --force",
+        "--index-filter 'git rm --cached",
+        "--ignore-unmatch secrets.txt' --all"
+      ],
+      "say": "Accidentally committed a secret? Use a history rewrite to scrub it out for good."
+    },
+    {
+      "id": "4-trap-interview-gotch",
+      "type": "trap",
+      "question": "Why use signed commits?",
+      "wrong": "To hide who made changes",
+      "right": "To prove authorship and prevent tampering",
+      "say": "Interview trap: Why bother with signed commits? It's not about hiding who made changes. It's about proving authorship and stopping tampering."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:28:46.555Z"
+}
