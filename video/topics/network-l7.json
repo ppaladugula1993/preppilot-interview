@@ -1,0 +1,96 @@
+{
+  "id": "network-l7",
+  "title": "HTTP Essentials for Interviews",
+  "keys": [
+    "HTTP methods",
+    "headers",
+    "status codes",
+    "keep-alive"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-http-basics",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "How well do you know HTTP?",
+      "line2": "Would you spot a proxy issue?",
+      "say": "How well do you know HTTP? Would you spot a proxy issue in an interview?"
+    },
+    {
+      "id": "1-chip-methods",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Methods",
+      "sub": "GET, POST, PUT, DELETE are the basics.",
+      "say": "HTTP methods are the verbs: GET, POST, PUT, DELETE. Most requests use these."
+    },
+    {
+      "id": "2-rows-headers",
+      "type": "rows",
+      "kicker": "Headers matter",
+      "rows": [
+        {
+          "a": "Host",
+          "b": "Tells server which site"
+        },
+        {
+          "a": "Authorization",
+          "b": "Credentials for access"
+        },
+        {
+          "a": "Cache-Control",
+          "b": "How responses are cached"
+        },
+        {
+          "a": "X-Forwarded-For",
+          "b": "Shows client IP behind proxy"
+        }
+      ],
+      "walk": true,
+      "say": "Headers like Host, Authorization, Cache-Control, and X-Forwarded-For control routing, access, caching, and reveal client IPs."
+    },
+    {
+      "id": "3-compare-status",
+      "type": "compare",
+      "kicker": "Status codes",
+      "left": {
+        "title": "Success & Redirect",
+        "items": [
+          "2xx: OK",
+          "3xx: Redirect (301, 302)"
+        ]
+      },
+      "right": {
+        "title": "Errors",
+        "items": [
+          "4xx: Client error",
+          "5xx: Server error"
+        ]
+      },
+      "say": "HTTP status codes: Two hundred means OK, three hundred is redirect. Four hundred is client error, five hundred is server error."
+    },
+    {
+      "id": "4-chip-keepalive",
+      "type": "chip",
+      "kicker": "Efficiency",
+      "label": "Keep-Alive",
+      "sub": "Reuse connections for speed.",
+      "say": "Keep-alive lets HTTP reuse connections, making requests faster and reducing overhead."
+    },
+    {
+      "id": "5-trap-host-header",
+      "type": "trap",
+      "question": "How do you test if an issue is LB or app?",
+      "wrong": "Check only the app logs.",
+      "right": "Hit the backend directly with curl and set the Host header.",
+      "say": "How do you test if an issue is the load balancer or the app? Don’t just check logs. Hit the backend directly with curl and set the Host header."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:01:33.617Z"
+}
