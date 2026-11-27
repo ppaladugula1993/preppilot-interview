@@ -1,0 +1,85 @@
+{
+  "id": "streaming-l0",
+  "title": "Kafka Topics, Partitions & Replication",
+  "keys": [
+    "topic",
+    "partition",
+    "offset",
+    "broker",
+    "replication"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-core-architectu",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How does Kafka keep your data safe?",
+      "line2": "What makes it scalable?",
+      "say": "How does Kafka keep your data safe and scale with your needs? Let’s break down the basics."
+    },
+    {
+      "id": "1-chip-topic-partition",
+      "type": "chip",
+      "kicker": "Core Concepts",
+      "label": "Topic",
+      "sub": "A topic is a named stream, split into partitions.",
+      "say": "A topic is just a named stream of records. Each topic gets split into partitions for better performance."
+    },
+    {
+      "id": "2-rows-partition-offse",
+      "type": "rows",
+      "kicker": "Data Structure",
+      "rows": [
+        {
+          "a": "Partition",
+          "b": "Ordered, immutable records"
+        },
+        {
+          "a": "Offset",
+          "b": "Unique ID for each record"
+        },
+        {
+          "a": "Broker",
+          "b": "Kafka server storing partitions"
+        }
+      ],
+      "walk": true,
+      "say": "Each partition is an ordered, unchangeable list of records. Every record has a unique offset. Brokers are the servers that store these partitions."
+    },
+    {
+      "id": "3-compare-replication",
+      "type": "compare",
+      "kicker": "Reliability",
+      "left": {
+        "title": "No Replication",
+        "items": [
+          "Single copy",
+          "Risk of data loss"
+        ]
+      },
+      "right": {
+        "title": "With Replication",
+        "items": [
+          "Multiple copies",
+          "Fault tolerant"
+        ]
+      },
+      "say": "Replication copies partitions across brokers. If one goes down, your data stays safe and available."
+    },
+    {
+      "id": "4-trap-offset-misconce",
+      "type": "trap",
+      "question": "Is an offset unique across all topics?",
+      "wrong": "Yes, offsets are global.",
+      "right": "No, offsets are unique only within a partition.",
+      "say": "Watch out: offsets are unique only within each partition, not across the whole system."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:44:40.398Z"
+}
