@@ -1,0 +1,72 @@
+{
+  "id": "sql-advanced-l3",
+  "title": "Top-N per Group & Deduplication in SQL",
+  "keys": [
+    "ROW_NUMBER",
+    "RANK",
+    "PARTITION BY",
+    "deduplication"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-top-n",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you pick top earners",
+      "line2": "per department?",
+      "say": "How do you pick the top earners in each department using SQL? Let's break it down."
+    },
+    {
+      "id": "1-chip-window-fn",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "ROW_NUMBER",
+      "sub": "Assigns a unique rank to each row within a group.",
+      "say": "The ROW_NUMBER window function gives every row a unique rank within its group."
+    },
+    {
+      "id": "2-code-top-n",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "SELECT * FROM (\n  SELECT *, ROW_NUMBER() OVER (\n    PARTITION BY department\n    ORDER BY salary DESC\n  ) AS rn\n  FROM employees\n) t WHERE rn <= 3;",
+      "say": "Here's how you get the top three salaries in each department. Partition by department, order by salary, and filter where the row number is three or less."
+    },
+    {
+      "id": "3-rows-dedup",
+      "type": "rows",
+      "kicker": "Use Cases",
+      "rows": [
+        {
+          "a": "Top-N per group",
+          "b": "Find top performers per team"
+        },
+        {
+          "a": "Deduplication",
+          "b": "Keep only latest record per user"
+        },
+        {
+          "a": "Flexible rules",
+          "b": "Pick based on any business logic"
+        }
+      ],
+      "walk": true,
+      "say": "You can use this pattern to find top performers, deduplicate by keeping the latest record, or apply any business rule you need."
+    },
+    {
+      "id": "4-trap-partition",
+      "type": "trap",
+      "question": "What does PARTITION BY do?",
+      "wrong": "It sorts the entire table.",
+      "right": "It splits rows into groups for the window function to work within each group.",
+      "say": "Don't mix up PARTITION BY. It doesn't sort the table—it splits rows into groups so the window function works within each group."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:51:09.622Z"
+}
