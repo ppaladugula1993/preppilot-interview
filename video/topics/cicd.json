@@ -1,0 +1,100 @@
+{
+  "id": "cicd",
+  "title": "CI/CD & IaC: The Power of Automation",
+  "keys": [
+    "CI/CD",
+    "pipeline",
+    "Terraform",
+    "Ansible",
+    "state"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-automate",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · 45 seconds",
+      "line1": "Why automate builds and infra?",
+      "line2": "What’s the real win?",
+      "say": "Why do top teams automate their builds and infrastructure? What’s the real win behind all this CI, CD, and infrastructure as code?"
+    },
+    {
+      "id": "1-chip-pipeline",
+      "type": "chip",
+      "kicker": "Pipeline",
+      "label": "CI/CD",
+      "sub": "Build, test, and deploy code on every commit.",
+      "say": "Continuous integration and delivery means every commit gets built, tested, and deployed—automatically."
+    },
+    {
+      "id": "2-terminal-git",
+      "type": "terminal",
+      "kicker": "Step 1 · Git",
+      "title": "Branch to Merge",
+      "lines": [
+        "$ git checkout -b feature-x",
+        "$ git commit -am 'add x'",
+        "$ git push origin feature-x",
+        "$ gh pr create"
+      ],
+      "say": "You work on a branch, commit, push, and open a pull request. Code review and checks happen before merging to main."
+    },
+    {
+      "id": "3-rows-terraform-ansib",
+      "type": "rows",
+      "kicker": "Infra as Code",
+      "rows": [
+        {
+          "a": "Terraform",
+          "b": "Defines cloud resources in code"
+        },
+        {
+          "a": "Ansible",
+          "b": "Configures servers over SSH"
+        },
+        {
+          "a": "State",
+          "b": "Tracks what’s real and planned"
+        }
+      ],
+      "walk": false,
+      "say": "With Terraform, you write code to describe cloud resources. Ansible configures servers. State files keep track of what exists."
+    },
+    {
+      "id": "4-compare-repeatable",
+      "type": "compare",
+      "kicker": "Why Automate?",
+      "left": {
+        "title": "Manual",
+        "items": [
+          "Snowflake servers",
+          "Missed steps",
+          "Hard to rollback"
+        ]
+      },
+      "right": {
+        "title": "Automated",
+        "items": [
+          "Repeatable",
+          "Reviewable",
+          "Easy rollback"
+        ]
+      },
+      "say": "Manual steps create snowflake servers and mistakes. Automation makes everything repeatable, reviewable, and easy to roll back."
+    },
+    {
+      "id": "5-trap-state",
+      "type": "trap",
+      "question": "Why keep Terraform state remote?",
+      "wrong": "So you can run apply offline",
+      "right": "Remote state is the single source of truth—no conflicts, no corruption.",
+      "say": "Interview trap: Why keep Terraform state remote? It’s not for offline work. Remote state is the single source of truth, so your team avoids conflicts and corruption."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:00:06.626Z"
+}
