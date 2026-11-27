@@ -1,0 +1,86 @@
+{
+  "id": "sql-advanced-l6",
+  "title": "Partition Pruning & Clustering in SQL",
+  "keys": [
+    "partition pruning",
+    "clustering",
+    "query speed",
+    "filtering"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-partition-clust",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "Why do warehouses skip data?",
+      "line2": "How does SQL do it?",
+      "say": "Ever wonder how massive data warehouses scan only what’s needed? Let’s see how SQL makes it happen."
+    },
+    {
+      "id": "1-chip-partition",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Partitioning",
+      "sub": "Partitions split data by key, like sale date, so queries scan only relevant chunks.",
+      "say": "Partitioning divides your table by a key, like sale date, so queries only scan the chunks they need."
+    },
+    {
+      "id": "2-rows-pruning",
+      "type": "rows",
+      "kicker": "Query Flow",
+      "rows": [
+        {
+          "a": "User query",
+          "b": "Filter by sale date"
+        },
+        {
+          "a": "Engine",
+          "b": "Skips partitions not matching"
+        },
+        {
+          "a": "Result",
+          "b": "Reads less, runs faster"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how partition pruning works: you filter by sale date, the engine skips partitions that don’t match, and your query runs way faster."
+    },
+    {
+      "id": "3-compare-cluster",
+      "type": "compare",
+      "kicker": "Clustering",
+      "left": {
+        "title": "Without Clustering",
+        "items": [
+          "Rows scattered",
+          "Slow filtering",
+          "More blocks scanned"
+        ]
+      },
+      "right": {
+        "title": "With Clustering",
+        "items": [
+          "Rows grouped by key",
+          "Fast filtering",
+          "Fewer blocks scanned"
+        ]
+      },
+      "say": "Clustering organizes data inside partitions. When rows are grouped by a key, filtering and joins are way more efficient."
+    },
+    {
+      "id": "4-trap-design",
+      "type": "trap",
+      "question": "What’s a common mistake with keys?",
+      "wrong": "Pick random columns for partitioning.",
+      "right": "Always choose keys based on frequent query filters to maximize pruning and speed.",
+      "say": "Don’t just pick random columns for partitioning. Always design keys around your most common query filters to get the best performance."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:11:05.226Z"
+}
