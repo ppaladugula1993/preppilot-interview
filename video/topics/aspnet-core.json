@@ -1,0 +1,73 @@
+{
+  "id": "aspnet-core",
+  "title": "ASP.NET Core · Why Middleware Order Matters",
+  "keys": [
+    "middleware",
+    "pipeline",
+    "order",
+    "authentication",
+    "authorization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-middleware-orde",
+      "type": "hook",
+      "kicker": "ASP.NET Core · 45 seconds",
+      "line1": "Why does middleware order matter?",
+      "line2": "What happens if you get it wrong?",
+      "say": "Why does the order of middleware in ASP.NET Core matter so much? What happens if you get it wrong?"
+    },
+    {
+      "id": "1-chip-pipeline",
+      "type": "chip",
+      "kicker": "Step 1 · Pipeline",
+      "label": "Pipeline",
+      "sub": "Requests flow through middleware, each can modify or handle.",
+      "say": "Every request flows through a pipeline of middleware. Each middleware can handle or modify the request and response."
+    },
+    {
+      "id": "2-rows-order",
+      "type": "rows",
+      "kicker": "Step 2 · Order",
+      "rows": [
+        {
+          "a": "Authentication",
+          "b": "Checks user identity first"
+        },
+        {
+          "a": "Authorization",
+          "b": "Enforces access rules next"
+        },
+        {
+          "a": "Logging",
+          "b": "Records request details"
+        }
+      ],
+      "walk": true,
+      "say": "Order matters. Authentication should run before authorization, and logging can wrap everything to record details."
+    },
+    {
+      "id": "3-code-programcs",
+      "type": "code",
+      "kicker": "Step 3 · Program.cs",
+      "lang": "csharp",
+      "code": "app.UseAuthentication();\napp.UseAuthorization();\napp.UseEndpoints(...);",
+      "say": "In Program dot C S, add authentication before authorization. This ensures users are identified before access is checked."
+    },
+    {
+      "id": "4-trap-middleware-trap",
+      "type": "trap",
+      "question": "What happens if auth runs after authorization?",
+      "wrong": "Authorization works fine.",
+      "right": "Authorization fails because user identity isn't set yet.",
+      "say": "Here's a trap: What happens if authentication runs after authorization? Authorization fails, because the user identity isn't set yet."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:26:31.111Z"
+}
