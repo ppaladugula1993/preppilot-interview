@@ -1,0 +1,30 @@
+name: App Store check (report)
+
+# Reads the whole App Store setup for the new app and prints what is missing. Changes nothing.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/eloquent-pasteur-wdc9yd]
+    paths: [.github/workflows/asc-audit.yml, scripts/asc-audit.mjs]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check App Store Connect
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          APP_ID: '6839824503'
+          SUB_ID: '6839824745'
+          IAP_ID: '6839824644'
+        run: node scripts/asc-audit.mjs

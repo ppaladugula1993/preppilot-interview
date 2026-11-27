@@ -4,7 +4,7 @@ import { createSign } from 'node:crypto';
 
 const { ASC_KEY_ID: kid, ASC_ISSUER_ID: iss, ASC_KEY_P8: p8 } = process.env;
 if (!kid || !iss || !p8) { console.error('Missing ASC_KEY_ID, ASC_ISSUER_ID or ASC_KEY_P8 secret.'); process.exit(1); }
-const APP = '6835532732', SUB = '6835597421', IAP = '6835659087';
+const APP = process.env.APP_ID || '6835532732', SUB = process.env.SUB_ID || '6835597421', IAP = process.env.IAP_ID || '6835659087';
 const FIX = process.env.FIX === '1';
 const ONLY = ['USA'];
 
@@ -39,7 +39,31 @@ if (appAv.data) {
   show('Sold in', avail);
 } else console.log(`  availability: ${appAv.error}`);
 const vers = await api('GET', `/v1/apps/${APP}/appStoreVersions?limit=5`);
-vers.data.forEach(v => console.log(`  Version ${v.attributes.versionString}: ${v.attributes.appStoreState}`));
+vers.data.forEach(v => console.log(`  Version ${v.attributes.versionString}: ${v.attributes.appStoreState}, copyright: ${v.attributes.copyright || 'MISSING'}`));
+const ver = vers.data.find(v => v.attributes.appStoreState === 'PREPARE_FOR_SUBMISSION') || vers.data[0];
+const a0 = app.data.attributes;
+console.log(`  Content rights declaration: ${a0.contentRightsDeclaration || 'MISSING'}; primary locale: ${a0.primaryLocale}`);
+const infos = await tryApi('GET', `/v1/apps/${APP}/appInfos?include=primaryCategory,ageRatingDeclaration`);
+for (const inf of infos.data || []) {
+  console.log(`  App info (${inf.attributes.appStoreState || inf.attributes.state}): category ${inf.relationships?.primaryCategory?.data?.id || 'MISSING'}, age rating ${inf.attributes.appStoreAgeRating || 'not computed yet'}`);
+  const ar = await tryApi('GET', `/v1/appInfos/${inf.id}/ageRatingDeclaration`);
+  if (ar.data) { const unset = Object.entries(ar.data.attributes).filter(([, v]) => v === null).map(([k]) => k); console.log(`  Age rating questionnaire: ${unset.length ? `${unset.length} answers missing` : 'complete'}`); }
+  const il = await tryApi('GET', `/v1/appInfos/${inf.id}/appInfoLocalizations`);
+  (il.data || []).forEach(l => console.log(`  ${l.attributes.locale}: name "${l.attributes.name}", subtitle "${l.attributes.subtitle || 'MISSING'}", privacy URL ${l.attributes.privacyPolicyUrl ? 'set' : 'MISSING'}`));
+}
+if (ver) {
+  const vl = await tryApi('GET', `/v1/appStoreVersions/${ver.id}/appStoreVersionLocalizations`);
+  (vl.data || []).forEach(l => { const x = l.attributes; console.log(`  ${x.locale}: description ${x.description ? x.description.length + ' chars' : 'MISSING'}, keywords ${x.keywords ? 'set' : 'MISSING'}, support URL ${x.supportUrl || 'MISSING'}`); });
+  const rd = await tryApi('GET', `/v1/appStoreVersions/${ver.id}/appStoreReviewDetail`);
+  const r = rd.data?.attributes || {};
+  console.log(`  App Review contact: name ${r.contactFirstName ? '✓' : 'MISSING'}, email ${r.contactEmail ? '✓' : 'MISSING'}, phone ${r.contactPhone ? '✓' : 'MISSING'}; notes ${r.notes ? '✓' : 'MISSING'}`);
+  const b = await tryApi('GET', `/v1/appStoreVersions/${ver.id}/build`);
+  console.log(`  Build attached to version: ${b.data ? b.data.attributes.version : 'none yet'}`);
+  const sets = await tryApi('GET', `/v1/appStoreVersionLocalizations/${(vl.data || [])[0]?.id}/appScreenshotSets`);
+  (sets.data || []).forEach(x => console.log(`  Screenshot set ${x.attributes.screenshotDisplayType}`));
+}
+const builds = await tryApi('GET', `/v1/builds?filter[app]=${APP}&limit=5&sort=-uploadedDate`);
+console.log(`  Builds uploaded: ${(builds.data || []).map(x => `${x.attributes.version} (${x.attributes.processingState})`).join(', ') || 'none yet'}`);
 
 // Subscription
 const sub = await api('GET', `/v1/subscriptions/${SUB}`);
@@ -60,7 +84,7 @@ if (FIX && (subTerr.join() !== ONLY.join() || subAv.data?.attributes.availableIn
     relationships: { subscription: { data: { type: 'subscriptions', id: SUB } }, availableTerritories: { data: ONLY.map(id => ({ type: 'territories', id })) } } } });
   console.log('  -> now sold in the United States only');
 }
-const group = await tryApi('GET', `/v1/subscriptions/${SUB}/group`);
+const group = await tryApi('GET', `/v1/subscriptions/${SUB}?include=group`).then(d => ({ data: (d.included || []).find(x => x.type === 'subscriptionGroups') }));
 if (group.data) {
   const gl = await api('GET', `/v1/subscriptionGroups/${group.data.id}/subscriptionGroupLocalizations`);
   console.log(`  Group "${group.data.attributes.referenceName}": ${gl.data.map(l => `${l.attributes.locale} "${l.attributes.name}"`).join(', ') || 'NO display name (needed for review)'}`);
