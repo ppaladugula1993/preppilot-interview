@@ -1,0 +1,89 @@
+{
+  "id": "efcore",
+  "title": "DbContext: Unit of Work in EF Core",
+  "keys": [
+    "DbContext",
+    "Unit of Work",
+    "Tracking",
+    "SaveChanges",
+    "Performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dbcontext",
+      "type": "hook",
+      "kicker": "Entity Framework Core · 45 seconds",
+      "line1": "Why does DbContext matter?",
+      "line2": "What’s its real job?",
+      "say": "Ever wonder why DbContext is at the heart of Entity Framework Core? What does it actually do for you?"
+    },
+    {
+      "id": "1-chip-unit-work",
+      "type": "chip",
+      "kicker": "Step 1 · Workflow",
+      "label": "Pattern",
+      "sub": "DbContext tracks changes and saves them as one transaction.",
+      "say": "DbContext uses the unit of work pattern. It tracks every change you make and saves them all together in one go."
+    },
+    {
+      "id": "2-rows-lifetime",
+      "type": "rows",
+      "kicker": "Step 2 · Lifetime",
+      "rows": [
+        {
+          "a": "Create DbContext",
+          "b": "Start your unit of work"
+        },
+        {
+          "a": "Make changes",
+          "b": "Add, update, or remove entities"
+        },
+        {
+          "a": "SaveChanges",
+          "b": "Commit all changes in one transaction"
+        },
+        {
+          "a": "Dispose DbContext",
+          "b": "Release resources"
+        }
+      ],
+      "walk": true,
+      "say": "You spin up a DbContext, make your changes, call SaveChanges, and then dispose it. That’s your workflow."
+    },
+    {
+      "id": "3-compare-tracking",
+      "type": "compare",
+      "kicker": "Step 3 · Tracking",
+      "left": {
+        "title": "Tracking",
+        "items": [
+          "Detects changes",
+          "Saves updates"
+        ]
+      },
+      "right": {
+        "title": "No Tracking",
+        "items": [
+          "Read-only",
+          "Faster queries"
+        ]
+      },
+      "say": "With tracking, DbContext spots changes and saves them. Without tracking, queries are faster but updates aren’t possible."
+    },
+    {
+      "id": "4-trap-lifetime",
+      "type": "trap",
+      "question": "Should you reuse DbContext across requests?",
+      "wrong": "Yes, to save resources",
+      "right": "No, it causes memory leaks and stale data. Use a new DbContext for each unit of work.",
+      "say": "Don’t reuse DbContext across requests. That leads to memory leaks and stale data. Always start fresh for each unit of work."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:15:11.319Z"
+}
