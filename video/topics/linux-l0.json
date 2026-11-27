@@ -1,0 +1,81 @@
+{
+  "id": "linux-l0",
+  "title": "Linux Boot Process: Step by Step",
+  "keys": [
+    "firmware",
+    "GRUB",
+    "kernel",
+    "systemd",
+    "target"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-boot-trouble",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "Why won't my server boot?",
+      "line2": "Where does it fail?",
+      "say": "Ever had a server refuse to start? Let's break down the Linux boot process so you can pinpoint exactly where things go wrong."
+    },
+    {
+      "id": "1-rows-boot-stages",
+      "type": "rows",
+      "kicker": "Boot Stages",
+      "rows": [
+        {
+          "a": "Firmware",
+          "b": "Runs checks, hands off to bootloader"
+        },
+        {
+          "a": "GRUB",
+          "b": "Loads kernel and initramfs"
+        },
+        {
+          "a": "Kernel",
+          "b": "Initializes hardware, mounts root"
+        },
+        {
+          "a": "systemd",
+          "b": "Starts as process one, runs services"
+        }
+      ],
+      "walk": true,
+      "say": "First, firmware runs checks and passes control to the bootloader. GRUB loads the kernel and its helpers. The kernel sets up hardware and mounts your main filesystem. Then, systemd takes over as the first process and starts up all your services."
+    },
+    {
+      "id": "2-chip-targets",
+      "type": "chip",
+      "kicker": "Targets",
+      "label": "Default",
+      "sub": "multi-user for servers, graphical for desktops",
+      "say": "Systemd brings the system to a default target. For servers, that's usually multi-user mode. For desktops, it's graphical mode."
+    },
+    {
+      "id": "3-terminal-troubleshoo",
+      "type": "terminal",
+      "kicker": "Troubleshooting",
+      "title": "Check boot targets and logs",
+      "lines": [
+        "$ systemctl get-default",
+        "$ journalctl -xb",
+        "$ systemctl rescue"
+      ],
+      "say": "To see which target the system boots into, use the get default command. For detailed logs from this boot, check the journal. If you need to fix things, drop into rescue mode."
+    },
+    {
+      "id": "4-trap-boot-trap",
+      "type": "trap",
+      "question": "Stuck at GRUB—what's likely wrong?",
+      "wrong": "A systemd unit failed",
+      "right": "It's usually a bootloader or disk issue, not systemd.",
+      "say": "Here's a common interview trap: If you're stuck at the GRUB screen, it's usually a bootloader or disk problem, not a systemd unit issue."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:40:19.419Z"
+}
