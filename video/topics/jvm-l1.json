@@ -36,7 +36,8 @@
           "means": "Garbage collectors"
         }
       ],
-      "say": "Think of JVM memory as a warehouse. Fast-moving packages represent short-lived objects, while dusty boxes are long-lived. Forklifts—our garbage collectors—clear out the clutter efficiently."
+      "say": "Think of JVM memory as a warehouse. Fast-moving packages represent short-lived objects, while dusty boxes are long-lived. Forklifts—our garbage collectors—clear out the clutter efficiently.",
+      "image": "jvm-l1-1-picture-gc-warehouse.jpg"
     },
     {
       "id": "2-rows-gc-types",
@@ -81,5 +82,6 @@
       "say": "Get interview ready with PrepPilot."
     }
   ],
-  "voice": "en-US-AndrewMultilingualNeural"
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T18:35:21.372Z"
 }
