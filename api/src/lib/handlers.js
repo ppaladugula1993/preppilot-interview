@@ -541,7 +541,7 @@ export async function handleSaveMyData(req, now = Date.now()) {
   const w = who(req);
   if (w.error) return w.error;
   const prev = lastSync.get(w.ident.key) || 0;
-  if (now - prev < 2000) return json(429, { error: 'Saving too often.' }, { 'retry-after': '2' });
+  if (now - prev < 300) return json(429, { error: 'Saving too often.' }, { 'retry-after': '1' });
   lastSync.set(w.ident.key, now);
   const b = req.body || {};
   const profile = b.profile && typeof b.profile === 'object' && !Array.isArray(b.profile) ? b.profile : undefined;

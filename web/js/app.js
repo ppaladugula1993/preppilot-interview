@@ -1761,6 +1761,7 @@ function accountCard() {
     ${usageMeters(a)}
     ${(() => { const { credits, left } = liveState(); return credits || left >= 20 ? `<p class="note">${left >= 20 ? `Live AI session in progress: ${Math.ceil(left / 60)} min left. ` : ''}${credits ? `${credits} Live AI session${credits > 1 ? 's' : ''} ready.` : ''} <button class="link" data-act="livesetup">${left >= 20 ? 'Rejoin' : 'Start'} →</button></p>` : ''; })()}
     ${a.plan === 'free' ? '<button class="btn primary block" data-act="plans">See pricing</button>' : ''}
+    ${(() => { const t = Number(lsGet('pp.syncedAt', '')) || 0; return `<p class="muted small">${t ? `Profile and progress saved to your account at ${new Date(t).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}.` : 'Profile not saved to your account yet.'} <button class="link quiet small" data-act="syncnow">Save now</button></p>`; })()}
     <div class="links">
       <button class="link quiet" data-act="plans">Pricing</button>
       ${native() && !a.unlimited ? '<button class="link quiet" data-act="restore">Restore purchases</button>' : ''}
@@ -2499,7 +2500,7 @@ function render() {
   const out = !signedIn() && !S.guest;
   const key = S.login && !signedIn() ? 'login'
     : S.showPlans ? 'plans'
-    : !p ? (S.onboard ? 'onboard' : 'landing')
+    : !p ? (S.restoring && signedIn() ? 'restoring' : S.onboard ? 'onboard' : 'landing')
     : out ? 'landing'
     : S.view === 'deck' && !S.deck ? 'home' : S.view;
   const changed = key !== S.lastView;
@@ -2524,6 +2525,7 @@ function render() {
     : key === 'focus' ? jobFocusView()
     : key === 'lab' ? labView()
     : key === 'watch' ? watchView()
+    : key === 'restoring' ? '<div class="stack" style="padding:40px 0;text-align:center"><h2>Loading your saved plan…</h2><p class="muted">Bringing back your profile and progress.</p></div>'
     : key === 'settings' ? settingsView()
     : homeView();
   app.innerHTML = `<div class="${changed ? 'view' : ''}">${html}</div>`;
@@ -3127,6 +3129,7 @@ document.addEventListener('click', async e => {
   else if (a === 'quick') sendChat(b.dataset.q);
   else if (a === 'rtstart') startVoice(b.dataset.mode);
   else if (a === 'plans') { S.showPlans = true; render(); }
+  else if (a === 'syncnow') { const ok = await S.flushUserData?.(); render(); ok ? toast('Saved to your account.') : oops('Could not save to your account. Check your connection and try again.'); }
   else if (a === 'watch') openWatch(id);
   else if (a === 'wnext') watchStep(1);
   else if (a === 'wprev') watchStep(-1);
@@ -3182,7 +3185,9 @@ document.addEventListener('click', async e => {
       <div class="row"><button class="btn grow" data-act="closesheet">Cancel</button><button class="btn danger" data-act="signout-yes">Sign out</button></div>`);
   }
   else if (a === 'signout-yes') {
-    closeSheet(); S.rt?.stop(); await S.flushUserData?.(); signOut(); store.clearUser();
+    closeSheet(); S.rt?.stop();
+    if (profile() && (await S.flushUserData?.()) === false && !confirm('Your latest profile could not be saved to your account (no connection?). Log out anyway?')) return;
+    signOut(); store.clearUser(); lsSet('pp.syncedAt', '');
     Object.assign(S, { paywall: false, guest: false, onboard: false, view: 'home', adminSug: null, deck: null, draft: null, jf: null, livePaused: null, liveBrief: null, chatContext: '', prevMap: null, pickMode: null });
     render(); scrollToY(0);
   }
@@ -3252,8 +3257,13 @@ document.addEventListener('click', async e => {
   // Profile and card progress live with the account too: saved a few seconds after a change,
   // restored on sign-in when this device has none (e.g. after signing out).
   let syncTimer = 0;
-  const pushUserData = () => { clearTimeout(syncTimer); syncTimer = 0; if (!signedIn() || !profile()) return Promise.resolve();
-    return ai.post('/api/me/data/save', { profile: profile(), progress: store.progress() }).catch(() => {}); };
+  const pushUserData = async () => { clearTimeout(syncTimer); syncTimer = 0; if (!signedIn() || !profile()) return true;
+    for (const wait of [0, 1200, 3000]) {
+      if (wait) await new Promise(r => setTimeout(r, wait));
+      try { await ai.post('/api/me/data/save', { profile: profile(), progress: store.progress() }); lsSet('pp.syncedAt', String(Date.now())); return true; }
+      catch (e) { if (e?.status === 401) return false; }
+    }
+    return false; };
   store.onUserData = () => { if (!signedIn()) return; clearTimeout(syncTimer); syncTimer = setTimeout(pushUserData, 4000); };
   S.flushUserData = pushUserData;
   // Save at once when the tab is hidden or closed (keepalive lets the request finish).
@@ -3261,6 +3271,7 @@ document.addEventListener('click', async e => {
   let restoredFor = '';
   const restoreUserData = async () => {
     const who = store.session() || (store.accessCode() ? 'code' : ''); if (!who || restoredFor === who) return; restoredFor = who;
+    if (!profile()) { S.restoring = true; render(); }
     try {
       const d = await ai.post('/api/me/data', {});
       // A profile set up on this device while signed out (Get started before Log in) must not
@@ -3275,6 +3286,7 @@ document.addEventListener('click', async e => {
         toast('Welcome back. Your plan and progress are restored.');
       } else if (profile()) pushUserData();
     } catch (e) { restoredFor = ''; if (e?.status && e.status !== 401) oops('Could not load your saved profile. Pull to refresh to try again.'); }
+    finally { if (S.restoring) { S.restoring = false; render(); } }
   };
   onAccountChange(acc => { if (acc) restoreUserData(); });
   if (signedIn()) restoreUserData(); // app opened already signed in
