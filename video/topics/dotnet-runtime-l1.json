@@ -1,0 +1,80 @@
+{
+  "id": "dotnet-runtime-l1",
+  "title": ".NET Runtime: CLR, JIT, Tiered, AOT",
+  "keys": [
+    "CLR",
+    "JIT",
+    "Tiered Compilation",
+    "AOT"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-runtime-speed",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "How does .NET run your code fast?",
+      "line2": "CLR, JIT, AOT?",
+      "say": "Ever wonder how .NET makes your code run so fast? Let's break down CLR, JIT, tiered compilation, and AOT."
+    },
+    {
+      "id": "1-chip-clr",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "CLR",
+      "sub": "Executes managed code and handles memory.",
+      "say": "First up, the Common Language Runtime, or CLR, runs your managed code and takes care of memory and execution."
+    },
+    {
+      "id": "2-rows-jit-tiered",
+      "type": "rows",
+      "kicker": "How Code Runs",
+      "rows": [
+        {
+          "a": "JIT",
+          "b": "Converts IL to native at runtime"
+        },
+        {
+          "a": "Tiered",
+          "b": "Quick compile, then optimize hot code"
+        }
+      ],
+      "walk": true,
+      "say": "The Just-In-Time compiler, or JIT, turns intermediate language into native code as needed. Tiered compilation speeds up startup by compiling fast, then optimizing methods that run a lot."
+    },
+    {
+      "id": "3-compare-jit-aot",
+      "type": "compare",
+      "kicker": "JIT vs AOT",
+      "left": {
+        "title": "JIT",
+        "items": [
+          "Adapts at runtime",
+          "Slower startup"
+        ]
+      },
+      "right": {
+        "title": "AOT",
+        "items": [
+          "Native code at build",
+          "Faster startup"
+        ]
+      },
+      "say": "Ahead-Of-Time, or AOT, compiles to native code before you run the app. JIT adapts at runtime but starts slower. AOT gives you faster startup."
+    },
+    {
+      "id": "4-trap-tradeoff",
+      "type": "trap",
+      "question": "Is AOT always better than JIT?",
+      "wrong": "Yes, AOT is always faster.",
+      "right": "No. JIT allows runtime optimizations; AOT is faster to start but less adaptive.",
+      "say": "Here's a common trap: Is AOT always better than JIT? No way. JIT can optimize as your app runs, while AOT is all about fast startup."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:27:27.113Z"
+}
