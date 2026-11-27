@@ -1,0 +1,88 @@
+{
+  "id": "data-quality-l4",
+  "title": "PII Masking & GDPR for Engineers",
+  "keys": [
+    "PII",
+    "masking",
+    "GDPR",
+    "encryption"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pii-gdpr",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "How do you protect user data?",
+      "line2": "What’s GDPR mean?",
+      "say": "How do you keep user data safe? And what does GDPR really require from engineers?"
+    },
+    {
+      "id": "1-chip-pii",
+      "type": "chip",
+      "kicker": "Key Term",
+      "label": "PII",
+      "sub": "Personally Identifiable Information—think emails, names, or addresses.",
+      "say": "PII means Personally Identifiable Information—like emails, names, or addresses. This data must be protected."
+    },
+    {
+      "id": "2-rows-masking-steps",
+      "type": "rows",
+      "kicker": "Masking PII",
+      "rows": [
+        {
+          "a": "Identify PII",
+          "b": "Find sensitive fields early"
+        },
+        {
+          "a": "Apply Masking",
+          "b": "Hide or obfuscate data"
+        },
+        {
+          "a": "Encrypt Data",
+          "b": "Use strong encryption"
+        },
+        {
+          "a": "Limit Access",
+          "b": "Only authorized users allowed"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how I handle PII: First, identify sensitive fields. Then, mask or encrypt them. Finally, restrict access to only those who need it."
+    },
+    {
+      "id": "3-terminal-mask-exampl",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Masking Email in SQL",
+      "lines": [
+        "$ UPDATE users",
+        "$ SET email = CONCAT('xxxx',",
+        "  SUBSTRING(email, -5));"
+      ],
+      "say": "For example, to mask emails in a database, I might run an update that hides all but the last few characters."
+    },
+    {
+      "id": "4-chip-gdpr",
+      "type": "chip",
+      "kicker": "Law",
+      "label": "GDPR",
+      "sub": "Requires user consent, data minimization, and erasure rights.",
+      "say": "GDPR is the General Data Protection Regulation. It requires user consent, data minimization, and lets users erase their data."
+    },
+    {
+      "id": "5-trap-pii-mistake",
+      "type": "trap",
+      "question": "Is masking alone enough for GDPR?",
+      "wrong": "Yes, masking is sufficient.",
+      "right": "No. GDPR also requires user consent, data deletion, and access controls.",
+      "say": "Watch out: masking isn’t enough for GDPR. You also need user consent, deletion processes, and tight access controls."
+    },
+    {
+      "id": "6-end-pilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:50:45.400Z"
+}
