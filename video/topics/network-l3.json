@@ -1,0 +1,75 @@
+{
+  "id": "network-l3",
+  "title": "What Happens When You Open a URL",
+  "keys": [
+    "DNS",
+    "TCP",
+    "TLS",
+    "HTTP",
+    "load balancer"
+  ],
+  "scenes": [
+    {
+      "id": "0-url-magic-hook",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "What happens when you open a URL?",
+      "line2": "Can you walk through it?",
+      "say": "Ever wonder what really happens when you open a URL? Let’s break it down step by step."
+    },
+    {
+      "id": "1-dns-chip",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "DNS",
+      "sub": "Browser asks DNS for the server’s IP address.",
+      "say": "First, your browser asks the Domain Name System for the server’s IP address."
+    },
+    {
+      "id": "2-tcp-tls-rows",
+      "type": "rows",
+      "kicker": "Connections",
+      "rows": [
+        {
+          "a": "TCP handshake",
+          "b": "Sets up a reliable connection"
+        },
+        {
+          "a": "TLS handshake",
+          "b": "Secures the channel for HTTPS"
+        }
+      ],
+      "walk": true,
+      "say": "Next, it sets up a reliable connection with TCP, then secures it using Transport Layer Security for HTTPS."
+    },
+    {
+      "id": "3-http-terminal",
+      "type": "terminal",
+      "kicker": "Request",
+      "title": "curl example",
+      "lines": [
+        "$ curl -v https://app.example.com",
+        "* DNS done, TCP connecting",
+        "* SSL connection using TLSv1.3",
+        "> GET / HTTP/2",
+        "< HTTP/2 200"
+      ],
+      "say": "Now, your browser sends an HTTP request. It usually hits a load balancer, which forwards it to a backend server."
+    },
+    {
+      "id": "4-trap-load-balancer",
+      "type": "trap",
+      "question": "Does the browser connect directly to the server?",
+      "wrong": "Yes, it connects straight to the server.",
+      "right": "No, it usually goes through a load balancer first.",
+      "say": "Don’t forget: most requests hit a load balancer before reaching the web server. That’s a common interview trap."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:49:44.916Z"
+}
