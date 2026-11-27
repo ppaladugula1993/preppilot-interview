@@ -1,0 +1,72 @@
+{
+  "id": "streaming-l4",
+  "title": "Windows, Watermarks & State in Streams",
+  "keys": [
+    "windows",
+    "watermarks",
+    "state",
+    "streaming"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-windows-waterma",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How do streams handle late data?",
+      "line2": "What makes it reliable?",
+      "say": "Ever wondered how streaming systems handle late or out-of-order events and still give accurate results?"
+    },
+    {
+      "id": "1-chip-windows",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Windows",
+      "sub": "Group events by time or count for processing",
+      "say": "First up, windows. These group events into chunks, like every five minutes or every hundred records, so you can run analytics on each batch."
+    },
+    {
+      "id": "2-chip-watermarks",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Watermarks",
+      "sub": "Track event time progress, handle lateness",
+      "say": "Next, watermarks. They track how far event time has moved, letting the system know when to close a window, even if some events arrive late."
+    },
+    {
+      "id": "3-rows-state",
+      "type": "rows",
+      "kicker": "Why State Matters",
+      "rows": [
+        {
+          "a": "Store results",
+          "b": "Keep running sums or counts"
+        },
+        {
+          "a": "Enable joins",
+          "b": "Match related events together"
+        },
+        {
+          "a": "Handle late data",
+          "b": "Update outputs with new info"
+        }
+      ],
+      "walk": true,
+      "say": "State is crucial. It stores running results, lets you join related events, and helps update the output when late data arrives."
+    },
+    {
+      "id": "4-trap-watermark-trick",
+      "type": "trap",
+      "question": "What if watermarks are too strict?",
+      "wrong": "Late events are always included.",
+      "right": "Late events might be dropped, so you could lose data.",
+      "say": "Here's a common trap: if your watermark is too strict, late events might get dropped, and you could lose important data."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:53:45.170Z"
+}
