@@ -1,0 +1,64 @@
+{
+  "id": "testing-l8",
+  "title": "Testing Legacy Code Safely",
+  "keys": [
+    "legacy code",
+    "characterization",
+    "refactor",
+    "test coverage"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-legacy-risk",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "How do you test old code",
+      "line2": "without breaking things?",
+      "say": "How do you test legacy code without breaking anything important?"
+    },
+    {
+      "id": "1-chip-characterizatio",
+      "type": "chip",
+      "kicker": "Key Step",
+      "label": "Capture",
+      "sub": "Write characterization tests first—record what the code does now.",
+      "say": "First, write characterization tests. These capture exactly how the legacy code behaves today."
+    },
+    {
+      "id": "2-rows-safe-refactor",
+      "type": "rows",
+      "kicker": "Safe Refactor Steps",
+      "rows": [
+        {
+          "a": "Write tests",
+          "b": "Document current output"
+        },
+        {
+          "a": "Run tests",
+          "b": "Confirm behavior is captured"
+        },
+        {
+          "a": "Refactor code",
+          "b": "Make safe improvements"
+        }
+      ],
+      "walk": true,
+      "say": "Here's my process: write tests to document outputs, run them to confirm, then refactor safely."
+    },
+    {
+      "id": "3-trap-coverage",
+      "type": "trap",
+      "question": "How do you improve legacy test coverage?",
+      "wrong": "Just add new tests after refactoring.",
+      "right": "Write characterization tests first, then refactor.",
+      "say": "Interview trap: Don't just add tests after you refactor. Always write characterization tests first, so you know you're not breaking anything."
+    },
+    {
+      "id": "4-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:01:46.378Z"
+}
