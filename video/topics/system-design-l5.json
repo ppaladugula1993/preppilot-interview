@@ -1,0 +1,84 @@
+{
+  "id": "system-design-l5",
+  "title": "Async Processing: Queues & Pub/Sub",
+  "keys": [
+    "queue",
+    "pub/sub",
+    "idempotency",
+    "dead-letter"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-queues",
+      "type": "hook",
+      "kicker": "System Design · lesson",
+      "line1": "Why use queues or pub/sub?",
+      "line2": "How do they help?",
+      "say": "Why do system designers love queues and publish-subscribe? How do they make async processing reliable?"
+    },
+    {
+      "id": "1-chip-queue-basics",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Queue",
+      "sub": "Decouples producers and consumers for background tasks.",
+      "say": "A queue decouples producers from consumers. It lets you process tasks in the background, at your own pace."
+    },
+    {
+      "id": "2-compare-queue-pubsub",
+      "type": "compare",
+      "kicker": "How They Differ",
+      "left": {
+        "title": "Queue",
+        "items": [
+          "One consumer",
+          "Each message handled once"
+        ]
+      },
+      "right": {
+        "title": "Pub/Sub",
+        "items": [
+          "Many consumers",
+          "All get the same message"
+        ]
+      },
+      "say": "Queues send each message to one consumer. Publish-subscribe, or pub-sub, lets many consumers get the same message."
+    },
+    {
+      "id": "3-rows-failure-handlin",
+      "type": "rows",
+      "kicker": "Handling Failures",
+      "rows": [
+        {
+          "a": "1. Retry",
+          "b": "Try processing the message again"
+        },
+        {
+          "a": "2. Dead-letter",
+          "b": "Move failed jobs to a special queue"
+        },
+        {
+          "a": "3. Idempotency",
+          "b": "Make sure repeats don't cause errors"
+        }
+      ],
+      "walk": true,
+      "say": "To handle failures, retry jobs, use a dead-letter queue for stubborn ones, and design your logic to be idempotent. That means repeated processing won't break things."
+    },
+    {
+      "id": "4-trap-idempotency",
+      "type": "trap",
+      "question": "What if retries aren't idempotent?",
+      "wrong": "It doesn't matter—just retry.",
+      "right": "You risk duplicate side effects, like double billing. Always make retries safe.",
+      "say": "Here's a trap: If your retries aren't idempotent, you could double-charge a user or trigger duplicate actions. Always make retries safe."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:00:16.834Z"
+}
