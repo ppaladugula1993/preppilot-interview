@@ -1,0 +1,72 @@
+{
+  "id": "csharp-core-l1",
+  "title": "C# Generics and Constraints Explained",
+  "keys": [
+    "generics",
+    "constraints",
+    "type safety",
+    "compile-time"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-generics",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "Why use generics in C#?",
+      "line2": "How do constraints help?",
+      "say": "Ever wonder why C sharp developers use generics? And what do constraints actually do for you?"
+    },
+    {
+      "id": "1-chip-generics",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Generics",
+      "sub": "Write reusable, type-safe code for any data type.",
+      "say": "Generics let you write reusable code that works with any type, while keeping things type-safe."
+    },
+    {
+      "id": "2-rows-constraints",
+      "type": "rows",
+      "kicker": "Constraints",
+      "rows": [
+        {
+          "a": "where T : class",
+          "b": "T must be a reference type"
+        },
+        {
+          "a": "where T : new()",
+          "b": "T needs a parameterless constructor"
+        },
+        {
+          "a": "where T : Interface",
+          "b": "T must implement that interface"
+        }
+      ],
+      "walk": true,
+      "say": "Constraints limit what types can be used. For example, you can require T to be a class, have a default constructor, or implement an interface."
+    },
+    {
+      "id": "3-code-repository",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "public class Repository<T>\n  where T : IEntity, new()\n{\n  public T Create() => new T();\n}",
+      "say": "Here’s a real example. This repository only works for types that implement IEntity and have a parameterless constructor."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "What does 'where T : new()' ensure?",
+      "wrong": "T can be any type.",
+      "right": "T must have a public parameterless constructor.",
+      "say": "Watch out in interviews. 'Where T colon new' checks that T has a public parameterless constructor, not just any type."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:09:18.214Z"
+}
