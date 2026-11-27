@@ -1,0 +1,72 @@
+{
+  "id": "accessibility-l2",
+  "title": "Keyboard Navigation & Focus Management",
+  "keys": [
+    "keyboard",
+    "focus",
+    "modal",
+    "tabindex"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-keyboard-access",
+      "type": "hook",
+      "kicker": "Web Accessibility · lesson",
+      "line1": "Can you build for keyboard users?",
+      "line2": "How do you manage focus?",
+      "say": "Ever tried using a site with just the keyboard? How do you make sure every user can navigate and interact without a mouse?"
+    },
+    {
+      "id": "1-chip-keyboard",
+      "type": "chip",
+      "kicker": "Essentials",
+      "label": "Keyboard",
+      "sub": "All interactive elements must be reachable by keyboard.",
+      "say": "Keyboard accessibility means every button, link, and input should be usable with just the keyboard."
+    },
+    {
+      "id": "2-rows-focus-order",
+      "type": "rows",
+      "kicker": "Focus Management",
+      "rows": [
+        {
+          "a": "Open modal",
+          "b": "Move focus to modal"
+        },
+        {
+          "a": "Close modal",
+          "b": "Return focus to trigger"
+        },
+        {
+          "a": "Custom widgets",
+          "b": "Keep logical focus order"
+        }
+      ],
+      "walk": true,
+      "say": "When a modal opens, move focus to it. When it closes, send focus back to the trigger. For custom widgets, keep the focus order logical."
+    },
+    {
+      "id": "3-code-modal-focus",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "modal.setAttribute('tabindex', '-1');\nmodal.focus();\n// On close:\ntrigger.focus();",
+      "say": "To handle modals, set a tabindex of minus one and call focus on the modal. When closing, return focus to the element that opened it."
+    },
+    {
+      "id": "4-trap-tab-test",
+      "type": "trap",
+      "question": "How do you test keyboard navigation?",
+      "wrong": "Run an automated accessibility tool.",
+      "right": "Tab through the interface manually. Check that focus indicators are visible and order makes sense.",
+      "say": "Don't rely only on automated tools. Always test keyboard navigation by tabbing through your interface yourself."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:42:52.904Z"
+}
