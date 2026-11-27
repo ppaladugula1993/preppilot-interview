@@ -1,0 +1,72 @@
+{
+  "id": "sql-advanced-l4",
+  "title": "Pivoting & Conditional Aggregation in SQL",
+  "keys": [
+    "pivot",
+    "CASE",
+    "aggregation",
+    "PIVOT"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pivoting",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you turn rows into columns?",
+      "line2": "What about custom counts?",
+      "say": "How do you turn rows into columns in SQL? And how do you count values by condition?"
+    },
+    {
+      "id": "1-chip-pivot",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Pivot",
+      "sub": "Transforms row values into columns for reporting.",
+      "say": "Pivoting means transforming row values into columns. It's great for reporting and analytics."
+    },
+    {
+      "id": "2-code-cond-agg",
+      "type": "code",
+      "kicker": "Technique",
+      "lang": "sql",
+      "code": "SELECT department,\n  SUM(CASE WHEN gender = 'F'\n    THEN 1 ELSE 0 END) AS female_count\nFROM employees\nGROUP BY department;",
+      "say": "Conditional aggregation uses a CASE statement inside SUM or COUNT. For example, counting females per department."
+    },
+    {
+      "id": "3-rows-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "1. CASE",
+          "b": "Checks a condition per row"
+        },
+        {
+          "a": "2. Aggregate",
+          "b": "SUM or COUNT the results"
+        },
+        {
+          "a": "3. GROUP BY",
+          "b": "Split data by a category"
+        }
+      ],
+      "walk": true,
+      "say": "First, CASE checks each row. Then, SUM or COUNT aggregates. Finally, GROUP BY splits by category."
+    },
+    {
+      "id": "4-trap-pivot",
+      "type": "trap",
+      "question": "Can you only pivot with PIVOT?",
+      "wrong": "Yes, only with the PIVOT operator.",
+      "right": "No. You can use CASE in aggregates for custom pivots.",
+      "say": "Interview trap: Can you only pivot with the PIVOT operator? No. You can use CASE in aggregates for custom pivots, even if PIVOT isn't supported."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T17:50:13.480Z"
+}
