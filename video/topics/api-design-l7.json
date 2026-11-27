@@ -1,0 +1,77 @@
+{
+  "id": "api-design-l7",
+  "title": "OpenAPI & Contract-First API Design",
+  "keys": [
+    "OpenAPI",
+    "contract-first",
+    "specification",
+    "codegen",
+    "documentation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-contract-first",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "How do you avoid messy APIs?",
+      "line2": "Contract-first or code-first?",
+      "say": "Ever wondered how top teams keep their APIs clean and consistent? Should you start with code or a contract?"
+    },
+    {
+      "id": "1-chip-openapi",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "OpenAPI",
+      "sub": "OpenAPI describes REST APIs in a standard format.",
+      "say": "OpenAPI is a standard way to describe REST interfaces. It helps everyone agree on what the API does."
+    },
+    {
+      "id": "2-rows-contract-first",
+      "type": "rows",
+      "kicker": "Steps",
+      "rows": [
+        {
+          "a": "Define spec",
+          "b": "Write OpenAPI before coding"
+        },
+        {
+          "a": "Share",
+          "b": "Get feedback from teammates"
+        },
+        {
+          "a": "Generate",
+          "b": "Create docs and client code"
+        },
+        {
+          "a": "Implement",
+          "b": "Build to match the contract"
+        }
+      ],
+      "walk": true,
+      "say": "With contract-first, you write the OpenAPI spec first, share it for feedback, generate docs and code, then build to match the contract."
+    },
+    {
+      "id": "3-code-openapi-snippet",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "yaml",
+      "code": "openapi: 3.0.0\npaths:\n  /users:\n    get:\n      summary: List users",
+      "say": "Here’s a simple OpenAPI spec. It defines a users endpoint and describes what the get method does."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s the main benefit of contract-first?",
+      "wrong": "It’s faster to code without specs.",
+      "right": "It ensures everyone agrees on the API, reduces confusion, and enables code generation.",
+      "say": "Interviewers want you to highlight clarity and collaboration. Don’t just say it’s faster—focus on agreement and tooling."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:47:37.562Z"
+}
