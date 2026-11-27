@@ -1,0 +1,72 @@
+{
+  "id": "go-core-l5",
+  "title": "Go Generics: Type-Safe Reuse",
+  "keys": [
+    "generics",
+    "type parameters",
+    "constraints",
+    "type safety"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-generics",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "Why did Go add generics?",
+      "line2": "What do they unlock?",
+      "say": "Why did Go finally add generics? What do they let you do that you couldn't before?"
+    },
+    {
+      "id": "1-chip-type-params",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Generics",
+      "sub": "Use type parameters for reusable, type-safe code.",
+      "say": "Generics let you write functions and types that work with different data types, all while keeping type safety."
+    },
+    {
+      "id": "2-code-sum-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "func Sum[T int | float64](a, b T) T {\n    return a + b\n}",
+      "say": "Here's a generic sum function. It works with both integers and floating-point numbers, thanks to type parameters."
+    },
+    {
+      "id": "3-rows-why-use-generic",
+      "type": "rows",
+      "kicker": "Why Use Generics?",
+      "rows": [
+        {
+          "a": "Type safety",
+          "b": "Catch errors at compile time"
+        },
+        {
+          "a": "No runtime cost",
+          "b": "No hidden performance hit"
+        },
+        {
+          "a": "Reusable logic",
+          "b": "Less copy-paste code"
+        }
+      ],
+      "walk": true,
+      "say": "Generics give you type safety, no runtime performance cost, and let you reuse logic without copy-pasting."
+    },
+    {
+      "id": "4-trap-overuse-complex",
+      "type": "trap",
+      "question": "What's a common generics mistake?",
+      "wrong": "Using complex constraints for everything",
+      "right": "Overusing generics can hurt readability. Keep constraints simple and use interfaces for behavior.",
+      "say": "A common trap is overusing generics or making constraints too complex. Keep it simple, and use interfaces when you just need behavior."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:48:19.336Z"
+}
