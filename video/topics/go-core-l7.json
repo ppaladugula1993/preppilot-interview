@@ -1,0 +1,59 @@
+{
+  "id": "go-core-l7",
+  "title": "Go Defer, Panic, Recover: Core Control Flow",
+  "keys": [
+    "defer",
+    "panic",
+    "recover",
+    "error handling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-defer-panic",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "Ever crashed a Go app?",
+      "line2": "How do you recover?",
+      "say": "Ever crashed a Go app? How do you recover from unexpected errors in Go?"
+    },
+    {
+      "id": "1-chip-defer",
+      "type": "chip",
+      "kicker": "Keyword",
+      "label": "defer",
+      "sub": "Runs code after your function returns. Great for cleanup.",
+      "say": "Defer lets you schedule code to run after your function returns. It's perfect for cleanup tasks, like closing files."
+    },
+    {
+      "id": "2-chip-panic",
+      "type": "chip",
+      "kicker": "Keyword",
+      "label": "panic",
+      "sub": "Raises a runtime error. Stops normal flow.",
+      "say": "Panic raises a runtime error and stops normal control flow. It's how Go signals something went seriously wrong."
+    },
+    {
+      "id": "3-code-recover-demo",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "func f() {\n  defer func() {\n    if r := recover(); r != nil {\n      fmt.Println(\"Recovered\")\n    }\n  }()\n  panic(\"fail\")\n}",
+      "say": "Here, defer sets up a function to catch a panic. If panic is called, recover grabs it and prints recovered, so the program doesn't crash."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Should you always use recover?",
+      "wrong": "Yes, always catch panics.",
+      "right": "No, use recover only for unexpected panics, not for regular error handling.",
+      "say": "Here's a common trap: should you always use recover? No way. Only use recover for unexpected panics, not for regular errors."
+    },
+    {
+      "id": "5-end-ready",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:51:55.291Z"
+}
