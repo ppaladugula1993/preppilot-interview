@@ -1,0 +1,72 @@
+{
+  "id": "efcore-l6",
+  "title": "EF Core: Diagnosing Performance Pitfalls",
+  "keys": [
+    "tracking",
+    "N+1 queries",
+    "ToQueryString",
+    "logging"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pitfalls",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "Why does EF Core slow down?",
+      "line2": "Can you spot the cause?",
+      "say": "Ever wonder why your app crawls when using Entity Framework Core? Can you pinpoint the culprit?"
+    },
+    {
+      "id": "1-chip-tracking",
+      "type": "chip",
+      "kicker": "Pitfall",
+      "label": "Tracking",
+      "sub": "Excessive tracking wastes memory and slows queries.",
+      "say": "Too much entity tracking eats up memory and drags down query speed."
+    },
+    {
+      "id": "2-rows-diagnosis",
+      "type": "rows",
+      "kicker": "Diagnosis Tools",
+      "rows": [
+        {
+          "a": "Logging",
+          "b": "Shows slow or repeated queries"
+        },
+        {
+          "a": "ToQueryString",
+          "b": "Reveals generated SQL"
+        },
+        {
+          "a": "Profilers",
+          "b": "Finds bottlenecks in database"
+        }
+      ],
+      "walk": true,
+      "say": "To catch performance issues, I check logs, review the generated SQL, and use profilers to spot bottlenecks."
+    },
+    {
+      "id": "3-code-no-tracking",
+      "type": "code",
+      "kicker": "Quick Fix",
+      "lang": "csharp",
+      "code": "context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;\nvar sql = context.Users.Where(u => u.IsActive).ToQueryString();",
+      "say": "Disabling tracking for read-only queries and inspecting the SQL helps me catch inefficiencies early."
+    },
+    {
+      "id": "4-trap-nplus1",
+      "type": "trap",
+      "question": "What causes the N+1 query problem?",
+      "wrong": "Using explicit loading only",
+      "right": "Lazy loading triggers extra queries for each related entity, leading to N plus one problems.",
+      "say": "What leads to the N plus one query issue? It's usually lazy loading, which fires extra queries for every related entity."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:30:47.278Z"
+}
