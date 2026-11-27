@@ -1,0 +1,80 @@
+{
+  "id": "data-quality-l3",
+  "title": "Data Lineage & Catalogs Explained",
+  "keys": [
+    "data lineage",
+    "catalog",
+    "metadata",
+    "trace"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lineage-catalog",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "Can you trace data issues fast?",
+      "line2": "Why does lineage matter?",
+      "say": "Can you quickly trace data issues? Let’s see why data lineage and catalogs matter for engineers."
+    },
+    {
+      "id": "1-chip-lineage",
+      "type": "chip",
+      "kicker": "Data Flow",
+      "label": "Lineage",
+      "sub": "Shows how data moves and transforms across systems.",
+      "say": "Data lineage shows how data flows and transforms across systems. It helps you trace sources and dependencies."
+    },
+    {
+      "id": "2-rows-catalog",
+      "type": "rows",
+      "kicker": "Catalog Details",
+      "rows": [
+        {
+          "a": "Datasets",
+          "b": "What tables exist"
+        },
+        {
+          "a": "Schemas",
+          "b": "Column names and types"
+        },
+        {
+          "a": "Owners",
+          "b": "Who manages each table"
+        },
+        {
+          "a": "Metadata",
+          "b": "Extra info for discovery"
+        }
+      ],
+      "walk": true,
+      "say": "A data catalog documents datasets, schemas, owners, and metadata. This makes data easier to find and govern."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Lineage Graph",
+      "title": "Sample Data Flow",
+      "lines": [
+        "$ raw_sales",
+        "$ cleaned_sales",
+        "$ sales_aggregates"
+      ],
+      "say": "A lineage graph might show data flowing from raw sales to cleaned sales, then to sales aggregates."
+    },
+    {
+      "id": "4-trap-catalog",
+      "type": "trap",
+      "question": "What does a catalog entry include?",
+      "wrong": "Just table names and owners.",
+      "right": "Table columns, data types, owner, and metadata.",
+      "say": "Interviewers may ask what a catalog entry includes. It’s more than just names and owners—remember columns, types, and metadata."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:47:33.519Z"
+}
