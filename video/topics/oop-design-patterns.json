@@ -1,0 +1,94 @@
+{
+  "id": "oop-design-patterns",
+  "title": "The Core of OOP: Composition Over Inheritance",
+  "keys": [
+    "composition",
+    "inheritance",
+    "flexibility",
+    "SOLID",
+    "maintainability"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-composition",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · 45 seconds",
+      "line1": "Why do top engineers avoid deep",
+      "line2": "inheritance trees?",
+      "say": "Why do the best engineers almost never build deep inheritance trees?"
+    },
+    {
+      "id": "1-chip-inheritance",
+      "type": "chip",
+      "kicker": "Classic OOP",
+      "label": "Inheritance",
+      "sub": "Classes extend each other in long chains.",
+      "say": "Traditional object-oriented code often stacks classes on top of each other, creating long inheritance chains."
+    },
+    {
+      "id": "2-compare-composition",
+      "type": "compare",
+      "kicker": "Modern Approach",
+      "left": {
+        "title": "Inheritance",
+        "items": [
+          "Tight coupling",
+          "Hard to change"
+        ]
+      },
+      "right": {
+        "title": "Composition",
+        "items": [
+          "Flexible",
+          "Easy to test",
+          "Swap behaviors"
+        ]
+      },
+      "say": "But composition flips this. Instead of rigid hierarchies, you build classes by combining smaller objects. That means less coupling and more flexibility."
+    },
+    {
+      "id": "3-rows-solid",
+      "type": "rows",
+      "kicker": "SOLID Principles",
+      "rows": [
+        {
+          "a": "Single Responsibility",
+          "b": "One job per class"
+        },
+        {
+          "a": "Open/Closed",
+          "b": "Extend, don't rewrite"
+        },
+        {
+          "a": "Dependency Inversion",
+          "b": "Depend on abstractions"
+        }
+      ],
+      "walk": true,
+      "say": "This idea is at the heart of the S O L I D principles. Each class has one job, you extend without rewriting, and you depend on interfaces, not details."
+    },
+    {
+      "id": "4-code-composition",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "class Logger:\n  def log(self, msg): ...\nclass Service:\n  def __init__(self, logger):\n    self.logger = logger",
+      "say": "See here? The Service class gets a Logger. It doesn't inherit from it. You can swap in any logger you want, even a mock for tests."
+    },
+    {
+      "id": "5-trap-inheritance",
+      "type": "trap",
+      "question": "Should you always use inheritance?",
+      "wrong": "Yes, for code reuse.",
+      "right": "No. Prefer composition for flexibility and maintainability.",
+      "say": "Here's a trap: thinking inheritance is always best for reusing code. In reality, composition keeps your code flexible and much easier to maintain."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:22:18.351Z"
+}
