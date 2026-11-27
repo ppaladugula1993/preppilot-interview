@@ -1,0 +1,68 @@
+{
+  "id": "data-modeling-l4",
+  "title": "Slowly Changing Dimensions (SCDs)",
+  "keys": [
+    "SCD",
+    "Type 1",
+    "Type 2",
+    "history"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-scd-question",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "How do you track changes",
+      "line2": "in dimension data?",
+      "say": "How do you track changes in dimension data over time? Let’s break down Slowly Changing Dimensions, or SCDs."
+    },
+    {
+      "id": "1-chip-type1",
+      "type": "chip",
+      "kicker": "SCD Types",
+      "label": "Type 1",
+      "sub": "Overwrites old data, loses history",
+      "say": "SCD Type 1 simply overwrites old data. You lose all history when an attribute changes."
+    },
+    {
+      "id": "2-chip-type2",
+      "type": "chip",
+      "kicker": "SCD Types",
+      "label": "Type 2",
+      "sub": "Inserts new row, keeps history",
+      "say": "SCD Type 2 creates a new record for each change, preserving historical values for analysis."
+    },
+    {
+      "id": "3-rows-example",
+      "type": "rows",
+      "kicker": "Example",
+      "rows": [
+        {
+          "a": "Type 1",
+          "b": "Update address in place"
+        },
+        {
+          "a": "Type 2",
+          "b": "Insert new row with new date"
+        }
+      ],
+      "walk": true,
+      "say": "For example, with Type 1, you update the customer address directly. With Type 2, you insert a new row with the updated address and a new valid-from date."
+    },
+    {
+      "id": "4-trap-type2",
+      "type": "trap",
+      "question": "When should you use SCD Type 2?",
+      "wrong": "When you never need history",
+      "right": "When you need to analyze historical changes",
+      "say": "Don’t forget: use SCD Type 2 when you need to analyze historical changes, not when history doesn’t matter."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:15:48.694Z"
+}
