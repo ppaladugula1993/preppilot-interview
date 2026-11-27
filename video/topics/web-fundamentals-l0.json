@@ -1,0 +1,73 @@
+{
+  "id": "web-fundamentals-l0",
+  "title": "URL Loading Lifecycle Explained",
+  "keys": [
+    "DNS",
+    "TCP",
+    "TLS",
+    "HTTP",
+    "Rendering"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-url-lifecycle",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "What happens when you load a URL?",
+      "line2": "Can you walk through each step?",
+      "say": "Ever wondered what really happens when you load a web address? Let’s break down each step in the browser’s journey."
+    },
+    {
+      "id": "1-rows-network-steps",
+      "type": "rows",
+      "kicker": "Network Steps",
+      "rows": [
+        {
+          "a": "DNS Lookup",
+          "b": "Browser finds the server’s address"
+        },
+        {
+          "a": "Connection",
+          "b": "TCP or QUIC handshake starts"
+        },
+        {
+          "a": "TLS Negotiation",
+          "b": "Secure connection for HTTPS"
+        },
+        {
+          "a": "HTTP Request",
+          "b": "Browser asks for the page"
+        },
+        {
+          "a": "HTTP Response",
+          "b": "Server sends back HTML"
+        }
+      ],
+      "walk": true,
+      "say": "First, the browser looks up the domain’s address using DNS. Next, it connects to the server, secures the link if needed, then requests and receives the page."
+    },
+    {
+      "id": "2-chip-rendering",
+      "type": "chip",
+      "kicker": "Browser Phase",
+      "label": "Rendering",
+      "sub": "HTML is parsed, resources loaded, and the page appears.",
+      "say": "Once the browser gets the HTML, it parses the content, fetches extra files like styles or scripts, and finally renders the page for you."
+    },
+    {
+      "id": "3-trap-interview",
+      "type": "trap",
+      "question": "What’s the first browser step?",
+      "wrong": "It sends an HTTP request.",
+      "right": "It resolves the domain name using DNS before anything else.",
+      "say": "Interviewers love this one. The browser doesn’t start with a request—it first finds the server’s address using DNS."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:18:19.377Z"
+}
