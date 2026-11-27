@@ -1,0 +1,76 @@
+{
+  "id": "sql-advanced-l5",
+  "title": "Query Plans & Join Algorithms Explained",
+  "keys": [
+    "query plan",
+    "hash join",
+    "merge join",
+    "nested loop"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-query-plan",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How does SQL pick a join method?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder how SQL decides which join algorithm to use? Why does this choice impact query speed?"
+    },
+    {
+      "id": "1-chip-query-plan",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Plan",
+      "sub": "A query plan shows how SQL executes your query.",
+      "say": "A query plan reveals the steps SQL takes to run your query, including which join algorithm it picks."
+    },
+    {
+      "id": "2-rows-join-types",
+      "type": "rows",
+      "kicker": "Join Algorithms",
+      "rows": [
+        {
+          "a": "Hash Join",
+          "b": "Best for big, unsorted tables"
+        },
+        {
+          "a": "Merge Join",
+          "b": "Fast for sorted data"
+        },
+        {
+          "a": "Nested Loop",
+          "b": "Efficient for small tables"
+        }
+      ],
+      "walk": true,
+      "say": "There are three main join algorithms. Hash join works well for large, unsorted tables. Merge join is fast when both inputs are sorted. Nested loop join is efficient for small tables or indexed data."
+    },
+    {
+      "id": "3-terminal-explain",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "EXPLAIN a join",
+      "lines": [
+        "$ EXPLAIN SELECT * FROM orders",
+        "JOIN customers ON orders.customer_id = customers.id",
+        "-> Hash Join or Merge Join shown"
+      ],
+      "say": "Use EXPLAIN to see which join method SQL chooses. This helps you spot performance issues and tune your query."
+    },
+    {
+      "id": "4-trap-index-mistake",
+      "type": "trap",
+      "question": "Does SQL always pick the fastest join?",
+      "wrong": "Yes, SQL always picks the best one.",
+      "right": "No, SQL picks based on stats. Sometimes, it needs hints or better indexes to choose the optimal join.",
+      "say": "Interviewers may ask if SQL always picks the fastest join. It doesn't. SQL uses stats, but sometimes needs hints or indexes for the best choice."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T19:55:15.263Z"
+}
