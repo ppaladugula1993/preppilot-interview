@@ -1,0 +1,86 @@
+{
+  "id": "data-quality",
+  "title": "The Core of Data Quality & Governance",
+  "keys": [
+    "data quality",
+    "tests",
+    "observability",
+    "lineage",
+    "PII"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-quality-matters",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · 45 seconds",
+      "line1": "What makes data truly trustworthy?",
+      "line2": "How do you prove it?",
+      "say": "If your data can't be trusted, every downstream decision is at risk. So, what does it take to actually prove your data is reliable?"
+    },
+    {
+      "id": "1-chip-dimensions",
+      "type": "chip",
+      "kicker": "Essentials",
+      "label": "Quality",
+      "sub": "Accuracy, completeness, consistency, timeliness, uniqueness, validity",
+      "say": "Data quality isn't just one thing. It's accuracy, completeness, consistency, timeliness, uniqueness, and validity. Each one checks a different angle of trust."
+    },
+    {
+      "id": "2-rows-tests",
+      "type": "rows",
+      "kicker": "Step 1 · Testing",
+      "rows": [
+        {
+          "a": "Uniqueness",
+          "b": "No duplicate keys"
+        },
+        {
+          "a": "Null checks",
+          "b": "No missing critical fields"
+        },
+        {
+          "a": "Referential",
+          "b": "Links between tables hold up"
+        }
+      ],
+      "walk": true,
+      "say": "You automate these checks with tools like dbt and Great Expectations. They run tests for duplicates, missing values, and broken links between tables."
+    },
+    {
+      "id": "3-terminal-observabili",
+      "type": "terminal",
+      "kicker": "Step 2 · Observability",
+      "title": "Pipeline Metrics",
+      "lines": [
+        "$ check freshness",
+        "Last update: 2 hours ago",
+        "$ check volume",
+        "Row count: 1,000,000"
+      ],
+      "say": "Next, you monitor freshness and volume. If data's late or the row count suddenly drops, you catch it before users do."
+    },
+    {
+      "id": "4-chip-lineage",
+      "type": "chip",
+      "kicker": "Traceability",
+      "label": "Lineage",
+      "sub": "Shows where data comes from and how it changes",
+      "say": "Lineage tools map out how data moves and transforms. This makes it easy to trace issues back to the source."
+    },
+    {
+      "id": "5-trap-pii",
+      "type": "trap",
+      "question": "Is masking PII enough for GDPR?",
+      "wrong": "Yes, masking alone is fine.",
+      "right": "No—GDPR also requires consent, minimization, and user rights.",
+      "say": "A common mistake: thinking masking is enough for privacy laws. But GDPR also needs consent, data minimization, and honoring user rights."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:24:01.956Z"
+}
