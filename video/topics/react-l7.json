@@ -1,0 +1,73 @@
+{
+  "id": "react-l7",
+  "title": "React Testing Library: User-Focused Testing",
+  "keys": [
+    "React",
+    "Testing",
+    "UI",
+    "fireEvent",
+    "Jest"
+  ],
+  "scenes": [
+    {
+      "id": "0-rtl-hook",
+      "type": "hook",
+      "kicker": "React · Testing",
+      "line1": "How do you test React like a user?",
+      "line2": "What matters most?",
+      "say": "How do you test React apps the way users actually use them? What do interviewers look for?"
+    },
+    {
+      "id": "1-rtl-chip",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "User",
+      "sub": "React Testing Library checks UI from the user's view.",
+      "say": "React Testing Library focuses on testing from the user's perspective. That means checking what users see and do."
+    },
+    {
+      "id": "2-rtl-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "render(<Button />);\nfireEvent.click(screen.getByText('Submit'));\nexpect(screen.getByText('Submitted')).toBeInTheDocument();",
+      "say": "Here's a typical test. We render a button, simulate a click, and check that the UI updates as expected."
+    },
+    {
+      "id": "3-rtl-rows",
+      "type": "rows",
+      "kicker": "Steps",
+      "rows": [
+        {
+          "a": "Render",
+          "b": "Show the component in the test"
+        },
+        {
+          "a": "Simulate",
+          "b": "Trigger user actions like clicks"
+        },
+        {
+          "a": "Assert",
+          "b": "Check for expected UI changes"
+        }
+      ],
+      "walk": true,
+      "say": "The process is simple: render your component, simulate user events, and assert what changes in the UI."
+    },
+    {
+      "id": "4-rtl-trap",
+      "type": "trap",
+      "question": "Should you test internal state?",
+      "wrong": "Yes, always check state.",
+      "right": "No, focus on UI changes users can see.",
+      "say": "Here's a trap: don't test internal state directly. Interviewers want tests that focus on visible changes, not hidden details."
+    },
+    {
+      "id": "5-rtl-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:20:41.005Z"
+}
