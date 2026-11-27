@@ -125,7 +125,22 @@ export const Captions: React.FC<{ words: { w: string; t: number; d: number }[]; 
   // Spelled-out letters ("P I D") read better on screen as one word ("PID").
   words = React.useMemo(() => { const out: typeof words = []; for (const w of words) { const prev = out[out.length - 1];
     if (prev && /^[A-Za-z]$/.test(w.w) && /^[A-Z]+$/.test(prev.w) && w.t - (prev.t + prev.d) < 0.25) { prev.w += w.w.toUpperCase(); prev.d = w.t + w.d - prev.t; }
-    else out.push({ ...w, w: /^[a-z]$/.test(w.w) ? w.w.toUpperCase() : w.w }); } return out; }, [words]);
+    else out.push({ ...w, w: /^[a-z]$/.test(w.w) ? w.w.toUpperCase() : w.w }); }
+    // Spoken symbols ("slash etc slash systemd", "config dot yaml") show as the real thing: /etc/systemd, config.yaml.
+    const SYM: Record<string, string> = { slash: '/', dot: '.', dash: '-', underscore: '_' };
+    const res: typeof words = []; let glue = false;
+    for (let k = 0; k < out.length; k++) {
+      const w = out[k], key = w.w.toLowerCase().replace(/[^a-z]/g, ''), sym = SYM[key], next = out[k + 1];
+      if (sym && next && !SYM[next.w.toLowerCase().replace(/[^a-z]/g, '')]) {
+        const prev = res[res.length - 1], word = next.w.replace(/[.,!?;:]+$/, ''), tail = next.w.slice(word.length);
+        const infix = sym !== '/' || glue;
+        if (infix && prev) { prev.w = prev.w.replace(/[.,!?;:]+$/, '') + sym + word.toLowerCase() + tail; prev.d = next.t + next.d - prev.t; }
+        else res.push({ w: sym + word.toLowerCase() + tail, t: w.t, d: next.t + next.d - w.t });
+        glue = true; k++; continue;
+      }
+      glue = false; res.push({ ...w });
+    }
+    return res; }, [words]);
   let i = words.findIndex(w => w.t > now) - 1; if (i < -1) i = words.length - 1; if (i < 0) return null;
   const start = Math.floor(i / 4) * 4, chunk = words.slice(start, start + 4);
   if (now > words[words.length - 1].t + words[words.length - 1].d + 0.6) return null;

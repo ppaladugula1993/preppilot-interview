@@ -61,7 +61,7 @@ Each scene: {"id": short-slug, "type": one of hook|chip|terminal|rows|compare|co
 - code: kicker, lang, code (max 8 lines, max 34 chars per line, real and correct)
 - trap: question (max 40 chars), wrong (the common wrong answer, max 40 chars), right (max 60 chars)
 - end: say must be exactly "Get interview ready with PrepPilot."
-Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
+Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types. The "say" narration is spoken by a friendly engineer: never read symbols, paths, commands or code out literally (no "slash", "dot", "dash", "underscore", "colon", brackets or quotes read aloud). Say what it means in plain words instead, e.g. "the systemd settings folder" not "/etc/systemd", "the list units command" not "systemctl list-units". Exact paths, commands and code go only in on-screen fields. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "scenes": [...]}.
@@ -90,7 +90,7 @@ Each scene: {"id": short-slug, "type": one of hook|chip|terminal|rows|compare|co
 - code: kicker, lang, code (max 8 lines, max 34 chars per line, real and correct)
 - trap: question (max 40 chars), wrong (max 40 chars), right (max 60 chars)
 - end: say must be exactly "Get interview ready with PrepPilot."
-Use at least 2 different teaching scene types. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
+Use at least 2 different teaching scene types. The "say" narration is spoken by a friendly engineer: never read symbols, paths, commands or code out literally (no "slash", "dot", "dash", "underscore", "colon", brackets or quotes read aloud). Say what it means in plain words instead, e.g. "the systemd settings folder" not "/etc/systemd", "the list units command" not "systemctl list-units". Exact paths, commands and code go only in on-screen fields. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
 EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "max 40 chars", "keys": [2-5 key terms], "scenes": [...]}.
@@ -103,7 +103,7 @@ ${cards}`;
   return ask(sys, user, 2000);
 }
 async function check(script) {
-  const r = await ask('You are a strict technical reviewer of a short interview-prep video script. Output ONLY JSON: {"ok": true|false, "problems": "short list"}. ok=false if any fact, command or code is wrong or misleading, or the trap is not actually a common mistake. Picture scenes are deliberate real-world analogies: do NOT reject an analogy for being simplified, only if it teaches something false. Minor wording is fine; reject only real errors.',
+  const r = await ask('You are a strict technical reviewer of a short interview-prep video script. Output ONLY JSON: {"ok": true|false, "problems": "short list"}. ok=false if any fact, command or code is wrong or misleading, or if "say" reads symbols or paths aloud (like "slash" or "dot"), or the trap is not actually a common mistake. Picture scenes are deliberate real-world analogies: do NOT reject an analogy for being simplified, only if it teaches something false. Minor wording is fine; reject only real errors.',
     `Topic: ${topic.name}\nScript:\n${JSON.stringify(script)}`, 600, 0);
   return r;
 }
