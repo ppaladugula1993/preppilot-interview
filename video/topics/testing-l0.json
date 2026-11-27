@@ -1,0 +1,84 @@
+{
+  "id": "testing-l0",
+  "title": "Mastering the Test Pyramid",
+  "keys": [
+    "test pyramid",
+    "unit test",
+    "integration",
+    "E2E"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pyramid",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Why do we need more unit tests?",
+      "line2": "What’s the test pyramid?",
+      "say": "Why do software teams focus on unit tests? What’s the test pyramid, and why does it matter?"
+    },
+    {
+      "id": "1-rows-pyramid-shape",
+      "type": "rows",
+      "kicker": "Test Pyramid",
+      "rows": [
+        {
+          "a": "Unit tests",
+          "b": "Fast, cheap, broad coverage"
+        },
+        {
+          "a": "Integration",
+          "b": "Slower, more complex"
+        },
+        {
+          "a": "E2E tests",
+          "b": "Slowest, most brittle"
+        }
+      ],
+      "walk": true,
+      "say": "The test pyramid means lots of unit tests at the base, fewer integration tests in the middle, and just a handful of end-to-end tests at the top."
+    },
+    {
+      "id": "2-chip-tradeoff",
+      "type": "chip",
+      "kicker": "Trade-offs",
+      "label": "Balance",
+      "sub": "More unit tests keep suites fast and reliable.",
+      "say": "Balancing test types is key. More unit tests keep your test suite fast and reliable, while fewer E2E tests reduce maintenance headaches."
+    },
+    {
+      "id": "3-compare-example",
+      "type": "compare",
+      "kicker": "Example",
+      "left": {
+        "title": "Unit tests",
+        "items": [
+          "100 tests",
+          "Quick feedback"
+        ]
+      },
+      "right": {
+        "title": "E2E tests",
+        "items": [
+          "5 tests",
+          "Slow, fragile"
+        ]
+      },
+      "say": "For example, you might have one hundred unit tests for fast feedback, but only five end-to-end tests since they’re slow and fragile."
+    },
+    {
+      "id": "4-trap-pyramid-mistake",
+      "type": "trap",
+      "question": "Should you write equal numbers of each test?",
+      "wrong": "Yes, for balanced coverage.",
+      "right": "No. More unit tests, fewer integration, fewest E2E for efficiency.",
+      "say": "Interview trap: Should you write equal numbers of each test type? No. More unit tests, fewer integration, and the fewest end-to-end tests maximize efficiency."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:36:17.910Z"
+}
