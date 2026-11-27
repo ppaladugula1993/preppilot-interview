@@ -1,0 +1,74 @@
+{
+  "id": "data-modeling-l0",
+  "title": "OLTP vs OLAP: Know the Difference",
+  "keys": [
+    "OLTP",
+    "OLAP",
+    "transactions",
+    "analytics",
+    "data modeling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-oltp-vs-olap",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "OLTP or OLAP?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder why some databases fly through transactions, while others crunch huge reports? Let's break down OLTP and OLAP."
+    },
+    {
+      "id": "1-chip-oltp",
+      "type": "chip",
+      "kicker": "OLTP",
+      "label": "OLTP",
+      "sub": "Handles lots of quick, atomic transactions. Prioritizes speed and data integrity.",
+      "say": "OLTP stands for online transaction processing. Think banking apps, where every update has to be fast and reliable."
+    },
+    {
+      "id": "2-chip-olap",
+      "type": "chip",
+      "kicker": "OLAP",
+      "label": "OLAP",
+      "sub": "Optimized for complex queries and aggregations on big data.",
+      "say": "OLAP is online analytical processing. It's built for deep dives—like sales reports across regions and years."
+    },
+    {
+      "id": "3-compare-oltp-olap",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "OLTP",
+        "items": [
+          "Fast inserts and updates",
+          "Strict data integrity",
+          "Normalized tables"
+        ]
+      },
+      "right": {
+        "title": "OLAP",
+        "items": [
+          "Complex queries",
+          "Aggregates data",
+          "Denormalized models"
+        ]
+      },
+      "say": "OLTP is all about speed and consistency for transactions. OLAP is tuned for heavy analytics, often using denormalized tables for faster queries."
+    },
+    {
+      "id": "4-trap-schema",
+      "type": "trap",
+      "question": "Should you always normalize your schema?",
+      "wrong": "Yes, normalization is always best.",
+      "right": "Nope. Normalize for OLTP, but denormalize for OLAP to speed up analytics.",
+      "say": "Here's a common trap: always normalizing your schema. That's great for OLTP, but OLAP needs denormalized data for quick analytics."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:17:03.896Z"
+}
