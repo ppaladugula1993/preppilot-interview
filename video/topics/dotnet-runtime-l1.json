@@ -1,0 +1,84 @@
+{
+  "id": "dotnet-runtime-l1",
+  "title": ".NET CLR, JIT, Tiered & AOT Explained",
+  "keys": [
+    "CLR",
+    "JIT",
+    "Tiered Compilation",
+    "AOT"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-clr-jit-aot",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Why does .NET run so fast?",
+      "line2": "What makes it tick?",
+      "say": "Ever wondered how .NET apps manage to start quickly and still run efficiently? Let's break down the magic behind the scenes."
+    },
+    {
+      "id": "1-chip-clr",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "CLR",
+      "sub": "The Common Language Runtime runs managed code.",
+      "say": "First up, the Common Language Runtime, or CLR, is the engine that runs all managed .NET code."
+    },
+    {
+      "id": "2-rows-jit-tiered",
+      "type": "rows",
+      "kicker": "How Code Runs",
+      "rows": [
+        {
+          "a": "JIT",
+          "b": "Turns IL into native code at runtime"
+        },
+        {
+          "a": "Tiered",
+          "b": "Quick compile, then optimize hot code"
+        },
+        {
+          "a": "AOT",
+          "b": "Builds native code ahead of time"
+        }
+      ],
+      "walk": true,
+      "say": "The Just-In-Time compiler, or JIT, converts intermediate code to native instructions as your app runs. Tiered compilation speeds up startup by compiling methods fast, then re-optimizing the busy ones. Ahead-Of-Time, or AOT, creates native code before you even launch the app, cutting startup delays."
+    },
+    {
+      "id": "3-compare-tiered-aot",
+      "type": "compare",
+      "kicker": "Performance Trade-offs",
+      "left": {
+        "title": "Tiered JIT",
+        "items": [
+          "Faster startup",
+          "Adapts at runtime"
+        ]
+      },
+      "right": {
+        "title": "AOT",
+        "items": [
+          "Lowest startup time",
+          "Less runtime tuning"
+        ]
+      },
+      "say": "Tiered JIT gives you a quick launch and tweaks performance as your app runs. AOT is all about instant startup, but it can't adapt as well after deployment."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Does AOT always outperform JIT?",
+      "wrong": "Yes, AOT is always faster.",
+      "right": "No—AOT starts faster, but JIT can optimize code at runtime for better throughput.",
+      "say": "Here's a common interview trap: Does Ahead-Of-Time compilation always beat Just-In-Time? Not quite. AOT gets you running fast, but JIT can actually deliver better performance over time by optimizing as your app runs."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:39:12.130Z"
+}
