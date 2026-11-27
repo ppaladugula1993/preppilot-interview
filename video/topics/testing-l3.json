@@ -1,0 +1,72 @@
+{
+  "id": "testing-l3",
+  "title": "Integration Tests with Real Databases",
+  "keys": [
+    "integration test",
+    "database",
+    "Testcontainers",
+    "teardown"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-real-db",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Should integration tests use real databases?",
+      "line2": "What’s the risk?",
+      "say": "Should integration tests connect to real databases? What could go wrong if they do?"
+    },
+    {
+      "id": "1-chip-testcontainers",
+      "type": "chip",
+      "kicker": "Tool",
+      "label": "Testcontainers",
+      "sub": "Spins up disposable database containers for testing.",
+      "say": "Testcontainers is a tool that spins up disposable database containers, so your tests run in realistic environments."
+    },
+    {
+      "id": "2-code-postgres-demo",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "from testcontainers.postgres import PostgresContainer\nwith PostgresContainer() as db:\n    # run integration tests against db.get_connection_url()",
+      "say": "Here's how you use Testcontainers to launch a temporary Postgres database and run your integration tests against it."
+    },
+    {
+      "id": "3-rows-benefits",
+      "type": "rows",
+      "kicker": "Why use real databases?",
+      "rows": [
+        {
+          "a": "Realistic tests",
+          "b": "Check true database behavior"
+        },
+        {
+          "a": "Clean teardown",
+          "b": "No leftover test data"
+        },
+        {
+          "a": "Safe",
+          "b": "Production data stays untouched"
+        }
+      ],
+      "walk": true,
+      "say": "Using real databases means your tests are realistic, your data stays clean after tests, and production is never at risk."
+    },
+    {
+      "id": "4-trap-prod-risk",
+      "type": "trap",
+      "question": "What’s the danger of using production?",
+      "wrong": "It’s faster for tests.",
+      "right": "You risk corrupting real data and breaking systems.",
+      "say": "Interviewers might ask about using production databases for tests. The real risk is corrupting live data and breaking important systems."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:36:51.518Z"
+}
