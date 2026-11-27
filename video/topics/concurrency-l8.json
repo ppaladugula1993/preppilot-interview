@@ -1,0 +1,72 @@
+{
+  "id": "concurrency-l8",
+  "title": "Producer-Consumer Problem Explained",
+  "keys": [
+    "producer",
+    "consumer",
+    "queue",
+    "synchronization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-producer-consum",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "Ever seen two threads share data?",
+      "line2": "How do they avoid chaos?",
+      "say": "Ever wondered how two threads can safely share data without stepping on each other's toes? Let's break down the producer-consumer problem."
+    },
+    {
+      "id": "1-chip-thread-safe-que",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Queue",
+      "sub": "A thread-safe queue lets producers add and consumers take items safely.",
+      "say": "A thread-safe queue is the secret sauce. It lets producers add data and consumers take it, all without data races."
+    },
+    {
+      "id": "2-rows-synchronization",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Producer makes data",
+          "b": "Adds to shared queue"
+        },
+        {
+          "a": "Consumer waits",
+          "b": "Takes data from queue"
+        },
+        {
+          "a": "Sync needed",
+          "b": "Prevents lost or duplicate data"
+        }
+      ],
+      "walk": true,
+      "say": "First, the producer makes data and adds it to the shared queue. The consumer waits until something's there, then takes it. Synchronization keeps everything in order."
+    },
+    {
+      "id": "3-code-java-blockingqu",
+      "type": "code",
+      "kicker": "In Practice",
+      "lang": "java",
+      "code": "BlockingQueue q = new LinkedBlockingQueue();\nq.put(data); // producer\nq.take();   // consumer",
+      "say": "In Java, you can use a blocking queue. Producers call put to add items, and consumers call take to get them. It handles the locking for you."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "What happens without synchronization?",
+      "wrong": "Threads just work it out.",
+      "right": "Without sync, you get race conditions and lost data.",
+      "say": "Here's a trap: what happens if you skip synchronization? Threads do not just work it out. You risk race conditions and lost data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:14:45.390Z"
+}
