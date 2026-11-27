@@ -1,0 +1,81 @@
+{
+  "id": "go-concurrency-l7",
+  "title": "Go Deadlocks & Starvation Explained",
+  "keys": [
+    "deadlock",
+    "starvation",
+    "goroutine",
+    "mutex",
+    "channel"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-deadlock-starve",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "What’s a deadlock or starvation?",
+      "line2": "Why do they trip up devs?",
+      "say": "Ever wondered why deadlocks and starvation are such common interview traps in Go concurrency?"
+    },
+    {
+      "id": "1-chip-deadlock",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Deadlock",
+      "sub": "Goroutines wait forever—no one can proceed.",
+      "say": "A deadlock happens when goroutines wait on each other forever. No one moves forward."
+    },
+    {
+      "id": "2-code-deadlock",
+      "type": "code",
+      "kicker": "Classic Example",
+      "lang": "go",
+      "code": "ch := make(chan int)\nch <- 1 // Deadlock: no receiver",
+      "say": "Here, sending to a channel with no receiver causes an instant deadlock."
+    },
+    {
+      "id": "3-chip-starvation",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Starvation",
+      "sub": "Some goroutines never get resources or scheduled.",
+      "say": "Starvation is when some goroutines never get scheduled or can't access resources."
+    },
+    {
+      "id": "4-rows-avoidance",
+      "type": "rows",
+      "kicker": "Prevention Tips",
+      "rows": [
+        {
+          "a": "Check all code paths",
+          "b": "Make sure every send has a receive"
+        },
+        {
+          "a": "Lock order",
+          "b": "Always acquire locks in same order"
+        },
+        {
+          "a": "Use defer",
+          "b": "Unlock mutex right after locking"
+        }
+      ],
+      "walk": true,
+      "say": "To avoid both issues, always check all code paths, lock in the same order, and unlock with defer."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "How do you avoid mutex deadlocks?",
+      "wrong": "Just release locks manually.",
+      "right": "Always lock in a consistent order and use defer to unlock.",
+      "say": "Interview trap: How do you avoid mutex deadlocks? Don't just release locks manually. Always lock in the same order and use defer to unlock."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:57:52.116Z"
+}
