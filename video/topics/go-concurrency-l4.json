@@ -1,0 +1,72 @@
+{
+  "id": "go-concurrency-l4",
+  "title": "Go Concurrency Primitives Explained",
+  "keys": [
+    "sync.Mutex",
+    "WaitGroup",
+    "Once",
+    "atomic"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-go-concurrency",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How do you keep goroutines safe?",
+      "line2": "Which tool for which job?",
+      "say": "Go makes concurrency easy, but how do you keep goroutines from stepping on each other? Which tool should you use for safe access?"
+    },
+    {
+      "id": "1-chip-mutex",
+      "type": "chip",
+      "kicker": "Critical Section",
+      "label": "Mutex",
+      "sub": "Locks code so only one goroutine runs it.",
+      "say": "Use a mutex to lock critical sections. Only one goroutine can enter at a time."
+    },
+    {
+      "id": "2-rows-sync-primitives",
+      "type": "rows",
+      "kicker": "Go Primitives",
+      "rows": [
+        {
+          "a": "WaitGroup",
+          "b": "Waits for goroutines to finish"
+        },
+        {
+          "a": "Once",
+          "b": "Runs code only one time"
+        },
+        {
+          "a": "atomic",
+          "b": "Lock-free variable updates"
+        }
+      ],
+      "walk": true,
+      "say": "WaitGroup lets you wait for goroutines to finish. Once ensures a function runs just one time. Atomic handles simple updates without locks."
+    },
+    {
+      "id": "3-code-mutex-example",
+      "type": "code",
+      "kicker": "Mutex Example",
+      "lang": "go",
+      "code": "var mu sync.Mutex\nmu.Lock()\n// critical section\nmu.Unlock()",
+      "say": "Here's a mutex in action. Lock before the critical section, unlock after."
+    },
+    {
+      "id": "4-trap-mutex-deadlock",
+      "type": "trap",
+      "question": "How do you avoid deadlocks with Mutex?",
+      "wrong": "Just unlock when done.",
+      "right": "Always lock and unlock in the same order. Use defer mu.Unlock() right after locking.",
+      "say": "A common trap is deadlocks with mutexes. Always lock and unlock in the same order, and use defer to guarantee unlock."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:52:27.143Z"
+}
