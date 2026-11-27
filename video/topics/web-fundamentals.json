@@ -1,0 +1,98 @@
+{
+  "id": "web-fundamentals",
+  "title": "The Web’s Secret: How Your Browser Talks",
+  "keys": [
+    "HTTP",
+    "TLS",
+    "DNS",
+    "cookies",
+    "caching"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-browser-chat",
+      "type": "hook",
+      "kicker": "Web Fundamentals · 45 seconds",
+      "line1": "What really happens",
+      "line2": "when you load a web page?",
+      "say": "Ever wonder what your browser actually does when you hit Enter on a link? Let's break down the magic behind every page load."
+    },
+    {
+      "id": "1-chip-dns",
+      "type": "chip",
+      "kicker": "Step 1 · DNS",
+      "label": "DNS",
+      "sub": "Translates a website name to an IP address.",
+      "say": "First, the browser asks DNS to turn the site name into a real internet address."
+    },
+    {
+      "id": "2-rows-handshake",
+      "type": "rows",
+      "kicker": "Step 2 · Connection",
+      "rows": [
+        {
+          "a": "TCP/QUIC",
+          "b": "Sets up the network pipeline"
+        },
+        {
+          "a": "TLS",
+          "b": "Encrypts and secures the channel"
+        },
+        {
+          "a": "HTTP",
+          "b": "Sends the actual request"
+        }
+      ],
+      "walk": true,
+      "say": "Next, your browser builds a connection, locks it down with encryption, and finally sends an HTTP request."
+    },
+    {
+      "id": "3-terminal-http-respon",
+      "type": "terminal",
+      "kicker": "Step 3 · Response",
+      "title": "Server replies",
+      "lines": [
+        "$ GET /index.html HTTP/2",
+        "200 OK",
+        "Set-Cookie: sessionid=xyz",
+        "Cache-Control: max-age=3600"
+      ],
+      "say": "The server answers with your page, sets cookies for tracking, and tells the browser how to cache it."
+    },
+    {
+      "id": "4-compare-cookies-toke",
+      "type": "compare",
+      "kicker": "Session State",
+      "left": {
+        "title": "Cookies",
+        "items": [
+          "Stored by browser",
+          "Sent with each request"
+        ]
+      },
+      "right": {
+        "title": "Tokens",
+        "items": [
+          "Stored client-side",
+          "Stateless, scalable"
+        ]
+      },
+      "say": "Cookies and tokens help remember who you are. Cookies are sent automatically, while tokens are more flexible and scalable."
+    },
+    {
+      "id": "5-trap-tls-myth",
+      "type": "trap",
+      "question": "Does TLS only protect passwords?",
+      "wrong": "Yes, just login details.",
+      "right": "No, TLS encrypts all data between browser and server, not just passwords.",
+      "say": "A common trap: TLS doesn't just hide passwords. It protects every bit of data sent between your browser and the server."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:16:39.188Z"
+}
