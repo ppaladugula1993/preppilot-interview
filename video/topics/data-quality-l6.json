@@ -1,0 +1,79 @@
+{
+  "id": "data-quality-l6",
+  "title": "Incident Handling for Bad Data",
+  "keys": [
+    "incident",
+    "alert",
+    "rollback",
+    "postmortem"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bad-data",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "What do you do when",
+      "line2": "bad data hits?",
+      "say": "What happens when your pipeline loads bad data? Let's break down incident handling so you’re ready."
+    },
+    {
+      "id": "1-chip-detect",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Detect",
+      "sub": "Spot issues fast with alerts and monitoring.",
+      "say": "First, detect issues quickly. Alerts and monitoring help you catch problems before they spread."
+    },
+    {
+      "id": "2-rows-handle",
+      "type": "rows",
+      "kicker": "Incident Response",
+      "rows": [
+        {
+          "a": "Triage",
+          "b": "Assess impact and scope"
+        },
+        {
+          "a": "Rollback",
+          "b": "Revert to clean data"
+        },
+        {
+          "a": "Communicate",
+          "b": "Notify stakeholders"
+        },
+        {
+          "a": "Postmortem",
+          "b": "Analyze and prevent repeat"
+        }
+      ],
+      "walk": true,
+      "say": "Handle incidents like production outages. Triage the issue, rollback if needed, communicate clearly, and always do a postmortem to learn."
+    },
+    {
+      "id": "3-terminal-dbt-test",
+      "type": "terminal",
+      "kicker": "Prevention",
+      "title": "Add a dbt uniqueness test",
+      "lines": [
+        "$ dbt test --select customers",
+        "PASS uniqueness_customers_id"
+      ],
+      "say": "Add automated tests, like a dbt uniqueness check, to block future bad data before it lands."
+    },
+    {
+      "id": "4-trap-root-cause",
+      "type": "trap",
+      "question": "What's often missed after rollback?",
+      "wrong": "Just fixing the data",
+      "right": "Root cause analysis and prevention steps",
+      "say": "Don’t just fix the data and move on. Interviewers want to see you run a root cause analysis and put prevention in place."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:55:55.037Z"
+}
