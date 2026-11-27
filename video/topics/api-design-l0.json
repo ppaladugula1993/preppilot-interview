@@ -1,0 +1,88 @@
+{
+  "id": "api-design-l0",
+  "title": "REST Resources & HTTP Verbs Made Clear",
+  "keys": [
+    "REST",
+    "resource",
+    "HTTP verb",
+    "idempotent"
+  ],
+  "scenes": [
+    {
+      "id": "0-rest-api-hook",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "Why do REST APIs use verbs?",
+      "line2": "And why does it matter?",
+      "say": "Why do REST APIs use HTTP verbs, and why should you care in an interview?"
+    },
+    {
+      "id": "1-resource-chip",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Resource",
+      "sub": "A resource is a thing, like a user or order.",
+      "say": "In REST, a resource is just an object—think user or order—exposed by your API."
+    },
+    {
+      "id": "2-verbs-rows",
+      "type": "rows",
+      "kicker": "HTTP Verbs",
+      "rows": [
+        {
+          "a": "GET",
+          "b": "Reads a resource. Safe, idempotent."
+        },
+        {
+          "a": "POST",
+          "b": "Creates a resource. Not idempotent."
+        },
+        {
+          "a": "PUT",
+          "b": "Replaces a resource. Idempotent."
+        },
+        {
+          "a": "DELETE",
+          "b": "Removes a resource. Idempotent."
+        }
+      ],
+      "walk": true,
+      "say": "You act on resources with HTTP verbs. GET reads, POST creates, PUT replaces, DELETE removes. Only POST is not idempotent."
+    },
+    {
+      "id": "3-idempotency-compare",
+      "type": "compare",
+      "kicker": "Idempotency",
+      "left": {
+        "title": "Idempotent",
+        "items": [
+          "GET",
+          "PUT",
+          "DELETE"
+        ]
+      },
+      "right": {
+        "title": "Not Idempotent",
+        "items": [
+          "POST"
+        ]
+      },
+      "say": "Idempotency means repeating the same request gives the same result. GET, PUT, and DELETE are idempotent. POST is not."
+    },
+    {
+      "id": "4-trap-verbs",
+      "type": "trap",
+      "question": "Which verb is NOT idempotent?",
+      "wrong": "PUT",
+      "right": "POST is not idempotent. It can create new resources each time.",
+      "say": "Watch out—only POST is not idempotent. PUT and DELETE are safe to repeat."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:15:39.136Z"
+}
