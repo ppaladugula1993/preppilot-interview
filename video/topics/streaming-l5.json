@@ -1,0 +1,84 @@
+{
+  "id": "streaming-l5",
+  "title": "Schema Registry & Evolution in Kafka",
+  "keys": [
+    "schema registry",
+    "schema evolution",
+    "compatibility",
+    "Kafka"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-schema-evolutio",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How do you change data safely?",
+      "line2": "What keeps Kafka in sync?",
+      "say": "Ever wondered how you can update your data structure in Kafka without breaking everything? Let’s find out."
+    },
+    {
+      "id": "1-chip-schema-registry",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Registry",
+      "sub": "Stores and manages schemas for Kafka topics.",
+      "say": "A schema registry is where you store and manage your data schemas for Kafka topics. It keeps everyone on the same page."
+    },
+    {
+      "id": "2-rows-evolution-steps",
+      "type": "rows",
+      "kicker": "How evolution works",
+      "rows": [
+        {
+          "a": "Register schema",
+          "b": "Add your schema to the registry"
+        },
+        {
+          "a": "Update schema",
+          "b": "Change fields as needed"
+        },
+        {
+          "a": "Check compatibility",
+          "b": "Prevent breaking changes"
+        }
+      ],
+      "walk": true,
+      "say": "First, you register your schema. When you need to update it, you change the fields, then check for compatibility to avoid breaking things."
+    },
+    {
+      "id": "3-compare-compatibilit",
+      "type": "compare",
+      "kicker": "Compatibility types",
+      "left": {
+        "title": "Backward",
+        "items": [
+          "Old data works",
+          "New fields optional"
+        ]
+      },
+      "right": {
+        "title": "Forward",
+        "items": [
+          "New data works",
+          "Old fields kept"
+        ]
+      },
+      "say": "Backward compatibility means old data still works with new code. Forward compatibility means new data works with old code. Both help prevent data corruption."
+    },
+    {
+      "id": "4-trap-interview-gotch",
+      "type": "trap",
+      "question": "What if you skip compatibility checks?",
+      "wrong": "It just adds new fields safely.",
+      "right": "You risk breaking consumers and corrupting data.",
+      "say": "Here’s a common trap: skipping compatibility checks. That can break your consumers or even corrupt your data."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:56:01.756Z"
+}
