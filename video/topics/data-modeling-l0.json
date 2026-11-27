@@ -1,0 +1,72 @@
+{
+  "id": "data-modeling-l0",
+  "title": "OLTP vs OLAP: Transactional vs Analytical",
+  "keys": [
+    "OLTP",
+    "OLAP",
+    "transactions",
+    "analytics",
+    "data integrity"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-oltp-olap",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "OLTP or OLAP?",
+      "line2": "Why does it matter?",
+      "say": "OLTP or OLAP? Why do engineers care about the difference? Let’s break it down."
+    },
+    {
+      "id": "1-chip-oltp",
+      "type": "chip",
+      "kicker": "Type",
+      "label": "OLTP",
+      "sub": "Handles lots of short transactions fast.",
+      "say": "OLTP stands for Online Transaction Processing. It’s built for high-speed, reliable transactions—think banking apps or order processing."
+    },
+    {
+      "id": "2-chip-olap",
+      "type": "chip",
+      "kicker": "Type",
+      "label": "OLAP",
+      "sub": "Optimized for complex queries and analysis.",
+      "say": "OLAP means Online Analytical Processing. It’s designed for deep analysis and reporting—like generating sales reports across regions."
+    },
+    {
+      "id": "3-compare-oltp-olap",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "OLTP",
+        "items": [
+          "Fast CRUD ops",
+          "Strict data integrity"
+        ]
+      },
+      "right": {
+        "title": "OLAP",
+        "items": [
+          "Complex queries",
+          "Efficient aggregations"
+        ]
+      },
+      "say": "OLTP systems focus on fast create, read, update, delete operations and strict data integrity. OLAP systems handle complex queries and big aggregations efficiently."
+    },
+    {
+      "id": "4-trap-schema",
+      "type": "trap",
+      "question": "Can you use the same schema for both?",
+      "wrong": "Yes, one schema works for both.",
+      "right": "No. OLTP and OLAP need different designs for performance and integrity.",
+      "say": "Here’s a trap: Can you use the same schema for both OLTP and OLAP? No way. Each needs a different design for speed and accuracy."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:03:53.353Z"
+}
