@@ -1,0 +1,75 @@
+{
+  "id": "dsa-l0",
+  "title": "Big-O Notation & Complexity Basics",
+  "keys": [
+    "Big-O",
+    "complexity",
+    "amortized",
+    "efficiency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-big-o",
+      "type": "hook",
+      "kicker": "Data Structures & Algorithms · lesson",
+      "line1": "How fast is your code, really?",
+      "line2": "What does Big-O mean?",
+      "say": "How fast is your code, really? What does Big-O actually measure?"
+    },
+    {
+      "id": "1-chip-big-o",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Big-O",
+      "sub": "Describes how time or space grows as input increases.",
+      "say": "Big-O describes how an algorithm's time or space grows as input size increases."
+    },
+    {
+      "id": "2-compare-complexity",
+      "type": "compare",
+      "kicker": "Complexity Types",
+      "left": {
+        "title": "Time",
+        "items": [
+          "O(n)",
+          "O(1)"
+        ]
+      },
+      "right": {
+        "title": "Space",
+        "items": [
+          "O(1)",
+          "O(n)"
+        ]
+      },
+      "say": "Always state both time and space complexity. For example, O of n time and O of one space."
+    },
+    {
+      "id": "3-terminal-amortized",
+      "type": "terminal",
+      "kicker": "Amortized Analysis",
+      "title": "Python List Append",
+      "lines": [
+        "$ my_list.append(42)",
+        "# O(1) most times",
+        "# O(n) when resizing"
+      ],
+      "say": "Appending to a Python list is usually constant time, but resizing bumps it up to linear time. On average, it's O of one—amortized."
+    },
+    {
+      "id": "4-trap-worst-case",
+      "type": "trap",
+      "question": "What if you skip worst-case analysis?",
+      "wrong": "It's fine for interviews.",
+      "right": "Interviewers expect you to mention worst, average, or amortized cases.",
+      "say": "Don't skip worst-case, average, or amortized cases. Interviewers expect you to mention them."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:05:32.129Z"
+}
