@@ -1,0 +1,80 @@
+{
+  "id": "data-modeling-l4",
+  "title": "Slowly Changing Dimensions (SCDs)",
+  "keys": [
+    "SCD",
+    "Type 1",
+    "Type 2",
+    "history"
+  ],
+  "scenes": [
+    {
+      "id": "0-scd-hook",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "How do you track changes",
+      "line2": "in dimension data?",
+      "say": "How do you track changes in things like customer addresses over time?"
+    },
+    {
+      "id": "1-scd-compare",
+      "type": "compare",
+      "kicker": "SCD Types",
+      "left": {
+        "title": "Type 1",
+        "items": [
+          "Overwrites old data",
+          "Loses history"
+        ]
+      },
+      "right": {
+        "title": "Type 2",
+        "items": [
+          "Adds new records",
+          "Keeps all history"
+        ]
+      },
+      "say": "There are two main types. Type One just overwrites the old value, so you lose history. Type Two adds a new record for every change, letting you keep all historical data."
+    },
+    {
+      "id": "2-scd-rows",
+      "type": "rows",
+      "kicker": "Example",
+      "rows": [
+        {
+          "a": "Type 1",
+          "b": "Update address in place"
+        },
+        {
+          "a": "Type 2",
+          "b": "Insert new row, set valid from date"
+        }
+      ],
+      "walk": true,
+      "say": "For example, with Type One, you simply update the address. With Type Two, you insert a new row and set a valid from date."
+    },
+    {
+      "id": "3-scd-chip",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "History",
+      "sub": "Use Type 2 if you need to analyze past data.",
+      "say": "My advice? Use Type Two when you need to analyze how things looked in the past."
+    },
+    {
+      "id": "4-scd-trap",
+      "type": "trap",
+      "question": "Which SCD type preserves history?",
+      "wrong": "Type 1 overwrites and keeps history",
+      "right": "Type 2 creates new records and preserves history",
+      "say": "Here's a common interview trap: only Type Two actually preserves historical data. Type One just overwrites it."
+    },
+    {
+      "id": "5-scd-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:24:19.611Z"
+}
