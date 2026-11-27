@@ -1,0 +1,72 @@
+{
+  "id": "go-core-l8",
+  "title": "Go Testing & Benchmarks: Core Skills",
+  "keys": [
+    "testing",
+    "table-driven",
+    "benchmarks",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-go-tests",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "How does Go handle tests?",
+      "line2": "Why do benchmarks matter?",
+      "say": "Ever wondered how Go makes testing and benchmarking easy? And why interviewers care about your skills here?"
+    },
+    {
+      "id": "1-chip-table-driven",
+      "type": "chip",
+      "kicker": "Go Testing",
+      "label": "Table",
+      "sub": "Table-driven tests loop over cases, making tests scalable and easy to maintain.",
+      "say": "Table-driven tests use slices of cases. This keeps your tests concise and scalable, especially as your code grows."
+    },
+    {
+      "id": "2-code-table-example",
+      "type": "code",
+      "kicker": "Unit Test Example",
+      "lang": "go",
+      "code": "func TestAdd(t *testing.T) {\n  cases := []struct{a,b,w int}{\n    {1,2,3}, {2,3,5},\n  }\n  for _, c := range cases {\n    got := Add(c.a, c.b)\n    if got != c.w {\n      t.Errorf(\"got %d, want %d\", got, c.w)\n    }\n  }\n}",
+      "say": "Here's a table-driven test for an add function. It checks multiple inputs in one go, making maintenance a breeze."
+    },
+    {
+      "id": "3-rows-benchmarks",
+      "type": "rows",
+      "kicker": "Benchmarks",
+      "rows": [
+        {
+          "a": "Measure speed",
+          "b": "Run code many times"
+        },
+        {
+          "a": "Use testing.B",
+          "b": "Loop for performance stats"
+        },
+        {
+          "a": "Optimize code",
+          "b": "Spot slow spots and fix"
+        }
+      ],
+      "walk": true,
+      "say": "Benchmarks measure how fast your code runs. Use the testing package to loop and gather stats, then optimize where needed."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What's the main benefit of table-driven tests?",
+      "wrong": "They run faster than other tests.",
+      "right": "They make tests concise, scalable, and easy to maintain.",
+      "say": "Interviewers love table-driven tests for their clarity and scalability, not speed. Don't mix up performance with maintainability."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:53:55.360Z"
+}
