@@ -1,0 +1,72 @@
+{
+  "id": "sql-advanced-l0",
+  "title": "Mastering SQL Window Functions",
+  "keys": [
+    "window function",
+    "OVER",
+    "PARTITION BY",
+    "running total"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-window-func",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you get running totals",
+      "line2": "without losing row details?",
+      "say": "Ever wondered how to calculate running totals in SQL without collapsing your data? Let's unlock window functions."
+    },
+    {
+      "id": "1-chip-window",
+      "type": "chip",
+      "kicker": "Window Functions",
+      "label": "Purpose",
+      "sub": "Calculate across related rows, keep all rows.",
+      "say": "Window functions let you analyze sets of rows related to each entry, but keep every row intact."
+    },
+    {
+      "id": "2-rows-window-parts",
+      "type": "rows",
+      "kicker": "Key Clauses",
+      "rows": [
+        {
+          "a": "OVER",
+          "b": "Defines the window for calculation"
+        },
+        {
+          "a": "PARTITION BY",
+          "b": "Groups rows for separate analysis"
+        },
+        {
+          "a": "ORDER BY",
+          "b": "Sets row order within each group"
+        }
+      ],
+      "walk": true,
+      "say": "Three main clauses: OVER sets the window, PARTITION BY splits groups, and ORDER BY controls row order for calculations."
+    },
+    {
+      "id": "3-code-running-total",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "SELECT user_id, order_date,\n  SUM(amount) OVER (\n    PARTITION BY user_id\n    ORDER BY order_date\n  ) AS running_total\nFROM orders;",
+      "say": "Here's a running total per user. The sum updates for each order, but you keep every row."
+    },
+    {
+      "id": "4-trap-collapse",
+      "type": "trap",
+      "question": "Do window functions collapse rows?",
+      "wrong": "Yes, just like aggregate functions.",
+      "right": "No, window functions add computed columns but keep all original rows.",
+      "say": "Interviewers love this trick question. Window functions never collapse rows—they add new columns while keeping the data."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:36:30.614Z"
+}
