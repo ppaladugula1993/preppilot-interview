@@ -1,0 +1,76 @@
+{
+  "id": "html-css-l0",
+  "title": "Semantic HTML: Structure with Meaning",
+  "keys": [
+    "semantic",
+    "header",
+    "article",
+    "accessibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-semantic-html",
+      "type": "hook",
+      "kicker": "HTML & CSS · lesson",
+      "line1": "Does your markup have meaning?",
+      "line2": "Why use semantic HTML?",
+      "say": "Is your HTML just a bunch of divs, or does it actually tell browsers and humans what each part means? Why bother with semantic HTML?"
+    },
+    {
+      "id": "1-chip-header",
+      "type": "chip",
+      "kicker": "Semantic Elements",
+      "label": "header",
+      "sub": "<header> marks the start of a page or section.",
+      "say": "A header element marks the start of your page or a section. It tells everyone, including screen readers, what’s important."
+    },
+    {
+      "id": "2-rows-structure",
+      "type": "rows",
+      "kicker": "Common Semantic Tags",
+      "rows": [
+        {
+          "a": "<nav>",
+          "b": "Navigation links"
+        },
+        {
+          "a": "<main>",
+          "b": "Main content area"
+        },
+        {
+          "a": "<article>",
+          "b": "Standalone content"
+        },
+        {
+          "a": "<footer>",
+          "b": "Page or section footer"
+        }
+      ],
+      "walk": true,
+      "say": "Use nav for navigation, main for the main content, article for standalone pieces, and footer for the bottom of your page."
+    },
+    {
+      "id": "3-code-article",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "html",
+      "code": "<article>\n  <h2>News Title</h2>\n  <p>News content...</p>\n</article>",
+      "say": "Here’s an article element. It wraps a news item, making its purpose clear to browsers and assistive tech."
+    },
+    {
+      "id": "4-trap-div",
+      "type": "trap",
+      "question": "Should you use <div> for everything?",
+      "wrong": "Yes, it's simpler.",
+      "right": "No. Semantic tags improve accessibility and SEO.",
+      "say": "Don’t fall for the div trap. Semantic tags make your code more accessible and help search engines understand your site."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:56:40.148Z"
+}
