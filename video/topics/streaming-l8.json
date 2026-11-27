@@ -1,0 +1,89 @@
+{
+  "id": "streaming-l8",
+  "title": "Kafka Broker Failover & Leader Election",
+  "keys": [
+    "broker",
+    "partition",
+    "leader",
+    "replica",
+    "failover"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-failover",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "What happens when a Kafka broker dies?",
+      "line2": "Who leads now?",
+      "say": "If a Kafka broker goes down, how does the system keep running smoothly? Who takes charge next?"
+    },
+    {
+      "id": "1-chip-leader",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Leader",
+      "sub": "Each partition has one broker as its leader.",
+      "say": "Every partition in Kafka has one broker acting as its leader, handling all reads and writes for that partition."
+    },
+    {
+      "id": "2-rows-failover",
+      "type": "rows",
+      "kicker": "Failover Steps",
+      "rows": [
+        {
+          "a": "Broker fails",
+          "b": "Partition leader is lost"
+        },
+        {
+          "a": "Election begins",
+          "b": "In-sync replicas are checked"
+        },
+        {
+          "a": "New leader picked",
+          "b": "Replica takes over"
+        },
+        {
+          "a": "Service resumes",
+          "b": "Clients reconnect automatically"
+        }
+      ],
+      "walk": true,
+      "say": "If a broker fails, Kafka quickly checks the in-sync replicas for each affected partition, elects a new leader, and keeps service running. Clients reconnect without manual steps."
+    },
+    {
+      "id": "3-compare-leader-elect",
+      "type": "compare",
+      "kicker": "Example",
+      "left": {
+        "title": "Before failure",
+        "items": [
+          "Partition zero led by Broker one",
+          "Broker three is a replica"
+        ]
+      },
+      "right": {
+        "title": "After failure",
+        "items": [
+          "Broker one fails",
+          "Broker three becomes leader"
+        ]
+      },
+      "say": "Picture this: partition zero is led by broker one, with broker three as a backup. If broker one fails, broker three steps up as the new leader."
+    },
+    {
+      "id": "4-trap-replication",
+      "type": "trap",
+      "question": "What ensures failover works?",
+      "wrong": "Just having multiple brokers",
+      "right": "Setting the replication factor for enough in-sync replicas",
+      "say": "Here's a common trap: just adding brokers isn't enough. You need to set the replication factor so there are enough in-sync replicas to handle failures."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:02:52.059Z"
+}
