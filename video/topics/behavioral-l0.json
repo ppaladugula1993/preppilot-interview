@@ -1,0 +1,73 @@
+{
+  "id": "behavioral-l0",
+  "title": "Nail Your 60-Second Intro",
+  "keys": [
+    "intro",
+    "story",
+    "behavioral",
+    "numbers",
+    "role"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-intro",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "Can you sum up your career?",
+      "line2": "In just 60 seconds?",
+      "say": "Could you tell your story in a single minute? Every interview starts here."
+    },
+    {
+      "id": "1-chip-format",
+      "type": "chip",
+      "kicker": "Pro Tip",
+      "label": "Format",
+      "sub": "Current role, two things you own with numbers, past role, and what you want next.",
+      "say": "Use a simple format: your current role, two things you own with numbers, a quick past role, and what you want next."
+    },
+    {
+      "id": "2-rows-example",
+      "type": "rows",
+      "kicker": "Example Intro",
+      "rows": [
+        {
+          "a": "Current",
+          "b": "Backend dev, 4 years"
+        },
+        {
+          "a": "Owns",
+          "b": "API with 10K daily users"
+        },
+        {
+          "a": "Owns",
+          "b": "CI pipeline, 8 repos"
+        },
+        {
+          "a": "Past",
+          "b": "Built fintech MVP"
+        },
+        {
+          "a": "Next",
+          "b": "Want to scale systems"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how it sounds: Backend developer, four years. I own an API with ten thousand daily users and maintain the pipeline for eight repos. Before that, I built a fintech MVP. Now, I want to scale systems like yours."
+    },
+    {
+      "id": "3-trap-mistake",
+      "type": "trap",
+      "question": "What's a common intro mistake?",
+      "wrong": "Rambling or listing your resume.",
+      "right": "Rambling or reciting your resume. Instead, use numbers and tailor your ending to the job.",
+      "say": "The big trap? Rambling or just listing your resume. Instead, use numbers and always tailor your ending for this job."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:11:14.818Z"
+}
