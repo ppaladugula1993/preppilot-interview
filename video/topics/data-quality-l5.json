@@ -1,0 +1,89 @@
+{
+  "id": "data-quality-l5",
+  "title": "Data Contracts: No More Surprises",
+  "keys": [
+    "data contract",
+    "schema",
+    "producer",
+    "consumer",
+    "quality"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-contracts",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "Ever had data break overnight?",
+      "line2": "How can teams prevent it?",
+      "say": "Ever had your pipeline break because someone changed the data? How can teams prevent these surprises?"
+    },
+    {
+      "id": "1-chip-contract-def",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Contract",
+      "sub": "A formal agreement on schema, quality, and delivery between teams.",
+      "say": "A data contract is a formal agreement between data producers and consumers. It spells out the schema, quality, and delivery expectations."
+    },
+    {
+      "id": "2-rows-contract-exampl",
+      "type": "rows",
+      "kicker": "Example Contract",
+      "rows": [
+        {
+          "a": "Field",
+          "b": "customer_id"
+        },
+        {
+          "a": "Type",
+          "b": "Integer, unique"
+        },
+        {
+          "a": "Quality",
+          "b": "No nulls allowed"
+        },
+        {
+          "a": "Delivery",
+          "b": "Daily by 7am"
+        }
+      ],
+      "walk": true,
+      "say": "For example, a contract might require customer ID to be an integer, unique, with no missing values, delivered every morning by seven."
+    },
+    {
+      "id": "3-compare-without-with",
+      "type": "compare",
+      "kicker": "Why It Matters",
+      "left": {
+        "title": "No Contract",
+        "items": [
+          "Unexpected schema changes",
+          "Broken pipelines"
+        ]
+      },
+      "right": {
+        "title": "With Contract",
+        "items": [
+          "Clear expectations",
+          "Fewer surprises"
+        ]
+      },
+      "say": "Without contracts, teams get unexpected schema changes and broken pipelines. With contracts, everyone knows what to expect, and surprises drop."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Are data contracts only about schemas?",
+      "wrong": "Yes, just the schema.",
+      "right": "No, they cover schema, quality, and delivery expectations.",
+      "say": "Watch out—data contracts aren't just about schemas. They also cover data quality and when the data gets delivered."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:55:00.052Z"
+}
