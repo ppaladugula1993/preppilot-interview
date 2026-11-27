@@ -1,0 +1,63 @@
+{
+  "id": "etl-elt-l0",
+  "title": "ETL vs ELT: Key Differences Explained",
+  "keys": [
+    "ETL",
+    "ELT",
+    "data pipeline",
+    "cloud"
+  ],
+  "scenes": [
+    {
+      "id": "0-etl-elt-hook",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "Why are ETL and ELT so different?",
+      "line2": "Which one fits modern data?",
+      "say": "Ever wondered why ETL and ELT matter so much in interviews? Which one is best for today's data platforms?"
+    },
+    {
+      "id": "1-etl-elt-compare",
+      "type": "compare",
+      "kicker": "ETL vs ELT",
+      "left": {
+        "title": "ETL",
+        "items": [
+          "Transform before loading",
+          "Used with legacy tools"
+        ]
+      },
+      "right": {
+        "title": "ELT",
+        "items": [
+          "Load raw data first",
+          "Transform inside warehouse"
+        ]
+      },
+      "say": "ETL transforms data before loading it into the destination, while ELT loads raw data first and transforms it inside the data warehouse."
+    },
+    {
+      "id": "2-elt-chip",
+      "type": "chip",
+      "kicker": "Modern Cloud",
+      "label": "ELT",
+      "sub": "Warehouses like BigQuery transform data after loading.",
+      "say": "Cloud warehouses like BigQuery and Snowflake are built to handle transformations after loading, making ELT more scalable."
+    },
+    {
+      "id": "3-etl-elt-trap",
+      "type": "trap",
+      "question": "Why is ELT preferred in the cloud?",
+      "wrong": "Because it's simpler to code.",
+      "right": "Cloud warehouses are optimized for large-scale transformations after loading, making ELT more efficient.",
+      "say": "Interviewers might ask why ELT is preferred in the cloud. It's not just about code simplicity—it's about leveraging the warehouse's compute power for transformations."
+    },
+    {
+      "id": "4-etl-elt-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:33:29.090Z"
+}
