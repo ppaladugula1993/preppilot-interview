@@ -1,0 +1,78 @@
+{
+  "id": "linux-l1",
+  "title": "systemd Services: What, Where, How",
+  "keys": [
+    "systemd",
+    "unit files",
+    "enable",
+    "status",
+    "journalctl"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-systemd",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "Why won't your service start?",
+      "line2": "Is it a systemd issue?",
+      "say": "Ever had a service fail to start? Let’s see how systemd fits into the picture."
+    },
+    {
+      "id": "1-chip-unit-files",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Unit",
+      "sub": "systemd uses unit files to define and control services.",
+      "say": "Systemd controls services using unit files. These files describe how your app runs and restarts."
+    },
+    {
+      "id": "2-terminal-enable-stat",
+      "type": "terminal",
+      "kicker": "Hands-on",
+      "title": "Enable and check your service",
+      "lines": [
+        "$ sudo systemctl daemon-reload",
+        "$ sudo systemctl enable --now myapp",
+        "$ systemctl status myapp",
+        "$ journalctl -u myapp -f"
+      ],
+      "say": "Reload systemd, enable your service to run on boot, check its status, and view logs in real time."
+    },
+    {
+      "id": "3-rows-unit-location",
+      "type": "rows",
+      "kicker": "Where to put unit files",
+      "rows": [
+        {
+          "a": "System units",
+          "b": "Stored in /usr/lib/systemd/system"
+        },
+        {
+          "a": "Custom units",
+          "b": "Use /etc/systemd/system"
+        },
+        {
+          "a": "User units",
+          "b": "Located in ~/.config/systemd/user"
+        }
+      ],
+      "walk": false,
+      "say": "System units are in the library folder. Custom units, like your own services, go in the system folder. User units live in your config directory."
+    },
+    {
+      "id": "4-trap-unit-path",
+      "type": "trap",
+      "question": "Where do you put your own unit files?",
+      "wrong": "In the library folder",
+      "right": "In /etc/systemd/system for custom services",
+      "say": "Here’s a common interview trap: where should you place your own unit files? Don’t mix them with system units."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:43:09.396Z"
+}
