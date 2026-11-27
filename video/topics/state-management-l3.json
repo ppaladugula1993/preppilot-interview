@@ -1,0 +1,72 @@
+{
+  "id": "state-management-l3",
+  "title": "Server State with React Query & SWR",
+  "keys": [
+    "React Query",
+    "SWR",
+    "server state",
+    "caching"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-server-state",
+      "type": "hook",
+      "kicker": "Frontend State Management · lesson",
+      "line1": "How do you handle server data?",
+      "line2": "Cache it or fetch it?",
+      "say": "When your app needs fresh data from a server, do you fetch it every time, or cache it for speed?"
+    },
+    {
+      "id": "1-chip-react-query",
+      "type": "chip",
+      "kicker": "Server State",
+      "label": "React Query",
+      "sub": "Handles fetching, caching, and updating remote data.",
+      "say": "React Query is a library that handles fetching, caching, and updating remote data for you."
+    },
+    {
+      "id": "2-code-usequery-exampl",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "const { data, isLoading } =\n  useQuery(['user', id], () =>\n    fetchUser(id)\n  )",
+      "say": "With React Query, you use the useQuery hook to fetch and cache data automatically."
+    },
+    {
+      "id": "3-compare-react-query-",
+      "type": "compare",
+      "kicker": "Libraries",
+      "left": {
+        "title": "React Query",
+        "items": [
+          "Caching",
+          "Refetching",
+          "Background updates"
+        ]
+      },
+      "right": {
+        "title": "SWR",
+        "items": [
+          "Caching",
+          "Stale-while-revalidate"
+        ]
+      },
+      "say": "Both React Query and S W R offer caching, but React Query adds refetching and background updates. S W R uses a stale-while-revalidate approach."
+    },
+    {
+      "id": "4-trap-local-vs-server",
+      "type": "trap",
+      "question": "Is server state the same as local state?",
+      "wrong": "Yes, both are managed locally.",
+      "right": "No. Server state comes from APIs and needs syncing.",
+      "say": "Don't confuse server state with local state. Server state comes from remote APIs and needs syncing, while local state lives only in your component."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:42:55.248Z"
+}
