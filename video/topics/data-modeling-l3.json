@@ -1,0 +1,72 @@
+{
+  "id": "data-modeling-l3",
+  "title": "Star vs Snowflake Schema Explained",
+  "keys": [
+    "star schema",
+    "snowflake",
+    "fact table",
+    "dimension",
+    "normalization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-star-or-snowfla",
+      "type": "hook",
+      "kicker": "Data Modeling · lesson",
+      "line1": "Star or snowflake schema?",
+      "line2": "Which is better for analytics?",
+      "say": "Ever wondered if you should use a star or snowflake schema for your analytics data?"
+    },
+    {
+      "id": "1-chip-star-schema",
+      "type": "chip",
+      "kicker": "Star Schema",
+      "label": "Simple",
+      "sub": "Central fact table, denormalized dimensions",
+      "say": "A star schema puts your fact table in the center and connects it to denormalized dimension tables. This keeps things simple and makes queries fast."
+    },
+    {
+      "id": "2-chip-snowflake-schem",
+      "type": "chip",
+      "kicker": "Snowflake",
+      "label": "Normalized",
+      "sub": "Dimensions split into related tables",
+      "say": "A snowflake schema breaks dimension tables into smaller, related tables. This reduces data duplication, but adds complexity."
+    },
+    {
+      "id": "3-compare-star-vs-snow",
+      "type": "compare",
+      "kicker": "Schema Showdown",
+      "left": {
+        "title": "Star",
+        "items": [
+          "Faster queries",
+          "Easier to understand"
+        ]
+      },
+      "right": {
+        "title": "Snowflake",
+        "items": [
+          "Less redundancy",
+          "Better for huge dimensions"
+        ]
+      },
+      "say": "Star schemas are fast and easy to work with. Snowflake schemas save space and help with really big or complex dimensions."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Should you always normalize dimensions?",
+      "wrong": "Yes, normalization is always best.",
+      "right": "No, denormalized star schemas are usually better for analytics unless dimensions are huge.",
+      "say": "Here's a common trap: thinking you always need to normalize. For most analytics, a star schema is the smart default unless your dimensions are massive."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:22:36.853Z"
+}
