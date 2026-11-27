@@ -1,0 +1,72 @@
+{
+  "id": "dsa-l1",
+  "title": "Arrays, Strings & Two Pointers",
+  "keys": [
+    "arrays",
+    "strings",
+    "two pointers",
+    "sliding window"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-arrays-strings",
+      "type": "hook",
+      "kicker": "Data Structures & Algorithms · lesson",
+      "line1": "Why are arrays and strings so fast?",
+      "line2": "How do two pointers help?",
+      "say": "Arrays and strings let us access data quickly. But how can we use two pointers to solve problems efficiently?"
+    },
+    {
+      "id": "1-chip-contiguous",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Memory",
+      "sub": "Arrays and strings use contiguous memory for fast access.",
+      "say": "Arrays and strings use contiguous memory. That means we can access any element instantly."
+    },
+    {
+      "id": "2-rows-two-pointer",
+      "type": "rows",
+      "kicker": "Technique",
+      "rows": [
+        {
+          "a": "Step 1",
+          "b": "Set left and right pointers."
+        },
+        {
+          "a": "Step 2",
+          "b": "Move right to scan data."
+        },
+        {
+          "a": "Step 3",
+          "b": "Adjust left to optimize."
+        }
+      ],
+      "walk": true,
+      "say": "With two pointers, set left and right. Move right to scan, and adjust left to optimize your solution."
+    },
+    {
+      "id": "3-code-longest-substri",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "left = 0\nseen = {}\nfor right in range(len(s)):\n    if s[right] in seen:\n        left = max(left, seen[s[right]] + 1)\n    seen[s[right]] = right",
+      "say": "Here's how two pointers find the longest substring without repeating characters. This reduces complexity from N squared to N."
+    },
+    {
+      "id": "4-trap-complexity",
+      "type": "trap",
+      "question": "What’s the time complexity here?",
+      "wrong": "O(n^2), since we scan every pair.",
+      "right": "O(n), because each character is processed only once.",
+      "say": "Don't fall for the trap! With two pointers, each character is processed once, so it's O of N, not N squared."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:15:39.175Z"
+}
