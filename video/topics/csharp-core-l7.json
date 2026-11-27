@@ -1,0 +1,58 @@
+{
+  "id": "csharp-core-l7",
+  "title": "Modern C# Features That Matter",
+  "keys": [
+    "pattern matching",
+    "primary constructors",
+    "collection expressions"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-modern-csharp",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "What's new in modern C#?",
+      "line2": "How does it help you?",
+      "say": "Modern C sharp has some cool features. Do you know which ones make your code cleaner and easier to read?"
+    },
+    {
+      "id": "1-chip-pattern-matchin",
+      "type": "chip",
+      "kicker": "Feature",
+      "label": "Pattern",
+      "sub": "Check types and extract values in one step.",
+      "say": "First up, pattern matching. It lets you check an object's type and pull out properties all at once."
+    },
+    {
+      "id": "2-code-primary-constru",
+      "type": "code",
+      "kicker": "Feature",
+      "lang": "csharp",
+      "code": "record Point(int X, int Y);\nvar p = new Point(3, 4);",
+      "say": "Primary constructors make records and classes super simple to set up. No need for extra boilerplate."
+    },
+    {
+      "id": "3-chip-collection-expr",
+      "type": "chip",
+      "kicker": "Feature",
+      "label": "Collections",
+      "sub": "Quickly create lists with new syntax.",
+      "say": "Collection expressions let you create lists with less code. Just brackets and your values."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you check a type and value?",
+      "wrong": "Use lots of if statements.",
+      "right": "Pattern matching checks type and extracts values in one line.",
+      "say": "Here's a common trap: don't use a bunch of if statements when pattern matching does it all in one go."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:25:47.452Z"
+}
