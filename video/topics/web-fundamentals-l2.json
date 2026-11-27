@@ -1,0 +1,76 @@
+{
+  "id": "web-fundamentals-l2",
+  "title": "Cookies, Sessions & Tokens Explained",
+  "keys": [
+    "cookie",
+    "session",
+    "token",
+    "HttpOnly"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cookie-session-",
+      "type": "hook",
+      "kicker": "Web Fundamentals · lesson",
+      "line1": "How do browsers remember you?",
+      "line2": "What keeps you logged in?",
+      "say": "Ever wonder how websites keep you logged in or remember your preferences? Let’s break down cookies, sessions, and tokens."
+    },
+    {
+      "id": "1-chip-cookie-basics",
+      "type": "chip",
+      "kicker": "Basics",
+      "label": "Cookie",
+      "sub": "Stores small data in your browser. Used for sessions, preferences, and tracking.",
+      "say": "A cookie is a small piece of data stored in your browser. It’s often used for sessions, preferences, or even tracking."
+    },
+    {
+      "id": "2-compare-session-toke",
+      "type": "compare",
+      "kicker": "Authentication",
+      "left": {
+        "title": "Sessions",
+        "items": [
+          "State stored on server",
+          "Client has session ID",
+          "Easy to revoke"
+        ]
+      },
+      "right": {
+        "title": "Tokens",
+        "items": [
+          "Stateless, stored client-side",
+          "Often use JWTs",
+          "Harder to revoke"
+        ]
+      },
+      "say": "Sessions keep state on the server, and your browser just holds a session ID. Tokens, like JSON Web Tokens, are stateless and live on the client. Each has pros and cons for scaling and security."
+    },
+    {
+      "id": "3-terminal-cookie-flag",
+      "type": "terminal",
+      "kicker": "Security",
+      "title": "Cookie Flags Example",
+      "lines": [
+        "$ Set-Cookie: sessionId=abc123;",
+        "  HttpOnly; Secure; SameSite=Strict"
+      ],
+      "say": "For security, always use flags like HttpOnly, Secure, and SameSite. These help block attacks like cross-site scripting and request forgery."
+    },
+    {
+      "id": "4-trap-session-vs-toke",
+      "type": "trap",
+      "question": "Are tokens always safer than sessions?",
+      "wrong": "Yes, tokens are more secure.",
+      "right": "Nope. Tokens are scalable but can be leaked or hard to revoke. Sessions are easier to manage on the server.",
+      "say": "Here’s a trap: Are tokens always safer than sessions? Nope. Tokens are scalable, but can be leaked or hard to revoke. Sessions are easier to manage on the server."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:22:07.478Z"
+}
