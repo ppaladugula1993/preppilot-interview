@@ -1,0 +1,78 @@
+{
+  "id": "etl-elt-l6",
+  "title": "dbt Models, Tests & Incremental Loads",
+  "keys": [
+    "dbt",
+    "models",
+    "tests",
+    "sources",
+    "incremental"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dbt-pipelines",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "How does dbt supercharge pipelines?",
+      "line2": "What makes it so efficient?",
+      "say": "Want to build scalable data pipelines fast? Let's see how dbt makes it easy and reliable."
+    },
+    {
+      "id": "1-chip-models",
+      "type": "chip",
+      "kicker": "dbt Basics",
+      "label": "Models",
+      "sub": "Define views or tables with SQL. dbt manages dependencies.",
+      "say": "With dbt, you write models as SQL queries. It handles the relationships for you."
+    },
+    {
+      "id": "2-rows-tests-sources",
+      "type": "rows",
+      "kicker": "Quality & Raw Data",
+      "rows": [
+        {
+          "a": "Sources",
+          "b": "Connect to raw data tables"
+        },
+        {
+          "a": "Tests",
+          "b": "Check uniqueness or nulls"
+        },
+        {
+          "a": "Custom Checks",
+          "b": "Write your own SQL tests"
+        }
+      ],
+      "walk": true,
+      "say": "You declare sources for raw data, then add tests for things like uniqueness and missing values. Custom checks are easy, too."
+    },
+    {
+      "id": "3-terminal-incremental",
+      "type": "terminal",
+      "kicker": "Incremental Models",
+      "title": "Efficient Loads",
+      "lines": [
+        "$ config(materialized='incremental')",
+        "$ SELECT * FROM source",
+        "$ WHERE updated_at > (SELECT MAX(updated_at)",
+        "$ FROM this)"
+      ],
+      "say": "Incremental models only pull new rows. dbt uses the latest timestamp to filter, so you skip reprocessing old data."
+    },
+    {
+      "id": "4-trap-watermark",
+      "type": "trap",
+      "question": "What does a watermark do in dbt?",
+      "wrong": "It marks the start of the pipeline.",
+      "right": "It tracks the latest processed data, letting incremental models load only new records.",
+      "say": "Here's a trap: what does a watermark actually do? It's not just a marker—it's key for efficient incremental loads."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:40:06.620Z"
+}
