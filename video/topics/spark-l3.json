@@ -1,0 +1,84 @@
+{
+  "id": "spark-l3",
+  "title": "Spark Partitioning & Skew Handling",
+  "keys": [
+    "partitioning",
+    "repartition",
+    "coalesce",
+    "skew"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-partitioning",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Why does partitioning matter?",
+      "line2": "How does it affect speed?",
+      "say": "Ever wonder why some Spark jobs crawl while others fly? Let’s break down partitioning and skew."
+    },
+    {
+      "id": "1-chip-partitioning",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Partitioning",
+      "sub": "Splits data for parallel tasks. Good partitioning keeps jobs fast.",
+      "say": "Partitioning splits your data for parallel processing. Getting this right means jobs finish quickly."
+    },
+    {
+      "id": "2-compare-repartition-",
+      "type": "compare",
+      "kicker": "Partition control",
+      "left": {
+        "title": "Repartition",
+        "items": [
+          "Changes partition count",
+          "Triggers a full shuffle"
+        ]
+      },
+      "right": {
+        "title": "Coalesce",
+        "items": [
+          "Only reduces partitions",
+          "No full shuffle"
+        ]
+      },
+      "say": "Repartition changes the number of partitions and shuffles data. Coalesce just reduces partitions, no heavy shuffle needed."
+    },
+    {
+      "id": "3-rows-skew-handling",
+      "type": "rows",
+      "kicker": "Skew handling",
+      "rows": [
+        {
+          "a": "Analyze partition sizes",
+          "b": "Check Spark UI for imbalance"
+        },
+        {
+          "a": "Salt skewed keys",
+          "b": "Add randomness to spread data"
+        },
+        {
+          "a": "Repartition",
+          "b": "Balance load across tasks"
+        }
+      ],
+      "walk": true,
+      "say": "To handle skew, I check partition sizes in the Spark UI, salt keys to spread data, or repartition to balance tasks."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Is coalesce always faster than repartition?",
+      "wrong": "Yes, coalesce is always faster.",
+      "right": "Coalesce is faster for reducing partitions, but repartition is needed for balancing or increasing them.",
+      "say": "Don’t assume coalesce is always better. It’s faster for reducing partitions, but repartition is key for balancing or increasing them."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:53:12.751Z"
+}
