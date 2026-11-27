@@ -1,0 +1,67 @@
+{
+  "id": "data-quality-l1",
+  "title": "Testing Data with dbt & Great Expectations",
+  "keys": [
+    "dbt",
+    "Great Expectations",
+    "data quality",
+    "testing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dbt-ge",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "How do you catch bad data early?",
+      "line2": "Automated testing?",
+      "say": "How do you catch bad data before it breaks your pipeline? Let’s talk automated testing with dbt and Great Expectations."
+    },
+    {
+      "id": "1-chip-dbt",
+      "type": "chip",
+      "kicker": "dbt",
+      "label": "Schema",
+      "sub": "dbt tests for uniqueness, nulls, and referential integrity at the model level.",
+      "say": "With dbt, you write tests for things like uniqueness, nulls, and referential integrity right in your data models."
+    },
+    {
+      "id": "2-code-dbt-test",
+      "type": "code",
+      "kicker": "dbt Example",
+      "lang": "yaml",
+      "code": "models:\n  - name: customers\n    tests:\n      - unique:\n          column_name: customer_id",
+      "say": "Here’s a dbt test that checks if customer IDs are unique. It runs automatically with your pipeline."
+    },
+    {
+      "id": "3-chip-ge",
+      "type": "chip",
+      "kicker": "Great Expectations",
+      "label": "Row-level",
+      "sub": "Define custom or built-in checks for granular data validation.",
+      "say": "Great Expectations lets you define detailed expectations—like making sure every customer ID is unique or matches a pattern."
+    },
+    {
+      "id": "4-code-ge-test",
+      "type": "code",
+      "kicker": "Great Expectations Example",
+      "lang": "python",
+      "code": "expect_column_values_to_be_unique('customer_id')",
+      "say": "This expectation checks each row for unique customer IDs. It’s more granular than dbt’s schema checks."
+    },
+    {
+      "id": "5-trap-dbt-ge",
+      "type": "trap",
+      "question": "Should you use dbt for row-level checks?",
+      "wrong": "Yes, dbt handles all granularity.",
+      "right": "No, use dbt for schema-level and Great Expectations for row-level checks.",
+      "say": "Here’s a common trap: Should you use dbt for row-level checks? Actually, dbt is best for schema-level tests. For row-level validation, use Great Expectations."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:36:44.226Z"
+}
