@@ -1,0 +1,76 @@
+{
+  "id": "spark-l5",
+  "title": "Spark Caching vs Persistence",
+  "keys": [
+    "cache",
+    "persist",
+    "memory",
+    "disk",
+    "DataFrame"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cache-or-persis",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Cache or persist?",
+      "line2": "Why does it matter?",
+      "say": "Should you cache or persist your DataFrame in Spark? Let’s see why this choice matters."
+    },
+    {
+      "id": "1-chip-cache",
+      "type": "chip",
+      "kicker": "Caching",
+      "label": "Memory",
+      "sub": "Stores DataFrame in RAM for fast reuse.",
+      "say": "Caching puts your DataFrame in memory, so repeated operations run much faster."
+    },
+    {
+      "id": "2-terminal-persist",
+      "type": "terminal",
+      "kicker": "Persistence",
+      "title": "Disk Storage",
+      "lines": [
+        "$ df.persist(StorageLevel.DISK_ONLY)",
+        "DataFrame stored on disk, not RAM"
+      ],
+      "say": "Persistence can store data on disk instead of memory. This saves RAM but is slower."
+    },
+    {
+      "id": "3-rows-when-to-cache",
+      "type": "rows",
+      "kicker": "When to Cache",
+      "rows": [
+        {
+          "a": "Reused DataFrame",
+          "b": "Used in multiple steps"
+        },
+        {
+          "a": "Monitor Memory",
+          "b": "Avoid spilling to disk"
+        },
+        {
+          "a": "Cache selectively",
+          "b": "Don’t cache everything"
+        }
+      ],
+      "walk": true,
+      "say": "Cache only when a DataFrame is reused. Always monitor memory usage to avoid spilling. Don’t cache everything."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Should you always cache DataFrames?",
+      "wrong": "Yes, for every DataFrame.",
+      "right": "No. Cache only reused DataFrames and monitor memory.",
+      "say": "Interview trap: Should you always cache? No. Cache only reused DataFrames and keep an eye on memory."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:52:16.850Z"
+}
