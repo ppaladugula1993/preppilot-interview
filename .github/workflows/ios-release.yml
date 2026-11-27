@@ -2,7 +2,7 @@ name: iOS release (EAS build + TestFlight)
 
 # Manual only: Actions tab -> "iOS release" -> Run workflow.
 # Needs the EXPO_TOKEN repository secret. Signing credentials and the App Store Connect
-# API key live on Expo's servers (see docs/IOS-RELEASE-RUNBOOK.md).
+# API key comes from this repository's ASC_* secrets for the TestFlight upload.
 on:
   workflow_dispatch:
     inputs:
@@ -17,6 +17,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 150
     defaults:
       run:
         working-directory: mobile
@@ -34,4 +35,14 @@ jobs:
           token: ${{ secrets.EXPO_TOKEN }}
       - run: npm ci
       - name: Build on EAS
-        run: eas build -p ios --profile production --non-interactive --no-wait ${{ inputs.submit && '--auto-submit' || '' }}
+        # Waits for the build so the upload below can use the App Store Connect key in this repo's secrets.
+        run: eas build -p ios --profile production --non-interactive ${{ inputs.submit && '' || '--no-wait' }}
+      - name: Upload to TestFlight
+        if: ${{ inputs.submit }}
+        env:
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+          EXPO_ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          EXPO_ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          printf '%s\n' "$ASC_KEY_P8" > "$RUNNER_TEMP/asc.p8"
+          EXPO_ASC_API_KEY_PATH="$RUNNER_TEMP/asc.p8" eas submit -p ios --profile production --latest --non-interactive --wait
