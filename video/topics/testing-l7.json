@@ -1,0 +1,73 @@
+{
+  "id": "testing-l7",
+  "title": "Contract Testing for Services",
+  "keys": [
+    "contract",
+    "provider",
+    "consumer",
+    "Pact",
+    "microservices"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-contract-testin",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "How do microservices stay in sync?",
+      "line2": "What if contracts break?",
+      "say": "Ever wonder how microservices avoid breaking each other? What stops one team's update from causing chaos?"
+    },
+    {
+      "id": "1-chip-contract-basics",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Contract",
+      "sub": "A contract defines the expected interface between services.",
+      "say": "A contract is just an agreement on how two services talk to each other. It defines the expected interface."
+    },
+    {
+      "id": "2-rows-contract-flow",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Consumer",
+          "b": "Defines what it expects"
+        },
+        {
+          "a": "Provider",
+          "b": "Implements the contract"
+        },
+        {
+          "a": "Test",
+          "b": "Checks both sides match"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the flow. The consumer says what it needs. The provider promises to deliver. Then, contract tests check if both sides agree."
+    },
+    {
+      "id": "3-code-pact-example",
+      "type": "code",
+      "kicker": "Example: Pact Test",
+      "lang": "js",
+      "code": "// Consumer expects\nGET /user\n{\n  id,\n  name\n}\n",
+      "say": "With Pact, you can automate this. For example, the consumer expects a user endpoint to return an ID and a name."
+    },
+    {
+      "id": "4-trap-contract-trap",
+      "type": "trap",
+      "question": "What does contract testing prevent?",
+      "wrong": "It finds logic bugs in code.",
+      "right": "It catches mismatches in service interfaces before deployment.",
+      "say": "Here's a common trap: contract tests don't find logic bugs. They catch mismatches in how services talk to each other, before anything goes live."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:16:24.696Z"
+}
