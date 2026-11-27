@@ -1,0 +1,76 @@
+{
+  "id": "docker-l7",
+  "title": "Docker Troubleshooting Kit",
+  "keys": [
+    "logs",
+    "exit code",
+    "inspect",
+    "exec"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-exit-question",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "Container keeps exiting?",
+      "line2": "What do you check first?",
+      "say": "Your Docker container keeps exiting. What do you check first?"
+    },
+    {
+      "id": "1-terminal-logs-status",
+      "type": "terminal",
+      "kicker": "Quick checks",
+      "title": "Logs and exit codes",
+      "lines": [
+        "$ docker logs --tail 100 -f web",
+        "$ docker ps -a",
+        "$ docker inspect web --format '{{.State.ExitCode}} {{.State.OOMKilled}}'"
+      ],
+      "say": "First, check logs and exit codes. Use docker logs, docker ps dash a, and docker inspect for details."
+    },
+    {
+      "id": "2-chip-exec-shell",
+      "type": "chip",
+      "kicker": "Next step",
+      "label": "exec",
+      "sub": "Get a shell inside with docker exec -it web sh",
+      "say": "If you need to poke around, open a shell inside with docker exec dash i t web sh."
+    },
+    {
+      "id": "3-rows-exit-codes",
+      "type": "rows",
+      "kicker": "Know your codes",
+      "rows": [
+        {
+          "a": "Exit 137",
+          "b": "Killed, often out of memory"
+        },
+        {
+          "a": "Exit 1",
+          "b": "Application error"
+        },
+        {
+          "a": "Exit 0",
+          "b": "Process finished cleanly"
+        }
+      ],
+      "walk": true,
+      "say": "Exit codes tell the story. One thirty seven means killed, usually by running out of memory. One is an app error. Zero means the main process finished cleanly."
+    },
+    {
+      "id": "4-trap-misread-oom",
+      "type": "trap",
+      "question": "What does exit 137 usually mean?",
+      "wrong": "The app crashed due to a bug.",
+      "right": "It was killed, often by running out of memory.",
+      "say": "Here's a trap: What does exit one thirty seven usually mean? It's not just a bug. It's usually killed by running out of memory."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:03:23.753Z"
+}
