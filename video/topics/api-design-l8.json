@@ -1,0 +1,72 @@
+{
+  "id": "api-design-l8",
+  "title": "gRPC, GraphQL, and Webhooks Basics",
+  "keys": [
+    "gRPC",
+    "GraphQL",
+    "Webhooks",
+    "API"
+  ],
+  "scenes": [
+    {
+      "id": "0-api-design-hook",
+      "type": "hook",
+      "kicker": "API Design · lesson",
+      "line1": "gRPC, GraphQL, or Webhooks?",
+      "line2": "When do you use each?",
+      "say": "Ever wonder when to use gRPC, GraphQL, or webhooks? Let’s break down their best use cases."
+    },
+    {
+      "id": "1-grpc-chip",
+      "type": "chip",
+      "kicker": "gRPC",
+      "label": "Internal",
+      "sub": "High-performance, contract-based calls",
+      "say": "gRPC is great for internal, high-speed service-to-service communication. It uses strict contracts for reliability."
+    },
+    {
+      "id": "2-graphql-chip",
+      "type": "chip",
+      "kicker": "GraphQL",
+      "label": "Flexible",
+      "sub": "Clients pick exactly the data they need",
+      "say": "GraphQL lets clients ask for only the data they want. It’s perfect for flexible, client-driven queries."
+    },
+    {
+      "id": "3-webhooks-rows",
+      "type": "rows",
+      "kicker": "Webhooks",
+      "rows": [
+        {
+          "a": "Notify clients",
+          "b": "Send events as they happen"
+        },
+        {
+          "a": "Sign payloads",
+          "b": "Prove authenticity"
+        },
+        {
+          "a": "Retry & order",
+          "b": "Handle failures, keep sequence"
+        }
+      ],
+      "walk": false,
+      "say": "Webhooks push event updates to clients. Always sign payloads, retry on failure, and guarantee correct order."
+    },
+    {
+      "id": "4-interview-trap",
+      "type": "trap",
+      "question": "How do you keep webhooks reliable?",
+      "wrong": "Just send and forget.",
+      "right": "Sign payloads, use retries, and track event order for reliability.",
+      "say": "Interview trap: Don’t just send and forget webhooks. Sign them, retry on failure, and use event IDs to keep order."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:33:23.134Z"
+}
