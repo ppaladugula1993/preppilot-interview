@@ -912,6 +912,81 @@ function newTopicsNote() {
   </section>`;
 }
 
+/* ---------- Watch: short explainer videos, a quick card after each (only cards move progress) ---------- */
+async function loadVideos() {
+  if (S.videos || S.videosLoading) return;
+  S.videosLoading = true;
+  try { const r = await fetch(`content/videos.json?h=${new Date().toISOString().slice(0, 13)}`); S.videos = (await r.json()).videos || []; }
+  catch { S.videos = []; }
+  S.videosLoading = false;
+  if (['watch', 'home', 'learn'].includes(S.lastView)) render();
+}
+function videoFor(topicId, lesson) { return (S.videos || []).find(v => v.topic === topicId && (lesson === undefined ? v.lesson === undefined : v.lesson === lesson)); }
+// Plan order: each topic's main video, then its lessons.
+function watchList() {
+  const p = profile(); const order = p ? rankTopics(topics(), p).map(t => t.id) : [];
+  const rank = id => { const i = order.indexOf(id); return i < 0 ? 999 : i; };
+  return [...(S.videos || [])].sort((a, b) => rank(a.topic) - rank(b.topic) || a.topic.localeCompare(b.topic) || (a.lesson ?? -1) - (b.lesson ?? -1));
+}
+function openWatch(id) {
+  const list = watchList();
+  const i = Math.max(0, id ? list.findIndex(v => v.id === id) : 0);
+  S.watch = { list, i, phase: 'play', reveal: false, run: S.watch?.run || 0 };
+  S.view = 'watch'; render(); scrollToY(0);
+}
+function watchQuizCard(v) {
+  const t = topicById(v.topic); if (!t?.qa?.length) return null;
+  let qi = v.quiz || 0;
+  if (v.lesson !== undefined && v.lessonTitle) {
+    const words = v.lessonTitle.toLowerCase().split(/[^a-z0-9]+/).filter(w => w.length > 3);
+    const k = t.qa.findIndex(q => words.some(w => q.q.toLowerCase().includes(w)));
+    if (k >= 0) qi = k;
+  }
+  return { id: `${t.id}-${qi}`, ...t.qa[qi] };
+}
+function watchView() {
+  if (!S.videos) { loadVideos(); return '<p class="muted">Loading videos…</p>'; }
+  const W = S.watch && S.watch.list.length ? S.watch : (S.watch = { list: watchList(), i: 0, phase: 'play', reveal: false, run: 0 });
+  if (!W.list.length) return `<div class="stack"><h2>Watch</h2><p class="muted">Short videos for every topic are on the way. Check back soon.</p><button class="btn" data-act="home">Back to plan</button></div>`;
+  const v = W.list[W.i], t = topicById(v.topic), name = t?.name || v.topic;
+  const head = `<div class="row between"><button class="back" data-act="home">${ic('left')}Plan</button><span class="muted small">${W.i + 1} of ${W.list.length}</span></div>`;
+  const label = `<p class="w-meta"><b>${esc(v.title)}</b><span>${esc(name)}${v.lessonTitle ? ` · ${esc(v.lessonTitle)}` : ''} · ${v.duration}s</span></p>`;
+  if (isLocked(v.topic)) return `<div class="stack watch">${head}
+    <div class="w-frame w-locked" style="background-image:url('${esc(v.poster)}')"><div>${ic('lock')}<b>Pro video</b><span>Free covers the videos for your first ${FREE_TOPICS} topics.</span><button class="btn primary" data-act="plans">Unlock all videos</button></div></div>
+    ${label}<div class="row"><button class="btn" data-act="wprev" ${W.i ? '' : 'disabled'}>${ic('left')}Previous</button><button class="btn primary grow" data-act="wnext">Next video</button></div></div>`;
+  if (W.phase === 'play') return `<div class="stack watch">${head}
+    <div class="w-frame"><video id="wv" src="${esc(v.url)}" poster="${esc(v.poster)}" playsinline controls autoplay preload="auto"></video></div>
+    ${label}
+    <div class="row"><button class="btn" data-act="wprev" ${W.i ? '' : 'disabled'}>${ic('left')}Previous</button><button class="btn primary grow" data-act="wdone">Quick question</button></div></div>`;
+  // quiz phase
+  const q = watchQuizCard(v);
+  const nudge = W.run >= 5 ? `<section class="sw-promo"><div><b>Nice run. 5 quick cards to lock it in?</b><span class="muted small">Videos explain it; cards make it stick. Your progress only moves with cards.</span>
+    <div class="row"><button class="btn primary" data-act="deck" data-id="${esc(v.topic)}">Practise 5 cards</button><button class="link quiet small" data-act="wrunok">Keep watching</button></div></div></section>` : '';
+  return `<div class="stack watch">${head}${label}${nudge}
+    ${q ? `<article class="card stacked flash" id="flash"><div class="card-head"><span>Quick check · ${esc(name)}</span></div>
+      <p class="q">${fmt(q.q)}</p>${W.reveal ? `<div class="ans">${fmt(q.a)}</div>` : ''}
+      <div class="foot">${W.reveal ? (W.graded ? '<p class="muted small">Saved. It counts toward your progress.</p>' : `<div class="row"><button class="btn grow" data-act="wgrade" data-ok="0">Not yet</button><button class="btn primary grow" data-act="wgrade" data-ok="1">Knew it</button></div>`) : '<button class="btn primary block" data-act="wreveal">Show the answer</button>'}</div></article>` : ''}
+    <button class="btn primary block" data-act="wnext">Next video</button>
+    <div class="row"><button class="btn grow" data-act="deck" data-id="${esc(v.topic)}">${ic('cards')}Practise 5 cards</button><button class="btn grow" data-act="wreplay">Watch again</button></div></div>`;
+}
+function watchStep(d) {
+  const W = S.watch; if (!W) return;
+  W.i = Math.max(0, Math.min(W.list.length - 1, W.i + d)); W.phase = 'play'; W.reveal = false; W.graded = false;
+  render(); scrollToY(0);
+}
+function bindWatch() {
+  const el = document.getElementById('wv'); if (!el || el.dataset.bound) return;
+  el.dataset.bound = '1';
+  el.addEventListener('ended', () => { if (S.view !== 'watch' || !S.watch) return; S.watch.phase = 'quiz'; S.watch.run++; ensureTopics([S.watch.list[S.watch.i].topic]).catch(() => {}).finally(() => render()); });
+}
+function watchStrip() {
+  if (!S.videos?.length) return '';
+  const next = watchList().filter(v => !isLocked(v.topic)).slice(0, 3);
+  if (!next.length) return '';
+  return `<section><div class="sec-head"><h3>Learn it in 45 seconds</h3><button class="link quiet small" data-act="watch">See all</button></div>
+    <div class="w-strip">${next.map(v => `<button class="w-thumb" data-act="watch" data-id="${esc(v.id)}"><img src="${esc(v.poster)}" alt="" loading="lazy"><span>${ic('play')}${esc(v.title)}</span></button>`).join('')}</div></section>`;
+}
+
 // "New in PrepPilot": the same four updates on Home (signed in, with a profile) and on the landing page.
 function newsHtml(home) {
   const p = home ? profile() : null;
@@ -923,7 +998,7 @@ function newsHtml(home) {
     ${home ? '<div class="sec-head"><h3>New in PrepPilot</h3></div>' : '<p class="l-tag">## new in preppilot</p><h2 class="l-h2">Fresh this month</h2>'}
     <div class="l-grid news-grid">
       ${tile('book', 'Interview Lab', stack ? `Worked answers for ${esc(stack)} interviews: system design, coding, SQL and behavioral. Try it first, then see the strong answer.` : '82 worked answers: system design, coding, SQL, low-level design and behavioral. Try it first, then see the strong answer.', 'openlab')}
-      ${tile('play', '45-second videos', 'Short explainers for every topic and lesson, with a quick question after each one so it sticks.', '', 'Coming soon')}
+      ${S.videos?.length ? tile('play', 'Watch', `${S.videos.length} short explainer videos, with a quick question after each one so it sticks.`, 'watch', 'New') : tile('play', '45-second videos', 'Short explainers for every topic and lesson, with a quick question after each one so it sticks.', '', 'Coming soon')}
       ${tile('spark', 'Role Ready', 'Paste a job post or type a role and get the top 5 skills it will test, with flashcards.', 'jobfocus', 'Pro')}
       ${tile('cards', 'Floating cards', 'Keep a card floating over your other apps; it moves to the next one on its own.', pipSupport() ? 'popout' : '')}
     </div>
@@ -978,6 +1053,7 @@ function homeView() {
       <div class="sw-promo-cards" aria-hidden="true"><i></i><i></i><i></i></div>
       <div><span class="tag">New</span><b>Swipe right on what you know</b><span class="muted small">Like Tinder, but for your next job. Cards from all your skills, mixed.</span>
       <div class="row"><button class="btn primary" data-act="swipedeck">Try swipe mode</button><button class="link quiet small" data-act="swipenah">Keep steady</button></div></div></section>`}
+    ${watchStrip()}
     ${newsHtml(true)}
     ${jobFocusEntry()}
     ${roleIds.includes('other') ? `<section class="panel stack"><h3>Make it specific to ${esc(p.otherRole)}</h3>
@@ -1285,6 +1361,7 @@ function learnView() {
   return `<div class="stack">
     <div class="row between"><button class="back" data-act="home">${ic('left')}Plan</button><span class="muted small">${esc(t.name)}, ${S.ci + 1} of ${t.concepts.length}</span></div>
     <div class="segs">${t.concepts.map((_, i) => `<i class="${i <= S.ci ? 'on' : ''}"></i>`).join('')}</div>
+    ${(() => { const v = videoFor(t.id, S.ci) || videoFor(t.id); return v ? `<button class="btn quiet w-cta" data-act="watch" data-id="${esc(v.id)}">${ic('play')}Watch ${v.duration}s${v.lesson === undefined ? ` · ${esc(t.name)} explained` : ''}</button>` : ''; })()}
     ${story ? `${scene}${diagramTeaser(t.id, story.html)}` : scene}
     <article class="lesson" style="padding:14px 0 6px">
       ${c.basic ? `<span class="tag" style="margin-bottom:8px">Basics${profile()?.level === 'senior' ? ', you may know this' : ''}</span>` : ''}
@@ -1788,6 +1865,7 @@ function navDrawerHtml(key) {
     <div class="nd-head"><b>PrepPilot</b><span class="nd-head-btns"><button class="nd-round" data-act="ndgo" data-v="search" aria-label="Search topics">${ic('search')}</button><button class="nd-round nd-menu" data-act="drawer" aria-label="Close panel">${ic('menu')}</button></span></div>
     <nav class="nd-nav">
       ${item('home', 'Home', 'home', key === 'home')}
+      ${item('watch', 'Watch', 'play', key === 'watch')}
       ${item('deck', 'Cards', 'cards', key === 'deck')}
       ${item('jobfocus', 'Role Ready', 'target', key === 'focus')}
       ${item('lab', 'Interview Lab', 'book', key === 'lab')}
@@ -2445,6 +2523,7 @@ function render() {
     : key === 'custom' ? customView()
     : key === 'focus' ? jobFocusView()
     : key === 'lab' ? labView()
+    : key === 'watch' ? watchView()
     : key === 'settings' ? settingsView()
     : homeView();
   app.innerHTML = `<div class="${changed ? 'view' : ''}">${html}</div>`;
@@ -2464,6 +2543,8 @@ function render() {
   // Native app: keep the icon badge and the daily reminder in step with the plan.
   if (native() && key === 'home' && profile()) syncNativeHome();
   if (key === 'chat' && profile()) loadFresh();
+  if (key === 'watch') bindWatch(); else document.querySelectorAll('video').forEach(x => x.pause());
+  if ((key === 'home' || key === 'learn') && !S.videos) loadVideos();
   if (key === 'landing' && !S.demo) loadDemo();
   if (key === 'landing') { storyLast = -1; requestAnimationFrame(paintStory); if (changed || !featTimer) startFeat(); } else stopFeat();
   // The plans-screen diagram plays itself when the screen opens; anywhere
@@ -2994,6 +3075,7 @@ document.addEventListener('click', async e => {
     const v = b.dataset.v; setDrawer(false); S.showPlans = false;
     if (v === 'search') { S.view = 'home'; render(); scrollToY(0); setTimeout(() => document.getElementById('learnSearch')?.focus(), 80); }
     else if (v === 'deck') startDeck(null);
+    else if (v === 'watch') openWatch();
     else if (v === 'jobfocus') { S.view = 'focus'; render(); }
     else if (v === 'live') { S.view = 'chat'; render(); liveSetupSheet(); }
     else if (v === 'plans') { S.showPlans = true; render(); }
@@ -3044,6 +3126,14 @@ document.addEventListener('click', async e => {
   else if (a === 'quick') sendChat(b.dataset.q);
   else if (a === 'rtstart') startVoice(b.dataset.mode);
   else if (a === 'plans') { S.showPlans = true; render(); }
+  else if (a === 'watch') openWatch(id);
+  else if (a === 'wnext') watchStep(1);
+  else if (a === 'wprev') watchStep(-1);
+  else if (a === 'wdone') { S.watch.phase = 'quiz'; S.watch.run++; ensureTopics([S.watch.list[S.watch.i].topic]).catch(() => {}).finally(() => render()); }
+  else if (a === 'wreplay') { S.watch.phase = 'play'; render(); }
+  else if (a === 'wreveal') { S.watch.reveal = true; render(); }
+  else if (a === 'wrunok') { S.watch.run = 0; render(); }
+  else if (a === 'wgrade') { const W = S.watch, q = watchQuizCard(W.list[W.i]); if (q && !W.graded) { const ok = b.dataset.ok === '1', prog = store.progress(); prog[q.id] = review(prog[q.id], ok); store.setProgress(prog); store.setActivity(recordActivity(store.activity(), todayKey(), ok)); W.graded = true; } render(); }
   else if (a === 'openlab') { S.view = 'lab'; render(); scrollToY(0); }
   else if (a === 'jobfocus') { S.view = 'focus'; render(); }
   else if (a === 'jfgo') jobFocusGo();
