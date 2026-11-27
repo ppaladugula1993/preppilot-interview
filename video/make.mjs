@@ -64,6 +64,7 @@ Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|co
 - end: say must be exactly "Get interview ready with PrepPilot."
 Kickers are short, like "Step 1 · Firmware". Use at least 3 different scene types, and put ONE picture scene right after the hook: pick a real-world metaphor that makes this idea click (e.g. Docker = cargo ship with containers; JVM garbage collection = warehouse forklift clearing unused boxes; event loop = one chef juggling orders; class vs object = blueprint vs houses; index = library card catalogue; Git branches = a tree; React components = LEGO bricks; Kafka = post office sorting mail; CI/CD or ETL = factory assembly line; auth = bank vault with ID badges; LLM RAG = librarian looking up books before answering). Pick the best fit for THIS topic, not these examples by default. Spell acronyms for speech in "say" only when needed (e.g. "P I D"), never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
+EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "video title, max 40 chars", "keys": [3-6 key terms to colour in captions], "scenes": [...]}.
 
 Lessons:
@@ -93,6 +94,7 @@ Each scene: {"id": short-slug, "type": one of hook|picture|chip|terminal|rows|co
 - end: say must be exactly "Get interview ready with PrepPilot."
 Use at least 2 different teaching scene types, and put ONE picture scene right after the hook with a real-world metaphor that makes this lesson click (e.g. cargo ship for containers, warehouse forklift for garbage collection, chef juggling orders for an event loop, blueprint vs houses for class vs object, library catalogue for indexes, factory line for pipelines). Pick the best fit for THIS lesson. Spell acronyms for speech in "say" only when needed, never in on-screen fields.
 ${feedback ? `Fix these problems from the review: ${feedback}\n` : ''}
+EVERY scene, including hook, picture, chip and trap, MUST have a "say" field with its spoken narration.
 Return {"title": "max 40 chars", "keys": [2-5 key terms], "scenes": [...]}.
 
 Lesson:
@@ -103,7 +105,7 @@ ${cards}`;
   return ask(sys, user, 2000);
 }
 async function check(script) {
-  const r = await ask('You are a strict technical reviewer of a short interview-prep video script. Output ONLY JSON: {"ok": true|false, "problems": "short list"}. ok=false if any fact, command or code is wrong or misleading, or the trap is not actually a common mistake.',
+  const r = await ask('You are a strict technical reviewer of a short interview-prep video script. Output ONLY JSON: {"ok": true|false, "problems": "short list"}. ok=false if any fact, command or code is wrong or misleading, or the trap is not actually a common mistake. Picture scenes are deliberate real-world analogies: do NOT reject an analogy for being simplified, only if it teaches something false. Minor wording is fine; reject only real errors.',
     `Topic: ${topic.name}\nScript:\n${JSON.stringify(script)}`, 600, 0);
   return r;
 }
@@ -111,9 +113,10 @@ const valid = s => Array.isArray(s?.scenes) && s.scenes.length >= (lesson ? 4 : 
 let script = !force && existsSync(scriptFile) ? JSON.parse(readFileSync(scriptFile, 'utf8')) : null;
 if (!script) {
   let fb = '';
-  for (let k = 0; k < 3 && !script; k++) {
+  for (let k = 0; k < 4 && !script; k++) {
     const s = await writeScript(fb);
-    if (!valid(s)) { fb = 'Follow the scene structure exactly (hook first, end last, every scene has id and say).'; continue; }
+    (s?.scenes || []).forEach(x => { if (!x.say && x.type === 'hook') x.say = `${x.line1} ${x.line2}`; if (!x.say && x.type === 'end') x.say = 'Get interview ready with PrepPilot.'; });
+    if (!valid(s)) { log('invalid: ' + (s?.scenes || []).filter(x => !x.say).map(x => x.type).join(',')); fb = 'Follow the scene structure exactly (hook first, end last, every scene has id and say).'; continue; }
     s.scenes.forEach((x, i) => { x.id = `${i}-${String(x.id).replace(/[^a-z0-9-]/gi, '').slice(0, 20) || 's'}`; });
     const c = await check(s);
     if (c.ok === true || c.ok === 'true') script = s; else { fb = c.problems || 'facts'; log(`review: ${fb}`); }

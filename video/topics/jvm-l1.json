@@ -1,0 +1,85 @@
+{
+  "id": "jvm-l1",
+  "title": "JVM Garbage Collectors & Generational GC",
+  "keys": [
+    "G1",
+    "ZGC",
+    "Parallel GC",
+    "heap",
+    "generational"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-gc",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Why does JVM split its memory?",
+      "line2": "How does GC boost performance?",
+      "say": "Why does JVM split its memory? How does GC boost performance?"
+    },
+    {
+      "id": "1-picture-gc-warehouse",
+      "type": "picture",
+      "kicker": "Metaphor · Warehouse sorting",
+      "prompt": "A warehouse with two sections: one for fast-moving packages and another for slow-moving, dusty boxes. Forklifts quickly remove packages from the fast section, while a crew carefully sorts the older boxes.",
+      "map": [
+        {
+          "thing": "fast-moving packages",
+          "means": "Young generation objects"
+        },
+        {
+          "thing": "dusty boxes",
+          "means": "Old generation objects"
+        },
+        {
+          "thing": "forklifts",
+          "means": "Garbage collectors"
+        }
+      ],
+      "say": "Think of JVM memory as a warehouse. Fast-moving packages represent short-lived objects, while dusty boxes are long-lived. Forklifts—our garbage collectors—clear out the clutter efficiently."
+    },
+    {
+      "id": "2-rows-gc-types",
+      "type": "rows",
+      "kicker": "GC Types",
+      "rows": [
+        {
+          "a": "G1",
+          "b": "Divides heap, targets most garbage"
+        },
+        {
+          "a": "ZGC",
+          "b": "Low-latency, colored pointers"
+        },
+        {
+          "a": "Parallel",
+          "b": "Multiple threads, throughput"
+        }
+      ],
+      "walk": true,
+      "say": "JVM offers several collectors: G1 prioritizes regions with most garbage, ZGC minimizes pauses, and Parallel GC maximizes throughput using threads."
+    },
+    {
+      "id": "3-chip-generational",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Generational",
+      "sub": "Heap split into Young and Old generations for efficient collection.",
+      "say": "Generational GC splits the heap. Young generation gets frequent cleanups, while Old generation is for objects that survive longer."
+    },
+    {
+      "id": "4-trap-gc-choice",
+      "type": "trap",
+      "question": "Is G1 always the best GC for all apps?",
+      "wrong": "Yes, it's always optimal.",
+      "right": "No. Choose GC based on latency and throughput needs—G1, ZGC, or Parallel each fit different workloads.",
+      "say": "Interviewers might ask if G1 is always best. It's not—pick a collector based on your app's latency or throughput requirements."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural"
+}
