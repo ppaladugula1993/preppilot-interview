@@ -1,0 +1,76 @@
+{
+  "id": "sql-advanced-l3",
+  "title": "Top-N per Group & Deduplication in SQL",
+  "keys": [
+    "ROW_NUMBER",
+    "PARTITION BY",
+    "Deduplication",
+    "Top-N"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-top-n",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you get the top earners",
+      "line2": "in each department?",
+      "say": "How would you find the highest paid people in every department using SQL?"
+    },
+    {
+      "id": "1-chip-row-number",
+      "type": "chip",
+      "kicker": "Key Tool",
+      "label": "ROW_NUMBER",
+      "sub": "Assigns a unique rank to each row within a group.",
+      "say": "The row number function gives each row a unique rank inside its group."
+    },
+    {
+      "id": "2-code-top-n-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "SELECT * FROM (\n  SELECT *, ROW_NUMBER() OVER (\n    PARTITION BY department\n    ORDER BY salary DESC\n  ) AS rn\n  FROM employees\n) t WHERE rn <= 3;",
+      "say": "Here's how you grab the top three earners in every department using row number and partition by."
+    },
+    {
+      "id": "3-rows-deduplication",
+      "type": "rows",
+      "kicker": "Deduplication Steps",
+      "rows": [
+        {
+          "a": "1. Partition",
+          "b": "Group by your key, like user or email"
+        },
+        {
+          "a": "2. Order",
+          "b": "Sort by your business rule, like latest date"
+        },
+        {
+          "a": "3. Number",
+          "b": "Assign row numbers within each group"
+        },
+        {
+          "a": "4. Filter",
+          "b": "Pick only the first row per group"
+        }
+      ],
+      "walk": true,
+      "say": "To deduplicate, group your data, sort it, assign row numbers, then keep only the first row for each group."
+    },
+    {
+      "id": "4-trap-partition-by",
+      "type": "trap",
+      "question": "What does PARTITION BY do?",
+      "wrong": "It sorts the rows in the table.",
+      "right": "It splits rows into groups so window functions work within each group.",
+      "say": "Don't mix up partition by with order by. Partition by splits your data into groups for the window function."
+    },
+    {
+      "id": "5-end-ready",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:41:17.567Z"
+}
