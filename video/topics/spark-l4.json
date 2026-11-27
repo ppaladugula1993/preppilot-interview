@@ -1,0 +1,82 @@
+{
+  "id": "spark-l4",
+  "title": "Spark Joins: Broadcast vs Sort-Merge",
+  "keys": [
+    "broadcast",
+    "sort-merge",
+    "shuffle",
+    "performance",
+    "executor"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-join-choice",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Which join is faster in Spark?",
+      "line2": "Broadcast or sort-merge?",
+      "say": "Which join strategy actually makes Spark run faster—broadcast or sort-merge?"
+    },
+    {
+      "id": "1-chip-broadcast",
+      "type": "chip",
+      "kicker": "Joins",
+      "label": "Broadcast",
+      "sub": "Sends a small table to every executor.",
+      "say": "Broadcast joins send a small table to every executor, so each worker has what it needs, with no shuffling."
+    },
+    {
+      "id": "2-chip-sortmerge",
+      "type": "chip",
+      "kicker": "Joins",
+      "label": "Sort-Merge",
+      "sub": "Shuffles and sorts both tables before joining.",
+      "say": "Sort-merge joins shuffle and sort both tables across the cluster before joining. This is heavier on resources."
+    },
+    {
+      "id": "3-compare-when-to-use",
+      "type": "compare",
+      "kicker": "Choosing",
+      "left": {
+        "title": "Broadcast",
+        "items": [
+          "Table under 10 megabytes",
+          "Small dimension tables",
+          "Avoids shuffle"
+        ]
+      },
+      "right": {
+        "title": "Sort-Merge",
+        "items": [
+          "Both tables are large",
+          "Shuffle required",
+          "More resource use"
+        ]
+      },
+      "say": "Use broadcast joins for small tables, usually under ten megabytes. For big tables, sort-merge is safer, but costs more."
+    },
+    {
+      "id": "4-code-broadcast",
+      "type": "code",
+      "kicker": "Tip",
+      "lang": "python",
+      "code": "from pyspark.sql.functions import broadcast\nresult = df1.join(broadcast(df2), \"id\")",
+      "say": "You can force a broadcast join in your code using the broadcast function on your smaller table."
+    },
+    {
+      "id": "5-trap-threshold",
+      "type": "trap",
+      "question": "What triggers a broadcast join?",
+      "wrong": "Any join with a small column",
+      "right": "Spark auto-broadcasts tables under ten megabytes, or you can force it with the broadcast function.",
+      "say": "Quick check: What actually triggers a broadcast join? It's not just small columns—Spark looks at the table size."
+    },
+    {
+      "id": "6-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:55:31.386Z"
+}
