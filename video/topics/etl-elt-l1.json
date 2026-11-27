@@ -1,0 +1,84 @@
+{
+  "id": "etl-elt-l1",
+  "title": "Full vs Incremental Loads in ETL",
+  "keys": [
+    "full load",
+    "incremental",
+    "watermark",
+    "pipeline"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-full-vs-increme",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "Full or incremental load?",
+      "line2": "Which scales better?",
+      "say": "If your dataset keeps growing, should you reload everything each time, or just process what's new?"
+    },
+    {
+      "id": "1-compare-load-types",
+      "type": "compare",
+      "kicker": "Load Strategies",
+      "left": {
+        "title": "Full Load",
+        "items": [
+          "Overwrite all data",
+          "Simple logic"
+        ]
+      },
+      "right": {
+        "title": "Incremental",
+        "items": [
+          "Only new or changed data",
+          "Needs change tracking"
+        ]
+      },
+      "say": "A full load replaces all data every run—simple, but wasteful for big tables. Incremental loads only pick up new or changed records, so they're much more efficient."
+    },
+    {
+      "id": "2-rows-incremental-ste",
+      "type": "rows",
+      "kicker": "Incremental Load Steps",
+      "rows": [
+        {
+          "a": "1. Track changes",
+          "b": "Use a watermark like updated time"
+        },
+        {
+          "a": "2. Filter source",
+          "b": "Select only new or changed rows"
+        },
+        {
+          "a": "3. Append data",
+          "b": "Insert into the target table"
+        }
+      ],
+      "walk": true,
+      "say": "To run an incremental load, first track changes with a watermark, then filter for new records, and finally append them to your target."
+    },
+    {
+      "id": "3-chip-watermark",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Watermark",
+      "sub": "A marker that tracks the latest processed record",
+      "say": "A watermark is just a marker—like the latest timestamp—so you know where you left off."
+    },
+    {
+      "id": "4-trap-overwrite-trap",
+      "type": "trap",
+      "question": "Should you always use full loads?",
+      "wrong": "Yes, it's simpler and safer.",
+      "right": "No. For large datasets, incremental loads save time and resources.",
+      "say": "Here's a common trap: always using full loads. That wastes compute and bandwidth on big data. Incremental loading is the scalable choice."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:35:26.518Z"
+}
