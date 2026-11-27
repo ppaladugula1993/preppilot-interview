@@ -1,0 +1,71 @@
+{
+  "id": "go-core-l0",
+  "title": "Go Structs and Methods: Receivers",
+  "keys": [
+    "struct",
+    "method",
+    "receiver",
+    "pointer"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-receivers",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "How do Go methods",
+      "line2": "change your structs?",
+      "say": "Ever wonder how methods actually change your structs in Go? Let's break down receivers and see why it matters."
+    },
+    {
+      "id": "1-chip-struct",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Struct",
+      "sub": "A group of fields acting as one type.",
+      "say": "First, a struct is just a group of fields bundled together, like a mini-record."
+    },
+    {
+      "id": "2-code-methods",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "type User struct { Name string }\nfunc (u User) GetName() string { return u.Name }\nfunc (u *User) SetName(name string) { u.Name = name }",
+      "say": "Here, GetName uses a value receiver. It works on a copy. SetName uses a pointer receiver, so it can change the real struct."
+    },
+    {
+      "id": "3-compare-receivers",
+      "type": "compare",
+      "kicker": "Receivers",
+      "left": {
+        "title": "Value",
+        "items": [
+          "Works on a copy",
+          "No changes outside"
+        ]
+      },
+      "right": {
+        "title": "Pointer",
+        "items": [
+          "Works on original",
+          "Can change fields"
+        ]
+      },
+      "say": "Value receivers can't change the original struct. Pointer receivers can, and they're also faster for big structs."
+    },
+    {
+      "id": "4-trap-copy",
+      "type": "trap",
+      "question": "Will SetName with value receiver update Name?",
+      "wrong": "Yes, it changes the struct.",
+      "right": "No, only pointer receivers update the original struct.",
+      "say": "Careful—using a value receiver in SetName won't update your struct. Only pointer receivers do."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:38:38.663Z"
+}
