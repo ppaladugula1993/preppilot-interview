@@ -1,0 +1,78 @@
+{
+  "id": "docker",
+  "title": "Docker: Images vs Containers",
+  "keys": [
+    "image",
+    "container",
+    "layer",
+    "writable",
+    "instance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-image-container",
+      "type": "hook",
+      "kicker": "Docker · 45 seconds",
+      "line1": "What’s the real difference?",
+      "line2": "Image or container?",
+      "say": "Docker talks about images and containers, but what’s the key difference you need to know?"
+    },
+    {
+      "id": "1-picture-cargo-metaph",
+      "type": "picture",
+      "kicker": "Metaphor · Shipping",
+      "prompt": "A cargo ship stacked with identical sealed containers, dock workers unloading containers onto the port, each container being opened and used. Sunny port, cranes, busy workers.",
+      "map": [
+        {
+          "thing": "sealed container",
+          "means": "Docker image"
+        },
+        {
+          "thing": "opened container",
+          "means": "Running container"
+        }
+      ],
+      "say": "Think of a cargo ship: images are sealed containers, ready to ship. Running containers are those opened and used on the dock.",
+      "image": "docker-1-picture-cargo-metaph.jpg"
+    },
+    {
+      "id": "2-chip-image",
+      "type": "chip",
+      "kicker": "Step 1 · Template",
+      "label": "Image",
+      "sub": "A read-only template built in layers.",
+      "say": "An image is a read-only template, built in layers. It’s not running yet."
+    },
+    {
+      "id": "3-chip-container",
+      "type": "chip",
+      "kicker": "Step 2 · Instance",
+      "label": "Container",
+      "sub": "A running instance with its own writable layer.",
+      "say": "A container is a running instance of that image, with its own thin writable layer on top."
+    },
+    {
+      "id": "4-code-docker-run",
+      "type": "code",
+      "kicker": "Step 3 · Launch",
+      "lang": "bash",
+      "code": "$ docker run nginx\n# Starts a container from the image",
+      "say": "When you run an image, Docker creates a container. One image can run many containers."
+    },
+    {
+      "id": "5-trap-image-vs-contai",
+      "type": "trap",
+      "question": "Is an image a running container?",
+      "wrong": "Yes, they’re the same.",
+      "right": "No. An image is the template; a container is the running instance with its own writable layer.",
+      "say": "Don’t confuse the two. An image is just the template. A container is the running instance, with its own writable layer."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T18:32:01.036Z"
+}
