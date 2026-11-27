@@ -1,0 +1,76 @@
+{
+  "id": "react-l6",
+  "title": "Server Components & Next.js Basics",
+  "keys": [
+    "server components",
+    "Next.js",
+    "SSR",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-server-componen",
+      "type": "hook",
+      "kicker": "React · lesson",
+      "line1": "Server Components & Next.js",
+      "line2": "Why do they boost performance?",
+      "say": "How do server components and Next.js make React apps faster and more scalable?"
+    },
+    {
+      "id": "1-chip-server-side",
+      "type": "chip",
+      "kicker": "Feature",
+      "label": "Server",
+      "sub": "Server components render UI on the server, cutting client-side JavaScript.",
+      "say": "Server components render parts of your UI on the server, so less JavaScript runs on the user's browser."
+    },
+    {
+      "id": "2-rows-nextjs-features",
+      "type": "rows",
+      "kicker": "Framework",
+      "rows": [
+        {
+          "a": "SSR",
+          "b": "Server-side rendering"
+        },
+        {
+          "a": "Static",
+          "b": "Static site generation"
+        },
+        {
+          "a": "Routing",
+          "b": "Built-in page routing"
+        },
+        {
+          "a": "API",
+          "b": "API routes for backend logic"
+        }
+      ],
+      "walk": true,
+      "say": "Next.js gives you server-side rendering, static generation, routing, and API routes—all out of the box."
+    },
+    {
+      "id": "3-code-nextjs-page",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "jsx",
+      "code": "export default function Home() {\n  return <div>Welcome to Next.js 13</div>;\n}",
+      "say": "Here's a simple Next.js page. It renders on the server, improving performance and search engine optimization."
+    },
+    {
+      "id": "4-trap-server-componen",
+      "type": "trap",
+      "question": "Can server components use browser APIs?",
+      "wrong": "Yes, they're just React components.",
+      "right": "No, server components can't access browser APIs or local state. Use client components for that.",
+      "say": "Interviewers love to ask: Can server components use browser APIs? No—they can't. That's a key limitation."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:54:21.438Z"
+}
