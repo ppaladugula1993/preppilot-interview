@@ -1,0 +1,71 @@
+{
+  "id": "oop-design-patterns-l1",
+  "title": "Composition vs Inheritance in OOP",
+  "keys": [
+    "composition",
+    "inheritance",
+    "flexibility",
+    "coupling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-composition",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "Why do pros prefer composition?",
+      "line2": "Inheritance or flexibility?",
+      "say": "Why do experienced engineers prefer composition over inheritance? Is it just about flexibility, or something more?"
+    },
+    {
+      "id": "1-chip-composition",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Composition",
+      "sub": "Build classes by combining objects, not by inheriting.",
+      "say": "Composition means you build classes by combining objects, instead of relying on inheritance hierarchies."
+    },
+    {
+      "id": "2-compare-flexibility",
+      "type": "compare",
+      "kicker": "Design Choice",
+      "left": {
+        "title": "Inheritance",
+        "items": [
+          "Rigid hierarchy",
+          "Tight coupling"
+        ]
+      },
+      "right": {
+        "title": "Composition",
+        "items": [
+          "Flexible design",
+          "Easy to change & test"
+        ]
+      },
+      "say": "Inheritance creates rigid hierarchies and tight coupling. Composition gives you flexible designs that are easier to change and test."
+    },
+    {
+      "id": "3-code-car-engine",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "java",
+      "code": "class Engine {}\nclass Car {\n  private Engine engine;\n  public Car(Engine engine) {\n    this.engine = engine;\n  }\n}",
+      "say": "Here's a simple example: Car has an Engine, not inherits from it. You can swap engines without touching the rest of Car."
+    },
+    {
+      "id": "4-trap-inheritance",
+      "type": "trap",
+      "question": "When is inheritance better than composition?",
+      "wrong": "Always use inheritance for reuse.",
+      "right": "Use inheritance only for clear 'is-a' relationships.",
+      "say": "Interviewers love this trap: When is inheritance better than composition? Only use inheritance for clear 'is-a' relationships, not just for code reuse."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:12:42.704Z"
+}
