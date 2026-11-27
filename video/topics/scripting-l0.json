@@ -1,0 +1,80 @@
+{
+  "id": "scripting-l0",
+  "title": "Bash Essentials for Scripting Tasks",
+  "keys": [
+    "shebang",
+    "variables",
+    "loops",
+    "exit codes"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bash-essentials",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "Can you script in bash confidently?",
+      "line2": "What are the must-knows?",
+      "say": "Can you script in bash confidently? What are the must-knows for interviews?"
+    },
+    {
+      "id": "1-chip-shebang",
+      "type": "chip",
+      "kicker": "Start Here",
+      "label": "Shebang",
+      "sub": "Tells Linux which interpreter to use.",
+      "say": "First, the shebang. It tells Linux which interpreter should run your script."
+    },
+    {
+      "id": "2-terminal-safe-mode-v",
+      "type": "terminal",
+      "kicker": "Best Practice",
+      "title": "Safe Mode & Variables",
+      "lines": [
+        "$ set -euo pipefail",
+        "$ THRESHOLD=${1:-90}",
+        "$ echo \"$THRESHOLD\""
+      ],
+      "say": "Set safe mode with dash e u o pipefail. Always quote your variables to avoid bugs."
+    },
+    {
+      "id": "3-rows-conditionals-lo",
+      "type": "rows",
+      "kicker": "Core Patterns",
+      "rows": [
+        {
+          "a": "if",
+          "b": "Test a condition"
+        },
+        {
+          "a": "for",
+          "b": "Loop through items"
+        },
+        {
+          "a": "function",
+          "b": "Reusable code block"
+        },
+        {
+          "a": "$?",
+          "b": "Last command's exit code"
+        }
+      ],
+      "walk": false,
+      "say": "Use if for conditions, for loops to repeat, functions for reuse, and dollar question mark for exit codes."
+    },
+    {
+      "id": "4-trap-unquoted-vars",
+      "type": "trap",
+      "question": "What's the #1 bash scripting bug?",
+      "wrong": "Forgetting the shebang",
+      "right": "Not quoting variables—breaks on spaces or empty values.",
+      "say": "Here's a common interview trap: What's the number one bash bug? It's not quoting variables. This breaks scripts on spaces or empty values."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:44:24.124Z"
+}
