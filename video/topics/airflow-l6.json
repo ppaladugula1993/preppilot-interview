@@ -1,0 +1,86 @@
+{
+  "id": "airflow-l6",
+  "title": "Alternatives to Airflow: Dagster, Prefect, Cloud",
+  "keys": [
+    "Dagster",
+    "Prefect",
+    "Cloud-native",
+    "Orchestrators"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-alternatives",
+      "type": "hook",
+      "kicker": "Orchestration (Airflow) · lesson",
+      "line1": "Is Airflow always the best pick?",
+      "line2": "What are the real options?",
+      "say": "Is Apache Airflow always your best choice? Let’s see what else is out there for orchestration."
+    },
+    {
+      "id": "1-chip-dagster",
+      "type": "chip",
+      "kicker": "Modern Option",
+      "label": "Dagster",
+      "sub": "Strong data lineage and observability features.",
+      "say": "Dagster offers modern workflow orchestration with built-in data lineage and great observability."
+    },
+    {
+      "id": "2-compare-prefect-clou",
+      "type": "compare",
+      "kicker": "Other Choices",
+      "left": {
+        "title": "Prefect",
+        "items": [
+          "Pythonic flows",
+          "Easy debugging",
+          "Good observability"
+        ]
+      },
+      "right": {
+        "title": "Cloud-native",
+        "items": [
+          "AWS Step Functions",
+          "Google Cloud Composer",
+          "Tight cloud integration"
+        ]
+      },
+      "say": "Prefect is developer-friendly and Pythonic. Cloud-native tools like AWS Step Functions or Google Cloud Composer scale easily and integrate tightly with cloud services."
+    },
+    {
+      "id": "3-rows-evaluate",
+      "type": "rows",
+      "kicker": "How to Choose",
+      "rows": [
+        {
+          "a": "Team skills",
+          "b": "What does your team know?"
+        },
+        {
+          "a": "Integration",
+          "b": "What services must connect?"
+        },
+        {
+          "a": "Overhead",
+          "b": "How much to maintain?"
+        }
+      ],
+      "walk": false,
+      "say": "When picking an orchestrator, consider your team’s skills, integration needs, and how much operational overhead you can handle."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Is Airflow always the best for cloud?",
+      "wrong": "Yes, it’s the default everywhere.",
+      "right": "No. Cloud-native tools may fit better for integration and scale.",
+      "say": "Don’t fall for this: Airflow isn’t always the best for cloud. Sometimes, cloud-native options are a better fit."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:14:17.712Z"
+}
