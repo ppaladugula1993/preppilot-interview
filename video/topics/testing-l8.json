@@ -1,0 +1,72 @@
+{
+  "id": "testing-l8",
+  "title": "Safely Testing Legacy Code",
+  "keys": [
+    "legacy code",
+    "characterization",
+    "refactor",
+    "test coverage"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-legacy-tests",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "How do you test old code",
+      "line2": "without breaking things?",
+      "say": "How do you test legacy code without accidentally breaking what works?"
+    },
+    {
+      "id": "1-chip-characterizatio",
+      "type": "chip",
+      "kicker": "Key Step",
+      "label": "Characterize",
+      "sub": "Write tests to capture what the code does now.",
+      "say": "First, write characterization tests. These capture exactly how the code behaves today, bugs and all."
+    },
+    {
+      "id": "2-rows-safe-refactor",
+      "type": "rows",
+      "kicker": "Safer Refactoring",
+      "rows": [
+        {
+          "a": "Add tests",
+          "b": "Document current behavior"
+        },
+        {
+          "a": "Refactor code",
+          "b": "Change with confidence"
+        },
+        {
+          "a": "Run tests",
+          "b": "Spot accidental changes"
+        }
+      ],
+      "walk": true,
+      "say": "Start by adding tests to document the current behavior. Then, refactor your code and use those tests to catch any unintended changes."
+    },
+    {
+      "id": "3-code-characterizatio",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "def test_legacy_func():\n    assert legacy_func(5) == 42",
+      "say": "For example, write a test that checks the output of a legacy function before you touch the code."
+    },
+    {
+      "id": "4-trap-refactor-risk",
+      "type": "trap",
+      "question": "What's risky about refactoring legacy code?",
+      "wrong": "Skipping tests to save time",
+      "right": "You might break existing behavior if you don't capture it first.",
+      "say": "Here's a common trap: skipping tests to save time. If you refactor without tests, you could break things you didn't expect."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:18:48.353Z"
+}
