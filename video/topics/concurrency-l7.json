@@ -1,0 +1,59 @@
+{
+  "id": "concurrency-l7",
+  "title": "Immutability & Message Passing Basics",
+  "keys": [
+    "immutability",
+    "message passing",
+    "concurrency",
+    "thread safety"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-immutable-msg",
+      "type": "hook",
+      "kicker": "Concurrency & Parallelism · lesson",
+      "line1": "How do you avoid race conditions?",
+      "line2": "Immutable data or message passing?",
+      "say": "How do you avoid race conditions in concurrent code? Is it by using immutable data or message passing?"
+    },
+    {
+      "id": "1-chip-immutability",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Immutability",
+      "sub": "Objects can't change after creation.",
+      "say": "Immutability means objects can't change after they're created. This prevents race conditions because data can't be modified by other threads."
+    },
+    {
+      "id": "2-chip-msgpass",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "MsgPass",
+      "sub": "Threads send data, not share it.",
+      "say": "Message passing means threads or processes send data to each other instead of sharing it. This reduces the need for locks or other synchronization."
+    },
+    {
+      "id": "3-code-python-queue",
+      "type": "code",
+      "kicker": "Python Example",
+      "lang": "python",
+      "code": "import queue\nq = queue.Queue()\nq.put('data')\ndata = q.get()",
+      "say": "In Python, you can use queue dot Queue to pass data safely between threads. No shared mutable state, fewer bugs."
+    },
+    {
+      "id": "4-trap-sync",
+      "type": "trap",
+      "question": "How do you ensure thread safety?",
+      "wrong": "Just use locks everywhere.",
+      "right": "Design data as immutable and use message passing to minimize shared state.",
+      "say": "Interview trap: How do you ensure thread safety? Don't just say you use locks. It's better to design data as immutable and use message passing to avoid shared state."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:01:30.069Z"
+}
