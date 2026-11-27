@@ -1,0 +1,76 @@
+{
+  "id": "behavioral-l2",
+  "title": "Own Your Limits: 'Only a Little' Answers",
+  "keys": [
+    "honesty",
+    "limits",
+    "approach",
+    "interview"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-only-a-little",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "Ever get asked about a skill",
+      "line2": "you barely used?",
+      "say": "Ever get asked about a skill you’ve only touched a little? Here’s how to nail that answer."
+    },
+    {
+      "id": "1-chip-honesty",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Honesty",
+      "sub": "Bluffing gets caught fast. Clear honesty scores.",
+      "say": "Bluffing gets caught on follow-ups. Clear honesty actually scores points."
+    },
+    {
+      "id": "2-rows-structure",
+      "type": "rows",
+      "kicker": "How to answer",
+      "rows": [
+        {
+          "a": "Say what you did",
+          "b": "Mention your real experience"
+        },
+        {
+          "a": "Admit limits",
+          "b": "Be clear what you haven't done"
+        },
+        {
+          "a": "Show approach",
+          "b": "Explain how you'd tackle it"
+        }
+      ],
+      "walk": true,
+      "say": "First, say what you’ve done. Next, admit what you haven’t. Then, explain how you’d approach the task."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Sample answer",
+      "title": "What it sounds like",
+      "lines": [
+        "$ I've worked alongside GraphQL.",
+        "$ I haven't owned it end to end.",
+        "$ Here’s how I’d approach it..."
+      ],
+      "say": "Here’s what it sounds like: I’ve worked alongside Graph Q L. I haven’t owned it end to end, but here’s how I’d approach it."
+    },
+    {
+      "id": "4-trap-bluffing",
+      "type": "trap",
+      "question": "What if you just say 'yes' to everything?",
+      "wrong": "You look confident.",
+      "right": "You get caught on follow-ups and lose trust.",
+      "say": "What if you just say yes to everything? You’ll get caught on follow-ups and lose trust fast."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T19:58:30.877Z"
+}
