@@ -1,0 +1,85 @@
+{
+  "id": "sql-l0",
+  "title": "SQL Basics: SELECT, WHERE, ORDER BY, LIMIT, NULL",
+  "keys": [
+    "SELECT",
+    "WHERE",
+    "ORDER BY",
+    "LIMIT",
+    "NULL"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-select-power",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "How do you pull just the data you need?",
+      "line2": "What about missing values?",
+      "say": "Ever wonder how to grab exactly the info you need from a database, and what to do when some values are missing?"
+    },
+    {
+      "id": "1-chip-select",
+      "type": "chip",
+      "kicker": "Query",
+      "label": "SELECT",
+      "sub": "Pulls columns from a table. Use it to choose what data you want.",
+      "say": "SELECT is your go-to for picking columns from a table. It's the foundation of any SQL query."
+    },
+    {
+      "id": "2-rows-filter-sort-lim",
+      "type": "rows",
+      "kicker": "Query Flow",
+      "rows": [
+        {
+          "a": "WHERE",
+          "b": "Filters rows by condition"
+        },
+        {
+          "a": "ORDER BY",
+          "b": "Sorts results by column"
+        },
+        {
+          "a": "LIMIT",
+          "b": "Restricts rows returned"
+        }
+      ],
+      "walk": true,
+      "say": "First, WHERE narrows things down. ORDER BY sorts your results. LIMIT keeps your output manageable."
+    },
+    {
+      "id": "3-compare-null",
+      "type": "compare",
+      "kicker": "NULLs",
+      "left": {
+        "title": "Wrong",
+        "items": [
+          "salary = NULL",
+          "salary != NULL"
+        ]
+      },
+      "right": {
+        "title": "Right",
+        "items": [
+          "salary IS NULL",
+          "salary IS NOT NULL"
+        ]
+      },
+      "say": "Don't use equals or not equals with NULL. Use IS NULL or IS NOT NULL to check for missing values."
+    },
+    {
+      "id": "4-trap-null-bug",
+      "type": "trap",
+      "question": "How do you filter out NULL values?",
+      "wrong": "WHERE salary != NULL",
+      "right": "WHERE salary IS NOT NULL. Comparisons with NULL don't work as expected.",
+      "say": "Here's a classic interview trap: filtering out NULLs. Remember, equals won't work. Use IS NOT NULL instead."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:55:36.973Z"
+}
