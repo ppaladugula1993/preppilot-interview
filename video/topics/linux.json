@@ -1,0 +1,16 @@
+{
+  "id": "linux",
+  "title": "How Linux boots",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "scenes": [
+    { "id": "hook", "text": "You press the power button on a Linux server. What actually happens next?" },
+    { "id": "uefi", "text": "First, the firmware, UEFI, wakes up. It checks the hardware, then looks for a disk it can boot from." },
+    { "id": "grub", "text": "It hands over to GRUB, the bootloader. GRUB picks which kernel to start." },
+    { "id": "kernel", "text": "The kernel loads its drivers, then mounts the real root file system." },
+    { "id": "systemd", "text": "Now the kernel starts one process: systemd, P I D one. systemd brings up every service, the network, S S H, your web server, in parallel." },
+    { "id": "login", "text": "And finally, the login prompt. You're in." },
+    { "id": "chain", "text": "So: firmware, GRUB, kernel, systemd, login." },
+    { "id": "trap", "text": "Interview trap. What is P I D one? Not the kernel. It's systemd." },
+    { "id": "end", "text": "Get interview ready with PrepPilot." }
+  ]
+}
