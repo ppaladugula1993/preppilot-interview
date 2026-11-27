@@ -1,0 +1,81 @@
+{
+  "id": "scripting-l6",
+  "title": "Safe Scripting for Production",
+  "keys": [
+    "idempotent",
+    "dry-run",
+    "logging",
+    "review"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-safe-prod",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "How do you keep scripts safe in prod?",
+      "line2": "What stops a meltdown?",
+      "say": "How do you make sure your script doesn't take down production? Let's break down what safe scripting really means."
+    },
+    {
+      "id": "1-chip-idempotent",
+      "type": "chip",
+      "kicker": "Principle",
+      "label": "Idempotent",
+      "sub": "Only make changes if needed—never twice.",
+      "say": "First, scripts should be idempotent. That means they only make changes if something actually needs fixing, not every time they run."
+    },
+    {
+      "id": "2-terminal-dryrun-logg",
+      "type": "terminal",
+      "kicker": "Best Practice",
+      "title": "Dry-run & Logging",
+      "lines": [
+        "$ ./deploy.sh --dry-run",
+        "Would update config.yaml",
+        "Would restart nginx",
+        "$ tail -f deploy.log"
+      ],
+      "say": "Add a dry-run flag so you can see what the script would do, before it does anything. And always log actions to a file and to the screen, with timestamps."
+    },
+    {
+      "id": "3-rows-hardening",
+      "type": "rows",
+      "kicker": "Checklist",
+      "rows": [
+        {
+          "a": "Error handling",
+          "b": "set -euo pipefail in bash"
+        },
+        {
+          "a": "Secrets",
+          "b": "Use env or vault, never in code"
+        },
+        {
+          "a": "Review",
+          "b": "Pull request in Git"
+        },
+        {
+          "a": "Linting",
+          "b": "shellcheck script.sh"
+        }
+      ],
+      "walk": true,
+      "say": "Harden your scripts: use strict error handling, never hard-code secrets, get every change reviewed in Git, and always run a linter like shellcheck to catch bugs early."
+    },
+    {
+      "id": "4-trap-prod-trap",
+      "type": "trap",
+      "question": "What's a common prod script mistake?",
+      "wrong": "Skipping code review for speed.",
+      "right": "Skipping review lets bugs and risky changes go live. Always use pull requests.",
+      "say": "Here's a common trap: skipping code review to move fast. That lets risky changes slip through. Always use pull requests, even for scripts."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:55:25.095Z"
+}
