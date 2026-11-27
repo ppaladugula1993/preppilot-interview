@@ -1,0 +1,78 @@
+{
+  "id": "spark-l1",
+  "title": "Lazy Evaluation in Spark: Actions vs Transformations",
+  "keys": [
+    "lazy evaluation",
+    "transformation",
+    "action",
+    "optimization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-spark-lazy",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Why doesn't Spark run code right away?",
+      "line2": "What's lazy evaluation?",
+      "say": "Ever wonder why Spark doesn't process your data as soon as you call map or filter? Let's break down lazy evaluation."
+    },
+    {
+      "id": "1-compare-transform-ac",
+      "type": "compare",
+      "kicker": "Transformations vs Actions",
+      "left": {
+        "title": "Transformations",
+        "items": [
+          "map",
+          "filter",
+          "select"
+        ]
+      },
+      "right": {
+        "title": "Actions",
+        "items": [
+          "count",
+          "collect",
+          "save"
+        ]
+      },
+      "say": "Transformations like map or filter just build a plan. Actions like count or collect actually run the plan and return results."
+    },
+    {
+      "id": "2-rows-lazy-steps",
+      "type": "rows",
+      "kicker": "How Spark Executes",
+      "rows": [
+        {
+          "a": "Step 1",
+          "b": "Chain transformations"
+        },
+        {
+          "a": "Step 2",
+          "b": "Build logical plan"
+        },
+        {
+          "a": "Step 3",
+          "b": "Action triggers execution"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works: first, you chain transformations. Spark builds a logical plan. Only when you call an action does Spark actually run the job."
+    },
+    {
+      "id": "3-trap-interview",
+      "type": "trap",
+      "question": "When does Spark run transformations?",
+      "wrong": "Right after you call map or filter.",
+      "right": "Only when you call an action, like count or collect. Transformations are lazy.",
+      "say": "Don't fall for this trap in interviews. Spark only executes transformations when an action is triggered."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:48:58.698Z"
+}
