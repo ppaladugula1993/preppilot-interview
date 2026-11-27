@@ -1,0 +1,84 @@
+{
+  "id": "data-quality-l4",
+  "title": "PII Masking & GDPR for Engineers",
+  "keys": [
+    "PII",
+    "masking",
+    "GDPR",
+    "encryption"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pii-gdpr",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "How do you protect user data?",
+      "line2": "What about GDPR?",
+      "say": "How do you keep user data safe, and what does GDPR mean for your code?"
+    },
+    {
+      "id": "1-chip-pii",
+      "type": "chip",
+      "kicker": "Key Term",
+      "label": "PII",
+      "sub": "Personal data like names, emails, or addresses.",
+      "say": "PII stands for personal data, like names, emails, or addresses. This stuff needs real protection."
+    },
+    {
+      "id": "2-rows-masking-steps",
+      "type": "rows",
+      "kicker": "Masking PII",
+      "rows": [
+        {
+          "a": "Identify PII",
+          "b": "Find sensitive fields early"
+        },
+        {
+          "a": "Mask or Encrypt",
+          "b": "Hide or scramble key details"
+        },
+        {
+          "a": "Control Access",
+          "b": "Limit who can see real data"
+        }
+      ],
+      "walk": true,
+      "say": "First, spot the sensitive fields. Then, mask or encrypt them. Finally, make sure only the right people can see the real info."
+    },
+    {
+      "id": "3-terminal-masking-exa",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Masking Email Addresses",
+      "lines": [
+        "$ UPDATE users",
+        "$ SET email = CONCAT('xxxx',",
+        "$ SUBSTRING(email, -5));"
+      ],
+      "say": "Here's a quick example. We hide the start of each email, showing only the last five characters."
+    },
+    {
+      "id": "4-chip-gdpr",
+      "type": "chip",
+      "kicker": "Law",
+      "label": "GDPR",
+      "sub": "Requires consent, data minimization, and deletion.",
+      "say": "GDPR is a privacy law. It means you need user consent, keep data minimal, and delete it if users ask."
+    },
+    {
+      "id": "5-trap-gdpr-mistake",
+      "type": "trap",
+      "question": "Is masking enough for GDPR compliance?",
+      "wrong": "Yes, masking covers all GDPR needs.",
+      "right": "No, GDPR also requires consent, minimization, and deletion rights.",
+      "say": "Don't fall for this trap. Masking helps, but GDPR also demands consent, data minimization, and the right to delete."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:52:05.195Z"
+}
