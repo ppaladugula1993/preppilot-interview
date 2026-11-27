@@ -1,0 +1,72 @@
+{
+  "id": "csharp-core-l5",
+  "title": "Nullable Reference Types in C#",
+  "keys": [
+    "nullable",
+    "reference",
+    "compile",
+    "safety",
+    "C# 8"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-null-safety",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "Null bugs got you worried?",
+      "line2": "How does C# help?",
+      "say": "Ever had your app crash because of a null reference? Let's see how C sharp tackles this problem."
+    },
+    {
+      "id": "1-chip-csharp8",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "C# 8",
+      "sub": "Nullable reference types catch null errors early.",
+      "say": "Starting with version eight, C sharp can warn you about null issues before your code even runs."
+    },
+    {
+      "id": "2-code-enable-nullable",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "#nullable enable\nstring? name = null;\nstring greeting = name ?? \"Hello\";",
+      "say": "Enable nullable reference types, mark variables as nullable or not, and let the compiler help you avoid mistakes."
+    },
+    {
+      "id": "3-compare-nullable-vs-",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Non-nullable",
+        "items": [
+          "string",
+          "Always expects a value"
+        ]
+      },
+      "right": {
+        "title": "Nullable",
+        "items": [
+          "string?",
+          "May be set to null"
+        ]
+      },
+      "say": "A plain string must always have a value. A string with a question mark can be set to null."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How does C# warn about null?",
+      "wrong": "It throws errors at runtime.",
+      "right": "It gives compiler warnings for possible null dereferences.",
+      "say": "Don’t say C sharp only throws errors at runtime. It actually gives you warnings while you code."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:21:20.546Z"
+}
