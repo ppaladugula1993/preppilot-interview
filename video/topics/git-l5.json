@@ -1,0 +1,79 @@
+{
+  "id": "git-l5",
+  "title": "Cherry-pick, Stash & Bisect in Git",
+  "keys": [
+    "cherry-pick",
+    "stash",
+    "bisect",
+    "debug"
+  ],
+  "scenes": [
+    {
+      "id": "0-git-collab-hook",
+      "type": "hook",
+      "kicker": "Git & Collaboration · lesson",
+      "line1": "Ever lost work or found a bug?",
+      "line2": "How does Git help?",
+      "say": "Have you ever needed to save unfinished changes or track down a bug? Git has tools for that."
+    },
+    {
+      "id": "1-cherry-pick-chip",
+      "type": "chip",
+      "kicker": "Selective Integration",
+      "label": "Cherry-pick",
+      "sub": "Apply a specific commit to your branch.",
+      "say": "Cherry-pick lets you grab a single commit from another branch and add it to yours."
+    },
+    {
+      "id": "2-stash-terminal",
+      "type": "terminal",
+      "kicker": "Temporary Work",
+      "title": "Stash Workflow",
+      "lines": [
+        "$ git stash",
+        "$ git stash pop"
+      ],
+      "say": "Stash temporarily saves your changes when you need to switch tasks. Later, you can restore them and keep working."
+    },
+    {
+      "id": "3-bisect-rows",
+      "type": "rows",
+      "kicker": "Debugging",
+      "rows": [
+        {
+          "a": "Start bisect",
+          "b": "Begin searching for the bug"
+        },
+        {
+          "a": "Mark bad",
+          "b": "Tag the broken commit"
+        },
+        {
+          "a": "Mark good",
+          "b": "Tag the working commit"
+        },
+        {
+          "a": "Test",
+          "b": "Git finds the culprit"
+        }
+      ],
+      "walk": true,
+      "say": "Bisect helps you find which commit introduced a bug. You mark good and bad versions, and Git narrows it down."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you debug a regression?",
+      "wrong": "Just check every commit manually.",
+      "right": "Use bisect to quickly pinpoint the bad commit.",
+      "say": "In an interview, don’t say you check every commit. Mention using bisect to search efficiently."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:25:49.537Z"
+}
