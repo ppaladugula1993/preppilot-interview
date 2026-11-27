@@ -1,0 +1,71 @@
+{
+  "id": "csharp-core-l2",
+  "title": "LINQ Deferred Execution in C#",
+  "keys": [
+    "LINQ",
+    "deferred execution",
+    "IEnumerable",
+    "IQueryable"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-deferred",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "When does a LINQ query run?",
+      "line2": "Guess before you answer.",
+      "say": "Ever wondered when your LINQ query actually runs? Let's clear up deferred execution."
+    },
+    {
+      "id": "1-chip-ienumerable",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Deferred",
+      "sub": "LINQ on IEnumerable waits until you loop.",
+      "say": "With IEnumerable, LINQ queries don't run when you write them. They wait until you loop or ask for results."
+    },
+    {
+      "id": "2-code-deferred",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "var query = numbers.Where(n => n > 5);\n// Not run yet\nforeach (var n in query)\n{\n    Console.WriteLine(n);\n}\n// Now it runs",
+      "say": "Here, the query is just set up at first. It only runs when you start looping through the results."
+    },
+    {
+      "id": "3-compare-types",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "IEnumerable",
+        "items": [
+          "Executes in memory",
+          "Runs when you enumerate"
+        ]
+      },
+      "right": {
+        "title": "IQueryable",
+        "items": [
+          "Executes remotely, often as SQL",
+          "Runs when you enumerate"
+        ]
+      },
+      "say": "IEnumerable runs queries in memory. IQueryable translates them, often to SQL, and runs them on the data source."
+    },
+    {
+      "id": "4-trap-modify",
+      "type": "trap",
+      "question": "What if you change the list before looping?",
+      "wrong": "The query uses the original data.",
+      "right": "Deferred execution means changes affect the results. Modifying the list before looping can cause surprises or errors.",
+      "say": "Careful—if you change your collection before looping, the query sees those changes. That can lead to bugs."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:13:48.563Z"
+}
