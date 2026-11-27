@@ -1,0 +1,279 @@
+{
+  "id": "web-fundamentals",
+  "title": "What Happens When You Enter a URL?",
+  "scenes": [
+    {
+      "id": "s0",
+      "type": "hook",
+      "say": "Ever wondered what really happens when you hit Enter on a URL?",
+      "title": "HIT ENTER",
+      "accent": "ENTER",
+      "subtitle": "The browser's secret journey",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "keyboard",
+            "label": "ENTER",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s1",
+      "type": "chip",
+      "say": "It's not magic—it's a lightning-fast relay of steps under the hood.",
+      "title": "NOT MAGIC",
+      "accent": "MAGIC",
+      "subtitle": "Just fast science",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "zap",
+            "label": "SPEED",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s2",
+      "type": "chip",
+      "say": "First, your browser asks DNS to turn the website name into an IP address.",
+      "title": "DNS LOOKUP",
+      "accent": "DNS",
+      "subtitle": "Find the address",
+      "visual": {
+        "layout": "flow",
+        "items": [
+          {
+            "icon": "globe",
+            "label": "URL",
+            "good": true
+          },
+          {
+            "icon": "search",
+            "label": "DNS",
+            "good": true
+          },
+          {
+            "icon": "network",
+            "label": "IP",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s3",
+      "type": "chip",
+      "say": "Next, the browser opens a connection to the server—using TCP or the newer, faster QUIC.",
+      "title": "CONNECTION TIME",
+      "accent": "CONNECTION",
+      "subtitle": "TCP or QUIC",
+      "visual": {
+        "layout": "compare",
+        "items": [
+          {
+            "icon": "cable",
+            "label": "TCP",
+            "good": true
+          },
+          {
+            "icon": "rocket",
+            "label": "QUIC",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s4",
+      "type": "chip",
+      "say": "If the site uses HTTPS, TLS kicks in to encrypt your data for safety.",
+      "title": "TLS ENCRYPTS",
+      "accent": "TLS",
+      "subtitle": "Safe and secure",
+      "visual": {
+        "layout": "stack",
+        "items": [
+          {
+            "icon": "lock",
+            "label": "TLS",
+            "good": true
+          },
+          {
+            "icon": "cloud",
+            "label": "HTTPS",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s5",
+      "type": "chip",
+      "say": "Now, the browser sends an HTTP request—like GET for loading the page.",
+      "title": "HTTP REQUEST",
+      "accent": "HTTP",
+      "subtitle": "Ask for the page",
+      "visual": {
+        "layout": "flow",
+        "items": [
+          {
+            "icon": "arrow-right",
+            "label": "SEND",
+            "good": true
+          },
+          {
+            "icon": "file-code",
+            "label": "GET",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s6",
+      "type": "chip",
+      "say": "The server replies with an HTTP response—usually HTML, CSS, or JavaScript.",
+      "title": "SERVER RESPONDS",
+      "accent": "RESPONDS",
+      "subtitle": "HTML and friends",
+      "visual": {
+        "layout": "list",
+        "items": [
+          {
+            "icon": "file-code",
+            "label": "HTML",
+            "good": true
+          },
+          {
+            "icon": "file",
+            "label": "CSS",
+            "good": true
+          },
+          {
+            "icon": "braces",
+            "label": "JS",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s7",
+      "type": "chip",
+      "say": "The browser parses the HTML, then fetches extra stuff like images and scripts.",
+      "title": "FETCH RESOURCES",
+      "accent": "FETCH",
+      "subtitle": "Load more files",
+      "visual": {
+        "layout": "grid",
+        "items": [
+          {
+            "icon": "image",
+            "label": "IMAGES",
+            "good": true
+          },
+          {
+            "icon": "file-code",
+            "label": "SCRIPTS",
+            "good": true
+          },
+          {
+            "icon": "file",
+            "label": "STYLES",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s8",
+      "type": "chip",
+      "say": "Finally, the browser renders the page, turning code into what you see.",
+      "title": "RENDER TIME",
+      "accent": "RENDER",
+      "subtitle": "See the website",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "monitor",
+            "label": "PAGE",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s9",
+      "type": "chip",
+      "say": "But here's the twist: slow DNS, expired certificates, or CORS errors can break this chain.",
+      "title": "THE TWIST",
+      "accent": "TWIST",
+      "subtitle": "What can go wrong",
+      "visual": {
+        "layout": "list",
+        "items": [
+          {
+            "icon": "alert-triangle",
+            "label": "DNS",
+            "good": false
+          },
+          {
+            "icon": "lock",
+            "label": "CERT",
+            "good": false
+          },
+          {
+            "icon": "x",
+            "label": "CORS",
+            "good": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "s10",
+      "type": "chip",
+      "say": "Interviewers love this question because it reveals what you really know about the web.",
+      "title": "KNOW THE FLOW",
+      "accent": "FLOW",
+      "subtitle": "Impress in interviews",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "brain",
+            "label": "KNOW",
+            "good": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot.",
+      "title": "PREP PILOT",
+      "accent": "PREP",
+      "subtitle": "Ace your next interview",
+      "visual": {
+        "layout": "single",
+        "items": [
+          {
+            "icon": "trophy",
+            "label": "SUCCESS",
+            "good": true
+          }
+        ]
+      }
+    }
+  ],
+  "voice": "en-US-ChristopherNeural",
+  "rendered": "2026-11-27T20:05:40.164Z"
+}
