@@ -1,0 +1,64 @@
+{
+  "id": "linux-l1",
+  "title": "Mastering systemd Services",
+  "keys": [
+    "systemd",
+    "unit file",
+    "daemon-reload",
+    "enable"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-systemd",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "Why do services fail to start?",
+      "line2": "What does systemd do?",
+      "say": "Ever wondered why a service won't start in Linux? It's almost always a systemd problem."
+    },
+    {
+      "id": "1-chip-unit-files",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Unit",
+      "sub": "systemd reads unit files to launch and manage services.",
+      "say": "Systemd launches and supervises services using unit files. Your custom units go in slash etc slash systemd slash system."
+    },
+    {
+      "id": "2-code-myapp-service",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "ini",
+      "code": "[Unit]\nDescription=My App\nAfter=network.target\n\n[Service]\nUser=app\nExecStart=/opt/myapp/run.sh\nRestart=on-failure\n\n[Install]\nWantedBy=multi-user.target",
+      "say": "Here's a sample unit file. It describes when to start, which user to run as, and how to restart."
+    },
+    {
+      "id": "3-terminal-commands",
+      "type": "terminal",
+      "kicker": "Workflow",
+      "title": "Manage your service",
+      "lines": [
+        "$ sudo systemctl daemon-reload",
+        "$ sudo systemctl enable --now myapp",
+        "$ systemctl status myapp",
+        "$ journalctl -u myapp -f"
+      ],
+      "say": "Reload systemd, enable and start your service, check status, and view logs in real time."
+    },
+    {
+      "id": "4-trap-enable-now",
+      "type": "trap",
+      "question": "What does 'enable --now' do?",
+      "wrong": "Just enables the service on boot.",
+      "right": "It enables the service on boot and starts it immediately.",
+      "say": "Interview trap: 'Enable dash dash now' both enables your service at boot and starts it right away."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:40:26.122Z"
+}
