@@ -1,0 +1,85 @@
+{
+  "id": "data-quality-l6",
+  "title": "Incident Handling for Bad Data",
+  "keys": [
+    "incident",
+    "alert",
+    "rollback",
+    "postmortem",
+    "dbt"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bad-data",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "What if bad data hits prod?",
+      "line2": "How do you respond?",
+      "say": "What would you do if bad data suddenly made it into production? Let’s break down a solid response."
+    },
+    {
+      "id": "1-rows-incident-steps",
+      "type": "rows",
+      "kicker": "Incident Handling Steps",
+      "rows": [
+        {
+          "a": "Detect",
+          "b": "Spot the issue with alerts"
+        },
+        {
+          "a": "Triage",
+          "b": "Assess impact and scope"
+        },
+        {
+          "a": "Resolve",
+          "b": "Rollback or fix the data"
+        },
+        {
+          "a": "Communicate",
+          "b": "Update teams and users"
+        },
+        {
+          "a": "Postmortem",
+          "b": "Analyze and prevent repeat"
+        }
+      ],
+      "walk": true,
+      "say": "First, get alerted when something’s off. Next, triage to see how bad it is. Then, roll back or fix the data. Communicate clearly, and finally, run a postmortem to prevent it happening again."
+    },
+    {
+      "id": "2-terminal-example",
+      "type": "terminal",
+      "kicker": "Example: Duplicate Records",
+      "title": "dbt Uniqueness Test",
+      "lines": [
+        "$ dbt test --select customers",
+        "FAIL 1/1 unique_customers",
+        "Duplicate customer_id found"
+      ],
+      "say": "For example, if a pipeline loads duplicate customers, a dbt test fails, the alert fires, and you roll back the change."
+    },
+    {
+      "id": "3-chip-prod-outage",
+      "type": "chip",
+      "kicker": "Pro Tip",
+      "label": "Runbooks",
+      "sub": "Treat bad data like a production outage: use alerts, runbooks, and follow-ups.",
+      "say": "I treat bad data just like a production outage, with clear alerts, runbooks, and follow-up actions."
+    },
+    {
+      "id": "4-trap-missed-step",
+      "type": "trap",
+      "question": "Which step is often skipped?",
+      "wrong": "Fixing the data",
+      "right": "Postmortems are skipped, but they prevent repeat incidents.",
+      "say": "A lot of engineers skip postmortems, but that’s how you actually stop the same incident from happening again."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:57:45.529Z"
+}
