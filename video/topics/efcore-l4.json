@@ -1,0 +1,72 @@
+{
+  "id": "efcore-l4",
+  "title": "Raw SQL & Compiled Queries in EF Core",
+  "keys": [
+    "FromSqlRaw",
+    "CompiledQuery",
+    "Performance",
+    "Optimization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-raw-sql-compile",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "LINQ isn't always enough.",
+      "line2": "How do you go beyond it?",
+      "say": "Sometimes, LINQ can't handle complex or high-performance queries. So, how do you push EF Core further?"
+    },
+    {
+      "id": "1-chip-rawsql",
+      "type": "chip",
+      "kicker": "EF Core",
+      "label": "RawSQL",
+      "sub": "FromSqlRaw lets you run custom SQL for tough queries.",
+      "say": "Raw SQL is your tool for complex queries. With FromSqlRaw, you can run custom statements right from your code."
+    },
+    {
+      "id": "2-code-compiled-query",
+      "type": "code",
+      "kicker": "Performance",
+      "lang": "csharp",
+      "code": "var query = EF.CompileQuery(\n  (ctx, isActive) => ctx.Users\n    .Where(u => u.IsActive == isActive));\nvar users = query(context, true);",
+      "say": "Compiled queries cache the query plan. That means faster execution for repeated queries with different parameters."
+    },
+    {
+      "id": "3-compare-sql-vs-compi",
+      "type": "compare",
+      "kicker": "Optimize",
+      "left": {
+        "title": "Raw SQL",
+        "items": [
+          "Custom logic",
+          "Bypass LINQ",
+          "Direct SQL"
+        ]
+      },
+      "right": {
+        "title": "Compiled Query",
+        "items": [
+          "Reuse plan",
+          "Speed up frequent calls"
+        ]
+      },
+      "say": "Raw SQL gives you flexibility, while compiled queries boost performance. Both help you go beyond basic LINQ."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you speed up repeated queries?",
+      "wrong": "Just use FromSqlRaw for everything.",
+      "right": "Use compiled queries to cache the query plan and reduce overhead for frequent execution.",
+      "say": "Interviewers want more than just raw SQL. For repeated queries, compiled queries are the real performance win."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:26:39.539Z"
+}
