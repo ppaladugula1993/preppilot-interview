@@ -1,0 +1,77 @@
+{
+  "id": "html-css",
+  "title": "The Box Model: Foundation of Layout",
+  "keys": [
+    "box model",
+    "content",
+    "padding",
+    "border",
+    "margin"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-box-model",
+      "type": "hook",
+      "kicker": "HTML & CSS · 45 seconds",
+      "line1": "Why does your layout break?",
+      "line2": "What controls element size?",
+      "say": "Ever wonder why your layout breaks or elements overflow? What actually controls the size of every box on your page?"
+    },
+    {
+      "id": "1-chip-box-model",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Box",
+      "sub": "Every HTML element is a box with content, padding, border, and margin.",
+      "say": "Every HTML element is a box. It has content in the middle, surrounded by padding, a border, and margin on the outside."
+    },
+    {
+      "id": "2-rows-box-parts",
+      "type": "rows",
+      "kicker": "Step 1 · Box Model",
+      "rows": [
+        {
+          "a": "Content",
+          "b": "The actual text or image"
+        },
+        {
+          "a": "Padding",
+          "b": "Space between content and border"
+        },
+        {
+          "a": "Border",
+          "b": "Line around the padding"
+        },
+        {
+          "a": "Margin",
+          "b": "Space outside the border"
+        }
+      ],
+      "walk": true,
+      "say": "Let’s break it down. Content is your text or image. Padding adds space inside the border. Border wraps the padding. Margin is space outside the border."
+    },
+    {
+      "id": "3-code-box-model",
+      "type": "code",
+      "kicker": "Example · CSS",
+      "lang": "css",
+      "code": "div {\n  width: 200px;\n  padding: 20px;\n  border: 2px solid;\n  margin: 10px;\n}",
+      "say": "Here’s a typical box. The total width isn’t just 200 pixels. You add padding, border, and margin."
+    },
+    {
+      "id": "4-trap-box-sizing",
+      "type": "trap",
+      "question": "How do you set a box’s total width?",
+      "wrong": "Just set the width property.",
+      "right": "You must account for padding, border, and margin. Or use box-sizing: border-box.",
+      "say": "Interview trap: Setting width alone doesn’t control the total size. You must include padding, border, and margin—or use box-sizing border-box."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:54:35.800Z"
+}
