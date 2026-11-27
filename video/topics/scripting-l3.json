@@ -1,0 +1,67 @@
+{
+  "id": "scripting-l3",
+  "title": "PowerShell for Fleets: Objects, Not Text",
+  "keys": [
+    "PowerShell",
+    "Objects",
+    "Where-Object",
+    "Invoke-Command",
+    "Export-Csv"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-fleet-powershel",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "Why does PowerShell rule fleets?",
+      "line2": "Objects, not text?",
+      "say": "Why do big Windows shops demand PowerShell? It's all about objects, not text."
+    },
+    {
+      "id": "1-chip-objects",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Objects",
+      "sub": "Filter with Where-Object, pick with Select-Object, export with Export-Csv.",
+      "say": "PowerShell passes objects. That means you filter with Where-Object, pick with Select-Object, and export with Export-Csv—no messy text parsing."
+    },
+    {
+      "id": "2-code-port-check",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "powershell",
+      "code": "$servers = Get-Content .\\servers.txt\n$servers | ForEach-Object {\n  [pscustomobject]@{\n    Server = $_\n    Https  = (Test-NetConnection $_ -Port 443 -WarningAction SilentlyContinue).TcpTestSucceeded\n  }\n} | Export-Csv .\\port-report.csv -NoTypeInformation",
+      "say": "Here's a real example: check HTTPS on all servers, output as objects, and export to CSV in one go."
+    },
+    {
+      "id": "3-terminal-remote",
+      "type": "terminal",
+      "kicker": "Remote Control",
+      "title": "Invoke-Command",
+      "lines": [
+        "$servers = Get-Content .\\servers.txt",
+        "$results = Invoke-Command -ComputerName $servers -ScriptBlock {",
+        "  Get-Volume -DriveLetter C |",
+        "    Select-Object @{n='FreeGB';e={[math]::Round($_.SizeRemaining/1GB,1)}}",
+        "}",
+        "$results | Select-Object PSComputerName, FreeGB"
+      ],
+      "say": "Need to run commands on many servers at once? Use Invoke-Command with WinRM for parallel remote control."
+    },
+    {
+      "id": "4-trap-cim",
+      "type": "trap",
+      "question": "Which is preferred in PowerShell 7?",
+      "wrong": "Get-WmiObject",
+      "right": "Get-CimInstance—WMI is removed in PowerShell 7.",
+      "say": "Watch out: Get-WmiObject is gone in PowerShell seven. Use Get-CimInstance instead."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:49:03.954Z"
+}
