@@ -1,0 +1,98 @@
+{
+  "id": "git",
+  "title": "Why Branches Are Essential in Git",
+  "keys": [
+    "commit",
+    "branch",
+    "HEAD",
+    "merge",
+    "rebase",
+    "conflict"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-branches",
+      "type": "hook",
+      "kicker": "Git & Collaboration · 45 seconds",
+      "line1": "Why does Git use branches?",
+      "line2": "What’s the big deal?",
+      "say": "Why does Git use branches? What’s the big deal?"
+    },
+    {
+      "id": "1-chip-commit",
+      "type": "chip",
+      "kicker": "Step 1 · Commit",
+      "label": "Commit",
+      "sub": "A commit is a snapshot of your code at a point in time.",
+      "say": "A commit is a snapshot of your code at a point in time."
+    },
+    {
+      "id": "2-rows-branches",
+      "type": "rows",
+      "kicker": "Step 2 · Branches",
+      "rows": [
+        {
+          "a": "Branch",
+          "b": "Pointer to a commit"
+        },
+        {
+          "a": "Parallel work",
+          "b": "Feature branches"
+        },
+        {
+          "a": "HEAD",
+          "b": "Current branch and commit"
+        }
+      ],
+      "walk": true,
+      "say": "Branches are pointers to commits. They let you work in parallel, like with feature branches. HEAD marks where you are now."
+    },
+    {
+      "id": "3-compare-merge-rebase",
+      "type": "compare",
+      "kicker": "Step 3 · Integrate",
+      "left": {
+        "title": "Merge",
+        "items": [
+          "Keeps history",
+          "Creates merge commit"
+        ]
+      },
+      "right": {
+        "title": "Rebase",
+        "items": [
+          "Rewrites history",
+          "Linear sequence"
+        ]
+      },
+      "say": "To combine branches, use merge or rebase. Merge keeps history and creates a merge commit. Rebase rewrites history for a cleaner, linear sequence."
+    },
+    {
+      "id": "4-terminal-conflict",
+      "type": "terminal",
+      "kicker": "Step 4 · Conflicts",
+      "title": "Resolving Conflicts",
+      "lines": [
+        "$ git status",
+        "Unmerged paths:",
+        "both modified: main.py"
+      ],
+      "say": "When changes overlap, Git marks conflicts. You must edit the files to resolve them before finishing a merge or rebase."
+    },
+    {
+      "id": "5-trap-rebase-risk",
+      "type": "trap",
+      "question": "Can you rebase a shared branch?",
+      "wrong": "Yes, it’s always safe.",
+      "right": "No—rebasing shared branches rewrites history and risks lost commits.",
+      "say": "Can you rebase a shared branch? No—rebasing shared branches rewrites history and risks lost commits."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:13:24.602Z"
+}
