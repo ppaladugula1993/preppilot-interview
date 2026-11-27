@@ -1,0 +1,79 @@
+{
+  "id": "go-core-l2",
+  "title": "Go Slices vs Arrays: Key Differences",
+  "keys": [
+    "slice",
+    "array",
+    "capacity",
+    "append"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-slices-arrays",
+      "type": "hook",
+      "kicker": "Core Go · lesson",
+      "line1": "Slices vs Arrays",
+      "line2": "What's the real difference?",
+      "say": "Arrays and slices look similar in Go, but their behavior is very different. What makes slices special?"
+    },
+    {
+      "id": "1-chip-array-facts",
+      "type": "chip",
+      "kicker": "Arrays",
+      "label": "Fixed",
+      "sub": "Arrays have a fixed length and can't grow.",
+      "say": "Arrays in Go are fixed in size. Once you set their length, it never changes."
+    },
+    {
+      "id": "2-chip-slice-facts",
+      "type": "chip",
+      "kicker": "Slices",
+      "label": "Dynamic",
+      "sub": "Slices can grow and shrink. They track length and capacity.",
+      "say": "Slices are dynamic. They track both length and capacity, and can change size as you append elements."
+    },
+    {
+      "id": "3-compare-backings",
+      "type": "compare",
+      "kicker": "Backing Arrays",
+      "left": {
+        "title": "Arrays",
+        "items": [
+          "Own storage",
+          "Never changes"
+        ]
+      },
+      "right": {
+        "title": "Slices",
+        "items": [
+          "View over array",
+          "May reallocate on append"
+        ]
+      },
+      "say": "Arrays always keep their own storage. Slices are views over arrays, and appending can create a new backing array."
+    },
+    {
+      "id": "4-code-append-example",
+      "type": "code",
+      "kicker": "Append Demo",
+      "lang": "go",
+      "code": "a := [3]int{1,2,3}\ns := a[:2]\ns = append(s, 4)\n// s now has its own array\n",
+      "say": "Here's the classic trap. After appending to s, it gets its own backing array. Changes to s won't affect a."
+    },
+    {
+      "id": "5-trap-sharing-arrays",
+      "type": "trap",
+      "question": "Does append always change the array?",
+      "wrong": "Yes, append always reallocates.",
+      "right": "No. Append only reallocates if capacity is exceeded. Otherwise, slices still share the same backing array.",
+      "say": "Interviewers love this: append only reallocates if you exceed the slice's capacity. Otherwise, slices still share the same backing array."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:33:16.695Z"
+}
