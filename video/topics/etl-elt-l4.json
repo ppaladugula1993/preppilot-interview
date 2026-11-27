@@ -1,0 +1,75 @@
+{
+  "id": "etl-elt-l4",
+  "title": "Late-Arriving Data in ETL & ELT",
+  "keys": [
+    "late-arriving data",
+    "reprocessing",
+    "upsert",
+    "data completeness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-late-data",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "What if data shows up late?",
+      "line2": "How do you handle it?",
+      "say": "What happens when data arrives after your pipeline already ran? How do you keep your results accurate?"
+    },
+    {
+      "id": "1-chip-define-late",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Late Data",
+      "sub": "Data that arrives after its processing window",
+      "say": "Late-arriving data means records show up after your usual processing window, often because of upstream delays."
+    },
+    {
+      "id": "2-rows-late-handling",
+      "type": "rows",
+      "kicker": "Handling Late Data",
+      "rows": [
+        {
+          "a": "Detect late records",
+          "b": "Watch for new data by date or ID"
+        },
+        {
+          "a": "Reprocess partitions",
+          "b": "Rerun jobs for affected dates"
+        },
+        {
+          "a": "Use upserts",
+          "b": "Update or insert to avoid duplicates"
+        }
+      ],
+      "walk": true,
+      "say": "To handle late data, detect new arrivals for past dates, reprocess only what's affected, and use upserts to keep things clean."
+    },
+    {
+      "id": "3-terminal-reprocess-e",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "Reprocessing a Partition",
+      "lines": [
+        "$ airflow trigger_dag etl_job",
+        "--conf '{\"date\": \"2024-06-01\"}'"
+      ],
+      "say": "For example, if new records for June first arrive late, you can trigger your ETL job again just for that date."
+    },
+    {
+      "id": "4-trap-upsert",
+      "type": "trap",
+      "question": "What if you just append late data?",
+      "wrong": "You risk duplicate or wrong results.",
+      "right": "You need upserts or merges to avoid duplicates and keep your data correct.",
+      "say": "Here's a trap: if you only append late data, you might get duplicates. Always use upserts or merges to keep your data right."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:40:31.806Z"
+}
