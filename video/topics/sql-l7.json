@@ -1,0 +1,84 @@
+{
+  "id": "sql-l7",
+  "title": "SQL Transactions & ACID Explained",
+  "keys": [
+    "transactions",
+    "ACID",
+    "isolation",
+    "deadlocks"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-acid",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "Why do transactions matter?",
+      "line2": "What keeps your data safe?",
+      "say": "Ever wonder how SQL keeps your data safe and consistent, even with multiple users?"
+    },
+    {
+      "id": "1-chip-acid",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "ACID",
+      "sub": "Atomicity, Consistency, Isolation, Durability",
+      "say": "ACID stands for atomicity, consistency, isolation, and durability. These guarantee reliable transactions."
+    },
+    {
+      "id": "2-rows-isolation",
+      "type": "rows",
+      "kicker": "Isolation Levels",
+      "rows": [
+        {
+          "a": "Read Committed",
+          "b": "Prevents dirty reads"
+        },
+        {
+          "a": "Repeatable Read",
+          "b": "Prevents non-repeatable reads"
+        },
+        {
+          "a": "Serializable",
+          "b": "Prevents phantom reads"
+        }
+      ],
+      "walk": true,
+      "say": "Isolation levels control what data you see. Read committed stops dirty reads, repeatable read blocks changes during your transaction, and serializable is the strictest."
+    },
+    {
+      "id": "3-compare-deadlock",
+      "type": "compare",
+      "kicker": "Concurrency Risk",
+      "left": {
+        "title": "Safe",
+        "items": [
+          "Short transactions",
+          "Consistent order"
+        ]
+      },
+      "right": {
+        "title": "Deadlock",
+        "items": [
+          "Long locks",
+          "Random resource access"
+        ]
+      },
+      "say": "Deadlocks happen when transactions block each other. Keep transactions short and access resources in a consistent order to avoid them."
+    },
+    {
+      "id": "4-trap-isolation",
+      "type": "trap",
+      "question": "Should you always use SERIALIZABLE?",
+      "wrong": "Yes, for maximum safety.",
+      "right": "No, use the lowest level that fits your needs to avoid unnecessary locking.",
+      "say": "Don’t always pick the strictest isolation. Use the lowest level that meets your consistency needs, or you’ll slow down your database."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:04:43.756Z"
+}
