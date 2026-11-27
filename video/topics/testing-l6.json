@@ -1,0 +1,76 @@
+{
+  "id": "testing-l6",
+  "title": "Code Coverage: Signal, Not a Guarantee",
+  "keys": [
+    "code coverage",
+    "testing",
+    "assertion",
+    "edge case"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-coverage",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Does high code coverage mean",
+      "line2": "your code is bug-free?",
+      "say": "Does a high code coverage number mean your code is actually bug-free?"
+    },
+    {
+      "id": "1-chip-coverage-metric",
+      "type": "chip",
+      "kicker": "Quick Fact",
+      "label": "Coverage",
+      "sub": "Shows what percent of your code runs during tests.",
+      "say": "Code coverage tells you what percent of your code actually runs when you run your tests."
+    },
+    {
+      "id": "2-terminal-coverage-re",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Coverage Report",
+      "lines": [
+        "$ npm test --coverage",
+        "Statements: 95%",
+        "Branches: 94%",
+        "Functions: 93%"
+      ],
+      "say": "You might see a report showing ninety five percent coverage. That looks great, but what does it really mean?"
+    },
+    {
+      "id": "3-compare-metric-vs-me",
+      "type": "compare",
+      "kicker": "Dig Deeper",
+      "left": {
+        "title": "High Coverage",
+        "items": [
+          "Most lines are run",
+          "Few untested areas"
+        ]
+      },
+      "right": {
+        "title": "What It Misses",
+        "items": [
+          "Missing edge case checks",
+          "No guarantee of correct results"
+        ]
+      },
+      "say": "High coverage means most lines run during tests, but it doesn't catch missing edge cases or guarantee your tests actually check for the right results."
+    },
+    {
+      "id": "4-trap-coverage-trap",
+      "type": "trap",
+      "question": "Is 100% coverage always enough?",
+      "wrong": "Yes, it means all bugs are caught.",
+      "right": "No, you can miss important checks even with full coverage.",
+      "say": "Here's a classic trap: Is full coverage always enough? Not really. You can still miss important checks, even if every line runs."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:13:46.935Z"
+}
