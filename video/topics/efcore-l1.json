@@ -1,0 +1,79 @@
+{
+  "id": "efcore-l1",
+  "title": "Change Tracking vs AsNoTracking",
+  "keys": [
+    "Change Tracking",
+    "AsNoTracking",
+    "EF Core",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ct-vs-ant",
+      "type": "hook",
+      "kicker": "Entity Framework Core · lesson",
+      "line1": "Why use AsNoTracking?",
+      "line2": "Is tracking always needed?",
+      "say": "Do you always need change tracking in Entity Framework Core? Or is AsNoTracking better for some queries?"
+    },
+    {
+      "id": "1-chip-track",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Tracking",
+      "sub": "EF Core watches for changes to entities.",
+      "say": "Change tracking means Entity Framework Core watches your entities for changes, so it can save any updates back to the database."
+    },
+    {
+      "id": "2-chip-no-track",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "AsNoTracking",
+      "sub": "Disables tracking for read-only queries.",
+      "say": "AsNoTracking turns off this feature. The data you get is read-only, and EF Core won't track or update it."
+    },
+    {
+      "id": "3-compare-track-vs-no",
+      "type": "compare",
+      "kicker": "Performance",
+      "left": {
+        "title": "Tracking",
+        "items": [
+          "Tracks entity changes",
+          "Needed for updates"
+        ]
+      },
+      "right": {
+        "title": "AsNoTracking",
+        "items": [
+          "No change tracking",
+          "Faster for reads"
+        ]
+      },
+      "say": "With tracking, changes are monitored and saved. AsNoTracking skips this, making reads much faster and using less memory."
+    },
+    {
+      "id": "4-code-ant-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "var users = context.Users\n  .AsNoTracking()\n  .ToList();",
+      "say": "Here's how you'd use AsNoTracking for a read-only query. This is perfect when you don't need to update the data."
+    },
+    {
+      "id": "5-trap-misuse",
+      "type": "trap",
+      "question": "Can you update entities from AsNoTracking?",
+      "wrong": "Yes, EF Core will track changes.",
+      "right": "No, EF Core ignores changes from AsNoTracking queries.",
+      "say": "Don't fall for this trap: if you use AsNoTracking, Entity Framework Core will ignore any changes you make to those entities."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:05:08.034Z"
+}
