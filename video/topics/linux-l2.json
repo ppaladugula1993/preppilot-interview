@@ -1,0 +1,85 @@
+{
+  "id": "linux-l2",
+  "title": "Linux Disks and LVM: What Engineers Need",
+  "keys": [
+    "disk",
+    "partition",
+    "LVM",
+    "filesystem",
+    "mount"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-disk-lvm",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "Ever had a disk fill up?",
+      "line2": "How do you fix it?",
+      "say": "Ever had a disk fill up on Linux? How do you fix it when it happens?"
+    },
+    {
+      "id": "1-rows-disk-lvm-flow",
+      "type": "rows",
+      "kicker": "Disk structure",
+      "rows": [
+        {
+          "a": "Disk",
+          "b": "Physical hardware"
+        },
+        {
+          "a": "Partition",
+          "b": "Slice of the disk"
+        },
+        {
+          "a": "LVM",
+          "b": "Flexible volume manager"
+        },
+        {
+          "a": "Filesystem",
+          "b": "XFS or EXT4 format"
+        },
+        {
+          "a": "Mount point",
+          "b": "Where you access files"
+        }
+      ],
+      "walk": true,
+      "say": "Disks break down into partitions. LVM, or Logical Volume Manager, sits on top. Then you add a filesystem like XFS or EXT4, and mount it."
+    },
+    {
+      "id": "2-terminal-check-space",
+      "type": "terminal",
+      "kicker": "Check disk space",
+      "title": "Find what's full",
+      "lines": [
+        "$ df -h",
+        "$ du -xsh /var/* | sort -h | tail",
+        "$ lsof +L1"
+      ],
+      "say": "To troubleshoot, use df dash h to see which filesystem is full. du shows what's using space. lsof plus L1 finds deleted files still open."
+    },
+    {
+      "id": "3-code-grow-lvm",
+      "type": "code",
+      "kicker": "Grow LVM disk",
+      "lang": "bash",
+      "code": "growpart /dev/sda 2\npvresize /dev/sda2\nlvextend -r -l +100%FREE /dev/mapper/vg-root",
+      "say": "To extend a disk with LVM, grow the partition, resize the physical volume, then lvextend with dash r to expand the filesystem in one step."
+    },
+    {
+      "id": "4-trap-lvm-trick",
+      "type": "trap",
+      "question": "How do you grow an LVM filesystem?",
+      "wrong": "Just run lvextend, then resize2fs.",
+      "right": "Use lvextend with dash r to grow both the volume and the filesystem at once.",
+      "say": "Interview trap: Don't just run lvextend and then resize2fs. Use lvextend with dash r to grow both the volume and the filesystem at once."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:42:46.682Z"
+}
