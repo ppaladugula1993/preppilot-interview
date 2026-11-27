@@ -1,0 +1,82 @@
+{
+  "id": "etl-elt",
+  "title": "ETL vs ELT: Why ELT Wins in Modern Data",
+  "keys": [
+    "ETL",
+    "ELT",
+    "data warehouse",
+    "transform",
+    "dbt"
+  ],
+  "scenes": [
+    {
+      "id": "0-etl-elt-hook",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · 45 seconds",
+      "line1": "Why did ELT replace ETL?",
+      "line2": "What changed?",
+      "say": "Ever wonder why ELT is everywhere now? What made it take over classic ETL?"
+    },
+    {
+      "id": "1-etl-chip",
+      "type": "chip",
+      "kicker": "Step 1 · ETL",
+      "label": "ETL",
+      "sub": "Transforms data before loading into the destination.",
+      "say": "ETL means you transform data before loading it into your warehouse or database."
+    },
+    {
+      "id": "2-elt-chip",
+      "type": "chip",
+      "kicker": "Step 2 · ELT",
+      "label": "ELT",
+      "sub": "Loads raw data first, then transforms inside the warehouse.",
+      "say": "ELT flips the script. You load raw data first, then transform it right inside the warehouse."
+    },
+    {
+      "id": "3-compare-modern",
+      "type": "compare",
+      "kicker": "Step 3 · Modern Warehouses",
+      "left": {
+        "title": "ETL",
+        "items": [
+          "External compute",
+          "Pre-transform",
+          "Legacy systems"
+        ]
+      },
+      "right": {
+        "title": "ELT",
+        "items": [
+          "In-warehouse compute",
+          "Post-transform",
+          "Cloud platforms"
+        ]
+      },
+      "say": "Modern cloud warehouses like BigQuery or Snowflake are built for ELT. They handle huge transformations right where the data lives."
+    },
+    {
+      "id": "4-dbt-code",
+      "type": "code",
+      "kicker": "Step 4 · dbt",
+      "lang": "SQL",
+      "code": "select * from raw_data\nwhere updated_at > last_watermark",
+      "say": "Tools like dbt make ELT even easier. You can transform data with SQL and only process new records."
+    },
+    {
+      "id": "5-etl-trap",
+      "type": "trap",
+      "question": "Why is ELT preferred in cloud platforms?",
+      "wrong": "Because it's simpler.",
+      "right": "Because warehouses optimize transformations, making ELT faster and more scalable.",
+      "say": "Don't fall for the simplicity trap. ELT wins because cloud warehouses are optimized for transformations after loading."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:31:54.874Z"
+}
