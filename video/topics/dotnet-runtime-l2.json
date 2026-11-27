@@ -1,0 +1,76 @@
+{
+  "id": "dotnet-runtime-l2",
+  "title": ".NET GC Generations & Large Object Heap",
+  "keys": [
+    "generations",
+    "LOH",
+    "memory",
+    "fragmentation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-gc-layers",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Why does .NET split memory into layers?",
+      "line2": "What’s the Large Object Heap?",
+      "say": "Ever wonder why .NET splits memory into generations, and what happens with really big objects?"
+    },
+    {
+      "id": "1-chip-gen0-gen2",
+      "type": "chip",
+      "kicker": "Memory Tiers",
+      "label": "Generations",
+      "sub": "Gen 0 is for short-lived objects. Gen 2 is for long-lived ones.",
+      "say": "In .NET, Gen zero is for short-lived objects. Gen two is for long-lived ones. This keeps memory cleanup fast."
+    },
+    {
+      "id": "2-rows-loh-details",
+      "type": "rows",
+      "kicker": "Large Object Heap",
+      "rows": [
+        {
+          "a": "Size threshold",
+          "b": "Objects over 85 kilobytes"
+        },
+        {
+          "a": "Location",
+          "b": "Stored in the Large Object Heap"
+        },
+        {
+          "a": "Collection",
+          "b": "Only during Gen 2 GC"
+        },
+        {
+          "a": "Compaction",
+          "b": "Not compacted by default"
+        }
+      ],
+      "walk": false,
+      "say": "If an object is bigger than eighty-five kilobytes, it lands in the Large Object Heap. This area is only cleaned up during Gen two collections, and it isn’t compacted by default."
+    },
+    {
+      "id": "3-code-loh-allocation",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "byte[] arr = new byte[100_000];",
+      "say": "For example, if you allocate a one hundred kilobyte byte array, it goes straight to the Large Object Heap."
+    },
+    {
+      "id": "4-trap-fragmentation",
+      "type": "trap",
+      "question": "Does LOH get compacted every GC?",
+      "wrong": "Yes, always compacted",
+      "right": "No, LOH is only collected in Gen 2 and is not compacted by default. This can cause fragmentation.",
+      "say": "Here's a common trap: people think the Large Object Heap is compacted every time garbage collection runs. It's not. That can lead to fragmentation."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:41:31.192Z"
+}
