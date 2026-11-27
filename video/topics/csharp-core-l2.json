@@ -1,0 +1,71 @@
+{
+  "id": "csharp-core-l2",
+  "title": "LINQ Deferred Execution Explained",
+  "keys": [
+    "LINQ",
+    "deferred execution",
+    "IEnumerable",
+    "IQueryable"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-deferred",
+      "type": "hook",
+      "kicker": "Core C# · lesson",
+      "line1": "When does a LINQ query run?",
+      "line2": "Guess before you code.",
+      "say": "When does a LINQ query actually run? Think before you answer."
+    },
+    {
+      "id": "1-chip-deferred",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "Deferred",
+      "sub": "LINQ queries run only when you enumerate them.",
+      "say": "LINQ queries use deferred execution. That means they only run when you actually enumerate them."
+    },
+    {
+      "id": "2-code-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "csharp",
+      "code": "var query = numbers.Where(n => n > 5);\n// Not executed yet\nforeach (var n in query)\n{\n  Console.WriteLine(n);\n}\n// Executes now",
+      "say": "Here, the query isn't executed when it's defined. It runs only when you loop through it."
+    },
+    {
+      "id": "3-compare-enumerable",
+      "type": "compare",
+      "kicker": "Know the Types",
+      "left": {
+        "title": "IEnumerable",
+        "items": [
+          "In-memory",
+          "Executes locally"
+        ]
+      },
+      "right": {
+        "title": "IQueryable",
+        "items": [
+          "Remote data",
+          "Often translates to SQL"
+        ]
+      },
+      "say": "IEnumerable runs queries in memory. IQueryable sends queries to remote sources, often as SQL."
+    },
+    {
+      "id": "4-trap-modify",
+      "type": "trap",
+      "question": "What if you change the source collection?",
+      "wrong": "The query result stays the same.",
+      "right": "Deferred queries see changes. Results may change or throw errors.",
+      "say": "If you change the source collection before running a deferred query, the results might change or even cause errors."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:11:31.673Z"
+}
