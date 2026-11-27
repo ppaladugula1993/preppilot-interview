@@ -1,0 +1,89 @@
+{
+  "id": "behavioral",
+  "title": "Nail Behavioral Interviews With STAR Stories",
+  "keys": [
+    "STAR",
+    "story",
+    "own",
+    "result",
+    "weakness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-star",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · 45s",
+      "line1": "How do you stand out in interviews?",
+      "line2": "What do they really want?",
+      "say": "Behavioral interviews can feel vague. But what do interviewers actually want to hear from you?"
+    },
+    {
+      "id": "1-rows-star",
+      "type": "rows",
+      "kicker": "STAR Stories",
+      "rows": [
+        {
+          "a": "Situation",
+          "b": "Set the scene briefly"
+        },
+        {
+          "a": "Task",
+          "b": "What you needed to solve"
+        },
+        {
+          "a": "Action",
+          "b": "What you did, say 'I'"
+        },
+        {
+          "a": "Result",
+          "b": "Show impact with numbers"
+        }
+      ],
+      "walk": true,
+      "say": "The STAR method is your secret weapon. Situation, Task, Action, Result. Every story should follow this flow, and highlight what you owned."
+    },
+    {
+      "id": "2-chip-own",
+      "type": "chip",
+      "kicker": "Own Your Part",
+      "label": "Own",
+      "sub": "Use 'I' to show what you did, not just the team.",
+      "say": "Always use 'I' for your actions. Interviewers want to know what you actually did, not just what your team accomplished."
+    },
+    {
+      "id": "3-compare-weakness",
+      "type": "compare",
+      "kicker": "Weakness",
+      "left": {
+        "title": "Fake",
+        "items": [
+          "I work too hard",
+          "I'm a perfectionist"
+        ]
+      },
+      "right": {
+        "title": "Real",
+        "items": [
+          "Skill gap",
+          "How you are fixing it"
+        ]
+      },
+      "say": "When asked about weaknesses, avoid fake answers like 'I work too hard.' Share a real gap and what you’re doing to improve."
+    },
+    {
+      "id": "4-trap-patterns",
+      "type": "trap",
+      "question": "What's the biggest interview mistake?",
+      "wrong": "Talking only about the team",
+      "right": "Not owning your actions and results. Always show what you did, and the impact.",
+      "say": "The biggest trap? Talking only about the team. You must own your actions and results, or you risk looking weak."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:10:36.301Z"
+}
