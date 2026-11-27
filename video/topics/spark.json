@@ -1,0 +1,85 @@
+{
+  "id": "spark",
+  "title": "The Secret Behind Spark's Speed",
+  "keys": [
+    "driver",
+    "executors",
+    "partitions",
+    "lazy evaluation",
+    "shuffles"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lazy-power",
+      "type": "hook",
+      "kicker": "Apache Spark · 45 seconds",
+      "line1": "Why is Spark so fast?",
+      "line2": "What's the real trick?",
+      "say": "Ever wonder why Spark crunches big data so quickly? What's its real secret sauce?"
+    },
+    {
+      "id": "1-chip-lazy-eval",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Lazy",
+      "sub": "Spark waits to run code until you call an action.",
+      "say": "The answer is lazy evaluation. Spark doesn't run your code right away. It waits until you ask for results."
+    },
+    {
+      "id": "2-rows-driver-exec",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Driver",
+          "b": "Plans the job"
+        },
+        {
+          "a": "Executors",
+          "b": "Run tasks on partitions"
+        },
+        {
+          "a": "Partitions",
+          "b": "Split data for parallel work"
+        }
+      ],
+      "walk": true,
+      "say": "Here's what happens. The driver plans the job. Executors run tasks on chunks of data called partitions. This means lots of work happens at once."
+    },
+    {
+      "id": "3-compare-narrow-wide",
+      "type": "compare",
+      "kicker": "Transformations",
+      "left": {
+        "title": "Narrow",
+        "items": [
+          "map",
+          "filter"
+        ]
+      },
+      "right": {
+        "title": "Wide",
+        "items": [
+          "groupBy",
+          "join"
+        ]
+      },
+      "say": "Some operations, like map or filter, only need one partition. Others, like group by or join, shuffle data between partitions. Shuffles can slow things down."
+    },
+    {
+      "id": "4-trap-action-trick",
+      "type": "trap",
+      "question": "When does Spark run your code?",
+      "wrong": "Right after each transformation",
+      "right": "Only when you call an action, like count or collect.",
+      "say": "Here's a classic interview trap. Many think Spark runs code after each step. Nope. It only runs when you call an action, like count or collect."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:44:53.280Z"
+}
