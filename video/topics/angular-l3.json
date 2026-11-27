@@ -1,0 +1,88 @@
+{
+  "id": "angular-l3",
+  "title": "Angular OnPush & Change Detection",
+  "keys": [
+    "OnPush",
+    "change detection",
+    "signals",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-onpush-detectio",
+      "type": "hook",
+      "kicker": "Angular · lesson",
+      "line1": "Why does OnPush boost performance?",
+      "line2": "How does it detect changes?",
+      "say": "Ever wonder why OnPush makes Angular apps faster? How does it actually detect changes?"
+    },
+    {
+      "id": "1-rows-strategy-steps",
+      "type": "rows",
+      "kicker": "Detection Strategies",
+      "rows": [
+        {
+          "a": "Default",
+          "b": "Checks every component each cycle"
+        },
+        {
+          "a": "OnPush",
+          "b": "Checks only on input ref change"
+        },
+        {
+          "a": "OnPush",
+          "b": "Also triggers on events or async"
+        },
+        {
+          "a": "Signals",
+          "b": "Fine-grained updates, Angular v17"
+        }
+      ],
+      "walk": true,
+      "say": "Angular's default strategy checks every component. OnPush checks only when input references change, or when events, observables, or async pipes fire. Signals, new in Angular version seventeen, trigger updates precisely when their value changes."
+    },
+    {
+      "id": "2-compare-mutation-vs-",
+      "type": "compare",
+      "kicker": "Mutation vs Reference",
+      "left": {
+        "title": "Mutate Object",
+        "items": [
+          "Change property directly",
+          "No OnPush update"
+        ]
+      },
+      "right": {
+        "title": "Replace Reference",
+        "items": [
+          "Assign new object",
+          "OnPush triggers update"
+        ]
+      },
+      "say": "If you mutate an object directly, OnPush won't notice. But if you replace the reference, Angular triggers an update."
+    },
+    {
+      "id": "3-code-onpush-signals",
+      "type": "code",
+      "kicker": "OnPush Example",
+      "lang": "typescript",
+      "code": "@Component({\n  changeDetection: ChangeDetectionStrategy.OnPush\n})\nmySignal = signal(0);\nmySignal.set(1);",
+      "say": "Here's how you set OnPush in a component. Signals, like mySignal here, update the view as soon as their value changes."
+    },
+    {
+      "id": "4-trap-onpush-events",
+      "type": "trap",
+      "question": "What triggers OnPush updates?",
+      "wrong": "Only input reference changes",
+      "right": "Input ref changes, events, observables, async pipes",
+      "say": "Don't forget: OnPush updates on input reference changes, but also on events, observables, and async pipes. Missing this can trip you up in interviews."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:12:25.828Z"
+}
