@@ -1,0 +1,72 @@
+{
+  "id": "testing-l1",
+  "title": "Unit Tests: Arrange-Act-Assert & Isolation",
+  "keys": [
+    "unit test",
+    "isolation",
+    "arrange-act-assert",
+    "reliable"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-aaa-isolate",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "What makes a great unit test?",
+      "line2": "How do you keep tests reliable?",
+      "say": "What makes a unit test actually reliable? And how do you keep your tests from breaking for the wrong reasons?"
+    },
+    {
+      "id": "1-rows-aaa-steps",
+      "type": "rows",
+      "kicker": "Unit Test Steps",
+      "rows": [
+        {
+          "a": "Arrange",
+          "b": "Set up your data and mocks"
+        },
+        {
+          "a": "Act",
+          "b": "Run the code you want to test"
+        },
+        {
+          "a": "Assert",
+          "b": "Check the result is correct"
+        }
+      ],
+      "walk": true,
+      "say": "Unit tests always follow three steps: Arrange, Act, Assert. First, set up your data. Next, run the code. Finally, check the result."
+    },
+    {
+      "id": "2-chip-isolation",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "Isolation",
+      "sub": "Keep tests independent from databases or APIs.",
+      "say": "Isolation is key. Your tests should never rely on databases, APIs, or shared state. This keeps them fast and consistent."
+    },
+    {
+      "id": "3-code-aaa-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "def test_add():\n    # Arrange\n    a, b = 2, 3\n    # Act\n    result = add(a, b)\n    # Assert\n    assert result == 5",
+      "say": "Here's what that looks like in code. Arrange your inputs, act by calling the function, and assert the result."
+    },
+    {
+      "id": "4-trap-shared-state",
+      "type": "trap",
+      "question": "What breaks unit test reliability?",
+      "wrong": "Using real databases is fine.",
+      "right": "Relying on shared state or external systems makes tests flaky.",
+      "say": "Watch out! If your unit test depends on a real database or shared state, it can become flaky and unreliable."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:38:45.745Z"
+}
