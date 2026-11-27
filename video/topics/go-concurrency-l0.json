@@ -1,0 +1,71 @@
+{
+  "id": "go-concurrency-l0",
+  "title": "Goroutines & the Go Scheduler",
+  "keys": [
+    "goroutine",
+    "scheduler",
+    "OS thread",
+    "concurrency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-goroutines",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How does Go run thousands of tasks?",
+      "line2": "What's a goroutine?",
+      "say": "Ever wonder how Go runs thousands of tasks at once? What's really happening when you launch a goroutine?"
+    },
+    {
+      "id": "1-chip-goroutine",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Goroutine",
+      "sub": "A lightweight thread managed by Go's runtime.",
+      "say": "A goroutine is a lightweight thread, managed by Go itself, not your operating system."
+    },
+    {
+      "id": "2-compare-scheduler",
+      "type": "compare",
+      "kicker": "Under the Hood",
+      "left": {
+        "title": "Goroutines",
+        "items": [
+          "Created in your code",
+          "Thousands per program"
+        ]
+      },
+      "right": {
+        "title": "OS Threads",
+        "items": [
+          "Managed by OS",
+          "Fewer, more expensive"
+        ]
+      },
+      "say": "Go's scheduler maps thousands of goroutines onto a small set of operating system threads, making concurrency efficient and cheap."
+    },
+    {
+      "id": "3-code-goroutine",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "go func() {\n  fmt.Println(\"Hello from a goroutine\")\n}()",
+      "say": "Just add the go keyword before a function call. Go handles the rest, running your function in the background."
+    },
+    {
+      "id": "4-trap-leak",
+      "type": "trap",
+      "question": "Can you ignore goroutine cleanup?",
+      "wrong": "Yes, Go handles it all.",
+      "right": "No, you must manage their lifecycle to prevent leaks.",
+      "say": "Here's a common trap: thinking Go cleans up every goroutine for you. You still need to manage their lifecycle, or you'll end up with leaks."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:58:51.955Z"
+}
