@@ -1,0 +1,71 @@
+{
+  "id": "sql-advanced-l7",
+  "title": "Mastering MERGE for Slowly Changing Data",
+  "keys": [
+    "SCD",
+    "MERGE",
+    "upsert",
+    "data warehouse"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-scd-merge",
+      "type": "hook",
+      "kicker": "Advanced SQL · lesson",
+      "line1": "How do you track evolving data?",
+      "line2": "MERGE or upsert?",
+      "say": "How do you keep track of changes in data over time? Can you use MERGE or upsert to handle this?"
+    },
+    {
+      "id": "1-chip-scd",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "SCD",
+      "sub": "Slowly Changing Dimensions track historical changes.",
+      "say": "Slowly Changing Dimensions help you track historical changes in your data, keeping a record of how values evolve."
+    },
+    {
+      "id": "2-compare-merge-upsert",
+      "type": "compare",
+      "kicker": "Technique",
+      "left": {
+        "title": "MERGE",
+        "items": [
+          "Updates existing",
+          "Inserts new"
+        ]
+      },
+      "right": {
+        "title": "Upsert",
+        "items": [
+          "Same as MERGE",
+          "Atomic operation"
+        ]
+      },
+      "say": "MERGE and upsert let you update existing rows or insert new ones in a single atomic step. Perfect for evolving data."
+    },
+    {
+      "id": "3-code-merge-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "MERGE INTO customers t\nUSING updates s ON t.id = s.id\nWHEN MATCHED THEN UPDATE SET t.name = s.name\nWHEN NOT MATCHED THEN INSERT (id, name)\nVALUES (s.id, s.name);",
+      "say": "Here's how a MERGE statement works. It updates matching rows and inserts new ones, all at once."
+    },
+    {
+      "id": "4-trap-scd-type2",
+      "type": "trap",
+      "question": "How do you preserve history in SCD?",
+      "wrong": "Just update the row.",
+      "right": "Close out old records and insert new rows with updated values and effective dates.",
+      "say": "Interviewers want more than just updates. For SCD Type 2, you need to close out old records and insert new ones with new effective dates to preserve history."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T19:59:36.452Z"
+}
