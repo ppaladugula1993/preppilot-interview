@@ -1,0 +1,110 @@
+{
+  "id": "api-design",
+  "title": "The #1 Rule of Good API Design",
+  "keys": [
+    "resource",
+    "HTTP verb",
+    "idempotent",
+    "status code",
+    "versioning"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-api-core",
+      "type": "hook",
+      "kicker": "API Design · 45 seconds",
+      "line1": "What's the golden rule",
+      "line2": "of great API design?",
+      "say": "What’s the single rule that makes or breaks your API design in interviews?"
+    },
+    {
+      "id": "1-chip-resource",
+      "type": "chip",
+      "kicker": "Step 1 · REST",
+      "label": "Resource",
+      "sub": "APIs organize data as resources—like users or orders.",
+      "say": "First, APIs organize data as resources. Think users, orders, or products."
+    },
+    {
+      "id": "2-rows-verbs",
+      "type": "rows",
+      "kicker": "Step 2 · HTTP Verbs",
+      "rows": [
+        {
+          "a": "GET",
+          "b": "Read a resource"
+        },
+        {
+          "a": "POST",
+          "b": "Create something new"
+        },
+        {
+          "a": "PUT",
+          "b": "Replace a resource"
+        },
+        {
+          "a": "DELETE",
+          "b": "Remove a resource"
+        }
+      ],
+      "walk": true,
+      "say": "You act on resources using HTTP verbs. Get reads, post creates, put replaces, delete removes."
+    },
+    {
+      "id": "3-compare-idempotency",
+      "type": "compare",
+      "kicker": "Step 3 · Idempotency",
+      "left": {
+        "title": "Idempotent",
+        "items": [
+          "GET",
+          "PUT",
+          "DELETE"
+        ]
+      },
+      "right": {
+        "title": "Not Idempotent",
+        "items": [
+          "POST"
+        ]
+      },
+      "say": "Here’s the trick: GET, PUT, and DELETE are idempotent. Repeat them, and nothing breaks. POST isn’t. That matters for reliability."
+    },
+    {
+      "id": "4-terminal-status",
+      "type": "terminal",
+      "kicker": "Step 4 · Status Codes",
+      "title": "Standard Responses",
+      "lines": [
+        "$ GET /users/123",
+        "200 OK",
+        "$ POST /users",
+        "201 Created"
+      ],
+      "say": "Always use standard status codes. Two hundred for success, two oh one when you create something."
+    },
+    {
+      "id": "5-chip-version",
+      "type": "chip",
+      "kicker": "Step 5 · Versioning",
+      "label": "Version",
+      "sub": "Use /v1/ or headers to avoid breaking old clients.",
+      "say": "When you need to change things, version your API. Use slash v one, or headers, so old clients keep working."
+    },
+    {
+      "id": "6-trap-idempotency",
+      "type": "trap",
+      "question": "Is POST idempotent?",
+      "wrong": "Yes, it is safe to retry POST.",
+      "right": "No. Only GET, PUT, and DELETE are idempotent. POST can create duplicates.",
+      "say": "Here’s a classic interview trap: Is post idempotent? No—only get, put, and delete are. Post can create duplicates if retried."
+    },
+    {
+      "id": "7-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:13:19.586Z"
+}
