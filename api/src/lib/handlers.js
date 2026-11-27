@@ -529,7 +529,6 @@ const cleanProgress = p => {
 export async function handleGetMyData(req) {
   const w = who(req);
   if (w.error) return w.error;
-  if (w.ident.viaCode) return json(200, {});
   const d = await (await getDb()).get('prefs', w.ident.key);
   if (!d) return json(200, {});
   let progress = null;
@@ -539,7 +538,6 @@ export async function handleGetMyData(req) {
 export async function handleSaveMyData(req, now = Date.now()) {
   const w = who(req);
   if (w.error) return w.error;
-  if (w.ident.viaCode) return json(200, { ok: true });
   const prev = lastSync.get(w.ident.key) || 0;
   if (now - prev < 2000) return json(429, { error: 'Saving too often.' }, { 'retry-after': '2' });
   lastSync.set(w.ident.key, now);

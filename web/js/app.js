@@ -3260,7 +3260,7 @@ document.addEventListener('click', async e => {
   document.addEventListener('visibilitychange', () => { if (document.hidden && syncTimer) pushUserData(); });
   let restoredFor = '';
   const restoreUserData = async () => {
-    const who = store.session(); if (!who || restoredFor === who) return; restoredFor = who;
+    const who = store.session() || (store.accessCode() ? 'code' : ''); if (!who || restoredFor === who) return; restoredFor = who;
     try {
       const d = await ai.post('/api/me/data', {});
       // A profile set up on this device while signed out (Get started before Log in) must not
@@ -3274,7 +3274,7 @@ document.addEventListener('click', async e => {
         S.onboard = false; S.view = 'home'; render();
         toast('Welcome back. Your plan and progress are restored.');
       } else if (profile()) pushUserData();
-    } catch { /* offline: try again next sign-in */ }
+    } catch (e) { restoredFor = ''; if (e?.status && e.status !== 401) oops('Could not load your saved profile. Pull to refresh to try again.'); }
   };
   onAccountChange(acc => { if (acc) restoreUserData(); });
   if (signedIn()) restoreUserData(); // app opened already signed in
