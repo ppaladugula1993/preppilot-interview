@@ -1,0 +1,59 @@
+{
+  "id": "aspnet-core-l4",
+  "title": "ASP.NET Core Auth: Secure Your APIs",
+  "keys": [
+    "authentication",
+    "authorization",
+    "JWT",
+    "policies"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-auth-vs-authz",
+      "type": "hook",
+      "kicker": "ASP.NET Core · lesson",
+      "line1": "Auth vs. Authz:",
+      "line2": "What's the difference?",
+      "say": "Do you know how authentication and authorization work together to secure your ASP.NET Core APIs?"
+    },
+    {
+      "id": "1-chip-authentication",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Auth",
+      "sub": "Authentication checks who you are. JWT Bearer is common.",
+      "say": "First up is authentication. This verifies user identity. JWT Bearer tokens are a popular method in ASP.NET Core."
+    },
+    {
+      "id": "2-chip-authorization",
+      "type": "chip",
+      "kicker": "Step 2",
+      "label": "Authz",
+      "sub": "Authorization controls what you can access.",
+      "say": "Next is authorization. This decides what the authenticated user can actually do. Use roles, claims, or policies for fine-grained control."
+    },
+    {
+      "id": "3-code-add-auth",
+      "type": "code",
+      "kicker": "Configure",
+      "lang": "csharp",
+      "code": "services.AddAuthentication(\n  JwtBearerDefaults.AuthenticationScheme)\n  .AddJwtBearer(...);\nservices.AddAuthorization(options => {\n  options.AddPolicy(\"AdminOnly\",\n    policy => policy.RequireRole(\"Admin\"));\n});",
+      "say": "Set up authentication before authorization in your Program or Startup file. Add policies for flexible rules."
+    },
+    {
+      "id": "4-trap-middleware-orde",
+      "type": "trap",
+      "question": "Can you swap auth and authz middleware?",
+      "wrong": "Yes, order doesn't matter.",
+      "right": "No. Authentication must run before authorization or access checks will fail.",
+      "say": "Here's a common trap: Middleware order matters. Authentication must run before authorization. Get this wrong, and your access checks will break."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:49:10.573Z"
+}
