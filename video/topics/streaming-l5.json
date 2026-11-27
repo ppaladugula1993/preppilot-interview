@@ -1,0 +1,85 @@
+{
+  "id": "streaming-l5",
+  "title": "Schema Registry & Evolution in Kafka",
+  "keys": [
+    "schema registry",
+    "Kafka",
+    "schema evolution",
+    "compatibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-schema-registry",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How do you keep Kafka data safe?",
+      "line2": "What is schema evolution?",
+      "say": "Ever wonder how Kafka avoids data chaos as schemas change? Let’s break down schema registry and evolution."
+    },
+    {
+      "id": "1-chip-schema-registry",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Registry",
+      "sub": "Stores schemas for Kafka topics so producers and consumers agree on data structure.",
+      "say": "A schema registry stores schemas for Kafka topics, letting producers and consumers agree on the exact data structure."
+    },
+    {
+      "id": "2-compare-evolution",
+      "type": "compare",
+      "kicker": "Schema Evolution",
+      "left": {
+        "title": "Avro v1",
+        "items": [
+          "name",
+          "age"
+        ]
+      },
+      "right": {
+        "title": "Avro v2",
+        "items": [
+          "name",
+          "age",
+          "email (optional)"
+        ]
+      },
+      "say": "Schema evolution means adding or removing fields, like making email optional in version two, with compatibility checks to avoid breaking consumers."
+    },
+    {
+      "id": "3-rows-compatibility",
+      "type": "rows",
+      "kicker": "Why Compatibility Matters",
+      "rows": [
+        {
+          "a": "Forward",
+          "b": "Old consumers read new data"
+        },
+        {
+          "a": "Backward",
+          "b": "New consumers read old data"
+        },
+        {
+          "a": "Corruption",
+          "b": "Avoids breaking downstream apps"
+        }
+      ],
+      "walk": true,
+      "say": "Compatibility checks ensure forward and backward reading, and prevent data corruption as schemas evolve."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What happens if you skip compatibility checks?",
+      "wrong": "Nothing changes, data flows fine.",
+      "right": "You risk breaking downstream consumers and corrupting data.",
+      "say": "If you skip compatibility checks, you risk breaking downstream consumers and corrupting your data pipeline."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:58:06.977Z"
+}
