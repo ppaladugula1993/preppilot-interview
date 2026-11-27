@@ -1,0 +1,84 @@
+{
+  "id": "testing-l5",
+  "title": "TDD Workflow and Its Limits",
+  "keys": [
+    "TDD",
+    "workflow",
+    "red-green-refactor",
+    "limits"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-tdd-limits",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Does TDD always work?",
+      "line2": "Where does it fall short?",
+      "say": "Does test-driven development always fit? Where can it break down?"
+    },
+    {
+      "id": "1-rows-tdd-cycle",
+      "type": "rows",
+      "kicker": "TDD Steps",
+      "rows": [
+        {
+          "a": "Red",
+          "b": "Write a failing test"
+        },
+        {
+          "a": "Green",
+          "b": "Add code to pass the test"
+        },
+        {
+          "a": "Refactor",
+          "b": "Clean up code and tests"
+        }
+      ],
+      "walk": true,
+      "say": "The TDD cycle is simple. First, write a failing test. Second, write code to make it pass. Third, refactor for clarity."
+    },
+    {
+      "id": "2-chip-tdd-strength",
+      "type": "chip",
+      "kicker": "Best For",
+      "label": "Logic",
+      "sub": "TDD shines with logic-heavy code.",
+      "say": "Test-driven development works best for logic-heavy code, like algorithms or data processing."
+    },
+    {
+      "id": "3-compare-tdd-limits",
+      "type": "compare",
+      "kicker": "TDD Limits",
+      "left": {
+        "title": "Works Well",
+        "items": [
+          "Core logic",
+          "Small units"
+        ]
+      },
+      "right": {
+        "title": "Struggles With",
+        "items": [
+          "UI code",
+          "Complex integrations"
+        ]
+      },
+      "say": "But TDD struggles with user interfaces or complex integrations. It’s not a one-size-fits-all."
+    },
+    {
+      "id": "4-trap-tdd-interview",
+      "type": "trap",
+      "question": "Should you always use TDD?",
+      "wrong": "Yes, for every feature.",
+      "right": "No. Adapt your approach for UI or integrations.",
+      "say": "Interview trap: Should you always use TDD? No. Adapt your approach for UI or integration-heavy features."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T19:56:00.136Z"
+}
