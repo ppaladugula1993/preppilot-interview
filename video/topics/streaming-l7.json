@@ -1,0 +1,72 @@
+{
+  "id": "streaming-l7",
+  "title": "Kafka Offset Management Explained",
+  "keys": [
+    "offset",
+    "commit",
+    "auto",
+    "manual",
+    "consumer"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-offsets",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How does Kafka know",
+      "line2": "where you left off?",
+      "say": "Ever wonder how Kafka remembers exactly which messages you've read, even after a crash? Let's talk about offsets."
+    },
+    {
+      "id": "1-chip-offset",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Offset",
+      "sub": "Tracks a consumer’s position in a partition.",
+      "say": "An offset is just a number that marks your spot in a partition. It's how Kafka keeps track of what each consumer has read."
+    },
+    {
+      "id": "2-compare-commit",
+      "type": "compare",
+      "kicker": "Commit Methods",
+      "left": {
+        "title": "Auto",
+        "items": [
+          "Commits offsets for you",
+          "Easy, but less control"
+        ]
+      },
+      "right": {
+        "title": "Manual",
+        "items": [
+          "Commit after processing",
+          "Ensures at-least-once delivery"
+        ]
+      },
+      "say": "You can let Kafka commit offsets automatically, or do it manually after processing. Manual commits give you more control and reliability."
+    },
+    {
+      "id": "3-code-commit",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "java",
+      "code": "consumer.commitSync();",
+      "say": "In Java, you call commit sync after handling a batch. This makes sure you only move the offset forward when processing succeeds."
+    },
+    {
+      "id": "4-trap-auto",
+      "type": "trap",
+      "question": "Is auto-commit always reliable?",
+      "wrong": "Yes, it's safe for all cases.",
+      "right": "No, manual commit is safer for at-least-once.",
+      "say": "Don't fall for this: auto-commit might skip messages if you crash mid-processing. Manual commit is safer when you need reliability."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:00:16.869Z"
+}
