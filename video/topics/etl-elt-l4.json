@@ -1,0 +1,76 @@
+{
+  "id": "etl-elt-l4",
+  "title": "Late-Arriving Data in ETL/ELT Pipelines",
+  "keys": [
+    "late-arriving",
+    "reprocessing",
+    "upsert",
+    "completeness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-late-data",
+      "type": "hook",
+      "kicker": "ETL / ELT Pipelines · lesson",
+      "line1": "What if data arrives late?",
+      "line2": "How do you handle it?",
+      "say": "What happens when new data for last week shows up today? How do you make sure your results stay accurate?"
+    },
+    {
+      "id": "1-chip-late-arrival",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Late Data",
+      "sub": "Data that arrives after its expected window.",
+      "say": "Late-arriving data means information shows up after your pipeline already processed that time period."
+    },
+    {
+      "id": "2-rows-reprocess-steps",
+      "type": "rows",
+      "kicker": "Strategy",
+      "rows": [
+        {
+          "a": "Detect",
+          "b": "Find late records by date or ID"
+        },
+        {
+          "a": "Reprocess",
+          "b": "Update affected partitions"
+        },
+        {
+          "a": "Upsert",
+          "b": "Insert or update changed rows"
+        }
+      ],
+      "walk": true,
+      "say": "To handle late data, first detect it, then reprocess just the affected partitions, and finally upsert those records to keep things correct."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Reprocessing a Partition",
+      "lines": [
+        "$ find late records for 2024-06-01",
+        "$ reprocess partition 2024-06-01",
+        "$ upsert new rows into table"
+      ],
+      "say": "For example, if new records for June first arrive late, you find them, reprocess that partition, and upsert into your table."
+    },
+    {
+      "id": "4-trap-missed-late-dat",
+      "type": "trap",
+      "question": "What if you ignore late-arriving data?",
+      "wrong": "Nothing happens—it's fine.",
+      "right": "Your data will be incomplete or wrong. Always plan for late arrivals.",
+      "say": "Here's a trap: If you ignore late-arriving data, your results will be incomplete or incorrect. Always plan to handle it."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:31:01.743Z"
+}
