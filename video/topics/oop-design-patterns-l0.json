@@ -1,0 +1,76 @@
+{
+  "id": "oop-design-patterns-l0",
+  "title": "OOP Fundamentals: The Four Pillars",
+  "keys": [
+    "encapsulation",
+    "inheritance",
+    "polymorphism",
+    "abstraction"
+  ],
+  "scenes": [
+    {
+      "id": "0-oop-pillars-hook",
+      "type": "hook",
+      "kicker": "OOP & Design Patterns · lesson",
+      "line1": "What are the 4 pillars of OOP?",
+      "line2": "And why do they matter?",
+      "say": "What are the four pillars of object-oriented programming, and why do interviewers care so much about them?"
+    },
+    {
+      "id": "1-oop-pillars-chips",
+      "type": "chip",
+      "kicker": "Pillar",
+      "label": "Encapsulation",
+      "sub": "Bundle data and methods. Protect state.",
+      "say": "First, encapsulation bundles data and methods, protecting an object's state from outside interference."
+    },
+    {
+      "id": "2-oop-pillars-rows",
+      "type": "rows",
+      "kicker": "Four Pillars",
+      "rows": [
+        {
+          "a": "Encapsulation",
+          "b": "Keep state safe in classes"
+        },
+        {
+          "a": "Inheritance",
+          "b": "Reuse code from base classes"
+        },
+        {
+          "a": "Polymorphism",
+          "b": "One interface, many forms"
+        },
+        {
+          "a": "Abstraction",
+          "b": "Hide details, show essentials"
+        }
+      ],
+      "walk": true,
+      "say": "The four pillars are encapsulation, inheritance, polymorphism, and abstraction. Each helps keep code organized and reusable."
+    },
+    {
+      "id": "3-oop-pillars-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "java",
+      "code": "class Vehicle {\n  protected int speed;\n  public void accelerate() {\n    speed += 10;\n  }\n}\nclass Car extends Vehicle {\n  public void honk() {\n    System.out.println(\"Beep!\");\n  }\n}",
+      "say": "For example, a Car class can inherit from Vehicle, gaining its speed and accelerate methods, while adding its own honk behavior."
+    },
+    {
+      "id": "4-oop-pillars-trap",
+      "type": "trap",
+      "question": "Is abstraction just hiding variables?",
+      "wrong": "Yes, it hides variables from users.",
+      "right": "No, abstraction hides complexity by exposing only necessary details.",
+      "say": "Watch out: abstraction isn't just about hiding variables. It's about hiding complexity and exposing only what users need."
+    },
+    {
+      "id": "5-oop-pillars-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:05:51.023Z"
+}
