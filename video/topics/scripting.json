@@ -1,0 +1,107 @@
+{
+  "id": "scripting",
+  "title": "One Rule for Scripting & Automation",
+  "keys": [
+    "bash",
+    "PowerShell",
+    "Python",
+    "jq",
+    "safe mode"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-safety-first",
+      "type": "hook",
+      "kicker": "Scripting & Automation · 45 seconds",
+      "line1": "What's the #1 rule for scripts?",
+      "line2": "How do you keep prod safe?",
+      "say": "What's the single most important rule for scripting and automation? How do you make sure your script doesn't break production?"
+    },
+    {
+      "id": "1-chip-safe-mode",
+      "type": "chip",
+      "kicker": "Step 1 · Bash",
+      "label": "Safe",
+      "sub": "Always use strict mode: exit on errors, unset vars, pipeline fails",
+      "say": "In bash, always turn on strict mode. That means your script stops if anything fails, if you use a variable you forgot to set, or if a pipeline command fails."
+    },
+    {
+      "id": "2-terminal-safe-mode-e",
+      "type": "terminal",
+      "kicker": "Strict Mode · Bash",
+      "title": "Set strict mode at the top",
+      "lines": [
+        "$ set -euo pipefail",
+        "$ echo $UNSET_VAR",
+        "bash: UNSET_VAR: unbound variable"
+      ],
+      "say": "Set strict mode at the very top. If you try to use an unset variable, your script will stop right there, instead of running wild."
+    },
+    {
+      "id": "3-compare-objects-vs-t",
+      "type": "compare",
+      "kicker": "PowerShell vs Bash",
+      "left": {
+        "title": "PowerShell",
+        "items": [
+          "Handles objects",
+          "Filter with Where-Object",
+          "Export to CSV or JSON"
+        ]
+      },
+      "right": {
+        "title": "Bash",
+        "items": [
+          "Handles text",
+          "Parse with awk or cut",
+          "Breaks if output changes"
+        ]
+      },
+      "say": "PowerShell scripts work with real objects, so you filter and export data safely. Bash scripts just handle text, so they're fragile if the output changes."
+    },
+    {
+      "id": "4-rows-safe-script-che",
+      "type": "rows",
+      "kicker": "Checklist · Safe Scripts",
+      "rows": [
+        {
+          "a": "Idempotent",
+          "b": "Can run twice, same result"
+        },
+        {
+          "a": "Dry-run",
+          "b": "Show what will change"
+        },
+        {
+          "a": "Logged",
+          "b": "Record actions for review"
+        },
+        {
+          "a": "Fail loudly",
+          "b": "Stop on error, alert"
+        },
+        {
+          "a": "No secrets",
+          "b": "Never hardcode passwords"
+        }
+      ],
+      "walk": true,
+      "say": "A safe script is idempotent, can dry-run, logs its actions, fails loudly, and never hardcodes secrets. These are non-negotiable for production."
+    },
+    {
+      "id": "5-trap-bash-vs-python",
+      "type": "trap",
+      "question": "When should you use Python, not bash?",
+      "wrong": "For any command-line task",
+      "right": "When logic, APIs, or JSON get complex, or scripts grow past fifty lines",
+      "say": "Here's a trap: Should you always use bash for command-line tasks? Not really. Once your logic gets complex or you deal with APIs or JSON, switch to Python."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:55:13.583Z"
+}
