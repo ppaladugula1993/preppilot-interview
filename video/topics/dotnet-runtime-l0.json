@@ -1,0 +1,77 @@
+{
+  "id": "dotnet-runtime-l0",
+  "title": ".NET vs .NET Framework & LTS",
+  "keys": [
+    ".NET",
+    ".NET Framework",
+    "LTS",
+    "cross-platform"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dotnet-lts",
+      "type": "hook",
+      "kicker": ".NET Runtime & Performance · lesson",
+      "line1": "Why care about .NET LTS releases?",
+      "line2": "Legacy or modern?",
+      "say": "Are you building for today or maintaining yesterday? Let's break down .NET and its LTS releases."
+    },
+    {
+      "id": "1-compare-dotnet-frame",
+      "type": "compare",
+      "kicker": "Platform showdown",
+      "left": {
+        "title": ".NET",
+        "items": [
+          "Cross-platform",
+          "Open-source",
+          "Unified versioning"
+        ]
+      },
+      "right": {
+        "title": ".NET Framework",
+        "items": [
+          "Windows-only",
+          "Legacy",
+          "No LTS releases"
+        ]
+      },
+      "say": "Modern .NET runs on Windows, Linux, and Mac, and it's open source. The old .NET Framework only works on Windows and is now considered legacy."
+    },
+    {
+      "id": "2-chip-lts-support",
+      "type": "chip",
+      "kicker": "Support",
+      "label": "LTS",
+      "sub": "LTS releases get at least 3 years of fixes",
+      "say": "Long-Term Support releases in .NET get at least three years of security and bug fixes."
+    },
+    {
+      "id": "3-terminal-dotnet-vers",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": ".NET LTS vs Framework",
+      "lines": [
+        "$ dotnet --list-sdks",
+        "6.0.100 [supported until Nov 2024]",
+        "4.8 [Windows only]"
+      ],
+      "say": "For example, .NET six is LTS and supported until November twenty twenty-four. .NET Framework four point eight only runs on Windows."
+    },
+    {
+      "id": "4-trap-lts-benefit",
+      "type": "trap",
+      "question": "Why pick LTS for production?",
+      "wrong": "It has more features.",
+      "right": "It offers stability and long-term security updates.",
+      "say": "In interviews, don't say you pick LTS for new features. The real reason is stability and long-term security."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T23:36:02.417Z"
+}
