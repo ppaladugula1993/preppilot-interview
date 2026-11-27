@@ -1,0 +1,71 @@
+{
+  "id": "react-l5",
+  "title": "React Performance: Memoization & Lazy Loading",
+  "keys": [
+    "memoization",
+    "code splitting",
+    "lazy loading",
+    "useMemo"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-performance",
+      "type": "hook",
+      "kicker": "React · lesson",
+      "line1": "Want faster React apps?",
+      "line2": "How do you optimize performance?",
+      "say": "React apps can get slow fast. How do you make them snappy for users and interviewers?"
+    },
+    {
+      "id": "1-chip-memoization",
+      "type": "chip",
+      "kicker": "Speed Tip",
+      "label": "Memoize",
+      "sub": "useMemo and useCallback prevent wasteful re-renders.",
+      "say": "Memoization with useMemo and useCallback stops unnecessary recalculations and re-renders."
+    },
+    {
+      "id": "2-code-lazy-load",
+      "type": "code",
+      "kicker": "Load Only When Needed",
+      "lang": "js",
+      "code": "const LazyComponent =\n  React.lazy(() => import('./LazyComponent'));",
+      "say": "Lazy loading with React dot lazy loads components only when needed, shrinking your initial bundle."
+    },
+    {
+      "id": "3-compare-memo-vs-lazy",
+      "type": "compare",
+      "kicker": "Optimize Two Ways",
+      "left": {
+        "title": "Memoization",
+        "items": [
+          "Caches results",
+          "Reduces re-renders"
+        ]
+      },
+      "right": {
+        "title": "Lazy Loading",
+        "items": [
+          "Loads on demand",
+          "Cuts bundle size"
+        ]
+      },
+      "say": "Memoization caches expensive calculations. Lazy loading cuts bundle size by loading components on demand."
+    },
+    {
+      "id": "4-trap-memoization",
+      "type": "trap",
+      "question": "When does useMemo recalculate?",
+      "wrong": "Every render",
+      "right": "Only when dependencies change, not every render.",
+      "say": "Interview trap: useMemo only recalculates when its dependencies change, not every render."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:27:48.316Z"
+}
