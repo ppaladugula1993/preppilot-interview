@@ -1,0 +1,73 @@
+{
+  "id": "spark-l0",
+  "title": "Spark: Driver, Executors, Jobs, Stages",
+  "keys": [
+    "driver",
+    "executors",
+    "jobs",
+    "stages",
+    "tasks"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-driver-executor",
+      "type": "hook",
+      "kicker": "Apache Spark · lesson",
+      "line1": "Who does what in a Spark job?",
+      "line2": "Driver or executor?",
+      "say": "Ever wonder who actually runs your Spark code? Is it the driver or the executors?"
+    },
+    {
+      "id": "1-chip-driver",
+      "type": "chip",
+      "kicker": "Key Role",
+      "label": "Driver",
+      "sub": "Coordinates everything and splits work",
+      "say": "The driver is the boss. It plans your job, splits it up, and tells everyone what to do."
+    },
+    {
+      "id": "2-rows-execution-flow",
+      "type": "rows",
+      "kicker": "Execution Flow",
+      "rows": [
+        {
+          "a": "Job",
+          "b": "Triggered by an action"
+        },
+        {
+          "a": "Stages",
+          "b": "Split at shuffle points"
+        },
+        {
+          "a": "Tasks",
+          "b": "One per partition, run in parallel"
+        }
+      ],
+      "walk": true,
+      "say": "When you trigger an action, Spark creates a job. The job breaks into stages, usually where data shuffles. Each stage splits into tasks, and those run in parallel on your data partitions."
+    },
+    {
+      "id": "3-chip-executor",
+      "type": "chip",
+      "kicker": "Key Role",
+      "label": "Executor",
+      "sub": "Runs tasks, handles data processing",
+      "say": "Executors are the workers. They run the tasks and handle all the actual data crunching."
+    },
+    {
+      "id": "4-trap-job-vs-stage",
+      "type": "trap",
+      "question": "Is a stage the same as a job?",
+      "wrong": "Yes, they're both one unit of work.",
+      "right": "No, a job splits into stages at shuffle points. Stages are smaller steps.",
+      "say": "Here's a common mix-up: a job is the whole action, but it's split into smaller stages, usually where data shuffles."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:47:00.293Z"
+}
