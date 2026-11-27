@@ -1,0 +1,73 @@
+{
+  "id": "linux-l0",
+  "title": "Linux Boot Process: Step by Step",
+  "keys": [
+    "firmware",
+    "GRUB",
+    "kernel",
+    "systemd",
+    "target"
+  ],
+  "scenes": [
+    {
+      "id": "0-boot-hook",
+      "type": "hook",
+      "kicker": "Linux · lesson",
+      "line1": "What happens when Linux boots?",
+      "line2": "Could you debug a failure?",
+      "say": "What actually happens when Linux boots up? If a server fails, can you spot where it broke?"
+    },
+    {
+      "id": "1-boot-steps",
+      "type": "rows",
+      "kicker": "Boot Steps",
+      "rows": [
+        {
+          "a": "Firmware",
+          "b": "Runs POST, finds bootloader"
+        },
+        {
+          "a": "GRUB",
+          "b": "Loads kernel and initramfs"
+        },
+        {
+          "a": "Kernel",
+          "b": "Initializes hardware, mounts root"
+        },
+        {
+          "a": "systemd",
+          "b": "Starts as PID 1, brings up target"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the sequence: First, firmware like BIOS or UEFI runs checks and finds the bootloader. GRUB then loads the kernel and its initramfs. The kernel sets up hardware and mounts the real root filesystem. Finally, systemd starts as process one and brings up your default target."
+    },
+    {
+      "id": "2-boot-terminal",
+      "type": "terminal",
+      "kicker": "Check Boot State",
+      "title": "Useful commands",
+      "lines": [
+        "$ systemctl get-default",
+        "$ journalctl -xb",
+        "$ systemctl rescue"
+      ],
+      "say": "To see which target your system boots into, use systemctl get-default. For boot logs, try journalctl dash x b. If you need to drop to rescue mode, use systemctl rescue."
+    },
+    {
+      "id": "3-boot-trap",
+      "type": "trap",
+      "question": "Stuck at GRUB—what's likely wrong?",
+      "wrong": "A systemd unit failed",
+      "right": "It's a bootloader or disk problem, not systemd.",
+      "say": "Interview trap: If you’re stuck at GRUB, don’t blame systemd. That’s a bootloader or disk issue, not a service problem."
+    },
+    {
+      "id": "4-boot-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:38:10.099Z"
+}
