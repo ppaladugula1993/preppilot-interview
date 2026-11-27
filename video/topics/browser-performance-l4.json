@@ -1,0 +1,72 @@
+{
+  "id": "browser-performance-l4",
+  "title": "Images & Fonts: Optimize for Speed",
+  "keys": [
+    "WebP",
+    "WOFF2",
+    "srcset",
+    "font-display"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-img-fonts",
+      "type": "hook",
+      "kicker": "Browser & Web Performance · lesson",
+      "line1": "Why do images and fonts slow pages?",
+      "line2": "How can you fix it?",
+      "say": "Why do images and fonts slow down web pages? And how can you fix it?"
+    },
+    {
+      "id": "1-chip-images",
+      "type": "chip",
+      "kicker": "Optimize",
+      "label": "Images",
+      "sub": "Use WebP, compress files, serve responsive sizes.",
+      "say": "First, optimize images. Use modern formats like WebP, compress files, and serve responsive sizes."
+    },
+    {
+      "id": "2-code-responsive-img",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "html",
+      "code": "<img srcset=\"img-400.jpg 400w,\n img-800.jpg 800w\"\n sizes=\"(max-width: 600px) 400px,\n 800px\"\n src=\"img-800.jpg\"\n alt=\"...\">",
+      "say": "Here's how to serve responsive images with HTML. This loads the right size for each device."
+    },
+    {
+      "id": "3-rows-fonts",
+      "type": "rows",
+      "kicker": "Fonts",
+      "rows": [
+        {
+          "a": "WOFF2",
+          "b": "Small, fast font format"
+        },
+        {
+          "a": "Subset glyphs",
+          "b": "Remove unused characters"
+        },
+        {
+          "a": "font-display: swap",
+          "b": "Show fallback text instantly"
+        }
+      ],
+      "walk": true,
+      "say": "For fonts, use WOFF2 for speed, subset unused glyphs, and set font-display swap to avoid invisible text."
+    },
+    {
+      "id": "4-trap-lazyload",
+      "type": "trap",
+      "question": "What's a key image optimization?",
+      "wrong": "Always load all images at once",
+      "right": "Use lazy loading to skip offscreen images at first",
+      "say": "Here's a common interview trap: Should you always load all images at once? No. Use lazy loading to skip offscreen images at first."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:41:44.494Z"
+}
