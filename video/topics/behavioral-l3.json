@@ -1,0 +1,68 @@
+{
+  "id": "behavioral-l3",
+  "title": "Smart Questions to Ask Interviewers",
+  "keys": [
+    "questions",
+    "interview",
+    "on-call",
+    "automation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ask-them",
+      "type": "hook",
+      "kicker": "Behavioral & Your Story · lesson",
+      "line1": "What should you ask them?",
+      "line2": "Are you ready?",
+      "say": "Ever freeze when they ask, 'Any questions for us?' Let's make sure you never say 'no.'"
+    },
+    {
+      "id": "1-chip-why-ask",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Impact",
+      "sub": "Good questions show you care about the real job.",
+      "say": "Having smart questions ready proves you're thinking about the actual job, not just the offer."
+    },
+    {
+      "id": "2-rows-good-questions",
+      "type": "rows",
+      "kicker": "Examples",
+      "rows": [
+        {
+          "a": "On-call",
+          "b": "How often does it page?"
+        },
+        {
+          "a": "Automation",
+          "b": "How much is manual today?"
+        },
+        {
+          "a": "Tech Problem",
+          "b": "Biggest challenge this year?"
+        },
+        {
+          "a": "Process",
+          "b": "How are changes approved?"
+        }
+      ],
+      "walk": false,
+      "say": "Here are strong questions: What does on-call look like? How much is automated versus manual? What's the biggest technical problem this year? How are changes approved?"
+    },
+    {
+      "id": "3-trap-salary",
+      "type": "trap",
+      "question": "When should you ask about salary?",
+      "wrong": "During your first interview.",
+      "right": "Wait until you have an offer in hand.",
+      "say": "Don't ask about salary or benefits yet. Save those for when you actually have an offer."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:00:12.455Z"
+}
