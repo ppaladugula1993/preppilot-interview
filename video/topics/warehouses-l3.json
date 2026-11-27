@@ -1,0 +1,93 @@
+{
+  "id": "warehouses-l3",
+  "title": "BigQuery: Slots, Partitioning & Pricing",
+  "keys": [
+    "BigQuery",
+    "slots",
+    "partitioning",
+    "clustering",
+    "pricing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bq-optimize",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "Want faster, cheaper BigQuery?",
+      "line2": "How do slots and partitions help?",
+      "say": "Want faster, cheaper BigQuery? How do slots and partitions help you optimize your queries?"
+    },
+    {
+      "id": "1-chip-slots",
+      "type": "chip",
+      "kicker": "BigQuery",
+      "label": "Slots",
+      "sub": "Units of compute for running SQL queries",
+      "say": "BigQuery uses slots as units of compute. More slots mean faster queries."
+    },
+    {
+      "id": "2-rows-partitioning",
+      "type": "rows",
+      "kicker": "Partitioning",
+      "rows": [
+        {
+          "a": "By date",
+          "b": "Split tables by day or month"
+        },
+        {
+          "a": "By integer",
+          "b": "Use numeric columns to partition"
+        },
+        {
+          "a": "Efficient scans",
+          "b": "Only scan relevant partitions"
+        }
+      ],
+      "walk": true,
+      "say": "Partition tables by date or integer columns. This way, queries only scan the data they need."
+    },
+    {
+      "id": "3-chip-clustering",
+      "type": "chip",
+      "kicker": "BigQuery",
+      "label": "Clustering",
+      "sub": "Organizes data by columns for fast filtering",
+      "say": "Clustering organizes table data by columns, speeding up filters and sorts."
+    },
+    {
+      "id": "4-compare-pricing",
+      "type": "compare",
+      "kicker": "Pricing",
+      "left": {
+        "title": "On-Demand",
+        "items": [
+          "$5 per TB scanned",
+          "Pay as you query"
+        ]
+      },
+      "right": {
+        "title": "Flat-Rate",
+        "items": [
+          "Reserve slots",
+          "Predictable cost"
+        ]
+      },
+      "say": "Pricing is simple: pay per terabyte scanned, or reserve slots for a flat monthly fee."
+    },
+    {
+      "id": "5-trap-partitioning",
+      "type": "trap",
+      "question": "Partitioning always speeds up queries?",
+      "wrong": "Yes, always faster",
+      "right": "Only if queries filter on partitioned columns",
+      "say": "Interview trap: Partitioning only helps if your queries filter on the partitioned columns."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:21:00.626Z"
+}
