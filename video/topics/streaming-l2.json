@@ -1,0 +1,80 @@
+{
+  "id": "streaming-l2",
+  "title": "Kafka Consumer Groups & Rebalancing",
+  "keys": [
+    "consumer group",
+    "partition",
+    "rebalance",
+    "scaling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-consumer-groups",
+      "type": "hook",
+      "kicker": "Streaming & Kafka · lesson",
+      "line1": "How does Kafka scale consumers?",
+      "line2": "What triggers a rebalance?",
+      "say": "Ever wonder how Kafka splits up work between consumers? And what happens when a consumer drops out?"
+    },
+    {
+      "id": "1-chip-group-basics",
+      "type": "chip",
+      "kicker": "Core idea",
+      "label": "Group",
+      "sub": "A consumer group shares the job of reading a topic.",
+      "say": "A consumer group is just a set of consumers sharing the job of reading from a topic."
+    },
+    {
+      "id": "2-rows-partition-assig",
+      "type": "rows",
+      "kicker": "Partition assignment",
+      "rows": [
+        {
+          "a": "Consumer 1",
+          "b": "Reads Partition 0"
+        },
+        {
+          "a": "Consumer 2",
+          "b": "Reads Partition 1"
+        }
+      ],
+      "walk": true,
+      "say": "Kafka assigns each partition to only one consumer in the group at a time. That means each consumer gets its own chunk of data."
+    },
+    {
+      "id": "3-compare-rebalance",
+      "type": "compare",
+      "kicker": "Rebalancing",
+      "left": {
+        "title": "Before",
+        "items": [
+          "Two consumers",
+          "Each has one partition"
+        ]
+      },
+      "right": {
+        "title": "After",
+        "items": [
+          "One consumer",
+          "Gets both partitions"
+        ]
+      },
+      "say": "If a consumer leaves, Kafka rebalances. The remaining consumer picks up the extra work and reads both partitions."
+    },
+    {
+      "id": "4-trap-rebalance-trap",
+      "type": "trap",
+      "question": "Does rebalancing always go smoothly?",
+      "wrong": "Yes, it's seamless every time.",
+      "right": "No, rebalances can cause brief downtime or duplicate processing.",
+      "say": "Here's a trap: rebalancing isn't always seamless. It can cause short outages or even duplicate some records."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:49:01.945Z"
+}
