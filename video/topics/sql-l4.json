@@ -1,0 +1,73 @@
+{
+  "id": "sql-l4",
+  "title": "Window Functions: The Basics",
+  "keys": [
+    "window function",
+    "OVER",
+    "RANK",
+    "ROW_NUMBER"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-windows",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "How can you rank rows",
+      "line2": "without losing any data?",
+      "say": "How do you rank or sum rows in SQL, but keep every row in your result?"
+    },
+    {
+      "id": "1-chip-window-def",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Window",
+      "sub": "Calculates across related rows, keeps all rows",
+      "say": "Window functions let you calculate things like ranks or totals across related rows, but they keep every row in your results."
+    },
+    {
+      "id": "2-compare-window-vs-gr",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Window",
+        "items": [
+          "Keeps all rows",
+          "Uses OVER clause",
+          "Ranks or totals"
+        ]
+      },
+      "right": {
+        "title": "Aggregate",
+        "items": [
+          "Reduces row count",
+          "Uses GROUP BY",
+          "Summarizes groups"
+        ]
+      },
+      "say": "Unlike aggregate functions, which collapse groups with group by, window functions use the over clause and keep every row."
+    },
+    {
+      "id": "3-code-rank-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "sql",
+      "code": "SELECT name, salary,\n  RANK() OVER (ORDER BY salary DESC)\nFROM employees;",
+      "say": "Here's a classic window function. It ranks employees by salary, but you still see every employee in the result."
+    },
+    {
+      "id": "4-trap-over-required",
+      "type": "trap",
+      "question": "Can you use RANK without OVER?",
+      "wrong": "Yes, OVER is optional.",
+      "right": "No, every window function needs an OVER clause.",
+      "say": "Watch out: every window function needs an over clause. Forgetting it will break your query."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:08:57.584Z"
+}
