@@ -1,0 +1,72 @@
+{
+  "id": "warehouses-l2",
+  "title": "Snowflake: Warehouses & Clustering",
+  "keys": [
+    "virtual warehouse",
+    "micro-partition",
+    "clustering",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-snowflake-essen",
+      "type": "hook",
+      "kicker": "Cloud Warehouses & Lakehouses · lesson",
+      "line1": "How does Snowflake boost query speed?",
+      "line2": "And control costs?",
+      "say": "How does Snowflake make queries fast, and keep costs low? Let’s break down its key architecture."
+    },
+    {
+      "id": "1-chip-virtual-warehou",
+      "type": "chip",
+      "kicker": "Compute",
+      "label": "Warehouse",
+      "sub": "A virtual cluster you can scale or pause anytime.",
+      "say": "First, Snowflake uses virtual warehouses. These are compute clusters you can scale up, down, or pause without touching your data."
+    },
+    {
+      "id": "2-rows-micro-partition",
+      "type": "rows",
+      "kicker": "Storage",
+      "rows": [
+        {
+          "a": "Micro-partitions",
+          "b": "Tiny, immutable data chunks"
+        },
+        {
+          "a": "Auto-created",
+          "b": "Split by ingest timestamp"
+        },
+        {
+          "a": "Fast access",
+          "b": "Efficient, quick scans"
+        }
+      ],
+      "walk": true,
+      "say": "Data is stored in micro-partitions—small, unchangeable chunks. Snowflake creates them automatically, often by ingest time, for fast and efficient access."
+    },
+    {
+      "id": "3-code-clustering",
+      "type": "code",
+      "kicker": "Performance",
+      "lang": "sql",
+      "code": "ALTER TABLE sales\nCLUSTER BY (customer_id);",
+      "say": "Want faster queries on specific columns? Use clustering. For example, clustering the sales table by customer ID speeds up filters on that column."
+    },
+    {
+      "id": "4-trap-warehouse-costs",
+      "type": "trap",
+      "question": "How do you cut Snowflake costs?",
+      "wrong": "Just shrink storage size.",
+      "right": "Pause or resize warehouses and cluster tables.",
+      "say": "Interview trap—how do you control Snowflake costs? Don’t just shrink storage. The real answer: pause or resize warehouses, and use clustering to scan less data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:18:22.575Z"
+}
