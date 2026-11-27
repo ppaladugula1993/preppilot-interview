@@ -1,0 +1,85 @@
+{
+  "id": "testing-l0",
+  "title": "Test Pyramid: Balancing Test Types",
+  "keys": [
+    "test pyramid",
+    "unit tests",
+    "integration",
+    "end-to-end",
+    "trade-offs"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pyramid",
+      "type": "hook",
+      "kicker": "Software Testing · lesson",
+      "line1": "Why do we use the test pyramid?",
+      "line2": "What’s the trade-off?",
+      "say": "Ever wonder why we stack more unit tests than integration or end-to-end tests? Let’s break down the test pyramid and its trade-offs."
+    },
+    {
+      "id": "1-chip-unit",
+      "type": "chip",
+      "kicker": "Test Pyramid",
+      "label": "Unit",
+      "sub": "Fast, cheap, and easy to maintain.",
+      "say": "Unit tests are your foundation. They’re fast, cheap, and easy to maintain."
+    },
+    {
+      "id": "2-compare-types",
+      "type": "compare",
+      "kicker": "Test Types",
+      "left": {
+        "title": "Integration",
+        "items": [
+          "Slower",
+          "More complex"
+        ]
+      },
+      "right": {
+        "title": "End-to-End",
+        "items": [
+          "Slowest",
+          "Most brittle"
+        ]
+      },
+      "say": "Integration tests check how parts work together, but they’re slower and more complex. End-to-end tests cover real user flows, but they’re the slowest and most fragile."
+    },
+    {
+      "id": "3-rows-example",
+      "type": "rows",
+      "kicker": "Example Pyramid",
+      "rows": [
+        {
+          "a": "Unit tests",
+          "b": "100"
+        },
+        {
+          "a": "Integration tests",
+          "b": "20"
+        },
+        {
+          "a": "End-to-end tests",
+          "b": "5"
+        }
+      ],
+      "walk": true,
+      "say": "A solid pyramid might have a hundred unit tests, twenty integration tests, and just five end-to-end tests."
+    },
+    {
+      "id": "4-trap-balance",
+      "type": "trap",
+      "question": "Should you maximize E2E tests for coverage?",
+      "wrong": "Yes, more E2E tests means better coverage.",
+      "right": "No, too many E2E tests slow you down and increase maintenance. Balance test types for reliability and speed.",
+      "say": "Here’s a common interview trap: Should you maximize end-to-end tests for coverage? Actually, too many slows you down and makes maintenance harder. Balance is key."
+    },
+    {
+      "id": "5-end-pilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T22:32:28.790Z"
+}
