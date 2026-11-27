@@ -1,0 +1,73 @@
+{
+  "id": "docker-l2",
+  "title": "Dockerfile: Your Image Recipe",
+  "keys": [
+    "Dockerfile",
+    "image",
+    "layer",
+    "build",
+    "cache"
+  ],
+  "scenes": [
+    {
+      "id": "0-what-is-dockerfile",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "What does a Dockerfile really do?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder how Docker knows what to put in your image? Let's break down the Dockerfile."
+    },
+    {
+      "id": "1-dockerfile-layers",
+      "type": "chip",
+      "kicker": "Core idea",
+      "label": "Layers",
+      "sub": "Each instruction in a Dockerfile adds a new image layer.",
+      "say": "Each line in your Dockerfile adds a layer to your image. Layers make builds faster and more efficient."
+    },
+    {
+      "id": "2-dockerfile-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "Dockerfile",
+      "code": "FROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\nCOPY . .\nUSER 1000\nEXPOSE 8000\nCMD [\"gunicorn\", \"-b\", \"0.0.0.0:8000\", \"app:app\"]",
+      "say": "Here's a real Dockerfile. It sets the base image, copies dependencies, installs them, then adds your code."
+    },
+    {
+      "id": "3-dockerfile-order-tip",
+      "type": "rows",
+      "kicker": "Pro tip",
+      "rows": [
+        {
+          "a": "Copy deps first",
+          "b": "COPY requirements.txt ."
+        },
+        {
+          "a": "Install deps",
+          "b": "RUN pip install ..."
+        },
+        {
+          "a": "Copy code later",
+          "b": "COPY . ."
+        }
+      ],
+      "walk": true,
+      "say": "Copy your dependency file before your code. That way, Docker can cache the install step if only your code changes."
+    },
+    {
+      "id": "4-trap-layer-trick",
+      "type": "trap",
+      "question": "Does changing code bust the pip cache?",
+      "wrong": "No, cache always works.",
+      "right": "Yes, if code is copied before deps, the install step reruns.",
+      "say": "Here's a trap: If you copy your code before your dependencies, Docker will rerun pip install every time you change your code. That slows you down."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:52:38.579Z"
+}
