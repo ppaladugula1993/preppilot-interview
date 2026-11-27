@@ -1,0 +1,76 @@
+{
+  "id": "data-quality-l8",
+  "title": "Distribution Monitoring for Data Quality",
+  "keys": [
+    "distribution",
+    "monitoring",
+    "outliers",
+    "alerting"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dist-mon",
+      "type": "hook",
+      "kicker": "Data Quality & Governance · lesson",
+      "line1": "Can you spot silent data errors?",
+      "line2": "How do you catch them?",
+      "say": "Can you spot silent errors in your data before they cause trouble? How do you catch them?"
+    },
+    {
+      "id": "1-chip-dist-def",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Distributions",
+      "sub": "Track mean, median, min, max, and histograms to catch outliers.",
+      "say": "Distribution monitoring means tracking stats like mean, median, min, max, and histograms to catch outliers or shifts."
+    },
+    {
+      "id": "2-rows-why-matters",
+      "type": "rows",
+      "kicker": "Why It Matters",
+      "rows": [
+        {
+          "a": "Catches silent errors",
+          "b": "Like data skew or outliers"
+        },
+        {
+          "a": "Flags anomalies",
+          "b": "E.g., sudden mean spikes"
+        },
+        {
+          "a": "Goes beyond basics",
+          "b": "Finds issues simple tests miss"
+        }
+      ],
+      "walk": true,
+      "say": "Why does this matter? It catches silent errors like data skew, flags anomalies such as sudden mean spikes, and finds issues that basic tests miss."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Detecting a Spike",
+      "lines": [
+        "$ monitor order_amount",
+        "mean: 50 → 5000 (ALERT)",
+        "histogram: shape changed"
+      ],
+      "say": "For example, if the mean of order amount jumps from fifty to five thousand, your alert fires. The histogram shape changes too."
+    },
+    {
+      "id": "4-trap-thresholds",
+      "type": "trap",
+      "question": "Is basic null-checking enough?",
+      "wrong": "Yes, it catches all errors.",
+      "right": "No, distribution shifts can slip past basic checks.",
+      "say": "Is basic null-checking enough? No way. Distribution shifts can slip right past simple checks."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:01:02.264Z"
+}
