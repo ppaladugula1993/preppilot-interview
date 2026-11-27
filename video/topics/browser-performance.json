@@ -1,0 +1,93 @@
+{
+  "id": "browser-performance",
+  "title": "The Critical Rendering Path: Why It Matters",
+  "keys": [
+    "rendering",
+    "reflow",
+    "bundle",
+    "caching",
+    "Core Web Vitals"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-critical-path",
+      "type": "hook",
+      "kicker": "Browser & Web Performance · 45s",
+      "line1": "Why do some pages load instantly?",
+      "line2": "What slows others down?",
+      "say": "Ever wonder why some web pages pop up fast, while others crawl? Let’s break down the critical rendering path—the browser’s roadmap for turning code into pixels."
+    },
+    {
+      "id": "1-rows-rendering-steps",
+      "type": "rows",
+      "kicker": "Step 1 · Rendering",
+      "rows": [
+        {
+          "a": "Parse HTML",
+          "b": "Builds DOM tree"
+        },
+        {
+          "a": "Parse CSS",
+          "b": "Builds CSSOM tree"
+        },
+        {
+          "a": "Render Tree",
+          "b": "Combines DOM & CSSOM"
+        },
+        {
+          "a": "Layout",
+          "b": "Calculates positions"
+        },
+        {
+          "a": "Paint",
+          "b": "Draws pixels on screen"
+        }
+      ],
+      "walk": true,
+      "say": "The browser takes these steps: parses HTML and CSS, builds the DOM and CSSOM, combines them into a render tree, lays out elements, and finally paints pixels."
+    },
+    {
+      "id": "2-compare-reflow-repai",
+      "type": "compare",
+      "kicker": "Step 2 · Layout",
+      "left": {
+        "title": "Reflow",
+        "items": [
+          "Recalculates layout",
+          "Expensive operation"
+        ]
+      },
+      "right": {
+        "title": "Repaint",
+        "items": [
+          "Updates pixels only",
+          "Less costly"
+        ]
+      },
+      "say": "Changing layout triggers a reflow, which is costly. Repaint just updates pixels—much cheaper. Avoid unnecessary reflows for speed."
+    },
+    {
+      "id": "3-chip-core-web-vitals",
+      "type": "chip",
+      "kicker": "Step 3 · Metrics",
+      "label": "Vitals",
+      "sub": "LCP, INP, and CLS measure real user experience.",
+      "say": "Core Web Vitals—Largest Contentful Paint, Interaction to Next Paint, and Cumulative Layout Shift—track how fast and stable your site feels to users."
+    },
+    {
+      "id": "4-trap-bundle-size",
+      "type": "trap",
+      "question": "Does bundle size affect rendering?",
+      "wrong": "No, only network speed matters.",
+      "right": "Yes, smaller bundles mean less code to parse and faster rendering.",
+      "say": "Here’s a common interview trap: Does bundle size affect rendering? It absolutely does. Smaller bundles mean less code to parse and quicker rendering."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T21:28:25.247Z"
+}
