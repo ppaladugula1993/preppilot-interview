@@ -1,0 +1,97 @@
+{
+  "id": "sql-l2",
+  "title": "GROUP BY, HAVING & Aggregates in SQL",
+  "keys": [
+    "GROUP BY",
+    "HAVING",
+    "aggregate",
+    "WHERE"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-groupby",
+      "type": "hook",
+      "kicker": "SQL Essentials · lesson",
+      "line1": "How do you summarize data in SQL?",
+      "line2": "GROUP BY or HAVING?",
+      "say": "How do you summarize and filter groups of data in SQL? Should you use GROUP BY or HAVING?"
+    },
+    {
+      "id": "1-chip-groupby",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "GROUP BY",
+      "sub": "Groups rows by column values for analysis",
+      "say": "GROUP BY lets you group rows by column values, so you can analyze each group separately."
+    },
+    {
+      "id": "2-rows-aggregates",
+      "type": "rows",
+      "kicker": "Aggregates",
+      "rows": [
+        {
+          "a": "COUNT",
+          "b": "Counts rows in each group"
+        },
+        {
+          "a": "SUM",
+          "b": "Adds up values in a group"
+        },
+        {
+          "a": "AVG",
+          "b": "Calculates average per group"
+        }
+      ],
+      "walk": true,
+      "say": "Aggregate functions like count, sum, and average operate on each group to summarize your data."
+    },
+    {
+      "id": "3-compare-where-having",
+      "type": "compare",
+      "kicker": "Filter Types",
+      "left": {
+        "title": "WHERE",
+        "items": [
+          "Filters rows",
+          "Before grouping"
+        ]
+      },
+      "right": {
+        "title": "HAVING",
+        "items": [
+          "Filters groups",
+          "After aggregation"
+        ]
+      },
+      "say": "Remember: WHERE filters rows before grouping. HAVING filters groups after aggregation."
+    },
+    {
+      "id": "4-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Departments with 10+ employees",
+      "lines": [
+        "$ SELECT department_id, COUNT(*)",
+        "  FROM employees",
+        "  GROUP BY department_id",
+        "  HAVING COUNT(*) > 10;"
+      ],
+      "say": "Here's how you find departments with more than ten employees using GROUP BY and HAVING."
+    },
+    {
+      "id": "5-trap-where-vs-having",
+      "type": "trap",
+      "question": "Where do you filter on aggregates?",
+      "wrong": "Use WHERE with COUNT(*) > 10",
+      "right": "Use HAVING with COUNT(*) > 10, not WHERE.",
+      "say": "Interview trap: You can't use WHERE to filter on aggregate results like count. Use HAVING instead."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-27T20:41:42.424Z"
+}
