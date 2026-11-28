@@ -1,0 +1,82 @@
+{
+  "id": "k8s-l10",
+  "title": "Kubernetes Troubleshooting Kit",
+  "keys": [
+    "kubectl",
+    "describe",
+    "logs",
+    "endpoints",
+    "events"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-where-start",
+      "type": "hook",
+      "kicker": "Kubernetes · Troubleshooting",
+      "line1": "Pod misbehaving?",
+      "line2": "Where do you start?",
+      "say": "Pod acting up? Let’s break down a quick troubleshooting kit every engineer should know."
+    },
+    {
+      "id": "1-rows-checklist",
+      "type": "rows",
+      "kicker": "First Steps",
+      "rows": [
+        {
+          "a": "Check pod status",
+          "b": "Get a quick overview"
+        },
+        {
+          "a": "Read Events",
+          "b": "Look for recent errors"
+        },
+        {
+          "a": "View logs",
+          "b": "See what crashed or failed"
+        },
+        {
+          "a": "Check endpoints",
+          "b": "Is the service routing?"
+        }
+      ],
+      "walk": true,
+      "say": "First, get a snapshot of pod status. Next, scan events for error messages. Then, check the logs, especially for failed runs. Finally, verify if your service endpoints are set up right."
+    },
+    {
+      "id": "2-terminal-commands",
+      "type": "terminal",
+      "kicker": "Handy Commands",
+      "title": "Your go-to tools",
+      "lines": [
+        "$ kubectl get pods -A",
+        "$ kubectl describe pod demo",
+        "$ kubectl logs demo --previous",
+        "$ kubectl get endpoints my-service"
+      ],
+      "say": "These commands help you spot stuck pods, read event history, catch crash output, and confirm if your service is routing traffic."
+    },
+    {
+      "id": "3-chip-tip",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "Fast Fix",
+      "sub": "describe and logs with previous flag solve most issues",
+      "say": "Pro tip: describe and logs with the previous flag fix most problems fast."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s the first thing to check?",
+      "wrong": "Always check logs first.",
+      "right": "Start with pod status and events, then read logs.",
+      "say": "Interview trap! Don’t jump straight to logs. Always check pod status and events first—then dig into the logs."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:09:43.130Z"
+}
