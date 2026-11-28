@@ -1,0 +1,72 @@
+{
+  "id": "lb-l1",
+  "title": "L4 vs L7 Load Balancers & TLS",
+  "keys": [
+    "L4",
+    "L7",
+    "TLS",
+    "HTTP",
+    "routing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-l4-l7-tls",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "Can both L4 and L7 handle TLS?",
+      "line2": "What's the real difference?",
+      "say": "Can both layer four and layer seven load balancers handle encrypted traffic? Let's break down what really sets them apart."
+    },
+    {
+      "id": "1-chip-l4",
+      "type": "chip",
+      "kicker": "Layer 4",
+      "label": "L4",
+      "sub": "Routes by IP and port. Fast, protocol-agnostic.",
+      "say": "Layer four routes based on IP address and port. It's fast and works for any protocol, not just web traffic."
+    },
+    {
+      "id": "2-chip-l7",
+      "type": "chip",
+      "kicker": "Layer 7",
+      "label": "L7",
+      "sub": "Understands HTTP. Can route by host, path, or headers.",
+      "say": "Layer seven actually understands HTTP. It can route by host name, path, or even rewrite headers."
+    },
+    {
+      "id": "3-compare-tls",
+      "type": "compare",
+      "kicker": "TLS Termination",
+      "left": {
+        "title": "L4",
+        "items": [
+          "Can terminate TLS in some cases",
+          "Doesn't read HTTP details"
+        ]
+      },
+      "right": {
+        "title": "L7",
+        "items": [
+          "Often terminates TLS",
+          "Can inspect and modify HTTP"
+        ]
+      },
+      "say": "Both layers can terminate encrypted connections in some setups. But only layer seven can look inside the HTTP and change requests if needed."
+    },
+    {
+      "id": "4-trap-tls-termination",
+      "type": "trap",
+      "question": "Who can terminate TLS connections?",
+      "wrong": "Only L7 load balancers can do it.",
+      "right": "Both L4 and L7 can terminate TLS, but only L7 can inspect HTTP traffic.",
+      "say": "Here's a common trap: it's not just layer seven that can end encrypted sessions. Layer four can do it too, but it can't read or change the web traffic inside."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:37:17.279Z"
+}
