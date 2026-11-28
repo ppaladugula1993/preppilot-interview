@@ -1,0 +1,76 @@
+{
+  "id": "node-runtime-l5",
+  "title": "Node.js: Error Handling & Graceful Shutdown",
+  "keys": [
+    "error handling",
+    "graceful shutdown",
+    "signals",
+    "unhandledRejection"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-shutdown",
+      "type": "hook",
+      "kicker": "Node.js Runtime · lesson",
+      "line1": "What happens if your app crashes?",
+      "line2": "How do you shut down safely?",
+      "say": "Ever wonder what happens if your Node app hits an error or gets a shutdown signal? How do you keep things safe and clean?"
+    },
+    {
+      "id": "1-chip-catch",
+      "type": "chip",
+      "kicker": "Error",
+      "label": "Catching",
+      "sub": "Catch exceptions and promise rejections to avoid crashes.",
+      "say": "First, catch exceptions and handle promise rejections. This keeps your app from crashing unexpectedly."
+    },
+    {
+      "id": "2-code-unhandled",
+      "type": "code",
+      "kicker": "Global Handler",
+      "lang": "js",
+      "code": "process.on('unhandledRejection',\n  (err) => {\n    logError(err);\n    // decide to exit or recover\n  }\n);",
+      "say": "Set up a global handler for unhandled promise rejections. Log the error and decide if you need to shut down or recover."
+    },
+    {
+      "id": "3-rows-shutdown",
+      "type": "rows",
+      "kicker": "Graceful Shutdown",
+      "rows": [
+        {
+          "a": "Listen for signals",
+          "b": "SIGTERM, SIGINT"
+        },
+        {
+          "a": "Stop new requests",
+          "b": "Close server to new connections"
+        },
+        {
+          "a": "Finish active work",
+          "b": "Wait for ongoing requests"
+        },
+        {
+          "a": "Clean up resources",
+          "b": "Close databases, files"
+        }
+      ],
+      "walk": true,
+      "say": "For graceful shutdown, listen for termination signals, stop accepting new requests, finish what's in progress, and close resources like databases."
+    },
+    {
+      "id": "4-trap-exit",
+      "type": "trap",
+      "question": "Is calling exit right after close safe?",
+      "wrong": "Yes, it always waits for cleanup.",
+      "right": "No. Exit may kill the process before async cleanup finishes. Await your cleanup tasks first.",
+      "say": "Here's a common trap: calling exit right after close isn't always safe. If you don't wait for cleanup, you might lose data or leave things hanging."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:10:28.501Z"
+}
