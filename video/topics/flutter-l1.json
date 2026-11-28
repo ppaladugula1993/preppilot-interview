@@ -1,0 +1,68 @@
+{
+  "id": "flutter-l1",
+  "title": "Flutter Async, Await & Isolates",
+  "keys": [
+    "async",
+    "await",
+    "isolate",
+    "parallelism",
+    "jank"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-isolate",
+      "type": "hook",
+      "kicker": "Flutter · lesson",
+      "line1": "How does Flutter stay smooth?",
+      "line2": "Async or isolate?",
+      "say": "Ever wonder how Flutter keeps your app smooth, even when things get busy? Is it async, isolates, or both?"
+    },
+    {
+      "id": "1-chip-async",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Async",
+      "sub": "Async and await let Dart run tasks without blocking the UI.",
+      "say": "Async and await let Dart run tasks in the background so your app doesn't freeze."
+    },
+    {
+      "id": "2-code-async-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "dart",
+      "code": "Future<String> fetchData() async {\n  await Future.delayed(Duration(seconds: 2));\n  return 'Done';\n}",
+      "say": "Here's an async function. It waits for two seconds, then returns a result, all without blocking the main thread."
+    },
+    {
+      "id": "3-chip-isolate",
+      "type": "chip",
+      "kicker": "Parallelism",
+      "label": "Isolates",
+      "sub": "Isolates run code in parallel, each with its own memory.",
+      "say": "Isolates are Dart's way to run code in true parallel, each with its own memory and event loop."
+    },
+    {
+      "id": "4-code-isolate-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "dart",
+      "code": "Isolate.spawn(entryPoint, 'message');",
+      "say": "You can start an isolate for heavy computation. It won't slow down your user interface."
+    },
+    {
+      "id": "5-trap-jank",
+      "type": "trap",
+      "question": "How do you avoid jank in Flutter?",
+      "wrong": "Just use async everywhere.",
+      "right": "Use async for I/O, isolates for heavy CPU work. That keeps the UI responsive.",
+      "say": "Here's a common trap. It's not enough to use async everywhere. For heavy computation, you need isolates to avoid jank."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:41:03.862Z"
+}
