@@ -1,0 +1,73 @@
+{
+  "id": "k8s-l3",
+  "title": "Kubernetes Services: Stable Access to Pods",
+  "keys": [
+    "Service",
+    "ClusterIP",
+    "NodePort",
+    "LoadBalancer"
+  ],
+  "scenes": [
+    {
+      "id": "0-svc-hook",
+      "type": "hook",
+      "kicker": "Kubernetes · Services",
+      "line1": "Pods keep changing—",
+      "line2": "how do clients keep up?",
+      "say": "Pods come and go, but your app needs a reliable address. How does Kubernetes solve this?"
+    },
+    {
+      "id": "1-svc-chip",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Service",
+      "sub": "A stable IP and DNS name in front of pods.",
+      "say": "A Service gives your pods a consistent IP and DNS name, even as pods restart or scale."
+    },
+    {
+      "id": "2-svc-compare",
+      "type": "compare",
+      "kicker": "Types",
+      "left": {
+        "title": "Internal",
+        "items": [
+          "ClusterIP"
+        ]
+      },
+      "right": {
+        "title": "External",
+        "items": [
+          "NodePort",
+          "LoadBalancer"
+        ]
+      },
+      "say": "ClusterIP is for inside the cluster. NodePort and LoadBalancer let traffic in from outside."
+    },
+    {
+      "id": "3-svc-terminal",
+      "type": "terminal",
+      "kicker": "Debug",
+      "title": "Check Service Endpoints",
+      "lines": [
+        "$ kubectl get svc",
+        "$ kubectl get endpoints web"
+      ],
+      "say": "Check your services with the get service command, and see if any pods are ready with get endpoints."
+    },
+    {
+      "id": "4-svc-trap",
+      "type": "trap",
+      "question": "Does a Service always expose to the internet?",
+      "wrong": "Yes, by default it does.",
+      "right": "No—ClusterIP is internal only. Use NodePort or LoadBalancer for external access.",
+      "say": "Here's a common trap: Not all services are public. By default, ClusterIP is only reachable inside the cluster."
+    },
+    {
+      "id": "5-svc-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:50:15.993Z"
+}
