@@ -1,0 +1,76 @@
+{
+  "id": "troubleshoot-l10",
+  "title": "Scenario Playbooks for Troubleshooting",
+  "keys": [
+    "connectivity",
+    "latency",
+    "throughput",
+    "playbook"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-scenario-playbo",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity, Latency, Throughput · lesson",
+      "line1": "What if the app is slow or flaky?",
+      "line2": "What's your first move?",
+      "say": "When things break, do you freeze, or do you have a plan? Let’s build your go-to playbook for those classic connectivity and latency issues."
+    },
+    {
+      "id": "1-chip-app-slow",
+      "type": "chip",
+      "kicker": "Scenario",
+      "label": "Slow App",
+      "sub": "Start by checking the load balancer for latency and errors, then look for a bad backend node.",
+      "say": "If the app is slow for everyone, check the load balancer for latency spikes or errors. A single bad backend could be dragging it all down."
+    },
+    {
+      "id": "2-rows-works-from-a-no",
+      "type": "rows",
+      "kicker": "Scenario",
+      "rows": [
+        {
+          "a": "Works from A, not B",
+          "b": "Compare firewall rules by source subnet"
+        },
+        {
+          "a": "Check routes",
+          "b": "Look for differences in network paths"
+        },
+        {
+          "a": "NAT or proxy?",
+          "b": "See if address translation changes things"
+        }
+      ],
+      "walk": true,
+      "say": "If it works from one place but not another, compare firewall rules, routes, and proxies between the two. Sometimes, it’s just a missing rule or a different path."
+    },
+    {
+      "id": "3-terminal-large-uploa",
+      "type": "terminal",
+      "kicker": "Scenario",
+      "title": "Large Uploads Fail",
+      "lines": [
+        "$ ip link show",
+        "$ ping -M do -s 1472 host",
+        "$ curl -T bigfile host"
+      ],
+      "say": "When large uploads fail but small ones work, check for MTU issues, body size limits on the load balancer, or timeouts on proxies."
+    },
+    {
+      "id": "4-trap-bandwidth-laten",
+      "type": "trap",
+      "question": "App is slow after moving to cloud. Why?",
+      "wrong": "Not enough bandwidth.",
+      "right": "High latency adds up if the app is chatty. Hundreds of queries times round trip equals big delays.",
+      "say": "Here’s a classic trap: when an app slows down after moving to the cloud, don’t blame bandwidth right away. If the app makes lots of queries, high round trip times add up fast."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:17:16.386Z"
+}
