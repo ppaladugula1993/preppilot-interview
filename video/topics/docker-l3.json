@@ -1,0 +1,73 @@
+{
+  "id": "docker-l3",
+  "title": "Docker Multi-Stage Builds Made Easy",
+  "keys": [
+    "multi-stage",
+    "build",
+    "image",
+    "runtime",
+    "copy"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-multistage",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "How do you shrink Docker images?",
+      "line2": "What's a multi-stage build?",
+      "say": "Docker images can get bloated fast. So, what's a multi-stage build and why should you care?"
+    },
+    {
+      "id": "1-chip-benefits",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Smaller",
+      "sub": "Multi-stage builds cut image size and risk.",
+      "say": "Multi-stage builds make your images smaller and safer. Less junk means fewer bugs and vulnerabilities."
+    },
+    {
+      "id": "2-code-example",
+      "type": "code",
+      "kicker": "How it works",
+      "lang": "Dockerfile",
+      "code": "FROM maven:3.9 AS build\nWORKDIR /src\nCOPY . .\nRUN mvn package\nFROM eclipse-temurin:21-jre\nCOPY --from=build /src/target/app.jar /app.jar\nCMD [\"java\", \"-jar\", \"/app.jar\"]",
+      "say": "First, build your app with all the tools. Then, copy just the finished jar file into a clean runtime image. No Maven, no source code—just what you need to run."
+    },
+    {
+      "id": "3-rows-steps",
+      "type": "rows",
+      "kicker": "Step-by-step",
+      "rows": [
+        {
+          "a": "Build stage",
+          "b": "Compile with full tools"
+        },
+        {
+          "a": "Copy result",
+          "b": "Move only the output file"
+        },
+        {
+          "a": "Final image",
+          "b": "Just runtime and app"
+        }
+      ],
+      "walk": true,
+      "say": "You start with a build stage, copy only the result, and finish with a slim runtime image. That's it."
+    },
+    {
+      "id": "4-trap-maven",
+      "type": "trap",
+      "question": "Does the final image contain Maven?",
+      "wrong": "Yes, it keeps all build tools.",
+      "right": "No, only the jar file and runtime are left.",
+      "say": "Here's a classic interview trap: Does the final image still have Maven? Nope—just your app and the runtime."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:27:00.021Z"
+}
