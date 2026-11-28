@@ -1,0 +1,89 @@
+{
+  "id": "troubleshoot-l0",
+  "title": "Troubleshooting: The Method That Works",
+  "keys": [
+    "define",
+    "scope",
+    "reproduce",
+    "layers",
+    "split",
+    "compare",
+    "verify"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-method-every-ti",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity, Latency, Throughput · lesson",
+      "line1": "What’s your first move when",
+      "line2": "something breaks?",
+      "say": "When a system slows down or stops, what’s your first step? Let’s talk about the method that interviewers want to see every time."
+    },
+    {
+      "id": "1-rows-structured-step",
+      "type": "rows",
+      "kicker": "The method: step by step",
+      "rows": [
+        {
+          "a": "Define",
+          "b": "Pinpoint what fails and error text"
+        },
+        {
+          "a": "Scope",
+          "b": "Who’s affected, where, since when"
+        },
+        {
+          "a": "Reproduce",
+          "b": "Try from the user's network"
+        },
+        {
+          "a": "Walk layers",
+          "b": "DNS, route, port, TLS, app"
+        },
+        {
+          "a": "Split path",
+          "b": "Test from the middle out"
+        }
+      ],
+      "walk": true,
+      "say": "Start by defining what’s broken. Scope out who’s hit and where. Reproduce the issue yourself. Walk through each layer, and split the path to test from the middle."
+    },
+    {
+      "id": "2-compare-working-vs-b",
+      "type": "compare",
+      "kicker": "Compare: Spot the difference",
+      "left": {
+        "title": "Working",
+        "items": [
+          "Yesterday’s logs",
+          "Healthy client",
+          "Normal latency"
+        ]
+      },
+      "right": {
+        "title": "Broken",
+        "items": [
+          "Today’s logs",
+          "Failing client",
+          "High latency"
+        ]
+      },
+      "say": "Always compare a working setup to the broken one. Look at logs, client behavior, and latency. This narrows down what changed."
+    },
+    {
+      "id": "3-trap-lucky-vs-method",
+      "type": "trap",
+      "question": "What impresses interview panels most?",
+      "wrong": "A quick fix or lucky guess",
+      "right": "A calm, structured troubleshooting method is what they grade highest. It beats luck every time.",
+      "say": "Interviewers care more about your method than a lucky fix. Don’t skip steps—show your calm, structured approach."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:46:49.140Z"
+}
