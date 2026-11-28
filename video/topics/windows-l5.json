@@ -1,0 +1,74 @@
+{
+  "id": "windows-l5",
+  "title": "Share vs NTFS Permissions in Windows",
+  "keys": [
+    "share permissions",
+    "NTFS permissions",
+    "effective access",
+    "Windows Server"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-share-ntfs",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "Why can't users write to a share?",
+      "line2": "Even with Full Control?",
+      "say": "Ever seen a user with full control on a shared folder, but they still can't write files? Let's break down why that happens."
+    },
+    {
+      "id": "1-compare-share-ntfs",
+      "type": "compare",
+      "kicker": "Permissions Layers",
+      "left": {
+        "title": "Share",
+        "items": [
+          "Set on the share itself",
+          "Controls network access"
+        ]
+      },
+      "right": {
+        "title": "NTFS",
+        "items": [
+          "Set on the folder",
+          "Controls all access"
+        ]
+      },
+      "say": "Windows uses two layers: share permissions, which control access over the network, and NTFS permissions, which control everything on the folder itself."
+    },
+    {
+      "id": "2-chip-most-restrictiv",
+      "type": "chip",
+      "kicker": "Key Rule",
+      "label": "Restrictive",
+      "sub": "Access is limited by the most restrictive permission.",
+      "say": "Here's the trick: the most restrictive permission always wins. If one blocks write, you can't write, no matter what the other says."
+    },
+    {
+      "id": "3-terminal-check-acces",
+      "type": "terminal",
+      "kicker": "How to Check",
+      "title": "See Permissions",
+      "lines": [
+        "$ Get-SmbShareAccess -Name Finance",
+        "$ Get-Acl D:\\Finance | Format-List"
+      ],
+      "say": "To check, use PowerShell to view both share and NTFS permissions. Or, use the folder's properties and check the Effective Access tab."
+    },
+    {
+      "id": "4-trap-full-control-tr",
+      "type": "trap",
+      "question": "User has Full Control on share but can't write?",
+      "wrong": "Share permissions are broken.",
+      "right": "NTFS permissions are blocking write. Effective access is the most restrictive of both.",
+      "say": "Here's a classic interview trap: a user has full control on the share, but can't write. It's almost always because NTFS permissions are blocking them."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:26:40.690Z"
+}
