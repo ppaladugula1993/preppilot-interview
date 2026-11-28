@@ -1,0 +1,88 @@
+{
+  "id": "appsec-l5",
+  "title": "SAST, DAST, SCA in CI/CD Pipelines",
+  "keys": [
+    "SAST",
+    "DAST",
+    "SCA",
+    "CI/CD"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pipeline-sec",
+      "type": "hook",
+      "kicker": "Application Security (OWASP) · lesson",
+      "line1": "How do you automate finding bugs?",
+      "line2": "What’s your pipeline strategy?",
+      "say": "Ever wondered how to catch security issues before your app hits production? What’s your approach for automating this in your pipeline?"
+    },
+    {
+      "id": "1-rows-pipeline-steps",
+      "type": "rows",
+      "kicker": "CI/CD Pipeline Steps",
+      "rows": [
+        {
+          "a": "SAST",
+          "b": "Scan code for vulnerabilities"
+        },
+        {
+          "a": "SCA",
+          "b": "Check dependencies for risks"
+        },
+        {
+          "a": "DAST",
+          "b": "Test running app for flaws"
+        }
+      ],
+      "walk": true,
+      "say": "A solid pipeline runs static code scans, checks your dependencies for risks, and tests your app while it’s live. Each step catches different types of vulnerabilities."
+    },
+    {
+      "id": "2-compare-sast-dast",
+      "type": "compare",
+      "kicker": "SAST vs DAST",
+      "left": {
+        "title": "SAST",
+        "items": [
+          "Analyzes code",
+          "No runtime needed"
+        ]
+      },
+      "right": {
+        "title": "DAST",
+        "items": [
+          "Tests live app",
+          "Simulates attacks"
+        ]
+      },
+      "say": "Static analysis checks your code without running it. Dynamic testing probes your live app, simulating real attacks. Both together give broad coverage."
+    },
+    {
+      "id": "3-terminal-gh-actions",
+      "type": "terminal",
+      "kicker": "Example: GitHub Actions",
+      "title": "Security Tools in Action",
+      "lines": [
+        "$ snyk test",
+        "$ sonar-scanner",
+        "$ zap scan"
+      ],
+      "say": "In practice, your pipeline might run Snyk to scan dependencies, SonarQube for code analysis, and OWASP ZAP to test the app while it’s running."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What if DAST finds a flaw?",
+      "wrong": "Just ignore and deploy anyway.",
+      "right": "Block deployment until the flaw is fixed and retested.",
+      "say": "If dynamic testing finds a flaw, don’t just push to production. Block the deployment until you fix and verify the issue."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:44:15.257Z"
+}
