@@ -1,0 +1,73 @@
+{
+  "id": "virt-l1",
+  "title": "Snapshot vs Backup in VMware",
+  "keys": [
+    "snapshot",
+    "backup",
+    "datastore",
+    "retention"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-snapshots-backu",
+      "type": "hook",
+      "kicker": "VMware & Storage · lesson",
+      "line1": "Snapshots or backups?",
+      "line2": "What's the real difference?",
+      "say": "Snapshots and backups sound similar, but do you know why they're not the same?"
+    },
+    {
+      "id": "1-chip-snapshot",
+      "type": "chip",
+      "kicker": "Snapshot",
+      "label": "Snapshot",
+      "sub": "Point-in-time delta on same datastore",
+      "say": "A snapshot is a quick point-in-time change record, stored on the same datastore as your virtual machine."
+    },
+    {
+      "id": "2-chip-backup",
+      "type": "chip",
+      "kicker": "Backup",
+      "label": "Backup",
+      "sub": "Full copy on separate storage",
+      "say": "A backup is a full copy saved to separate storage, often managed by tools like Veeam or Commvault."
+    },
+    {
+      "id": "3-compare-snap-vs-back",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "Snapshot",
+        "items": [
+          "Quick rollback",
+          "Grows, slows VM",
+          "Lost with datastore"
+        ]
+      },
+      "right": {
+        "title": "Backup",
+        "items": [
+          "Separate storage",
+          "Retention policy",
+          "Survives datastore loss"
+        ]
+      },
+      "say": "Snapshots are great for quick rollbacks but can slow things down and are lost if the datastore goes. Backups live elsewhere, keep your data safe, and stick around as long as you need."
+    },
+    {
+      "id": "4-trap-snapshot-trap",
+      "type": "trap",
+      "question": "Is a snapshot a backup?",
+      "wrong": "Yes, it's the same thing.",
+      "right": "No, snapshots are not backups. Backups are separate copies.",
+      "say": "Here's a common trap: a snapshot is not a backup. If you lose the datastore, the snapshot is gone too."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:26:14.414Z"
+}
