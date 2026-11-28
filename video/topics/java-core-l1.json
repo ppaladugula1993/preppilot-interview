@@ -1,0 +1,72 @@
+{
+  "id": "java-core-l1",
+  "title": "equals/hashCode & Immutability",
+  "keys": [
+    "equals",
+    "hashCode",
+    "immutability",
+    "collections"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-equals-contract",
+      "type": "hook",
+      "kicker": "Core Java · lesson",
+      "line1": "Why do equals and hashCode",
+      "line2": "matter so much?",
+      "say": "Ever wonder why equals and hashCode are such a big deal in Java interviews?"
+    },
+    {
+      "id": "1-chip-contract",
+      "type": "chip",
+      "kicker": "Contract",
+      "label": "Equals",
+      "sub": "Equal objects must have equal hash codes.",
+      "say": "The contract is simple: if two objects are equal, their hash codes must match."
+    },
+    {
+      "id": "2-rows-immutability",
+      "type": "rows",
+      "kicker": "Immutability",
+      "rows": [
+        {
+          "a": "State can't change",
+          "b": "After object creation"
+        },
+        {
+          "a": "Thread safe",
+          "b": "No sync needed"
+        },
+        {
+          "a": "Used by String",
+          "b": "String pool optimizes memory"
+        }
+      ],
+      "walk": true,
+      "say": "Immutability means the object's state never changes. It's thread safe by default, and Strings use this for memory efficiency."
+    },
+    {
+      "id": "3-code-equals-hashcode",
+      "type": "code",
+      "kicker": "Override Together",
+      "lang": "java",
+      "code": "public boolean equals(Object o) {...}\npublic int hashCode() {...}",
+      "say": "Always override equals and hashCode together to keep collections like HashMap working right."
+    },
+    {
+      "id": "4-trap-interview-gotch",
+      "type": "trap",
+      "question": "Can mutable keys break HashMap?",
+      "wrong": "No, HashMap handles it.",
+      "right": "Yes! Changing a key's state can break lookups.",
+      "say": "Here's a classic trap: using mutable objects as keys in a HashMap can break your code if their state changes."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:13:33.298Z"
+}
