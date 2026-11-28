@@ -1,0 +1,73 @@
+{
+  "id": "docker-l8",
+  "title": "Docker Registries & Tags Made Simple",
+  "keys": [
+    "registry",
+    "tag",
+    "push",
+    "pull",
+    "versioning"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-registries-tags",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "Where do your images live?",
+      "line2": "And what are tags for?",
+      "say": "Ever wonder where your Docker images actually go, and why tags matter for versioning?"
+    },
+    {
+      "id": "1-chip-registries",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Registries",
+      "sub": "Images live in registries like Docker Hub, Azure, AWS, or Artifactory.",
+      "say": "Images aren’t just on your laptop. They’re stored in registries like Docker Hub, Azure, AWS, or Artifactory."
+    },
+    {
+      "id": "2-rows-tags",
+      "type": "rows",
+      "kicker": "How tags work",
+      "rows": [
+        {
+          "a": "Tag image",
+          "b": "Name it with a version"
+        },
+        {
+          "a": "Push",
+          "b": "Send it to a registry"
+        },
+        {
+          "a": "Pull",
+          "b": "Download by name and tag"
+        }
+      ],
+      "walk": true,
+      "say": "Tagging gives your image a version. You push it to a registry, and anyone can pull that exact version by name and tag."
+    },
+    {
+      "id": "3-code-push-pull",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "bash",
+      "code": "docker tag myapp:1.0 myacr.azurecr.io/myapp:1.0\ndocker login myacr.azurecr.io\ndocker push myacr.azurecr.io/myapp:1.0\ndocker pull myacr.azurecr.io/myapp:1.0",
+      "say": "Here’s how you tag, log in, push, and pull a versioned image to Azure Container Registry."
+    },
+    {
+      "id": "4-trap-latest-tag",
+      "type": "trap",
+      "question": "Is it safe to deploy the latest tag?",
+      "wrong": "Yes, latest is always fine.",
+      "right": "No! Pin a version tag so you know exactly what’s running in production.",
+      "say": "Careful—never deploy the tag called latest to production. Always pin a version so you know exactly what’s running."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:36:52.671Z"
+}
