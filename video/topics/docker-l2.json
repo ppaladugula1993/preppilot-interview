@@ -1,0 +1,73 @@
+{
+  "id": "docker-l2",
+  "title": "Dockerfile: Your Image Recipe",
+  "keys": [
+    "Dockerfile",
+    "image",
+    "layer",
+    "build",
+    "cache"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dockerfile",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "What does a Dockerfile actually do?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder how Docker knows exactly what to put in your image? Let's break down the Dockerfile and why it's a must for your next interview."
+    },
+    {
+      "id": "1-chip-recipe",
+      "type": "chip",
+      "kicker": "Core idea",
+      "label": "Recipe",
+      "sub": "A Dockerfile is a step-by-step recipe for building an image. Each instruction adds a new layer.",
+      "say": "Think of a Dockerfile as a recipe for your app. Each line adds a new layer, building up your final image."
+    },
+    {
+      "id": "2-code-example",
+      "type": "code",
+      "kicker": "Sample Dockerfile",
+      "lang": "dockerfile",
+      "code": "FROM python:3.12-slim\nWORKDIR /app\nCOPY requirements.txt .\nRUN pip install --no-cache-dir -r requirements.txt\nCOPY . .\nUSER 1000\nEXPOSE 8000\nCMD [\"gunicorn\", \"-b\", \"0.0.0.0:8000\", \"app:app\"]",
+      "say": "Here's a real example. It starts with a Python base, sets the work directory, copies dependencies, installs them, then adds your code and sets up the app to run."
+    },
+    {
+      "id": "3-rows-build-steps",
+      "type": "rows",
+      "kicker": "Build process",
+      "rows": [
+        {
+          "a": "Write Dockerfile",
+          "b": "Describe each build step"
+        },
+        {
+          "a": "Build image",
+          "b": "Run the build command"
+        },
+        {
+          "a": "Run container",
+          "b": "Start your app from the image"
+        }
+      ],
+      "walk": true,
+      "say": "First, write your Dockerfile with each step. Next, build your image. Finally, run your app as a container."
+    },
+    {
+      "id": "4-trap-copy-order",
+      "type": "trap",
+      "question": "Which should you copy first?",
+      "wrong": "Copy all code before dependencies.",
+      "right": "Copy dependencies first, so install steps are cached. This speeds up rebuilds when only your code changes.",
+      "say": "Here's a classic trap: always copy your dependency file before your code. That way, Docker can cache the install step and your builds stay fast."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:24:29.076Z"
+}
