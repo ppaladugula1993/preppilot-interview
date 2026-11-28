@@ -1,0 +1,72 @@
+{
+  "id": "flutter-l6",
+  "title": "Flutter Platform Channels Explained",
+  "keys": [
+    "Flutter",
+    "platform channels",
+    "native code",
+    "MethodChannel"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-q",
+      "type": "hook",
+      "kicker": "Flutter · lesson",
+      "line1": "How does Flutter talk to native code?",
+      "line2": "What lets Dart call device APIs?",
+      "say": "Ever wondered how Flutter apps access device features that Dart can't reach? Let's break down platform channels."
+    },
+    {
+      "id": "1-chip-core",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Channels",
+      "sub": "Platform channels let Flutter send messages to native Android or iOS code for deeper access.",
+      "say": "Platform channels are a bridge. They connect your Dart code to native Android or iOS code, letting you tap into features Flutter doesn't cover."
+    },
+    {
+      "id": "2-code-dart",
+      "type": "code",
+      "kicker": "Dart side",
+      "lang": "dart",
+      "code": "const platform = MethodChannel(\n  'samples.flutter.dev/battery'\n);\nfinal batteryLevel = await \n  platform.invokeMethod('getBatteryLevel');",
+      "say": "On the Dart side, you set up a method channel and call native methods. Here, we're asking for the battery level."
+    },
+    {
+      "id": "3-rows-steps",
+      "type": "rows",
+      "kicker": "Integration steps",
+      "rows": [
+        {
+          "a": "Define channel in Dart",
+          "b": "Set up MethodChannel"
+        },
+        {
+          "a": "Implement handler natively",
+          "b": "Write code in Kotlin or Swift"
+        },
+        {
+          "a": "Send messages",
+          "b": "Dart calls methods, gets responses"
+        }
+      ],
+      "walk": true,
+      "say": "First, define your channel in Dart. Then, implement the handler on the native side. Finally, send messages and handle responses."
+    },
+    {
+      "id": "4-trap-native",
+      "type": "trap",
+      "question": "Can Flutter plugins access any device feature?",
+      "wrong": "Yes, plugins cover everything.",
+      "right": "No, some features need custom platform channels for native access.",
+      "say": "Don't assume plugins can do it all. Sometimes, you need platform channels for features not exposed by plugins."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:49:29.179Z"
+}
