@@ -1,0 +1,90 @@
+{
+  "id": "threat-modeling-l2",
+  "title": "STRIDE: 6 Threats You Can't Miss",
+  "keys": [
+    "STRIDE",
+    "threat modeling",
+    "security",
+    "categories"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-stride-threats",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "Can you name all 6 STRIDE threats?",
+      "line2": "Which do you forget?",
+      "say": "Think you can list every STRIDE threat off the top of your head? Which one do you usually miss?"
+    },
+    {
+      "id": "1-chip-spoofing",
+      "type": "chip",
+      "kicker": "STRIDE",
+      "label": "Spoofing",
+      "sub": "Pretending to be someone else in the system.",
+      "say": "Spoofing means an attacker pretends to be someone else. Think fake logins or forged identities."
+    },
+    {
+      "id": "2-rows-stride-list",
+      "type": "rows",
+      "kicker": "STRIDE Categories",
+      "rows": [
+        {
+          "a": "Tampering",
+          "b": "Changing data or requests"
+        },
+        {
+          "a": "Repudiation",
+          "b": "Denying actions taken"
+        },
+        {
+          "a": "Info Disclosure",
+          "b": "Leaking sensitive data"
+        },
+        {
+          "a": "Denial of Service",
+          "b": "Making features unavailable"
+        },
+        {
+          "a": "Elevation of Priv",
+          "b": "Gaining extra rights"
+        }
+      ],
+      "walk": false,
+      "say": "The rest of STRIDE: tampering is changing data, repudiation is denying actions, information disclosure is leaking secrets, denial of service is breaking features, and elevation of privilege is gaining extra rights."
+    },
+    {
+      "id": "3-compare-tampering-in",
+      "type": "compare",
+      "kicker": "Examples",
+      "left": {
+        "title": "Tampering",
+        "items": [
+          "Altering a request to get admin access"
+        ]
+      },
+      "right": {
+        "title": "Info Disclosure",
+        "items": [
+          "Sending passwords over plain HTTP"
+        ]
+      },
+      "say": "For example, tampering could be changing a request to get admin access. Information disclosure? Sending passwords without encryption."
+    },
+    {
+      "id": "4-trap-stride-trap",
+      "type": "trap",
+      "question": "Is STRIDE just for login features?",
+      "wrong": "Yes, only for authentication.",
+      "right": "No, use STRIDE for every system part.",
+      "say": "Don't fall for this: STRIDE isn't just for logins. Use it to check every part of your system."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:55:07.525Z"
+}
