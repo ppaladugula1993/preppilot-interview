@@ -1,0 +1,72 @@
+{
+  "id": "python-web-l1",
+  "title": "FastAPI Routing & Pydantic Validation",
+  "keys": [
+    "FastAPI",
+    "routing",
+    "Pydantic",
+    "validation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-fastapi-routing",
+      "type": "hook",
+      "kicker": "Python Web · FastAPI Lesson",
+      "line1": "How does FastAPI handle data?",
+      "line2": "Why is validation automatic?",
+      "say": "Ever wonder how FastAPI checks your data and routes requests so reliably? Let’s break down its secret sauce."
+    },
+    {
+      "id": "1-chip-routing",
+      "type": "chip",
+      "kicker": "Routing",
+      "label": "Decorators",
+      "sub": "Routes use decorators to map HTTP methods.",
+      "say": "FastAPI uses decorators to connect functions to endpoints. You can handle GET or POST requests with a simple annotation."
+    },
+    {
+      "id": "2-code-pydantic-model",
+      "type": "code",
+      "kicker": "Validation",
+      "lang": "python",
+      "code": "class Item(BaseModel):\n    name: str\n@app.post('/items/')\ndef create_item(item: Item):\n    return item",
+      "say": "Here, a Pydantic model called Item defines the expected data. FastAPI checks incoming requests against this model automatically."
+    },
+    {
+      "id": "3-rows-validation-bene",
+      "type": "rows",
+      "kicker": "Why Use Pydantic?",
+      "rows": [
+        {
+          "a": "Automatic errors",
+          "b": "Clear feedback on bad input"
+        },
+        {
+          "a": "Type hints",
+          "b": "Python types drive validation"
+        },
+        {
+          "a": "OpenAPI docs",
+          "b": "Docs update from your models"
+        }
+      ],
+      "walk": true,
+      "say": "This approach gives you instant error messages, leverages Python type hints, and keeps your API docs up to date."
+    },
+    {
+      "id": "4-trap-missing-validat",
+      "type": "trap",
+      "question": "What happens if you skip Pydantic?",
+      "wrong": "FastAPI still validates input.",
+      "right": "Without Pydantic, FastAPI won’t check or serialize incoming data. You lose automatic validation.",
+      "say": "Don’t forget: if you skip Pydantic models, FastAPI won’t validate your data. That’s an easy mistake in interviews."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:43:36.250Z"
+}
