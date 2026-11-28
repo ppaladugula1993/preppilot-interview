@@ -1,0 +1,72 @@
+{
+  "id": "selenium-playwright-l1",
+  "title": "Locator Strategies & Resilient Selectors",
+  "keys": [
+    "locators",
+    "selectors",
+    "resilient",
+    "Playwright",
+    "Selenium"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-locators",
+      "type": "hook",
+      "kicker": "UI Automation · lesson",
+      "line1": "How do you find UI elements?",
+      "line2": "What makes a selector resilient?",
+      "say": "How do you actually find a button or input in test automation? And what makes a selector resilient enough for real-world apps?"
+    },
+    {
+      "id": "1-chip-id",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "IDs",
+      "sub": "Unique IDs make selectors stable and fast.",
+      "say": "First, always prefer unique IDs. They're fast, stable, and rarely change, making your tests reliable."
+    },
+    {
+      "id": "2-compare-css-xpath",
+      "type": "compare",
+      "kicker": "Selector Types",
+      "left": {
+        "title": "Resilient",
+        "items": [
+          "ID or data attribute",
+          "Accessible role"
+        ]
+      },
+      "right": {
+        "title": "Fragile",
+        "items": [
+          "nth-child",
+          "Dynamic class names"
+        ]
+      },
+      "say": "Compare these: IDs and data attributes are resilient. But using nth-child or dynamic classes? That's asking for flaky tests."
+    },
+    {
+      "id": "3-code-playwright",
+      "type": "code",
+      "kicker": "Playwright Example",
+      "lang": "js",
+      "code": "page.getByRole('button', {\n  name: 'Submit'\n})",
+      "say": "In Playwright, you can target a button by its accessible role and name. This stays reliable, even if the UI layout changes."
+    },
+    {
+      "id": "4-trap-fragile",
+      "type": "trap",
+      "question": "Is nth-child a good selector?",
+      "wrong": "Yes, it's precise.",
+      "right": "No, UI changes can break it. Use IDs or roles.",
+      "say": "Interview trap: Is nth-child a good selector? Nope. UI tweaks can break it. Stick to IDs or roles for resilience."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:43:17.728Z"
+}
