@@ -1,0 +1,80 @@
+{
+  "id": "go-concurrency-l1",
+  "title": "Buffered vs Unbuffered Channels in Go",
+  "keys": [
+    "unbuffered",
+    "buffered",
+    "blocking",
+    "asynchronous",
+    "deadlock"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-buffered-or-not",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "Buffered or unbuffered channel?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder when to use a buffered channel instead of an unbuffered one? Let’s break down why it matters."
+    },
+    {
+      "id": "1-chip-unbuffered",
+      "type": "chip",
+      "kicker": "Channel Type",
+      "label": "Unbuffered",
+      "sub": "Blocks sender until a receiver is ready.",
+      "say": "An unbuffered channel blocks the sender until a receiver is ready. This means both sides must sync up every time."
+    },
+    {
+      "id": "2-chip-buffered",
+      "type": "chip",
+      "kicker": "Channel Type",
+      "label": "Buffered",
+      "sub": "Lets you send up to its capacity without blocking.",
+      "say": "A buffered channel lets you send messages up to its capacity without waiting. The sender only blocks when the buffer is full."
+    },
+    {
+      "id": "3-code-buffered-exampl",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "ch := make(chan int, 2)\nch <- 1\nch <- 2 // no block yet",
+      "say": "Here, we create a channel with room for two messages. Sending two values won’t block until the buffer fills up."
+    },
+    {
+      "id": "4-compare-sync-async",
+      "type": "compare",
+      "kicker": "Communication",
+      "left": {
+        "title": "Unbuffered",
+        "items": [
+          "Synchronous",
+          "Sender waits for receiver"
+        ]
+      },
+      "right": {
+        "title": "Buffered",
+        "items": [
+          "Asynchronous",
+          "Sender only waits if full"
+        ]
+      },
+      "say": "Unbuffered channels are synchronous—sender and receiver must meet. Buffered channels are asynchronous, so the sender can get ahead."
+    },
+    {
+      "id": "5-trap-deadlock",
+      "type": "trap",
+      "question": "What can cause deadlocks with buffers?",
+      "wrong": "Buffers prevent all deadlocks.",
+      "right": "If the buffer fills up and no receiver drains it, your program can still deadlock.",
+      "say": "Here’s a trap: buffered channels don’t magically prevent deadlocks. If the buffer fills and nothing reads from it, you’re stuck."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:01:20.325Z"
+}
