@@ -1,0 +1,72 @@
+{
+  "id": "spring-l3",
+  "title": "Spring Data JPA & Repository Pattern",
+  "keys": [
+    "Spring Data JPA",
+    "Repository",
+    "Lazy Loading",
+    "N+1"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-jpa-repos",
+      "type": "hook",
+      "kicker": "Spring & Spring Boot · lesson",
+      "line1": "How does Spring Data JPA save time?",
+      "line2": "And what's the N plus 1 trap?",
+      "say": "How does Spring Data JPA save you from boilerplate, and what should you watch out for with lazy loading?"
+    },
+    {
+      "id": "1-chip-jpa-repo",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Repository",
+      "sub": "Spring Data JPA gives you ready-made interfaces for CRUD and queries.",
+      "say": "Spring Data JPA gives you ready-made interfaces for creating, reading, updating, and deleting data, plus easy query methods."
+    },
+    {
+      "id": "2-code-jpa-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "java",
+      "code": "public interface UserRepo extends JpaRepository<User, Long> {}\n\n@Entity\npublic class User {\n  @OneToMany(fetch = FetchType.LAZY)\n  List<Order> orders;\n}",
+      "say": "Here, a user repository interface extends the JPA repository, and the user entity loads orders only when you access them."
+    },
+    {
+      "id": "3-rows-lazy-n1",
+      "type": "rows",
+      "kicker": "Lazy Loading Pitfall",
+      "rows": [
+        {
+          "a": "Access users",
+          "b": "Loads user data only"
+        },
+        {
+          "a": "Access orders",
+          "b": "Triggers extra queries"
+        },
+        {
+          "a": "Many users",
+          "b": "Can cause N plus 1 queries"
+        }
+      ],
+      "walk": true,
+      "say": "With lazy loading, fetching users doesn't load their orders. But if you access orders for each user in a loop, you might trigger a separate query for every user. That's the classic N plus 1 problem."
+    },
+    {
+      "id": "4-trap-n1-fix",
+      "type": "trap",
+      "question": "How do you avoid N plus 1 queries?",
+      "wrong": "Just use lazy loading everywhere.",
+      "right": "Use entity graphs or fetch joins to load related data efficiently.",
+      "say": "Here's a common interview trap: how do you avoid N plus 1 queries? It's not enough to rely on lazy loading. Use entity graphs or fetch joins to load related data efficiently."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:19:40.267Z"
+}
