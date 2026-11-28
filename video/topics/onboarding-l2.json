@@ -1,0 +1,93 @@
+{
+  "id": "onboarding-l2",
+  "title": "Sizing and Environment Design Basics",
+  "keys": [
+    "sizing",
+    "environment",
+    "zones",
+    "naming",
+    "tags"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-sizing-env",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "How do you size and design environments?",
+      "line2": "Why does it matter?",
+      "say": "Sizing and environment design can make or break your app onboarding. How do you get it right, and why does it matter?"
+    },
+    {
+      "id": "1-chip-sizing",
+      "type": "chip",
+      "kicker": "Sizing",
+      "label": "Math",
+      "sub": "Use vendor guidance, load tests, and real usage—not guesses.",
+      "say": "Always size from real data. Use vendor guidance, load tests, or current usage. Never guess."
+    },
+    {
+      "id": "2-rows-sizing-example",
+      "type": "rows",
+      "kicker": "Sizing Example",
+      "rows": [
+        {
+          "a": "Peak load",
+          "b": "200 requests per second"
+        },
+        {
+          "a": "Instance capacity",
+          "b": "80 requests per second"
+        },
+        {
+          "a": "Math",
+          "b": "200 divided by 80 equals 2.5"
+        },
+        {
+          "a": "N+1",
+          "b": "Round up to 4 instances"
+        },
+        {
+          "a": "Zones",
+          "b": "Split across 2 zones"
+        }
+      ],
+      "walk": true,
+      "say": "Say your peak is 200 requests a second, and one instance handles 80. Divide, round up, add one for N plus one, and spread across two zones."
+    },
+    {
+      "id": "3-compare-envs",
+      "type": "compare",
+      "kicker": "Environments",
+      "left": {
+        "title": "Stage",
+        "items": [
+          "Prod-like topology",
+          "Accurate load tests"
+        ]
+      },
+      "right": {
+        "title": "Dev/Test",
+        "items": [
+          "Simplified setup",
+          "Lower resource needs"
+        ]
+      },
+      "say": "Stage must match production in topology. If it doesn't, your load tests can lie. Dev and test can be simpler."
+    },
+    {
+      "id": "4-trap-size-guess",
+      "type": "trap",
+      "question": "How should you size your app?",
+      "wrong": "Just guess based on gut feel.",
+      "right": "Use real data, enable autoscale, and right-size after 30 days of metrics.",
+      "say": "Interview trap: Never guess sizing. Panels want to see the math and a plan to adjust after real metrics."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:05:22.668Z"
+}
