@@ -1,0 +1,77 @@
+{
+  "id": "k8s-l2",
+  "title": "Kubernetes Deployments Demystified",
+  "keys": [
+    "Deployment",
+    "ReplicaSet",
+    "Pods",
+    "Rollout"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-deployments",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "What keeps your apps alive?",
+      "line2": "Why use Deployments?",
+      "say": "If a pod crashes, who brings it back? Let's talk about Deployments and why they're the backbone of Kubernetes workloads."
+    },
+    {
+      "id": "1-chip-deployment",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Deployment",
+      "sub": "Manages identical pods, handles updates and rollbacks.",
+      "say": "A Deployment manages a group of identical pods for you. It keeps the right number running, and takes care of updates or rollbacks when needed."
+    },
+    {
+      "id": "2-rows-how-it-works",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Deployment",
+          "b": "Defines your desired state"
+        },
+        {
+          "a": "ReplicaSet",
+          "b": "Keeps the right pod count"
+        },
+        {
+          "a": "Pods",
+          "b": "Run your containerized app"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it flows: the Deployment defines what you want, the ReplicaSet makes sure you have enough pods, and the pods actually run your app."
+    },
+    {
+      "id": "3-terminal-deploy-comm",
+      "type": "terminal",
+      "kicker": "In Action",
+      "title": "Deployment Commands",
+      "lines": [
+        "$ kubectl scale deploy web --replicas=5",
+        "$ kubectl set image deploy/web web=myacr.azurecr.io/web:1.5",
+        "$ kubectl rollout status deploy/web",
+        "$ kubectl rollout undo deploy/web"
+      ],
+      "say": "You can scale up with a single command, update your app image, check rollout progress, or roll back if something breaks. Super handy for real-world ops."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "If you delete a pod, is it gone for good?",
+      "wrong": "Yes, you have to recreate it manually.",
+      "right": "Nope! The ReplicaSet spins up a new pod automatically.",
+      "say": "Here's a common trap: if you delete a pod, Kubernetes doesn't just let it go. The ReplicaSet will create a new one to match your Deployment's desired state."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:47:56.856Z"
+}
