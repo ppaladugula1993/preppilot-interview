@@ -1,0 +1,78 @@
+{
+  "id": "python-packaging-l2",
+  "title": "Poetry & uv: Modern Python Packaging",
+  "keys": [
+    "Poetry",
+    "uv",
+    "pyproject.toml",
+    "lock files",
+    "dependency management"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-poetry-uv",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "Why use Poetry or uv?",
+      "line2": "What makes them better?",
+      "say": "Ever wondered why engineers are switching to Poetry or uv for Python projects? What makes these tools stand out?"
+    },
+    {
+      "id": "1-chip-poetry",
+      "type": "chip",
+      "kicker": "Tool Highlight",
+      "label": "Poetry",
+      "sub": "Handles dependencies, virtual environments, and publishing with one config.",
+      "say": "Poetry manages dependencies, virtual environments, and package publishing, all from a single configuration file."
+    },
+    {
+      "id": "2-compare-poetry-uv",
+      "type": "compare",
+      "kicker": "Tool Comparison",
+      "left": {
+        "title": "Poetry",
+        "items": [
+          "Easy init",
+          "Lock file",
+          "Publishing"
+        ]
+      },
+      "right": {
+        "title": "uv",
+        "items": [
+          "Fast installs",
+          "Lock file",
+          "pyproject support"
+        ]
+      },
+      "say": "Both Poetry and uv use pyproject.toml for setup and generate lock files for reproducible installs. Poetry focuses on publishing, uv is super fast."
+    },
+    {
+      "id": "3-terminal-commands",
+      "type": "terminal",
+      "kicker": "Quick Commands",
+      "title": "Poetry & uv in action",
+      "lines": [
+        "$ poetry init",
+        "$ poetry add requests",
+        "$ uv pip install -r requirements.txt --lock requirements.lock"
+      ],
+      "say": "Initialize a project, add dependencies, or install from a requirements file with locking. These commands make setup and installs simple."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What's the big advantage of lock files?",
+      "wrong": "They just list dependencies.",
+      "right": "Lock files pin exact versions, preventing conflicts and ensuring reproducible environments.",
+      "say": "If asked about lock files, remember: they guarantee consistent environments by pinning exact dependency versions."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:57:01.579Z"
+}
