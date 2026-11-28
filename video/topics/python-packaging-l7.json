@@ -1,0 +1,64 @@
+{
+  "id": "python-packaging-l7",
+  "title": "pytest Structure & Fixtures Essentials",
+  "keys": [
+    "pytest",
+    "fixtures",
+    "test discovery",
+    "DRY"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pytest-structur",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "How does pytest keep tests clean?",
+      "line2": "What are fixtures for?",
+      "say": "Ever wonder how pytest keeps your test files clean and organized? And what exactly are fixtures doing for you?"
+    },
+    {
+      "id": "1-rows-pytest-basics",
+      "type": "rows",
+      "kicker": "Pytest Structure",
+      "rows": [
+        {
+          "a": "Test function",
+          "b": "Named with test at the start"
+        },
+        {
+          "a": "Fixture",
+          "b": "Reusable setup for tests"
+        },
+        {
+          "a": "Assertion",
+          "b": "Checks expected outcomes"
+        }
+      ],
+      "walk": true,
+      "say": "Pytest finds any function that starts with the word test. Fixtures handle setup or teardown, so you don't repeat yourself. Assertions check if your code does what you expect."
+    },
+    {
+      "id": "2-code-fixture-example",
+      "type": "code",
+      "kicker": "Fixture Example",
+      "lang": "python",
+      "code": "@pytest.fixture\ndef db():\n    return connect_to_db()\ndef test_insert(db):\n    assert db.insert('foo') == True",
+      "say": "Here, the fixture named db connects to your database. Any test that needs it just asks for db as an argument. No need to rewrite your setup code."
+    },
+    {
+      "id": "3-trap-fixture-misuse",
+      "type": "trap",
+      "question": "How do fixtures help tests stay DRY?",
+      "wrong": "They only run once per file.",
+      "right": "They provide reusable setup and teardown, so you don't repeat code in each test.",
+      "say": "Here's a common trap: thinking fixtures only run once per file. Actually, they make setup reusable, keeping your tests dry and easy to maintain."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:19:53.098Z"
+}
