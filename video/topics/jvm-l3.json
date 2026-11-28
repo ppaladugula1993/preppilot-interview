@@ -1,0 +1,75 @@
+{
+  "id": "jvm-l3",
+  "title": "Thread Dumps & High-CPU Diagnosis",
+  "keys": [
+    "thread dump",
+    "high CPU",
+    "jstack",
+    "async-profiler"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-high-cpu",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "App spiking CPU?",
+      "line2": "How do you debug it?",
+      "say": "Your Java app is eating CPU. How do you figure out what's going on?"
+    },
+    {
+      "id": "1-chip-thread-dump",
+      "type": "chip",
+      "kicker": "Core Tool",
+      "label": "jstack",
+      "sub": "Shows all threads and their stack traces.",
+      "say": "First, grab a thread dump using jstack. This shows every thread and what it's doing right now."
+    },
+    {
+      "id": "2-terminal-commands",
+      "type": "terminal",
+      "kicker": "Real-World Debugging",
+      "title": "Thread Dump & Profiling",
+      "lines": [
+        "$ jstack 12345",
+        "$ ./profiler.sh -d 30 -f cpu.svg 12345"
+      ],
+      "say": "Run jstack with the process ID to get a snapshot. For a deeper look, use async-profiler to visualize CPU hotspots."
+    },
+    {
+      "id": "3-rows-diagnosis-steps",
+      "type": "rows",
+      "kicker": "Diagnosis Steps",
+      "rows": [
+        {
+          "a": "1. Capture dump",
+          "b": "Use jstack on live process"
+        },
+        {
+          "a": "2. Spot hot threads",
+          "b": "Look for loops or locks"
+        },
+        {
+          "a": "3. Profile CPU",
+          "b": "Async-profiler for hotspots"
+        }
+      ],
+      "walk": true,
+      "say": "Here's my process: capture a thread dump, spot threads stuck in loops or locks, then profile CPU usage to see where the time goes."
+    },
+    {
+      "id": "4-trap-misconception",
+      "type": "trap",
+      "question": "Is a thread dump enough for CPU issues?",
+      "wrong": "Yes, always enough",
+      "right": "No, profiling tools reveal hotspots and code paths",
+      "say": "Don't fall for this: a thread dump alone isn't always enough. Profiling tools like async-profiler reveal the real CPU hogs."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:03:13.306Z"
+}
