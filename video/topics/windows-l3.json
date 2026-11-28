@@ -1,0 +1,74 @@
+{
+  "id": "windows-l3",
+  "title": "PowerShell: The Admin Shell for Windows",
+  "keys": [
+    "PowerShell",
+    "cmdlets",
+    "objects",
+    "admin"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-powershell",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "Can you work without the GUI?",
+      "line2": "How well do you know PowerShell?",
+      "say": "Could you manage a server if you lost the Windows desktop? How well do you know PowerShell?"
+    },
+    {
+      "id": "1-chip-essentials",
+      "type": "chip",
+      "kicker": "Why PowerShell?",
+      "label": "Essentials",
+      "sub": "Commands use Verb-Noun, pass objects not text.",
+      "say": "PowerShell commands use a verb and a noun, and they pass objects instead of plain text. That makes automation powerful."
+    },
+    {
+      "id": "2-terminal-samples",
+      "type": "terminal",
+      "kicker": "Sample Commands",
+      "title": "Top PowerShell Moves",
+      "lines": [
+        "$ Get-Service | Where Status -eq 'Stopped'",
+        "$ Restart-Service Spooler",
+        "$ Get-Process | Sort CPU -Desc",
+        "$ Test-NetConnection db01 -Port 1433"
+      ],
+      "say": "Here are some essentials. List stopped services, restart the print spooler, show top processes by CPU, or test a database port."
+    },
+    {
+      "id": "3-compare-netcat",
+      "type": "compare",
+      "kicker": "Network Checks",
+      "left": {
+        "title": "Linux",
+        "items": [
+          "nc -zv server port"
+        ]
+      },
+      "right": {
+        "title": "PowerShell",
+        "items": [
+          "Test-NetConnection server -Port port"
+        ]
+      },
+      "say": "Need to check a port? On Linux, you use netcat. In PowerShell, Test Net Connection does the job."
+    },
+    {
+      "id": "4-trap-cmdlet",
+      "type": "trap",
+      "question": "What makes PowerShell cmdlets unique?",
+      "wrong": "They only handle plain text.",
+      "right": "They pass objects, not just text, between commands.",
+      "say": "Here's a common trap: PowerShell commands pass objects, not just plain text. That's what sets them apart."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:21:59.520Z"
+}
