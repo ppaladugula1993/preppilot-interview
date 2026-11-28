@@ -1,0 +1,87 @@
+{
+  "id": "troubleshoot-l4",
+  "title": "Pinpoint Slow Phases in Latency",
+  "keys": [
+    "latency",
+    "DNS",
+    "TCP",
+    "TTFB",
+    "curl"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-find-slow-phase",
+      "type": "hook",
+      "kicker": "Troubleshooting: Latency",
+      "line1": "Which part of your request is slow?",
+      "line2": "How do you spot it?",
+      "say": "Ever wonder where your app actually slows down? Let's break it down and find the bottleneck."
+    },
+    {
+      "id": "1-rows-request-phases",
+      "type": "rows",
+      "kicker": "Request Breakdown",
+      "rows": [
+        {
+          "a": "DNS",
+          "b": "Name lookup"
+        },
+        {
+          "a": "TCP Connect",
+          "b": "Network handshake"
+        },
+        {
+          "a": "TLS",
+          "b": "Secure handshake"
+        },
+        {
+          "a": "TTFB",
+          "b": "First byte from backend"
+        },
+        {
+          "a": "Transfer",
+          "b": "Data download"
+        }
+      ],
+      "walk": true,
+      "say": "Every request has five phases: DNS, TCP connect, TLS, time to first byte, and transfer. Each step can be slow for different reasons."
+    },
+    {
+      "id": "2-terminal-curl-timing",
+      "type": "terminal",
+      "kicker": "Measure Each Phase",
+      "title": "curl Timing Output",
+      "lines": [
+        "$ dns 0.03",
+        "$ connect 0.50",
+        "$ tls 0.04",
+        "$ ttfb 1.20",
+        "$ total 1.30"
+      ],
+      "say": "Use curl with timing flags to see exactly how long each phase takes. The biggest value points to your culprit."
+    },
+    {
+      "id": "3-chip-big-phase",
+      "type": "chip",
+      "kicker": "Spot the Slow Phase",
+      "label": "TTFB",
+      "sub": "If time-to-first-byte is high, it's usually a backend or database issue.",
+      "say": "If time to first byte stands out, your backend or database is likely the issue."
+    },
+    {
+      "id": "4-trap-interview-mista",
+      "type": "trap",
+      "question": "Is 'total' always the slowest phase?",
+      "wrong": "Yes, total is what matters most.",
+      "right": "No, total is cumulative. Find the biggest jump between phases to target the real problem.",
+      "say": "Don't just blame the total time. The biggest jump between phases shows where to focus."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:57:51.695Z"
+}
