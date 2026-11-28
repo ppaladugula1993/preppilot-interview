@@ -1,0 +1,68 @@
+{
+  "id": "onboarding-l8",
+  "title": "Operational Readiness Checklist",
+  "keys": [
+    "monitoring",
+    "alerts",
+    "backups",
+    "DR plan"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-readiness",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "Is your app truly production ready?",
+      "line2": "Can others support it?",
+      "say": "You built the app. But can someone else support it when things go wrong? Let's see what real operational readiness means."
+    },
+    {
+      "id": "1-chip-monitoring",
+      "type": "chip",
+      "kicker": "Checklist",
+      "label": "Monitoring",
+      "sub": "Host, application, and synthetic checks. Dashboards shared.",
+      "say": "First, monitoring must cover the host, the app, and synthetic user flows. Share dashboards with your support team."
+    },
+    {
+      "id": "2-rows-alerts-backups",
+      "type": "rows",
+      "kicker": "Critical Steps",
+      "rows": [
+        {
+          "a": "Alerts",
+          "b": "Routed to on-call, with runbooks"
+        },
+        {
+          "a": "Logs",
+          "b": "Shipped to central store, retention set"
+        },
+        {
+          "a": "Backups",
+          "b": "Configured and restore tested"
+        },
+        {
+          "a": "DR Plan",
+          "b": "Written and tested for tier one"
+        }
+      ],
+      "walk": true,
+      "say": "Next, make sure alerts reach the on-call team and each alert has a runbook. Centralize logs, set retention. Backups are only real if you test restoring them. And for critical apps, test your disaster recovery plan."
+    },
+    {
+      "id": "3-trap-backups",
+      "type": "trap",
+      "question": "Which backup step do teams skip?",
+      "wrong": "Just scheduling backups",
+      "right": "Testing a backup restore—always prove you can recover.",
+      "say": "Here's a common trap: teams set up backups but skip testing restores. Always prove you can recover your data."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:20:22.006Z"
+}
