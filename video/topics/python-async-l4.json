@@ -1,0 +1,72 @@
+{
+  "id": "python-async-l4",
+  "title": "The GIL & Free-Threaded Python Explained",
+  "keys": [
+    "GIL",
+    "CPython",
+    "concurrency",
+    "threads",
+    "Python 3.12"
+  ],
+  "scenes": [
+    {
+      "id": "0-gil-hook",
+      "type": "hook",
+      "kicker": "Async & Concurrency in Python · lesson",
+      "line1": "Why can't Python threads run in parallel?",
+      "line2": "What's changing soon?",
+      "say": "Ever wondered why Python threads don't really run in parallel? Let's see what's changing soon."
+    },
+    {
+      "id": "1-gil-chip",
+      "type": "chip",
+      "kicker": "Concurrency Limit",
+      "label": "GIL",
+      "sub": "The Global Interpreter Lock blocks true thread parallelism in CPython.",
+      "say": "The Global Interpreter Lock, or GIL, stops Python threads from running at the same time. It limits how much you can use multiple cores."
+    },
+    {
+      "id": "2-gil-compare",
+      "type": "compare",
+      "kicker": "Concurrency",
+      "left": {
+        "title": "With GIL",
+        "items": [
+          "Threads share one core",
+          "CPU-bound tasks are slow"
+        ]
+      },
+      "right": {
+        "title": "Free-Threaded",
+        "items": [
+          "Threads use all cores",
+          "True parallelism possible"
+        ]
+      },
+      "say": "With the GIL, threads share a single core, so CPU-heavy work is slow. Free-threaded Python lets threads use all cores for real parallelism."
+    },
+    {
+      "id": "3-gil-code",
+      "type": "code",
+      "kicker": "Threading Example",
+      "lang": "python",
+      "code": "import threading\nfor _ in range(4):\n    threading.Thread(target=cpu_bound_func).start()",
+      "say": "Here's a threading example. Right now, even with four threads, the GIL keeps them from running in parallel for CPU tasks."
+    },
+    {
+      "id": "4-gil-trap",
+      "type": "trap",
+      "question": "Can threads run CPU tasks in parallel today?",
+      "wrong": "Yes, Python threads use all cores.",
+      "right": "No, the GIL blocks true parallelism for CPU-bound threads.",
+      "say": "Interviewers love this: Can Python threads run CPU tasks in parallel today? The answer is no, because the GIL blocks it."
+    },
+    {
+      "id": "5-gil-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:42:20.665Z"
+}
