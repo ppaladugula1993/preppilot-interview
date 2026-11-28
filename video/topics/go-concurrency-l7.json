@@ -1,0 +1,73 @@
+{
+  "id": "go-concurrency-l7",
+  "title": "Go Concurrency: Deadlocks & Starvation",
+  "keys": [
+    "deadlock",
+    "starvation",
+    "mutex",
+    "channel",
+    "goroutine"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-deadlocks",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "Ever seen your Go code freeze?",
+      "line2": "What's a deadlock?",
+      "say": "Ever seen your Go program freeze up for no reason? Let's talk about deadlocks and starvation."
+    },
+    {
+      "id": "1-chip-deadlock",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Deadlock",
+      "sub": "Goroutines wait forever on each other—nothing moves.",
+      "say": "A deadlock is when goroutines are stuck waiting on each other forever. Nothing gets done."
+    },
+    {
+      "id": "2-rows-starvation",
+      "type": "rows",
+      "kicker": "Starvation Signs",
+      "rows": [
+        {
+          "a": "Goroutine waits",
+          "b": "Never gets scheduled"
+        },
+        {
+          "a": "Resource hogging",
+          "b": "One goroutine dominates"
+        },
+        {
+          "a": "No progress",
+          "b": "Some tasks never run"
+        }
+      ],
+      "walk": false,
+      "say": "Starvation is when some goroutines never get a turn. Maybe one hogs a resource, or others just never run."
+    },
+    {
+      "id": "3-code-deadlock-exampl",
+      "type": "code",
+      "kicker": "Classic Mistake",
+      "lang": "go",
+      "code": "ch := make(chan int)\nch <- 1 // Deadlock: no receiver",
+      "say": "Here's a classic deadlock. Sending to a channel with no receiver means your code just hangs."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you avoid mutex deadlocks?",
+      "wrong": "Just unlock when you're done.",
+      "right": "Always lock in a consistent order and use defer to unlock right after locking.",
+      "say": "Interview trap! If you just say unlock when you're done, that's not enough. Always lock in the same order, and use defer to make sure you always unlock."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:13:10.171Z"
+}
