@@ -1,0 +1,73 @@
+{
+  "id": "js-core-l3",
+  "title": "JS Prototypes vs Classes Explained",
+  "keys": [
+    "prototype",
+    "class",
+    "inheritance",
+    "constructor"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-inherit",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "How does JavaScript share methods?",
+      "line2": "Prototype or class?",
+      "say": "Ever wonder how JavaScript objects share methods? Is it all about prototypes, or do classes play a role?"
+    },
+    {
+      "id": "1-chip-prototype",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Prototype",
+      "sub": "Objects inherit behavior from their prototype.",
+      "say": "First up, prototypes. Every object in JavaScript can inherit features from another object, called its prototype."
+    },
+    {
+      "id": "2-code-class-sugar",
+      "type": "code",
+      "kicker": "Syntax",
+      "lang": "js",
+      "code": "class Animal {\n  speak() { return 'hi'; }\n}\nconst a = new Animal();\na.speak();",
+      "say": "Now, classes. With ES6, classes give us a cleaner way to write constructor functions and methods, but under the hood, they still use prototypes."
+    },
+    {
+      "id": "3-compare-proto-class",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Prototype",
+        "items": [
+          "Lightweight",
+          "Flexible",
+          "Manual setup"
+        ]
+      },
+      "right": {
+        "title": "Class",
+        "items": [
+          "Structured",
+          "Constructor support",
+          "Syntactic sugar"
+        ]
+      },
+      "say": "Prototypes are flexible and lightweight, great for quick sharing. Classes offer structure and built-in constructors, making inheritance easier to manage."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Are classes totally separate from prototypes?",
+      "wrong": "Yes, classes are a new system.",
+      "right": "No, classes use prototypes behind the scenes.",
+      "say": "Interview trap: Are classes a new inheritance system? Nope! They just wrap prototypes with nicer syntax."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:00:59.148Z"
+}
