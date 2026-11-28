@@ -1,0 +1,73 @@
+{
+  "id": "onboarding-l11",
+  "title": "Handover to Business & Support (BAU)",
+  "keys": [
+    "handover",
+    "runbook",
+    "support",
+    "sign-off",
+    "access"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-handover",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "When is your app truly handed over?",
+      "line2": "What does 'done' look like?",
+      "say": "When can someone else support your app at three in the morning without waking you up? Let's break down what a real handover means."
+    },
+    {
+      "id": "1-chip-handover-pack",
+      "type": "chip",
+      "kicker": "Essentials",
+      "label": "Handbook",
+      "sub": "Runbook, architecture, support model, access, monitoring, and known issues.",
+      "say": "A solid handover means delivering a handbook: runbooks, diagrams, support model, access steps, and monitoring links—all in one place."
+    },
+    {
+      "id": "2-rows-handover-steps",
+      "type": "rows",
+      "kicker": "Handover Steps",
+      "rows": [
+        {
+          "a": "Runbook",
+          "b": "Start, stop, logs, fixes"
+        },
+        {
+          "a": "Support Model",
+          "b": "L1 desk, L2 app, L3 eng"
+        },
+        {
+          "a": "Access",
+          "b": "Groups, SSO, request process"
+        },
+        {
+          "a": "Monitoring",
+          "b": "Dashboards, alerts, paging"
+        },
+        {
+          "a": "Sign-off",
+          "b": "KT, UAT, owner accepts"
+        }
+      ],
+      "walk": true,
+      "say": "You need a runbook, clear support model, explicit access steps, monitoring setup, and formal sign-off from the business owner."
+    },
+    {
+      "id": "3-trap-access-trap",
+      "type": "trap",
+      "question": "What’s the most missed handover step?",
+      "wrong": "Test cases or code review",
+      "right": "Access for end users—groups, SSO, and a clear request process. Miss this and you’ll drown in login tickets.",
+      "say": "Most people forget to make end user access explicit. If you skip this, your support queue will fill with login issues on day one."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:27:19.052Z"
+}
