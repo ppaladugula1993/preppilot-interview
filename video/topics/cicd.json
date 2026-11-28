@@ -1,0 +1,99 @@
+{
+  "id": "cicd",
+  "title": "CI/CD & IaC: One Big Idea",
+  "keys": [
+    "CI/CD",
+    "Pipeline",
+    "Terraform",
+    "Ansible",
+    "Git"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-big-idea",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · 45 seconds",
+      "line1": "How do teams ship fast, safely?",
+      "line2": "What's the secret?",
+      "say": "How do top teams ship code fast and safely? What's the real secret behind smooth releases?"
+    },
+    {
+      "id": "1-chip-version-control",
+      "type": "chip",
+      "kicker": "Step 1 · Git",
+      "label": "Branch",
+      "sub": "Work in branches, commit, push, open pull requests",
+      "say": "It all starts with Git. You work in branches, commit your changes, push, and open pull requests for review."
+    },
+    {
+      "id": "2-rows-pipeline",
+      "type": "rows",
+      "kicker": "Step 2 · Pipeline",
+      "rows": [
+        {
+          "a": "Build",
+          "b": "Compile and package code"
+        },
+        {
+          "a": "Test",
+          "b": "Run checks automatically"
+        },
+        {
+          "a": "Deploy",
+          "b": "Promote build to next environment"
+        }
+      ],
+      "walk": true,
+      "say": "Next, the pipeline takes over. It builds your code, runs tests, and deploys to the next environment—all automatically."
+    },
+    {
+      "id": "3-compare-infra",
+      "type": "compare",
+      "kicker": "Step 3 · Infra as Code",
+      "left": {
+        "title": "Terraform",
+        "items": [
+          "Cloud resources",
+          "Tracks state"
+        ]
+      },
+      "right": {
+        "title": "Ansible",
+        "items": [
+          "Configures servers",
+          "Idempotent"
+        ]
+      },
+      "say": "For infrastructure, Terraform describes what you need in code and tracks it. Ansible configures servers and makes sure changes are repeatable."
+    },
+    {
+      "id": "4-terminal-pipeline",
+      "type": "terminal",
+      "kicker": "Pipeline · Jenkins",
+      "title": "Jenkinsfile example",
+      "lines": [
+        "$ stages {",
+        "  build",
+        "  test",
+        "  deploy",
+        "}"
+      ],
+      "say": "With Jenkins, your pipeline steps live in code too. The Jenkinsfile lists each stage—build, test, deploy—so nothing is manual."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "Why use infrastructure as code?",
+      "wrong": "So I can click less in the portal.",
+      "right": "It makes changes repeatable, reviewable, and keeps every environment identical—no snowflake servers.",
+      "say": "Interview trap: Why use infrastructure as code? It's not just to avoid clicking around. The real reason is repeatability, review, and identical environments every time."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:38:34.702Z"
+}
