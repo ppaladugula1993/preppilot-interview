@@ -1,0 +1,88 @@
+{
+  "id": "network-l8",
+  "title": "Proxies, DHCP and ARP Explained",
+  "keys": [
+    "proxy",
+    "DHCP",
+    "ARP",
+    "networking"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-proxy-dhcp-arp",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "Why do proxies, DHCP, and ARP matter?",
+      "line2": "Ever seen 'works on my laptop'?",
+      "say": "Ever wonder why something works on your laptop but fails on the server? Let’s break down proxies, DHCP, and ARP so you can spot these issues fast."
+    },
+    {
+      "id": "1-compare-proxy-types",
+      "type": "compare",
+      "kicker": "Proxy Types",
+      "left": {
+        "title": "Forward Proxy",
+        "items": [
+          "Clients go out",
+          "Used for web filtering"
+        ]
+      },
+      "right": {
+        "title": "Reverse Proxy",
+        "items": [
+          "Sits in front of servers",
+          "Load balancing, security"
+        ]
+      },
+      "say": "There are two main proxy types. Forward proxies help clients reach the internet, like in corporate setups. Reverse proxies sit in front of servers, handling load balancing and security."
+    },
+    {
+      "id": "2-rows-dhcp-dora",
+      "type": "rows",
+      "kicker": "DHCP Steps",
+      "rows": [
+        {
+          "a": "Discover",
+          "b": "Client asks for IP"
+        },
+        {
+          "a": "Offer",
+          "b": "Server proposes an IP"
+        },
+        {
+          "a": "Request",
+          "b": "Client accepts the IP"
+        },
+        {
+          "a": "Ack",
+          "b": "Server confirms assignment"
+        }
+      ],
+      "walk": true,
+      "say": "DHCP assigns IPs in four steps: discover, offer, request, and acknowledge. This is called the DORA process."
+    },
+    {
+      "id": "3-chip-arp",
+      "type": "chip",
+      "kicker": "ARP",
+      "label": "ARP",
+      "sub": "Maps IP addresses to MACs on the local subnet",
+      "say": "ARP links an IP address to a physical MAC address on your local network. It’s essential for devices to talk to each other directly."
+    },
+    {
+      "id": "4-trap-proxy-issue",
+      "type": "trap",
+      "question": "Internal calls failing via proxy?",
+      "wrong": "Proxy config is fine, must be DNS.",
+      "right": "Check NO_PROXY settings. Missing domains can cause internal calls to fail.",
+      "say": "If internal calls fail through a proxy, don’t just blame DNS. Check your NO_PROXY settings—missing domains here can break internal connections."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:30:37.407Z"
+}
