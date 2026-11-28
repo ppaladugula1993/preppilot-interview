@@ -1,0 +1,72 @@
+{
+  "id": "python-core-l6",
+  "title": "Python Classes & Dataclasses Essentials",
+  "keys": [
+    "class",
+    "dataclass",
+    "dunder",
+    "property"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-classes",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "Classes, dataclasses, dunder magic",
+      "line2": "What makes Python OOP shine?",
+      "say": "How do Python classes, dataclasses, and dunder methods make object oriented code easier and more readable?"
+    },
+    {
+      "id": "1-rows-class-vs-datacl",
+      "type": "rows",
+      "kicker": "Class vs Dataclass",
+      "rows": [
+        {
+          "a": "Regular class",
+          "b": "You write all methods"
+        },
+        {
+          "a": "Dataclass",
+          "b": "Auto-generates init, repr, eq"
+        },
+        {
+          "a": "Best for",
+          "b": "Simple data containers"
+        }
+      ],
+      "walk": true,
+      "say": "A regular class means you write every method yourself. A dataclass, on the other hand, creates the initializer, string representation, and equality checks for you. Use dataclasses for simple data containers."
+    },
+    {
+      "id": "2-code-dunder-and-prop",
+      "type": "code",
+      "kicker": "Dunder & Property Example",
+      "lang": "python",
+      "code": "from dataclasses import dataclass\n@dataclass\nclass Point:\n  x: int; y: int\n  @property\n  def area(self):\n    return self.x * self.y",
+      "say": "Here, the dataclass decorator builds the basics for a point. The property decorator lets you access area as if it's a simple attribute, but it runs code each time."
+    },
+    {
+      "id": "3-chip-dunder-methods",
+      "type": "chip",
+      "kicker": "Magic Methods",
+      "label": "Dunder",
+      "sub": "Init, repr, and eq customize object behavior",
+      "say": "Dunder methods like init, repr, and eq let you control how your objects are created, shown, and compared."
+    },
+    {
+      "id": "4-trap-dataclass-equal",
+      "type": "trap",
+      "question": "Does dataclass auto-add equality?",
+      "wrong": "No, you must write eq yourself",
+      "right": "Yes, dataclass auto-generates eq for you",
+      "say": "Watch out: dataclasses automatically add equality checks, so you don't need to write that method unless you want custom logic."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:34:21.650Z"
+}
