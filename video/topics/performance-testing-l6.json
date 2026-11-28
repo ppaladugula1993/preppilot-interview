@@ -1,0 +1,80 @@
+{
+  "id": "performance-testing-l6",
+  "title": "Interpreting Performance Metrics",
+  "keys": [
+    "latency",
+    "throughput",
+    "error rate",
+    "percentiles"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-metrics-matter",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "What do latency and errors reveal?",
+      "line2": "How do you spot real issues?",
+      "say": "When you see latency or error spikes, do you know what they really mean? Let's break down performance metrics so you can spot real issues fast."
+    },
+    {
+      "id": "1-chip-latency",
+      "type": "chip",
+      "kicker": "Key Metric",
+      "label": "Latency",
+      "sub": "How long a request takes. Focus on the slowest 5 or 1 percent.",
+      "say": "Latency is how long a request takes. I always check the slowest five or one percent, not just the average."
+    },
+    {
+      "id": "2-rows-trends-outliers",
+      "type": "rows",
+      "kicker": "What to Watch",
+      "rows": [
+        {
+          "a": "Throughput",
+          "b": "Requests per second"
+        },
+        {
+          "a": "Error Rate",
+          "b": "Failed requests over total"
+        },
+        {
+          "a": "Latency Percentiles",
+          "b": "p95 or p99, not just average"
+        },
+        {
+          "a": "Trends & Outliers",
+          "b": "Spikes show hidden problems"
+        }
+      ],
+      "walk": false,
+      "say": "I watch throughput, error rate, and latency percentiles. But the real insights come from spotting trends and outliers, not just looking at averages."
+    },
+    {
+      "id": "3-terminal-metrics-exa",
+      "type": "terminal",
+      "kicker": "Example Output",
+      "title": "Spotting Issues",
+      "lines": [
+        "$ Throughput: 500 req/s",
+        "$ Error Rate: 5%",
+        "$ p99 Latency: 2s"
+      ],
+      "say": "If throughput drops and errors rise, that's a sign of resource exhaustion. A spike in p99 latency during peak load? That often means thread contention."
+    },
+    {
+      "id": "4-trap-average-trap",
+      "type": "trap",
+      "question": "Should you rely on average latency?",
+      "wrong": "Yes, average is enough.",
+      "right": "No, averages hide outliers. Focus on p95 or p99 to see real user impact.",
+      "say": "Here's a common trap: relying only on average latency. Don't fall for it. Outliers matter most for real users."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:24:54.395Z"
+}
