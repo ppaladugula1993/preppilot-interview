@@ -1,0 +1,85 @@
+{
+  "id": "ml-fundamentals-l4",
+  "title": "Class Imbalance in ML Interviews",
+  "keys": [
+    "class imbalance",
+    "accuracy",
+    "resampling",
+    "ROC-AUC",
+    "F1-score"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-class-imbalance",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "Is accuracy always reliable?",
+      "line2": "What if classes are skewed?",
+      "say": "Is accuracy always the best metric? What happens when your classes are uneven?"
+    },
+    {
+      "id": "1-chip-class-imbalance",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Imbalance",
+      "sub": "One class dominates the dataset, causing misleading results.",
+      "say": "Class imbalance means one group shows up way more than others. This can make your metrics look better than they really are."
+    },
+    {
+      "id": "2-compare-metrics",
+      "type": "compare",
+      "kicker": "Metrics Matter",
+      "left": {
+        "title": "Accuracy",
+        "items": [
+          "Can be misleading",
+          "Ignores minority class"
+        ]
+      },
+      "right": {
+        "title": "F1 & ROC-AUC",
+        "items": [
+          "Handle imbalance",
+          "Reflect real performance"
+        ]
+      },
+      "say": "Accuracy can fool you if the data is skewed. Metrics like F1-score or ROC-AUC give a clearer picture."
+    },
+    {
+      "id": "3-rows-fix-imbalance",
+      "type": "rows",
+      "kicker": "Fixing Imbalance",
+      "rows": [
+        {
+          "a": "Resample",
+          "b": "Balance classes by adding or removing data"
+        },
+        {
+          "a": "Class Weights",
+          "b": "Give more importance to rare classes"
+        },
+        {
+          "a": "Better Metrics",
+          "b": "Use F1-score or ROC-AUC"
+        }
+      ],
+      "walk": true,
+      "say": "To handle imbalance, I resample, tweak class weights, or switch to better metrics."
+    },
+    {
+      "id": "4-trap-accuracy",
+      "type": "trap",
+      "question": "Is accuracy enough for fraud detection?",
+      "wrong": "Yes, it's always informative.",
+      "right": "No, because most transactions are legit, so accuracy hides model weaknesses. F1 or ROC-AUC is better.",
+      "say": "Here's a trap: Is accuracy enough for fraud detection? Nope. Since almost all transactions are legit, accuracy hides model weaknesses. F1-score or ROC-AUC works better."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:08:17.507Z"
+}
