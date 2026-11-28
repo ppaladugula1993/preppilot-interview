@@ -1,0 +1,81 @@
+{
+  "id": "ml-ops-l8",
+  "title": "Reproducibility in ML Pipelines",
+  "keys": [
+    "reproducibility",
+    "versioning",
+    "determinism",
+    "Docker",
+    "ML pipelines"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-repro-ml",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "Can you always rerun your ML pipeline?",
+      "line2": "Why does it matter?",
+      "say": "Can you rerun your machine learning pipeline and get the same results every single time? Let's see why that matters."
+    },
+    {
+      "id": "1-chip-reprodef",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Repeatable",
+      "sub": "Same code, data, and settings always give the same output.",
+      "say": "Reproducibility means running the same code with the same data and settings always gives you the same output."
+    },
+    {
+      "id": "2-rows-repro-steps",
+      "type": "rows",
+      "kicker": "How to achieve it",
+      "rows": [
+        {
+          "a": "Version code",
+          "b": "Use Git for all scripts"
+        },
+        {
+          "a": "Version data",
+          "b": "Tag or snapshot datasets"
+        },
+        {
+          "a": "Fix environments",
+          "b": "Use Docker or Conda"
+        },
+        {
+          "a": "Set random seeds",
+          "b": "Control randomness"
+        }
+      ],
+      "walk": true,
+      "say": "To make your pipeline reproducible, version your code, snapshot your data, lock your environment with tools like Docker, and set random seeds to control randomness."
+    },
+    {
+      "id": "3-terminal-docker-exam",
+      "type": "terminal",
+      "kicker": "Example setup",
+      "title": "Docker for reproducibility",
+      "lines": [
+        "$ docker build -t ml-pipeline .",
+        "$ docker run ml-pipeline",
+        "$ python train.py --seed 42"
+      ],
+      "say": "Here's a real example. Build your environment with Docker, then run your pipeline and set a fixed random seed for training."
+    },
+    {
+      "id": "4-trap-interview-pitfa",
+      "type": "trap",
+      "question": "What if you skip data versioning?",
+      "wrong": "It's fine if the code is versioned.",
+      "right": "Without data versioning, results can change even if code and environment stay the same.",
+      "say": "Here's a common trap: skipping data versioning. Even if your code is tracked, your results can change if the data isn't versioned too."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:30:53.037Z"
+}
