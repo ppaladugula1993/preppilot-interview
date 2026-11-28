@@ -1,0 +1,97 @@
+{
+  "id": "network-l4",
+  "title": "Firewalls: Stateful vs Stateless Rules",
+  "keys": [
+    "firewall",
+    "stateful",
+    "stateless",
+    "rules"
+  ],
+  "scenes": [
+    {
+      "id": "0-firewall-hook",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "What makes a firewall stateful?",
+      "line2": "And why does it matter?",
+      "say": "Ever wonder why some firewall rules feel simple, while others get messy fast? Let’s break down what makes a firewall stateful, and why you’ll care in interviews."
+    },
+    {
+      "id": "1-compare-stateful-sta",
+      "type": "compare",
+      "kicker": "Types",
+      "left": {
+        "title": "Stateful",
+        "items": [
+          "Tracks connections",
+          "Return traffic allowed",
+          "Fewer rules needed"
+        ]
+      },
+      "right": {
+        "title": "Stateless",
+        "items": [
+          "No connection tracking",
+          "Rules needed both ways",
+          "Easier to misconfigure"
+        ]
+      },
+      "say": "Stateful firewalls keep track of connections, so replies get through automatically. With stateless rules, you need to allow traffic both ways, or things break."
+    },
+    {
+      "id": "2-rows-firewall-reques",
+      "type": "rows",
+      "kicker": "Request Checklist",
+      "rows": [
+        {
+          "a": "Source",
+          "b": "IP or subnet sending traffic"
+        },
+        {
+          "a": "Destination",
+          "b": "IP receiving traffic"
+        },
+        {
+          "a": "Port",
+          "b": "Like TCP 443 for HTTPS"
+        },
+        {
+          "a": "Direction",
+          "b": "Inbound or outbound"
+        },
+        {
+          "a": "Reason",
+          "b": "Business need"
+        }
+      ],
+      "walk": true,
+      "say": "When you file a firewall request, always include the source and destination, the port and protocol, direction, and why you need it. Miss one, and your ticket gets bounced."
+    },
+    {
+      "id": "3-terminal-verify",
+      "type": "terminal",
+      "kicker": "Verify",
+      "title": "Testing a new rule",
+      "lines": [
+        "$ nc -zv dest 443",
+        "$ Test-NetConnection dest -Port 443"
+      ],
+      "say": "After your rule is in, test it. Use netcat on Linux or Test Net Connection on Windows to make sure traffic actually flows."
+    },
+    {
+      "id": "4-trap-backend-calls",
+      "type": "trap",
+      "question": "Backend calls client—need a rule?",
+      "wrong": "No, stateful handles it.",
+      "right": "Yes. If the backend initiates, you need a rule for that direction too.",
+      "say": "Here’s a classic trap: if your backend calls back to the client, you need a rule for that direction—even with stateful firewalls. Don’t miss it in interviews."
+    },
+    {
+      "id": "5-firewall-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:21:06.623Z"
+}
