@@ -1,0 +1,73 @@
+{
+  "id": "selenium-playwright-l3",
+  "title": "Page Object Model for UI Automation",
+  "keys": [
+    "Page Object Model",
+    "POM",
+    "reusability",
+    "maintainability",
+    "test logic"
+  ],
+  "scenes": [
+    {
+      "id": "0-pom-hook",
+      "type": "hook",
+      "kicker": "UI Automation · lesson",
+      "line1": "How do you keep test code clean?",
+      "line2": "What is the Page Object Model?",
+      "say": "Want your UI tests to stay clean and easy to update? Let's talk about the Page Object Model."
+    },
+    {
+      "id": "1-pom-chip",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "POM",
+      "sub": "Encapsulate page elements and actions in classes or modules.",
+      "say": "The Page Object Model means you wrap page elements and actions into their own class or module."
+    },
+    {
+      "id": "2-pom-rows",
+      "type": "rows",
+      "kicker": "Why Use POM?",
+      "rows": [
+        {
+          "a": "Reusability",
+          "b": "Reuse page logic across tests"
+        },
+        {
+          "a": "Readability",
+          "b": "Tests are easier to understand"
+        },
+        {
+          "a": "Maintainability",
+          "b": "Update UI in one place"
+        }
+      ],
+      "walk": true,
+      "say": "You get three wins: reusable code, readable tests, and easy updates when the UI changes."
+    },
+    {
+      "id": "3-pom-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "class LoginPage {\n  constructor(page) {\n    this.page = page;\n  }\n  async login(user, pass) {\n    await this.page.fill('#username', user);\n    await this.page.fill('#password', pass);\n    await this.page.click('#submit');\n  }\n}",
+      "say": "Here's a LoginPage class. All the login logic sits in one spot, so any UI changes are easy to fix."
+    },
+    {
+      "id": "4-pom-trap",
+      "type": "trap",
+      "question": "What does POM help with most?",
+      "wrong": "Makes tests run faster",
+      "right": "Makes tests easier to maintain and update",
+      "say": "Don't mix up speed with maintainability. POM is all about making updates simple and keeping tests organized."
+    },
+    {
+      "id": "5-pom-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:46:48.199Z"
+}
