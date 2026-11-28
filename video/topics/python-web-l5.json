@@ -1,0 +1,72 @@
+{
+  "id": "python-web-l5",
+  "title": "Sessions vs JWT: Python Web Auth",
+  "keys": [
+    "sessions",
+    "JWT",
+    "authentication",
+    "stateless",
+    "server-side"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-session-jwt",
+      "type": "hook",
+      "kicker": "Python Web · FastAPI · Django · Flask",
+      "line1": "Sessions or JWT for authentication?",
+      "line2": "What's the real difference?",
+      "say": "Sessions or JWT for authentication? What's the real difference and why does it matter?"
+    },
+    {
+      "id": "1-chip-session",
+      "type": "chip",
+      "kicker": "Sessions",
+      "label": "Session",
+      "sub": "User state is stored on the server, tracked by a cookie.",
+      "say": "Session authentication keeps user state on the server and tracks it with a cookie."
+    },
+    {
+      "id": "2-chip-jwt",
+      "type": "chip",
+      "kicker": "JWT",
+      "label": "JWT",
+      "sub": "User info is encoded in a signed token sent with each request.",
+      "say": "JWT is stateless. User info is packed in a signed token and sent every time."
+    },
+    {
+      "id": "3-compare-session-jwt",
+      "type": "compare",
+      "kicker": "How they're used",
+      "left": {
+        "title": "Session",
+        "items": [
+          "Server stores state",
+          "Cookie tracks session"
+        ]
+      },
+      "right": {
+        "title": "JWT",
+        "items": [
+          "Server stores nothing",
+          "Token in request header"
+        ]
+      },
+      "say": "Session means the server remembers you. JWT means the server checks your token but doesn't save your state."
+    },
+    {
+      "id": "4-trap-scalability",
+      "type": "trap",
+      "question": "Which is more scalable for APIs?",
+      "wrong": "Session authentication",
+      "right": "JWT is more scalable since it's stateless and doesn't need server storage.",
+      "say": "Which is more scalable for APIs? It's JWT, because stateless tokens don't need server storage."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:19:32.572Z"
+}
