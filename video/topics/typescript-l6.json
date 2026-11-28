@@ -1,0 +1,72 @@
+{
+  "id": "typescript-l6",
+  "title": "TypeScript Strict Mode & tsconfig Basics",
+  "keys": [
+    "strict mode",
+    "tsconfig",
+    "type safety",
+    "compilerOptions"
+  ],
+  "scenes": [
+    {
+      "id": "0-strict-mode-hook",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "Want fewer runtime bugs?",
+      "line2": "How strict is your config?",
+      "say": "Want fewer runtime bugs? How strict is your TypeScript setup?"
+    },
+    {
+      "id": "1-strict-chip",
+      "type": "chip",
+      "kicker": "Config",
+      "label": "strict",
+      "sub": "Turns on all strict type checks for you.",
+      "say": "Strict mode flips on every strict type check, making your code more reliable."
+    },
+    {
+      "id": "2-tsconfig-rows",
+      "type": "rows",
+      "kicker": "tsconfig essentials",
+      "rows": [
+        {
+          "a": "strict",
+          "b": "Enables all strict checks"
+        },
+        {
+          "a": "target",
+          "b": "Sets ECMAScript version"
+        },
+        {
+          "a": "module",
+          "b": "Defines module system"
+        },
+        {
+          "a": "esModuleInterop",
+          "b": "Interop with ES modules"
+        },
+        {
+          "a": "outDir",
+          "b": "Build output folder"
+        }
+      ],
+      "walk": true,
+      "say": "For a solid setup, set strict for safety, target for JavaScript version, module for system type, esModuleInterop for compatibility, and outDir for your build files."
+    },
+    {
+      "id": "3-trap-question",
+      "type": "trap",
+      "question": "Is strictNullChecks enough for safety?",
+      "wrong": "strictNullChecks covers everything.",
+      "right": "Strict mode covers all checks, not just nulls.",
+      "say": "Careful—strictNullChecks alone isn't enough. Strict mode covers all the bases, not just null values."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:53:41.426Z"
+}
