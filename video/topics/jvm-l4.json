@@ -1,0 +1,81 @@
+{
+  "id": "jvm-l4",
+  "title": "JIT Compilation & JVM Warm-up",
+  "keys": [
+    "JIT",
+    "JVM",
+    "warm-up",
+    "hotspots",
+    "profiling"
+  ],
+  "scenes": [
+    {
+      "id": "0-jit-warmup-hook",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Why does Java speed up after a while?",
+      "line2": "What’s JVM warm-up?",
+      "say": "Ever notice your Java app runs faster after a few loops? Let's see why the Java Virtual Machine needs a warm-up phase."
+    },
+    {
+      "id": "1-jit-hotspots-chip",
+      "type": "chip",
+      "kicker": "JIT Compilation",
+      "label": "Hotspots",
+      "sub": "JVM finds hot code and compiles it to native instructions at runtime.",
+      "say": "The Java Virtual Machine watches for code that runs a lot—these are hotspots. It then compiles this bytecode into fast native instructions while your app is running."
+    },
+    {
+      "id": "2-warmup-rows",
+      "type": "rows",
+      "kicker": "Warm-up Steps",
+      "rows": [
+        {
+          "a": "Start JVM",
+          "b": "Loads and interprets bytecode"
+        },
+        {
+          "a": "Profile",
+          "b": "Identifies frequently used code"
+        },
+        {
+          "a": "Optimize",
+          "b": "Compiles hotspots to native code"
+        },
+        {
+          "a": "Peak Speed",
+          "b": "Runs optimized code"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works: First, the Java Virtual Machine starts and runs your code in basic mode. Next, it profiles which parts run the most, then compiles those to native code. After that, your app hits peak speed."
+    },
+    {
+      "id": "3-jit-logs-terminal",
+      "type": "terminal",
+      "kicker": "JIT in Action",
+      "title": "See JIT Compilation Logs",
+      "lines": [
+        "$ java -XX:+PrintCompilation MyApp",
+        "123   1       MyClass::myMethod",
+        "456   2       OtherClass::run"
+      ],
+      "say": "You can see this in action by enabling JIT compilation logs when you run your app. You'll see which methods get compiled as the Java Virtual Machine optimizes your code."
+    },
+    {
+      "id": "4-trap-jit-benchmark",
+      "type": "trap",
+      "question": "Can you benchmark Java code right away?",
+      "wrong": "Yes, results are always accurate.",
+      "right": "No, you need a warm-up for the Java Virtual Machine to optimize your code first.",
+      "say": "Here's a common trap: If you benchmark Java code without a warm-up, your results will be misleading. Always let the Java Virtual Machine optimize before measuring performance."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:05:16.684Z"
+}
