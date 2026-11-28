@@ -1,0 +1,97 @@
+{
+  "id": "ml-ops-l0",
+  "title": "ML Lifecycle & MLOps Made Simple",
+  "keys": [
+    "ML Lifecycle",
+    "MLOps",
+    "Deployment",
+    "Monitoring"
+  ],
+  "scenes": [
+    {
+      "id": "0-mlops-lifecycle-hook",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "How does ML really ship?",
+      "line2": "What’s MLOps for?",
+      "say": "Ever wonder how machine learning models actually get built, shipped, and kept running in production? Let’s break down the ML lifecycle and see where MLOps fits in."
+    },
+    {
+      "id": "1-ml-lifecycle-steps",
+      "type": "rows",
+      "kicker": "ML Lifecycle",
+      "rows": [
+        {
+          "a": "Data Ingestion",
+          "b": "Gather raw data"
+        },
+        {
+          "a": "Feature Engineering",
+          "b": "Prepare inputs for models"
+        },
+        {
+          "a": "Model Training",
+          "b": "Teach the model patterns"
+        },
+        {
+          "a": "Evaluation",
+          "b": "Check model accuracy"
+        },
+        {
+          "a": "Deployment",
+          "b": "Put model into production"
+        },
+        {
+          "a": "Monitoring",
+          "b": "Track performance live"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the typical flow: collect data, process it into features, train your model, evaluate how well it works, deploy it, and keep an eye on it once it’s live."
+    },
+    {
+      "id": "2-mlops-chip",
+      "type": "chip",
+      "kicker": "Why MLOps?",
+      "label": "MLOps",
+      "sub": "Automates and connects every ML stage",
+      "say": "MLOps is all about automating and connecting these stages. It brings DevOps ideas to machine learning, so teams can collaborate and ship models faster and more reliably."
+    },
+    {
+      "id": "3-mlops-vs-ds",
+      "type": "compare",
+      "kicker": "Bridging the Gap",
+      "left": {
+        "title": "Data Science",
+        "items": [
+          "Experiment",
+          "Build models"
+        ]
+      },
+      "right": {
+        "title": "Production",
+        "items": [
+          "Deploy",
+          "Monitor",
+          "Maintain"
+        ]
+      },
+      "say": "Think of MLOps as the bridge between data science and production. It makes sure models aren’t just built, but actually deployed and maintained at scale."
+    },
+    {
+      "id": "4-mlops-trap",
+      "type": "trap",
+      "question": "Is MLOps just about deployment?",
+      "wrong": "Yes, it’s only for deployment.",
+      "right": "No, MLOps covers the whole ML lifecycle: from data to monitoring.",
+      "say": "Watch out: MLOps isn’t just about deployment. It covers every stage, from data to monitoring, making the whole process repeatable and robust."
+    },
+    {
+      "id": "5-mlops-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:52:40.930Z"
+}
