@@ -1,0 +1,84 @@
+{
+  "id": "llm-apps-l0",
+  "title": "LLM Fundamentals: Tokens & Temperature",
+  "keys": [
+    "tokens",
+    "context window",
+    "temperature",
+    "LLM"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-tokens-context-",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "How do LLMs generate text?",
+      "line2": "What limits their output?",
+      "say": "Ever wondered how large language models actually produce text—and what controls their creativity and recall?"
+    },
+    {
+      "id": "1-chip-tokens",
+      "type": "chip",
+      "kicker": "Fundamentals",
+      "label": "Tokens",
+      "sub": "LLMs split text into tokens—words or subwords.",
+      "say": "First, LLMs break everything you type into tokens, which are just words or subwords. That’s how they handle language."
+    },
+    {
+      "id": "2-rows-context-temp",
+      "type": "rows",
+      "kicker": "Key Constraints",
+      "rows": [
+        {
+          "a": "Context Window",
+          "b": "Max tokens model can remember"
+        },
+        {
+          "a": "Temperature",
+          "b": "Controls randomness in output"
+        },
+        {
+          "a": "Example",
+          "b": "4096-token window, temp 0.8 = creative"
+        }
+      ],
+      "walk": true,
+      "say": "Two big factors: context window—the maximum tokens the model can recall at once—and temperature, which tweaks how random or creative the output is."
+    },
+    {
+      "id": "3-compare-temp-values",
+      "type": "compare",
+      "kicker": "Temperature Effects",
+      "left": {
+        "title": "Low Temp",
+        "items": [
+          "Precise",
+          "Deterministic"
+        ]
+      },
+      "right": {
+        "title": "High Temp",
+        "items": [
+          "Creative",
+          "Diverse"
+        ]
+      },
+      "say": "Set temperature low for focused, predictable answers. Raise it for more creative and varied responses."
+    },
+    {
+      "id": "4-trap-context-window",
+      "type": "trap",
+      "question": "Can LLMs recall all previous text?",
+      "wrong": "Yes, they remember everything.",
+      "right": "No, they only see up to their context window limit.",
+      "say": "Don’t get caught thinking LLMs remember everything—they only see up to their context window limit."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:37:29.990Z"
+}
