@@ -1,0 +1,85 @@
+{
+  "id": "spring-l1",
+  "title": "Spring Boot Auto-Configuration & Starters",
+  "keys": [
+    "auto-configuration",
+    "starters",
+    "profiles",
+    "externalized config"
+  ],
+  "scenes": [
+    {
+      "id": "0-auto-config-hook",
+      "type": "hook",
+      "kicker": "Spring Boot · lesson",
+      "line1": "Why do Spring Boot apps need less setup?",
+      "line2": "How does auto-configuration work?",
+      "say": "Ever wonder why Spring Boot projects need so little manual setup? How does auto-configuration make it happen?"
+    },
+    {
+      "id": "1-starter-chip",
+      "type": "chip",
+      "kicker": "Feature",
+      "label": "Starters",
+      "sub": "Starters bundle dependencies for web, data, or other features.",
+      "say": "Spring Boot starters are bundles of dependencies for features like web or data. They make adding functionality fast and easy."
+    },
+    {
+      "id": "2-auto-config-rows",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Classpath scan",
+          "b": "Finds libraries and beans"
+        },
+        {
+          "a": "Property check",
+          "b": "Reads settings from files"
+        },
+        {
+          "a": "Conditional setup",
+          "b": "Configures only what's needed"
+        }
+      ],
+      "walk": true,
+      "say": "Auto-configuration scans your project for libraries, checks your settings, and sets up only what you need. No extra code required."
+    },
+    {
+      "id": "3-profiles-compare",
+      "type": "compare",
+      "kicker": "Environments",
+      "left": {
+        "title": "Profiles",
+        "items": [
+          "dev",
+          "test",
+          "prod"
+        ]
+      },
+      "right": {
+        "title": "Config",
+        "items": [
+          "application-dev",
+          "application-prod"
+        ]
+      },
+      "say": "Profiles let you switch between environments easily. Each profile can have its own config file for clean separation."
+    },
+    {
+      "id": "4-trap-question",
+      "type": "trap",
+      "question": "Can you skip config files in prod?",
+      "wrong": "Yes, auto-config handles everything.",
+      "right": "No, you still need profile-specific files for production settings.",
+      "say": "Interview trap: Can you skip config files in production? No, you still need separate files for each environment."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:16:15.557Z"
+}
