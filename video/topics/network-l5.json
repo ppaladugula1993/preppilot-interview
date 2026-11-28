@@ -1,0 +1,79 @@
+{
+  "id": "network-l5",
+  "title": "TCP Handshake, Teardown & States",
+  "keys": [
+    "handshake",
+    "teardown",
+    "SYN",
+    "ACK",
+    "TIME_WAIT"
+  ],
+  "scenes": [
+    {
+      "id": "0-tcp-handshake-hook",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "How does TCP start and end?",
+      "line2": "What are those states?",
+      "say": "Ever wonder what really happens when two machines connect over the internet? Let's break down the handshake, teardown, and those mysterious TCP states."
+    },
+    {
+      "id": "1-handshake-steps",
+      "type": "rows",
+      "kicker": "Three-way handshake",
+      "rows": [
+        {
+          "a": "Client sends SYN",
+          "b": "Starts connection"
+        },
+        {
+          "a": "Server replies SYN-ACK",
+          "b": "Port open, ready"
+        },
+        {
+          "a": "Client sends ACK",
+          "b": "Connection established"
+        }
+      ],
+      "walk": true,
+      "say": "First, the classic three-way handshake. The client sends a synchronize request, the server replies with synchronize-acknowledge, and the client answers with acknowledge. Now the connection is live."
+    },
+    {
+      "id": "2-teardown-states",
+      "type": "chip",
+      "kicker": "Closing up",
+      "label": "Teardown",
+      "sub": "Each side sends a finish and acknowledge. The first closer waits in time wait.",
+      "say": "To close, each side sends a finish and an acknowledge. The side that closes first sits in time wait for a bit, making sure all packets are done."
+    },
+    {
+      "id": "3-tcp-state-terminal",
+      "type": "terminal",
+      "kicker": "Spot the state",
+      "title": "Check TCP states",
+      "lines": [
+        "$ ss -tan | awk '{print $1}'",
+        "LISTEN",
+        "ESTAB",
+        "TIME-WAIT",
+        "CLOSE-WAIT"
+      ],
+      "say": "You can check current TCP states with the socket statistics command. Listen means waiting for connections, established means connected, time wait is after closing, and close wait means the app isn't closing sockets."
+    },
+    {
+      "id": "4-trap-handshake",
+      "type": "trap",
+      "question": "What does a SYN with no answer mean?",
+      "wrong": "Connection refused",
+      "right": "It means the packet was dropped or timed out—likely a firewall or routing issue.",
+      "say": "Here's a trap: if a synchronize packet gets no answer, that's not refused. It means the packet was dropped or timed out, usually by a firewall or network problem."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:23:33.336Z"
+}
