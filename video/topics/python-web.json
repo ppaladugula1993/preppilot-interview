@@ -1,0 +1,80 @@
+{
+  "id": "python-web",
+  "title": "Choosing Your Python Web Framework",
+  "keys": [
+    "FastAPI",
+    "Django",
+    "Flask",
+    "async",
+    "validation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-which-framework",
+      "type": "hook",
+      "kicker": "Python Web · 45 seconds",
+      "line1": "Which framework fits your next app?",
+      "line2": "FastAPI, Django, or Flask?",
+      "say": "If you're building a web app, picking the right Python framework can make or break your project. Which one should you choose?"
+    },
+    {
+      "id": "1-chip-fastapi",
+      "type": "chip",
+      "kicker": "Step 1 · FastAPI",
+      "label": "FastAPI",
+      "sub": "Async-first, automatic docs, and type-driven validation.",
+      "say": "FastAPI is async-first, generates docs for you, and uses Python types for validation. It's perfect for modern APIs."
+    },
+    {
+      "id": "2-chip-django",
+      "type": "chip",
+      "kicker": "Step 2 · Django",
+      "label": "Django",
+      "sub": "Full-stack, batteries-included, ORM, admin, and auth.",
+      "say": "Django is full-stack. You get an ORM, admin interface, and authentication out of the box. Great for complex apps."
+    },
+    {
+      "id": "3-chip-flask",
+      "type": "chip",
+      "kicker": "Step 3 · Flask",
+      "label": "Flask",
+      "sub": "Minimal, flexible, ideal for microservices or simple APIs.",
+      "say": "Flask is minimal and flexible. It's ideal for microservices or simple APIs, and you add features as you need them."
+    },
+    {
+      "id": "4-compare-async",
+      "type": "compare",
+      "kicker": "Async Support",
+      "left": {
+        "title": "FastAPI",
+        "items": [
+          "Async by default",
+          "ASGI server"
+        ]
+      },
+      "right": {
+        "title": "Django & Flask",
+        "items": [
+          "Sync or async views",
+          "WSGI or ASGI"
+        ]
+      },
+      "say": "FastAPI is async by default and runs on ASGI. Django and Flask now support async views, but you can still use sync if you want."
+    },
+    {
+      "id": "5-trap-misconception",
+      "type": "trap",
+      "question": "Are Django and Flask strictly sync-only?",
+      "wrong": "Yes, they're sync-only.",
+      "right": "No, both support async views since recent versions.",
+      "say": "Don't fall for this trap. Django and Flask both support async views now, so they're not strictly synchronous."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:39:48.360Z"
+}
