@@ -1,0 +1,80 @@
+{
+  "id": "ml-ops-l7",
+  "title": "Model Versioning in MLOps",
+  "keys": [
+    "model versioning",
+    "rollback",
+    "MLflow",
+    "reproducibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-model-versions",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "Ever needed to undo a model change?",
+      "line2": "How do you track versions?",
+      "say": "Ever needed to undo a model change? How do you actually keep track of every model version?"
+    },
+    {
+      "id": "1-chip-why-version",
+      "type": "chip",
+      "kicker": "Why Version?",
+      "label": "Trace",
+      "sub": "Versioning lets you audit, rollback, and reproduce models.",
+      "say": "Versioning lets you audit, roll back, and reproduce your models. It's your safety net in production."
+    },
+    {
+      "id": "2-rows-how-versioning-",
+      "type": "rows",
+      "kicker": "How it Works",
+      "rows": [
+        {
+          "a": "Track code",
+          "b": "Log training scripts and changes"
+        },
+        {
+          "a": "Track data",
+          "b": "Record datasets used"
+        },
+        {
+          "a": "Track params",
+          "b": "Save hyperparameters"
+        },
+        {
+          "a": "Tools",
+          "b": "Use MLflow or DVC"
+        }
+      ],
+      "walk": true,
+      "say": "You track your training code, the exact data, and all parameters. Tools like MLflow or DVC make this easy."
+    },
+    {
+      "id": "3-terminal-mlflow-exam",
+      "type": "terminal",
+      "kicker": "MLflow Example",
+      "title": "Model Registry",
+      "lines": [
+        "$ mlflow models list",
+        "v1: dataset A, baseline",
+        "v2: dataset B, new features"
+      ],
+      "say": "For example, MLflow can list your model versions. You see what data and features each version used."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Is saving model files enough?",
+      "wrong": "Yes, just save the model file.",
+      "right": "Nope! You need code, data, and parameters for true reproducibility.",
+      "say": "Is saving just the model file enough? Nope! You need code, data, and parameters for true reproducibility."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:09:55.092Z"
+}
