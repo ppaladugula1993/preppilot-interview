@@ -1,0 +1,80 @@
+{
+  "id": "cloud-l7",
+  "title": "Azure/AWS Outbound Internet & SNAT",
+  "keys": [
+    "SNAT",
+    "NAT Gateway",
+    "Outbound",
+    "Port Exhaustion"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-outbound-snat",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "Why do VM internet calls fail",
+      "line2": "under heavy load?",
+      "say": "Ever wonder why your virtual machines suddenly can't reach the internet when traffic spikes?"
+    },
+    {
+      "id": "1-chip-snat-paths",
+      "type": "chip",
+      "kicker": "Outbound paths",
+      "label": "Options",
+      "sub": "NAT Gateway, firewall, load balancer, or a VM's public IP.",
+      "say": "VMs can reach the internet through a NAT gateway, a firewall, load balancer rules, or a public IP."
+    },
+    {
+      "id": "2-rows-snat-exhaustion",
+      "type": "rows",
+      "kicker": "SNAT Port Limits",
+      "rows": [
+        {
+          "a": "NAT Gateway",
+          "b": "Simple, scalable, static IP"
+        },
+        {
+          "a": "Firewall",
+          "b": "Inspects, allows by domain"
+        },
+        {
+          "a": "Load Balancer",
+          "b": "Custom port allocation"
+        },
+        {
+          "a": "Public IP",
+          "b": "Avoid for servers"
+        }
+      ],
+      "walk": true,
+      "say": "Each path shares a limited pool of SNAT ports. If your app opens lots of short-lived connections, those ports run out fast."
+    },
+    {
+      "id": "3-terminal-snat-metric",
+      "type": "terminal",
+      "kicker": "Troubleshooting",
+      "title": "Check SNAT Usage",
+      "lines": [
+        "$ az network nat show",
+        "SNAT Connection Count: 63999",
+        "SNAT Connection Count (failed): 120"
+      ],
+      "say": "Check the SNAT connection count metric on your load balancer or NAT gateway. High failed counts mean port exhaustion."
+    },
+    {
+      "id": "4-trap-exhaustion-caus",
+      "type": "trap",
+      "question": "What's the main cause of SNAT issues?",
+      "wrong": "Not enough public IPs",
+      "right": "Too many new connections per request. Reuse connections instead.",
+      "say": "Here's a trap: most SNAT problems are caused by apps opening new connections for every request, not just a lack of IP addresses."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:49:50.407Z"
+}
