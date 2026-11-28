@@ -1,0 +1,80 @@
+{
+  "id": "virt-l3",
+  "title": "Storage Types & RAID for VMware",
+  "keys": [
+    "DAS",
+    "NAS",
+    "SAN",
+    "RAID"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-storage-types",
+      "type": "hook",
+      "kicker": "VMware & Storage · lesson",
+      "line1": "DAS, NAS, SAN—what's the difference?",
+      "line2": "And why does RAID matter?",
+      "say": "You keep hearing DAS, NAS, SAN, and RAID. But what do they really mean for your VMware setup?"
+    },
+    {
+      "id": "1-chip-das-nas-san",
+      "type": "chip",
+      "kicker": "Storage Types",
+      "label": "DAS",
+      "sub": "Local disks, directly attached to the host.",
+      "say": "DAS is direct attached storage. Just local disks plugged right into your server."
+    },
+    {
+      "id": "2-rows-nas-san",
+      "type": "rows",
+      "kicker": "Networked Storage",
+      "rows": [
+        {
+          "a": "NAS",
+          "b": "File shares over the network."
+        },
+        {
+          "a": "SAN",
+          "b": "Block storage via Fibre Channel or iSCSI."
+        }
+      ],
+      "walk": false,
+      "say": "NAS gives you file shares over the network, like NFS or SMB. SAN is block storage, so your server sees it as a raw disk."
+    },
+    {
+      "id": "3-compare-raid",
+      "type": "compare",
+      "kicker": "RAID Levels",
+      "left": {
+        "title": "RAID 5",
+        "items": [
+          "Stripes data with parity",
+          "Survives one disk failure"
+        ]
+      },
+      "right": {
+        "title": "RAID 10",
+        "items": [
+          "Mirrors and stripes",
+          "Fast, but half capacity"
+        ]
+      },
+      "say": "For RAID, remember: RAID 5 stripes data with parity, so it can lose one disk. RAID 10 mirrors and stripes, so it's fast but you only get half the space."
+    },
+    {
+      "id": "4-trap-iops-throughput",
+      "type": "trap",
+      "question": "What does a database care about most?",
+      "wrong": "Throughput in megabytes per second.",
+      "right": "IOPS and latency matter most for databases.",
+      "say": "Here's a trap: Databases don't care about throughput—they care about input output per second and latency."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:32:14.082Z"
+}
