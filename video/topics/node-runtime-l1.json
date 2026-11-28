@@ -1,0 +1,73 @@
+{
+  "id": "node-runtime-l1",
+  "title": "Blocking the Event Loop in Node.js",
+  "keys": [
+    "event loop",
+    "blocking",
+    "synchronous",
+    "clinic.js",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-blocking",
+      "type": "hook",
+      "kicker": "Node.js Runtime · lesson",
+      "line1": "What happens if the event loop stalls?",
+      "line2": "Can your server still respond?",
+      "say": "Ever wondered what happens when Node's event loop gets stuck? Can your server still handle requests?"
+    },
+    {
+      "id": "1-chip-blocking",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Blocking",
+      "sub": "Synchronous code can freeze the event loop, stopping all other events.",
+      "say": "Blocking means synchronous code runs so long that the event loop can't process anything else. Everything grinds to a halt."
+    },
+    {
+      "id": "2-code-infinite-loop",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "while(true) {}\n// Server becomes unresponsive",
+      "say": "For example, an infinite loop like this will totally freeze your server. No requests get handled until it's stopped."
+    },
+    {
+      "id": "3-rows-detect-blocking",
+      "type": "rows",
+      "kicker": "Detection",
+      "rows": [
+        {
+          "a": "Profile latency",
+          "b": "Use clinic.js"
+        },
+        {
+          "a": "Check active requests",
+          "b": "process._getActiveRequests()"
+        },
+        {
+          "a": "Monitor response times",
+          "b": "Look for slowdowns"
+        }
+      ],
+      "walk": true,
+      "say": "To catch blocking code, I profile latency with clinic.js, check active requests, and watch for slow response times."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you block the event loop?",
+      "wrong": "By using async code everywhere.",
+      "right": "By running heavy synchronous code, like infinite loops or big computations.",
+      "say": "Interviewers love this: How do you block the event loop? It's not about async code—it's about heavy synchronous stuff."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:02:15.966Z"
+}
