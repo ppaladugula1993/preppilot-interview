@@ -1,0 +1,74 @@
+{
+  "id": "python-async-l3",
+  "title": "Threading vs Multiprocessing vs Futures",
+  "keys": [
+    "threading",
+    "multiprocessing",
+    "concurrent.futures",
+    "GIL",
+    "parallelism"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-concurren",
+      "type": "hook",
+      "kicker": "Async & Concurrency in Python · lesson",
+      "line1": "Which concurrency model fits your task?",
+      "line2": "Threading, Multiprocessing, or Futures?",
+      "say": "Ever wondered which Python concurrency tool to pick for your workload? Let's break down threading, multiprocessing, and concurrent futures."
+    },
+    {
+      "id": "1-compare-threading-mu",
+      "type": "compare",
+      "kicker": "Core Differences",
+      "left": {
+        "title": "Threading",
+        "items": [
+          "Single process",
+          "Limited by GIL",
+          "Good for I/O-bound"
+        ]
+      },
+      "right": {
+        "title": "Multiprocessing",
+        "items": [
+          "Multiple processes",
+          "True parallelism",
+          "Best for CPU-bound"
+        ]
+      },
+      "say": "Threading runs multiple threads in one process, but the global interpreter lock slows down CPU-heavy work. Multiprocessing uses separate processes, letting you run tasks in parallel and dodge the GIL."
+    },
+    {
+      "id": "2-chip-concurrent-futu",
+      "type": "chip",
+      "kicker": "Unified API",
+      "label": "Futures",
+      "sub": "ThreadPoolExecutor and ProcessPoolExecutor let you use both models with one interface.",
+      "say": "Concurrent futures gives you a single interface to manage threads or processes, making your code cleaner and easier to switch between models."
+    },
+    {
+      "id": "3-code-executor-exampl",
+      "type": "code",
+      "kicker": "Quick Example",
+      "lang": "python",
+      "code": "from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor\nwith ThreadPoolExecutor() as pool:\n    pool.submit(func, arg)\nwith ProcessPoolExecutor() as pool:\n    pool.submit(cpu_bound_func, arg)",
+      "say": "Use thread pool executor for I/O-bound jobs, and process pool executor for CPU-bound ones. It’s just a swap of the executor type."
+    },
+    {
+      "id": "4-trap-gil-mistake",
+      "type": "trap",
+      "question": "Which is best for CPU-bound tasks?",
+      "wrong": "Threading, since it's lighter.",
+      "right": "Multiprocessing, because it avoids the GIL and enables true parallelism.",
+      "say": "Don’t fall for the trap—threading is limited by the global interpreter lock for CPU-heavy tasks. Multiprocessing is your go-to for real parallel speed."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:39:35.886Z"
+}
