@@ -1,0 +1,72 @@
+{
+  "id": "ios-swift-l6",
+  "title": "Networking, Codable & Persistence",
+  "keys": [
+    "URLSession",
+    "Codable",
+    "Core Data",
+    "SwiftData"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-networking-coda",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "How do apps fetch, parse, and save data?",
+      "line2": "What tools make it easy?",
+      "say": "How do iOS apps fetch, parse, and save data smoothly? What tools make that easy for us?"
+    },
+    {
+      "id": "1-chip-networking",
+      "type": "chip",
+      "kicker": "Networking",
+      "label": "URLSession",
+      "sub": "Handles HTTP requests in Swift apps.",
+      "say": "First up, URLSession. This handles HTTP requests for us, making networking straightforward."
+    },
+    {
+      "id": "2-code-codable",
+      "type": "code",
+      "kicker": "Parsing JSON",
+      "lang": "swift",
+      "code": "struct User: Codable {\n  let name: String\n}\nlet data = try JSONEncoder().encode(User(name: \"Alice\"))",
+      "say": "Codable makes encoding and decoding models to JSON super safe and concise. Here’s a user struct as an example."
+    },
+    {
+      "id": "3-rows-persistence",
+      "type": "rows",
+      "kicker": "Persistence Options",
+      "rows": [
+        {
+          "a": "Core Data",
+          "b": "Object graph, complex data"
+        },
+        {
+          "a": "SwiftData",
+          "b": "Modern, simple storage"
+        },
+        {
+          "a": "UserDefaults",
+          "b": "Lightweight key-value pairs"
+        }
+      ],
+      "walk": true,
+      "say": "For saving data locally, use Core Data for complex models, SwiftData for simpler needs, or UserDefaults for lightweight storage."
+    },
+    {
+      "id": "4-trap-codable-misuse",
+      "type": "trap",
+      "question": "Is Codable only for JSON?",
+      "wrong": "Yes, just for JSON.",
+      "right": "No, Codable works with any format, like property lists.",
+      "say": "Interview trap: Is Codable only for JSON? Nope, it works with other formats too, like property lists."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:19:54.782Z"
+}
