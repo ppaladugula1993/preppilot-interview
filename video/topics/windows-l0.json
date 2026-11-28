@@ -1,0 +1,77 @@
+{
+  "id": "windows-l0",
+  "title": "Active Directory Basics",
+  "keys": [
+    "Active Directory",
+    "domain controller",
+    "authentication",
+    "replication"
+  ],
+  "scenes": [
+    {
+      "id": "0-ad-hook",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "What keeps logins secure?",
+      "line2": "Why use Active Directory?",
+      "say": "Ever wondered how big companies keep all their logins and permissions in sync? Let's break down Active Directory."
+    },
+    {
+      "id": "1-ad-chip",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Directory",
+      "sub": "Active Directory stores users, computers, and groups for the whole network.",
+      "say": "Active Directory is like a giant address book for your network. It tracks users, computers, and groups all in one place."
+    },
+    {
+      "id": "2-ad-compare",
+      "type": "compare",
+      "kicker": "Key Role",
+      "left": {
+        "title": "Domain Controller",
+        "items": [
+          "Authenticates logins",
+          "Holds directory",
+          "Replicates changes"
+        ]
+      },
+      "right": {
+        "title": "Regular Server",
+        "items": [
+          "No authentication",
+          "No directory",
+          "No replication"
+        ]
+      },
+      "say": "Domain controllers are special servers. They handle authentication, store the directory, and sync updates with each other. Regular servers can't do any of that."
+    },
+    {
+      "id": "3-ad-terminal",
+      "type": "terminal",
+      "kicker": "Handy Commands",
+      "title": "User & Group Tasks",
+      "lines": [
+        "$ Search-ADAccount -LockedOut",
+        "$ Unlock-ADAccount jdoe",
+        "$ Get-ADGroupMember \"App-Admins\""
+      ],
+      "say": "You can easily find locked accounts, unlock users, and list group members using PowerShell commands."
+    },
+    {
+      "id": "4-ad-trap",
+      "type": "trap",
+      "question": "How many domain controllers per domain?",
+      "wrong": "Just one is fine.",
+      "right": "Always run at least two for redundancy.",
+      "say": "Here's a common trap: running only one domain controller. Always use at least two so you don't lose authentication if one goes down."
+    },
+    {
+      "id": "5-ad-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:15:27.495Z"
+}
