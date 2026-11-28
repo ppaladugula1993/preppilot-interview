@@ -1,0 +1,71 @@
+{
+  "id": "python-core-l8",
+  "title": "Type Hints, mypy, and the GIL",
+  "keys": [
+    "type hints",
+    "mypy",
+    "GIL",
+    "threads"
+  ],
+  "scenes": [
+    {
+      "id": "0-python-hints-gil-hoo",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "Why do type hints and the GIL matter?",
+      "line2": "How do they affect your code?",
+      "say": "Ever wonder why type hints and something called the GIL actually matter for your Python code?"
+    },
+    {
+      "id": "1-type-hint-chip",
+      "type": "chip",
+      "kicker": "Type Hints",
+      "label": "mypy",
+      "sub": "Type hints let tools like mypy catch bugs before you run your code.",
+      "say": "Type hints let static tools like mypy catch type errors before your code even runs. It's a huge boost for code quality."
+    },
+    {
+      "id": "2-type-hint-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "def add(a: int, b: int) -> int:\n    return a + b",
+      "say": "Here's a function with type hints. It says add takes two integers and returns an integer."
+    },
+    {
+      "id": "3-gil-compare",
+      "type": "compare",
+      "kicker": "Concurrency",
+      "left": {
+        "title": "Threads",
+        "items": [
+          "Blocked by GIL",
+          "No speedup for CPU tasks"
+        ]
+      },
+      "right": {
+        "title": "Processes",
+        "items": [
+          "No GIL limit",
+          "True parallelism"
+        ]
+      },
+      "say": "But the GIL, or Global Interpreter Lock, means only one thread runs Python code at a time. For real parallelism, use processes, not threads."
+    },
+    {
+      "id": "4-gil-trap",
+      "type": "trap",
+      "question": "Will threads speed up CPU-heavy code?",
+      "wrong": "Yes, threads run in parallel.",
+      "right": "No, the GIL blocks threads from running CPU code in parallel. Use processes instead.",
+      "say": "Here's a common trap: will threads speed up CPU-heavy code? Nope. The GIL keeps them from running in true parallel. Use processes instead."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:37:39.518Z"
+}
