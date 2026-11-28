@@ -1,0 +1,90 @@
+{
+  "id": "troubleshoot-l1",
+  "title": "Latency, Bandwidth & Throughput: Know the Difference",
+  "keys": [
+    "latency",
+    "bandwidth",
+    "throughput",
+    "loss",
+    "jitter"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-latency-bandwid",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity, Latency, Throughput · lesson",
+      "line1": "Is high bandwidth always fast?",
+      "line2": "Or is it latency?",
+      "say": "Is a bigger network pipe always faster? Or does latency slow you down?"
+    },
+    {
+      "id": "1-chip-bandwidth",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Bandwidth",
+      "sub": "The size of the pipe—how much data can flow at once.",
+      "say": "Bandwidth is the size of your network pipe. It’s the max capacity, not what you actually get."
+    },
+    {
+      "id": "2-rows-latency-through",
+      "type": "rows",
+      "kicker": "Compare the Terms",
+      "rows": [
+        {
+          "a": "Latency",
+          "b": "Round-trip time for data"
+        },
+        {
+          "a": "Throughput",
+          "b": "Actual data delivered"
+        },
+        {
+          "a": "Loss",
+          "b": "Packets that never arrive"
+        },
+        {
+          "a": "Jitter",
+          "b": "Latency that jumps around"
+        }
+      ],
+      "walk": false,
+      "say": "Latency is the round-trip time. Throughput is what you really get. Loss means missing packets. Jitter is when latency keeps changing."
+    },
+    {
+      "id": "3-compare-bw-latency",
+      "type": "compare",
+      "kicker": "Why It Matters",
+      "left": {
+        "title": "Bandwidth",
+        "items": [
+          "Big pipe",
+          "High capacity"
+        ]
+      },
+      "right": {
+        "title": "Latency & Loss",
+        "items": [
+          "Slow round trips",
+          "Lost packets",
+          "Lower throughput"
+        ]
+      },
+      "say": "A huge pipe doesn’t help if round trips are slow or packets vanish. High latency or loss can kill your throughput, no matter the bandwidth."
+    },
+    {
+      "id": "4-trap-mixup",
+      "type": "trap",
+      "question": "What fixes slow file copies?",
+      "wrong": "Upgrade bandwidth every time",
+      "right": "Check latency, loss, and TCP window size. Bandwidth alone may not help.",
+      "say": "Here’s a trap: If a file copy is slow, do you just upgrade bandwidth? Not always. Latency, loss, and TCP window size can be the real blockers."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:49:44.047Z"
+}
