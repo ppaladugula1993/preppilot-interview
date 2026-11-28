@@ -1,0 +1,92 @@
+{
+  "id": "test-strategy-l3",
+  "title": "Defect Lifecycle: Severity vs Priority",
+  "keys": [
+    "defect",
+    "severity",
+    "priority",
+    "lifecycle"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-defect-lifecycl",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "What happens after you find a bug?",
+      "line2": "How urgent is it?",
+      "say": "Ever wonder what really happens after you spot a bug? And how do you decide if it needs fixing right away?"
+    },
+    {
+      "id": "1-rows-lifecycle",
+      "type": "rows",
+      "kicker": "Defect Lifecycle",
+      "rows": [
+        {
+          "a": "Report",
+          "b": "Bug is logged by QA"
+        },
+        {
+          "a": "Triage",
+          "b": "Assign severity and priority"
+        },
+        {
+          "a": "Fix",
+          "b": "Developer resolves the issue"
+        },
+        {
+          "a": "Verify",
+          "b": "QA checks the fix"
+        },
+        {
+          "a": "Close",
+          "b": "Defect is marked resolved"
+        }
+      ],
+      "walk": true,
+      "say": "The defect lifecycle starts with reporting, then triage where we set severity and priority, followed by fixing, verifying, and finally closing the bug."
+    },
+    {
+      "id": "2-compare-severity-pri",
+      "type": "compare",
+      "kicker": "Severity vs Priority",
+      "left": {
+        "title": "Severity",
+        "items": [
+          "Impact on system",
+          "How badly it breaks things"
+        ]
+      },
+      "right": {
+        "title": "Priority",
+        "items": [
+          "How soon to fix",
+          "Urgency for the team"
+        ]
+      },
+      "say": "Severity is about how much the bug affects the system. Priority is about how quickly it needs to be fixed. Both matter for smart defect management."
+    },
+    {
+      "id": "3-chip-example",
+      "type": "chip",
+      "kicker": "Example",
+      "label": "Typo",
+      "sub": "Low severity, low priority. Payment failure? High severity, high priority.",
+      "say": "For example, a typo in the interface is low severity and low priority. But a payment failure is both high severity and high priority."
+    },
+    {
+      "id": "4-trap-confuse",
+      "type": "trap",
+      "question": "What’s more urgent: severity or priority?",
+      "wrong": "Severity always comes first.",
+      "right": "Priority decides urgency. Severity shows impact.",
+      "say": "Here's a common interview trap: Is severity more urgent than priority? Actually, priority decides urgency, while severity shows impact."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:29:48.267Z"
+}
