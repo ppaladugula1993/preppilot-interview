@@ -1,0 +1,72 @@
+{
+  "id": "python-web-l7",
+  "title": "Pytest Fixtures for Web App Testing",
+  "keys": [
+    "pytest",
+    "fixture",
+    "test client",
+    "setup"
+  ],
+  "scenes": [
+    {
+      "id": "0-pytest-fixtures-hook",
+      "type": "hook",
+      "kicker": "Python Web (FastAPI, Django, Flask) · lesson",
+      "line1": "How do pros keep web app tests clean?",
+      "line2": "What are pytest fixtures?",
+      "say": "Ever wonder how experienced devs keep their web app tests clean and easy to maintain? Let's talk about pytest fixtures."
+    },
+    {
+      "id": "1-why-pytest-fixtures",
+      "type": "chip",
+      "kicker": "Testing",
+      "label": "Fixtures",
+      "sub": "Reusable setup for tests, like test clients or fake data.",
+      "say": "Fixtures in pytest let you set up things like test clients or fake databases, and reuse that setup across tests."
+    },
+    {
+      "id": "2-pytest-fixture-examp",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "@pytest.fixture\ndef client():\n    return TestClient(app)\ndef test_home(client):\n    response = client.get('/')\n    assert response.status_code == 200",
+      "say": "Here's how it works. You define a fixture that returns a test client. Then, any test that takes that fixture as an argument gets a ready-to-use client."
+    },
+    {
+      "id": "3-pytest-fixture-steps",
+      "type": "rows",
+      "kicker": "How Fixtures Help",
+      "rows": [
+        {
+          "a": "Setup",
+          "b": "Create test clients or data"
+        },
+        {
+          "a": "Reuse",
+          "b": "Share setup across tests"
+        },
+        {
+          "a": "Isolation",
+          "b": "Each test runs clean"
+        }
+      ],
+      "walk": true,
+      "say": "With fixtures, you set up once, reuse everywhere, and keep each test isolated. That means less code and fewer bugs."
+    },
+    {
+      "id": "4-trap-fixture-mistake",
+      "type": "trap",
+      "question": "Should you share global state in fixtures?",
+      "wrong": "Yes, to speed up tests.",
+      "right": "No, each test should get a fresh setup to avoid flaky results.",
+      "say": "Here's a common trap: sharing global state in fixtures. Don't do it. Each test should get a fresh setup so your tests stay reliable."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:24:46.319Z"
+}
