@@ -1,0 +1,84 @@
+{
+  "id": "api-testing-l1",
+  "title": "API Testing Tools: What to Know",
+  "keys": [
+    "Postman",
+    "REST Assured",
+    "pytest",
+    "automation"
+  ],
+  "scenes": [
+    {
+      "id": "0-api-testing-hook",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "Which tool should you pick?",
+      "line2": "Do you know why?",
+      "say": "Which API testing tool should you use, and why does it matter in interviews?"
+    },
+    {
+      "id": "1-postman-chip",
+      "type": "chip",
+      "kicker": "Popular Tool",
+      "label": "Postman",
+      "sub": "Great for manual and automated REST API tests.",
+      "say": "Postman is a favorite for manual and automated testing of REST APIs. It's user-friendly and powerful."
+    },
+    {
+      "id": "2-compare-automation",
+      "type": "compare",
+      "kicker": "Automation Choices",
+      "left": {
+        "title": "REST Assured",
+        "items": [
+          "Java-based",
+          "Fluent syntax"
+        ]
+      },
+      "right": {
+        "title": "pytest + requests",
+        "items": [
+          "Python-based",
+          "Simple assertions"
+        ]
+      },
+      "say": "For automation, Java teams often use REST Assured, while Python fans reach for pytest with requests."
+    },
+    {
+      "id": "3-rows-ci",
+      "type": "rows",
+      "kicker": "Why It Matters",
+      "rows": [
+        {
+          "a": "Automate tests",
+          "b": "Catch bugs early"
+        },
+        {
+          "a": "CI integration",
+          "b": "Run tests on every build"
+        },
+        {
+          "a": "Industry standard",
+          "b": "Interviewers expect it"
+        }
+      ],
+      "walk": false,
+      "say": "These tools help you automate checks, plug into CI pipelines, and show interviewers you know industry standards."
+    },
+    {
+      "id": "4-trap-tool-choice",
+      "type": "trap",
+      "question": "Should you always use Postman?",
+      "wrong": "Yes, it's the best for everything.",
+      "right": "No, pick tools based on tech stack and CI needs.",
+      "say": "Don't just default to Postman. Choose your tool based on the team's tech stack and how it fits into CI workflows."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:35:30.290Z"
+}
