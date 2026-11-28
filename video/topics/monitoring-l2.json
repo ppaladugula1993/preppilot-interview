@@ -1,0 +1,85 @@
+{
+  "id": "monitoring-l2",
+  "title": "Alert Rules: What, Why, How",
+  "keys": [
+    "PromQL",
+    "severity",
+    "for",
+    "alert noise"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-alert-rules",
+      "type": "hook",
+      "kicker": "Monitoring · lesson",
+      "line1": "What makes a good alert rule?",
+      "line2": "How do you write one?",
+      "say": "Ever wondered how to write alert rules that actually help, not just spam your team?"
+    },
+    {
+      "id": "1-chip-promql",
+      "type": "chip",
+      "kicker": "Core piece",
+      "label": "PromQL",
+      "sub": "Alert rules use a PromQL expression to define what to watch.",
+      "say": "Alert rules start with a PromQL expression. That’s how you tell the system exactly what to monitor."
+    },
+    {
+      "id": "2-rows-alert-parts",
+      "type": "rows",
+      "kicker": "Alert rule basics",
+      "rows": [
+        {
+          "a": "Expression",
+          "b": "What metric triggers the alert"
+        },
+        {
+          "a": "Duration",
+          "b": "How long it must be true"
+        },
+        {
+          "a": "Severity",
+          "b": "How urgent the alert is"
+        }
+      ],
+      "walk": true,
+      "say": "Every alert rule has three parts: the metric to watch, how long it must stay triggered, and how serious it is."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Disk almost full",
+      "lines": [
+        "$ alert: HostDiskAlmostFull",
+        "$ expr: avail / size < 10%",
+        "$ for: 10m",
+        "$ severity: warning"
+      ],
+      "say": "Here’s an alert for when disk space drops below ten percent for ten minutes. It’s marked as a warning."
+    },
+    {
+      "id": "4-chip-for-tip",
+      "type": "chip",
+      "kicker": "Pro tip",
+      "label": "for",
+      "sub": "Use durations to block noisy, one-off spikes.",
+      "say": "Adding a duration stops one-off spikes from waking up the whole team. It keeps alerts actionable."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "What’s the most important part?",
+      "wrong": "Severity, so you know who to page.",
+      "right": "All parts matter: expression, duration, and severity. Missing any makes alerts useless or noisy.",
+      "say": "Interviewers love this question. Don’t just pick severity—every part matters. Without all three, alerts get ignored or become noise."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:00:47.484Z"
+}
