@@ -1,0 +1,62 @@
+{
+  "id": "windows-l2",
+  "title": "DNS & DHCP for Windows Server Interviews",
+  "keys": [
+    "DNS",
+    "DHCP",
+    "SRV records",
+    "Active Directory"
+  ],
+  "scenes": [
+    {
+      "id": "0-dns-dhcp-hook",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "Why does AD break so often?",
+      "line2": "Is it really the domain?",
+      "say": "Ever wonder why Active Directory issues pop up so much? Is it really the domain that's broken?"
+    },
+    {
+      "id": "1-dns-chip",
+      "type": "chip",
+      "kicker": "Core Fact",
+      "label": "DNS",
+      "sub": "Domain controllers register service records so clients can find them.",
+      "say": "Here's the deal: domain controllers use DNS to register special service records. That's how clients actually find them."
+    },
+    {
+      "id": "2-dhcp-chip",
+      "type": "chip",
+      "kicker": "Core Fact",
+      "label": "DHCP",
+      "sub": "DHCP hands out IP addresses from defined scopes.",
+      "say": "And DHCP? It hands out IP addresses from scopes you set up, so every device gets a unique address."
+    },
+    {
+      "id": "3-dns-terminal",
+      "type": "terminal",
+      "kicker": "Troubleshoot",
+      "title": "Check DNS records",
+      "lines": [
+        "$ nslookup app.corp.local",
+        "$ nslookup -type=SRV _ldap._tcp.dc._msdcs.corp.local"
+      ],
+      "say": "If something's off, use the lookup command to check if your app or domain controller records show up. If the service record is missing, DNS is the real culprit."
+    },
+    {
+      "id": "4-trap-fix",
+      "type": "trap",
+      "question": "SRV lookup is empty. What next?",
+      "wrong": "Start fixing Active Directory.",
+      "right": "Fix DNS first—AD relies on DNS to work.",
+      "say": "Here's a classic trap: if your service record lookup comes back empty, don't jump to fixing Active Directory. Always fix DNS first."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:20:03.225Z"
+}
