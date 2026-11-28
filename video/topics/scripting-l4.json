@@ -1,0 +1,72 @@
+{
+  "id": "scripting-l4",
+  "title": "Python for Infra Tasks: When & How",
+  "keys": [
+    "Python",
+    "automation",
+    "APIs",
+    "infra"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-python-or-bash",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "When does bash fall short?",
+      "line2": "Where does Python shine?",
+      "say": "Ever wondered when bash just isn't enough? Let's see where Python makes infra tasks easier."
+    },
+    {
+      "id": "1-chip-why-python",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Python",
+      "sub": "Teams expect Python for automation and API work.",
+      "say": "Most teams now expect you to know basic Python for automation and calling APIs."
+    },
+    {
+      "id": "2-rows-bash-vs-python",
+      "type": "rows",
+      "kicker": "Choose the right tool",
+      "rows": [
+        {
+          "a": "Bash",
+          "b": "Glue Linux commands together"
+        },
+        {
+          "a": "Python",
+          "b": "APIs, JSON, real error handling"
+        },
+        {
+          "a": "Ansible",
+          "b": "Configure many servers at once"
+        }
+      ],
+      "walk": false,
+      "say": "Here's the rule of thumb: use bash for simple command glue, Python for logic or APIs, and Ansible for managing lots of servers."
+    },
+    {
+      "id": "3-code-python-healthch",
+      "type": "code",
+      "kicker": "Python in action",
+      "lang": "python",
+      "code": "#!/usr/bin/env python3\nimport sys, time, requests\nURLS = [\"https://app.example.com/health\", \"https://api.example.com/health\"]\nfailed = 0\nfor url in URLS:\n    start = time.monotonic()\n    try:\n        r = requests.get(url, timeout=5)\n        ms = (time.monotonic() - start) * 1000\n        status = \"OK\" if r.status_code == 200 else \"BAD\"\n        print(f\"{status} {url} {r.status_code} {ms:.0f}ms\")\n        failed += status != \"OK\"\n    except requests.RequestException as e:\n        print(f\"FAIL {url} {e}\")\n        failed += 1\nsys.exit(1 if failed else 0)",
+      "say": "Here's a real example: Python checks health endpoints, handles errors, and times each request. Bash would get messy fast."
+    },
+    {
+      "id": "4-trap-bash-vs-python",
+      "type": "trap",
+      "question": "When should you switch from bash to Python?",
+      "wrong": "Only when bash can't run commands.",
+      "right": "When you need logic, handle APIs, or scripts grow beyond fifty lines.",
+      "say": "Don't wait until bash breaks. Switch to Python when you need logic, APIs, or your script is getting long."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:05:50.692Z"
+}
