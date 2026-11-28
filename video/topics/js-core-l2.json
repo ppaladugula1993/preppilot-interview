@@ -1,0 +1,89 @@
+{
+  "id": "js-core-l2",
+  "title": "JavaScript: this & Arrow Functions",
+  "keys": [
+    "this",
+    "arrow function",
+    "binding",
+    "method",
+    "context"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-this-arrow",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "When does 'this' go undefined?",
+      "line2": "Are arrow functions safe?",
+      "say": "Ever wonder why this sometimes turns up undefined in your code? And if arrow functions always do what you expect?"
+    },
+    {
+      "id": "1-rows-this-binding",
+      "type": "rows",
+      "kicker": "Binding Rules",
+      "rows": [
+        {
+          "a": "Default",
+          "b": "Global object or undefined"
+        },
+        {
+          "a": "Method",
+          "b": "Object before the dot"
+        },
+        {
+          "a": "Constructor",
+          "b": "New instance"
+        },
+        {
+          "a": "call/apply/bind",
+          "b": "Explicitly set"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how this gets its value. By default, it's the global object, or undefined in strict mode. In a method, it's the object before the dot. Constructors give you a new instance. And with call, apply, or bind, you set it directly."
+    },
+    {
+      "id": "2-compare-arrow-vs-reg",
+      "type": "compare",
+      "kicker": "Arrow vs Regular",
+      "left": {
+        "title": "Regular",
+        "items": [
+          "Own this",
+          "Context set by call"
+        ]
+      },
+      "right": {
+        "title": "Arrow",
+        "items": [
+          "Inherit this",
+          "No own context"
+        ]
+      },
+      "say": "Regular functions have their own this, based on how they're called. Arrow functions just inherit this from where they're created. They never get their own context."
+    },
+    {
+      "id": "3-code-arrow-method-go",
+      "type": "code",
+      "kicker": "Common Mistake",
+      "lang": "js",
+      "code": "const obj = {\n  val: 42,\n  getVal: function() { return this.val },\n  getValArrow: () => this.val\n}\nobj.getVal(); // 42\nobj.getValArrow(); // undefined",
+      "say": "Check this out. The regular method returns forty-two, but the arrow function returns undefined. That's because arrow functions don't bind their own this."
+    },
+    {
+      "id": "4-trap-arrow-method",
+      "type": "trap",
+      "question": "Should you use arrow functions for methods?",
+      "wrong": "Yes, they're always safer.",
+      "right": "No, arrow functions inherit this, so use regular functions for methods needing their own context.",
+      "say": "Here's a classic interview trap. Should you use arrow functions for object methods? Nope. Arrow functions inherit this, so use a regular function if you need the object's context."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:59:09.882Z"
+}
