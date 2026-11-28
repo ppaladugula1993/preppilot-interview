@@ -1,0 +1,72 @@
+{
+  "id": "cicd-l1",
+  "title": "CI/CD Pipeline Stages Explained",
+  "keys": [
+    "pipeline",
+    "stages",
+    "CI",
+    "CD"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pipeline-stages",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · lesson",
+      "line1": "What happens in a pipeline?",
+      "line2": "Which stage does what?",
+      "say": "Ever wonder what actually happens in a CI CD pipeline? Let's break down each stage so you can explain it in your next interview."
+    },
+    {
+      "id": "1-rows-pipeline-flow",
+      "type": "rows",
+      "kicker": "Pipeline Flow",
+      "rows": [
+        {
+          "a": "Checkout",
+          "b": "Pull the latest code"
+        },
+        {
+          "a": "Build",
+          "b": "Compile or package the app"
+        },
+        {
+          "a": "Unit Test",
+          "b": "Run automated tests"
+        },
+        {
+          "a": "Security Scan",
+          "b": "Check for vulnerabilities"
+        },
+        {
+          "a": "Publish",
+          "b": "Store the build artifact"
+        }
+      ],
+      "walk": true,
+      "say": "A typical pipeline starts by pulling the latest code, then builds the app, runs unit tests, scans for security issues, and finally stores the build artifact."
+    },
+    {
+      "id": "2-chip-cd-stages",
+      "type": "chip",
+      "kicker": "CD Stages",
+      "label": "Deploy",
+      "sub": "Move the tested build through environments",
+      "say": "After that, continuous delivery takes over. It moves the tested build through environments like development and production, often with approval steps in between."
+    },
+    {
+      "id": "3-trap-interview-mixup",
+      "type": "trap",
+      "question": "Is deploying to prod part of CI?",
+      "wrong": "Yes, CI handles deployment too.",
+      "right": "No, continuous integration stops at testing. Deployment is handled by continuous delivery.",
+      "say": "Here's a classic interview trap. Is deploying to production part of continuous integration? Nope. CI stops at testing. Deployment is continuous delivery's job."
+    },
+    {
+      "id": "4-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:43:07.539Z"
+}
