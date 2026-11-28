@@ -1,0 +1,86 @@
+{
+  "id": "java-build-l6",
+  "title": "Reproducible Builds & Artifact Repos",
+  "keys": [
+    "reproducible builds",
+    "artifact repository",
+    "CI/CD",
+    "checksum",
+    "fixed versions"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-repro-builds",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "Can you trust your build output?",
+      "line2": "Why does reproducibility matter?",
+      "say": "Ever wonder if your build will always give the same result? Let's see why reproducible builds are key."
+    },
+    {
+      "id": "1-chip-reproducible",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Reproducible",
+      "sub": "Same source and config always produce identical artifacts.",
+      "say": "A reproducible build means your code and settings always create the same artifact, every time."
+    },
+    {
+      "id": "2-compare-artifact-rep",
+      "type": "compare",
+      "kicker": "Artifact Repositories",
+      "left": {
+        "title": "Public",
+        "items": [
+          "Maven Central",
+          "Share globally"
+        ]
+      },
+      "right": {
+        "title": "Private",
+        "items": [
+          "Nexus",
+          "Artifactory",
+          "Control access"
+        ]
+      },
+      "say": "Artifact repositories store and share your build outputs. Public ones like Maven Central are open, private ones like Nexus let you control access."
+    },
+    {
+      "id": "3-rows-repro-steps",
+      "type": "rows",
+      "kicker": "How to ensure reproducibility",
+      "rows": [
+        {
+          "a": "Use fixed versions",
+          "b": "Avoid changing dependencies"
+        },
+        {
+          "a": "Verify checksums",
+          "b": "Check artifact integrity"
+        },
+        {
+          "a": "Configure plugins",
+          "b": "Produce deterministic outputs"
+        }
+      ],
+      "walk": true,
+      "say": "Use fixed versions, verify checksums, and set plugins for predictable results. That’s how you keep builds reproducible."
+    },
+    {
+      "id": "4-trap-ci-cd",
+      "type": "trap",
+      "question": "Why is reproducibility vital for CI/CD?",
+      "wrong": "It speeds up builds.",
+      "right": "It ensures deployments are reliable and consistent every time.",
+      "say": "Here's a common interview trap: reproducibility isn't just about speed, but making sure deployments are always reliable."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:19:56.613Z"
+}
