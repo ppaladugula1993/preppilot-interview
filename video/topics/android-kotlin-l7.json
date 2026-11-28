@@ -1,0 +1,76 @@
+{
+  "id": "android-kotlin-l7",
+  "title": "Preventing ANRs & Boosting Android Performance",
+  "keys": [
+    "ANR",
+    "main thread",
+    "coroutines",
+    "Profiler"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-anr",
+      "type": "hook",
+      "kicker": "Android & Kotlin · lesson",
+      "line1": "Why do Android apps freeze?",
+      "line2": "What causes ANRs?",
+      "say": "Ever had your app freeze and wonder why? What triggers those dreaded ANRs?"
+    },
+    {
+      "id": "1-chip-anr-fact",
+      "type": "chip",
+      "kicker": "ANRs",
+      "label": "Timeout",
+      "sub": "ANRs happen when the main thread is blocked over five seconds.",
+      "say": "ANRs, or Application Not Responding errors, pop up if the main thread is blocked for more than five seconds."
+    },
+    {
+      "id": "2-rows-best-practices",
+      "type": "rows",
+      "kicker": "Performance",
+      "rows": [
+        {
+          "a": "Background threads",
+          "b": "Move heavy tasks off the main thread"
+        },
+        {
+          "a": "Compose",
+          "b": "Minimize recompositions"
+        },
+        {
+          "a": "Profiler",
+          "b": "Spot slow operations"
+        },
+        {
+          "a": "StrictMode",
+          "b": "Catch main thread violations"
+        }
+      ],
+      "walk": true,
+      "say": "To keep your app fast, use background threads for heavy work, minimize recompositions in Compose, and always profile with tools like Profiler and StrictMode."
+    },
+    {
+      "id": "3-code-coroutine-examp",
+      "type": "code",
+      "kicker": "Avoiding ANRs",
+      "lang": "kotlin",
+      "code": "CoroutineScope.launch {\n  withContext(Dispatchers.IO) {\n    // database access\n  }\n}",
+      "say": "Here's how you launch a coroutine with the IO dispatcher for database access. This keeps the main thread free and responsive."
+    },
+    {
+      "id": "4-trap-main-thread",
+      "type": "trap",
+      "question": "Is it safe to run database queries on the main thread?",
+      "wrong": "Yes, if they're fast.",
+      "right": "No, always use background threads or coroutines to avoid ANRs.",
+      "say": "Quick quiz: Is it safe to run database queries on the main thread? Nope! Always use background threads or coroutines."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:52:12.643Z"
+}
