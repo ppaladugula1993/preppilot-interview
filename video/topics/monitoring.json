@@ -1,0 +1,85 @@
+{
+  "id": "monitoring",
+  "title": "The One Thing to Know About Monitoring",
+  "keys": [
+    "Prometheus",
+    "Grafana",
+    "alert",
+    "metrics",
+    "golden signals"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-golden-signals",
+      "type": "hook",
+      "kicker": "Monitoring · 45 seconds",
+      "line1": "What makes monitoring work?",
+      "line2": "What's the core idea?",
+      "say": "Ever wonder what really matters in monitoring? Let’s break down the one thing you need to know."
+    },
+    {
+      "id": "1-chip-golden-signals",
+      "type": "chip",
+      "kicker": "Core",
+      "label": "Signals",
+      "sub": "Latency, traffic, errors, and saturation—the four golden signals.",
+      "say": "It all starts with the four golden signals: latency, traffic, errors, and saturation. These tell you if users are happy, or if something’s breaking."
+    },
+    {
+      "id": "2-compare-metrics-logs",
+      "type": "compare",
+      "kicker": "Pillars",
+      "left": {
+        "title": "Metrics",
+        "items": [
+          "Numbers over time",
+          "Fast alerts"
+        ]
+      },
+      "right": {
+        "title": "Logs & Traces",
+        "items": [
+          "Detailed events",
+          "Request flows"
+        ]
+      },
+      "say": "Metrics are your first alert—numbers over time. Logs and traces fill in the story when you need details or to follow a request."
+    },
+    {
+      "id": "3-rows-prometheus-graf",
+      "type": "rows",
+      "kicker": "Tools",
+      "rows": [
+        {
+          "a": "Prometheus",
+          "b": "Pulls metrics, triggers alerts"
+        },
+        {
+          "a": "Grafana",
+          "b": "Visualizes dashboards"
+        },
+        {
+          "a": "Alertmanager",
+          "b": "Routes notifications"
+        }
+      ],
+      "walk": true,
+      "say": "Prometheus pulls your metrics, checks alert rules, and fires off alerts. Grafana makes it all visible. Alertmanager gets the right team involved."
+    },
+    {
+      "id": "4-trap-alert-noise",
+      "type": "trap",
+      "question": "What’s the biggest alerting mistake?",
+      "wrong": "Alerting on every metric change.",
+      "right": "Alert only on symptoms users notice, not every tiny blip.",
+      "say": "Here’s where people slip up: they alert on every metric change. The real trick? Only alert on symptoms users would notice, not every blip."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:54:37.095Z"
+}
