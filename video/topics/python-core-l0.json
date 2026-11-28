@@ -1,0 +1,74 @@
+{
+  "id": "python-core-l0",
+  "title": "Mutable vs Immutable Types in Python",
+  "keys": [
+    "mutable",
+    "immutable",
+    "list",
+    "tuple",
+    "copy"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-mutable-questio",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "Can lists change but tuples can't?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder why lists can change but tuples can't? Let's see why this matters for your next Python interview."
+    },
+    {
+      "id": "1-compare-mut-immut",
+      "type": "compare",
+      "kicker": "Key Difference",
+      "left": {
+        "title": "Mutable",
+        "items": [
+          "Lists",
+          "Dicts",
+          "Sets"
+        ]
+      },
+      "right": {
+        "title": "Immutable",
+        "items": [
+          "Tuples",
+          "Strings",
+          "Ints"
+        ]
+      },
+      "say": "Mutable types, like lists and dictionaries, can be changed after they're made. Immutable types, like tuples and strings, stay the same forever."
+    },
+    {
+      "id": "2-code-assignments",
+      "type": "code",
+      "kicker": "Assignment Demo",
+      "lang": "python",
+      "code": "a = [1, 2]\nb = a\nb.append(3)\nprint(a)",
+      "say": "Here's a classic gotcha. If you assign a list to another name and change it, both names see the update. That's because both point to the same object."
+    },
+    {
+      "id": "3-chip-copy-tip",
+      "type": "chip",
+      "kicker": "Pro Tip",
+      "label": "Copy",
+      "sub": "Use deep copy to avoid shared changes.",
+      "say": "If you want a true independent copy, use a deep copy. That way, changes in one won't affect the other."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Does assignment copy an object?",
+      "wrong": "Yes, assignment always copies.",
+      "right": "No, assignment just binds a name to the same object.",
+      "say": "Here's a common interview trap: Assignment doesn't copy the object. It just gives you another name for the same thing."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:25:05.076Z"
+}
