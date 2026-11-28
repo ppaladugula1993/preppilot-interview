@@ -1,0 +1,71 @@
+{
+  "id": "spring-l4",
+  "title": "@Transactional: Propagation & Pitfalls",
+  "keys": [
+    "@Transactional",
+    "Propagation",
+    "Isolation",
+    "Self-invocation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-care",
+      "type": "hook",
+      "kicker": "Spring & Spring Boot · lesson",
+      "line1": "Ever wonder how transactions interact?",
+      "line2": "What can go wrong?",
+      "say": "Ever wonder how Spring handles transactions behind the scenes? And what can go wrong if you’re not careful?"
+    },
+    {
+      "id": "1-chip-propagation",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Propagation",
+      "sub": "Controls if a method joins or starts a transaction",
+      "say": "Propagation decides if your method joins an existing transaction or starts a brand new one."
+    },
+    {
+      "id": "2-compare-isolation",
+      "type": "compare",
+      "kicker": "Data Visibility",
+      "left": {
+        "title": "Low Isolation",
+        "items": [
+          "Faster",
+          "May see uncommitted data"
+        ]
+      },
+      "right": {
+        "title": "High Isolation",
+        "items": [
+          "Safer",
+          "Prevents dirty reads"
+        ]
+      },
+      "say": "Isolation levels control what data one transaction can see from another. Lower isolation is faster but riskier. Higher isolation is safer, but may slow things down."
+    },
+    {
+      "id": "3-trap-self-invocation",
+      "type": "trap",
+      "question": "What happens if a method calls itself?",
+      "wrong": "The transaction always applies.",
+      "right": "Self-invocation skips the proxy, so @Transactional is ignored.",
+      "say": "Here’s a classic trap: if a transactional method calls another transactional method in the same class, the annotation is ignored. That can break your transaction logic."
+    },
+    {
+      "id": "4-code-fix-self-invoca",
+      "type": "code",
+      "kicker": "Avoid the Pitfall",
+      "lang": "java",
+      "code": "public class ServiceA {\n  @Transactional\n  public void methodA() {\n    serviceB.methodB();\n  }\n}",
+      "say": "To avoid this, move the called method to another bean and inject it. That way, the transactional proxy does its job."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:21:28.112Z"
+}
