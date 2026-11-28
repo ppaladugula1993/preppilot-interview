@@ -1,0 +1,83 @@
+{
+  "id": "k8s-l8",
+  "title": "Kubernetes Storage: PV, PVC, StorageClass",
+  "keys": [
+    "PersistentVolume",
+    "PersistentVolumeClaim",
+    "StorageClass",
+    "PVC"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pv-pvc",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "How does Kubernetes handle storage?",
+      "line2": "What are PVs and PVCs?",
+      "say": "Ever wondered how your data survives pod restarts in Kubernetes? Let's break down Persistent Volumes and Claims."
+    },
+    {
+      "id": "1-chip-pv",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "PV",
+      "sub": "A PersistentVolume is a chunk of storage managed by the cluster.",
+      "say": "A Persistent Volume, or PV, is just a piece of storage managed by your cluster. Think of it as a pool you can claim from."
+    },
+    {
+      "id": "2-chip-pvc",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "PVC",
+      "sub": "A PersistentVolumeClaim is a pod's request for storage.",
+      "say": "A Persistent Volume Claim, or PVC, is how your pod asks for storage. It's the ticket that reserves space from the pool."
+    },
+    {
+      "id": "3-compare-storageclass",
+      "type": "compare",
+      "kicker": "Provisioning",
+      "left": {
+        "title": "Manual",
+        "items": [
+          "Admin creates PVs",
+          "PVCs bind to existing PVs"
+        ]
+      },
+      "right": {
+        "title": "StorageClass",
+        "items": [
+          "Creates PVs automatically",
+          "PVCs trigger dynamic provisioning"
+        ]
+      },
+      "say": "You can create PVs manually, but with a StorageClass, Kubernetes creates them for you on demand. PVCs trigger this dynamic provisioning."
+    },
+    {
+      "id": "4-terminal-pvc-status",
+      "type": "terminal",
+      "kicker": "Check Status",
+      "title": "kubectl get pvc,pv",
+      "lines": [
+        "$ kubectl get pvc,pv",
+        "NAME   STATUS   VOLUME",
+        "data   Bound    pvc-1234"
+      ],
+      "say": "To check if your claim is working, use the get command for PVCs and PVs. Look for the status to be Bound."
+    },
+    {
+      "id": "5-trap-pvc-pending",
+      "type": "trap",
+      "question": "PVC stuck Pending — what's likely wrong?",
+      "wrong": "Pod spec is invalid",
+      "right": "No matching StorageClass or not enough capacity",
+      "say": "If your claim is stuck Pending, it's usually because there's no matching StorageClass or not enough storage available. Not a pod issue."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:04:02.636Z"
+}
