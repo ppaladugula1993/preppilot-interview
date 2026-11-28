@@ -1,0 +1,82 @@
+{
+  "id": "network-l6",
+  "title": "TLS Handshake: How Secure Connections Start",
+  "keys": [
+    "TLS",
+    "handshake",
+    "certificate",
+    "SNI",
+    "key exchange"
+  ],
+  "scenes": [
+    {
+      "id": "0-tls-hook",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "Why does HTTPS take extra time?",
+      "line2": "What’s a TLS handshake?",
+      "say": "Ever wonder why secure sites take a little longer to load? Let's break down what really happens in a TLS handshake."
+    },
+    {
+      "id": "1-handshake-steps",
+      "type": "rows",
+      "kicker": "TLS handshake steps",
+      "rows": [
+        {
+          "a": "Client Hello",
+          "b": "Sends versions, ciphers, hostname"
+        },
+        {
+          "a": "Server Hello",
+          "b": "Picks cipher, sends certificate"
+        },
+        {
+          "a": "Key Exchange",
+          "b": "Both sides agree on encryption keys"
+        },
+        {
+          "a": "Encrypted Traffic",
+          "b": "Connection is now secure"
+        }
+      ],
+      "walk": true,
+      "say": "First, your browser says hello with its supported versions and ciphers, plus the site name. The server replies with its choices and a certificate. Then, both sides agree on keys. After that, everything is encrypted."
+    },
+    {
+      "id": "2-tls-one-rt",
+      "type": "chip",
+      "kicker": "TLS 1.3",
+      "label": "Speed",
+      "sub": "TLS version one point three does all this in one round trip.",
+      "say": "With TLS version one point three, the whole handshake finishes in just one round trip, making secure connections much faster."
+    },
+    {
+      "id": "3-openssl-demo",
+      "type": "terminal",
+      "kicker": "Real-world check",
+      "title": "See the handshake in action",
+      "lines": [
+        "$ openssl s_client -connect app.example.com:443",
+        "CONNECTED",
+        "SSL handshake has read 3 bytes",
+        "Certificate chain"
+      ],
+      "say": "You can watch this handshake happen using the openssl client tool. It shows every step, including the certificate chain."
+    },
+    {
+      "id": "4-sni-trap",
+      "type": "trap",
+      "question": "Why test TLS by IP can fail?",
+      "wrong": "The server always sends the right certificate.",
+      "right": "Without the server name, you get the default certificate, which may not match your site.",
+      "say": "Here's a common interview trap: If you test TLS by connecting to an IP address without sending the server name, you'll likely get the default certificate, not the one for your site."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:25:47.913Z"
+}
