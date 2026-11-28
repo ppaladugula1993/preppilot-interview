@@ -1,0 +1,73 @@
+{
+  "id": "state-management-l2",
+  "title": "Zustand vs Context for Global State",
+  "keys": [
+    "Zustand",
+    "React Context",
+    "global state",
+    "Redux"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-zustand-context",
+      "type": "hook",
+      "kicker": "Frontend State Management · lesson",
+      "line1": "Zustand or React Context?",
+      "line2": "When should you use each?",
+      "say": "Ever wonder when to use Zustand or React Context for global state? Let's break it down."
+    },
+    {
+      "id": "1-chip-zustand",
+      "type": "chip",
+      "kicker": "State Tools",
+      "label": "Zustand",
+      "sub": "Minimal state library. Uses hooks. Great for global state.",
+      "say": "Zustand is a minimal state library. It uses hooks and is perfect for sharing global state across your app."
+    },
+    {
+      "id": "2-chip-context",
+      "type": "chip",
+      "kicker": "State Tools",
+      "label": "Context",
+      "sub": "Lets you pass data without props. Best for low-frequency updates.",
+      "say": "React Context lets you pass data through the component tree without props. It's best for low-frequency updates."
+    },
+    {
+      "id": "3-compare-context-zust",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "Context",
+        "items": [
+          "Simple",
+          "Low-frequency",
+          "Small state"
+        ]
+      },
+      "right": {
+        "title": "Zustand",
+        "items": [
+          "Minimal setup",
+          "Global state",
+          "Frequent updates"
+        ]
+      },
+      "say": "Context is simple and ideal for small state or rare updates. Zustand is easier to set up for global state and frequent changes."
+    },
+    {
+      "id": "4-trap-redux-alternati",
+      "type": "trap",
+      "question": "Why not always use Redux?",
+      "wrong": "Redux is always best for global state.",
+      "right": "Redux is powerful, but Zustand and Context are lighter and easier for small apps.",
+      "say": "Don't assume Redux is always the answer. For small apps, Zustand or Context can be lighter and easier."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:07:08.894Z"
+}
