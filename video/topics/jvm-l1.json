@@ -1,0 +1,85 @@
+{
+  "id": "jvm-l1",
+  "title": "JVM Garbage Collectors & Generational GC",
+  "keys": [
+    "G1",
+    "ZGC",
+    "Parallel GC",
+    "Young Gen",
+    "Old Gen"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-gc-basics",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Why does JVM split memory into generations?",
+      "line2": "What does it gain?",
+      "say": "Ever wonder why the JVM splits memory into generations? Let’s see how it boosts performance."
+    },
+    {
+      "id": "1-chip-gen-gc",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Generational",
+      "sub": "Young gen for short-lived objects, Old gen for long-lived.",
+      "say": "The heap is split into Young and Old generations. Most objects die young, so the JVM collects them more often."
+    },
+    {
+      "id": "2-compare-gc-types",
+      "type": "compare",
+      "kicker": "GC Types",
+      "left": {
+        "title": "G1",
+        "items": [
+          "Region-based",
+          "Predictable pauses"
+        ]
+      },
+      "right": {
+        "title": "ZGC",
+        "items": [
+          "Low latency",
+          "Concurrent marking"
+        ]
+      },
+      "say": "G1 splits the heap into regions and aims for predictable pause times. ZGC focuses on low latency and does most work while your app runs."
+    },
+    {
+      "id": "3-rows-parallel-gc",
+      "type": "rows",
+      "kicker": "Parallel GC",
+      "rows": [
+        {
+          "a": "Threads",
+          "b": "Multiple for Young gen"
+        },
+        {
+          "a": "Goal",
+          "b": "Maximize throughput"
+        },
+        {
+          "a": "Best for",
+          "b": "Batch jobs"
+        }
+      ],
+      "walk": false,
+      "say": "Parallel GC uses several threads to collect the Young generation fast. It’s great when you need raw throughput, like in batch jobs."
+    },
+    {
+      "id": "4-trap-tuning",
+      "type": "trap",
+      "question": "Which GC is always best for low latency?",
+      "wrong": "Parallel GC",
+      "right": "ZGC or G1 are better for low latency apps; Parallel GC prioritizes throughput.",
+      "say": "Don’t just pick Parallel GC for everything. For low-latency services, ZGC or G1 are usually better choices."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:27:35.458Z"
+}
