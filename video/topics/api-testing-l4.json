@@ -1,0 +1,75 @@
+{
+  "id": "api-testing-l4",
+  "title": "Test Data Management for API Testing",
+  "keys": [
+    "test data",
+    "fixtures",
+    "mock",
+    "repeatable",
+    "deterministic"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-test-data",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "How do you keep API tests reliable?",
+      "line2": "What about test data?",
+      "say": "How do you keep your API tests reliable every single run? What about the data you use?"
+    },
+    {
+      "id": "1-chip-create-clean",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Isolate",
+      "sub": "Create and clean test data for every run.",
+      "say": "First, always create and clean your test data for every run. This keeps each test isolated and repeatable."
+    },
+    {
+      "id": "2-compare-mock-fixture",
+      "type": "compare",
+      "kicker": "Reliable Tests",
+      "left": {
+        "title": "Fixtures",
+        "items": [
+          "Seed database with users",
+          "Reset data before tests"
+        ]
+      },
+      "right": {
+        "title": "Mocks",
+        "items": [
+          "Simulate endpoints",
+          "No real external calls"
+        ]
+      },
+      "say": "Fixtures let you seed your database and reset data before tests. Mocks simulate endpoints, so you skip real external calls. Both make your tests reliable."
+    },
+    {
+      "id": "3-terminal-mock-server",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Mocking a payments endpoint",
+      "lines": [
+        "$ mock-server start",
+        "Simulating /payments endpoint"
+      ],
+      "say": "Here's an example. Start a mock server to simulate your payments endpoint. Now your tests won't break if the real service changes."
+    },
+    {
+      "id": "4-trap-flaky",
+      "type": "trap",
+      "question": "What makes an API test flaky?",
+      "wrong": "Using real, shared data",
+      "right": "Tests that depend on shared or changing data can fail randomly. Always isolate your test data.",
+      "say": "Here's a trap: What makes an API test flaky? Using real, shared data. Always isolate your test data to avoid random failures."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:43:49.139Z"
+}
