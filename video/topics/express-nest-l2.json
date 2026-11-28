@@ -1,0 +1,72 @@
+{
+  "id": "express-nest-l2",
+  "title": "NestJS Modules, Controllers & DI",
+  "keys": [
+    "module",
+    "controller",
+    "provider",
+    "DI"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-nestjs-arch",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "How does NestJS organize your app?",
+      "line2": "What makes it scalable?",
+      "say": "Ever wondered how NestJS keeps apps modular and scalable? Let's break down its core building blocks."
+    },
+    {
+      "id": "1-chip-module",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Module",
+      "sub": "Groups related controllers and providers.",
+      "say": "Modules are the backbone. They group controllers and providers, keeping features organized."
+    },
+    {
+      "id": "2-rows-controllers-pro",
+      "type": "rows",
+      "kicker": "Roles",
+      "rows": [
+        {
+          "a": "Controller",
+          "b": "Handles HTTP requests"
+        },
+        {
+          "a": "Provider",
+          "b": "Implements business logic"
+        },
+        {
+          "a": "DI",
+          "b": "Injects dependencies for reuse"
+        }
+      ],
+      "walk": true,
+      "say": "Controllers handle requests. Providers run your business logic. Dependency injection connects them, making code reusable and testable."
+    },
+    {
+      "id": "3-code-di-example",
+      "type": "code",
+      "kicker": "DI in Action",
+      "lang": "typescript",
+      "code": "@Injectable()\nexport class UserService {}\n\n@Controller()\nexport class UserController {\n  constructor(private userService: UserService) {}\n}",
+      "say": "Here, dependency injection lets the controller use the user service without manual setup. Decorators handle wiring for you."
+    },
+    {
+      "id": "4-trap-fat-controller",
+      "type": "trap",
+      "question": "What's a common NestJS mistake?",
+      "wrong": "Putting business logic in controllers",
+      "right": "Controllers should delegate logic to providers for clean, maintainable code.",
+      "say": "A classic trap: controllers packed with business logic. Keep them thin—delegate to providers for maintainability."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:11:19.361Z"
+}
