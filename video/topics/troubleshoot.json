@@ -1,0 +1,110 @@
+{
+  "id": "troubleshoot",
+  "title": "Troubleshooting Network Issues: One Method",
+  "keys": [
+    "connectivity",
+    "latency",
+    "throughput",
+    "layers",
+    "split-path"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-method",
+      "type": "hook",
+      "kicker": "Troubleshooting · 45 seconds",
+      "line1": "How do you fix any network issue?",
+      "line2": "What's the repeatable method?",
+      "say": "Ever get stuck chasing a weird network problem? There's a method that works every time, no matter what tool or platform you're on."
+    },
+    {
+      "id": "1-rows-method",
+      "type": "rows",
+      "kicker": "Step 1 · The Method",
+      "rows": [
+        {
+          "a": "Define",
+          "b": "What exactly is broken?"
+        },
+        {
+          "a": "Scope",
+          "b": "Who, where, when?"
+        },
+        {
+          "a": "Reproduce",
+          "b": "Can you trigger it?"
+        },
+        {
+          "a": "Walk layers",
+          "b": "Check each step: interface, gateway, DNS, port, listener, firewall, packets"
+        },
+        {
+          "a": "Split path",
+          "b": "Test halfway, compare working vs broken"
+        },
+        {
+          "a": "Change one thing",
+          "b": "Make a tweak, verify, document"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the checklist: define the issue, scope it, reproduce it, walk the layers, split the path in half, compare working to broken, change one thing, and document what you find."
+    },
+    {
+      "id": "2-chip-layers",
+      "type": "chip",
+      "kicker": "Step 2 · Layers",
+      "label": "Layers",
+      "sub": "Interface, gateway, DNS, port, listener, firewall, packets",
+      "say": "Every problem sits somewhere on the ladder: interface, gateway, DNS, port, listener, firewall, or packets. Always check each layer in order."
+    },
+    {
+      "id": "3-compare-half",
+      "type": "compare",
+      "kicker": "Step 3 · Split Path",
+      "left": {
+        "title": "Working",
+        "items": [
+          "Test from a known-good site",
+          "Compare outputs"
+        ]
+      },
+      "right": {
+        "title": "Broken",
+        "items": [
+          "Test from the failing site",
+          "Spot the difference"
+        ]
+      },
+      "say": "Split the path in half. Test from a working site and a broken one. Compare the results to find where things diverge."
+    },
+    {
+      "id": "4-terminal-tools",
+      "type": "terminal",
+      "kicker": "Step 4 · Tools",
+      "title": "Linux & Windows",
+      "lines": [
+        "$ nc -zv host 443",
+        "$ Test-NetConnection host -Port 443",
+        "$ traceroute -T -p 443",
+        "$ ping -M do -s 1472"
+      ],
+      "say": "Use the right tools for your platform. Netcat, Test-NetConnection, traceroute, and ping help you check connectivity, ports, and MTU."
+    },
+    {
+      "id": "5-trap-layer",
+      "type": "trap",
+      "question": "What's the first step after an error?",
+      "wrong": "Run traceroute or ping right away",
+      "right": "Read the error message to find the layer",
+      "say": "Don't jump straight to tools. Always read the error message first—it tells you which layer to start with."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:44:16.310Z"
+}
