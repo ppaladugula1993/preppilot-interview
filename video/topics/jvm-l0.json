@@ -1,0 +1,72 @@
+{
+  "id": "jvm-l0",
+  "title": "JVM Memory Areas: Heap, Stack, Metaspace",
+  "keys": [
+    "heap",
+    "stack",
+    "metaspace",
+    "garbage collection"
+  ],
+  "scenes": [
+    {
+      "id": "0-memory-hook",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Where does your Java data live?",
+      "line2": "Heap, stack, or metaspace?",
+      "say": "Ever wonder where your Java data actually lives? Is it on the heap, the stack, or in metaspace?"
+    },
+    {
+      "id": "1-heap-chip",
+      "type": "chip",
+      "kicker": "Memory Area",
+      "label": "Heap",
+      "sub": "Stores objects. Managed by garbage collection.",
+      "say": "The heap is where Java stores objects. It's managed by garbage collection, so you don't free memory yourself."
+    },
+    {
+      "id": "2-stack-vs-heap",
+      "type": "compare",
+      "kicker": "Memory Areas",
+      "left": {
+        "title": "Stack",
+        "items": [
+          "Method calls",
+          "Local variables",
+          "Thread-local"
+        ]
+      },
+      "right": {
+        "title": "Heap",
+        "items": [
+          "Objects",
+          "Shared across threads"
+        ]
+      },
+      "say": "The stack holds method calls and local variables for each thread. The heap is shared, storing objects for the whole app."
+    },
+    {
+      "id": "3-metaspace-chip",
+      "type": "chip",
+      "kicker": "Memory Area",
+      "label": "Metaspace",
+      "sub": "Holds class definitions and metadata.",
+      "say": "Metaspace is where the Java Virtual Machine keeps class definitions and metadata. It grows as needed."
+    },
+    {
+      "id": "4-trap-memory",
+      "type": "trap",
+      "question": "Where are local variables stored?",
+      "wrong": "On the heap with objects.",
+      "right": "On the stack, which is thread-local.",
+      "say": "Here's a common trap: local variables aren't on the heap. They're on the stack, and each thread has its own stack."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:25:47.791Z"
+}
