@@ -1,0 +1,72 @@
+{
+  "id": "python-data-l4",
+  "title": "Handling Missing Data in pandas & NumPy",
+  "keys": [
+    "pandas",
+    "NumPy",
+    "missing data",
+    "fillna"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-missing-values",
+      "type": "hook",
+      "kicker": "Python for Data (pandas, NumPy) · lesson",
+      "line1": "Missing values everywhere?",
+      "line2": "How do you handle them?",
+      "say": "Ever opened a dataset and seen a bunch of missing values? Let's talk about how to handle them the right way."
+    },
+    {
+      "id": "1-chip-nan",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "NaN",
+      "sub": "Missing data in pandas shows up as NaN or None.",
+      "say": "In pandas, missing values usually show up as NaN or None. You'll see these a lot in real-world data."
+    },
+    {
+      "id": "2-code-handle-missing",
+      "type": "code",
+      "kicker": "Detect & Fix",
+      "lang": "python",
+      "code": "df.isnull().sum()\ndf['age'].fillna(df['age'].mean())\ndf.dropna(subset=['salary'])",
+      "say": "Use isnull to spot missing values. Fillna replaces them, like filling age with the average. Dropna lets you remove rows with missing salary."
+    },
+    {
+      "id": "3-rows-inspect-pattern",
+      "type": "rows",
+      "kicker": "Pro Tip",
+      "rows": [
+        {
+          "a": "Check patterns",
+          "b": "See where missing data clusters"
+        },
+        {
+          "a": "Decide action",
+          "b": "Fill or drop based on impact"
+        },
+        {
+          "a": "Model quality",
+          "b": "Poor handling hurts results"
+        }
+      ],
+      "walk": true,
+      "say": "I always check for patterns before changing anything. Sometimes it's better to fill, sometimes to drop. Handling this well keeps your analysis solid."
+    },
+    {
+      "id": "4-trap-wrong-approach",
+      "type": "trap",
+      "question": "Should you always drop missing data?",
+      "wrong": "Yes, drop all missing rows.",
+      "right": "No, dropping can lose valuable info. Inspect first, then fill or drop based on context.",
+      "say": "Here's a trap: should you always drop missing data? Definitely not. Dropping everything can throw away useful info. Always inspect and decide what makes sense."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:42:01.806Z"
+}
