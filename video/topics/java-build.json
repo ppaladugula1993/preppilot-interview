@@ -1,0 +1,85 @@
+{
+  "id": "java-build",
+  "title": "Why Dependency Management Matters",
+  "keys": [
+    "dependency",
+    "transitive",
+    "conflict",
+    "BOM",
+    "multi-module"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-dep-chaos",
+      "type": "hook",
+      "kicker": "Maven & Gradle · 45 seconds",
+      "line1": "Ever had a build break",
+      "line2": "over one library version?",
+      "say": "Ever had your build suddenly fail, just because of one library version? Let's see why dependency management is the heart of Maven and Gradle."
+    },
+    {
+      "id": "1-chip-transitive",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Transitive",
+      "sub": "Dependencies pull in their own dependencies—automatically.",
+      "say": "Both Maven and Gradle pull in not just your direct dependencies, but also everything those dependencies need. That's called transitive dependencies."
+    },
+    {
+      "id": "2-rows-conflict",
+      "type": "rows",
+      "kicker": "Problem",
+      "rows": [
+        {
+          "a": "Lib A needs",
+          "b": "Logging 1.2"
+        },
+        {
+          "a": "Lib B needs",
+          "b": "Logging 1.4"
+        },
+        {
+          "a": "Your build gets",
+          "b": "Only one version"
+        }
+      ],
+      "walk": true,
+      "say": "If two libraries need different versions of the same thing, your build only gets one. That can cause bugs or crashes."
+    },
+    {
+      "id": "3-compare-bom",
+      "type": "compare",
+      "kicker": "Solution",
+      "left": {
+        "title": "Without BOM",
+        "items": [
+          "Conflicts",
+          "Random versions"
+        ]
+      },
+      "right": {
+        "title": "With BOM",
+        "items": [
+          "Consistent versions",
+          "Fewer surprises"
+        ]
+      },
+      "say": "To fix this, both tools can use a Bill of Materials, or BOM. It locks dependency versions, making builds predictable and stable."
+    },
+    {
+      "id": "4-trap-versions",
+      "type": "trap",
+      "question": "Can you ignore version conflicts?",
+      "wrong": "Sure, the build will pick one.",
+      "right": "Ignoring conflicts risks runtime errors or subtle bugs.",
+      "say": "Here's a trap: can you just ignore version conflicts? Many do, but that leads to weird runtime errors or subtle bugs."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:28:21.421Z"
+}
