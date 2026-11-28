@@ -1,0 +1,72 @@
+{
+  "id": "express-nest-l7",
+  "title": "NestJS Validation Pipes Explained",
+  "keys": [
+    "NestJS",
+    "ValidationPipe",
+    "DTO",
+    "decorators"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-nestjs-validati",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "How does NestJS validate input?",
+      "line2": "Why use validation pipes?",
+      "say": "Ever wonder how NestJS keeps your input safe and clean? Let's talk about validation pipes."
+    },
+    {
+      "id": "1-chip-validation-pipe",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Pipe",
+      "sub": "Automatically checks incoming data for errors.",
+      "say": "A validation pipe in NestJS checks incoming data before it hits your controller. If something's off, it blocks the request."
+    },
+    {
+      "id": "2-code-dto-example",
+      "type": "code",
+      "kicker": "DTO Example",
+      "lang": "typescript",
+      "code": "export class CreateUserDto {\n  @IsEmail()\n  email: string;\n}\n@Post()\ncreate(@Body(new ValidationPipe()) dto: CreateUserDto) {...}",
+      "say": "Here, a data transfer object uses the Is Email decorator. The validation pipe makes sure only real emails get through."
+    },
+    {
+      "id": "3-rows-validation-step",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Define a DTO",
+          "b": "Add decorators like Is Email"
+        },
+        {
+          "a": "Apply ValidationPipe",
+          "b": "Globally or per route"
+        },
+        {
+          "a": "Invalid data?",
+          "b": "NestJS returns a 400 error"
+        }
+      ],
+      "walk": true,
+      "say": "First, you define a DTO with decorators. Then, attach a validation pipe. If the data doesn't match, NestJS rejects it with a clear error."
+    },
+    {
+      "id": "4-trap-interview-mixup",
+      "type": "trap",
+      "question": "Do you validate with express-validator?",
+      "wrong": "Yes, I use express-validator in NestJS.",
+      "right": "No, I use validation pipes and decorators in NestJS for automatic request validation.",
+      "say": "Don't mix up Express and NestJS. In NestJS, you use validation pipes, not express-validator."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:21:27.467Z"
+}
