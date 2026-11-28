@@ -1,0 +1,90 @@
+{
+  "id": "onboarding-l5",
+  "title": "Azure App Onboarding: Containers Path",
+  "keys": [
+    "Azure",
+    "ACR",
+    "AKS",
+    "Container Apps"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-containers-azur",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "How do you launch containers",
+      "line2": "on Azure, end to end?",
+      "say": "Ever wondered how a containerized app gets onboarded to Azure, start to finish?"
+    },
+    {
+      "id": "1-chip-build-acr",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Build",
+      "sub": "Build and scan your image, then push to Azure Container Registry.",
+      "say": "First, you build and scan your image, then push it to Azure Container Registry. This is your secure image store."
+    },
+    {
+      "id": "2-rows-aks-steps",
+      "type": "rows",
+      "kicker": "Deploy to AKS",
+      "rows": [
+        {
+          "a": "Get credentials",
+          "b": "Connect to your AKS cluster"
+        },
+        {
+          "a": "Create namespace",
+          "b": "Isolate your app resources"
+        },
+        {
+          "a": "Apply manifests",
+          "b": "Deploy with Deployment, Service, Ingress"
+        },
+        {
+          "a": "Check rollout",
+          "b": "Watch your app go live"
+        }
+      ],
+      "walk": true,
+      "say": "To run on Kubernetes, connect to your Azure cluster, create a namespace, apply your manifests, and check the rollout. This wires up deployments, services, and ingress."
+    },
+    {
+      "id": "3-compare-aks-containe",
+      "type": "compare",
+      "kicker": "AKS vs Container Apps",
+      "left": {
+        "title": "AKS",
+        "items": [
+          "Full Kubernetes",
+          "Custom resources",
+          "Needs cluster setup"
+        ]
+      },
+      "right": {
+        "title": "Container Apps",
+        "items": [
+          "No cluster to manage",
+          "Autoscaling built-in",
+          "Quick setup"
+        ]
+      },
+      "say": "AKS gives you full Kubernetes but needs more setup. Container Apps skips cluster management and scales for you—great for fast onboarding."
+    },
+    {
+      "id": "4-trap-secrets",
+      "type": "trap",
+      "question": "Where should app secrets go on Azure?",
+      "wrong": "In config files or container images",
+      "right": "Store secrets in Key Vault and inject them at runtime using workload identity or the CSI driver.",
+      "say": "Here's a trap: never put secrets in config files or images. Use Key Vault and inject them securely at runtime."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:13:26.762Z"
+}
