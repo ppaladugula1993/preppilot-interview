@@ -1,0 +1,74 @@
+{
+  "id": "typescript-l1",
+  "title": "Interface vs Type Alias in TypeScript",
+  "keys": [
+    "interface",
+    "type alias",
+    "extend",
+    "merge",
+    "union"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-intro",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "Interface or type alias?",
+      "line2": "Which one should you use?",
+      "say": "Ever wonder when to use an interface versus a type alias in TypeScript? Let's clear it up."
+    },
+    {
+      "id": "1-compare-basics",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "Interface",
+        "items": [
+          "Describes object shapes",
+          "Can be extended",
+          "Supports merging"
+        ]
+      },
+      "right": {
+        "title": "Type Alias",
+        "items": [
+          "Works for unions, primitives",
+          "No merging",
+          "Great for tuples"
+        ]
+      },
+      "say": "Interfaces describe object shapes and can be extended or merged. Type aliases are more flexible—they handle unions, primitives, and tuples, but can't be merged."
+    },
+    {
+      "id": "2-code-merge",
+      "type": "code",
+      "kicker": "Merging Example",
+      "lang": "typescript",
+      "code": "interface A { foo: string }\ninterface A { bar: number }\n// A is now { foo: string; bar: number }",
+      "say": "Here's the cool part: interfaces with the same name get merged. Add a property later, and TypeScript combines them automatically."
+    },
+    {
+      "id": "3-chip-tip",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "Best Use",
+      "sub": "Use interface for extensible objects, type for unions or primitives.",
+      "say": "My rule: use interfaces for objects you'll extend, and type aliases for unions or primitives."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Can type aliases be merged?",
+      "wrong": "Yes, just like interfaces.",
+      "right": "No, only interfaces support merging. Type aliases can't be combined.",
+      "say": "Watch out: only interfaces support merging. Type aliases can't be combined, so don't mix them up in interviews."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:43:56.801Z"
+}
