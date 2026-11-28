@@ -1,0 +1,72 @@
+{
+  "id": "python-core-l2",
+  "title": "Comprehensions, Generators & Yield",
+  "keys": [
+    "comprehensions",
+    "generators",
+    "iterators",
+    "yield"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-comp-gen",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "List or generator?",
+      "line2": "Which saves memory?",
+      "say": "Which is better for memory, a list or a generator? Let's find out."
+    },
+    {
+      "id": "1-chip-comprehensions",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Comprehensions",
+      "sub": "Quickly build lists, sets, or dicts in one line.",
+      "say": "Comprehensions are a fast way to build lists, sets, or dictionaries in just one line."
+    },
+    {
+      "id": "2-code-gen-yield",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "def gen():\n  for i in range(3):\n    yield i",
+      "say": "Generators use the yield keyword to produce values one at a time. This saves memory, since nothing is stored all at once."
+    },
+    {
+      "id": "3-rows-iterators",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Comprehension",
+          "b": "Builds full list in memory"
+        },
+        {
+          "a": "Generator",
+          "b": "Yields items as needed"
+        },
+        {
+          "a": "Iterator",
+          "b": "Implements next and iter"
+        }
+      ],
+      "walk": true,
+      "say": "Comprehensions build the whole list in memory. Generators yield items as you need them. Iterators are objects that support next and iter, so you can loop over them."
+    },
+    {
+      "id": "4-trap-gen-vs-list",
+      "type": "trap",
+      "question": "What does yield do in a generator?",
+      "wrong": "It returns all values at once.",
+      "right": "It produces one value at a time, pausing the function.",
+      "say": "Here's a common mistake: yield doesn't return everything at once. It gives you one value at a time, then pauses until you ask for the next."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:27:41.407Z"
+}
