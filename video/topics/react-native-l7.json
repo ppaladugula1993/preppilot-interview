@@ -1,0 +1,64 @@
+{
+  "id": "react-native-l7",
+  "title": "React Native Fabric UI Manager",
+  "keys": [
+    "Fabric",
+    "UI Manager",
+    "concurrent rendering",
+    "layout"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-fabric-ui",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "Why is Fabric a game-changer?",
+      "line2": "How does it boost UI speed?",
+      "say": "Ever wondered why Fabric makes React Native apps feel smoother? What’s behind its speed boost?"
+    },
+    {
+      "id": "1-chip-concurrent",
+      "type": "chip",
+      "kicker": "Key Feature",
+      "label": "Concurrent",
+      "sub": "Fabric schedules UI updates without blocking the JavaScript thread.",
+      "say": "Fabric lets UI updates happen alongside JavaScript, so your app stays responsive even under heavy loads."
+    },
+    {
+      "id": "2-rows-layout-batch",
+      "type": "rows",
+      "kicker": "Batching Views",
+      "rows": [
+        {
+          "a": "Batch updates",
+          "b": "Views update together for speed"
+        },
+        {
+          "a": "Efficient layout",
+          "b": "Calculations are optimized"
+        },
+        {
+          "a": "Better memory",
+          "b": "Handles complex UIs smoothly"
+        }
+      ],
+      "walk": true,
+      "say": "Fabric batches view updates, calculates layouts efficiently, and manages memory better. That’s perfect for complex screens."
+    },
+    {
+      "id": "3-trap-fabric-impact",
+      "type": "trap",
+      "question": "What’s Fabric’s main impact?",
+      "wrong": "It just changes the rendering engine.",
+      "right": "It enables concurrent rendering and faster, scalable UI updates.",
+      "say": "Don’t just say Fabric swaps engines. It’s about concurrent rendering and scalable, faster UI updates."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:15:34.221Z"
+}
