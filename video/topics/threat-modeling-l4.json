@@ -1,0 +1,85 @@
+{
+  "id": "threat-modeling-l4",
+  "title": "Mitigations & Tracking in Threat Modeling",
+  "keys": [
+    "mitigations",
+    "tracking",
+    "threats",
+    "issue tracker"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-mitigations-tra",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "How do you make threats disappear?",
+      "line2": "What’s your next move?",
+      "say": "You’ve spotted a security threat. What’s your next move to actually reduce risk?"
+    },
+    {
+      "id": "1-chip-mitigation",
+      "type": "chip",
+      "kicker": "Mitigation",
+      "label": "Action",
+      "sub": "Mitigations are steps to reduce or remove threats.",
+      "say": "Mitigations are actions or controls you take to shrink or eliminate a threat."
+    },
+    {
+      "id": "2-rows-tracking",
+      "type": "rows",
+      "kicker": "Tracking",
+      "rows": [
+        {
+          "a": "Log mitigation",
+          "b": "Create a ticket or task"
+        },
+        {
+          "a": "Link to threat",
+          "b": "Connect mitigation to threat"
+        },
+        {
+          "a": "Assign & verify",
+          "b": "Make sure it’s done and tested"
+        }
+      ],
+      "walk": true,
+      "say": "Tracking means logging each mitigation, linking it to the threat, and making sure someone owns and verifies it."
+    },
+    {
+      "id": "3-compare-types",
+      "type": "compare",
+      "kicker": "Types",
+      "left": {
+        "title": "Technical",
+        "items": [
+          "Input validation",
+          "Encryption",
+          "HTTPS everywhere"
+        ]
+      },
+      "right": {
+        "title": "Process",
+        "items": [
+          "Code reviews",
+          "Security training"
+        ]
+      },
+      "say": "Mitigations can be technical, like enforcing HTTPS, or process-based, like code reviews or training."
+    },
+    {
+      "id": "4-trap-accountability",
+      "type": "trap",
+      "question": "What’s the key to tracking mitigations?",
+      "wrong": "Just mark them as done.",
+      "right": "Always link each mitigation to its threat and verify completion.",
+      "say": "Don’t just mark mitigations as done. Always link them to their threats and verify they actually reduce risk."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:59:14.834Z"
+}
