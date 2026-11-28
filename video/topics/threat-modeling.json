@@ -1,0 +1,86 @@
+{
+  "id": "threat-modeling",
+  "title": "Threat Modeling: The Power of Trust Boundaries",
+  "keys": [
+    "threat modeling",
+    "trust boundary",
+    "STRIDE",
+    "DFD",
+    "mitigation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-trust-boundary",
+      "type": "hook",
+      "kicker": "Threat Modeling · 45 seconds",
+      "line1": "Where do most attacks start?",
+      "line2": "What is a trust boundary?",
+      "say": "Ever wonder where attackers usually break into systems? Let’s talk about trust boundaries—the number one place threats get in."
+    },
+    {
+      "id": "1-chip-dfd",
+      "type": "chip",
+      "kicker": "Step 1 · Diagram",
+      "label": "DFD",
+      "sub": "Maps how data moves and where trust changes",
+      "say": "First, draw a data flow diagram. This maps how data travels and highlights where trust shifts—those are your trust boundaries."
+    },
+    {
+      "id": "2-rows-stride-boundari",
+      "type": "rows",
+      "kicker": "Step 2 · STRIDE",
+      "rows": [
+        {
+          "a": "Spoofing",
+          "b": "Can someone fake their identity?"
+        },
+        {
+          "a": "Tampering",
+          "b": "Can data be changed in transit?"
+        },
+        {
+          "a": "Info Disclosure",
+          "b": "Is sensitive data exposed?"
+        }
+      ],
+      "walk": true,
+      "say": "At every trust boundary, apply STRIDE. Ask: can someone fake who they are, change data, or see things they shouldn’t?"
+    },
+    {
+      "id": "3-compare-mitigate-tra",
+      "type": "compare",
+      "kicker": "Step 3 · Mitigation",
+      "left": {
+        "title": "Mitigations",
+        "items": [
+          "Input validation",
+          "Encryption",
+          "Auth checks"
+        ]
+      },
+      "right": {
+        "title": "Tracking",
+        "items": [
+          "Assign fixes",
+          "Verify before release"
+        ]
+      },
+      "say": "Mitigate threats at these boundaries with validation, encryption, and authentication. Track each fix, and make sure it’s verified before launch."
+    },
+    {
+      "id": "4-trap-missed-boundary",
+      "type": "trap",
+      "question": "What’s most often missed in threat models?",
+      "wrong": "Listing threats but missing boundaries",
+      "right": "Missing trust boundaries—where attackers cross in",
+      "say": "Here’s a common interview trap: teams list threats but skip marking trust boundaries. That’s where attackers sneak in."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:48:36.068Z"
+}
