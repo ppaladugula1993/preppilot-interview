@@ -1,0 +1,68 @@
+{
+  "id": "performance-testing-l8",
+  "title": "Test Environment Setup for Performance",
+  "keys": [
+    "environment",
+    "isolation",
+    "fidelity",
+    "production"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-env-fidelity",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "Does your test environment matter?",
+      "line2": "Why match production?",
+      "say": "Ever wondered why your test environment needs to look just like production? Let’s break down why it matters."
+    },
+    {
+      "id": "1-chip-hardware",
+      "type": "chip",
+      "kicker": "Setup Tip",
+      "label": "Hardware",
+      "sub": "Use the same machine specs as production for valid results.",
+      "say": "First, match hardware specs. If your test server is weaker than production, your results won’t reflect real-world performance."
+    },
+    {
+      "id": "2-rows-env-match",
+      "type": "rows",
+      "kicker": "Checklist",
+      "rows": [
+        {
+          "a": "VM size",
+          "b": "Same as production"
+        },
+        {
+          "a": "DB version",
+          "b": "Identical to prod"
+        },
+        {
+          "a": "Network",
+          "b": "Dedicated, isolated"
+        },
+        {
+          "a": "Other workloads",
+          "b": "None during tests"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s what I always check: virtual machine size, database version, and network. Make sure nothing else is running during tests."
+    },
+    {
+      "id": "3-trap-env-isolation",
+      "type": "trap",
+      "question": "Why isolate your test environment?",
+      "wrong": "To save resources for other apps.",
+      "right": "Isolation prevents interference, so your results stay reliable.",
+      "say": "Interviewers love to ask about isolation. It’s not just about saving resources—it’s about avoiding interference so your results are trustworthy."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:29:47.611Z"
+}
