@@ -1,0 +1,84 @@
+{
+  "id": "network-l0",
+  "title": "The Layers That Matter in Networking",
+  "keys": [
+    "L2",
+    "L3",
+    "L4",
+    "L7",
+    "MAC",
+    "IP",
+    "TCP",
+    "HTTP"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-layers",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "Which layers actually matter?",
+      "line2": "Why do we care?",
+      "say": "Ever wondered which networking layers you really need to know? Let’s break down the ones that matter most for interviews."
+    },
+    {
+      "id": "1-rows-layers",
+      "type": "rows",
+      "kicker": "Layers in action",
+      "rows": [
+        {
+          "a": "L2: Data link",
+          "b": "MAC addresses, switches"
+        },
+        {
+          "a": "L3: Network",
+          "b": "IP addresses, routers"
+        },
+        {
+          "a": "L4: Transport",
+          "b": "TCP/UDP ports"
+        },
+        {
+          "a": "L7: Application",
+          "b": "HTTP, DNS, TLS"
+        }
+      ],
+      "walk": true,
+      "say": "Layer two is all about MAC addresses and switches. Layer three handles IP addresses and routing. Layer four is where TCP and UDP ports live. Layer seven is your app layer—think HTTP and DNS."
+    },
+    {
+      "id": "2-compare-l4-l7",
+      "type": "compare",
+      "kicker": "Why layers matter",
+      "left": {
+        "title": "L4 Load Balancer",
+        "items": [
+          "Routes by port",
+          "Ignores app protocol"
+        ]
+      },
+      "right": {
+        "title": "L7 Load Balancer",
+        "items": [
+          "Routes by HTTP",
+          "Can inspect app traffic"
+        ]
+      },
+      "say": "Load balancers at layer four route by port and don’t care about the app protocol. Layer seven balancers can inspect HTTP and route based on app traffic."
+    },
+    {
+      "id": "3-trap-port-timeout",
+      "type": "trap",
+      "question": "Ping works but app port times out. Why?",
+      "wrong": "The network path is broken.",
+      "right": "The network path is fine. Something blocks or isn’t listening on that port—maybe a firewall or the app isn’t running.",
+      "say": "Here’s a classic interview trap: If ping works but your app port times out, it’s not a network path issue. Something’s blocking or not listening on that port."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:11:19.418Z"
+}
