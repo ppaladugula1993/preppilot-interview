@@ -1,0 +1,89 @@
+{
+  "id": "troubleshoot-l5",
+  "title": "Throughput: Why Is Transfer Slow?",
+  "keys": [
+    "throughput",
+    "iperf3",
+    "latency",
+    "bandwidth",
+    "MTU"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-transfer-slow",
+      "type": "hook",
+      "kicker": "Troubleshooting · Throughput",
+      "line1": "Why is file transfer so slow?",
+      "line2": "Is it the network?",
+      "say": "Ever copied a file across datacenters and wondered why it's crawling, even on a fast link?"
+    },
+    {
+      "id": "1-chip-iperf3-test",
+      "type": "chip",
+      "kicker": "Network Test",
+      "label": "iperf3",
+      "sub": "Measure pure network speed with iperf3 before blaming the link.",
+      "say": "First, use iperf3 to check the raw network speed. This rules out the network as the culprit."
+    },
+    {
+      "id": "2-compare-streams",
+      "type": "compare",
+      "kicker": "Single vs Parallel Streams",
+      "left": {
+        "title": "Single Stream",
+        "items": [
+          "Much slower",
+          "Limited by latency"
+        ]
+      },
+      "right": {
+        "title": "Parallel Streams",
+        "items": [
+          "Much faster",
+          "Uses bandwidth better"
+        ]
+      },
+      "say": "If parallel streams are way faster than a single stream, latency and TCP window size are holding you back, not bandwidth."
+    },
+    {
+      "id": "3-rows-check-errors",
+      "type": "rows",
+      "kicker": "Check for Issues",
+      "rows": [
+        {
+          "a": "NIC errors",
+          "b": "ip -s link show eth0"
+        },
+        {
+          "a": "Speed/duplex",
+          "b": "ethtool eth0"
+        },
+        {
+          "a": "MTU mismatch",
+          "b": "ping -M do -s 1472"
+        },
+        {
+          "a": "Disk bottleneck",
+          "b": "iostat"
+        }
+      ],
+      "walk": true,
+      "say": "Check for errors, speed mismatches, MTU issues, and disk bottlenecks. Any of these can slow your transfer."
+    },
+    {
+      "id": "4-trap-network-or-disk",
+      "type": "trap",
+      "question": "Copy is slow but iperf3 is fast. Why?",
+      "wrong": "The network is the problem.",
+      "right": "It's not the network. Check disk and the copy tool before blaming the link.",
+      "say": "Here's a classic trap: if iperf3 is fast but your file copy is slow, it's not the network. Look at disk or the copy tool."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:00:35.743Z"
+}
