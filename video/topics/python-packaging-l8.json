@@ -1,0 +1,63 @@
+{
+  "id": "python-packaging-l8",
+  "title": "pytest Parametrize & Coverage Essentials",
+  "keys": [
+    "pytest",
+    "parametrize",
+    "coverage",
+    "testing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-parametrize-or-",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "How do you test smarter in Python?",
+      "line2": "Are your tests complete?",
+      "say": "How do you make sure your Python tests cover every case, and actually check all your code?"
+    },
+    {
+      "id": "1-chip-parametrize",
+      "type": "chip",
+      "kicker": "pytest",
+      "label": "Parametrize",
+      "sub": "Run one test with many input sets at once.",
+      "say": "Parametrize in pytest lets you run the same test with different inputs, so you cover more ground with less code."
+    },
+    {
+      "id": "2-code-parametrize-exa",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "@pytest.mark.parametrize(\"x, y, expected\", [\n  (1, 2, 3),\n  (2, 3, 5)\n])\ndef test_add(x, y, expected):\n    assert add(x, y) == expected",
+      "say": "Here, the test runs twice, once for each set of numbers. Parametrize makes it easy to check lots of cases."
+    },
+    {
+      "id": "3-terminal-coverage",
+      "type": "terminal",
+      "kicker": "Coverage",
+      "title": "Measuring Test Coverage",
+      "lines": [
+        "$ pytest --cov=src/",
+        "---------- coverage: ... ----------",
+        "src/add.py          100%   5   0"
+      ],
+      "say": "Coverage tools like pytest-cov show what percent of your code the tests actually run. Aim for high coverage to catch bugs."
+    },
+    {
+      "id": "4-trap-parametrize-cov",
+      "type": "trap",
+      "question": "Does parametrize increase coverage?",
+      "wrong": "Yes, it always does.",
+      "right": "It helps, but only if your tests reach all code paths.",
+      "say": "Be careful: parametrize helps, but if your test cases miss a branch, coverage won't be complete."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:21:11.643Z"
+}
