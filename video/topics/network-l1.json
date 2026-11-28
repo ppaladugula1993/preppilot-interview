@@ -1,0 +1,94 @@
+{
+  "id": "network-l1",
+  "title": "Subnetting in Your Head",
+  "keys": [
+    "subnet",
+    "network bits",
+    "hosts",
+    "private ranges"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-subnetting",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "Can you subnet in your head?",
+      "line2": "How many hosts in a slash 26?",
+      "say": "Can you quickly tell how many hosts fit in a slash twenty-six subnet? Let's make subnetting second nature."
+    },
+    {
+      "id": "1-bits-vs-hosts",
+      "type": "chip",
+      "kicker": "Subnetting",
+      "label": "Network Bits",
+      "sub": "Fewer network bits means more hosts per subnet.",
+      "say": "The slash number is how many bits make up the network part. Fewer network bits means more room for hosts."
+    },
+    {
+      "id": "2-subnet-rows",
+      "type": "rows",
+      "kicker": "Address Counts",
+      "rows": [
+        {
+          "a": "/24",
+          "b": "254 usable hosts"
+        },
+        {
+          "a": "/25",
+          "b": "126 usable hosts"
+        },
+        {
+          "a": "/26",
+          "b": "62 usable hosts"
+        },
+        {
+          "a": "/27",
+          "b": "30 usable hosts"
+        },
+        {
+          "a": "/28",
+          "b": "14 usable hosts"
+        }
+      ],
+      "walk": true,
+      "say": "Here's a cheat sheet. Slash twenty-four gives you two hundred fifty-four usable addresses. Each step up halves the number. Slash twenty-six? Sixty-two usable hosts."
+    },
+    {
+      "id": "3-private-compare",
+      "type": "compare",
+      "kicker": "Private Ranges",
+      "left": {
+        "title": "Range",
+        "items": [
+          "10.0.0.0/8",
+          "172.16.0.0/12",
+          "192.168.0.0/16"
+        ]
+      },
+      "right": {
+        "title": "Use",
+        "items": [
+          "Private networks",
+          "Not routable on the internet",
+          "Common in offices and homes"
+        ]
+      },
+      "say": "Remember these private address ranges. Ten dot zero, one seventy-two dot sixteen, and one ninety-two dot one sixty-eight. They're for internal networks only."
+    },
+    {
+      "id": "4-trap-slash-mistake",
+      "type": "trap",
+      "question": "How many usable hosts in /28?",
+      "wrong": "16 usable hosts",
+      "right": "14 usable hosts. Two addresses are reserved.",
+      "say": "Watch out! In a slash twenty-eight, you get fourteen usable hosts, not sixteen. Two addresses are always reserved for network and broadcast."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:14:10.581Z"
+}
