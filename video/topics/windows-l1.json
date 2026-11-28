@@ -1,0 +1,92 @@
+{
+  "id": "windows-l1",
+  "title": "Windows Server Group Policy Basics",
+  "keys": [
+    "Group Policy",
+    "GPO",
+    "OU",
+    "gpresult"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-gpo-order",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "Why do some settings overwrite others?",
+      "line2": "How does Group Policy work?",
+      "say": "Ever wonder why your Windows settings change unexpectedly? Let's see how Group Policy decides what sticks."
+    },
+    {
+      "id": "1-rows-gpo-order",
+      "type": "rows",
+      "kicker": "Order matters",
+      "rows": [
+        {
+          "a": "Local",
+          "b": "Settings on the machine itself"
+        },
+        {
+          "a": "Site",
+          "b": "Applied at the network site"
+        },
+        {
+          "a": "Domain",
+          "b": "Pushed from the domain"
+        },
+        {
+          "a": "OU",
+          "b": "Organizational unit settings"
+        }
+      ],
+      "walk": true,
+      "say": "Group Policy applies in this order: local, site, domain, then organizational unit. The last one wins, so OU settings can override everything else."
+    },
+    {
+      "id": "2-terminal-gpo-trouble",
+      "type": "terminal",
+      "kicker": "Troubleshooting",
+      "title": "Check which policies applied",
+      "lines": [
+        "$ gpresult /r",
+        "$ gpupdate /force",
+        "$ rsop.msc"
+      ],
+      "say": "If a setting isn't applying, use these commands to see which policies are active and force updates. This is a classic interview scenario."
+    },
+    {
+      "id": "3-compare-ou-vs-group",
+      "type": "compare",
+      "kicker": "Key difference",
+      "left": {
+        "title": "OU",
+        "items": [
+          "Organizes objects",
+          "Links GPOs"
+        ]
+      },
+      "right": {
+        "title": "Security Group",
+        "items": [
+          "Grants permissions",
+          "Used for filtering"
+        ]
+      },
+      "say": "An organizational unit organizes objects and links policies. Security groups grant permissions and filter users, but you can't link policies directly to them."
+    },
+    {
+      "id": "4-trap-gpo-link",
+      "type": "trap",
+      "question": "Can you link a GPO to a group?",
+      "wrong": "Yes, groups can have GPOs.",
+      "right": "No, GPOs link to organizational units. Groups are just for filtering.",
+      "say": "Here's a common trap: GPOs only link to organizational units, not groups. Groups are just for filtering."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:17:57.290Z"
+}
