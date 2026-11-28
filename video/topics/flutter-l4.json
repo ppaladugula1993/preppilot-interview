@@ -1,0 +1,75 @@
+{
+  "id": "flutter-l4",
+  "title": "Widget, Element, Render Trees in Flutter",
+  "keys": [
+    "widget tree",
+    "element tree",
+    "render tree",
+    "Flutter"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-trees",
+      "type": "hook",
+      "kicker": "Flutter · lesson",
+      "line1": "Why does Flutter use three trees?",
+      "line2": "What do they do?",
+      "say": "Ever wonder why Flutter uses not one, but three different trees to build your app? Let's break down what each tree does and why it matters."
+    },
+    {
+      "id": "1-chip-widget",
+      "type": "chip",
+      "kicker": "Tree 1",
+      "label": "Widget",
+      "sub": "Describes the UI structure, like a blueprint.",
+      "say": "First up, the widget tree. This is your user interface blueprint. It shows what widgets make up your screen."
+    },
+    {
+      "id": "2-rows-trees",
+      "type": "rows",
+      "kicker": "How they connect",
+      "rows": [
+        {
+          "a": "Widget tree",
+          "b": "UI structure"
+        },
+        {
+          "a": "Element tree",
+          "b": "Widget instances & state"
+        },
+        {
+          "a": "Render tree",
+          "b": "Layout & painting"
+        }
+      ],
+      "walk": true,
+      "say": "Next, the element tree. This holds live widget instances and their state. Finally, the render tree handles layout and painting, making your app actually appear on screen."
+    },
+    {
+      "id": "3-terminal-inspector",
+      "type": "terminal",
+      "kicker": "Debug tip",
+      "title": "See the trees in DevTools",
+      "lines": [
+        "$ flutter pub global activate devtools",
+        "$ flutter pub global run devtools"
+      ],
+      "say": "You can use the Flutter DevTools inspector to actually see and debug all three trees in action."
+    },
+    {
+      "id": "4-trap-tree-mixup",
+      "type": "trap",
+      "question": "Which tree handles painting?",
+      "wrong": "Widget tree",
+      "right": "Render tree. It controls layout and drawing.",
+      "say": "Here's a common trap: Don't confuse the widget tree with the render tree. Only the render tree handles layout and painting."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:46:13.925Z"
+}
