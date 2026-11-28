@@ -1,0 +1,81 @@
+{
+  "id": "lb-l6",
+  "title": "Azure Load-Balancing Interview Guide",
+  "keys": [
+    "Azure",
+    "Load Balancer",
+    "App Gateway",
+    "Front Door",
+    "Traffic Manager"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-azure-lb",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "Which Azure load balancer fits?",
+      "line2": "Global, regional, or HTTP?",
+      "say": "Azure has four main load-balancing services. Which one should you use for your app?"
+    },
+    {
+      "id": "1-rows-lb-types",
+      "type": "rows",
+      "kicker": "Azure LB Types",
+      "rows": [
+        {
+          "a": "Load Balancer",
+          "b": "Regional, Layer 4, any TCP or UDP"
+        },
+        {
+          "a": "App Gateway",
+          "b": "Regional, Layer 7, HTTP, TLS offload"
+        },
+        {
+          "a": "Front Door",
+          "b": "Global, Layer 7, CDN, WAF"
+        },
+        {
+          "a": "Traffic Manager",
+          "b": "Global, DNS, failover, any protocol"
+        }
+      ],
+      "walk": true,
+      "say": "Here are your options: Load Balancer for any TCP or UDP, App Gateway for web and TLS, Front Door for global apps, and Traffic Manager for DNS-based failover."
+    },
+    {
+      "id": "2-compare-scope",
+      "type": "compare",
+      "kicker": "Scope & Protocol",
+      "left": {
+        "title": "Regional",
+        "items": [
+          "Load Balancer",
+          "App Gateway"
+        ]
+      },
+      "right": {
+        "title": "Global",
+        "items": [
+          "Front Door",
+          "Traffic Manager"
+        ]
+      },
+      "say": "Regional services handle local traffic, while global ones route across continents. Choose based on where your users are."
+    },
+    {
+      "id": "3-trap-lb-health",
+      "type": "trap",
+      "question": "Why did all your backends go down?",
+      "wrong": "The app crashed everywhere.",
+      "right": "A custom network rule blocked Azure health probes, marking every backend as down.",
+      "say": "Interview trap: If all backends show as down, check your network security rules. Blocking Azure health probes can cause this."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:47:13.952Z"
+}
