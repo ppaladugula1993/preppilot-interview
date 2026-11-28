@@ -1,0 +1,76 @@
+{
+  "id": "jvm-l5",
+  "title": "JVM Class Loading & Classpath Issues",
+  "keys": [
+    "class loading",
+    "classpath",
+    "class loader",
+    "hierarchy",
+    "ClassNotFoundException"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-class-load",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Ever hit a ClassNotFound error?",
+      "line2": "What causes it?",
+      "say": "Have you ever run into a ClassNotFound error and wondered what’s behind it? Let’s break down class loading and classpath issues."
+    },
+    {
+      "id": "1-chip-loader-hierarch",
+      "type": "chip",
+      "kicker": "Class Loader Hierarchy",
+      "label": "Hierarchy",
+      "sub": "Bootstrap, Extension, and Application loaders work together to load classes at runtime.",
+      "say": "The JVM uses a chain of loaders—bootstrap, extension, and application—to bring classes into memory. Each loader has its own role."
+    },
+    {
+      "id": "2-rows-common-issues",
+      "type": "rows",
+      "kicker": "Common Classpath Problems",
+      "rows": [
+        {
+          "a": "Missing JARs",
+          "b": "Class not found errors"
+        },
+        {
+          "a": "Duplicate classes",
+          "b": "Version conflicts"
+        },
+        {
+          "a": "Incompatible classes",
+          "b": "Runtime failures"
+        }
+      ],
+      "walk": true,
+      "say": "Most classpath headaches come from missing JARs, duplicate classes, or incompatible versions. These lead to errors and weird runtime failures."
+    },
+    {
+      "id": "3-terminal-check-class",
+      "type": "terminal",
+      "kicker": "Debugging Classpath",
+      "title": "Check your classpath setup",
+      "lines": [
+        "$ java -cp lib/*:app.jar com.example.Main",
+        "ClassNotFoundException: com.example.Main"
+      ],
+      "say": "If you see a ClassNotFoundException, double-check your classpath setup. Make sure all dependencies are there and not conflicting."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s your first step for class loading errors?",
+      "wrong": "Restart the JVM or redeploy the app",
+      "right": "Inspect the class loader hierarchy and check for missing, duplicate, or incompatible classes in the classpath.",
+      "say": "Don’t just restart or redeploy. Interviewers want you to inspect the loader hierarchy and check for missing or conflicting classes."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:07:00.079Z"
+}
