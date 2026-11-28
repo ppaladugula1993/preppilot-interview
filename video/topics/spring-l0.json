@@ -1,0 +1,90 @@
+{
+  "id": "spring-l0",
+  "title": "Spring IoC & Dependency Injection",
+  "keys": [
+    "IoC",
+    "Dependency Injection",
+    "Bean",
+    "Scope"
+  ],
+  "scenes": [
+    {
+      "id": "0-ioc-hook",
+      "type": "hook",
+      "kicker": "Spring & Spring Boot · lesson",
+      "line1": "Who builds your beans in Spring?",
+      "line2": "Is it you or the framework?",
+      "say": "Who actually creates and connects your objects in a Spring app? Is it your code, or does Spring handle it for you?"
+    },
+    {
+      "id": "1-ioc-chip",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "IoC",
+      "sub": "Spring controls object creation and wiring.",
+      "say": "Inversion of Control means Spring, not your code, is in charge of making and connecting objects."
+    },
+    {
+      "id": "2-di-compare",
+      "type": "compare",
+      "kicker": "How Spring Injects Dependencies",
+      "left": {
+        "title": "Constructor",
+        "items": [
+          "Explicit",
+          "Immutable",
+          "Testable"
+        ]
+      },
+      "right": {
+        "title": "Field",
+        "items": [
+          "Hidden",
+          "Mutable",
+          "Harder to test"
+        ]
+      },
+      "say": "Spring injects dependencies using constructors or fields. Constructor injection is clear and easier to test. Field injection is less visible and best avoided."
+    },
+    {
+      "id": "3-bean-scope-rows",
+      "type": "rows",
+      "kicker": "Bean Scopes",
+      "rows": [
+        {
+          "a": "singleton",
+          "b": "One shared bean per app"
+        },
+        {
+          "a": "prototype",
+          "b": "New bean every time"
+        },
+        {
+          "a": "request",
+          "b": "One bean per web request"
+        },
+        {
+          "a": "session",
+          "b": "One bean per user session"
+        }
+      ],
+      "walk": false,
+      "say": "Bean scopes control how long beans live. Singleton is one per app. Prototype creates a new bean each time. Request and session scopes are for web apps."
+    },
+    {
+      "id": "4-di-trap",
+      "type": "trap",
+      "question": "Is field injection better than constructor?",
+      "wrong": "Yes, it's simpler.",
+      "right": "No, constructor injection is clearer and easier to test.",
+      "say": "Here's a common trap: is field injection better than constructor injection? It's not. Constructor injection makes your dependencies obvious and your code easier to test."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:14:32.915Z"
+}
