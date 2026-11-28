@@ -1,0 +1,77 @@
+{
+  "id": "go-concurrency-l5",
+  "title": "Goroutine Leaks & Race Detector in Go",
+  "keys": [
+    "goroutine leaks",
+    "race detector",
+    "channels",
+    "cancellation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-goroutine-leaks",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "Can goroutines leak memory?",
+      "line2": "How do you catch them?",
+      "say": "Ever wondered if goroutines can leak memory? And how you'd spot them before your interview?"
+    },
+    {
+      "id": "1-chip-leak",
+      "type": "chip",
+      "kicker": "Problem",
+      "label": "Leak",
+      "sub": "Goroutine leaks happen when they're blocked or can't exit.",
+      "say": "Goroutine leaks happen when they're blocked or can't exit, often from a stuck channel or missing cancellation."
+    },
+    {
+      "id": "2-compare-race-leak",
+      "type": "compare",
+      "kicker": "Detection",
+      "left": {
+        "title": "Leak",
+        "items": [
+          "Blocked goroutine",
+          "Missing cancel",
+          "Silent memory use"
+        ]
+      },
+      "right": {
+        "title": "Race",
+        "items": [
+          "Data race",
+          "Unsafe access",
+          "Race detector spots it"
+        ]
+      },
+      "say": "Leaks silently use memory, while races cause unsafe access. The race detector helps you spot data races in your code."
+    },
+    {
+      "id": "3-terminal-race-detect",
+      "type": "terminal",
+      "kicker": "Tool",
+      "title": "Race Detector",
+      "lines": [
+        "$ go run -race main.go",
+        "Found data race",
+        "Location: main.go:12"
+      ],
+      "say": "Run the race detector during development. It shows exactly where data races happen, so you can fix them fast."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What's a common goroutine leak cause?",
+      "wrong": "Forgetting to start goroutines",
+      "right": "Leaving goroutines blocked on channels or missing cancellation logic.",
+      "say": "Interviewers love asking what causes goroutine leaks. It's usually blocked channels or missing cancellation."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:09:07.448Z"
+}
