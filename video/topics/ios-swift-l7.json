@@ -1,0 +1,72 @@
+{
+  "id": "ios-swift-l7",
+  "title": "iOS Testing Basics with XCTest",
+  "keys": [
+    "XCTest",
+    "unit test",
+    "mock",
+    "dependency injection"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-testing-ios",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "How do you test your Swift code?",
+      "line2": "Is XCTest enough?",
+      "say": "How do you actually test your Swift code? Is using XCTest all you need for solid apps?"
+    },
+    {
+      "id": "1-chip-xctest",
+      "type": "chip",
+      "kicker": "Core Tool",
+      "label": "XCTest",
+      "sub": "Xcode’s built-in framework for unit, UI, and performance tests.",
+      "say": "XCTest is the built-in tool in Xcode for writing unit, user interface, and performance tests."
+    },
+    {
+      "id": "2-code-unit-test",
+      "type": "code",
+      "kicker": "Sample Test",
+      "lang": "swift",
+      "code": "func testSum() {\n  XCTAssertEqual(sum(2,3), 5)\n}",
+      "say": "Here's a simple test. It checks that adding two and three with your sum function gives five."
+    },
+    {
+      "id": "3-rows-mocks-di",
+      "type": "rows",
+      "kicker": "Best Practices",
+      "rows": [
+        {
+          "a": "Mocks",
+          "b": "Fake objects for dependencies"
+        },
+        {
+          "a": "Dependency Injection",
+          "b": "Pass in dependencies for control"
+        },
+        {
+          "a": "Critical Logic",
+          "b": "Test your most important code"
+        }
+      ],
+      "walk": false,
+      "say": "Use mocks to fake dependencies and dependency injection to control what your code uses. Always test your critical logic."
+    },
+    {
+      "id": "4-trap-xctest-only",
+      "type": "trap",
+      "question": "Is using XCTest alone enough?",
+      "wrong": "Yes, just write tests.",
+      "right": "No—use mocks and dependency injection for reliable tests.",
+      "say": "Here's a common trap: thinking just writing tests with XCTest is enough. You also need mocks and dependency injection for reliable results."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:22:34.081Z"
+}
