@@ -1,0 +1,74 @@
+{
+  "id": "docker-l1",
+  "title": "Docker Containers vs Virtual Machines",
+  "keys": [
+    "container",
+    "VM",
+    "kernel",
+    "isolation",
+    "namespaces"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vs-vm",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "Containers or VMs?",
+      "line2": "What's the real difference?",
+      "say": "Ever wondered how containers really differ from virtual machines? Let's break it down."
+    },
+    {
+      "id": "1-compare-arch",
+      "type": "compare",
+      "kicker": "Architecture",
+      "left": {
+        "title": "VM",
+        "items": [
+          "Own kernel",
+          "Guest operating system",
+          "Hypervisor layer"
+        ]
+      },
+      "right": {
+        "title": "Container",
+        "items": [
+          "Shares host kernel",
+          "No guest OS",
+          "Container runtime"
+        ]
+      },
+      "say": "A virtual machine runs its own operating system and kernel on a hypervisor. A container just shares the host's kernel and runs on a container runtime."
+    },
+    {
+      "id": "2-chip-speed",
+      "type": "chip",
+      "kicker": "Speed",
+      "label": "Startup",
+      "sub": "VMs boot in minutes; containers in seconds.",
+      "say": "VMs can take minutes to start. Containers are ready in seconds."
+    },
+    {
+      "id": "3-chip-size",
+      "type": "chip",
+      "kicker": "Efficiency",
+      "label": "Size",
+      "sub": "VMs use gigabytes; containers use megabytes.",
+      "say": "VMs are heavy and use gigabytes of resources. Containers are much lighter, often just megabytes."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Do containers have their own kernel?",
+      "wrong": "Yes, each has its own kernel.",
+      "right": "No, containers share the host kernel and isolate with namespaces and cgroups.",
+      "say": "Here's a common interview trap: Do containers have their own kernel? Remember, they share the host kernel and use namespaces and cgroups for isolation."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:21:18.416Z"
+}
