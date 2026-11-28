@@ -1,0 +1,89 @@
+{
+  "id": "security-l4",
+  "title": "Zero Trust: Secrets & Identity",
+  "keys": [
+    "zero trust",
+    "secrets",
+    "identity",
+    "least privilege"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-zero-trust",
+      "type": "hook",
+      "kicker": "Security & Change · lesson",
+      "line1": "Would you trust your own network?",
+      "line2": "What if you shouldn't?",
+      "say": "Would you trust your own network? What if you shouldn't? Let's talk about zero trust, secrets, and identity."
+    },
+    {
+      "id": "1-chip-zero-trust",
+      "type": "chip",
+      "kicker": "Principle",
+      "label": "ZeroTrust",
+      "sub": "Never trust the network. Verify identity, device, and context every time.",
+      "say": "Zero trust means never trusting the network by default. Always verify identity, device, and context for every request."
+    },
+    {
+      "id": "2-rows-secrets",
+      "type": "rows",
+      "kicker": "Secrets Management",
+      "rows": [
+        {
+          "a": "Use a vault",
+          "b": "Key Vault or HashiCorp Vault"
+        },
+        {
+          "a": "No secrets in code",
+          "b": "Keep them out of repos and images"
+        },
+        {
+          "a": "Rotate & alert",
+          "b": "Change keys often, alert on odd use"
+        },
+        {
+          "a": "Scan for leaks",
+          "b": "GitHub secret scanning, gitleaks"
+        }
+      ],
+      "walk": true,
+      "say": "Store secrets in a vault like Key Vault or HashiCorp Vault. Never put secrets in code or images. Rotate keys often and set alerts for unusual access. Always scan your repos for leaked keys."
+    },
+    {
+      "id": "3-compare-identity",
+      "type": "compare",
+      "kicker": "Identity",
+      "left": {
+        "title": "Old Way",
+        "items": [
+          "Passwords",
+          "Single admin account"
+        ]
+      },
+      "right": {
+        "title": "Zero Trust",
+        "items": [
+          "Managed identities",
+          "MFA everywhere",
+          "Just-in-time admin"
+        ]
+      },
+      "say": "The old way relied on passwords and one admin account. Zero trust uses managed identities, multi-factor authentication everywhere, and just-in-time admin access."
+    },
+    {
+      "id": "4-trap-secrets",
+      "type": "trap",
+      "question": "Is deleting a leaked secret from Git enough?",
+      "wrong": "Yes, delete and move on.",
+      "right": "No. Rotate the secret. Deleting the commit isn't enough—assume it's compromised.",
+      "say": "Here's a trap: Is deleting a leaked secret from Git enough? No way. Always rotate the secret. Deleting the commit doesn't save you—assume it's compromised."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:03:49.843Z"
+}
