@@ -1,0 +1,77 @@
+{
+  "id": "java-build-l1",
+  "title": "Maven POM Structure Essentials",
+  "keys": [
+    "pom.xml",
+    "coordinates",
+    "dependencies",
+    "plugins",
+    "inheritance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pom-basics",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "What powers every Maven build?",
+      "line2": "What's inside a POM?",
+      "say": "Ever wonder what actually drives a Maven build? Let's break down the POM file and see why it matters."
+    },
+    {
+      "id": "1-chip-coordinates",
+      "type": "chip",
+      "kicker": "Key Part",
+      "label": "Coordinates",
+      "sub": "Group, artifact, and version uniquely identify your project.",
+      "say": "First, every POM starts with coordinates—group, artifact, and version. These three details make your project unique in the Maven world."
+    },
+    {
+      "id": "2-rows-pom-sections",
+      "type": "rows",
+      "kicker": "POM Sections",
+      "rows": [
+        {
+          "a": "Dependencies",
+          "b": "Libraries your project needs"
+        },
+        {
+          "a": "Plugins",
+          "b": "Tools for building and testing"
+        },
+        {
+          "a": "Build",
+          "b": "Custom build settings"
+        },
+        {
+          "a": "Modules",
+          "b": "Multi-module project structure"
+        }
+      ],
+      "walk": true,
+      "say": "You'll also see sections for dependencies, plugins, build settings, and modules. Each one shapes how your project is built and managed."
+    },
+    {
+      "id": "3-code-pom-example",
+      "type": "code",
+      "kicker": "Sample POM",
+      "lang": "xml",
+      "code": "<project>\n  <groupId>com.example</groupId>\n  <artifactId>my-app</artifactId>\n  <version>1.0.0</version>\n  <dependencies>\n    <dependency>...</dependency>\n  </dependencies>\n</project>",
+      "say": "Here's a simple POM. You can quickly spot where to add dependencies or change project details."
+    },
+    {
+      "id": "4-trap-inheritance",
+      "type": "trap",
+      "question": "Does every module need a full POM?",
+      "wrong": "Yes, each module must repeat all config.",
+      "right": "No, modules can inherit from a parent POM for shared settings.",
+      "say": "Don't fall for this: not every module needs a full POM. Modules can inherit settings from a parent, making project management much easier."
+    },
+    {
+      "id": "5-end-pom",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:31:41.413Z"
+}
