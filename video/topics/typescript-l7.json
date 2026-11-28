@@ -1,0 +1,72 @@
+{
+  "id": "typescript-l7",
+  "title": "TypeScript: API Typing & Zod Validation",
+  "keys": [
+    "TypeScript",
+    "zod",
+    "runtime",
+    "validation",
+    "API"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-zod-types",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "How do you trust API data?",
+      "line2": "Can TypeScript catch bad inputs?",
+      "say": "How do you make sure your API data is safe? Can TypeScript really catch bad inputs when your code runs?"
+    },
+    {
+      "id": "1-chip-types-erased",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Runtime",
+      "sub": "TypeScript types disappear at runtime.",
+      "say": "TypeScript types only exist while you code. When your app runs, those types are gone."
+    },
+    {
+      "id": "2-code-zod-schema",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "typescript",
+      "code": "import { z } from 'zod'\nconst UserSchema = z.object({\n  id: z.number(),\n  name: z.string()\n})\ntype User = z.infer<typeof UserSchema>\nUserSchema.parse({ id: 1, name: 'Alice' })",
+      "say": "With zod, you define a schema for your data. It checks values at runtime and gives you a matching TypeScript type."
+    },
+    {
+      "id": "3-compare-static-vs-ru",
+      "type": "compare",
+      "kicker": "Checks",
+      "left": {
+        "title": "Static",
+        "items": [
+          "TypeScript",
+          "Compile-time only"
+        ]
+      },
+      "right": {
+        "title": "Runtime",
+        "items": [
+          "zod",
+          "Checks actual data"
+        ]
+      },
+      "say": "TypeScript checks types while you code. Zod checks real data when your app runs. Both matter for API safety."
+    },
+    {
+      "id": "4-trap-missing-validat",
+      "type": "trap",
+      "question": "Is TypeScript enough for API validation?",
+      "wrong": "Yes, TypeScript guarantees safety.",
+      "right": "No, TypeScript only checks types at compile-time. Use zod for runtime validation.",
+      "say": "Is TypeScript enough to keep your API data safe? No, you need runtime checks with zod or similar libraries."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:55:30.795Z"
+}
