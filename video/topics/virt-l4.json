@@ -1,0 +1,80 @@
+{
+  "id": "virt-l4",
+  "title": "Backup & DR: RPO, RTO, and Key Rules",
+  "keys": [
+    "RPO",
+    "RTO",
+    "3-2-1 rule",
+    "immutable backup"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-rpo-rto",
+      "type": "hook",
+      "kicker": "VMware & Storage · lesson",
+      "line1": "How much data can you lose?",
+      "line2": "And how fast are you back?",
+      "say": "Ever wondered how much data you can afford to lose, and how quickly you need to recover after a disaster?"
+    },
+    {
+      "id": "1-chip-rpo",
+      "type": "chip",
+      "kicker": "Core term",
+      "label": "RPO",
+      "sub": "Max data you can lose in a disaster.",
+      "say": "First up, RPO. That's your recovery point objective. It means the maximum data you can lose if things go wrong."
+    },
+    {
+      "id": "2-chip-rto",
+      "type": "chip",
+      "kicker": "Core term",
+      "label": "RTO",
+      "sub": "How fast you must restore service.",
+      "say": "Next, RTO. That's your recovery time objective. It's how quickly you have to get everything running again."
+    },
+    {
+      "id": "3-rows-3-2-1",
+      "type": "rows",
+      "kicker": "Best practice",
+      "rows": [
+        {
+          "a": "3 copies",
+          "b": "Your data, plus two backups"
+        },
+        {
+          "a": "2 media",
+          "b": "Use two different storage types"
+        },
+        {
+          "a": "1 offsite",
+          "b": "Keep one copy offsite"
+        }
+      ],
+      "walk": true,
+      "say": "Follow the three-two-one rule: three copies of your data, on two types of media, with one offsite. This keeps you safe from most disasters."
+    },
+    {
+      "id": "4-chip-immutable",
+      "type": "chip",
+      "kicker": "Security",
+      "label": "Immutable",
+      "sub": "Backups can't be changed or deleted.",
+      "say": "Immutable backups can't be changed or deleted. They're your best defense against ransomware."
+    },
+    {
+      "id": "5-trap-rpo-rto-trap",
+      "type": "trap",
+      "question": "What's the first thing to ask in DR?",
+      "wrong": "How big is the backup?",
+      "right": "Start with RPO and RTO: data loss and recovery time.",
+      "say": "Here's a common interview trap: Don't start with backup size. Always ask about RPO and RTO first—how much data loss and how fast you must recover."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:35:19.902Z"
+}
