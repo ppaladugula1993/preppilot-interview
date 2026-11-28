@@ -1,0 +1,100 @@
+{
+  "id": "windows-l4",
+  "title": "Windows Server: Event IDs You Must Know",
+  "keys": [
+    "Event Viewer",
+    "Event IDs",
+    "logon",
+    "shutdown",
+    "crash"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-event-id-questi",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "Can you explain a server reboot?",
+      "line2": "Which event IDs tell the story?",
+      "say": "Ever wondered why a Windows server rebooted? Which event IDs reveal the cause?"
+    },
+    {
+      "id": "1-rows-common-event-id",
+      "type": "rows",
+      "kicker": "Must-Know Event IDs",
+      "rows": [
+        {
+          "a": "4624",
+          "b": "Successful logon"
+        },
+        {
+          "a": "4625",
+          "b": "Failed logon"
+        },
+        {
+          "a": "4740",
+          "b": "Account locked out"
+        },
+        {
+          "a": "1074",
+          "b": "Planned restart"
+        },
+        {
+          "a": "6008",
+          "b": "Unexpected shutdown"
+        },
+        {
+          "a": "41",
+          "b": "Kernel crash or power loss"
+        }
+      ],
+      "walk": false,
+      "say": "These event IDs come up all the time. Logon attempts, account lockouts, planned restarts, and unexpected shutdowns—each has its own code."
+    },
+    {
+      "id": "2-terminal-find-restar",
+      "type": "terminal",
+      "kicker": "Finding Restart Causes",
+      "title": "Check planned restarts",
+      "lines": [
+        "$ Get-WinEvent -FilterHashtable",
+        "$ @{LogName='System'; Id=1074}",
+        "$ -MaxEvents 5"
+      ],
+      "say": "To see who or what triggered a planned restart, filter for event ID ten seventy-four in the system log."
+    },
+    {
+      "id": "3-compare-planned-vs-c",
+      "type": "compare",
+      "kicker": "Planned vs. Crash",
+      "left": {
+        "title": "Planned",
+        "items": [
+          "1074: Restart requested"
+        ]
+      },
+      "right": {
+        "title": "Crash",
+        "items": [
+          "6008: Unexpected shutdown",
+          "41: Kernel power loss"
+        ]
+      },
+      "say": "Planned restarts have event ID ten seventy-four. If you see six thousand eight or forty-one, the server crashed or lost power."
+    },
+    {
+      "id": "4-trap-misread-event-i",
+      "type": "trap",
+      "question": "Does 1074 mean a crash?",
+      "wrong": "Yes, 1074 means a crash.",
+      "right": "No, 1074 means someone or something requested a restart. Crashes show up as six thousand eight or forty-one.",
+      "say": "Here's a trap: does event ID ten seventy-four mean the server crashed? Not at all. It means a restart was requested. Crashes use different IDs."
+    },
+    {
+      "id": "5-end-preppilot-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:24:14.864Z"
+}
