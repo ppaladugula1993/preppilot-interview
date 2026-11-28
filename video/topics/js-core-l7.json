@@ -1,0 +1,93 @@
+{
+  "id": "js-core-l7",
+  "title": "ESM vs CommonJS: Module Systems",
+  "keys": [
+    "ESM",
+    "CommonJS",
+    "import",
+    "require",
+    "Node.js"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-modules",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "Why do modules matter in JS?",
+      "line2": "ESM vs CommonJS?",
+      "say": "What’s the difference between JavaScript module systems, and why should you care?"
+    },
+    {
+      "id": "1-chip-esm",
+      "type": "chip",
+      "kicker": "Module Types",
+      "label": "ESM",
+      "sub": "Uses import and export, works in browsers and Node twelve and up.",
+      "say": "ECMAScript modules use import and export. They’re native in browsers and modern Node."
+    },
+    {
+      "id": "2-chip-commonjs",
+      "type": "chip",
+      "kicker": "Module Types",
+      "label": "CommonJS",
+      "sub": "Uses require and module.exports, standard in older Node.js.",
+      "say": "CommonJS uses require and module exports. It’s the standard for older Node projects."
+    },
+    {
+      "id": "3-compare-syntax",
+      "type": "compare",
+      "kicker": "Syntax",
+      "left": {
+        "title": "ESM",
+        "items": [
+          "import",
+          "export"
+        ]
+      },
+      "right": {
+        "title": "CommonJS",
+        "items": [
+          "require",
+          "module.exports"
+        ]
+      },
+      "say": "ESM uses import and export, while CommonJS relies on require and module exports."
+    },
+    {
+      "id": "4-rows-why-esm",
+      "type": "rows",
+      "kicker": "Why ESM?",
+      "rows": [
+        {
+          "a": "Native browser support",
+          "b": "Works out of the box"
+        },
+        {
+          "a": "Static analysis",
+          "b": "Enables tree-shaking"
+        },
+        {
+          "a": "Modern tooling",
+          "b": "Better for new projects"
+        }
+      ],
+      "walk": true,
+      "say": "ESM is great for new projects. It’s supported in browsers, allows static analysis, and works well with modern tools."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "Can you mix ESM and CommonJS easily?",
+      "wrong": "Yes, they work together seamlessly.",
+      "right": "Mixing them can cause issues. You need extra setup or tools to bridge the gap.",
+      "say": "Don’t assume you can mix ESM and CommonJS without trouble. They need special setup to work together."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:08:16.882Z"
+}
