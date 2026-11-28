@@ -1,0 +1,74 @@
+{
+  "id": "python-packaging-l4",
+  "title": "Dependency Conflicts & Pinning in Python",
+  "keys": [
+    "dependency conflict",
+    "pinning",
+    "requirements.txt",
+    "lock file"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-conflict",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "Ever seen two packages clash?",
+      "line2": "How do you prevent it?",
+      "say": "Ever had two Python packages fight over which version of a library to use? How can you keep your project stable?"
+    },
+    {
+      "id": "1-chip-conflict",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Conflict",
+      "sub": "When packages need incompatible versions of the same dependency.",
+      "say": "A dependency conflict happens when different packages need different versions of the same library. Python can't satisfy both at once."
+    },
+    {
+      "id": "2-compare-pinning",
+      "type": "compare",
+      "kicker": "How to Prevent Conflicts",
+      "left": {
+        "title": "No Pinning",
+        "items": [
+          "Unpredictable installs",
+          "Possible breakage"
+        ]
+      },
+      "right": {
+        "title": "With Pinning",
+        "items": [
+          "Exact versions locked",
+          "Stable, repeatable builds"
+        ]
+      },
+      "say": "Pinning means locking dependencies to exact versions. Without it, installs can change over time and break your code. With pinning, your builds stay stable and predictable."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "requirements.txt Example",
+      "title": "Pinned Dependencies",
+      "lines": [
+        "requests==2.31.0",
+        "urllib3==1.26.15"
+      ],
+      "say": "Here's what pinning looks like in a requirements file. Each package has a specific version, so nothing changes unless you decide to update."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you avoid dependency conflicts?",
+      "wrong": "Just install the latest versions.",
+      "right": "Pin exact versions and use lock files to avoid conflicts.",
+      "say": "In interviews, don't just say you install the latest versions. The real answer is to pin exact versions and use lock files to keep things conflict-free."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:14:17.362Z"
+}
