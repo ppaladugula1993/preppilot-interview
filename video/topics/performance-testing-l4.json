@@ -1,0 +1,76 @@
+{
+  "id": "performance-testing-l4",
+  "title": "Find Bottlenecks with APM Tools",
+  "keys": [
+    "APM",
+    "latency",
+    "trace",
+    "bottleneck",
+    "correlate"
+  ],
+  "scenes": [
+    {
+      "id": "0-apm-bottleneck-hook",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "How do you spot bottlenecks fast?",
+      "line2": "What does APM show you?",
+      "say": "Ever wonder how to quickly find bottlenecks during a performance test? What can application monitoring tools reveal?"
+    },
+    {
+      "id": "1-apm-chip",
+      "type": "chip",
+      "kicker": "APM Tools",
+      "label": "Trace",
+      "sub": "APM tools track requests and highlight slow code or queries.",
+      "say": "Application monitoring tools trace requests and highlight slow code or database queries."
+    },
+    {
+      "id": "2-apm-terminal",
+      "type": "terminal",
+      "kicker": "APM Trace Example",
+      "title": "Spotting Slow SQL",
+      "lines": [
+        "$ /api/orders · SQL query · 800ms",
+        "$ Worker process · CPU spike · Load test"
+      ],
+      "say": "For example, a trace might show a slow SQL query in the orders endpoint, or a CPU spike in a worker process during load."
+    },
+    {
+      "id": "3-apm-rows",
+      "type": "rows",
+      "kicker": "Pinpoint Bottlenecks",
+      "rows": [
+        {
+          "a": "Run performance test",
+          "b": "Generate real traffic"
+        },
+        {
+          "a": "Check APM traces",
+          "b": "Find slow endpoints"
+        },
+        {
+          "a": "Correlate failures",
+          "b": "Locate root cause"
+        }
+      ],
+      "walk": true,
+      "say": "My process is simple: run your test, check the traces, and correlate failures to pinpoint the root cause."
+    },
+    {
+      "id": "4-apm-trap",
+      "type": "trap",
+      "question": "What does APM mainly help you do?",
+      "wrong": "Just measure overall latency",
+      "right": "Pinpoint which component or query is slow",
+      "say": "Here's a common interview trap: APM isn't just for measuring overall latency. It helps you pinpoint which component or query is actually slow."
+    },
+    {
+      "id": "5-apm-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:11:05.654Z"
+}
