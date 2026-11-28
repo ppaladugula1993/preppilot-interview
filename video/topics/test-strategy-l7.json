@@ -1,0 +1,89 @@
+{
+  "id": "test-strategy-l7",
+  "title": "Defect Triage: Prioritize Bugs Like a Pro",
+  "keys": [
+    "defect triage",
+    "severity",
+    "priority",
+    "QA",
+    "backlog"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-triage",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "How do teams decide which bugs to fix first?",
+      "line2": "What’s the triage process?",
+      "say": "Ever wonder how teams choose which bugs get fixed right away and which can wait? Let’s break down the defect triage process."
+    },
+    {
+      "id": "1-chip-triage",
+      "type": "chip",
+      "kicker": "Defect Triage",
+      "label": "Review",
+      "sub": "Teams review reported bugs together, weighing impact.",
+      "say": "Defect triage means reviewing new bugs as a team, looking at how they affect users and the business."
+    },
+    {
+      "id": "2-rows-triage-steps",
+      "type": "rows",
+      "kicker": "Triage Steps",
+      "rows": [
+        {
+          "a": "Review defect",
+          "b": "Check details and impact"
+        },
+        {
+          "a": "Set severity",
+          "b": "How bad is the bug?"
+        },
+        {
+          "a": "Set priority",
+          "b": "How soon should we fix it?"
+        },
+        {
+          "a": "Assign owner",
+          "b": "Who will fix or track it?"
+        }
+      ],
+      "walk": true,
+      "say": "First, review the defect. Then, set severity for impact, priority for urgency, and assign someone to handle it."
+    },
+    {
+      "id": "3-compare-severity-pri",
+      "type": "compare",
+      "kicker": "Severity vs Priority",
+      "left": {
+        "title": "Severity",
+        "items": [
+          "System crash",
+          "Data loss"
+        ]
+      },
+      "right": {
+        "title": "Priority",
+        "items": [
+          "Fix now",
+          "Defer fix"
+        ]
+      },
+      "say": "Severity is about how much damage a bug causes. Priority is about how quickly it needs fixing. A crash is high severity and usually high priority."
+    },
+    {
+      "id": "4-trap-triage",
+      "type": "trap",
+      "question": "What’s more important: severity or priority?",
+      "wrong": "Always fix high severity first.",
+      "right": "Priority decides fix order, even if severity is high.",
+      "say": "Don’t assume high severity always comes first. Priority sets the order, so business needs can shift focus."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:36:19.810Z"
+}
