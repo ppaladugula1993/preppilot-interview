@@ -1,0 +1,88 @@
+{
+  "id": "security-l5",
+  "title": "Certificates & PKI: What Engineers Miss",
+  "keys": [
+    "certificate",
+    "PKI",
+    "expiry",
+    "mTLS"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pki-certificate",
+      "type": "hook",
+      "kicker": "Security & Change · lesson",
+      "line1": "Ever had an outage from a",
+      "line2": "missed certificate renewal?",
+      "say": "Ever had an outage because someone forgot to renew a certificate? Let's make sure that never happens again."
+    },
+    {
+      "id": "1-chip-public-internal",
+      "type": "chip",
+      "kicker": "PKI in practice",
+      "label": "Issuers",
+      "sub": "Public CAs for internet, internal CAs for company apps.",
+      "say": "For public-facing apps, use a public certificate authority. For internal services, your company likely runs its own CA."
+    },
+    {
+      "id": "2-rows-cert-inventory",
+      "type": "rows",
+      "kicker": "Certificate Inventory",
+      "rows": [
+        {
+          "a": "Name",
+          "b": "Service or hostname"
+        },
+        {
+          "a": "SANs",
+          "b": "Extra valid hostnames"
+        },
+        {
+          "a": "Issuer",
+          "b": "Who signed the cert"
+        },
+        {
+          "a": "Expiry",
+          "b": "When it goes invalid"
+        },
+        {
+          "a": "Where",
+          "b": "Load balancer, app, keystore"
+        },
+        {
+          "a": "Owner",
+          "b": "Who renews it"
+        }
+      ],
+      "walk": false,
+      "say": "Track every certificate: its name, alternate names, who issued it, expiry date, where it's installed, and who owns the renewal."
+    },
+    {
+      "id": "3-terminal-check-expir",
+      "type": "terminal",
+      "kicker": "Check Expiry",
+      "title": "openssl x509 expiry check",
+      "lines": [
+        "$ openssl x509 -in app.crt",
+        "-noout -enddate",
+        "notAfter=2025-03-01T12:00:00Z"
+      ],
+      "say": "You can check when a certificate expires with the openssl tool. Don't let that date sneak up on you."
+    },
+    {
+      "id": "4-trap-mtls",
+      "type": "trap",
+      "question": "What does mTLS require?",
+      "wrong": "Only the server presents a cert.",
+      "right": "Both client and server present certificates to verify each other.",
+      "say": "Here's a common interview trap: in mutual TLS, both sides must present a certificate. Not just the server."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:05:25.303Z"
+}
