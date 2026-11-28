@@ -1,0 +1,76 @@
+{
+  "id": "java-build-l7",
+  "title": "Scan Dependencies for Vulnerabilities",
+  "keys": [
+    "vulnerability",
+    "dependency",
+    "Maven",
+    "Gradle",
+    "CI"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vuln-scan",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "Are your dependencies safe?",
+      "line2": "How do you check?",
+      "say": "Ever wonder if your app's dependencies are secure? How do you actually check for vulnerabilities?"
+    },
+    {
+      "id": "1-chip-why-scan",
+      "type": "chip",
+      "kicker": "Why scan?",
+      "label": "Security",
+      "sub": "Scanning finds known issues before release.",
+      "say": "Scanning dependencies helps catch known security problems before you ship your code."
+    },
+    {
+      "id": "2-terminal-maven-gradl",
+      "type": "terminal",
+      "kicker": "How to scan",
+      "title": "Maven & Gradle Commands",
+      "lines": [
+        "$ mvn org.owasp:dependency-check-maven:check",
+        "$ ./gradlew dependencyCheckAnalyze"
+      ],
+      "say": "With Maven, run the OWASP dependency check command. In Gradle, use the dependency check analyze task. Both scan your dependencies for vulnerabilities."
+    },
+    {
+      "id": "3-rows-ci-integration",
+      "type": "rows",
+      "kicker": "Best practice",
+      "rows": [
+        {
+          "a": "Add plugin",
+          "b": "Install dependency check plugin"
+        },
+        {
+          "a": "Automate",
+          "b": "Run scan in your CI pipeline"
+        },
+        {
+          "a": "Review",
+          "b": "Check reports for CVEs"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how I do it: add the plugin, automate scans in the build pipeline, and review the report for security alerts."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Is manual scanning enough?",
+      "wrong": "Yes, manual scans are fine.",
+      "right": "No, automate scans in CI to catch issues fast.",
+      "say": "Don't fall for this: manual scans aren't enough. Interviewers want to hear that you automate vulnerability checks in your continuous integration pipeline."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:22:30.815Z"
+}
