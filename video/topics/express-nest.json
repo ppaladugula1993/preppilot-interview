@@ -1,0 +1,101 @@
+{
+  "id": "express-nest",
+  "title": "Express & NestJS: Middleware Chain Mastery",
+  "keys": [
+    "middleware",
+    "routing",
+    "validation",
+    "NestJS",
+    "Express"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-middleware-powe",
+      "type": "hook",
+      "kicker": "Express & NestJS · 45 seconds",
+      "line1": "What makes Express and NestJS so flexible?",
+      "line2": "How do they handle requests?",
+      "say": "Ever wondered how Express and NestJS handle everything from logging to authentication so smoothly? Let's break down the middleware chain."
+    },
+    {
+      "id": "1-chip-middleware",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Middleware",
+      "sub": "Functions that process requests in sequence.",
+      "say": "Middleware are just functions that run one after another for every request, letting you preprocess, log, or even block traffic."
+    },
+    {
+      "id": "2-rows-middleware-flow",
+      "type": "rows",
+      "kicker": "Step-by-Step",
+      "rows": [
+        {
+          "a": "Request arrives",
+          "b": "Hits the first middleware"
+        },
+        {
+          "a": "Preprocessing",
+          "b": "Logs or checks auth"
+        },
+        {
+          "a": "Validation",
+          "b": "Rejects bad data early"
+        },
+        {
+          "a": "Controller",
+          "b": "Runs business logic"
+        },
+        {
+          "a": "Response sent",
+          "b": "Ends the chain"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it flows: the request hits middleware, gets logged, validated, and finally reaches your controller. Each step can stop or pass the request along."
+    },
+    {
+      "id": "3-code-middleware-exam",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "app.use(authMiddleware);\napp.use(logMiddleware);\napp.post('/api', validate, handler);",
+      "say": "In Express, you stack middleware like this. Each function can check, modify, or reject the request before it reaches your route handler."
+    },
+    {
+      "id": "4-compare-nestjs-expre",
+      "type": "compare",
+      "kicker": "Frameworks",
+      "left": {
+        "title": "Express",
+        "items": [
+          "Manual middleware",
+          "Flexible, unopinionated"
+        ]
+      },
+      "right": {
+        "title": "NestJS",
+        "items": [
+          "Middleware + pipes",
+          "Modular, opinionated"
+        ]
+      },
+      "say": "Express gives you total control, but NestJS adds structure with modules and validation pipes—making large apps easier to manage."
+    },
+    {
+      "id": "5-trap-middleware-erro",
+      "type": "trap",
+      "question": "How do you handle errors in Express?",
+      "wrong": "Just throw an error in middleware",
+      "right": "Use error middleware with four parameters and call next with the error.",
+      "say": "A common mistake: just throwing errors in middleware. In Express, always use error middleware with four parameters and call next with the error to handle it properly."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:17:16.854Z"
+}
