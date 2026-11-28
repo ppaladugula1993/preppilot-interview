@@ -1,0 +1,87 @@
+{
+  "id": "test-strategy",
+  "title": "The Power of Shift-Left Testing",
+  "keys": [
+    "shift-left",
+    "CI",
+    "defects",
+    "test strategy",
+    "risk"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-shift-left",
+      "type": "hook",
+      "kicker": "QA Process · 45 seconds",
+      "line1": "How do top teams catch bugs early?",
+      "line2": "What is shift-left testing?",
+      "say": "How do top engineering teams catch critical bugs before they become a crisis? Let's talk about shift-left testing."
+    },
+    {
+      "id": "1-chip-shift-left",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Shift-Left",
+      "sub": "Move testing earlier in the pipeline for faster feedback.",
+      "say": "Shift-left means moving your testing activities earlier in development, not just at the end."
+    },
+    {
+      "id": "2-rows-shift-left-step",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Write tests early",
+          "b": "Start with requirements"
+        },
+        {
+          "a": "Automate tests",
+          "b": "Integrate with CI tools"
+        },
+        {
+          "a": "Run tests on every commit",
+          "b": "Catch issues right away"
+        }
+      ],
+      "walk": true,
+      "say": "You write tests early, automate them, and run them on every commit using continuous integration. This way, you catch issues as soon as they appear."
+    },
+    {
+      "id": "3-compare-shift-left-b",
+      "type": "compare",
+      "kicker": "Why It Matters",
+      "left": {
+        "title": "Shift-Left",
+        "items": [
+          "Find bugs early",
+          "Faster fixes",
+          "Lower cost"
+        ]
+      },
+      "right": {
+        "title": "Old Way",
+        "items": [
+          "Late surprises",
+          "Expensive rework",
+          "Delayed releases"
+        ]
+      },
+      "say": "With shift-left, you find bugs early, fix them faster, and save time and money compared to waiting until the end."
+    },
+    {
+      "id": "4-trap-late-testing",
+      "type": "trap",
+      "question": "When should most testing happen?",
+      "wrong": "After coding is done",
+      "right": "Testing should start as early as possible, even during design.",
+      "say": "Here's a classic interview trap: When should most testing happen? If you say after coding, that's outdated. The best answer is: start testing as early as possible, even during design."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:22:57.095Z"
+}
