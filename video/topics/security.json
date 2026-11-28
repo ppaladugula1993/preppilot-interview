@@ -1,0 +1,85 @@
+{
+  "id": "security",
+  "title": "Security & Change: The Power of Least Privilege",
+  "keys": [
+    "hardening",
+    "vulnerabilities",
+    "least privilege",
+    "change",
+    "incident"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-least-privilege",
+      "type": "hook",
+      "kicker": "Security & Change · 45 seconds",
+      "line1": "Why is least privilege so critical?",
+      "line2": "What does it really prevent?",
+      "say": "Ever wonder why least privilege is the backbone of security? Let's break down why it's the single most important principle."
+    },
+    {
+      "id": "1-chip-hardening",
+      "type": "chip",
+      "kicker": "Step 1 · Hardening",
+      "label": "Baseline",
+      "sub": "Every server starts with strict settings.",
+      "say": "First, hardening means locking down every server with baseline settings. No unnecessary access, no open doors."
+    },
+    {
+      "id": "2-rows-least-privilege",
+      "type": "rows",
+      "kicker": "Step 2 · Access Control",
+      "rows": [
+        {
+          "a": "Only needed rights",
+          "b": "No extra permissions"
+        },
+        {
+          "a": "Groups, not individuals",
+          "b": "Easy to review and rotate"
+        },
+        {
+          "a": "Temporary access",
+          "b": "Remove when done"
+        }
+      ],
+      "walk": true,
+      "say": "Least privilege is simple: only the rights you need, grouped for easy management, and access removed when no longer needed."
+    },
+    {
+      "id": "3-compare-vuln-triage",
+      "type": "compare",
+      "kicker": "Step 3 · Vulnerabilities",
+      "left": {
+        "title": "Full Access",
+        "items": [
+          "One breach, total control",
+          "Hard to contain"
+        ]
+      },
+      "right": {
+        "title": "Least Privilege",
+        "items": [
+          "Breach limited",
+          "Easy to isolate"
+        ]
+      },
+      "say": "If someone gets in, least privilege keeps damage contained. Full access means a single breach can take down everything."
+    },
+    {
+      "id": "4-trap-root-access",
+      "type": "trap",
+      "question": "Should you grant root to make it easier?",
+      "wrong": "Yes, just for convenience.",
+      "right": "No. Grant only the access needed for the task, like a sudo rule or group membership, and always document it.",
+      "say": "Here's a classic interview trap: never grant root or admin just to make things easier. Always limit access and document your decision."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:38:10.504Z"
+}
