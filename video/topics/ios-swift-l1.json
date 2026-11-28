@@ -1,0 +1,59 @@
+{
+  "id": "ios-swift-l1",
+  "title": "Swift Optionals & Protocols, Fast",
+  "keys": [
+    "optionals",
+    "protocols",
+    "unwrap",
+    "polymorphism"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-optionals-proto",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "Why do Swift devs love optionals?",
+      "line2": "And what are protocols?",
+      "say": "Why do Swift developers care so much about optionals and protocols? And what exactly do they do?"
+    },
+    {
+      "id": "1-chip-optional",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Optional",
+      "sub": "A value that might be missing. Marked with a question mark.",
+      "say": "An optional is a value that might be missing. In Swift, you mark it with a question mark."
+    },
+    {
+      "id": "2-chip-protocol",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Protocol",
+      "sub": "A blueprint for methods and properties. Enables code reuse.",
+      "say": "A protocol is a blueprint for methods and properties. It lets you write flexible, reusable code."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "swift",
+      "code": "protocol Drivable {\n  func drive()\n}\nstruct Car: Drivable {\n  func drive() {}\n}\nvar car: Car? = nil",
+      "say": "Here's a protocol called Drivable, a Car struct that adopts it, and an optional Car variable that starts out empty."
+    },
+    {
+      "id": "4-trap-unwrap",
+      "type": "trap",
+      "question": "How do you safely use an optional?",
+      "wrong": "Just force unwrap with an exclamation mark.",
+      "right": "Use if-let or guard-let to safely check for a value before using it.",
+      "say": "Interview trap: How do you safely use an optional? Never just force unwrap. Always use if-let or guard-let to check for a value first."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:07:20.149Z"
+}
