@@ -1,0 +1,74 @@
+{
+  "id": "test-strategy-l0",
+  "title": "Test Plan vs Test Strategy Explained",
+  "keys": [
+    "test plan",
+    "test strategy",
+    "QA",
+    "project",
+    "organization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-qa-difference",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "Are test plan and test strategy the same?",
+      "line2": "What's the real difference?",
+      "say": "Ever wondered if a test plan and a test strategy are just two names for the same thing? Let's clear that up."
+    },
+    {
+      "id": "1-chip-plan",
+      "type": "chip",
+      "kicker": "Test Plan",
+      "label": "Plan",
+      "sub": "Detailed steps for testing one project or release.",
+      "say": "A test plan spells out exactly what gets tested, how, and when, for a single project or release."
+    },
+    {
+      "id": "2-chip-strategy",
+      "type": "chip",
+      "kicker": "Test Strategy",
+      "label": "Strategy",
+      "sub": "High-level approach for all projects, sets objectives.",
+      "say": "A test strategy is the big picture. It sets the overall approach and goals for testing across the organization."
+    },
+    {
+      "id": "3-compare-plan-strateg",
+      "type": "compare",
+      "kicker": "Plan vs Strategy",
+      "left": {
+        "title": "Test Plan",
+        "items": [
+          "Project-specific",
+          "Detailed steps",
+          "Who, what, when"
+        ]
+      },
+      "right": {
+        "title": "Test Strategy",
+        "items": [
+          "Organization-wide",
+          "High-level approach",
+          "Objectives, standards"
+        ]
+      },
+      "say": "Think of a test plan as tactical—focused on one project. A test strategy is strategic—guiding testing everywhere."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Is a test plan always organization-wide?",
+      "wrong": "Yes, it's for the whole company.",
+      "right": "No, a test plan is specific to a project. The strategy covers the organization.",
+      "say": "Don't mix them up in interviews. A test plan covers one project, not the whole company."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:24:26.213Z"
+}
