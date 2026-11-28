@@ -1,0 +1,85 @@
+{
+  "id": "llm-apps-l8",
+  "title": "Chunking & Reranking in RAG",
+  "keys": [
+    "chunking",
+    "reranking",
+    "retrieval",
+    "LLM",
+    "tokens"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-rag-chunk-reran",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "How do you boost retrieval quality?",
+      "line2": "What makes RAG smarter?",
+      "say": "How do you make retrieval-augmented generation smarter and more relevant? What really boosts retrieval quality?"
+    },
+    {
+      "id": "1-chip-chunking",
+      "type": "chip",
+      "kicker": "Step One",
+      "label": "Chunking",
+      "sub": "Split documents into smaller pieces, like 500 tokens each.",
+      "say": "First, chunking splits documents into smaller, manageable pieces. For example, you might break them into sections of five hundred tokens."
+    },
+    {
+      "id": "2-rows-reranking",
+      "type": "rows",
+      "kicker": "Step Two",
+      "rows": [
+        {
+          "a": "Retrieve chunks",
+          "b": "Find chunks similar to the query"
+        },
+        {
+          "a": "Score chunks",
+          "b": "Rate each chunk for relevance"
+        },
+        {
+          "a": "Select top chunks",
+          "b": "Pick the best for LLM input"
+        }
+      ],
+      "walk": true,
+      "say": "Next, reranking comes in. You retrieve chunks similar to your query, score each for relevance, and select the top ones for the language model."
+    },
+    {
+      "id": "3-compare-chunk-size",
+      "type": "compare",
+      "kicker": "Optimization",
+      "left": {
+        "title": "Small Chunks",
+        "items": [
+          "More precise",
+          "May miss context"
+        ]
+      },
+      "right": {
+        "title": "Large Chunks",
+        "items": [
+          "More context",
+          "Risk irrelevant info"
+        ]
+      },
+      "say": "Choosing chunk size matters. Small chunks give precision but can miss context. Large chunks offer more context but risk including irrelevant details."
+    },
+    {
+      "id": "4-trap-rag-interview",
+      "type": "trap",
+      "question": "Why not skip reranking?",
+      "wrong": "All retrieved chunks are useful.",
+      "right": "Reranking ensures only the most relevant chunks reach the language model, improving response quality.",
+      "say": "Here's a trap: Why not skip reranking? Not all retrieved chunks are useful. Reranking makes sure only the most relevant ones reach the model."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:59:18.968Z"
+}
