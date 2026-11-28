@@ -1,0 +1,87 @@
+{
+  "id": "monitoring-l4",
+  "title": "Monitoring: The Tool Landscape",
+  "keys": [
+    "Dynatrace",
+    "Datadog",
+    "Splunk",
+    "ELK",
+    "Nagios"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-tool-landscape",
+      "type": "hook",
+      "kicker": "Monitoring · lesson",
+      "line1": "Can you name top monitoring tools?",
+      "line2": "Which ones have you used?",
+      "say": "Interviewers love to ask about monitoring tools. Can you name the big players and what they do?"
+    },
+    {
+      "id": "1-chip-dynatrace",
+      "type": "chip",
+      "kicker": "Know This",
+      "label": "Dynatrace",
+      "sub": "Auto-instruments apps, uses AI for root cause, strong APM",
+      "say": "Dynatrace auto-instruments your applications and uses artificial intelligence for root cause analysis. It's big on application performance monitoring."
+    },
+    {
+      "id": "2-compare-datadog-elk",
+      "type": "compare",
+      "kicker": "Tool Showdown",
+      "left": {
+        "title": "Datadog",
+        "items": [
+          "SaaS agent",
+          "Metrics, logs, APM",
+          "Synthetics"
+        ]
+      },
+      "right": {
+        "title": "ELK Stack",
+        "items": [
+          "Open source",
+          "Elasticsearch, Logstash, Kibana",
+          "Great for log search"
+        ]
+      },
+      "say": "Datadog is a software as a service platform that handles metrics, logs, and synthetic monitoring. ELK is open source and combines Elasticsearch, Logstash, and Kibana for powerful log search."
+    },
+    {
+      "id": "3-rows-classics",
+      "type": "rows",
+      "kicker": "Classic Tools",
+      "rows": [
+        {
+          "a": "Nagios",
+          "b": "Up or down checks, thresholds"
+        },
+        {
+          "a": "Zabbix",
+          "b": "Similar, plus more graphs"
+        },
+        {
+          "a": "Splunk",
+          "b": "Log search, SIEM, SPL queries"
+        }
+      ],
+      "walk": false,
+      "say": "Nagios and Zabbix are classics for up or down and threshold checks. Splunk is all about log search and security event management, using its own query language."
+    },
+    {
+      "id": "4-trap-cloud",
+      "type": "trap",
+      "question": "Are all tools cloud-native?",
+      "wrong": "Yes, most are built for the cloud.",
+      "right": "No—some, like Nagios and ELK, are classic or open source and not cloud-native by default.",
+      "say": "Here's a common trap: not all monitoring tools are cloud-native. Some, like Nagios and ELK, started as classic or open source solutions."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:05:24.407Z"
+}
