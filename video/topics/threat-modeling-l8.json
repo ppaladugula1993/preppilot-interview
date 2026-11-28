@@ -1,0 +1,83 @@
+{
+  "id": "threat-modeling-l8",
+  "title": "Mitigation Types in Threat Modeling",
+  "keys": [
+    "technical",
+    "process",
+    "organizational",
+    "mitigation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-mitigation-type",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "How do you stop threats?",
+      "line2": "Which mitigation fits?",
+      "say": "How do you actually stop threats in a system? Which type of mitigation should you use?"
+    },
+    {
+      "id": "1-chip-technical",
+      "type": "chip",
+      "kicker": "Mitigation Type",
+      "label": "Technical",
+      "sub": "Think input validation, encryption, or using parameterized queries.",
+      "say": "First, there are technical mitigations. These include things like input validation, encryption, and using parameterized queries to block attacks."
+    },
+    {
+      "id": "2-rows-mitigation-type",
+      "type": "rows",
+      "kicker": "Three Types",
+      "rows": [
+        {
+          "a": "Technical",
+          "b": "Code or config changes"
+        },
+        {
+          "a": "Process",
+          "b": "Reviews or testing steps"
+        },
+        {
+          "a": "Organizational",
+          "b": "Training or policy updates"
+        }
+      ],
+      "walk": true,
+      "say": "There are three main types. Technical controls are code or config changes. Process mitigations are things like code reviews or testing. Organizational mitigations mean training or updating policies."
+    },
+    {
+      "id": "3-compare-sql-example",
+      "type": "compare",
+      "kicker": "Example: SQL Injection",
+      "left": {
+        "title": "Right Mitigations",
+        "items": [
+          "Parameterized queries",
+          "Input validation"
+        ]
+      },
+      "right": {
+        "title": "Less Effective",
+        "items": [
+          "Security training only"
+        ]
+      },
+      "say": "For example, to stop SQL injection, parameterized queries and input validation work best. Just doing security training isn't enough by itself."
+    },
+    {
+      "id": "4-trap-mitigation-fit",
+      "type": "trap",
+      "question": "Which mitigation for code review?",
+      "wrong": "Technical, like encryption",
+      "right": "Process-based, since it checks code for issues before release",
+      "say": "Here's a common trap: If you use code review to catch bugs, that's a process mitigation, not a technical one like encryption."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:26:00.754Z"
+}
