@@ -1,0 +1,82 @@
+{
+  "id": "python-web-l0",
+  "title": "FastAPI vs Django vs Flask: How to Choose",
+  "keys": [
+    "FastAPI",
+    "Django",
+    "Flask",
+    "async",
+    "framework"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-choose-right-fr",
+      "type": "hook",
+      "kicker": "Python Web (FastAPI, Django, Flask) · lesson",
+      "line1": "Which Python web framework fits best?",
+      "line2": "How do you decide?",
+      "say": "Which Python web framework should you pick for your next project? Let's break down how to choose FastAPI, Django, or Flask."
+    },
+    {
+      "id": "1-chip-fastapi-modern",
+      "type": "chip",
+      "kicker": "FastAPI",
+      "label": "Async",
+      "sub": "Modern, async-first, auto docs, type checks",
+      "say": "FastAPI is modern and async-first. It gives you automatic documentation and type-driven validation out of the box."
+    },
+    {
+      "id": "2-chip-django-batterie",
+      "type": "chip",
+      "kicker": "Django",
+      "label": "Full-stack",
+      "sub": "ORM, admin, authentication, all built-in",
+      "say": "Django is full-stack with everything included. You get an ORM, admin panel, and authentication without extra setup."
+    },
+    {
+      "id": "3-chip-flask-lightweig",
+      "type": "chip",
+      "kicker": "Flask",
+      "label": "Minimal",
+      "sub": "Lightweight, flexible, great for microservices",
+      "say": "Flask is lightweight and flexible. It's perfect for simple APIs or microservices where you want full control."
+    },
+    {
+      "id": "4-compare-when-to-use",
+      "type": "compare",
+      "kicker": "When to Use Each",
+      "left": {
+        "title": "FastAPI",
+        "items": [
+          "Async APIs",
+          "Type validation",
+          "OpenAPI docs"
+        ]
+      },
+      "right": {
+        "title": "Django",
+        "items": [
+          "Complex apps",
+          "Rapid prototyping",
+          "Built-in admin"
+        ]
+      },
+      "say": "Use FastAPI for async APIs and tight data validation. Django shines for complex apps with lots of built-in tools."
+    },
+    {
+      "id": "5-trap-common-mistake",
+      "type": "trap",
+      "question": "Is Flask async by default?",
+      "wrong": "Yes, Flask handles async natively.",
+      "right": "No, Flask is synchronous by default. For async, choose FastAPI.",
+      "say": "Here's a common trap: Flask is not async by default. If you need async, FastAPI is the better choice."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:41:48.466Z"
+}
