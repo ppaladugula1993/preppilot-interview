@@ -1,0 +1,86 @@
+{
+  "id": "cicd-l0",
+  "title": "Git Basics for Infra Code",
+  "keys": [
+    "Git",
+    "branch",
+    "commit",
+    "pull request"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-git-basics",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · lesson",
+      "line1": "How does Git fit into infra work?",
+      "line2": "Why use branches?",
+      "say": "Ever wonder why we use branches in Git for infrastructure code? Let's break down the basics."
+    },
+    {
+      "id": "1-chip-branch",
+      "type": "chip",
+      "kicker": "Core step",
+      "label": "Branch",
+      "sub": "Work safely on changes without touching main.",
+      "say": "First, always create a branch. This keeps your changes separate from the main code until they're ready."
+    },
+    {
+      "id": "2-rows-git-steps",
+      "type": "rows",
+      "kicker": "Typical workflow",
+      "rows": [
+        {
+          "a": "Clone repo",
+          "b": "Get the latest code"
+        },
+        {
+          "a": "Checkout branch",
+          "b": "Start your fix or feature"
+        },
+        {
+          "a": "Commit & push",
+          "b": "Save and sync your work"
+        },
+        {
+          "a": "Open pull request",
+          "b": "Ask for review and checks"
+        },
+        {
+          "a": "Merge to main",
+          "b": "Deploy when approved"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the usual flow: clone the repo, make a branch, commit and push your changes, then open a pull request for review before merging to main."
+    },
+    {
+      "id": "3-terminal-git-command",
+      "type": "terminal",
+      "kicker": "Example commands",
+      "title": "Infra code in Git",
+      "lines": [
+        "$ git clone https://github.com/org/infra.git",
+        "$ git checkout -b fix/nginx-timeout",
+        "$ git add -A",
+        "$ git commit -m \"Raise nginx proxy timeout\"",
+        "$ git push -u origin fix/nginx-timeout"
+      ],
+      "say": "You might clone the infra repo, create a branch for your fix, add and commit your changes, then push to the remote."
+    },
+    {
+      "id": "4-trap-direct-merge",
+      "type": "trap",
+      "question": "Can you always merge straight to main?",
+      "wrong": "No, always open a pull request first.",
+      "right": "Not always—some teams require pull requests, but others allow direct merges if permissions let you.",
+      "say": "Here's a gotcha: Can you always merge straight to main? Not always. Some teams require a pull request, but others let you merge directly if you have permission."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:40:53.260Z"
+}
