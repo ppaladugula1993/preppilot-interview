@@ -1,0 +1,64 @@
+{
+  "id": "test-strategy-l8",
+  "title": "Test Automation in QA Process",
+  "keys": [
+    "test automation",
+    "regression",
+    "coverage",
+    "CI/CD"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-automation",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "Why automate tests in QA?",
+      "line2": "What’s the real benefit?",
+      "say": "Why bother automating tests in quality assurance? What’s the real benefit for engineers?"
+    },
+    {
+      "id": "1-chip-coverage",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Coverage",
+      "sub": "Automation boosts test coverage and speeds up feedback.",
+      "say": "Automated tests help us check more features, faster. That means we spot issues sooner and cover more ground."
+    },
+    {
+      "id": "2-rows-ci-cd",
+      "type": "rows",
+      "kicker": "CI/CD Impact",
+      "rows": [
+        {
+          "a": "Run tests nightly",
+          "b": "Catch bugs early"
+        },
+        {
+          "a": "Integrate with pipelines",
+          "b": "Quick feedback for devs"
+        },
+        {
+          "a": "Automate regression",
+          "b": "Reduce manual effort"
+        }
+      ],
+      "walk": true,
+      "say": "With continuous integration, we run tests every night, plug them into build pipelines, and automate regression checks. It saves time and keeps quality high."
+    },
+    {
+      "id": "3-trap-prioritize",
+      "type": "trap",
+      "question": "Should you automate every test?",
+      "wrong": "Yes, automate all tests.",
+      "right": "No, focus on stable, high-value regression tests first.",
+      "say": "Here’s a common trap: Should you automate every test? Nope. Start with stable, high-value regression cases."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:37:40.407Z"
+}
