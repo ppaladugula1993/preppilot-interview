@@ -1,0 +1,81 @@
+{
+  "id": "spring",
+  "title": "Spring Boot: The Power of IoC",
+  "keys": [
+    "IoC",
+    "Dependency Injection",
+    "Beans",
+    "Auto-Config",
+    "REST"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ioc",
+      "type": "hook",
+      "kicker": "Spring & Boot · 45 seconds",
+      "line1": "Who really controls your app?",
+      "line2": "Is it you, or Spring?",
+      "say": "Who really controls your app? Is it you, or Spring? Let's see why this matters for every Spring Boot project."
+    },
+    {
+      "id": "1-chip-ioc",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "IoC",
+      "sub": "Spring manages objects and wiring, not your code.",
+      "say": "The core of Spring is Inversion of Control. That means Spring, not you, creates and wires up your objects."
+    },
+    {
+      "id": "2-rows-di",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "You write a bean",
+          "b": "Just a plain Java class"
+        },
+        {
+          "a": "Spring injects dependencies",
+          "b": "Using constructor or field"
+        },
+        {
+          "a": "Spring controls lifecycle",
+          "b": "Singleton by default"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works. You write a bean, just a regular Java class. Spring injects what it needs, using constructor or field injection. It also controls the bean's lifecycle. Most beans are singletons by default."
+    },
+    {
+      "id": "3-code-rest",
+      "type": "code",
+      "kicker": "REST Example",
+      "lang": "java",
+      "code": "@RestController\nclass Hello {\n  @GetMapping(\"/hi\")\n  String hi() { return \"Hi!\"; }\n}",
+      "say": "For example, with REST, you just add a Rest Controller annotation. Spring handles the rest—no need to wire up endpoints yourself."
+    },
+    {
+      "id": "4-chip-auto",
+      "type": "chip",
+      "kicker": "Boot Magic",
+      "label": "Auto-Config",
+      "sub": "Boot auto-configures beans from your classpath.",
+      "say": "Spring Boot takes this further. It auto-configures beans based on what's on your classpath, so you skip the boilerplate."
+    },
+    {
+      "id": "5-trap-self-invoke",
+      "type": "trap",
+      "question": "What happens if a bean calls its own @Transactional method?",
+      "wrong": "The transaction still works.",
+      "right": "Self-invocation skips the proxy, so @Transactional is ignored. Move the method to another bean.",
+      "say": "Here's a common trap. If a bean calls its own transactional method, the transaction won't work. Spring's proxy gets skipped. To fix it, move that method to another bean."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:12:34.779Z"
+}
