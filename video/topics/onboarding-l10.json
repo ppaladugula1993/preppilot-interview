@@ -1,0 +1,94 @@
+{
+  "id": "onboarding-l10",
+  "title": "Go-live & Cutover: Run the Event",
+  "keys": [
+    "cutover",
+    "runbook",
+    "rollback",
+    "hypercare"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-go-live",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "Ready to launch your app?",
+      "line2": "How do you run cutover?",
+      "say": "You built the app. Now, how do you actually launch it without chaos? Let's break down the go-live and cutover process."
+    },
+    {
+      "id": "1-chip-cab",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "CAB",
+      "sub": "Get an approved change ticket before go-live.",
+      "say": "First, secure approval from the Change Advisory Board. No ticket, no launch."
+    },
+    {
+      "id": "2-rows-runbook",
+      "type": "rows",
+      "kicker": "Cutover Runbook",
+      "rows": [
+        {
+          "a": "Lower DNS TTL",
+          "b": "Clients update fast during cutover"
+        },
+        {
+          "a": "Freeze config",
+          "b": "No changes before launch"
+        },
+        {
+          "a": "Go/no-go call",
+          "b": "Tests passed, rollback ready"
+        },
+        {
+          "a": "Final sync & deploy",
+          "b": "Release and data move"
+        },
+        {
+          "a": "Decision point",
+          "b": "Success or rollback"
+        }
+      ],
+      "walk": true,
+      "say": "Follow a timed runbook. Lower the DNS time-to-live so changes take effect quickly. Freeze config, run tests, and have a clear go or no-go call."
+    },
+    {
+      "id": "3-compare-rollback",
+      "type": "compare",
+      "kicker": "Rollback Trigger",
+      "left": {
+        "title": "Defined Early",
+        "items": [
+          "Clear criteria",
+          "Calm decision",
+          "Fast recovery"
+        ]
+      },
+      "right": {
+        "title": "Decided Late",
+        "items": [
+          "Confusion",
+          "Stress",
+          "Delays"
+        ]
+      },
+      "say": "Set your rollback trigger before the window opens. Waiting until late at night under pressure leads to mistakes."
+    },
+    {
+      "id": "4-trap-hypercare",
+      "type": "trap",
+      "question": "What happens after go-live?",
+      "wrong": "You hand over and walk away.",
+      "right": "You enter hypercare—monitoring, fast fixes, and support until business as usual.",
+      "say": "After launch, you don't just hand off. You enter hypercare, watching closely and fixing issues fast until things stabilize."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:25:18.688Z"
+}
