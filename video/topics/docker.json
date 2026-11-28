@@ -1,0 +1,95 @@
+{
+  "id": "docker",
+  "title": "Docker: Image vs Container, Nailed",
+  "keys": [
+    "image",
+    "container",
+    "writable layer",
+    "template",
+    "instance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-image-or-contai",
+      "type": "hook",
+      "kicker": "Docker · 45 seconds",
+      "line1": "Image or container?",
+      "line2": "What's the real difference?",
+      "say": "Ever wonder why Docker talks about images and containers like they're different things? Let's clear this up for good."
+    },
+    {
+      "id": "1-chip-image",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Image",
+      "sub": "A read-only template, built in layers.",
+      "say": "First, an image is just a template. It's read-only, and built up layer by layer from a Dockerfile."
+    },
+    {
+      "id": "2-chip-container",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Container",
+      "sub": "A running instance with its own writable layer.",
+      "say": "A container is what you get when you run an image. It's a live instance, with its own thin writable layer on top."
+    },
+    {
+      "id": "3-rows-image-to-contai",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Build image",
+          "b": "From a Dockerfile recipe"
+        },
+        {
+          "a": "Run container",
+          "b": "Starts from the image"
+        },
+        {
+          "a": "Writable layer",
+          "b": "Only the container can change data"
+        }
+      ],
+      "walk": true,
+      "say": "You build an image from a recipe. When you run it, Docker adds a writable layer. That's where your app writes data."
+    },
+    {
+      "id": "4-compare-many-contain",
+      "type": "compare",
+      "kicker": "Instances",
+      "left": {
+        "title": "Image",
+        "items": [
+          "One file",
+          "Read-only",
+          "Reusable"
+        ]
+      },
+      "right": {
+        "title": "Containers",
+        "items": [
+          "Many at once",
+          "Writable",
+          "Ephemeral"
+        ]
+      },
+      "say": "One image can run as many containers as you want. Each gets its own writable space, but shares the same template."
+    },
+    {
+      "id": "5-trap-image-data-loss",
+      "type": "trap",
+      "question": "Where does container data live?",
+      "wrong": "In the image itself",
+      "right": "In the container's writable layer, which is lost when the container is deleted unless you use a volume.",
+      "say": "Interview trap: Data written by your app isn't saved in the image. It's in the container's writable layer, and gone when you remove the container—unless you use a volume."
+    },
+    {
+      "id": "6-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:51:39.204Z"
+}
