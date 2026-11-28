@@ -1,0 +1,89 @@
+{
+  "id": "llm-apps-l4",
+  "title": "LLM Tool Calling & Agents Explained",
+  "keys": [
+    "LLM",
+    "tool calling",
+    "agents",
+    "API",
+    "automation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-tool-calling",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "How do LLMs automate real tasks?",
+      "line2": "What makes agents powerful?",
+      "say": "Ever wondered how language models do more than just generate text? What lets them automate real-world tasks?"
+    },
+    {
+      "id": "1-chip-tool-calling",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Tools",
+      "sub": "LLMs can call APIs or functions to fetch data or run calculations.",
+      "say": "Tool calling means a language model can reach out to APIs or functions, grabbing data or running calculations beyond just words."
+    },
+    {
+      "id": "2-rows-agent-steps",
+      "type": "rows",
+      "kicker": "Agent Workflow",
+      "rows": [
+        {
+          "a": "Plan",
+          "b": "Decide which tools to use"
+        },
+        {
+          "a": "Call",
+          "b": "Run API or function requests"
+        },
+        {
+          "a": "Parse",
+          "b": "Read and interpret responses"
+        },
+        {
+          "a": "Summarize",
+          "b": "Generate a final answer"
+        }
+      ],
+      "walk": true,
+      "say": "Agents use language models to plan, call tools, parse responses, and summarize results. Each step builds on the last for complex tasks."
+    },
+    {
+      "id": "3-compare-agent-design",
+      "type": "compare",
+      "kicker": "Agent Design",
+      "left": {
+        "title": "Reliable",
+        "items": [
+          "Clear tool descriptions",
+          "Output validation"
+        ]
+      },
+      "right": {
+        "title": "Unsafe",
+        "items": [
+          "Ambiguous tools",
+          "No validation"
+        ]
+      },
+      "say": "Designing agents with clear tool descriptions and validating outputs keeps them reliable. Without this, you risk unsafe actions."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s a common agent mistake?",
+      "wrong": "Letting agents run unchecked",
+      "right": "Always sandbox actions and monitor outputs to prevent unintended or unsafe behavior.",
+      "say": "A big interview trap? Letting agents run unchecked. Always sandbox their actions and monitor outputs to stay safe."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:48:31.211Z"
+}
