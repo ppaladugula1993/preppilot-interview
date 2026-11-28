@@ -1,0 +1,76 @@
+{
+  "id": "cicd-l5",
+  "title": "Ansible: Agentless, Idempotent Automation",
+  "keys": [
+    "Ansible",
+    "agentless",
+    "idempotent",
+    "playbook",
+    "SSH"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ansible-basics",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · lesson",
+      "line1": "Why is Ansible a favorite for automation?",
+      "line2": "What makes it so reliable?",
+      "say": "Why do engineers trust Ansible for automating tasks across fleets? What makes it so reliable?"
+    },
+    {
+      "id": "1-chip-agentless",
+      "type": "chip",
+      "kicker": "Key Feature",
+      "label": "Agentless",
+      "sub": "No agent needed—runs over SSH or WinRM.",
+      "say": "Ansible is agentless. It connects directly to machines using SSH or WinRM, so you don't need to install anything extra."
+    },
+    {
+      "id": "2-rows-idempotent",
+      "type": "rows",
+      "kicker": "Why It Matters",
+      "rows": [
+        {
+          "a": "Patching",
+          "b": "Apply updates safely, repeatably"
+        },
+        {
+          "a": "Baselines",
+          "b": "Enforce consistent configs"
+        },
+        {
+          "a": "User Mgmt",
+          "b": "Manage accounts at scale"
+        }
+      ],
+      "walk": true,
+      "say": "It's perfect for patching, setting baselines, and managing users across a fleet. You get consistent results every time."
+    },
+    {
+      "id": "3-terminal-playbook",
+      "type": "terminal",
+      "kicker": "Playbook Example",
+      "title": "Install chrony & secure SSH",
+      "lines": [
+        "$ ansible-playbook site.yml -i inventory",
+        "$ ansible-playbook site.yml --check"
+      ],
+      "say": "You write playbooks in YAML. Here, we install chrony and lock down root logins. The check option lets you dry run changes before applying."
+    },
+    {
+      "id": "4-trap-idempotent",
+      "type": "trap",
+      "question": "What does idempotent mean in Ansible?",
+      "wrong": "It runs faster than other tools.",
+      "right": "Running it once or ten times leaves the system in the same state.",
+      "say": "Here's a common interview trap: What does idempotent mean in Ansible? It's not about speed—it's about always ending up in the same state, no matter how many times you run it."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:52:11.227Z"
+}
