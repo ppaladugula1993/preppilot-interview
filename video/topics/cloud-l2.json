@@ -1,0 +1,84 @@
+{
+  "id": "cloud-l2",
+  "title": "Identity in the Cloud: No Passwords Needed",
+  "keys": [
+    "managed identity",
+    "RBAC",
+    "IAM role",
+    "Key Vault"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cloud-identity",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "How does a VM get secrets safely?",
+      "line2": "No passwords in config?",
+      "say": "How can your app or virtual machine grab secrets from the cloud without ever storing a password?"
+    },
+    {
+      "id": "1-chip-managed-identit",
+      "type": "chip",
+      "kicker": "Azure",
+      "label": "Identity",
+      "sub": "Managed identity lets a VM authenticate to services with no password stored.",
+      "say": "Azure managed identity means your virtual machine can prove who it is to other services, without any password hiding in a config file."
+    },
+    {
+      "id": "2-compare-azure-aws",
+      "type": "compare",
+      "kicker": "Cloud Identity",
+      "left": {
+        "title": "Azure",
+        "items": [
+          "Managed identity",
+          "Role-based access control"
+        ]
+      },
+      "right": {
+        "title": "AWS",
+        "items": [
+          "IAM role",
+          "Policy assignment"
+        ]
+      },
+      "say": "Azure uses managed identity and role-based access control. AWS does the same with a role attached to your instance and policy assignments."
+    },
+    {
+      "id": "3-rows-assign-role",
+      "type": "rows",
+      "kicker": "Assigning Access",
+      "rows": [
+        {
+          "a": "Assign identity",
+          "b": "Give VM a managed identity"
+        },
+        {
+          "a": "Grant role",
+          "b": "Attach Key Vault access to identity"
+        },
+        {
+          "a": "No credentials",
+          "b": "VM gets tokens automatically"
+        }
+      ],
+      "walk": true,
+      "say": "First, assign a managed identity to your VM. Next, grant it a role, like Key Vault access. Now, the VM gets tokens on its own—no credentials needed."
+    },
+    {
+      "id": "4-trap-config-credenti",
+      "type": "trap",
+      "question": "Do you need to store secrets on the VM?",
+      "wrong": "Yes, you must keep credentials there.",
+      "right": "No, managed identity handles authentication and secrets access automatically.",
+      "say": "Don’t fall for it: you never need to stash secrets or credentials on the VM. Managed identity takes care of authentication and access for you."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:19:51.668Z"
+}
