@@ -1,0 +1,78 @@
+{
+  "id": "ml-fundamentals-l1",
+  "title": "Bias-Variance Trade-off & Regularization",
+  "keys": [
+    "bias",
+    "variance",
+    "regularization",
+    "overfitting",
+    "lasso"
+  ],
+  "scenes": [
+    {
+      "id": "0-bias-variance-hook",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "Why do some models underfit or overfit?",
+      "line2": "How do you fix it?",
+      "say": "Ever wonder why your model is too simple or too complex? Let's break down the bias-variance trade-off and how regularization helps."
+    },
+    {
+      "id": "1-tradeoff-compare",
+      "type": "compare",
+      "kicker": "Bias vs Variance",
+      "left": {
+        "title": "High Bias",
+        "items": [
+          "Too simple",
+          "Underfits",
+          "Misses patterns"
+        ]
+      },
+      "right": {
+        "title": "High Variance",
+        "items": [
+          "Too complex",
+          "Overfits",
+          "Fits noise"
+        ]
+      },
+      "say": "High bias means your model is too simple and misses real patterns. High variance means it's too complex and memorizes noise. You want a balance."
+    },
+    {
+      "id": "2-regularization-chip",
+      "type": "chip",
+      "kicker": "Solution",
+      "label": "Regularize",
+      "sub": "L1 and L2 regularization penalize complexity",
+      "say": "Regularization like L1 or L2 adds a penalty for complexity. This keeps your model from overfitting."
+    },
+    {
+      "id": "3-lasso-terminal",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Lasso Regression",
+      "lines": [
+        "$ from sklearn.linear_model import Lasso",
+        "$ model = Lasso(alpha=0.1)",
+        "$ model.fit(X_train, y_train)"
+      ],
+      "say": "Lasso regression, which uses L1 regularization, can even shrink some coefficients to zero and simplify your model."
+    },
+    {
+      "id": "4-trap-overfit",
+      "type": "trap",
+      "question": "How do you spot overfitting fast?",
+      "wrong": "Just check training error.",
+      "right": "Compare training and validation errors. Overfitting shows low training error but high validation error.",
+      "say": "Don't just look at training error. Always compare training and validation errors. Overfitting shows up as low training error but high validation error."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:00:01.498Z"
+}
