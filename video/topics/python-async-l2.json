@@ -1,0 +1,72 @@
+{
+  "id": "python-async-l2",
+  "title": "Blocking Calls in Async Python",
+  "keys": [
+    "blocking",
+    "async",
+    "event loop",
+    "run_in_executor"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-blocking-async",
+      "type": "hook",
+      "kicker": "Async & Concurrency in Python · lesson",
+      "line1": "What happens if you call",
+      "line2": "a blocking function in async code?",
+      "say": "Ever wondered what happens if you run a blocking function inside your async Python code?"
+    },
+    {
+      "id": "1-chip-blocking",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "Blocking",
+      "sub": "Blocking calls freeze the event loop, halting all other async tasks.",
+      "say": "Blocking calls freeze the event loop, stopping all other async tasks from running."
+    },
+    {
+      "id": "2-rows-avoid-blocking",
+      "type": "rows",
+      "kicker": "How to Avoid Blocking",
+      "rows": [
+        {
+          "a": "Use async libraries",
+          "b": "For network or file I O"
+        },
+        {
+          "a": "Offload work",
+          "b": "Use threads or processes"
+        },
+        {
+          "a": "run_in_executor",
+          "b": "Runs blocking code outside the loop"
+        }
+      ],
+      "walk": true,
+      "say": "To avoid blocking, use async libraries for I O, or offload heavy work to threads or processes with run in executor."
+    },
+    {
+      "id": "3-code-executor",
+      "type": "code",
+      "kicker": "Example: Offloading Blocking Work",
+      "lang": "python",
+      "code": "await loop.run_in_executor(None, blocking_func)",
+      "say": "Here, run in executor lets you run a blocking function without freezing your async tasks."
+    },
+    {
+      "id": "4-trap-blocking",
+      "type": "trap",
+      "question": "What if you call time.sleep in async code?",
+      "wrong": "It runs in parallel, no problem.",
+      "right": "It blocks the event loop and halts all async tasks.",
+      "say": "If you call a blocking function like time sleep in async code, the event loop stops and nothing else runs. That's a classic interview trap."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:36:15.240Z"
+}
