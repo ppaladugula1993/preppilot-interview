@@ -1,0 +1,84 @@
+{
+  "id": "onboarding-l6",
+  "title": "Network Plumbing for App Onboarding",
+  "keys": [
+    "flow matrix",
+    "firewall",
+    "NSG",
+    "DNS"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-flow-matrix",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "Why do apps fail at go-live?",
+      "line2": "What’s the network checklist?",
+      "say": "Most onboarding delays are network issues. What’s the one checklist that prevents go-live failures?"
+    },
+    {
+      "id": "1-chip-flow-matrix",
+      "type": "chip",
+      "kicker": "Step One",
+      "label": "Matrix",
+      "sub": "Build a flow matrix: source, destination, port, protocol, why.",
+      "say": "Start with a flow matrix. List every connection, its source, destination, port, protocol and purpose."
+    },
+    {
+      "id": "2-rows-traffic-path",
+      "type": "rows",
+      "kicker": "Where Each Flow Goes",
+      "rows": [
+        {
+          "a": "On-prem firewall",
+          "b": "First traffic filter"
+        },
+        {
+          "a": "ExpressRoute",
+          "b": "Connects on-prem to Azure"
+        },
+        {
+          "a": "Azure Firewall",
+          "b": "Cloud-wide filtering"
+        },
+        {
+          "a": "NSG",
+          "b": "Subnet or VM-level rules"
+        },
+        {
+          "a": "Host firewall",
+          "b": "Final check on the server"
+        }
+      ],
+      "walk": true,
+      "say": "Every row in your matrix must be allowed at each traffic filter: on-prem, ExpressRoute, Azure Firewall, NSG and host firewall."
+    },
+    {
+      "id": "3-terminal-dns",
+      "type": "terminal",
+      "kicker": "DNS Plumbing",
+      "title": "DNS Setup Example",
+      "lines": [
+        "$ Internal: A/CNAME records",
+        "$ External: public record",
+        "$ Private: DNS zone for endpoints"
+      ],
+      "say": "DNS matters too. Use internal records for private access, public records if needed, and private DNS zones for endpoints."
+    },
+    {
+      "id": "4-trap-matrix-miss",
+      "type": "trap",
+      "question": "What’s the biggest onboarding trap?",
+      "wrong": "Missing a firewall rule.",
+      "right": "Not building a flow matrix. Without it, you miss rules, approvals and troubleshooting steps.",
+      "say": "The biggest trap? Skipping the flow matrix. You’ll miss rules, approvals and troubleshooting steps."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:15:43.473Z"
+}
