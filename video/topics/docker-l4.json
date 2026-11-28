@@ -1,0 +1,86 @@
+{
+  "id": "docker-l4",
+  "title": "Docker Volumes vs Bind Mounts",
+  "keys": [
+    "volumes",
+    "bind mounts",
+    "persistence",
+    "docker"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vanishing-data",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "Ever lost data after",
+      "line2": "removing a container?",
+      "say": "Ever wonder why your data disappears when you remove a Docker container?"
+    },
+    {
+      "id": "1-chip-volume-basics",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Volumes",
+      "sub": "Docker-managed storage that lives outside the container.",
+      "say": "Volumes are managed by Docker and keep your data safe, even if the container goes away."
+    },
+    {
+      "id": "2-chip-bind-mounts",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Bind Mounts",
+      "sub": "Links a folder from your host into the container.",
+      "say": "Bind mounts connect a folder on your machine directly into the container, so changes show up on both sides."
+    },
+    {
+      "id": "3-compare-volumes-bind",
+      "type": "compare",
+      "kicker": "Persistence",
+      "left": {
+        "title": "Volumes",
+        "items": [
+          "Managed by Docker",
+          "Great for databases",
+          "Easy to back up"
+        ]
+      },
+      "right": {
+        "title": "Bind Mounts",
+        "items": [
+          "Direct link to host folder",
+          "Good for configs or code",
+          "Host controls permissions"
+        ]
+      },
+      "say": "Volumes are perfect for databases and backups. Bind mounts are handy for sharing configs or code from your machine."
+    },
+    {
+      "id": "4-terminal-volume-crea",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "Create and use a volume",
+      "lines": [
+        "$ docker volume create pgdata",
+        "$ docker run -d --name db \\",
+        "  -v pgdata:/var/lib/postgresql/data",
+        "  postgres:16"
+      ],
+      "say": "Here, we create a volume and use it for a database. The data sticks around, even if the container is deleted."
+    },
+    {
+      "id": "5-trap-classic-mistake",
+      "type": "trap",
+      "question": "Why does data disappear after removal?",
+      "wrong": "Docker never saves data by default.",
+      "right": "Data in the container's writable layer is deleted when the container is removed. Use a volume or bind mount to keep it.",
+      "say": "Classic interview trap: if you store data inside the container, it vanishes when the container is gone. Always use a volume or bind mount for persistence."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:29:47.280Z"
+}
