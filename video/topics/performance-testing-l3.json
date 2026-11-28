@@ -1,0 +1,90 @@
+{
+  "id": "performance-testing-l3",
+  "title": "Realistic Workload Modeling Basics",
+  "keys": [
+    "workload",
+    "pacing",
+    "concurrency",
+    "request mix"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-real-world",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "Do your tests match real users?",
+      "line2": "How close is close enough?",
+      "say": "Are your performance tests just numbers, or do they really reflect what users do? Let’s see why modeling real workloads matters."
+    },
+    {
+      "id": "1-chip-what-is-modelin",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Modeling",
+      "sub": "Simulate user behavior, request patterns, and data volumes.",
+      "say": "Workload modeling means simulating how real users behave, the types of requests they send, and how much data they generate."
+    },
+    {
+      "id": "2-rows-realistic-steps",
+      "type": "rows",
+      "kicker": "How To Model Real Workloads",
+      "rows": [
+        {
+          "a": "Analyze logs",
+          "b": "See real user flows"
+        },
+        {
+          "a": "Mix requests",
+          "b": "Like 70% browsing, 20% cart"
+        },
+        {
+          "a": "Set think time",
+          "b": "Random delays, 2 to 5 seconds"
+        },
+        {
+          "a": "Add concurrency",
+          "b": "Hundreds of users at once"
+        }
+      ],
+      "walk": true,
+      "say": "Start by analyzing production logs. Mix request types, set realistic delays between actions, and add real-world concurrency."
+    },
+    {
+      "id": "3-compare-real-vs-fake",
+      "type": "compare",
+      "kicker": "Why It Matters",
+      "left": {
+        "title": "Fake Workload",
+        "items": [
+          "Uniform requests",
+          "No think time",
+          "Low concurrency"
+        ]
+      },
+      "right": {
+        "title": "Realistic Workload",
+        "items": [
+          "Mixed requests",
+          "User delays",
+          "Peak traffic"
+        ]
+      },
+      "say": "If you use a fake workload, you’ll miss hidden issues. Only a realistic mix uncovers real bottlenecks."
+    },
+    {
+      "id": "4-trap-interview-gotch",
+      "type": "trap",
+      "question": "What’s a common modeling mistake?",
+      "wrong": "Testing only one request type",
+      "right": "Ignoring think time and user pacing can make results useless.",
+      "say": "Here’s a trap: Focusing only on request types. But if you skip user pacing and think time, your results won’t reflect reality."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:08:33.379Z"
+}
