@@ -1,0 +1,89 @@
+{
+  "id": "security-l0",
+  "title": "Server Hardening Checklist Essentials",
+  "keys": [
+    "hardening",
+    "checklist",
+    "firewall",
+    "least privilege",
+    "CIS benchmarks"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-hardening",
+      "type": "hook",
+      "kicker": "Security & Change · lesson",
+      "line1": "How do you harden a new server?",
+      "line2": "What are the must-do steps?",
+      "say": "Hardening a server is a classic interview question. Let's break down what every engineer should know."
+    },
+    {
+      "id": "1-chip-linux-basics",
+      "type": "chip",
+      "kicker": "Linux",
+      "label": "Firewall",
+      "sub": "Default deny, only allow needed ports.",
+      "say": "On Linux, start with a firewall set to block everything by default. Only open what you really need."
+    },
+    {
+      "id": "2-rows-windows-steps",
+      "type": "rows",
+      "kicker": "Windows",
+      "rows": [
+        {
+          "a": "Separate admin accounts",
+          "b": "No shared admin logins"
+        },
+        {
+          "a": "LAPS enabled",
+          "b": "Unique local admin passwords"
+        },
+        {
+          "a": "Firewall on",
+          "b": "Block unused ports"
+        },
+        {
+          "a": "RDP via jump host",
+          "b": "Network Level Auth required"
+        }
+      ],
+      "walk": true,
+      "say": "For Windows, use separate admin accounts, enable LAPS for unique passwords, turn on the firewall, and force remote desktop through a jump host with network-level authentication."
+    },
+    {
+      "id": "3-compare-least-privil",
+      "type": "compare",
+      "kicker": "Access Control",
+      "left": {
+        "title": "Bad",
+        "items": [
+          "Root for convenience",
+          "Wide admin rights"
+        ]
+      },
+      "right": {
+        "title": "Good",
+        "items": [
+          "Only needed access",
+          "Groups, not individuals"
+        ]
+      },
+      "say": "Never give root or admin just to make things easier. Grant only what's needed, ideally through groups."
+    },
+    {
+      "id": "4-trap-cis-benchmarks",
+      "type": "trap",
+      "question": "What standard guides hardening?",
+      "wrong": "Just use company rules.",
+      "right": "CIS benchmarks are the industry standard for server hardening.",
+      "say": "If asked about standards, mention CIS benchmarks. They're the industry go-to for secure baseline settings."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:56:03.671Z"
+}
