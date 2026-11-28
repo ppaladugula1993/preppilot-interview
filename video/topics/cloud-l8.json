@@ -1,0 +1,99 @@
+{
+  "id": "cloud-l8",
+  "title": "Azure Compute Options: Control vs Ops",
+  "keys": [
+    "VM",
+    "AKS",
+    "App Service",
+    "Functions",
+    "Container Apps"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-azure-compute",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "How would you host your app?",
+      "line2": "What Azure option fits best?",
+      "say": "You need to host an app in Azure. Which compute option should you pick—and why?"
+    },
+    {
+      "id": "1-rows-control-to-mana",
+      "type": "rows",
+      "kicker": "Control vs Operations",
+      "rows": [
+        {
+          "a": "VM",
+          "b": "Full OS control, you patch all"
+        },
+        {
+          "a": "VM Scale Set",
+          "b": "Auto-scale VMs, still full control"
+        },
+        {
+          "a": "AKS",
+          "b": "Kubernetes, for microservices"
+        },
+        {
+          "a": "Container Apps",
+          "b": "Run containers, no K8s ops"
+        },
+        {
+          "a": "App Service",
+          "b": "Web apps, managed platform"
+        },
+        {
+          "a": "Functions",
+          "b": "Event-driven, short tasks"
+        }
+      ],
+      "walk": false,
+      "say": "From most control to least ops: start with virtual machines, then scale sets, Kubernetes, Container Apps, App Service, and finally Functions for event-driven tasks."
+    },
+    {
+      "id": "2-chip-aci",
+      "type": "chip",
+      "kicker": "Special case",
+      "label": "ACI",
+      "sub": "Single container jobs, no autoscale or load balancer",
+      "say": "Azure Container Instances are for single or batch containers. No built-in load balancer or autoscale—so not for production web apps."
+    },
+    {
+      "id": "3-compare-justify",
+      "type": "compare",
+      "kicker": "Interview tip",
+      "left": {
+        "title": "Managed",
+        "items": [
+          "App Service",
+          "Functions",
+          "Container Apps"
+        ]
+      },
+      "right": {
+        "title": "More Control",
+        "items": [
+          "VM",
+          "VM Scale Set",
+          "AKS"
+        ]
+      },
+      "say": "In interviews, start with the most managed option that fits. Only step down to VMs if you need more control. Always justify your choice."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Is ACI good for a prod web app?",
+      "wrong": "Yes, it's a great web tier.",
+      "right": "No—ACI lacks autoscale and load balancing. Use App Service or Container Apps instead.",
+      "say": "Don't trip up: Azure Container Instances aren't meant for production web apps. They miss key features like autoscale and load balancing."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:52:29.580Z"
+}
