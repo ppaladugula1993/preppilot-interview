@@ -1,0 +1,84 @@
+{
+  "id": "llm-apps-l3",
+  "title": "Retrieval-Augmented Generation (RAG)",
+  "keys": [
+    "RAG",
+    "embedding",
+    "chunking",
+    "reranking"
+  ],
+  "scenes": [
+    {
+      "id": "0-rag-hook",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "How do LLMs handle facts?",
+      "line2": "What is RAG?",
+      "say": "How do large language models give accurate answers using real documents? Let's break down Retrieval-Augmented Generation."
+    },
+    {
+      "id": "1-rag-rows",
+      "type": "rows",
+      "kicker": "RAG workflow",
+      "rows": [
+        {
+          "a": "Chunk docs",
+          "b": "Split info into meaning-preserving parts"
+        },
+        {
+          "a": "Embed chunks",
+          "b": "Turn each chunk into a vector"
+        },
+        {
+          "a": "Retrieve",
+          "b": "Find top matches for the query"
+        },
+        {
+          "a": "Rerank",
+          "b": "Sort by relevance"
+        },
+        {
+          "a": "Feed to LLM",
+          "b": "Ground the answer in context"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the typical RAG flow: First, split your documents into chunks that keep their meaning. Next, turn those chunks into embeddings—think of them as semantic fingerprints. Retrieve the best matches for your question, rerank them for relevance, and send them to the model as context."
+    },
+    {
+      "id": "2-rag-compare",
+      "type": "compare",
+      "kicker": "Why use RAG?",
+      "left": {
+        "title": "LLM only",
+        "items": [
+          "Prone to hallucination",
+          "No access to new data"
+        ]
+      },
+      "right": {
+        "title": "With RAG",
+        "items": [
+          "Grounded in facts",
+          "Scalable to any knowledge base"
+        ]
+      },
+      "say": "Without RAG, language models can make things up or miss recent facts. With RAG, answers are grounded in real data and scale easily."
+    },
+    {
+      "id": "3-rag-trap",
+      "type": "trap",
+      "question": "What does chunking do in RAG?",
+      "wrong": "Splits data randomly",
+      "right": "Splits documents into meaningful parts for better retrieval",
+      "say": "Don’t fall for this: chunking isn’t just chopping text randomly. It’s about splitting documents into meaningful parts so retrieval actually works."
+    },
+    {
+      "id": "4-rag-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:45:33.435Z"
+}
