@@ -1,0 +1,64 @@
+{
+  "id": "onboarding-l12",
+  "title": "Common App Onboarding Failures",
+  "keys": [
+    "health probe",
+    "firewall",
+    "DNS",
+    "certificate"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-common-failures",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "Why do apps fail right after go-live?",
+      "line2": "Spot the classic mistakes.",
+      "say": "Ever wonder why so many apps break right after launch? Let's nail the classic onboarding failures every engineer should know cold."
+    },
+    {
+      "id": "1-chip-health-probe",
+      "type": "chip",
+      "kicker": "Failure",
+      "label": "Probe",
+      "sub": "Health checks need authentication, or redirect to SSO, so every backend looks unhealthy.",
+      "say": "First, health probes that require authentication or redirect to single sign-on make all your backends look unhealthy. Easy to miss, but brutal in production."
+    },
+    {
+      "id": "2-rows-firewall-dns-ce",
+      "type": "rows",
+      "kicker": "Three More Pain Points",
+      "rows": [
+        {
+          "a": "Firewall blocks probes",
+          "b": "NSG denies above load balancer rule"
+        },
+        {
+          "a": "DNS returns wrong IP",
+          "b": "Private endpoint, but public address"
+        },
+        {
+          "a": "Certificate missing info",
+          "b": "No intermediate or subject alt name"
+        }
+      ],
+      "walk": true,
+      "say": "Next up: firewall rules that block load balancer probes, DNS that returns the wrong address for private endpoints, and certificates missing intermediate or subject alt names. Each one can kill your onboarding."
+    },
+    {
+      "id": "3-trap-lb-reachability",
+      "type": "trap",
+      "question": "Why can't the load balancer reach the app?",
+      "wrong": "The app is bound to all interfaces.",
+      "right": "The app is bound only to the loopback address, so the load balancer can't connect.",
+      "say": "Here's a classic interview trap: if the load balancer can't reach your app, check if it's bound only to the loopback address. That's a rookie mistake."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:39:58.323Z"
+}
