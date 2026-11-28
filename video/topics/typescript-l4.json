@@ -1,0 +1,72 @@
+{
+  "id": "typescript-l4",
+  "title": "TypeScript Utility Types Explained",
+  "keys": [
+    "Partial",
+    "Pick",
+    "Omit",
+    "Record",
+    "ReturnType"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-utility-types",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "Tired of rewriting types?",
+      "line2": "How do utility types help?",
+      "say": "Tired of rewriting types in every project? How do utility types save you time and effort?"
+    },
+    {
+      "id": "1-chip-partial",
+      "type": "chip",
+      "kicker": "Utility Type",
+      "label": "Partial",
+      "sub": "Makes all properties in a type optional.",
+      "say": "Partial makes every property in a type optional. Great for updates or patch requests."
+    },
+    {
+      "id": "2-compare-pick-omit",
+      "type": "compare",
+      "kicker": "Pick vs Omit",
+      "left": {
+        "title": "Pick",
+        "items": [
+          "Selects properties",
+          "Keeps only what you list"
+        ]
+      },
+      "right": {
+        "title": "Omit",
+        "items": [
+          "Removes properties",
+          "Keeps everything else"
+        ]
+      },
+      "say": "Pick lets you select just the fields you need. Omit does the opposite—removes fields you don't want."
+    },
+    {
+      "id": "3-code-user-preview",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "ts",
+      "code": "type User = { id: number;\n  name: string;\n  email: string }\ntype UserPreview = Pick<User, 'id' | 'name'>\ntype UserUpdate = Partial<User>",
+      "say": "Here's how you create a User type, then use Pick for a preview, and Partial for updates. No copy-paste needed."
+    },
+    {
+      "id": "4-trap-utility-mistake",
+      "type": "trap",
+      "question": "When should you avoid utility types?",
+      "wrong": "Always use them for every type.",
+      "right": "Avoid them if you need custom logic or validation.",
+      "say": "A common mistake: using utility types everywhere. They're not for cases where you need custom logic or validation."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:50:13.856Z"
+}
