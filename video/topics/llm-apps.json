@@ -1,0 +1,85 @@
+{
+  "id": "llm-apps",
+  "title": "The Core of LLM Applications: Grounding",
+  "keys": [
+    "prompt",
+    "embedding",
+    "RAG",
+    "context",
+    "safety"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-grounded-or-gue",
+      "type": "hook",
+      "kicker": "LLM Applications · 45 seconds",
+      "line1": "Is your LLM grounded or just guessing?",
+      "line2": "How do you make it reliable?",
+      "say": "Is your language model actually answering from facts, or just making things up? How do you make its answers reliable?"
+    },
+    {
+      "id": "1-chip-prompt",
+      "type": "chip",
+      "kicker": "Start Here",
+      "label": "Prompt",
+      "sub": "Your prompt shapes what the model outputs.",
+      "say": "It all starts with your prompt. The way you ask shapes the answer you get."
+    },
+    {
+      "id": "2-rows-grounding",
+      "type": "rows",
+      "kicker": "Key Idea",
+      "rows": [
+        {
+          "a": "Prompt",
+          "b": "Asks the question"
+        },
+        {
+          "a": "Embeddings",
+          "b": "Find similar info"
+        },
+        {
+          "a": "RAG",
+          "b": "Brings in real context"
+        }
+      ],
+      "walk": true,
+      "say": "But the real magic is grounding. You prompt the model, use embeddings to find relevant info, and Retrieval-Augmented Generation brings in the facts."
+    },
+    {
+      "id": "3-compare-hallucinate-",
+      "type": "compare",
+      "kicker": "Why Ground?",
+      "left": {
+        "title": "Ungrounded",
+        "items": [
+          "Guesses answers",
+          "Can hallucinate"
+        ]
+      },
+      "right": {
+        "title": "Grounded",
+        "items": [
+          "Cites sources",
+          "Reduces errors"
+        ]
+      },
+      "say": "If you skip grounding, the model just guesses and can hallucinate. With grounding, it cites sources and reduces errors."
+    },
+    {
+      "id": "4-trap-retrieval-myth",
+      "type": "trap",
+      "question": "Does RAG stop all hallucinations?",
+      "wrong": "Yes, RAG guarantees truth.",
+      "right": "No, RAG helps but you still need filters and checks.",
+      "say": "Here's a common trap: does retrieval always guarantee truth? Nope. RAG helps, but you still need filters and checks."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:34:43.443Z"
+}
