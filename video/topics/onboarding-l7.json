@@ -1,0 +1,75 @@
+{
+  "id": "onboarding-l7",
+  "title": "Expose Your App: DNS, LB, TLS Steps",
+  "keys": [
+    "DNS",
+    "Load Balancer",
+    "TLS",
+    "VIP"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-expose-app",
+      "type": "hook",
+      "kicker": "App Onboarding · Expose the App",
+      "line1": "How do you safely expose an app?",
+      "line2": "What's the step-by-step?",
+      "say": "How do you actually expose a new app to users? Let's walk through the real steps, so you never miss a detail."
+    },
+    {
+      "id": "1-chip-cert",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Cert",
+      "sub": "Create a certificate request with all hostnames.",
+      "say": "First, request a certificate. Include every hostname your app will use, like production and internal names."
+    },
+    {
+      "id": "2-rows-lb-steps",
+      "type": "rows",
+      "kicker": "Step 2",
+      "rows": [
+        {
+          "a": "VIP/Listener",
+          "b": "Set up on the load balancer"
+        },
+        {
+          "a": "Backend Pool",
+          "b": "Add your app servers"
+        },
+        {
+          "a": "Health Probe",
+          "b": "Check /health returns OK"
+        }
+      ],
+      "walk": true,
+      "say": "Next, build out your load balancer. Create the listener, add your app servers to the backend pool, and set up a health probe to check the health endpoint."
+    },
+    {
+      "id": "3-terminal-test-vip",
+      "type": "terminal",
+      "kicker": "Step 3",
+      "title": "Test Before DNS",
+      "lines": [
+        "$ curl -v --resolve app.example.com:443:10.50.1.10 https://app.example.com/health",
+        "$ openssl s_client -connect 10.50.1.10:443 -servername app.example.com"
+      ],
+      "say": "Before you touch DNS, test the VIP directly using the real hostname. This makes sure your cert and backend are working before users ever hit the app."
+    },
+    {
+      "id": "4-trap-dns",
+      "type": "trap",
+      "question": "When should you update DNS?",
+      "wrong": "Right after setting up the load balancer",
+      "right": "Only after you test the VIP directly and confirm it's healthy",
+      "say": "Here's a common trap: don't update DNS until you've tested the VIP directly and confirmed everything is healthy."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:18:02.269Z"
+}
