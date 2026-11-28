@@ -1,0 +1,76 @@
+{
+  "id": "lb-l3",
+  "title": "TLS Certificates: What, Why, How",
+  "keys": [
+    "TLS",
+    "certificate",
+    "CA",
+    "public key",
+    "expiry"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-tls-certs",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "What does a TLS cert really do?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder what a TLS certificate actually does, and why engineers panic when one expires?"
+    },
+    {
+      "id": "1-chip-cert-basics",
+      "type": "chip",
+      "kicker": "Core Fact",
+      "label": "Cert",
+      "sub": "Holds a public key and identity, signed by a trusted CA.",
+      "say": "A TLS certificate holds a public key and proves who you are, thanks to a signature from a certificate authority."
+    },
+    {
+      "id": "2-rows-cert-chain",
+      "type": "rows",
+      "kicker": "The Chain",
+      "rows": [
+        {
+          "a": "Leaf",
+          "b": "Issued to your server"
+        },
+        {
+          "a": "Intermediate",
+          "b": "Bridges trust"
+        },
+        {
+          "a": "Root",
+          "b": "Trusted by browsers"
+        }
+      ],
+      "walk": true,
+      "say": "The chain starts at your server's certificate, passes through an intermediate, and ends at a root trusted by browsers."
+    },
+    {
+      "id": "3-terminal-check-expir",
+      "type": "terminal",
+      "kicker": "Real World",
+      "title": "Check cert chain & expiry",
+      "lines": [
+        "$ openssl s_client -connect app.example.com:443",
+        "$ openssl x509 -in app.crt -noout -dates"
+      ],
+      "say": "You can check a site's certificate chain and expiration date using OpenSSL. This helps catch issues before they cause downtime."
+    },
+    {
+      "id": "4-trap-expiry-trap",
+      "type": "trap",
+      "question": "What happens if a cert expires?",
+      "wrong": "The site keeps working fine.",
+      "right": "Browsers block access and users see scary warnings.",
+      "say": "Here's a trap: if a certificate expires, browsers block users with big warnings. Outages are real and embarrassing."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:40:51.957Z"
+}
