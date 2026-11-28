@@ -1,0 +1,72 @@
+{
+  "id": "express-nest-l4",
+  "title": "Database Access & the N+1 Problem",
+  "keys": [
+    "ORM",
+    "N+1",
+    "Prisma",
+    "TypeORM"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-n1-db",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "Why do some database queries slow down?",
+      "line2": "What is the N plus 1 problem?",
+      "say": "Ever wonder why your app slows down when loading related data? Let's talk about the N plus one problem."
+    },
+    {
+      "id": "1-chip-orms",
+      "type": "chip",
+      "kicker": "Popular ORMs",
+      "label": "Prisma",
+      "sub": "TypeORM and Prisma help manage databases in Node apps.",
+      "say": "Frameworks like Prisma and TypeORM make database access easier for Express and NestJS projects."
+    },
+    {
+      "id": "2-rows-n1-explained",
+      "type": "rows",
+      "kicker": "N+1 Problem",
+      "rows": [
+        {
+          "a": "Fetch users",
+          "b": "One query runs"
+        },
+        {
+          "a": "Fetch each user's posts",
+          "b": "One query per user"
+        },
+        {
+          "a": "Total queries",
+          "b": "One plus number of users"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the issue. You fetch all users in one go, but then, for each user, you fetch their posts separately. That adds up to a lot of queries."
+    },
+    {
+      "id": "3-code-prisma-include",
+      "type": "code",
+      "kicker": "Fix with Prisma",
+      "lang": "js",
+      "code": "const users = await prisma.user.findMany({\n  include: { posts: true }\n});",
+      "say": "The fix? Use Prisma's include option. Now, one query gets users and their posts together, boosting performance."
+    },
+    {
+      "id": "4-trap-n1-trap",
+      "type": "trap",
+      "question": "How do you avoid N+1 with Prisma?",
+      "wrong": "Fetch posts in a loop for each user.",
+      "right": "Use the include option to fetch related data in one query.",
+      "say": "Don't fall for this trap in interviews. Fetching posts in a loop is inefficient. Always use the include option for related data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:15:50.508Z"
+}
