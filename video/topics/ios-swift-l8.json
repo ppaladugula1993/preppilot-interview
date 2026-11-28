@@ -1,0 +1,68 @@
+{
+  "id": "ios-swift-l8",
+  "title": "App Store Release: The Basics",
+  "keys": [
+    "code signing",
+    "TestFlight",
+    "versioning",
+    "review"
+  ],
+  "scenes": [
+    {
+      "id": "0-release-hook",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "Ready to ship your iOS app?",
+      "line2": "What's the real release flow?",
+      "say": "You’ve built your app. But how do you actually get it on the App Store? Let’s break down the release pipeline."
+    },
+    {
+      "id": "1-release-steps",
+      "type": "rows",
+      "kicker": "Release Steps",
+      "rows": [
+        {
+          "a": "Increment version",
+          "b": "Update in Xcode"
+        },
+        {
+          "a": "Archive app",
+          "b": "Build for distribution"
+        },
+        {
+          "a": "Upload",
+          "b": "Send to App Store Connect"
+        },
+        {
+          "a": "Submit for review",
+          "b": "Wait for Apple approval"
+        }
+      ],
+      "walk": true,
+      "say": "First, bump your app’s version in Xcode. Then archive the build for distribution, upload it to App Store Connect, and submit for Apple’s review."
+    },
+    {
+      "id": "2-testflight-chip",
+      "type": "chip",
+      "kicker": "Beta",
+      "label": "TestFlight",
+      "sub": "Distribute pre-release builds to testers",
+      "say": "Before you go live, use TestFlight to send beta versions to testers. It’s Apple’s way to catch issues early."
+    },
+    {
+      "id": "3-release-trap",
+      "type": "trap",
+      "question": "Is TestFlight for production releases?",
+      "wrong": "Yes, it’s for App Store users.",
+      "right": "No, TestFlight is only for beta testing, not public release.",
+      "say": "Don’t confuse TestFlight with the actual App Store release. TestFlight is just for beta testing, not for your real users."
+    },
+    {
+      "id": "4-release-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:30:31.068Z"
+}
