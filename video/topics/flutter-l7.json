@@ -1,0 +1,73 @@
+{
+  "id": "flutter-l7",
+  "title": "Flutter Performance: Avoiding Jank",
+  "keys": [
+    "jank",
+    "frame rate",
+    "main isolate",
+    "DevTools"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-jank",
+      "type": "hook",
+      "kicker": "Flutter · lesson",
+      "line1": "Why does your app stutter?",
+      "line2": "What causes jank?",
+      "say": "Ever notice your Flutter app stuttering or lagging? That's called jank. What's behind it?"
+    },
+    {
+      "id": "1-chip-fps",
+      "type": "chip",
+      "kicker": "Performance",
+      "label": "60fps",
+      "sub": "Smooth UI means hitting sixty frames per second or higher.",
+      "say": "Smooth performance in Flutter means keeping the interface running at sixty frames per second or better."
+    },
+    {
+      "id": "2-compare-jank",
+      "type": "compare",
+      "kicker": "Jank Causes",
+      "left": {
+        "title": "Bad",
+        "items": [
+          "Heavy build methods",
+          "Blocking main isolate",
+          "Layout bottlenecks"
+        ]
+      },
+      "right": {
+        "title": "Good",
+        "items": [
+          "Lightweight builds",
+          "Move work to isolates",
+          "Use ListView.builder"
+        ]
+      },
+      "say": "Jank happens when you overload the main isolate or run expensive operations in build or layout. Keep builds light and move heavy work off the main thread."
+    },
+    {
+      "id": "3-code-compute",
+      "type": "code",
+      "kicker": "Tip",
+      "lang": "dart",
+      "code": "final result = await compute(\n  expensiveFunction, data\n);",
+      "say": "For heavy tasks, use the compute function to run work in a separate isolate. This keeps your UI responsive."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you debug jank in Flutter?",
+      "wrong": "Just check the build method.",
+      "right": "Profile with DevTools, find dropped frames, optimize builds, and move heavy work to isolates.",
+      "say": "Interviewers want more than just checking the build method. You should profile with DevTools, spot dropped frames, optimize builds, and shift heavy work to isolates."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:51:10.738Z"
+}
