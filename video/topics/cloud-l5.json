@@ -1,0 +1,87 @@
+{
+  "id": "cloud-l5",
+  "title": "Hub-Spoke Networking & Hybrid Cloud",
+  "keys": [
+    "hub",
+    "spoke",
+    "peering",
+    "firewall",
+    "hybrid"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-hub-spoke",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "How do big companies connect apps?",
+      "line2": "What is hub-spoke networking?",
+      "say": "Ever wonder how enterprises connect apps securely in the cloud? Let’s break down hub-spoke networking."
+    },
+    {
+      "id": "1-chip-hub",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Hub",
+      "sub": "Central VNet for shared services like firewall and gateways.",
+      "say": "The hub is a central virtual network that holds shared services—think firewall, gateways, and DNS resolver."
+    },
+    {
+      "id": "2-rows-spoke-steps",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Spoke VNet",
+          "b": "One per app, peered to hub"
+        },
+        {
+          "a": "UDR",
+          "b": "Routes spoke traffic to firewall"
+        },
+        {
+          "a": "Hybrid",
+          "b": "On-prem connects via VPN or ExpressRoute"
+        }
+      ],
+      "walk": true,
+      "say": "Each app gets its own spoke network, peered to the hub. User-defined routes send all traffic to the firewall. Hybrid connectivity? On-premises connects through VPN or ExpressRoute."
+    },
+    {
+      "id": "3-compare-connectivity",
+      "type": "compare",
+      "kicker": "Hybrid Options",
+      "left": {
+        "title": "VPN",
+        "items": [
+          "Encrypted over internet",
+          "Cheaper",
+          "Variable latency"
+        ]
+      },
+      "right": {
+        "title": "ExpressRoute",
+        "items": [
+          "Private circuit",
+          "Predictable latency",
+          "Not encrypted by default"
+        ]
+      },
+      "say": "VPN uses the internet, is encrypted, and cheaper, but latency can jump around. ExpressRoute gives you a private, stable connection, but it’s not encrypted by default."
+    },
+    {
+      "id": "4-trap-peering",
+      "type": "trap",
+      "question": "Can spokes talk to each other by default?",
+      "wrong": "Yes, peering is transitive.",
+      "right": "Nope. Peering isn’t transitive. Spoke-to-spoke traffic must route through the hub firewall.",
+      "say": "Here’s a common trap: spokes can’t talk to each other by default. Peering isn’t transitive. You have to route through the hub firewall."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:45:03.260Z"
+}
