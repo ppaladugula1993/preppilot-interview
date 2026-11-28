@@ -1,0 +1,97 @@
+{
+  "id": "security-l3",
+  "title": "Incident vs Problem: ITIL Basics",
+  "keys": [
+    "incident",
+    "problem",
+    "root cause",
+    "restore"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-incident-or-pro",
+      "type": "hook",
+      "kicker": "Security & Change · lesson",
+      "line1": "Incident or problem?",
+      "line2": "What's the real difference?",
+      "say": "Ever wonder if you're dealing with an incident or a problem? Let's clear it up for interviews."
+    },
+    {
+      "id": "1-chip-incident",
+      "type": "chip",
+      "kicker": "Key term",
+      "label": "Incident",
+      "sub": "Restore service now. Get things running again.",
+      "say": "An incident means something's broken and your top goal is to get service back, fast."
+    },
+    {
+      "id": "2-chip-problem",
+      "type": "chip",
+      "kicker": "Key term",
+      "label": "Problem",
+      "sub": "Find and fix the root cause. Prevent repeat.",
+      "say": "A problem is about digging in to find the root cause, so it doesn't happen again."
+    },
+    {
+      "id": "3-compare-severity",
+      "type": "compare",
+      "kicker": "Severity levels",
+      "left": {
+        "title": "Sev 1",
+        "items": [
+          "Full outage",
+          "Major business impact"
+        ]
+      },
+      "right": {
+        "title": "Sev 2-4",
+        "items": [
+          "Serious degradation",
+          "Minor, workaround exists",
+          "Cosmetic issue"
+        ]
+      },
+      "say": "Incidents come in levels. A severity one is a total outage. Lower levels mean less impact, like slowdowns or minor bugs."
+    },
+    {
+      "id": "4-rows-postmortem",
+      "type": "rows",
+      "kicker": "Postmortem steps",
+      "rows": [
+        {
+          "a": "Timeline",
+          "b": "What happened, and when"
+        },
+        {
+          "a": "Impact",
+          "b": "Who and what was affected"
+        },
+        {
+          "a": "Root cause",
+          "b": "Why did it break?"
+        },
+        {
+          "a": "Action items",
+          "b": "How to prevent a repeat"
+        }
+      ],
+      "walk": true,
+      "say": "After restoring service, run a blameless postmortem. Build a timeline, measure impact, find the root cause, and set action items."
+    },
+    {
+      "id": "5-trap-incident-vs-pro",
+      "type": "trap",
+      "question": "What's the top priority in an incident?",
+      "wrong": "Find the root cause first",
+      "right": "Restore service first, then investigate why",
+      "say": "Here's a common trap: In an incident, always restore service before you start hunting for the root cause."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:01:36.417Z"
+}
