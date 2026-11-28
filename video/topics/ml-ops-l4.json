@@ -1,0 +1,94 @@
+{
+  "id": "ml-ops-l4",
+  "title": "CI/CD Pipelines for Reliable ML Models",
+  "keys": [
+    "CI/CD",
+    "reproducibility",
+    "pipeline",
+    "deployment"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ci-cd-models",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "How do you automate ML model updates?",
+      "line2": "What keeps them reproducible?",
+      "say": "How can you update machine learning models automatically and make sure every version is reproducible?"
+    },
+    {
+      "id": "1-chip-ci-cd",
+      "type": "chip",
+      "kicker": "Core idea",
+      "label": "CI/CD",
+      "sub": "Automates testing, validation, and deployment for ML models.",
+      "say": "Continuous integration and deployment automates testing, validation, and rollout for machine learning models."
+    },
+    {
+      "id": "2-rows-pipeline-steps",
+      "type": "rows",
+      "kicker": "Pipeline steps",
+      "rows": [
+        {
+          "a": "Data validation",
+          "b": "Check quality and consistency"
+        },
+        {
+          "a": "Model training",
+          "b": "Build new model version"
+        },
+        {
+          "a": "Unit tests",
+          "b": "Verify model logic"
+        },
+        {
+          "a": "Registry update",
+          "b": "Store and version models"
+        },
+        {
+          "a": "Deployment",
+          "b": "Release model automatically"
+        }
+      ],
+      "walk": true,
+      "say": "A typical pipeline checks your data, trains the model, runs unit tests, updates the registry, and deploys automatically."
+    },
+    {
+      "id": "3-compare-repro-vs-man",
+      "type": "compare",
+      "kicker": "Why reproducibility matters",
+      "left": {
+        "title": "Automated CI/CD",
+        "items": [
+          "Consistent results",
+          "Fewer manual errors",
+          "Easy rollback"
+        ]
+      },
+      "right": {
+        "title": "Manual process",
+        "items": [
+          "Inconsistent runs",
+          "Risk of mistakes",
+          "Hard to track changes"
+        ]
+      },
+      "say": "Automated pipelines mean consistent results and fewer mistakes, unlike manual setups that are error-prone and tough to track."
+    },
+    {
+      "id": "4-trap-ci-cd-trap",
+      "type": "trap",
+      "question": "What ensures model reproducibility?",
+      "wrong": "Just retraining the model",
+      "right": "Automated pipelines with version control and tracking",
+      "say": "If asked what makes models reproducible, don't just say retraining. It's automated pipelines with version control and experiment tracking that really do the job."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:02:20.429Z"
+}
