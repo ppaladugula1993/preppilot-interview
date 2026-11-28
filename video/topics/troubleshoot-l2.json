@@ -1,0 +1,91 @@
+{
+  "id": "troubleshoot-l2",
+  "title": "Read Errors First: Save Troubleshooting Time",
+  "keys": [
+    "error message",
+    "layer",
+    "DNS",
+    "timeout",
+    "refused"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-read-error",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity, Latency, Throughput · lesson",
+      "line1": "Ever wasted time running random tools?",
+      "line2": "What should you do first?",
+      "say": "Have you ever spent ages running random commands and still missed the root cause? What should you actually do first?"
+    },
+    {
+      "id": "1-chip-error-layer",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "Layer",
+      "sub": "The error message tells you which layer failed.",
+      "say": "The error message almost always points to the exact layer that failed. That's your first clue."
+    },
+    {
+      "id": "2-rows-common-errors",
+      "type": "rows",
+      "kicker": "Common Errors",
+      "rows": [
+        {
+          "a": "Could not resolve host",
+          "b": "DNS issue"
+        },
+        {
+          "a": "No route to host",
+          "b": "Routing or ARP problem"
+        },
+        {
+          "a": "Connection timed out",
+          "b": "Firewall, routing, or host down"
+        },
+        {
+          "a": "Connection refused",
+          "b": "Host reached, nothing listening"
+        }
+      ],
+      "walk": true,
+      "say": "Here are some common errors. Each one tells you exactly where to start looking. For example, 'could not resolve host' means DNS is the problem."
+    },
+    {
+      "id": "3-compare-timeout-refu",
+      "type": "compare",
+      "kicker": "Timeout vs Refused",
+      "left": {
+        "title": "Timeout",
+        "items": [
+          "Packets dropped",
+          "Firewall or routing",
+          "Host might be down"
+        ]
+      },
+      "right": {
+        "title": "Refused",
+        "items": [
+          "Host reached",
+          "Nothing listening",
+          "Immediate answer"
+        ]
+      },
+      "say": "Timeout means something silently dropped your packets. Refused means you reached the host, but nothing's listening. That distinction is huge in interviews."
+    },
+    {
+      "id": "4-trap-skip-error",
+      "type": "trap",
+      "question": "What’s the first thing to check?",
+      "wrong": "Run traceroute or ping right away.",
+      "right": "Read the error message—it tells you the layer.",
+      "say": "Here's a classic interview trap: Don't jump straight to tools like traceroute or ping. Always read the error message first—it tells you where to start."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:52:42.553Z"
+}
