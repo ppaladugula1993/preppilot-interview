@@ -1,0 +1,76 @@
+{
+  "id": "llm-apps-l2",
+  "title": "Embeddings & Vector Search Explained",
+  "keys": [
+    "embeddings",
+    "vector search",
+    "semantic",
+    "retrieval"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-care",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "How does search get smarter?",
+      "line2": "What powers semantic retrieval?",
+      "say": "Ever wondered how search engines find meaning, not just keywords? Let’s see what makes semantic retrieval possible."
+    },
+    {
+      "id": "1-chip-embedding",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Embedding",
+      "sub": "A vector that captures the meaning of text.",
+      "say": "Embeddings are numbers that represent the meaning behind words or sentences."
+    },
+    {
+      "id": "2-terminal-vector-sear",
+      "type": "terminal",
+      "kicker": "Workflow",
+      "title": "Vector Search in Action",
+      "lines": [
+        "$ Embed: 'How to bake bread'",
+        "$ Store embedding in database",
+        "$ Query: Find nearest neighbors"
+      ],
+      "say": "First, you embed a sentence, then store it in a database. When you query, the system finds the closest matches."
+    },
+    {
+      "id": "3-rows-why-matters",
+      "type": "rows",
+      "kicker": "Why It Matters",
+      "rows": [
+        {
+          "a": "Semantic search",
+          "b": "Find meaning, not just words"
+        },
+        {
+          "a": "Document matching",
+          "b": "Link similar content fast"
+        },
+        {
+          "a": "LLM integration",
+          "b": "Connect models to knowledge"
+        }
+      ],
+      "walk": true,
+      "say": "This unlocks semantic search, quick document matching, and lets language models tap into external knowledge."
+    },
+    {
+      "id": "4-trap-misconception",
+      "type": "trap",
+      "question": "Are embeddings just keyword counts?",
+      "wrong": "Yes, they count keywords.",
+      "right": "No, embeddings capture meaning, not just counts.",
+      "say": "Don’t confuse embeddings with keyword counts. They actually capture the meaning of text."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:42:19.452Z"
+}
