@@ -1,0 +1,75 @@
+{
+  "id": "appsec-l6",
+  "title": "Secure Code Review Checklist (OWASP)",
+  "keys": [
+    "input validation",
+    "secrets",
+    "error handling",
+    "authorization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-checklist",
+      "type": "hook",
+      "kicker": "Application Security (OWASP) · lesson",
+      "line1": "Do you use a checklist?",
+      "line2": "What should be on it?",
+      "say": "When you review code for security, are you using a checklist? What should it actually cover?"
+    },
+    {
+      "id": "1-chip-inputs",
+      "type": "chip",
+      "kicker": "Checklist Item",
+      "label": "Inputs",
+      "sub": "Are all inputs validated and sanitized?",
+      "say": "First, always check if every input is validated and sanitized. This blocks a ton of common attacks."
+    },
+    {
+      "id": "2-rows-secrets-errors",
+      "type": "rows",
+      "kicker": "Checklist Items",
+      "rows": [
+        {
+          "a": "Secrets",
+          "b": "Are secrets externalized?"
+        },
+        {
+          "a": "Errors",
+          "b": "Is error handling generic?"
+        },
+        {
+          "a": "Deps",
+          "b": "Are dependencies up to date?"
+        }
+      ],
+      "walk": false,
+      "say": "Next, make sure secrets are not hardcoded, errors don't leak details, and dependencies are current."
+    },
+    {
+      "id": "3-terminal-access",
+      "type": "terminal",
+      "kicker": "Checklist Item",
+      "title": "Access Control",
+      "lines": [
+        "$ Enforce server-side checks",
+        "$ Block unauthorized access"
+      ],
+      "say": "And don't forget, always enforce access control on the server. Never trust the client to protect resources."
+    },
+    {
+      "id": "4-trap-missed",
+      "type": "trap",
+      "question": "Which is often missed in reviews?",
+      "wrong": "Client-side access control",
+      "right": "Server-side checks are critical. Client-side can be bypassed.",
+      "say": "Here's a trap: many devs only check access on the client. But server-side checks are what really matter."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:46:09.124Z"
+}
