@@ -1,0 +1,74 @@
+{
+  "id": "typescript",
+  "title": "TypeScript's Secret: Structural Typing",
+  "keys": [
+    "structural typing",
+    "interface",
+    "type alias",
+    "assignable",
+    "shape"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-structural",
+      "type": "hook",
+      "kicker": "TypeScript · 45 seconds",
+      "line1": "Why do types work by shape?",
+      "line2": "Not by their names?",
+      "say": "Ever wonder why TypeScript lets you assign one object type to another, even if their names don't match? Let's see why structure matters more than labels."
+    },
+    {
+      "id": "1-chip-structural",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Shape",
+      "sub": "TypeScript checks type compatibility by structure.",
+      "say": "TypeScript uses structural typing. That means it checks if the actual properties and methods match, not the type's name."
+    },
+    {
+      "id": "2-compare-interface-ty",
+      "type": "compare",
+      "kicker": "Interface vs Type Alias",
+      "left": {
+        "title": "interface",
+        "items": [
+          "Object shapes",
+          "Can extend",
+          "Merges allowed"
+        ]
+      },
+      "right": {
+        "title": "type alias",
+        "items": [
+          "Primitives, unions",
+          "No merging",
+          "More flexible"
+        ]
+      },
+      "say": "Interfaces and type aliases can both describe shapes. But interfaces are for objects and can be extended or merged. Type aliases are more flexible, but can't be merged."
+    },
+    {
+      "id": "3-code-structural",
+      "type": "code",
+      "kicker": "Assignability Demo",
+      "lang": "typescript",
+      "code": "interface A { x: number }\ntype B = { x: number }\nconst a: A = { x: 1 }\nconst b: B = a; // OK",
+      "say": "Here, an interface and a type alias both have a single number property. You can assign one to the other because their shapes match. The names don't matter."
+    },
+    {
+      "id": "4-trap-name-matching",
+      "type": "trap",
+      "question": "Does TypeScript require type names to match?",
+      "wrong": "Yes, names must match",
+      "right": "No, only the structure must match",
+      "say": "A common trap: thinking TypeScript cares about type names. It doesn't. Only the structure counts."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:11:53.003Z"
+}
