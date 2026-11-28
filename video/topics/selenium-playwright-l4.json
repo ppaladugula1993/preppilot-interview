@@ -1,0 +1,77 @@
+{
+  "id": "selenium-playwright-l4",
+  "title": "Flaky UI Tests: Causes & Fixes",
+  "keys": [
+    "flaky tests",
+    "selectors",
+    "waits",
+    "test data",
+    "Playwright"
+  ],
+  "scenes": [
+    {
+      "id": "0-flaky-or-just-broken",
+      "type": "hook",
+      "kicker": "UI Automation (Playwright, Selenium) · lesson",
+      "line1": "Why do some UI tests fail randomly?",
+      "line2": "What causes flakiness?",
+      "say": "Ever had a test pass, then fail for no reason? Let's talk about why UI tests get flaky—and how to fix them."
+    },
+    {
+      "id": "1-common-causes",
+      "type": "chip",
+      "kicker": "Flaky Tests",
+      "label": "Causes",
+      "sub": "Timing, unstable selectors, network delays, or bad test data.",
+      "say": "Flaky tests usually fail because of timing issues, unstable selectors, network hiccups, or inconsistent data."
+    },
+    {
+      "id": "2-fixes-rows",
+      "type": "rows",
+      "kicker": "How to Fix Flakiness",
+      "rows": [
+        {
+          "a": "Improve selectors",
+          "b": "Use stable IDs or roles"
+        },
+        {
+          "a": "Add waits",
+          "b": "Wait for visibility or readiness"
+        },
+        {
+          "a": "Stabilize data",
+          "b": "Use consistent test data"
+        },
+        {
+          "a": "Isolate tests",
+          "b": "Mock or stub external calls"
+        }
+      ],
+      "walk": true,
+      "say": "To fix flakiness, use better selectors, add smart waits, keep your test data steady, and isolate tests from outside systems."
+    },
+    {
+      "id": "3-explicit-wait-exampl",
+      "type": "code",
+      "kicker": "Example Fix",
+      "lang": "js",
+      "code": "await page.waitForSelector('#submit', {\n  state: 'visible'\n})",
+      "say": "If an element isn't visible yet, add an explicit wait for visibility. This makes your test more reliable."
+    },
+    {
+      "id": "4-trap-fragile-selecto",
+      "type": "trap",
+      "question": "Should you use nth-child in selectors?",
+      "wrong": "Yes, it's quick and easy.",
+      "right": "No. Nth-child is fragile—use stable IDs or roles instead.",
+      "say": "Interview trap: Avoid using nth-child or dynamic classes. They're fragile and break easily. Stick to stable IDs or roles."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:22:12.544Z"
+}
