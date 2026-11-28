@@ -1,0 +1,84 @@
+{
+  "id": "llm-apps-l5",
+  "title": "Evaluating LLM Apps: Metrics & Hallucination",
+  "keys": [
+    "offline metrics",
+    "LLM-as-judge",
+    "hallucination",
+    "evaluation"
+  ],
+  "scenes": [
+    {
+      "id": "0-eval-hook",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "How do you know if an LLM app works?",
+      "line2": "What should you check?",
+      "say": "How do you actually measure if a large language model app is reliable? What should you check before shipping?"
+    },
+    {
+      "id": "1-eval-metrics",
+      "type": "chip",
+      "kicker": "Offline Metrics",
+      "label": "Accuracy",
+      "sub": "Compare model answers to ground truth labels.",
+      "say": "First, use offline metrics like accuracy. Just match the model's answers to your ground truth labels."
+    },
+    {
+      "id": "2-llm-judge",
+      "type": "rows",
+      "kicker": "LLM-as-Judge",
+      "rows": [
+        {
+          "a": "Step 1",
+          "b": "Ask another LLM to review output"
+        },
+        {
+          "a": "Step 2",
+          "b": "Score for factual correctness"
+        },
+        {
+          "a": "Step 3",
+          "b": "Use scores to improve quality"
+        }
+      ],
+      "walk": true,
+      "say": "Next, try LLM-as-judge. Have another model review the output, score it for correctness, and use those scores to tune your app."
+    },
+    {
+      "id": "3-hallucination-check",
+      "type": "compare",
+      "kicker": "Spotting Hallucinations",
+      "left": {
+        "title": "Good Output",
+        "items": [
+          "Matches facts",
+          "Supported by data"
+        ]
+      },
+      "right": {
+        "title": "Hallucination",
+        "items": [
+          "Unsupported claims",
+          "False info"
+        ]
+      },
+      "say": "Finally, watch for hallucinations. Good outputs match facts and data. Hallucinations are unsupported or just plain wrong."
+    },
+    {
+      "id": "4-eval-trap",
+      "type": "trap",
+      "question": "Is accuracy alone enough to evaluate?",
+      "wrong": "Yes, it's the main metric.",
+      "right": "No. You also need LLM-as-judge and hallucination checks.",
+      "say": "Here's a trap: Is accuracy alone enough to evaluate? Nope. You also need LLM-as-judge and hallucination checks."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:51:14.072Z"
+}
