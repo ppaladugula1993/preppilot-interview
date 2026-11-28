@@ -1,0 +1,74 @@
+{
+  "id": "appsec-l4",
+  "title": "Secrets Management for Engineers",
+  "keys": [
+    "secrets",
+    "environment variables",
+    "secrets manager",
+    "least privilege"
+  ],
+  "scenes": [
+    {
+      "id": "0-secrets-hook",
+      "type": "hook",
+      "kicker": "Application Security (OWASP) · lesson",
+      "line1": "Where do your app secrets live?",
+      "line2": "Are they really safe?",
+      "say": "Where do your app secrets actually live? Are they really safe from leaks or mistakes?"
+    },
+    {
+      "id": "1-secrets-chip",
+      "type": "chip",
+      "kicker": "Basics",
+      "label": "Secrets",
+      "sub": "API keys, passwords, and certificates need secure storage.",
+      "say": "Secrets like keys, passwords, and certificates need secure storage. Never just leave them lying around."
+    },
+    {
+      "id": "2-secrets-compare",
+      "type": "compare",
+      "kicker": "Good vs Bad",
+      "left": {
+        "title": "Bad Practice",
+        "items": [
+          "Hardcoded in code",
+          "Saved in config files"
+        ]
+      },
+      "right": {
+        "title": "Good Practice",
+        "items": [
+          "Use a secrets manager",
+          "Inject with environment variables"
+        ]
+      },
+      "say": "Hardcoding secrets or saving them in config files is risky. Use a secrets manager or environment variables instead."
+    },
+    {
+      "id": "3-secrets-terminal",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "AWS Secrets Manager",
+      "lines": [
+        "$ aws secretsmanager get-secret-value",
+        "$ export DB_PASSWORD=secret"
+      ],
+      "say": "For example, AWS Secrets Manager can inject your database password as an environment variable at runtime."
+    },
+    {
+      "id": "4-secrets-trap",
+      "type": "trap",
+      "question": "What's wrong with hardcoding secrets?",
+      "wrong": "It's faster for development.",
+      "right": "Hardcoding secrets risks accidental leaks in code or logs.",
+      "say": "Here's a trap: Hardcoding secrets might seem fast, but it risks accidental leaks in your code or logs."
+    },
+    {
+      "id": "5-secrets-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:41:37.911Z"
+}
