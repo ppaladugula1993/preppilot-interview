@@ -1,0 +1,74 @@
+{
+  "id": "android-kotlin-l6",
+  "title": "Room & WorkManager: Core Android Tools",
+  "keys": [
+    "Room",
+    "WorkManager",
+    "SQLite",
+    "background",
+    "persistence"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-room-workmanage",
+      "type": "hook",
+      "kicker": "Android & Kotlin · lesson",
+      "line1": "How do you persist data and run tasks?",
+      "line2": "Room and WorkManager?",
+      "say": "Ever wonder how Android apps save data and run background jobs reliably? Let's break down Room and WorkManager."
+    },
+    {
+      "id": "1-chip-room",
+      "type": "chip",
+      "kicker": "Room",
+      "label": "Storage",
+      "sub": "Room gives you type-safe access to local SQLite.",
+      "say": "Room is an object mapping tool for local databases. It makes working with SQLite simple and safe."
+    },
+    {
+      "id": "2-compare-room-workman",
+      "type": "compare",
+      "kicker": "Core Roles",
+      "left": {
+        "title": "Room",
+        "items": [
+          "Stores data",
+          "Uses entities",
+          "Type-safe access"
+        ]
+      },
+      "right": {
+        "title": "WorkManager",
+        "items": [
+          "Schedules work",
+          "Runs in background",
+          "Survives restarts"
+        ]
+      },
+      "say": "Room handles local storage. WorkManager takes care of background jobs, even if your app stops or the device reboots."
+    },
+    {
+      "id": "3-code-room-workmanage",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "kotlin",
+      "code": "@Entity\n data class User(\n   @PrimaryKey val id: Int,\n   val name: String\n )\n val work = OneTimeWorkRequestBuilder<SyncWorker>().build()\n WorkManager.getInstance(context).enqueue(work)",
+      "say": "Here’s a quick look: Room defines a user entity for storage, and WorkManager queues a one-time sync task."
+    },
+    {
+      "id": "4-trap-room-workmanage",
+      "type": "trap",
+      "question": "Does WorkManager guarantee immediate execution?",
+      "wrong": "Yes, it always runs instantly.",
+      "right": "No, WorkManager schedules tasks to run eventually, not instantly.",
+      "say": "Don't confuse WorkManager with instant execution. It guarantees your task will run, but not right away."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:49:33.742Z"
+}
