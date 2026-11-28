@@ -1,0 +1,85 @@
+{
+  "id": "express-nest-l1",
+  "title": "Routing & Validation in Express vs NestJS",
+  "keys": [
+    "routing",
+    "validation",
+    "middleware",
+    "pipes",
+    "controller"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-routing-validat",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "How do you stop bad data early?",
+      "line2": "Why does routing matter?",
+      "say": "When handling requests, how do you make sure only valid data gets through? And why does the way you set up routes matter?"
+    },
+    {
+      "id": "1-compare-routing-vali",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Express",
+        "items": [
+          "Routes are functions",
+          "Validation is middleware"
+        ]
+      },
+      "right": {
+        "title": "NestJS",
+        "items": [
+          "Controllers group routes",
+          "Validation uses pipes"
+        ]
+      },
+      "say": "Express routes are just functions, and validation runs as middleware. In NestJS, routes live inside controllers, and validation happens through pipes."
+    },
+    {
+      "id": "2-code-express-validat",
+      "type": "code",
+      "kicker": "Express Example",
+      "lang": "js",
+      "code": "app.post('/user', [body('email').isEmail()],\n(req, res) => {\n  const errors = validationResult(req);\n  if (!errors.isEmpty())\n    return res.status(400).json({ errors: errors.array() });\n  // ...\n});",
+      "say": "Here, Express uses a validator middleware to check the email field. If validation fails, the request is rejected before any business logic runs."
+    },
+    {
+      "id": "3-rows-nestjs-validati",
+      "type": "rows",
+      "kicker": "NestJS Steps",
+      "rows": [
+        {
+          "a": "Create DTO",
+          "b": "Define data shape with decorators"
+        },
+        {
+          "a": "Add Pipe",
+          "b": "Attach validation pipe to route"
+        },
+        {
+          "a": "Handle Request",
+          "b": "Controller processes only valid data"
+        }
+      ],
+      "walk": true,
+      "say": "In NestJS, you define a data transfer object with decorators, add a validation pipe to your route, and your controller only sees valid data."
+    },
+    {
+      "id": "4-trap-validation-mist",
+      "type": "trap",
+      "question": "Should you validate after business logic?",
+      "wrong": "Yes, it's fine to validate late.",
+      "right": "No, always validate before business logic to avoid bugs and wasted processing.",
+      "say": "Don't wait to validate until after your main code runs. Always check incoming data first, so you don't process anything invalid."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:21:43.945Z"
+}
