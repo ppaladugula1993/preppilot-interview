@@ -1,0 +1,71 @@
+{
+  "id": "js-core-l5",
+  "title": "Promises, Async/Await & Error Handling",
+  "keys": [
+    "promise",
+    "async",
+    "await",
+    "try/catch"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-js",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "Async code in interviews:",
+      "line2": "What can trip you up?",
+      "say": "Async code is everywhere in interviews. What catches most candidates off guard?"
+    },
+    {
+      "id": "1-chip-promises",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Promise",
+      "sub": "Represents an async operation, chain with then and catch.",
+      "say": "A promise is just a stand-in for a future value. You can chain them with then and catch to handle results and errors."
+    },
+    {
+      "id": "2-compare-async-await",
+      "type": "compare",
+      "kicker": "Syntax",
+      "left": {
+        "title": "Promise Chaining",
+        "items": [
+          "then for results",
+          "catch for errors"
+        ]
+      },
+      "right": {
+        "title": "Async/Await",
+        "items": [
+          "await pauses for result",
+          "try catch for errors"
+        ]
+      },
+      "say": "Async and await make promise code look like regular synchronous code. You use try catch for error handling instead of chaining."
+    },
+    {
+      "id": "3-code-try-catch",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "async function fetchData() {\n  try {\n    const res = await fetch('/api')\n    return await res.json()\n  } catch (e) {\n    console.error(e)\n  }\n}",
+      "say": "Here's a classic pattern. Wrap your async code in try catch, so any error gets handled cleanly."
+    },
+    {
+      "id": "4-trap-error-handling",
+      "type": "trap",
+      "question": "How do you catch errors in async functions?",
+      "wrong": "Only with catch on the promise.",
+      "right": "Use try catch inside the async function, or attach a catch handler to the returned promise.",
+      "say": "Don't forget! You can catch errors with try catch inside the async function, or by attaching a catch handler to the promise it returns."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:04:15.124Z"
+}
