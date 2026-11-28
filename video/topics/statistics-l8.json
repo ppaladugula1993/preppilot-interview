@@ -1,0 +1,75 @@
+{
+  "id": "statistics-l8",
+  "title": "Logistic Regression: Odds Ratio Explained",
+  "keys": [
+    "logistic regression",
+    "log-odds",
+    "coefficient",
+    "odds ratio"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-odds-ratio",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "What does a logistic regression",
+      "line2": "coefficient really mean?",
+      "say": "Ever wondered what a logistic regression coefficient actually tells you about your data?"
+    },
+    {
+      "id": "1-chip-log-odds",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Log-odds",
+      "sub": "Logistic regression models binary outcomes using log-odds.",
+      "say": "Logistic regression predicts binary outcomes by modeling the log-odds of the event."
+    },
+    {
+      "id": "2-rows-coefficient-ste",
+      "type": "rows",
+      "kicker": "How to Interpret",
+      "rows": [
+        {
+          "a": "Coefficient",
+          "b": "Change in log-odds per unit"
+        },
+        {
+          "a": "Exponentiate",
+          "b": "Get the odds ratio"
+        },
+        {
+          "a": "Odds Ratio",
+          "b": "How much odds multiply"
+        }
+      ],
+      "walk": true,
+      "say": "First, the coefficient shows how the log-odds change for each unit increase. Next, exponentiate it to get the odds ratio. That tells you how much the odds multiply."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Logit(p) = 1.5x",
+      "lines": [
+        "$ Odds ratio = exp(1.5)",
+        "$ Odds ratio ≈ 4.48"
+      ],
+      "say": "For example, a coefficient of one point five means the odds multiply by about four point five for each unit increase."
+    },
+    {
+      "id": "4-trap-interview-mista",
+      "type": "trap",
+      "question": "What does the coefficient mean?",
+      "wrong": "It shows the change in probability.",
+      "right": "It shows the change in log-odds. To get the change in odds, exponentiate the coefficient.",
+      "say": "Don’t confuse the coefficient with a change in probability. It actually represents the change in log-odds. You need to exponentiate it to see the effect on odds."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:50:22.380Z"
+}
