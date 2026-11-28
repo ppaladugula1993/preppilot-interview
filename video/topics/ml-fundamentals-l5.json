@@ -1,0 +1,77 @@
+{
+  "id": "ml-fundamentals-l5",
+  "title": "Tree-Based Models: Core Concepts",
+  "keys": [
+    "decision tree",
+    "random forest",
+    "gradient boosting",
+    "ensemble"
+  ],
+  "scenes": [
+    {
+      "id": "0-tree-ensembles-hook",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "Why use forests, not just one tree?",
+      "line2": "What's the big advantage?",
+      "say": "Ever wonder why we build forests of trees in machine learning instead of just one?"
+    },
+    {
+      "id": "1-decision-tree-chip",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Tree",
+      "sub": "Splits data by feature values for predictions.",
+      "say": "A decision tree splits data by feature values to make predictions. Simple, powerful, but can overfit."
+    },
+    {
+      "id": "2-forest-boost-compare",
+      "type": "compare",
+      "kicker": "Ensemble Methods",
+      "left": {
+        "title": "Random Forest",
+        "items": [
+          "Many trees",
+          "Averages predictions",
+          "Reduces overfitting"
+        ]
+      },
+      "right": {
+        "title": "Gradient Boost",
+        "items": [
+          "Sequential trees",
+          "Each fixes last one's errors",
+          "Needs careful tuning"
+        ]
+      },
+      "say": "Random forests grow lots of independent trees and average their results. Gradient boosting builds trees one after another, each learning from the last one's mistakes."
+    },
+    {
+      "id": "3-rf-example-terminal",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Random Forest in scikit-learn",
+      "lines": [
+        "$ from sklearn.ensemble import RandomForestClassifier",
+        "$ model = RandomForestClassifier(n_estimators=100)",
+        "$ model.fit(X, y)"
+      ],
+      "say": "In scikit-learn, you can train a random forest by setting the number of trees. Here, one hundred trees are averaged for a strong prediction."
+    },
+    {
+      "id": "4-trap-ensemble-tuning",
+      "type": "trap",
+      "question": "Can you ignore tuning tree depth?",
+      "wrong": "Yes, defaults are fine.",
+      "right": "No, tuning depth and estimators balances bias and variance.",
+      "say": "Don't skip tuning tree depth or the number of trees. These settings help balance bias and variance for better results."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:23:14.490Z"
+}
