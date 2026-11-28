@@ -1,0 +1,64 @@
+{
+  "id": "react-native-l3",
+  "title": "React Native: Native Modules & Permissions",
+  "keys": [
+    "native modules",
+    "permissions",
+    "JavaScript",
+    "Android",
+    "iOS"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-native-perms",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "How does JS access device features?",
+      "line2": "And what about permissions?",
+      "say": "Ever wondered how JavaScript taps into your phone's camera or GPS? And how do you handle permissions safely?"
+    },
+    {
+      "id": "1-chip-native-module",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "NativeMod",
+      "sub": "Custom code bridges JS to Android or iOS features",
+      "say": "Native modules are your bridge from JavaScript to platform features like the camera or geolocation. You write custom code in Java, Kotlin, Objective C, or Swift."
+    },
+    {
+      "id": "2-code-android-example",
+      "type": "code",
+      "kicker": "Android Example",
+      "lang": "java",
+      "code": "public class MyModule extends ReactContextBaseJavaModule {\n  @ReactMethod\n  public void showToast(String message) {\n    Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_SHORT).show();\n  }\n}",
+      "say": "Here's a native module for Android. It lets JavaScript show a toast message using native code."
+    },
+    {
+      "id": "3-terminal-permissions",
+      "type": "terminal",
+      "kicker": "Permissions",
+      "title": "Request Camera Access",
+      "lines": [
+        "$ PermissionsAndroid.request(",
+        "  PermissionsAndroid.PERMISSIONS.CAMERA",
+        ")"
+      ],
+      "say": "To use features like the camera, you must request permission at runtime. Always follow platform guidelines and handle user responses."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Can JS access hardware without native code?",
+      "wrong": "Yes, JS can do it alone.",
+      "right": "No, JavaScript needs native modules for hardware access.",
+      "say": "Here's a common trap: JavaScript alone can't access hardware. Native modules are required to bridge the gap."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:05:31.709Z"
+}
