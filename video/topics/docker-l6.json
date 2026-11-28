@@ -1,0 +1,80 @@
+{
+  "id": "docker-l6",
+  "title": "Docker Compose: Multi-Container Magic",
+  "keys": [
+    "Docker Compose",
+    "YAML",
+    "services",
+    "single host"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-compose",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "How do you run many containers easily?",
+      "line2": "One command. One file.",
+      "say": "Ever wish you could launch your whole app stack with just one command? Let's see how Docker Compose makes that happen."
+    },
+    {
+      "id": "1-chip-yaml",
+      "type": "chip",
+      "kicker": "Compose",
+      "label": "YAML",
+      "sub": "Define all your services and volumes in one simple YAML file.",
+      "say": "Docker Compose uses a YAML file to describe every service your app needs, plus any volumes for data."
+    },
+    {
+      "id": "2-rows-steps",
+      "type": "rows",
+      "kicker": "Workflow",
+      "rows": [
+        {
+          "a": "Write YAML",
+          "b": "List services, ports, env vars"
+        },
+        {
+          "a": "Start app",
+          "b": "Use the compose up command"
+        },
+        {
+          "a": "Check logs",
+          "b": "See output for any service"
+        },
+        {
+          "a": "Stop all",
+          "b": "Bring everything down easily"
+        }
+      ],
+      "walk": true,
+      "say": "First, you write the YAML. Then, start everything with one command. Check logs for any service, and shut it all down when you're done."
+    },
+    {
+      "id": "3-terminal-compose",
+      "type": "terminal",
+      "kicker": "Compose Commands",
+      "title": "Start, log, stop",
+      "lines": [
+        "$ docker compose up -d",
+        "$ docker compose logs -f api",
+        "$ docker compose down"
+      ],
+      "say": "The up command launches your app. Logs let you follow output for any service. Down stops and removes everything."
+    },
+    {
+      "id": "4-trap-single-host",
+      "type": "trap",
+      "question": "Can Compose run across many hosts?",
+      "wrong": "Yes, it scales across servers.",
+      "right": "No, Compose runs on one host. For many, use Kubernetes.",
+      "say": "Here's the catch: Compose only works on one machine. If you need to run across several, you'll want Kubernetes."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:34:31.034Z"
+}
