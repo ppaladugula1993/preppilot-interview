@@ -1,0 +1,72 @@
+{
+  "id": "express-nest-l0",
+  "title": "Express Middleware Chain Explained",
+  "keys": [
+    "middleware",
+    "chain",
+    "next",
+    "error"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-middleware-flow",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "How does Express handle requests?",
+      "line2": "What’s a middleware chain?",
+      "say": "Ever wondered how Express processes requests step by step? Let's break down the middleware chain."
+    },
+    {
+      "id": "1-chip-sequential",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Chain",
+      "sub": "Middleware runs in order, each can pass control.",
+      "say": "Express runs middleware in sequence. Each one can handle the request or pass it along using next."
+    },
+    {
+      "id": "2-code-middleware-exam",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "app.use((req, res, next) => {\n  console.log('Request:', req.method, req.url);\n  next();\n});\napp.use((err, req, res, next) => {\n  res.status(500).json({ error: err.message });\n});",
+      "say": "Here, the first middleware logs every request, then calls next. The second one catches errors and sends a five hundred error response."
+    },
+    {
+      "id": "3-rows-middleware-step",
+      "type": "rows",
+      "kicker": "Request Flow",
+      "rows": [
+        {
+          "a": "Request hits app",
+          "b": "First middleware runs"
+        },
+        {
+          "a": "Calls next",
+          "b": "Next middleware runs"
+        },
+        {
+          "a": "Error occurs?",
+          "b": "Error handler runs"
+        }
+      ],
+      "walk": true,
+      "say": "A request enters the app, runs through each middleware in order, and if an error pops up, the error handler takes over."
+    },
+    {
+      "id": "4-trap-error-placement",
+      "type": "trap",
+      "question": "Where should error middleware go?",
+      "wrong": "At the top, before other handlers",
+      "right": "After all other handlers, so it catches errors from anywhere in the chain.",
+      "say": "Careful! Error middleware needs to be placed after all regular handlers, or it might miss catching errors."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:19:16.866Z"
+}
