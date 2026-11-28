@@ -1,0 +1,76 @@
+{
+  "id": "windows-l7",
+  "title": "Windows Troubleshooting Toolkit",
+  "keys": [
+    "ipconfig",
+    "netstat",
+    "perfmon",
+    "Event Viewer"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-windows-toolkit",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "Know your Windows toolkit?",
+      "line2": "What’s the Linux equivalent?",
+      "say": "Ever get stuck on Windows and wish you had your favorite Linux commands? Let’s match up the tools so you’re never lost."
+    },
+    {
+      "id": "1-chip-network-info",
+      "type": "chip",
+      "kicker": "Network",
+      "label": "ipconfig",
+      "sub": "Like 'ip a' on Linux, shows all IP addresses and adapters.",
+      "say": "To check network details, use ipconfig. It’s the Windows version of the ip address command."
+    },
+    {
+      "id": "2-terminal-process-por",
+      "type": "terminal",
+      "kicker": "Ports",
+      "title": "Find process on port 443",
+      "lines": [
+        "$ Get-NetTCPConnection -LocalPort 443",
+        "$ Select OwningProcess",
+        "$ Get-Process -Id <pid>"
+      ],
+      "say": "Want to know which process owns a port? Get-NetTCPConnection shows you the process ID, then Get-Process reveals the name."
+    },
+    {
+      "id": "3-rows-performance-che",
+      "type": "rows",
+      "kicker": "Performance",
+      "rows": [
+        {
+          "a": "Task Manager",
+          "b": "Top CPU, memory, disk users"
+        },
+        {
+          "a": "Resource Monitor",
+          "b": "Detailed stats by resource"
+        },
+        {
+          "a": "perfmon",
+          "b": "Disk, CPU, memory counters"
+        }
+      ],
+      "walk": true,
+      "say": "If a server’s slow, check Task Manager first, then Resource Monitor for deeper stats. Perfmon tracks disk and CPU bottlenecks."
+    },
+    {
+      "id": "4-trap-port-owner",
+      "type": "trap",
+      "question": "How do you find which process owns port 443?",
+      "wrong": "Just use netstat and guess the PID.",
+      "right": "Get-NetTCPConnection shows the process ID; Get-Process names it.",
+      "say": "Don’t just guess the process. Use Get-NetTCPConnection for the ID, then Get-Process to see the actual name."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:31:13.236Z"
+}
