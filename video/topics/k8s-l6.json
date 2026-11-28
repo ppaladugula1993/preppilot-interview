@@ -1,0 +1,77 @@
+{
+  "id": "k8s-l6",
+  "title": "Kubernetes Probes Demystified",
+  "keys": [
+    "liveness",
+    "readiness",
+    "startupProbe",
+    "health check"
+  ],
+  "scenes": [
+    {
+      "id": "0-probe-hook",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "Why do pods need probes?",
+      "line2": "What goes wrong if you skip them?",
+      "say": "Ever wonder why Kubernetes pods need probes? What happens if you get them wrong?"
+    },
+    {
+      "id": "1-probes-compare",
+      "type": "compare",
+      "kicker": "Know your probes",
+      "left": {
+        "title": "Liveness",
+        "items": [
+          "Restarts hung containers",
+          "Checks if app is alive"
+        ]
+      },
+      "right": {
+        "title": "Readiness",
+        "items": [
+          "Stops traffic to unready pods",
+          "Checks if app can serve"
+        ]
+      },
+      "say": "There are two main probes. Liveness restarts containers if they hang. Readiness holds off traffic until your app is ready to serve."
+    },
+    {
+      "id": "2-startup-chip",
+      "type": "chip",
+      "kicker": "Pro tip",
+      "label": "Startup",
+      "sub": "Gives slow apps time before liveness starts",
+      "say": "For slow-starting apps, use a startup probe. It delays liveness checks until your app is really ready."
+    },
+    {
+      "id": "3-probe-terminal",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Pod probe config",
+      "lines": [
+        "livenessProbe:",
+        "  httpGet: path /healthz port 8080",
+        "  initialDelaySeconds: 10",
+        "readinessProbe:",
+        "  httpGet: path /ready port 8080"
+      ],
+      "say": "Here's a sample pod spec. Liveness checks the health endpoint after ten seconds. Readiness checks if the app is ready to serve."
+    },
+    {
+      "id": "4-probe-trap",
+      "type": "trap",
+      "question": "What if readiness and liveness are wrong?",
+      "wrong": "The pod just runs fine anyway.",
+      "right": "You risk restart loops and outages.",
+      "say": "Watch out. If you set these probes wrong, you can trigger restart loops or even take your app offline."
+    },
+    {
+      "id": "5-probe-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:58:15.686Z"
+}
