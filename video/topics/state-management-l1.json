@@ -1,0 +1,95 @@
+{
+  "id": "state-management-l1",
+  "title": "Redux & Redux Toolkit Principles",
+  "keys": [
+    "Redux",
+    "Toolkit",
+    "store",
+    "actions",
+    "reducers"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-redux-toolkit",
+      "type": "hook",
+      "kicker": "Frontend State Management · lesson",
+      "line1": "Why does Redux need a toolkit?",
+      "line2": "What does it really fix?",
+      "say": "Ever wonder why Redux Toolkit exists? What problems does it actually solve for frontend state management?"
+    },
+    {
+      "id": "1-chip-redux-store",
+      "type": "chip",
+      "kicker": "Core Principle",
+      "label": "Store",
+      "sub": "Redux keeps all app state in a single, immutable store.",
+      "say": "Redux keeps your entire app state in one place, and that state never gets changed directly."
+    },
+    {
+      "id": "2-rows-redux-flow",
+      "type": "rows",
+      "kicker": "Redux Workflow",
+      "rows": [
+        {
+          "a": "Action",
+          "b": "Describes the change"
+        },
+        {
+          "a": "Reducer",
+          "b": "Handles state transition"
+        },
+        {
+          "a": "Store",
+          "b": "Holds the current state"
+        }
+      ],
+      "walk": true,
+      "say": "First, you fire an action describing what happened. Then a reducer updates the state. The store holds the latest version."
+    },
+    {
+      "id": "3-compare-toolkit-vs-r",
+      "type": "compare",
+      "kicker": "Toolkit vs. Classic Redux",
+      "left": {
+        "title": "Redux Toolkit",
+        "items": [
+          "Less boilerplate",
+          "Built-in best practices",
+          "Easy async logic"
+        ]
+      },
+      "right": {
+        "title": "Classic Redux",
+        "items": [
+          "Manual setup",
+          "Verbose code",
+          "More room for mistakes"
+        ]
+      },
+      "say": "Redux Toolkit cuts out repetitive code, handles async actions, and enforces best practices. Classic Redux needs more manual setup and is easier to mess up."
+    },
+    {
+      "id": "4-code-create-slice",
+      "type": "code",
+      "kicker": "Toolkit Example",
+      "lang": "js",
+      "code": "const todosSlice = createSlice({\n  name: 'todos',\n  initialState: [],\n  reducers: {\n    addTodo: (state, action) => {\n      state.push(action.payload);\n    }\n  }\n})",
+      "say": "With Toolkit, you can create a slice for todos in just a few lines. It handles immutable updates for you."
+    },
+    {
+      "id": "5-trap-toolkit-benefit",
+      "type": "trap",
+      "question": "Why use Redux Toolkit over classic Redux?",
+      "wrong": "It's just newer, not much different.",
+      "right": "Toolkit reduces boilerplate, handles async logic, and enforces best practices automatically.",
+      "say": "Don't just say it's newer. Toolkit actually makes Redux easier, safer, and less repetitive."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:04:32.606Z"
+}
