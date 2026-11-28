@@ -1,0 +1,85 @@
+{
+  "id": "ml-fundamentals-l6",
+  "title": "Feature Engineering & Scaling Essentials",
+  "keys": [
+    "feature engineering",
+    "scaling",
+    "standardization",
+    "data leakage"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-feature-equal",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "Why scale your features?",
+      "line2": "Does it always matter?",
+      "say": "Ever wonder why we bother scaling features? Does it really make a difference for your models?"
+    },
+    {
+      "id": "1-chip-feature-eng",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Features",
+      "sub": "Turn raw data into useful variables.",
+      "say": "Feature engineering means turning raw data into variables your model can actually use."
+    },
+    {
+      "id": "2-rows-scaling-steps",
+      "type": "rows",
+      "kicker": "Scaling in Practice",
+      "rows": [
+        {
+          "a": "Raw features",
+          "b": "Different scales, units"
+        },
+        {
+          "a": "Standardize",
+          "b": "Zero mean, unit variance"
+        },
+        {
+          "a": "Apply model",
+          "b": "Features contribute equally"
+        }
+      ],
+      "walk": true,
+      "say": "First, your features might be all over the place. Standardization brings them to zero mean and unit variance, so every feature gets a fair shot."
+    },
+    {
+      "id": "3-compare-when-scale",
+      "type": "compare",
+      "kicker": "When to Scale?",
+      "left": {
+        "title": "Sensitive Models",
+        "items": [
+          "SVM",
+          "k-NN",
+          "Neural Nets"
+        ]
+      },
+      "right": {
+        "title": "Less Sensitive",
+        "items": [
+          "Decision Trees",
+          "Random Forests"
+        ]
+      },
+      "say": "Models like support vector machines, nearest neighbors, and neural nets need scaling. Tree-based models? Not so much."
+    },
+    {
+      "id": "4-trap-leakage",
+      "type": "trap",
+      "question": "Should you fit scaler on all data?",
+      "wrong": "Yes, fit on entire dataset.",
+      "right": "No, fit only on training data to prevent leakage.",
+      "say": "Here's a classic trap: never fit your scaler on the whole dataset. Fit it only on training data, or you'll leak information and inflate your results."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:26:34.354Z"
+}
