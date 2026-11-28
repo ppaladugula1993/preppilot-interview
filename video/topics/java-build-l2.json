@@ -1,0 +1,71 @@
+{
+  "id": "java-build-l2",
+  "title": "Gradle Tasks & Kotlin DSL Essentials",
+  "keys": [
+    "Gradle",
+    "Tasks",
+    "Kotlin DSL",
+    "build.gradle.kts"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-gradle-tasks-ds",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "Can you write a Gradle task?",
+      "line2": "Kotlin DSL or Groovy?",
+      "say": "Ever wondered how to write a Gradle task with the Kotlin DSL instead of Groovy?"
+    },
+    {
+      "id": "1-chip-tasks",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Tasks",
+      "sub": "Gradle builds are made of tasks, like build or test.",
+      "say": "A Gradle build is just a series of tasks. You can use built-in ones, like build or test, or create your own."
+    },
+    {
+      "id": "2-compare-dsl",
+      "type": "compare",
+      "kicker": "Kotlin DSL vs Groovy",
+      "left": {
+        "title": "Kotlin DSL",
+        "items": [
+          "Type safe",
+          "Great IDE support"
+        ]
+      },
+      "right": {
+        "title": "Groovy DSL",
+        "items": [
+          "More flexible",
+          "Less type safety"
+        ]
+      },
+      "say": "Kotlin DSL gives you type safety and better auto-complete in your editor. Groovy is more flexible, but easier to break."
+    },
+    {
+      "id": "3-code-hello-task",
+      "type": "code",
+      "kicker": "Custom Task Example",
+      "lang": "kotlin",
+      "code": "tasks.register(\"hello\") {\n  doLast {\n    println(\"Hello, Gradle!\")\n  }\n}",
+      "say": "Here's how you define a custom hello task using the Kotlin DSL. It prints a message when you run it."
+    },
+    {
+      "id": "4-trap-dsl",
+      "type": "trap",
+      "question": "Why use Kotlin DSL for Gradle?",
+      "wrong": "Because it's the default option.",
+      "right": "It gives you type safety and better IDE support, making scripts easier to maintain.",
+      "say": "Don't just say 'because it's the default.' Interviewers want to hear about type safety and maintainability."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:33:07.881Z"
+}
