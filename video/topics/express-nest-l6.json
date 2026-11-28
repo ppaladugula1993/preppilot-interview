@@ -1,0 +1,92 @@
+{
+  "id": "express-nest-l6",
+  "title": "Express & NestJS: Prod Middleware Essentials",
+  "keys": [
+    "logging",
+    "rate limiting",
+    "helmet",
+    "CORS"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-prod-safety",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "How do you secure APIs in production?",
+      "line2": "What must you enable?",
+      "say": "When your API goes live, what should you set up to keep it safe and reliable?"
+    },
+    {
+      "id": "1-chip-logging",
+      "type": "chip",
+      "kicker": "Production Concern",
+      "label": "Logging",
+      "sub": "Use tools like Winston for error and request logs.",
+      "say": "First, log everything. Winston is a popular choice for capturing errors and requests."
+    },
+    {
+      "id": "2-rows-middleware",
+      "type": "rows",
+      "kicker": "Middleware Setup",
+      "rows": [
+        {
+          "a": "Helmet",
+          "b": "Adds secure headers"
+        },
+        {
+          "a": "CORS",
+          "b": "Controls cross-origin requests"
+        },
+        {
+          "a": "Rate Limiting",
+          "b": "Blocks abuse by limiting requests"
+        }
+      ],
+      "walk": true,
+      "say": "Next, add third-party middleware: Helmet for security headers, CORS for cross-origin control, and rate limiting to prevent abuse."
+    },
+    {
+      "id": "3-compare-express-nest",
+      "type": "compare",
+      "kicker": "Framework Differences",
+      "left": {
+        "title": "Express",
+        "items": [
+          "Middleware added directly",
+          "Use require for setup"
+        ]
+      },
+      "right": {
+        "title": "NestJS",
+        "items": [
+          "Middleware via modules",
+          "Setup differs from Express"
+        ]
+      },
+      "say": "Express lets you add middleware right in your app. In NestJS, you configure these in modules, not the same way as Express."
+    },
+    {
+      "id": "4-code-express-setup",
+      "type": "code",
+      "kicker": "Express Example",
+      "lang": "js",
+      "code": "const helmet = require('helmet');\nconst cors = require('cors');\nconst rateLimit = require('express-rate-limit');\napp.use(helmet());\napp.use(cors());\napp.use(rateLimit({ windowMs: 60000, max: 100 }));",
+      "say": "Here's how you add Helmet, CORS, and rate limiting in Express. These aren't enabled by default—you need to install and set them up."
+    },
+    {
+      "id": "5-trap-middleware-defa",
+      "type": "trap",
+      "question": "Are Helmet, CORS, and rate limiting built in?",
+      "wrong": "Yes, they're enabled by default.",
+      "right": "No, you must install and configure them as third-party middleware.",
+      "say": "Interviewers may ask if these protections are built in. They're not—you need to add and configure them yourself."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:19:40.539Z"
+}
