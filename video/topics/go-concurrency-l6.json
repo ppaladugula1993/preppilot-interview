@@ -1,0 +1,76 @@
+{
+  "id": "go-concurrency-l6",
+  "title": "Go HTTP Server Patterns & Graceful Shutdown",
+  "keys": [
+    "net/http",
+    "concurrency",
+    "Shutdown",
+    "context"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-go-concurrency",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How do you stop a Go server",
+      "line2": "without dropping requests?",
+      "say": "Ever wondered how to stop a Go HTTP server without losing user requests? Let's break down graceful shutdown."
+    },
+    {
+      "id": "1-chip-concurrent-requ",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Concurrent",
+      "sub": "Go's net HTTP server handles many requests at once.",
+      "say": "Go's net HTTP server handles lots of requests at the same time, thanks to built-in concurrency."
+    },
+    {
+      "id": "2-rows-shutdown-steps",
+      "type": "rows",
+      "kicker": "Graceful Shutdown Steps",
+      "rows": [
+        {
+          "a": "1. Start server",
+          "b": "Begin serving requests"
+        },
+        {
+          "a": "2. Listen for signal",
+          "b": "Wait for shutdown trigger"
+        },
+        {
+          "a": "3. Call Shutdown",
+          "b": "Let active requests finish"
+        },
+        {
+          "a": "4. Exit cleanly",
+          "b": "Server stops after requests"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works: start the server, listen for a shutdown signal, call Shutdown to finish in-flight requests, then exit cleanly."
+    },
+    {
+      "id": "3-code-shutdown-exampl",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "srv := &http.Server{Addr: \":8080\"}\ngo srv.ListenAndServe()\nctx, cancel := context.WithTimeout(\n  context.Background(), 5*time.Second)\ndefer cancel()\nsrv.Shutdown(ctx)",
+      "say": "In practice, create your server, run it in a goroutine, then use context with timeout and call Shutdown. This gives users time to finish up."
+    },
+    {
+      "id": "4-trap-tricky-shutdown",
+      "type": "trap",
+      "question": "Is closing the listener enough?",
+      "wrong": "Yes, that stops new connections.",
+      "right": "No, you must use Shutdown to let active requests finish before stopping.",
+      "say": "Here's a common trap: just closing the listener isn't enough. Always use Shutdown to let current requests complete."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:11:17.645Z"
+}
