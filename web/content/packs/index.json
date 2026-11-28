@@ -17,8 +17,8 @@
   {
    "id": "core-dev",
    "name": "Developer fundamentals",
-   "version": "b865391467",
-   "bytes": 106161,
+   "version": "5afc493796",
+   "bytes": 107413,
    "topics": [
     {
      "id": "dsa",
@@ -79,8 +79,8 @@
   {
    "id": "data",
    "name": "Data Engineering",
-   "version": "cd24c63a85",
-   "bytes": 109126,
+   "version": "5928c6c42e",
+   "bytes": 109790,
    "topics": [
     {
      "id": "sql-advanced",
@@ -167,8 +167,8 @@
   {
    "id": "frontend",
    "name": "Frontend",
-   "version": "b290ecd478",
-   "bytes": 73501,
+   "version": "f0126857f1",
+   "bytes": 74133,
    "topics": [
     {
      "id": "html-css",
@@ -231,8 +231,8 @@
   {
    "id": "infra",
    "name": "Infrastructure Engineering",
-   "version": "c1252f027d",
-   "bytes": 199938,
+   "version": "8f10ceadba",
+   "bytes": 201167,
    "topics": [
     {
      "id": "linux",
@@ -314,8 +314,8 @@
   {
    "id": "java",
    "name": "Java",
-   "version": "b4f7b87bbb",
-   "bytes": 50306,
+   "version": "77fa84b6c3",
+   "bytes": 50996,
    "topics": [
     {
      "id": "java-core",
@@ -346,8 +346,8 @@
   {
    "id": "ml",
    "name": "Machine Learning & AI",
-   "version": "de2a862558",
-   "bytes": 65406,
+   "version": "daef75d9ca",
+   "bytes": 66042,
    "topics": [
     {
      "id": "statistics",
@@ -416,8 +416,8 @@
   {
    "id": "node",
    "name": "JavaScript & Node.js",
-   "version": "ea4f239fa2",
-   "bytes": 53764,
+   "version": "3229693fd0",
+   "bytes": 55897,
    "topics": [
     {
      "id": "js-core",
@@ -448,8 +448,8 @@
   {
    "id": "python",
    "name": "Python",
-   "version": "13a2cf7cfe",
-   "bytes": 51175,
+   "version": "2a1b4ad118",
+   "bytes": 51836,
    "topics": [
     {
      "id": "python-core",
@@ -480,8 +480,8 @@
   {
    "id": "quality",
    "name": "Quality & Security",
-   "version": "8908b77779",
-   "bytes": 76140,
+   "version": "02d9c76b07",
+   "bytes": 76874,
    "topics": [
     {
      "id": "test-strategy",

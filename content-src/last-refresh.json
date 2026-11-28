@@ -1,96 +1,84 @@
 {
   "month": "2026-11",
-  "at": "2026-11-27T07:31:39.512Z",
-  "added": 15,
+  "at": "2026-11-28T07:26:05.969Z",
+  "added": 13,
   "report": [
     {
-      "topic": "concurrency",
+      "topic": "system-design",
       "qs": [
-        "In Python 3.13, what changes should you be aware of when using `multiprocessing.shared_memory` for concurrent access to large NumPy arrays, and how can you ensure safe synchronization between processes?"
+        "How would you design a system that supports adaptive caching strategies for architecture diagram collaboration, ensuring optimal performance as user activity patterns shift throughout the day?"
       ]
     },
     {
-      "topic": "sql-advanced",
+      "topic": "sql",
       "qs": [
-        "In PostgreSQL 16 and later, how can you use the `pgvector` extension's HNSW index for efficient nearest neighbor search, and what issues should you watch for regarding result consistency across repeated queries?"
+        "How would you use the `FILTER` clause with aggregate functions to compute conditional aggregates in a single query, and what are the advantages over using multiple subqueries or CASE statements?"
       ]
     },
     {
       "topic": "airflow",
       "qs": [
-        "How would you use Airflow's new `TaskGroup` feature to improve the readability and maintainability of complex DAGs, and what limitations should you be aware of when nesting groups?"
-      ]
-    },
-    {
-      "topic": "streaming",
-      "qs": [
-        "What are the key considerations when configuring Kafka's fetch size settings (`fetch.min.bytes` and `max.partition.fetch.bytes`) for consumer groups reading from topics with high partition counts and variable message sizes?"
-      ]
-    },
-    {
-      "topic": "angular",
-      "qs": [
-        "How can you leverage Angular's signal-based change detection to optimize performance in a component that renders a large list, and what APIs would you use to minimize unnecessary DOM updates?"
+        "How would you configure Airflow's DAG-level retry policies to handle intermittent failures, and what are the implications of using the `max_active_runs` parameter in Airflow 2.8+?"
       ]
     },
     {
       "topic": "browser-performance",
       "qs": [
-        "How would you optimize the caching strategy for a browser-based application that dynamically loads large WASM modules and GPU assets to minimize both initial load time and repeated interaction latency?"
+        "How do you optimize the rendering pipeline and Core Web Vitals when integrating real-time collaborative editing features that frequently update the DOM in a browser-based application?"
       ]
     },
     {
-      "topic": "go-core",
+      "topic": "network",
       "qs": [
-        "How does Go's `encoding/json` package handle large JSON numbers by default, and what approach would you take to avoid precision loss when parsing them?"
+        "How would you mitigate the risk of UDP amplification attacks in a public-facing service, and which recent firewall or network appliance features can help automate this protection?"
       ]
     },
     {
-      "topic": "monitoring",
+      "topic": "cicd",
       "qs": [
-        "How would you configure Prometheus and Grafana to detect and alert on lateral movement or privilege escalation attempts by AI agents within a cloud environment?"
+        "How would you configure a GitHub Actions workflow to reliably trigger on all pull request edits, including title and description changes, using the latest syntax and event types?"
       ]
     },
     {
-      "topic": "jvm",
+      "topic": "java-build",
       "qs": [
-        "How does the JVM's recent support for region-based memory allocation using the Foreign Memory API's arenas impact memory reclamation and GC interaction in applications that use off-heap memory extensively?"
+        "How would you configure selective caching in Maven builds when using the `maven-build-cache-extension`, so that only specific modules use the cache while others do not, and still allow global cache toggling from the command line?"
       ]
     },
     {
-      "topic": "js-core",
+      "topic": "statistics",
       "qs": [
-        "How would you use the `Promise.any()` method to handle multiple asynchronous operations where you only need the first successful result, and what should you consider when all promises reject?"
+        "What are the benefits and limitations of using bootstrapping methods for estimating confidence intervals in A/B testing, especially when the underlying data distribution is unknown or non-normal?"
+      ]
+    },
+    {
+      "topic": "typescript",
+      "qs": [
+        "How can you use TypeScript's improved type narrowing in version 5.x to safely access properties on objects with union types where the discriminant is a complex structure, such as an array?"
       ]
     },
     {
       "topic": "node-runtime",
       "qs": [
-        "What are some best practices for managing and monitoring memory usage in Node.js applications that frequently poll external APIs, especially in the context of long-running processes?"
+        "What are the considerations and recommended approaches for handling dynamic imports in Node.js 20+ when using ESM modules, especially regarding performance and compatibility with bundlers and serverless environments?"
       ]
     },
     {
-      "topic": "python-async",
+      "topic": "express-nest",
       "qs": [
-        "How would you debug and resolve an issue where an asyncio-based Python application freezes or deadlocks when integrating with hardware libraries (e.g., GPIO or BLE) that do not natively support asyncio?"
+        "How can you implement request-scoped services in NestJS to ensure that middleware and guards, such as Passport strategies, execute before dependency injection occurs, and what are the implications for authentication flows?"
       ]
     },
     {
       "topic": "python-packaging",
       "qs": [
-        "How would you configure `pyproject.toml` to enable both linting with `ruff` and testing with `pytest`, ensuring that all relevant settings are centralized and compatible with modern tooling?"
+        "What are the implications of using `uv`'s new isolated build environments for package installation on Windows, and how does this affect compatibility with IDEs like VS Code?"
       ]
     },
     {
-      "topic": "api-testing",
+      "topic": "threat-modeling",
       "qs": [
-        "How would you test REST APIs for proper handling of fine-grained permissions and scopes in modern OAuth 2.1 setups, especially considering recent changes in scope enforcement policies by popular identity providers?"
-      ]
-    },
-    {
-      "topic": "performance-testing",
-      "qs": [
-        "How would you tailor performance testing for a system using flash-based AI inference accelerators like DeepSeek v4.1, and which metrics would you prioritize to ensure optimal throughput and latency?"
+        "How would you adapt your threat modeling process to account for risks introduced by using official minimal source-backports for legacy PHP versions in production environments?"
       ]
     }
   ]
