@@ -1,0 +1,103 @@
+{
+  "id": "troubleshoot-l3",
+  "title": "Connectivity Checklist: Linux & Windows",
+  "keys": [
+    "interface",
+    "gateway",
+    "DNS",
+    "firewall",
+    "packets"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-connectivity-ch",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity",
+      "line1": "Same checklist for Linux & Windows?",
+      "line2": "Would you know each step?",
+      "say": "If you had to troubleshoot a connection, could you run the right checks on both Linux and Windows?"
+    },
+    {
+      "id": "1-rows-ladder-steps",
+      "type": "rows",
+      "kicker": "Checklist Ladder",
+      "rows": [
+        {
+          "a": "Interface",
+          "b": "Check IP address"
+        },
+        {
+          "a": "Gateway",
+          "b": "Test route to target"
+        },
+        {
+          "a": "DNS",
+          "b": "Resolve hostnames"
+        },
+        {
+          "a": "Port",
+          "b": "Is the port reachable?"
+        },
+        {
+          "a": "Listener",
+          "b": "Is something listening?"
+        },
+        {
+          "a": "Firewall",
+          "b": "Are rules blocking traffic?"
+        },
+        {
+          "a": "Packets",
+          "b": "Capture and inspect packets"
+        }
+      ],
+      "walk": true,
+      "say": "The steps are always the same: start at the network interface, then check the gateway, DNS, port, listener, firewall, and finally, packet flow."
+    },
+    {
+      "id": "2-compare-linux-window",
+      "type": "compare",
+      "kicker": "Commands Side-by-Side",
+      "left": {
+        "title": "Linux",
+        "items": [
+          "ip -br a",
+          "ip route get destination",
+          "getent hosts or dig",
+          "nc -zv host port",
+          "ss -tlnp",
+          "firewall-cmd or ufw",
+          "tcpdump"
+        ]
+      },
+      "right": {
+        "title": "Windows",
+        "items": [
+          "ipconfig /all",
+          "Find-NetRoute -RemoteIPAddress",
+          "Resolve-DnsName",
+          "Test-NetConnection -Port",
+          "Get-NetTCPConnection -State Listen",
+          "Get-NetFirewallRule",
+          "pktmon or Wireshark"
+        ]
+      },
+      "say": "The commands look different, but each step has a Linux and a Windows version. Know both, and you'll never be caught off guard."
+    },
+    {
+      "id": "3-trap-source-machine",
+      "type": "trap",
+      "question": "Where should you test connectivity?",
+      "wrong": "From your laptop is fine.",
+      "right": "Always test from the actual source machine. Your laptop's path is not the server's.",
+      "say": "Here's a trap: don't just test from your laptop. Always run these checks from the real source machine, or you might miss the real problem."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:55:08.544Z"
+}
