@@ -1,0 +1,80 @@
+{
+  "id": "threat-modeling-l6",
+  "title": "When to Perform Threat Modeling",
+  "keys": [
+    "design phase",
+    "architecture",
+    "review",
+    "milestones"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-timing",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "When should you model threats?",
+      "line2": "Is once enough?",
+      "say": "When should you actually do threat modeling? Is it just a one-time thing, or do you need to revisit it?"
+    },
+    {
+      "id": "1-chip-early",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "Early",
+      "sub": "Start threat modeling before you write code.",
+      "say": "The best time to start is before you write any code. Get ahead of threats right from the design phase."
+    },
+    {
+      "id": "2-rows-milestones",
+      "type": "rows",
+      "kicker": "Key Moments",
+      "rows": [
+        {
+          "a": "Design phase",
+          "b": "Map threats before coding"
+        },
+        {
+          "a": "Major changes",
+          "b": "Revisit with new architecture"
+        },
+        {
+          "a": "New features",
+          "b": "Update for added risks"
+        },
+        {
+          "a": "External services",
+          "b": "Review after integrations"
+        }
+      ],
+      "walk": true,
+      "say": "You should also revisit threat modeling when you hit major milestones, make big changes, add features, or bring in outside services."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "Adding a Payment Provider",
+      "lines": [
+        "$ npm install payment-sdk",
+        "$ update app routes",
+        "$ run threat-model review"
+      ],
+      "say": "For example, if your team adds a third-party payment provider, that's the perfect time to run another threat modeling session."
+    },
+    {
+      "id": "4-trap-checkbox",
+      "type": "trap",
+      "question": "Is threat modeling a one-time task?",
+      "wrong": "Yes, just do it at the start.",
+      "right": "No, repeat it with each big change or feature.",
+      "say": "Here's a common trap: thinking threat modeling is a one-time checkbox. In interviews, always say it's an ongoing process."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:03:42.600Z"
+}
