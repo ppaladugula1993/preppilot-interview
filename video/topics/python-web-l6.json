@@ -1,0 +1,84 @@
+{
+  "id": "python-web-l6",
+  "title": "WSGI vs ASGI, Gunicorn and Uvicorn",
+  "keys": [
+    "WSGI",
+    "ASGI",
+    "Gunicorn",
+    "Uvicorn",
+    "FastAPI"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-wsgi-asgi",
+      "type": "hook",
+      "kicker": "Python Web · FastAPI, Django, Flask",
+      "line1": "WSGI or ASGI?",
+      "line2": "Which server fits your app?",
+      "say": "WSGI or ASGI—do you know which server your app needs?"
+    },
+    {
+      "id": "1-chip-wsgi",
+      "type": "chip",
+      "kicker": "Interface",
+      "label": "WSGI",
+      "sub": "Synchronous interface for Django and Flask.",
+      "say": "WSGI is the classic synchronous interface used by Django and Flask."
+    },
+    {
+      "id": "2-chip-asgi",
+      "type": "chip",
+      "kicker": "Interface",
+      "label": "ASGI",
+      "sub": "Async interface required by FastAPI.",
+      "say": "ASGI is the async interface, perfect for FastAPI and real-time features."
+    },
+    {
+      "id": "3-compare-servers",
+      "type": "compare",
+      "kicker": "Servers",
+      "left": {
+        "title": "Gunicorn",
+        "items": [
+          "WSGI server",
+          "For Django, Flask"
+        ]
+      },
+      "right": {
+        "title": "Uvicorn",
+        "items": [
+          "ASGI server",
+          "For FastAPI"
+        ]
+      },
+      "say": "Gunicorn runs WSGI apps like Django and Flask. Uvicorn handles ASGI apps, like FastAPI."
+    },
+    {
+      "id": "4-terminal-examples",
+      "type": "terminal",
+      "kicker": "Production Commands",
+      "title": "How to run each",
+      "lines": [
+        "$ gunicorn myapp.wsgi:application",
+        "$ uvicorn main:app --host 0.0.0.0",
+        "$ uvicorn main:app --port 8000"
+      ],
+      "say": "Use Gunicorn for Django or Flask, and Uvicorn for FastAPI in production."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "Can you use Gunicorn for FastAPI?",
+      "wrong": "Yes, Gunicorn works for FastAPI.",
+      "right": "No, FastAPI needs an ASGI server like Uvicorn.",
+      "say": "Don’t mix them up! FastAPI needs an ASGI server like Uvicorn, not Gunicorn."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:22:03.169Z"
+}
