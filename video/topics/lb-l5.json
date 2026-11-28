@@ -1,0 +1,77 @@
+{
+  "id": "lb-l5",
+  "title": "What F5 BIG-IP LB Teams Build",
+  "keys": [
+    "Node",
+    "Pool",
+    "Virtual Server",
+    "SNAT",
+    "Profiles"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-f5-objects",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "What does the LB team really build?",
+      "line2": "Can you name the F5 objects?",
+      "say": "If you request a new VIP, do you know what the load balancer team actually configures behind the scenes?"
+    },
+    {
+      "id": "1-rows-f5-objects",
+      "type": "rows",
+      "kicker": "F5 BIG-IP Objects",
+      "rows": [
+        {
+          "a": "Node",
+          "b": "A backend server's IP address"
+        },
+        {
+          "a": "Pool",
+          "b": "Group of nodes, port, health check"
+        },
+        {
+          "a": "Virtual Server",
+          "b": "VIP and port, with profiles"
+        }
+      ],
+      "walk": true,
+      "say": "It starts with nodes, which are just backend server addresses. Then pools group those nodes, set the port, add health checks, and define load balancing. Finally, a virtual server ties it all together with a VIP, port, and profiles like SSL."
+    },
+    {
+      "id": "2-chip-snat",
+      "type": "chip",
+      "kicker": "Key Setting",
+      "label": "SNAT",
+      "sub": "Makes backend replies flow through the F5",
+      "say": "SNAT is often set to automap, so backend servers always reply through the F5. Without it, connections break."
+    },
+    {
+      "id": "3-terminal-f5-commands",
+      "type": "terminal",
+      "kicker": "What gets configured",
+      "title": "F5 tmsh examples",
+      "lines": [
+        "$ list ltm virtual vs_app_443",
+        "$ show ltm pool pool_app_8080 members",
+        "$ list ltm monitor http mon_app_health"
+      ],
+      "say": "These tmsh commands show the actual objects: the virtual server, the pool and its members, and the health monitor."
+    },
+    {
+      "id": "4-trap-f5-interview",
+      "type": "trap",
+      "question": "What does the LB team configure for a VIP?",
+      "wrong": "Just the VIP address and port",
+      "right": "Node, pool, virtual server, profiles, SNAT, and health checks",
+      "say": "In an interview, don't just say VIP and port. List out the node, pool, virtual server, profiles, SNAT, and health checks. That's what really gets built."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:45:17.064Z"
+}
