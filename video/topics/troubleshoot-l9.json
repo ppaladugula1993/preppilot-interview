@@ -1,0 +1,72 @@
+{
+  "id": "troubleshoot-l9",
+  "title": "On-Prem Path: Who to Engage & Why",
+  "keys": [
+    "on-prem",
+    "evidence",
+    "escalation",
+    "network"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-onprem",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity, Latency, Throughput · lesson",
+      "line1": "Who do you call when",
+      "line2": "the network breaks?",
+      "say": "Ever wonder who to engage when something breaks between your client and the server in a big company?"
+    },
+    {
+      "id": "1-rows-onprem-path",
+      "type": "rows",
+      "kicker": "On-Prem Path: Each Hop Matters",
+      "rows": [
+        {
+          "a": "Client",
+          "b": "Check IP config, connection type"
+        },
+        {
+          "a": "Switch",
+          "b": "Ask network team for port errors"
+        },
+        {
+          "a": "Firewall",
+          "b": "Traffic logs: allowed or blocked?"
+        },
+        {
+          "a": "Load Balancer",
+          "b": "Pool and VIP stats, packet captures"
+        },
+        {
+          "a": "Server",
+          "b": "Check firewall, logs, connections"
+        }
+      ],
+      "walk": true,
+      "say": "The path goes from your client, through switches, firewalls, and load balancers, all the way to the server. At each hop, you gather evidence or ask the right team for it."
+    },
+    {
+      "id": "2-chip-evidence",
+      "type": "chip",
+      "kicker": "Senior Skill",
+      "label": "Evidence",
+      "sub": "Bring the right data to the right team to get things fixed fast.",
+      "say": "The senior move? Bring clear evidence for each hop to the right team. That’s how you get things fixed quickly."
+    },
+    {
+      "id": "3-trap-mistake",
+      "type": "trap",
+      "question": "What’s a common escalation mistake?",
+      "wrong": "Just say 'App is down, check network.'",
+      "right": "Skip details and your ticket will sit in a queue. Give source, destination, port, time, and captures instead.",
+      "say": "Don’t just say the app is down and blame the network. Without details, your ticket will wait forever. Give source, destination, port, time, and captures."
+    },
+    {
+      "id": "4-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:14:09.232Z"
+}
