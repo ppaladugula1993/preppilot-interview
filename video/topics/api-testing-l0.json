@@ -1,0 +1,77 @@
+{
+  "id": "api-testing-l0",
+  "title": "API Response Validation Essentials",
+  "keys": [
+    "status code",
+    "schema",
+    "headers",
+    "error handling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-api-validation",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "How do you know an API works right?",
+      "line2": "What do you check?",
+      "say": "How do you know if an API is behaving exactly as it should? What should you check in every response?"
+    },
+    {
+      "id": "1-chip-status-schema",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Status",
+      "sub": "Check the status code matches what you expect.",
+      "say": "First, always check the status code. It tells you if the request succeeded or failed."
+    },
+    {
+      "id": "2-rows-schema-headers",
+      "type": "rows",
+      "kicker": "What to validate",
+      "rows": [
+        {
+          "a": "Schema",
+          "b": "Does the body match your schema?"
+        },
+        {
+          "a": "Headers",
+          "b": "Are content type and auth set right?"
+        },
+        {
+          "a": "Errors",
+          "b": "Does it handle bad input cleanly?"
+        }
+      ],
+      "walk": true,
+      "say": "Next, validate the response body against your schema, check headers for things like content type and authentication, and make sure errors are handled gracefully."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example: GET user",
+      "title": "Check response details",
+      "lines": [
+        "$ GET /users/123",
+        "200 OK",
+        "Content-Type: application/json",
+        "{ id: 123, name: 'Sam' }"
+      ],
+      "say": "For example, when you get a user, you want a two hundred status, JSON content type, and a response that matches your user schema."
+    },
+    {
+      "id": "4-trap-missed-header",
+      "type": "trap",
+      "question": "What if you skip checking headers?",
+      "wrong": "It's fine, they're not important.",
+      "right": "You might miss issues with content type or caching that break clients.",
+      "say": "Here's a trap: what if you skip checking headers? You could miss problems with content type or caching that cause real bugs."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:32:59.638Z"
+}
