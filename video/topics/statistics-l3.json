@@ -1,0 +1,72 @@
+{
+  "id": "statistics-l3",
+  "title": "Confidence Intervals Explained",
+  "keys": [
+    "confidence interval",
+    "sample mean",
+    "standard error",
+    "z-score"
+  ],
+  "scenes": [
+    {
+      "id": "0-ci-hook",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "How sure are you about your estimate?",
+      "line2": "What does a confidence interval show?",
+      "say": "How sure are you about your estimate? What does a confidence interval actually show?"
+    },
+    {
+      "id": "1-ci-chip",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Interval",
+      "sub": "A confidence interval gives a range where a population value likely falls, based on your sample.",
+      "say": "A confidence interval gives you a range where the real population value probably sits, based on your sample."
+    },
+    {
+      "id": "2-ci-rows",
+      "type": "rows",
+      "kicker": "How to Build It",
+      "rows": [
+        {
+          "a": "Sample mean",
+          "b": "Your best estimate"
+        },
+        {
+          "a": "Standard error",
+          "b": "Standard deviation divided by root of sample size"
+        },
+        {
+          "a": "Critical value",
+          "b": "Z-score for your confidence level"
+        }
+      ],
+      "walk": true,
+      "say": "You build a confidence interval using your sample mean, the standard error—which is the standard deviation divided by the square root of your sample size—and a z-score for your confidence level."
+    },
+    {
+      "id": "3-ci-code",
+      "type": "code",
+      "kicker": "Example Formula",
+      "lang": "python",
+      "code": "ci = mean ± 1.96 * (std / np.sqrt(n))",
+      "say": "For a ninety-five percent confidence interval, use your mean plus or minus one point nine six times the standard deviation over root n. This assumes a normal distribution and you know the population standard deviation."
+    },
+    {
+      "id": "4-ci-trap",
+      "type": "trap",
+      "question": "Does 95% CI mean 95% chance true value is inside?",
+      "wrong": "Yes, the true value has a 95% chance.",
+      "right": "No—over many samples, 95% of intervals will contain the true value. The true value is fixed; the interval is random.",
+      "say": "Careful: a ninety-five percent confidence interval doesn't mean there's a ninety-five percent chance the true value is inside. It means if you repeated the experiment many times, ninety-five percent of those intervals would capture the true value."
+    },
+    {
+      "id": "5-ci-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:36:51.736Z"
+}
