@@ -1,0 +1,73 @@
+{
+  "id": "python-core-l4",
+  "title": "Python Context Managers and with",
+  "keys": [
+    "context manager",
+    "with",
+    "resource",
+    "enter",
+    "exit"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-context-manager",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "How does Python clean up resources?",
+      "line2": "Why use with?",
+      "say": "Ever wonder how Python safely handles files, even if things go wrong? Let's see why the with statement matters."
+    },
+    {
+      "id": "1-chip-resource",
+      "type": "chip",
+      "kicker": "Key",
+      "label": "Resource",
+      "sub": "Anything you need to open and close, like files or locks.",
+      "say": "A resource is anything you need to open and close, like files or locks."
+    },
+    {
+      "id": "2-code-with-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "with open('f.txt') as f:\n    data = f.read()",
+      "say": "Here's a classic example. Using with to open a file means Python will always close it for you, even if an error happens."
+    },
+    {
+      "id": "3-rows-context-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Step 1",
+          "b": "Call enter to set up"
+        },
+        {
+          "a": "Step 2",
+          "b": "Run your code block"
+        },
+        {
+          "a": "Step 3",
+          "b": "Call exit to clean up"
+        }
+      ],
+      "walk": true,
+      "say": "Behind the scenes, with calls enter to set up, runs your code, then always calls exit to clean up."
+    },
+    {
+      "id": "4-trap-missing-exit",
+      "type": "trap",
+      "question": "What if you forget exit?",
+      "wrong": "Resource stays open forever.",
+      "right": "With always calls exit, even on errors.",
+      "say": "Here's a trap: forget to close a resource, and you might leak memory. With always calls exit, even if your code crashes."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:30:48.443Z"
+}
