@@ -1,0 +1,84 @@
+{
+  "id": "ml-fundamentals-l7",
+  "title": "Neural Network Basics for Interviews",
+  "keys": [
+    "neurons",
+    "activation",
+    "backpropagation",
+    "architecture"
+  ],
+  "scenes": [
+    {
+      "id": "0-nn-hook",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "How do neural networks learn?",
+      "line2": "What makes them powerful?",
+      "say": "Ever wondered how neural networks actually learn and why they're so powerful for deep learning?"
+    },
+    {
+      "id": "1-nn-rows",
+      "type": "rows",
+      "kicker": "Core Steps",
+      "rows": [
+        {
+          "a": "Input layer",
+          "b": "Receives raw features"
+        },
+        {
+          "a": "Hidden layers",
+          "b": "Transforms with activation"
+        },
+        {
+          "a": "Output layer",
+          "b": "Final prediction"
+        }
+      ],
+      "walk": true,
+      "say": "A neural network starts with an input layer, passes data through hidden layers using activation functions, and ends with an output layer for predictions."
+    },
+    {
+      "id": "2-nn-chip",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Backprop",
+      "sub": "Backpropagation updates weights to minimize error.",
+      "say": "Backpropagation is how networks update their weights to minimize prediction errors. It's the backbone of learning."
+    },
+    {
+      "id": "3-nn-compare",
+      "type": "compare",
+      "kicker": "Architectures",
+      "left": {
+        "title": "Feedforward",
+        "items": [
+          "Simple",
+          "No loops"
+        ]
+      },
+      "right": {
+        "title": "Convolutional",
+        "items": [
+          "Image tasks",
+          "Feature extraction"
+        ]
+      },
+      "say": "Feedforward networks are straightforward, while convolutional networks are specialized for tasks like image recognition."
+    },
+    {
+      "id": "4-nn-trap",
+      "type": "trap",
+      "question": "Why is feature scaling important?",
+      "wrong": "Neural networks ignore feature scale.",
+      "right": "Neural networks are sensitive to input scale. Scaling helps learning and stability.",
+      "say": "Interviewers love to ask about feature scaling. Neural networks actually depend on input scale, so scaling improves learning and keeps training stable."
+    },
+    {
+      "id": "5-nn-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:29:07.063Z"
+}
