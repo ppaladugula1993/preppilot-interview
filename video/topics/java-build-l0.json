@@ -1,0 +1,84 @@
+{
+  "id": "java-build-l0",
+  "title": "Maven Lifecycle & Phases Explained",
+  "keys": [
+    "maven",
+    "lifecycle",
+    "phases",
+    "plugins"
+  ],
+  "scenes": [
+    {
+      "id": "0-lifecycle-hook",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "Why does Maven have phases?",
+      "line2": "What do they control?",
+      "say": "Ever wonder why Maven splits builds into phases? What do those steps actually control?"
+    },
+    {
+      "id": "1-phases-row",
+      "type": "rows",
+      "kicker": "Build Steps",
+      "rows": [
+        {
+          "a": "validate",
+          "b": "Check project structure"
+        },
+        {
+          "a": "compile",
+          "b": "Turn source into bytecode"
+        },
+        {
+          "a": "test",
+          "b": "Run unit tests"
+        },
+        {
+          "a": "package",
+          "b": "Bundle code for shipping"
+        },
+        {
+          "a": "install",
+          "b": "Add to local repository"
+        }
+      ],
+      "walk": true,
+      "say": "Maven's lifecycle is a series of phases. It starts by checking your project, then compiles, tests, packages, and finally installs your build locally."
+    },
+    {
+      "id": "2-plugins-chip",
+      "type": "chip",
+      "kicker": "Customization",
+      "label": "Plugins",
+      "sub": "Plugins attach custom actions to any phase",
+      "say": "You can hook plugins to any phase, so extra steps like code analysis or deployment fit right into the flow."
+    },
+    {
+      "id": "3-test-terminal",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Run up to 'test' phase",
+      "lines": [
+        "$ mvn test",
+        "[INFO] Compiling sources",
+        "[INFO] Running unit tests"
+      ],
+      "say": "For example, running the test command compiles your code and runs all your unit tests automatically."
+    },
+    {
+      "id": "4-trap-phase",
+      "type": "trap",
+      "question": "Does 'mvn test' only run tests?",
+      "wrong": "Yes, it skips compile and package.",
+      "right": "No, it compiles first, then runs tests.",
+      "say": "Here's a classic interview trap: does running the test command only run tests? Not quite. Maven always completes earlier phases first, so it compiles before testing."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:30:01.073Z"
+}
