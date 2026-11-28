@@ -1,0 +1,91 @@
+{
+  "id": "java-core-l2",
+  "title": "Java Collections: List, Set, Map & HashMap",
+  "keys": [
+    "List",
+    "Set",
+    "Map",
+    "HashMap",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-core-java",
+      "type": "hook",
+      "kicker": "Core Java · lesson",
+      "line1": "Why do interviewers love collections?",
+      "line2": "What makes List, Set, Map unique?",
+      "say": "Ever wonder why interviewers always ask about Java collections? What makes List, Set, and Map so special?"
+    },
+    {
+      "id": "1-chip-list",
+      "type": "chip",
+      "kicker": "Collections",
+      "label": "List",
+      "sub": "ArrayList is fast for access, LinkedList is fast for insert and delete.",
+      "say": "Lists store ordered elements. ArrayList is quick for access, while LinkedList is better for insert and delete."
+    },
+    {
+      "id": "2-compare-set-map",
+      "type": "compare",
+      "kicker": "Types",
+      "left": {
+        "title": "Set",
+        "items": [
+          "No duplicates",
+          "HashSet: fast add",
+          "TreeSet: sorted"
+        ]
+      },
+      "right": {
+        "title": "Map",
+        "items": [
+          "Key-value pairs",
+          "HashMap: fast get",
+          "TreeMap: sorted keys"
+        ]
+      },
+      "say": "Sets prevent duplicates. HashSet adds quickly, TreeSet keeps things sorted. Maps store key-value pairs. HashMap gets values fast, TreeMap sorts keys."
+    },
+    {
+      "id": "3-rows-hashmap-interna",
+      "type": "rows",
+      "kicker": "HashMap Internals",
+      "rows": [
+        {
+          "a": "Buckets",
+          "b": "Store entries by hash code"
+        },
+        {
+          "a": "Chaining",
+          "b": "Handles collisions with lists"
+        },
+        {
+          "a": "Tree nodes",
+          "b": "Java 8+ uses trees for heavy collisions"
+        },
+        {
+          "a": "Resizing",
+          "b": "Grows automatically for performance"
+        }
+      ],
+      "walk": true,
+      "say": "HashMap uses buckets for storage. Collisions are handled with lists, and since Java eight, trees help when collisions get heavy. It resizes itself to stay fast."
+    },
+    {
+      "id": "4-trap-performance",
+      "type": "trap",
+      "question": "Is HashMap always O(1) for get?",
+      "wrong": "Yes, it's always constant time.",
+      "right": "No. Poor hashCode or too many collisions can slow it down.",
+      "say": "Is HashMap always constant time for getting values? Not if your hash code is bad or collisions pile up. Watch out for that."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:15:40.365Z"
+}
