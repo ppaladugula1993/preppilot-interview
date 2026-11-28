@@ -1,0 +1,68 @@
+{
+  "id": "scenarios-l0",
+  "title": "Senior Scenario Answer Framework",
+  "keys": [
+    "clarify",
+    "propose",
+    "trade-offs",
+    "operate"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-scenario",
+      "type": "hook",
+      "kicker": "Senior Scenarios · lesson",
+      "line1": "How do you ace any scenario?",
+      "line2": "What's the secret?",
+      "say": "Ever get a scenario question and freeze? Let’s break down how to answer any one confidently."
+    },
+    {
+      "id": "1-rows-framework",
+      "type": "rows",
+      "kicker": "Four Steps",
+      "rows": [
+        {
+          "a": "Clarify",
+          "b": "Ask about users, uptime, data, budget"
+        },
+        {
+          "a": "Propose",
+          "b": "Sketch the simple version first"
+        },
+        {
+          "a": "Trade-offs",
+          "b": "Explain changes for scale or cost"
+        },
+        {
+          "a": "Operate",
+          "b": "Cover monitoring, backups, rollback"
+        }
+      ],
+      "walk": true,
+      "say": "Use these four steps every time: clarify the requirements, propose a basic solution, discuss trade-offs, and explain how you’d operate it."
+    },
+    {
+      "id": "2-chip-clarify",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "Clarify",
+      "sub": "Ask one or two questions before answering.",
+      "say": "Start by asking a couple clarifying questions. It shows you think like a senior engineer."
+    },
+    {
+      "id": "3-trap-perfect",
+      "type": "trap",
+      "question": "Should you aim for a perfect design?",
+      "wrong": "Yes, always chase perfection.",
+      "right": "No. Interviewers care more about your reasoning than flawless designs.",
+      "say": "Don’t worry about perfect solutions. Interviewers want to see your thought process, not perfection."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:08:27.125Z"
+}
