@@ -1,0 +1,73 @@
+{
+  "id": "python-data-l0",
+  "title": "NumPy Arrays and Vectorization",
+  "keys": [
+    "NumPy",
+    "array",
+    "vectorization",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-numpy-vectoriza",
+      "type": "hook",
+      "kicker": "Python for Data (pandas, NumPy) · lesson",
+      "line1": "Why use NumPy arrays?",
+      "line2": "What makes them so fast?",
+      "say": "Ever wonder why NumPy arrays are the go-to for data crunching? What makes them faster than regular Python lists?"
+    },
+    {
+      "id": "1-chip-array-basics",
+      "type": "chip",
+      "kicker": "NumPy Arrays",
+      "label": "Arrays",
+      "sub": "Multidimensional, fixed-type, and built for speed.",
+      "say": "NumPy arrays are multidimensional and have a fixed data type. That means they're optimized for fast, element-wise operations."
+    },
+    {
+      "id": "2-compare-loops-vs-vec",
+      "type": "compare",
+      "kicker": "Loops vs Vectorization",
+      "left": {
+        "title": "Python Loops",
+        "items": [
+          "Slow",
+          "Row-by-row",
+          "Not scalable"
+        ]
+      },
+      "right": {
+        "title": "Vectorized Ops",
+        "items": [
+          "Fast",
+          "Bulk operations",
+          "Uses C backend"
+        ]
+      },
+      "say": "Instead of looping through each element, vectorized operations let NumPy handle the math in bulk, tapping into its C backend for speed."
+    },
+    {
+      "id": "3-code-add-arrays",
+      "type": "code",
+      "kicker": "Element-wise Addition",
+      "lang": "python",
+      "code": "import numpy as np\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nresult = a + b\n# result: [5, 7, 9]",
+      "say": "Here, adding two arrays is done in one shot. No loops needed. The result is instant and efficient."
+    },
+    {
+      "id": "4-trap-vectorization",
+      "type": "trap",
+      "question": "Why avoid .apply for big DataFrames?",
+      "wrong": "It's more readable.",
+      "right": "Because .apply is slow; vectorized ops are faster.",
+      "say": "Interviewers love to ask about .apply. Remember, it's slow for big data because it works row by row. Vectorized operations are way faster."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:32:38.540Z"
+}
