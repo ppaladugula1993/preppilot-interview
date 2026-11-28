@@ -1,0 +1,72 @@
+{
+  "id": "cloud-l9",
+  "title": "Bastion, Key Vault & Managed Access",
+  "keys": [
+    "Bastion",
+    "Key Vault",
+    "RBAC",
+    "Managed Identity"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-secure-access",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "How do you reach private VMs",
+      "line2": "without public IPs?",
+      "say": "How do you connect to private virtual machines in the cloud without exposing public IP addresses?"
+    },
+    {
+      "id": "1-chip-bastion",
+      "type": "chip",
+      "kicker": "Access",
+      "label": "Bastion",
+      "sub": "Portal or CLI RDP/SSH to VMs, no public IPs.",
+      "say": "Azure Bastion lets you connect to your virtual machines using Remote Desktop or SSH, right from the portal or command line, without ever needing a public IP."
+    },
+    {
+      "id": "2-rows-keyvault",
+      "type": "rows",
+      "kicker": "Secrets",
+      "rows": [
+        {
+          "a": "Key Vault",
+          "b": "Stores secrets, keys, certs"
+        },
+        {
+          "a": "RBAC",
+          "b": "Controls who can access what"
+        },
+        {
+          "a": "Managed Identity",
+          "b": "No passwords in code"
+        }
+      ],
+      "walk": true,
+      "say": "Key Vault holds your secrets, keys, and certificates. Role-based access control decides who gets in. Managed identities mean your apps never need passwords in their code."
+    },
+    {
+      "id": "3-chip-jit",
+      "type": "chip",
+      "kicker": "Admin",
+      "label": "Just-in-Time",
+      "sub": "Admins get rights only when needed.",
+      "say": "Just-in-time access and privileged identity management make sure admin rights are only active when you actually need them."
+    },
+    {
+      "id": "4-trap-public-ip",
+      "type": "trap",
+      "question": "Can you just add a public IP for admin?",
+      "wrong": "Sure, open port 3389 or 22.",
+      "right": "Never expose public IPs. Use Bastion, VPN, or a jump host with just-in-time access.",
+      "say": "Here's a trap: Is it okay to just add a public IP for admin access? Never do this. Use Bastion, a VPN, or a jump host, and always limit admin access windows."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:55:07.419Z"
+}
