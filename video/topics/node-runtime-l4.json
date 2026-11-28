@@ -1,0 +1,75 @@
+{
+  "id": "node-runtime-l4",
+  "title": "Node.js: Memory Leaks & Heap Snapshots",
+  "keys": [
+    "memory leak",
+    "heap snapshot",
+    "DevTools",
+    "node --inspect"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-memory-leak",
+      "type": "hook",
+      "kicker": "Node.js Runtime · lesson",
+      "line1": "Why does Node.js memory keep growing?",
+      "line2": "How do you catch a leak?",
+      "say": "Ever notice your Node app using more memory over time? How do you spot what's leaking?"
+    },
+    {
+      "id": "1-chip-leak-define",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Leak",
+      "sub": "A memory leak means objects stick around when they shouldn't.",
+      "say": "A memory leak happens when your code keeps holding on to objects it no longer needs. That makes memory usage creep up."
+    },
+    {
+      "id": "2-terminal-inspect",
+      "type": "terminal",
+      "kicker": "Tool",
+      "title": "Start Inspector",
+      "lines": [
+        "$ node --inspect app.js",
+        "Debugger listening on port 9229"
+      ],
+      "say": "To hunt leaks, start your app with the inspect flag. This lets you connect Chrome DevTools and look under the hood."
+    },
+    {
+      "id": "3-rows-heap-snapshot",
+      "type": "rows",
+      "kicker": "Steps",
+      "rows": [
+        {
+          "a": "Open DevTools",
+          "b": "Go to the memory tab"
+        },
+        {
+          "a": "Take snapshot",
+          "b": "Capture heap state"
+        },
+        {
+          "a": "Compare snapshots",
+          "b": "Spot growing objects"
+        }
+      ],
+      "walk": true,
+      "say": "Open Chrome DevTools, head to the memory tab, take a heap snapshot, then compare snapshots to find which objects keep growing."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How do you catch memory leaks?",
+      "wrong": "Just restart the app sometimes.",
+      "right": "Use heap snapshots in DevTools or node inspect to spot leaks.",
+      "say": "Interview trap: It's not enough to just restart your app. Show you know how to use heap snapshots and the inspector to actually find leaks."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:08:09.637Z"
+}
