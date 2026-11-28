@@ -1,0 +1,78 @@
+{
+  "id": "k8s-l7",
+  "title": "Kubernetes Requests and Limits",
+  "keys": [
+    "requests",
+    "limits",
+    "scheduler",
+    "CPU",
+    "memory"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-requests-limits",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "Why do pods get throttled or killed?",
+      "line2": "What are requests and limits?",
+      "say": "Ever wonder why your pod slows down or suddenly disappears? Let's break down requests and limits in Kubernetes."
+    },
+    {
+      "id": "1-compare-requests-lim",
+      "type": "compare",
+      "kicker": "Requests vs Limits",
+      "left": {
+        "title": "Requests",
+        "items": [
+          "Scheduler reserves these",
+          "Minimum needed to run"
+        ]
+      },
+      "right": {
+        "title": "Limits",
+        "items": [
+          "Maximum allowed",
+          "Go over CPU: throttled",
+          "Go over memory: killed"
+        ]
+      },
+      "say": "Requests are what Kubernetes guarantees for your container. Limits are the absolute maximum. If you exceed the CPU limit, your container gets throttled. If you go over the memory limit, it's killed."
+    },
+    {
+      "id": "2-rows-pod-behavior",
+      "type": "rows",
+      "kicker": "Pod Behavior",
+      "rows": [
+        {
+          "a": "Pending pod",
+          "b": "Not enough resources for requests"
+        },
+        {
+          "a": "Slow pod",
+          "b": "CPU limit is hit"
+        },
+        {
+          "a": "OOMKilled pod",
+          "b": "Memory limit is exceeded"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s what happens: a pod stays pending if there aren’t enough resources for its requests. It slows down if it hits its CPU limit. And it’s killed if it goes over its memory limit."
+    },
+    {
+      "id": "3-trap-no-requests",
+      "type": "trap",
+      "question": "What if you set no requests?",
+      "wrong": "The scheduler reserves nothing.",
+      "right": "The scheduler guesses what your pod needs, which can cause unpredictable performance.",
+      "say": "If you don’t set requests, Kubernetes guesses what your pod needs. That can lead to unpredictable performance."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:00:55.046Z"
+}
