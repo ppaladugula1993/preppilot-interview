@@ -1,0 +1,71 @@
+{
+  "id": "python-data-l5",
+  "title": "DataFrame Speed: Apply, Dtypes, Polars",
+  "keys": [
+    "apply",
+    "vectorized",
+    "dtypes",
+    "polars"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-avoid-slowdowns",
+      "type": "hook",
+      "kicker": "Python for Data · lesson",
+      "line1": "Why is your DataFrame slow?",
+      "line2": "Can you make it faster?",
+      "say": "Ever wonder why your DataFrame code is crawling? Let’s see how to speed it up and impress interviewers."
+    },
+    {
+      "id": "1-compare-apply-vs-vec",
+      "type": "compare",
+      "kicker": "Performance",
+      "left": {
+        "title": "Apply Loops",
+        "items": [
+          "Row by row",
+          "Slow for big data"
+        ]
+      },
+      "right": {
+        "title": "Vectorized",
+        "items": [
+          "Runs in compiled code",
+          "Much faster"
+        ]
+      },
+      "say": "Using apply with custom functions runs row by row in Python. Vectorized operations, like multiplying a column directly, run in compiled code and are way faster."
+    },
+    {
+      "id": "2-chip-dtype-optimizat",
+      "type": "chip",
+      "kicker": "Memory",
+      "label": "Dtypes",
+      "sub": "Choosing types like int32 or category cuts memory use.",
+      "say": "Optimizing data types, like picking int thirty-two or category instead of object, can shrink memory use and boost speed."
+    },
+    {
+      "id": "3-chip-polars-advantag",
+      "type": "chip",
+      "kicker": "Tools",
+      "label": "Polars",
+      "sub": "Polars is faster than pandas for big data.",
+      "say": "Polars is a newer DataFrame library. It’s faster and more efficient than pandas for large datasets, thanks to its Rust backend."
+    },
+    {
+      "id": "4-trap-apply-trap",
+      "type": "trap",
+      "question": "What’s wrong with using apply?",
+      "wrong": "It’s always fine for any size.",
+      "right": "Apply is slow for big data. Vectorized ops are much faster.",
+      "say": "Here’s a trap: What’s wrong with using apply on a huge DataFrame? It’s slow. Always go vectorized for speed."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:44:30.964Z"
+}
