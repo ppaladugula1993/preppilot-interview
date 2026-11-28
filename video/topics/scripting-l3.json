@@ -1,0 +1,81 @@
+{
+  "id": "scripting-l3",
+  "title": "PowerShell for Fleets: Objects, Not Text",
+  "keys": [
+    "PowerShell",
+    "Objects",
+    "Where-Object",
+    "Invoke-Command",
+    "Export-Csv"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-fleets-powershe",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "How do you automate",
+      "line2": "hundreds of Windows servers?",
+      "say": "How do you automate hundreds of Windows servers without losing your mind?"
+    },
+    {
+      "id": "1-chip-objects",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Objects",
+      "sub": "PowerShell passes objects, not plain text.",
+      "say": "PowerShell passes objects, not just text. That means you can filter and select properties directly."
+    },
+    {
+      "id": "2-terminal-port-check",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Check ports, export to CSV",
+      "lines": [
+        "$servers = Get-Content .\\servers.txt",
+        "$servers | ForEach-Object {",
+        "  [pscustomobject]@{",
+        "    Server = $_",
+        "    Https  = (Test-NetConnection $_ -Port 443).TcpTestSucceeded",
+        "  }",
+        "} | Export-Csv .\\port-report.csv"
+      ],
+      "say": "Grab your server list, test each one for open ports, and export the results straight to a spreadsheet. No messy text parsing."
+    },
+    {
+      "id": "3-rows-remote",
+      "type": "rows",
+      "kicker": "Remote at Scale",
+      "rows": [
+        {
+          "a": "Invoke-Command",
+          "b": "Run scripts on many servers"
+        },
+        {
+          "a": "WinRM",
+          "b": "Connects securely to each box"
+        },
+        {
+          "a": "Select-Object",
+          "b": "Pick only the fields you need"
+        }
+      ],
+      "walk": true,
+      "say": "You can run scripts in parallel across your whole fleet using Invoke-Command and WinRM. Just pick the data you want with Select-Object."
+    },
+    {
+      "id": "4-trap-wmi",
+      "type": "trap",
+      "question": "Which cmdlet replaces Get-WmiObject?",
+      "wrong": "Get-Service",
+      "right": "Get-CimInstance is the modern choice for services.",
+      "say": "Watch out: interviewers love to ask which command replaces the old Get WMI Object. The answer is Get Cim Instance."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:03:49.282Z"
+}
