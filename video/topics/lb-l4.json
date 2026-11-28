@@ -1,0 +1,82 @@
+{
+  "id": "lb-l4",
+  "title": "HTTP Errors at the Load Balancer",
+  "keys": [
+    "502",
+    "503",
+    "504",
+    "health check"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-http-lb-errors",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "Ever seen a 502 or 503 error?",
+      "line2": "What do they really mean?",
+      "say": "Ever seen a five oh two or five oh three error? What do they actually tell you about your app?"
+    },
+    {
+      "id": "1-chip-502",
+      "type": "chip",
+      "kicker": "LB HTTP Errors",
+      "label": "502",
+      "sub": "Bad Gateway: backend refused or sent junk",
+      "say": "A five oh two means the backend refused the connection or sent something the load balancer couldn't read."
+    },
+    {
+      "id": "2-rows-503-504",
+      "type": "rows",
+      "kicker": "LB HTTP Errors",
+      "rows": [
+        {
+          "a": "503",
+          "b": "No healthy servers in the pool"
+        },
+        {
+          "a": "504",
+          "b": "Backend too slow to answer"
+        }
+      ],
+      "walk": true,
+      "say": "A five oh three means there are no healthy servers left. Five oh four means the backend was too slow to respond."
+    },
+    {
+      "id": "3-compare-lb-vs-app-er",
+      "type": "compare",
+      "kicker": "LB vs App Errors",
+      "left": {
+        "title": "LB Errors",
+        "items": [
+          "502",
+          "503",
+          "504"
+        ]
+      },
+      "right": {
+        "title": "App Errors",
+        "items": [
+          "401: Needs authentication",
+          "403: Forbidden",
+          "404: Not found"
+        ]
+      },
+      "say": "Not all errors come from the load balancer. Four oh one means authentication required. Four oh three is forbidden. Four oh four means the path doesn't exist."
+    },
+    {
+      "id": "4-trap-health-check",
+      "type": "trap",
+      "question": "What could cause a 503 after deploy?",
+      "wrong": "The backend sent junk data",
+      "right": "The health check path might be missing or wrong",
+      "say": "Here's a classic trap: if you see a five oh three after a deploy, check if the health check path still exists. That's a common cause."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:42:56.131Z"
+}
