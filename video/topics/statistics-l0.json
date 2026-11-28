@@ -1,0 +1,89 @@
+{
+  "id": "statistics-l0",
+  "title": "Descriptive Stats & Data Distributions",
+  "keys": [
+    "mean",
+    "median",
+    "variance",
+    "normal"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-distributions",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "How do you quickly summarize data?",
+      "line2": "What shapes should you look for?",
+      "say": "How do you quickly summarize a dataset, and what shapes should you look for before modeling?"
+    },
+    {
+      "id": "1-chip-summary",
+      "type": "chip",
+      "kicker": "Descriptive Stats",
+      "label": "Mean",
+      "sub": "Average value, helps spot central tendency.",
+      "say": "The mean shows the average, helping you spot the central tendency."
+    },
+    {
+      "id": "2-rows-measures",
+      "type": "rows",
+      "kicker": "Common Measures",
+      "rows": [
+        {
+          "a": "Median",
+          "b": "Middle value, robust to outliers"
+        },
+        {
+          "a": "Mode",
+          "b": "Most frequent value"
+        },
+        {
+          "a": "Variance",
+          "b": "Spread of data"
+        },
+        {
+          "a": "Std Dev",
+          "b": "Typical distance from mean"
+        }
+      ],
+      "walk": true,
+      "say": "Median is the middle value, mode is the most frequent, variance measures spread, and standard deviation shows typical distance from the mean."
+    },
+    {
+      "id": "3-compare-distribution",
+      "type": "compare",
+      "kicker": "Distribution Types",
+      "left": {
+        "title": "Normal",
+        "items": [
+          "Bell-shaped",
+          "Mean zero",
+          "Std dev one"
+        ]
+      },
+      "right": {
+        "title": "Binomial & Poisson",
+        "items": [
+          "Binomial: two outcomes",
+          "Poisson: event counts"
+        ]
+      },
+      "say": "Normal distributions are bell-shaped, binomial has two outcomes, and Poisson counts events in fixed intervals."
+    },
+    {
+      "id": "4-trap-summary",
+      "type": "trap",
+      "question": "Is variance always enough to describe spread?",
+      "wrong": "Yes, variance fully describes spread.",
+      "right": "Variance helps, but standard deviation is more interpretable and both are needed for a full picture.",
+      "say": "Is variance always enough to describe spread? Actually, variance helps, but standard deviation is more interpretable. Both matter for a full picture."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:28:05.296Z"
+}
