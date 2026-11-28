@@ -1,0 +1,77 @@
+{
+  "id": "k8s-l0",
+  "title": "Kubernetes Architecture, Fast",
+  "keys": [
+    "control plane",
+    "worker node",
+    "kube-apiserver",
+    "kubelet"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-arch",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "Who runs your containers?",
+      "line2": "What’s the real boss?",
+      "say": "Ever wonder who actually runs your containers in Kubernetes? Let's break down who's really in charge."
+    },
+    {
+      "id": "1-compare-plane-node",
+      "type": "compare",
+      "kicker": "Big Picture",
+      "left": {
+        "title": "Control Plane",
+        "items": [
+          "API server: front door",
+          "etcd: stores cluster state",
+          "Scheduler: places pods",
+          "Controllers: keep state right"
+        ]
+      },
+      "right": {
+        "title": "Worker Node",
+        "items": [
+          "Kubelet: runs pods",
+          "Kube-proxy: routes traffic",
+          "Containerd: runs containers"
+        ]
+      },
+      "say": "The control plane makes all the decisions. Worker nodes do the actual work, running your containers and handling traffic."
+    },
+    {
+      "id": "2-chip-declare",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Declarative",
+      "sub": "You say what you want; controllers make it true.",
+      "say": "Here's the magic: you declare what you want, and controllers keep working until that's reality."
+    },
+    {
+      "id": "3-terminal-commands",
+      "type": "terminal",
+      "kicker": "Check It Out",
+      "title": "Control Plane in Action",
+      "lines": [
+        "$ kubectl get nodes -o wide",
+        "$ kubectl get pods -n kube-system"
+      ],
+      "say": "Try these commands to see your nodes and the system pods running behind the scenes."
+    },
+    {
+      "id": "4-trap-firstq",
+      "type": "trap",
+      "question": "What does the worker node do?",
+      "wrong": "It makes scheduling decisions.",
+      "right": "It runs containers and handles traffic.",
+      "say": "Here's a classic interview trap: worker nodes don't make decisions—they just run the containers and handle networking."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:42:33.812Z"
+}
