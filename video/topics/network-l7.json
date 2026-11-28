@@ -1,0 +1,96 @@
+{
+  "id": "network-l7",
+  "title": "HTTP Essentials for Interviews",
+  "keys": [
+    "HTTP methods",
+    "headers",
+    "status codes",
+    "keep-alive"
+  ],
+  "scenes": [
+    {
+      "id": "0-http-hook",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "How does HTTP power web apps?",
+      "line2": "What should you know?",
+      "say": "Ever wondered what makes web apps tick? Let's break down the essentials of HTTP you need for interviews."
+    },
+    {
+      "id": "1-http-methods-chip",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Methods",
+      "sub": "GET fetches, POST creates, PUT updates, DELETE removes",
+      "say": "HTTP methods are the verbs of the web. Get fetches, Post creates, Put updates, and Delete removes data."
+    },
+    {
+      "id": "2-http-headers-rows",
+      "type": "rows",
+      "kicker": "Headers matter",
+      "rows": [
+        {
+          "a": "Host",
+          "b": "Specifies target site"
+        },
+        {
+          "a": "Authorization",
+          "b": "Credentials for access"
+        },
+        {
+          "a": "X-Forwarded-For",
+          "b": "Shows original client IP"
+        },
+        {
+          "a": "Cache-Control",
+          "b": "Manages caching rules"
+        }
+      ],
+      "walk": false,
+      "say": "Headers carry info like which site you're hitting, credentials, the user's real IP, and how caching works."
+    },
+    {
+      "id": "3-http-status-compare",
+      "type": "compare",
+      "kicker": "Status codes",
+      "left": {
+        "title": "Success & Redirect",
+        "items": [
+          "2xx: OK",
+          "3xx: Redirects"
+        ]
+      },
+      "right": {
+        "title": "Errors",
+        "items": [
+          "4xx: Client issues",
+          "5xx: Server problems"
+        ]
+      },
+      "say": "Status codes tell you if things worked, redirected, or failed. Two hundred means OK, three hundred means redirect, four hundred is client error, five hundred is server error."
+    },
+    {
+      "id": "4-http-keepalive-chip",
+      "type": "chip",
+      "kicker": "Efficiency",
+      "label": "Keep-Alive",
+      "sub": "Reuses connections for faster requests",
+      "say": "Keep-alive lets HTTP reuse connections, speeding up multiple requests between client and server."
+    },
+    {
+      "id": "5-http-trap",
+      "type": "trap",
+      "question": "How do you check if a bug is in the app or LB?",
+      "wrong": "Just hit the public URL with curl.",
+      "right": "Send a request directly to the backend with the correct Host header to isolate the issue.",
+      "say": "Here's a common interview trap: To check if a bug is in the app or the load balancer, don't just hit the public address. Instead, target the backend directly with the right Host header."
+    },
+    {
+      "id": "6-http-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:28:13.850Z"
+}
