@@ -1,0 +1,67 @@
+{
+  "id": "python-data-l2",
+  "title": "GroupBy & Pivot Tables in Pandas",
+  "keys": [
+    "groupby",
+    "aggregation",
+    "pivot table",
+    "summarize"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-groupby-pivot",
+      "type": "hook",
+      "kicker": "Python for Data (pandas, NumPy) · lesson",
+      "line1": "How do you spot trends fast?",
+      "line2": "GroupBy or Pivot Table?",
+      "say": "Ever wondered how to instantly spot trends in messy data? Should you use groupby or a pivot table?"
+    },
+    {
+      "id": "1-chip-groupby",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "GroupBy",
+      "sub": "Splits data into groups, applies functions, and combines results.",
+      "say": "Groupby splits your data into groups, runs calculations on each, then puts it all back together."
+    },
+    {
+      "id": "2-code-groupby-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "df.groupby('category')['sales'].sum()",
+      "say": "Here's how you'd total sales for each category. Just group by category, then sum sales."
+    },
+    {
+      "id": "3-chip-pivot-table",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Pivot",
+      "sub": "Reshapes and summarizes data across categories.",
+      "say": "Pivot tables reshape data, letting you compare values across categories and time, all in one view."
+    },
+    {
+      "id": "4-code-pivot-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "df.pivot_table(\n  values='sales',\n  index='region',\n  columns='year',\n  aggfunc='mean'\n)",
+      "say": "This pivot table shows average sales by region and year. Super handy for quick comparisons."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "How do you sum sales by region?",
+      "wrong": "Use a pivot table with sum.",
+      "right": "Group by region and sum sales for a fast summary.",
+      "say": "Interview trap! If they ask how to sum sales by region, go with groupby and sum. It's the fastest way."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:37:06.747Z"
+}
