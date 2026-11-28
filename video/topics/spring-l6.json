@@ -1,0 +1,84 @@
+{
+  "id": "spring-l6",
+  "title": "Actuator & Micrometer Metrics in Spring Boot",
+  "keys": [
+    "Actuator",
+    "Micrometer",
+    "Metrics",
+    "Health"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-actuator-metric",
+      "type": "hook",
+      "kicker": "Spring & Spring Boot · lesson",
+      "line1": "How do you monitor your app?",
+      "line2": "Actuator or Micrometer?",
+      "say": "Ever wondered how to track your Spring Boot app’s health and performance in production?"
+    },
+    {
+      "id": "1-chip-actuator",
+      "type": "chip",
+      "kicker": "Key Feature",
+      "label": "Actuator",
+      "sub": "Exposes endpoints for health, metrics, and info.",
+      "say": "Actuator gives you built-in endpoints for health checks, metrics, and app info."
+    },
+    {
+      "id": "2-compare-micrometer",
+      "type": "compare",
+      "kicker": "Metrics Integration",
+      "left": {
+        "title": "Actuator",
+        "items": [
+          "Built-in endpoints",
+          "Health checks"
+        ]
+      },
+      "right": {
+        "title": "Micrometer",
+        "items": [
+          "Exports metrics",
+          "Works with Prometheus"
+        ]
+      },
+      "say": "Micrometer works with Actuator to export metrics to tools like Prometheus, so you can monitor your app externally."
+    },
+    {
+      "id": "3-rows-health-customiz",
+      "type": "rows",
+      "kicker": "Custom Health Checks",
+      "rows": [
+        {
+          "a": "Database",
+          "b": "Check connection status"
+        },
+        {
+          "a": "Disk",
+          "b": "Monitor free space"
+        },
+        {
+          "a": "Custom",
+          "b": "Add your own indicators"
+        }
+      ],
+      "walk": true,
+      "say": "You can customize health checks to include your database, disk space, or anything else you need."
+    },
+    {
+      "id": "4-trap-endpoint-exposu",
+      "type": "trap",
+      "question": "How do you expose Actuator endpoints?",
+      "wrong": "Just add Actuator to dependencies.",
+      "right": "Set endpoint exposure in settings to choose which endpoints are available.",
+      "say": "Don’t forget, you need to configure which endpoints are actually exposed, not just add Actuator."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:24:44.100Z"
+}
