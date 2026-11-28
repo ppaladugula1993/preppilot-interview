@@ -1,0 +1,72 @@
+{
+  "id": "python-core-l5",
+  "title": "*args, **kwargs & Default Pitfalls",
+  "keys": [
+    "*args",
+    "**kwargs",
+    "default arguments",
+    "mutable defaults"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-flexible-bugfre",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "How do you write flexible APIs?",
+      "line2": "And avoid hidden bugs?",
+      "say": "Ever wonder how to accept any number of arguments in Python, and dodge sneaky bugs with default values?"
+    },
+    {
+      "id": "1-chip-args-kwargs",
+      "type": "chip",
+      "kicker": "*args & **kwargs",
+      "label": "Flexible",
+      "sub": "*args grabs extra positionals, **kwargs grabs extra keywords.",
+      "say": "Star args collects extra positional arguments. Double star kwargs catches any extra keyword arguments."
+    },
+    {
+      "id": "2-code-mutable-default",
+      "type": "code",
+      "kicker": "Default Argument Pitfall",
+      "lang": "python",
+      "code": "def h(x, l=[]):\n    l.append(x)\n    return l",
+      "say": "Here's a classic trap. If you use a list as a default, it keeps growing every time you call the function."
+    },
+    {
+      "id": "3-rows-fix-mutable-def",
+      "type": "rows",
+      "kicker": "Safe Defaults",
+      "rows": [
+        {
+          "a": "Use None as default",
+          "b": "def f(x, l=None):"
+        },
+        {
+          "a": "Check inside function",
+          "b": "if l is None: l = []"
+        },
+        {
+          "a": "Now no shared state",
+          "b": "Each call gets a fresh list"
+        }
+      ],
+      "walk": true,
+      "say": "Instead, use None as your default, then create a new list inside the function. That way, each call is safe."
+    },
+    {
+      "id": "4-trap-mutable-default",
+      "type": "trap",
+      "question": "What happens if you use a list as a default?",
+      "wrong": "A new list is created each call.",
+      "right": "The same list is reused, causing shared state bugs.",
+      "say": "Here's a common interview trap. If you use a list as a default, Python reuses that list every time. That can lead to weird bugs."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:32:26.962Z"
+}
