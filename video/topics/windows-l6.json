@@ -1,0 +1,85 @@
+{
+  "id": "windows-l6",
+  "title": "Patching Windows Servers: What Matters",
+  "keys": [
+    "WSUS",
+    "SCCM",
+    "Intune",
+    "Patch Tuesday",
+    "Rollback"
+  ],
+  "scenes": [
+    {
+      "id": "0-patching-hook",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "How do you patch Windows servers?",
+      "line2": "And roll back if it breaks?",
+      "say": "How do you patch Windows servers—and what if an update goes wrong?"
+    },
+    {
+      "id": "1-update-tools",
+      "type": "chip",
+      "kicker": "Update Tools",
+      "label": "WSUS",
+      "sub": "WSUS, SCCM, and Intune approve and push updates in rings.",
+      "say": "Most companies use WSUS, SCCM, or Intune to approve and push updates in waves called rings."
+    },
+    {
+      "id": "2-patch-tuesday",
+      "type": "chip",
+      "kicker": "Schedule",
+      "label": "PatchDay",
+      "sub": "Patch Tuesday is the second Tuesday monthly.",
+      "say": "Patch Tuesday happens on the second Tuesday of every month. That's when most updates drop."
+    },
+    {
+      "id": "3-rollback-steps",
+      "type": "rows",
+      "kicker": "Rollback Steps",
+      "rows": [
+        {
+          "a": "1. Uninstall patch",
+          "b": "Use PowerShell or wusa tool"
+        },
+        {
+          "a": "2. Decline in WSUS",
+          "b": "Stop it from reinstalling"
+        },
+        {
+          "a": "3. Check reboot",
+          "b": "Pending reboot? Confirm in registry"
+        }
+      ],
+      "walk": true,
+      "say": "If a patch causes issues, uninstall it with PowerShell or the wusa tool. Decline it in WSUS so it doesn't come back. Then, check if a reboot is pending in the registry."
+    },
+    {
+      "id": "4-rollback-terminal",
+      "type": "terminal",
+      "kicker": "Command Line",
+      "title": "Uninstall & Check Reboot",
+      "lines": [
+        "$ Get-HotFix -Id KB5034441",
+        "$ wusa /uninstall /kb:5034441 /quiet",
+        "$ Test-Path '...RebootRequired'"
+      ],
+      "say": "Use Get-HotFix to check if a patch is installed, wusa to uninstall it quietly, and Test-Path to see if a reboot is required."
+    },
+    {
+      "id": "5-trap-pitfall",
+      "type": "trap",
+      "question": "What's the rollback gotcha?",
+      "wrong": "Just uninstall the patch—done.",
+      "right": "You must decline it in WSUS or SCCM, or it'll reinstall automatically.",
+      "say": "Here's the pitfall: if you only uninstall a bad patch, it may come right back. Always decline it in WSUS or SCCM to block it."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:29:07.953Z"
+}
