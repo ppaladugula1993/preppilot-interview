@@ -1,0 +1,77 @@
+{
+  "id": "monitoring-l1",
+  "title": "Prometheus: How It Monitors Systems",
+  "keys": [
+    "Prometheus",
+    "pull",
+    "metrics",
+    "Alertmanager"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-prometheus",
+      "type": "hook",
+      "kicker": "Monitoring · lesson",
+      "line1": "How does Prometheus collect data?",
+      "line2": "Pull or push?",
+      "say": "Ever wondered how Prometheus grabs its metrics? Does it pull, or does it push?"
+    },
+    {
+      "id": "1-chip-pull",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Pull",
+      "sub": "Prometheus pulls metrics from each target's endpoint on a schedule.",
+      "say": "Prometheus uses a pull model. It regularly scrapes each target's metrics endpoint on its own schedule."
+    },
+    {
+      "id": "2-rows-pipeline",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Scrape targets",
+          "b": "Pulls from each metrics endpoint"
+        },
+        {
+          "a": "Store time series",
+          "b": "Saves all metrics over time"
+        },
+        {
+          "a": "Alert rules",
+          "b": "Evaluates and sends alerts"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the flow: Prometheus scrapes targets, stores the data as time series, then checks alert rules and sends alerts if needed."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Config Example",
+      "title": "prometheus.yml",
+      "lines": [
+        "scrape_configs:",
+        "- job_name: node",
+        "  static_configs:",
+        "  - targets: ['web01:9100']"
+      ],
+      "say": "In the config, you define which endpoints to scrape. For example, here it targets web zero one on port ninety one hundred."
+    },
+    {
+      "id": "4-trap-push-vs-pull",
+      "type": "trap",
+      "question": "Does Prometheus push or pull metrics?",
+      "wrong": "It pushes metrics to targets.",
+      "right": "It pulls metrics from targets on a schedule.",
+      "say": "Don't mix this up: Prometheus doesn't push metrics to targets. It pulls them, which helps it spot downed systems."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:58:41.642Z"
+}
