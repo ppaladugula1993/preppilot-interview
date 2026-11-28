@@ -1,0 +1,72 @@
+{
+  "id": "flutter-l3",
+  "title": "Flutter Build Method: What & Why",
+  "keys": [
+    "build method",
+    "widget tree",
+    "render",
+    "state change"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-build-refresh",
+      "type": "hook",
+      "kicker": "Flutter · lesson",
+      "line1": "How does Flutter know",
+      "line2": "when to redraw your UI?",
+      "say": "Ever wonder how Flutter decides when to redraw your app? Let's break down the build method."
+    },
+    {
+      "id": "1-chip-ui-update",
+      "type": "chip",
+      "kicker": "Core idea",
+      "label": "Build",
+      "sub": "Describes how a widget displays itself using other widgets.",
+      "say": "The build method tells Flutter exactly how your widget should look by returning a tree of widgets."
+    },
+    {
+      "id": "2-code-build-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "dart",
+      "code": "Widget build(BuildContext context) {\n  return Scaffold(\n    body: Center(child: Text('Hello')),\n  );\n}",
+      "say": "Here's a typical build method. It returns a scaffold with a centered hello text. The build method runs every time the widget needs to update."
+    },
+    {
+      "id": "3-rows-when-build-runs",
+      "type": "rows",
+      "kicker": "When does build run?",
+      "rows": [
+        {
+          "a": "On widget creation",
+          "b": "First time the widget appears"
+        },
+        {
+          "a": "After state change",
+          "b": "When set state is called"
+        },
+        {
+          "a": "When parent updates",
+          "b": "If parent widget rebuilds"
+        }
+      ],
+      "walk": true,
+      "say": "Build gets called when the widget is first created, after any state change, or if the parent widget rebuilds."
+    },
+    {
+      "id": "4-trap-side-effect",
+      "type": "trap",
+      "question": "Is it okay to fetch data in build?",
+      "wrong": "Yes, build is a good place for side effects.",
+      "right": "No, keep build fast and side-effect free. Use init state or callbacks for side effects.",
+      "say": "Here's a classic trap: never run side effects like network calls in build. Keep it fast and pure."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:44:31.130Z"
+}
