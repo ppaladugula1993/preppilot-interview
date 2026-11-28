@@ -1,0 +1,80 @@
+{
+  "id": "react-native-l8",
+  "title": "Expo Updates & Permissions Essentials",
+  "keys": [
+    "Expo",
+    "OTA",
+    "Permissions",
+    "Bare workflow"
+  ],
+  "scenes": [
+    {
+      "id": "0-expo-hook",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "Expo makes updates easy.",
+      "line2": "But what about permissions?",
+      "say": "Expo makes updates a breeze. But how does it handle app permissions, and where can things get tricky?"
+    },
+    {
+      "id": "1-ota-chip",
+      "type": "chip",
+      "kicker": "Expo",
+      "label": "Updates",
+      "sub": "Push code changes instantly with OTA updates.",
+      "say": "Expo lets you push code changes instantly with over the air updates. No app store approval needed for JavaScript or assets."
+    },
+    {
+      "id": "2-permissions-compare",
+      "type": "compare",
+      "kicker": "Permissions API",
+      "left": {
+        "title": "Old",
+        "items": [
+          "expo-permissions package",
+          "One module for all permissions"
+        ]
+      },
+      "right": {
+        "title": "Now",
+        "items": [
+          "Separate modules like expo-camera",
+          "Import only what you need"
+        ]
+      },
+      "say": "In older Expo projects, you used one permissions package. Now, you import only what you need, like camera or location, for better modularity."
+    },
+    {
+      "id": "3-workflow-rows",
+      "type": "rows",
+      "kicker": "Workflows",
+      "rows": [
+        {
+          "a": "Managed workflow",
+          "b": "Easy updates, no custom native code"
+        },
+        {
+          "a": "Bare workflow",
+          "b": "Custom native code, manual updates"
+        }
+      ],
+      "walk": true,
+      "say": "Expo's managed workflow is great for quick updates but doesn't allow custom native code. The bare workflow gives you full native access, but you lose some Expo magic."
+    },
+    {
+      "id": "4-trap-permissions",
+      "type": "trap",
+      "question": "Can you use custom native modules in managed?",
+      "wrong": "Yes, just install them.",
+      "right": "No, managed workflow blocks custom native modules unless you eject to bare.",
+      "say": "Watch out: you can't use custom native modules in managed workflow unless you eject to bare. That's a common interview gotcha."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:18:37.907Z"
+}
