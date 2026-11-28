@@ -1,0 +1,62 @@
+{
+  "id": "python-packaging-l6",
+  "title": "Type Checking with mypy in Python",
+  "keys": [
+    "type hints",
+    "mypy",
+    "static analysis",
+    "type errors"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-type-checking",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "Can Python catch bugs before running?",
+      "line2": "How does type checking work?",
+      "say": "Ever wish Python could catch type bugs before your code even runs? Let's see how type checking helps."
+    },
+    {
+      "id": "1-chip-type-hints",
+      "type": "chip",
+      "kicker": "Type Hints",
+      "label": "Optional",
+      "sub": "Add type hints to functions for clarity and better tooling.",
+      "say": "Type hints are optional, but adding them to your functions makes your code clearer and helps your tools help you."
+    },
+    {
+      "id": "2-code-type-hint-examp",
+      "type": "code",
+      "kicker": "Type Hint Example",
+      "lang": "python",
+      "code": "def add(a: int, b: int) -> int:\n    return a + b",
+      "say": "Here's a quick example. This add function takes two integers and returns an integer. The type hints make it obvious what goes in and what comes out."
+    },
+    {
+      "id": "3-terminal-mypy",
+      "type": "terminal",
+      "kicker": "Check Types",
+      "title": "Run mypy to find type errors",
+      "lines": [
+        "$ mypy src/",
+        "Success: no issues found in 1 source file"
+      ],
+      "say": "Once you've added type hints, run mypy on your source code. It checks for type errors before you even run your program."
+    },
+    {
+      "id": "4-trap-type-checking",
+      "type": "trap",
+      "question": "Are type hints required for Python to run?",
+      "wrong": "Yes, Python won't run without them.",
+      "right": "Nope! Type hints are totally optional, but they help tools like mypy catch bugs early.",
+      "say": "Here's a common trap: are type hints required for Python to run? Nope. They're optional, but super helpful for catching bugs early."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:18:20.187Z"
+}
