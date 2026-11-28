@@ -1,0 +1,84 @@
+{
+  "id": "docker-l0",
+  "title": "Docker Image vs Container",
+  "keys": [
+    "image",
+    "container",
+    "template",
+    "writable layer"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-image-or-contai",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "Image or container?",
+      "line2": "What's the difference?",
+      "say": "Every Docker interview starts here. Do you know the real difference between an image and a container?"
+    },
+    {
+      "id": "1-chip-image",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Image",
+      "sub": "A read-only template, built in layers.",
+      "say": "First up, an image is just a read-only template. Think of it as the blueprint for your app."
+    },
+    {
+      "id": "2-chip-container",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Container",
+      "sub": "A running instance with its own writable layer.",
+      "say": "A container is what you get when you launch that blueprint. It's running, and it has its own writable layer for changes."
+    },
+    {
+      "id": "3-compare-class-object",
+      "type": "compare",
+      "kicker": "Analogy",
+      "left": {
+        "title": "Image",
+        "items": [
+          "Like a class",
+          "Reusable template"
+        ]
+      },
+      "right": {
+        "title": "Container",
+        "items": [
+          "Like an object",
+          "Live and unique"
+        ]
+      },
+      "say": "If you know object-oriented programming, here's a shortcut: an image is like a class, while a container is like an object created from that class."
+    },
+    {
+      "id": "4-terminal-image-conta",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "From image to container",
+      "lines": [
+        "$ docker pull nginx:1.27",
+        "$ docker images",
+        "$ docker run -d --name web -p 8080:80 nginx:1.27",
+        "$ docker ps"
+      ],
+      "say": "You pull an image, list your images, and then run a container from it. Now, that container is alive and writable."
+    },
+    {
+      "id": "5-trap-common-mixup",
+      "type": "trap",
+      "question": "Is an image ever writable?",
+      "wrong": "Yes, you can write to it.",
+      "right": "Nope. Images are always read-only. Only containers get a writable layer on top.",
+      "say": "Here's a common trap: images are never writable. Only containers can be changed while running."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:53:38.129Z"
+}
