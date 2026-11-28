@@ -1,0 +1,68 @@
+{
+  "id": "onboarding-l1",
+  "title": "App Intake: Questions for the Team",
+  "keys": [
+    "intake",
+    "requirements",
+    "dependencies",
+    "onboarding"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-intake",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "What should you ask the app team?",
+      "line2": "Avoid go-live surprises.",
+      "say": "Ever seen a go-live stall because someone missed a port or forgot a compliance rule? Let's fix that with the right intake questions."
+    },
+    {
+      "id": "1-rows-intake",
+      "type": "rows",
+      "kicker": "Cover all four categories",
+      "rows": [
+        {
+          "a": "Business",
+          "b": "Owner, users, compliance, deadline"
+        },
+        {
+          "a": "Technical",
+          "b": "Stack, sizing, ports, auth, DB"
+        },
+        {
+          "a": "Non-Functional",
+          "b": "Availability, RTO/RPO, load, backups"
+        },
+        {
+          "a": "Operational",
+          "b": "Support, deploy, monitoring, patching"
+        }
+      ],
+      "walk": true,
+      "say": "Group your intake into business, technical, non-functional, and operational. Ask about owners, users, stack, ports, uptime, and support."
+    },
+    {
+      "id": "2-chip-deps",
+      "type": "chip",
+      "kicker": "Dependencies",
+      "label": "Ports",
+      "sub": "Ask for inbound and outbound ports—both directions.",
+      "say": "Always get a full list of dependencies, including ports going out and coming in. Outbound to a partner is the classic gotcha."
+    },
+    {
+      "id": "3-trap-missed-port",
+      "type": "trap",
+      "question": "What’s the most common missed item?",
+      "wrong": "Inbound API port for the app",
+      "right": "Outbound dependency, like a SaaS or DB port nobody mentioned",
+      "say": "Most teams forget outbound ports—like a SaaS or database connection. That’s what bites you on go-live day."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:02:59.182Z"
+}
