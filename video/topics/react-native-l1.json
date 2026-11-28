@@ -1,0 +1,73 @@
+{
+  "id": "react-native-l1",
+  "title": "Expo vs Bare Workflow in React Native",
+  "keys": [
+    "Expo",
+    "bare workflow",
+    "native code",
+    "prototyping"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-expo-bare",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "Expo or bare workflow?",
+      "line2": "Which should you choose?",
+      "say": "Ever wonder if you should start your React Native project with Expo or go bare? Let's break down when each makes sense."
+    },
+    {
+      "id": "1-chip-expo",
+      "type": "chip",
+      "kicker": "Expo",
+      "label": "Managed",
+      "sub": "No native code needed. Fast setup.",
+      "say": "Expo is a managed workflow. You skip the native setup and get building right away."
+    },
+    {
+      "id": "2-chip-bare",
+      "type": "chip",
+      "kicker": "Bare",
+      "label": "Custom",
+      "sub": "Full access to native files. More control.",
+      "say": "The bare workflow gives you full access to native code. Great for custom modules and deep integrations."
+    },
+    {
+      "id": "3-compare-workflows",
+      "type": "compare",
+      "kicker": "Workflow Choice",
+      "left": {
+        "title": "Expo",
+        "items": [
+          "Rapid prototyping",
+          "No Xcode or Android Studio",
+          "Limited native customizations"
+        ]
+      },
+      "right": {
+        "title": "Bare",
+        "items": [
+          "Custom native modules",
+          "Manual setup",
+          "Full flexibility"
+        ]
+      },
+      "say": "Expo is my pick for fast prototypes or simple apps. Bare is better when you need advanced native features."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Can you add any native module with Expo?",
+      "wrong": "Yes, Expo supports all native modules.",
+      "right": "No, Expo limits native modules. Use bare workflow for full native access.",
+      "say": "Interview trap: Expo doesn't let you add just any native module. That's where the bare workflow shines."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:01:15.322Z"
+}
