@@ -1,0 +1,84 @@
+{
+  "id": "k8s-l11",
+  "title": "Helm, RBAC & Namespaces in Kubernetes",
+  "keys": [
+    "Helm",
+    "RBAC",
+    "Namespaces",
+    "Cluster"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-k8s-prod",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "How do you run apps in production?",
+      "line2": "What makes it safe?",
+      "say": "Ever wonder how teams package, split, and secure apps in Kubernetes for production?"
+    },
+    {
+      "id": "1-chip-helm",
+      "type": "chip",
+      "kicker": "Helm",
+      "label": "Charts",
+      "sub": "Packages apps as charts with custom values.",
+      "say": "Helm wraps your app into a chart, letting you customize settings for each environment."
+    },
+    {
+      "id": "2-rows-namespaces",
+      "type": "rows",
+      "kicker": "Namespaces",
+      "rows": [
+        {
+          "a": "Create",
+          "b": "Split clusters by team or env"
+        },
+        {
+          "a": "Isolate",
+          "b": "Limit access and resources"
+        },
+        {
+          "a": "Manage",
+          "b": "Organize workloads cleanly"
+        }
+      ],
+      "walk": true,
+      "say": "Namespaces split your cluster, so each team or environment stays separate and organized."
+    },
+    {
+      "id": "3-compare-rbac",
+      "type": "compare",
+      "kicker": "RBAC",
+      "left": {
+        "title": "Without RBAC",
+        "items": [
+          "Anyone can do anything",
+          "Risky for production"
+        ]
+      },
+      "right": {
+        "title": "With RBAC",
+        "items": [
+          "Control who can act",
+          "Least privilege enforced"
+        ]
+      },
+      "say": "Role-based access control locks down who can do what, so only the right people have the right permissions."
+    },
+    {
+      "id": "4-trap-prod-secure",
+      "type": "trap",
+      "question": "How do you secure a Kubernetes cluster?",
+      "wrong": "Just use Helm and namespaces.",
+      "right": "Use RBAC, namespaces, network policies, and trusted images.",
+      "say": "If asked about security, don't just mention Helm and namespaces. RBAC, network policies, and trusted images matter too."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:35:18.476Z"
+}
