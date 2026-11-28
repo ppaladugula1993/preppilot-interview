@@ -1,0 +1,81 @@
+{
+  "id": "troubleshoot-l7",
+  "title": "Azure Troubleshooting Toolkit Essentials",
+  "keys": [
+    "Network Watcher",
+    "NSG",
+    "next hop",
+    "effective routes"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-azure-toolkit",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity, Latency, Throughput · lesson",
+      "line1": "Can't see where Azure traffic dies?",
+      "line2": "How do you prove it?",
+      "say": "Ever wonder why your Azure VM can't reach a service, but you can't just plug into a switch to check? How do you actually prove where the traffic stops?"
+    },
+    {
+      "id": "1-chip-network-watcher",
+      "type": "chip",
+      "kicker": "Azure Toolkit",
+      "label": "Watcher",
+      "sub": "Network Watcher shows if traffic is allowed, and where it goes next.",
+      "say": "Network Watcher is your go-to tool. It tells you if traffic is allowed, and where it would go, without any guesswork."
+    },
+    {
+      "id": "2-rows-nsg-next-hop",
+      "type": "rows",
+      "kicker": "Key Checks",
+      "rows": [
+        {
+          "a": "Effective NSG",
+          "b": "See real security rules on the NIC"
+        },
+        {
+          "a": "IP Flow Verify",
+          "b": "Test if a connection would be allowed"
+        },
+        {
+          "a": "Next Hop",
+          "b": "Find the next device traffic hits"
+        },
+        {
+          "a": "Effective Routes",
+          "b": "Check what routes apply"
+        }
+      ],
+      "walk": true,
+      "say": "First, look at the effective security rules on the network card. Then, use IP Flow Verify to check if a connection would be allowed. Next Hop shows the next device your traffic hits, and Effective Routes tells you what routes actually apply."
+    },
+    {
+      "id": "3-terminal-test-comman",
+      "type": "terminal",
+      "kicker": "Real-World Example",
+      "title": "Diagnose with Azure CLI",
+      "lines": [
+        "$ az network watcher test-ip-flow ...",
+        "$ az network watcher show-next-hop ...",
+        "$ az network nic list-effective-nsg ...",
+        "$ az network watcher test-connectivity ..."
+      ],
+      "say": "You can use the Azure command line to run these checks. Test if a network security group allows the traffic, see where packets go next, list effective security rules, and test end-to-end connectivity."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "What do you check after NSG rules?",
+      "wrong": "Go straight to firewall logs",
+      "right": "Check the next hop and effective routes to see if traffic is routed or black-holed before looking at firewall logs.",
+      "say": "Here's a common trap: After checking security group rules, don't jump straight to firewall logs. Always check the next hop and effective routes first. You might find traffic is black-holed before it even reaches a firewall."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:07:53.020Z"
+}
