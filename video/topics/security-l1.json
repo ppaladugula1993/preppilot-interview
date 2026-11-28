@@ -1,0 +1,69 @@
+{
+  "id": "security-l1",
+  "title": "Vulnerability Triage: What to Fix First",
+  "keys": [
+    "triage",
+    "internet-facing",
+    "exploit",
+    "CVSS",
+    "change management"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-triage-critical",
+      "type": "hook",
+      "kicker": "Security & Change · lesson",
+      "line1": "200 critical vulnerabilities?",
+      "line2": "Where do you start?",
+      "say": "Your scan just flagged hundreds of critical issues. How do you decide what to fix first?"
+    },
+    {
+      "id": "1-rows-triage-steps",
+      "type": "rows",
+      "kicker": "Triage Steps",
+      "rows": [
+        {
+          "a": "1. Internet-facing",
+          "b": "Most exposed, highest risk"
+        },
+        {
+          "a": "2. Known exploited",
+          "b": "Check CISA KEV list"
+        },
+        {
+          "a": "3. CVSS score",
+          "b": "Prioritize by severity"
+        },
+        {
+          "a": "4. Group by fix",
+          "b": "One patch clears many"
+        }
+      ],
+      "walk": true,
+      "say": "First, tackle systems open to the internet. Next, look for vulnerabilities with known exploits. Then, use the CVSS score to sort by severity. Finally, group findings by fix—one patch can solve dozens."
+    },
+    {
+      "id": "2-chip-change-manageme",
+      "type": "chip",
+      "kicker": "Change Process",
+      "label": "Waves",
+      "sub": "Schedule fixes in batches, document exceptions.",
+      "say": "Roll out patches in waves through change management. If you can't fix everything, document exceptions and set a deadline."
+    },
+    {
+      "id": "3-trap-triage-risk",
+      "type": "trap",
+      "question": "What's the best triage approach?",
+      "wrong": "Fix the highest CVSS scores first.",
+      "right": "Start with internet-facing and known exploited, then use CVSS. Group by fix and document exceptions.",
+      "say": "Don't just chase the highest scores. Think about exposure and real-world exploits first."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:58:10.887Z"
+}
