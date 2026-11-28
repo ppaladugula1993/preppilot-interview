@@ -1,0 +1,75 @@
+{
+  "id": "ml-fundamentals-l3",
+  "title": "Evaluation Metrics for ML Interviews",
+  "keys": [
+    "accuracy",
+    "precision",
+    "recall",
+    "F1-score",
+    "ROC-AUC"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-metrics-matter",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "Which metric should you use?",
+      "line2": "Does it really matter?",
+      "say": "Which metric should you use to judge your model? Does it really matter? Let's break it down."
+    },
+    {
+      "id": "1-chip-classification",
+      "type": "chip",
+      "kicker": "Classification",
+      "label": "Precision",
+      "sub": "How many predicted positives are correct?",
+      "say": "Precision tells you, out of everything your model flagged as positive, how many were actually right."
+    },
+    {
+      "id": "2-compare-precision-re",
+      "type": "compare",
+      "kicker": "Key Metrics",
+      "left": {
+        "title": "Precision",
+        "items": [
+          "Few false alarms",
+          "Good for spam filters"
+        ]
+      },
+      "right": {
+        "title": "Recall",
+        "items": [
+          "Few misses",
+          "Good for fraud detection"
+        ]
+      },
+      "say": "Precision and recall measure different things. Precision is about avoiding false alarms, great for spam filters. Recall is about catching as many real cases as possible, like in fraud detection."
+    },
+    {
+      "id": "3-terminal-f1-rmse",
+      "type": "terminal",
+      "kicker": "Other Metrics",
+      "title": "F1-score & RMSE",
+      "lines": [
+        "$ F1 = 2 * (P * R) / (P + R)",
+        "$ RMSE = sqrt(mean((y - yhat)^2))"
+      ],
+      "say": "F1-score balances precision and recall, especially useful with imbalanced data. For regression, root mean squared error punishes big mistakes."
+    },
+    {
+      "id": "4-trap-metric-choice",
+      "type": "trap",
+      "question": "Is accuracy always the best metric?",
+      "wrong": "Yes, it's the simplest.",
+      "right": "No, accuracy can mislead with imbalanced data. Use F1 or ROC-AUC instead.",
+      "say": "Is accuracy always the best metric? Nope. If your data is imbalanced, accuracy can fool you. Use F1-score or ROC-AUC instead."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:05:31.017Z"
+}
