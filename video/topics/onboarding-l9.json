@@ -1,0 +1,83 @@
+{
+  "id": "onboarding-l9",
+  "title": "Testing Before Go-Live: What Matters",
+  "keys": [
+    "smoke test",
+    "load test",
+    "resilience",
+    "UAT"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-testing-ready",
+      "type": "hook",
+      "kicker": "App Onboarding · testing",
+      "line1": "How do you know your app is ready?",
+      "line2": "Is a page load enough?",
+      "say": "How do you know your app is actually ready for launch? Is seeing the homepage load really enough?"
+    },
+    {
+      "id": "1-chip-smoke",
+      "type": "chip",
+      "kicker": "First check",
+      "label": "Smoke",
+      "sub": "Quick hits: does the app respond at all?",
+      "say": "Start with a smoke test. Just check if the app responds at all, not if every feature works."
+    },
+    {
+      "id": "2-terminal-load",
+      "type": "terminal",
+      "kicker": "Load test",
+      "title": "Simulate real users",
+      "lines": [
+        "$ k6 run --vus 200 --duration 10m load.js",
+        "# or use JMeter or Azure Load Testing"
+      ],
+      "say": "Next, run a load test. Simulate hundreds of users at once to see if things slow down or break."
+    },
+    {
+      "id": "3-rows-resilience",
+      "type": "rows",
+      "kicker": "Resilience steps",
+      "rows": [
+        {
+          "a": "Kill a backend",
+          "b": "Stop one app node"
+        },
+        {
+          "a": "Check load balancer",
+          "b": "Drains traffic cleanly"
+        },
+        {
+          "a": "User impact",
+          "b": "No errors for real users"
+        }
+      ],
+      "walk": true,
+      "say": "Test resilience. Stop one backend and watch if the load balancer drains it smoothly, with no errors for users."
+    },
+    {
+      "id": "4-chip-uat",
+      "type": "chip",
+      "kicker": "Final check",
+      "label": "UAT",
+      "sub": "Business users run their test cases",
+      "say": "Finally, business users do user acceptance testing. They run their cases and sign off in writing."
+    },
+    {
+      "id": "5-trap-failover",
+      "type": "trap",
+      "question": "Which test do teams often skip?",
+      "wrong": "Security scan",
+      "right": "Failover—pulling a node to check resilience",
+      "say": "Here's a trap: most teams skip the failover test. Pulling a node in a test environment is cheap. Missing a health check in production is not."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:22:52.837Z"
+}
