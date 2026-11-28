@@ -1,0 +1,95 @@
+{
+  "id": "python-core",
+  "title": "Mutable vs Immutable: Python's Core Idea",
+  "keys": [
+    "mutable",
+    "immutable",
+    "list",
+    "tuple",
+    "assignment"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-mutable-or-immu",
+      "type": "hook",
+      "kicker": "Core Python · 45 seconds",
+      "line1": "Is your data safe from surprise changes?",
+      "line2": "Mutable or immutable?",
+      "say": "Ever changed a list and got weird bugs? Let's see why knowing mutable versus immutable types is core in Python."
+    },
+    {
+      "id": "1-chip-mutable",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Mutable",
+      "sub": "Lists and dicts can be changed after creation.",
+      "say": "Mutable types, like lists and dictionaries, can be changed in place after you make them."
+    },
+    {
+      "id": "2-chip-immutable",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Immutable",
+      "sub": "Tuples and strings can't be changed after creation.",
+      "say": "Immutable types, like tuples and strings, can't be changed once they're created."
+    },
+    {
+      "id": "3-rows-assignments",
+      "type": "rows",
+      "kicker": "Assignment",
+      "rows": [
+        {
+          "a": "x = [1, 2]",
+          "b": "x points to a list"
+        },
+        {
+          "a": "y = x",
+          "b": "y points to the same list"
+        },
+        {
+          "a": "x.append(3)",
+          "b": "y sees the change too"
+        }
+      ],
+      "walk": true,
+      "say": "Assignment doesn't copy objects. It just points another name to the same thing. If you change a mutable object, every reference sees that change."
+    },
+    {
+      "id": "4-compare-list-tuple",
+      "type": "compare",
+      "kicker": "Collections",
+      "left": {
+        "title": "List",
+        "items": [
+          "Mutable",
+          "Ordered",
+          "Square brackets"
+        ]
+      },
+      "right": {
+        "title": "Tuple",
+        "items": [
+          "Immutable",
+          "Ordered",
+          "Parentheses"
+        ]
+      },
+      "say": "Lists and tuples look similar, but lists are mutable and use square brackets. Tuples are immutable and use parentheses."
+    },
+    {
+      "id": "5-trap-shallow-copy",
+      "type": "trap",
+      "question": "Does list.copy() copy everything?",
+      "wrong": "Yes, it copies all nested objects.",
+      "right": "No, it only copies the outer list. Nested objects are still shared.",
+      "say": "Here's a classic trap: copying a list with list dot copy only copies the outer list. Any nested objects inside are still shared."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:23:26.192Z"
+}
