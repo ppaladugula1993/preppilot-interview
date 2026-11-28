@@ -1,0 +1,80 @@
+{
+  "id": "virt-l0",
+  "title": "vSphere Features Every Engineer Needs",
+  "keys": [
+    "vMotion",
+    "HA",
+    "DRS",
+    "Templates"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vsphere-feature",
+      "type": "hook",
+      "kicker": "VMware & Storage · lesson",
+      "line1": "Why do vSphere features matter?",
+      "line2": "What do they actually do?",
+      "say": "Ever wondered why vSphere features are a must-know for any virtualization role? What makes them so important?"
+    },
+    {
+      "id": "1-chip-vmotion",
+      "type": "chip",
+      "kicker": "Key Feature",
+      "label": "vMotion",
+      "sub": "Move a running VM to another host with zero downtime.",
+      "say": "vMotion lets you shift a running virtual machine to another host, no downtime at all."
+    },
+    {
+      "id": "2-compare-ha-drs",
+      "type": "compare",
+      "kicker": "Core Differences",
+      "left": {
+        "title": "HA",
+        "items": [
+          "Restarts VMs if host fails",
+          "Short outage"
+        ]
+      },
+      "right": {
+        "title": "DRS",
+        "items": [
+          "Balances load",
+          "Moves VMs live"
+        ]
+      },
+      "say": "High Availability restarts virtual machines if a host crashes. Distributed Resource Scheduler moves VMs around to balance workloads, all while they keep running."
+    },
+    {
+      "id": "3-rows-templates",
+      "type": "rows",
+      "kicker": "VM Deployment",
+      "rows": [
+        {
+          "a": "Templates",
+          "b": "Golden image for new VMs"
+        },
+        {
+          "a": "Customization",
+          "b": "Set hostname, IP, domain on clone"
+        }
+      ],
+      "walk": true,
+      "say": "Templates act as a golden image, making new VM creation fast. Customization specs set details like hostname and network settings during cloning."
+    },
+    {
+      "id": "4-trap-ha-fault-tolera",
+      "type": "trap",
+      "question": "Does HA prevent all VM downtime?",
+      "wrong": "Yes, VMs stay online always.",
+      "right": "No, HA restarts VMs after a host fails—there’s a short outage. Fault Tolerance keeps a live copy, with zero downtime.",
+      "say": "Here’s a common interview trap: Does High Availability prevent all downtime? Actually, it just restarts VMs after a host fails, so there’s a brief outage. Fault Tolerance is what keeps things running nonstop."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:23:32.508Z"
+}
