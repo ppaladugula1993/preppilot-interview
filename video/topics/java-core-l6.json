@@ -1,0 +1,73 @@
+{
+  "id": "java-core-l6",
+  "title": "Interfaces vs Abstract Classes in Java",
+  "keys": [
+    "interface",
+    "abstract class",
+    "default method",
+    "contract"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-intf-abs",
+      "type": "hook",
+      "kicker": "Core Java · lesson",
+      "line1": "Interfaces or abstract classes?",
+      "line2": "Which one, and when?",
+      "say": "Ever wonder when to use an interface versus an abstract class in Java?"
+    },
+    {
+      "id": "1-compare-intf-abs",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "Interface",
+        "items": [
+          "Defines a contract",
+          "No state allowed",
+          "Default methods since Java 8"
+        ]
+      },
+      "right": {
+        "title": "Abstract Class",
+        "items": [
+          "Can have state",
+          "Partial implementation",
+          "Fields and methods"
+        ]
+      },
+      "say": "Interfaces set the rules but can't hold data. Abstract classes can store state and share code. Since Java eight, interfaces can also have default methods with logic."
+    },
+    {
+      "id": "2-code-default-method",
+      "type": "code",
+      "kicker": "Default Methods",
+      "lang": "java",
+      "code": "interface Shape {\n  double area();\n  default void print() {\n    System.out.println(\"Shape\");\n  }\n}",
+      "say": "Here's a Shape interface. It has an area method and a default print method. Default methods let you add logic to interfaces without breaking old code."
+    },
+    {
+      "id": "3-chip-design-choice",
+      "type": "chip",
+      "kicker": "Design Tip",
+      "label": "Choice",
+      "sub": "Use interfaces for contracts, abstract classes for shared state.",
+      "say": "My rule: interfaces for contracts and reusable logic, abstract classes when I need to store fields."
+    },
+    {
+      "id": "4-trap-tricky",
+      "type": "trap",
+      "question": "Can interfaces have fields?",
+      "wrong": "Yes, since Java 8",
+      "right": "No, interfaces can't have instance fields—only constants.",
+      "say": "Watch out: interfaces can't have instance fields. Only constants are allowed."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:20:46.657Z"
+}
