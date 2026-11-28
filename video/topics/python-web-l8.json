@@ -1,0 +1,82 @@
+{
+  "id": "python-web-l8",
+  "title": "Deploy Python Web Apps in Containers",
+  "keys": [
+    "Docker",
+    "WSGI",
+    "ASGI",
+    "multi-stage"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-container-deplo",
+      "type": "hook",
+      "kicker": "Python Web · Deploying in Containers",
+      "line1": "How do you deploy Python web apps?",
+      "line2": "What makes containers essential?",
+      "say": "Ever wonder how to deploy your FastAPI, Django, or Flask app so it runs reliably everywhere? Why are containers the go-to solution?"
+    },
+    {
+      "id": "1-chip-docker-benefits",
+      "type": "chip",
+      "kicker": "Why Containers?",
+      "label": "Docker",
+      "sub": "Docker gives you a consistent setup, so your app runs the same on any machine or cloud.",
+      "say": "Docker makes your environment predictable. No more 'works on my machine' headaches—your app runs the same in development and production."
+    },
+    {
+      "id": "2-rows-deploy-steps",
+      "type": "rows",
+      "kicker": "Deployment Steps",
+      "rows": [
+        {
+          "a": "Write Dockerfile",
+          "b": "Define app image and dependencies"
+        },
+        {
+          "a": "Multi-stage build",
+          "b": "Optimize for production"
+        },
+        {
+          "a": "Choose server",
+          "b": "Use Gunicorn for WSGI, Uvicorn for ASGI"
+        },
+        {
+          "a": "Run container",
+          "b": "Launch app in a managed environment"
+        }
+      ],
+      "walk": true,
+      "say": "First, create a Dockerfile for your app. Use multi-stage builds to keep images lean. Pick Gunicorn for synchronous apps or Uvicorn for async ones. Then, run your container wherever you need."
+    },
+    {
+      "id": "3-terminal-prod-docker",
+      "type": "terminal",
+      "kicker": "Production Example",
+      "title": "Sample Dockerfile",
+      "lines": [
+        "$ FROM python:3.11-slim",
+        "$ WORKDIR /app",
+        "$ COPY . .",
+        "$ RUN pip install -r requirements.txt",
+        "$ CMD [\"gunicorn\", \"myapp.wsgi:application\"]"
+      ],
+      "say": "Here's a typical Dockerfile for a Django app. It installs dependencies and launches your app with Gunicorn, a production-ready server."
+    },
+    {
+      "id": "4-trap-server-choice",
+      "type": "trap",
+      "question": "Should you use Flask's built-in server in production?",
+      "wrong": "Yes, it's good enough for production.",
+      "right": "No, use Gunicorn or Uvicorn for production. Built-in servers are only for development.",
+      "say": "Don't use Flask's built-in server in production. Always choose Gunicorn or Uvicorn for reliability and performance."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:27:48.479Z"
+}
