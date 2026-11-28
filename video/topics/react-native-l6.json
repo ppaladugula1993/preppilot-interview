@@ -1,0 +1,76 @@
+{
+  "id": "react-native-l6",
+  "title": "React Native Deep Linking & State",
+  "keys": [
+    "deep linking",
+    "navigation state",
+    "React Navigation",
+    "URL mapping"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-deep-linking",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "How do apps open to the right screen?",
+      "line2": "What powers deep linking?",
+      "say": "Ever tapped a notification and landed on the exact screen you needed? Let's see how deep linking makes that work in React Native."
+    },
+    {
+      "id": "1-chip-deep-link",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "DeepLink",
+      "sub": "Lets your app open screens from URLs or notifications.",
+      "say": "Deep linking means your app can jump straight to a screen from a web link or a push notification."
+    },
+    {
+      "id": "2-rows-linking-steps",
+      "type": "rows",
+      "kicker": "How it works",
+      "rows": [
+        {
+          "a": "Set prefixes",
+          "b": "Define app URL patterns"
+        },
+        {
+          "a": "Map screens",
+          "b": "Connect URLs to screens"
+        },
+        {
+          "a": "Handle params",
+          "b": "Extract info from the link"
+        },
+        {
+          "a": "Sync state",
+          "b": "Restore navigation state"
+        }
+      ],
+      "walk": true,
+      "say": "First, you set up which URLs your app should handle. Then, you map those URLs to screens, grab any parameters, and make sure navigation state matches the link."
+    },
+    {
+      "id": "3-code-linking-config",
+      "type": "code",
+      "kicker": "Example Setup",
+      "lang": "jsx",
+      "code": "<NavigationContainer\n  linking={{\n    prefixes: ['myapp://'],\n    config: {\n      screens: {\n        Profile: 'user/:id',\n      },\n    },\n  }}\n/>",
+      "say": "Here's a real config. This setup lets my app open a user profile screen directly from a link with a user ID."
+    },
+    {
+      "id": "4-trap-interview-mista",
+      "type": "trap",
+      "question": "What if you skip navigation state sync?",
+      "wrong": "The app always works fine.",
+      "right": "You risk landing on the wrong screen or losing context when opening from a link.",
+      "say": "Don't forget—if you skip syncing navigation state, your app might open to the wrong place or lose the user's spot. That's a classic interview pitfall."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:13:29.767Z"
+}
