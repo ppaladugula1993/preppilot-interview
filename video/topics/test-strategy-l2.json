@@ -1,0 +1,88 @@
+{
+  "id": "test-strategy-l2",
+  "title": "Test Case Design: Equivalence & Boundaries",
+  "keys": [
+    "equivalence partitioning",
+    "boundary value",
+    "decision table",
+    "test case"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-inputs-matter",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "How do you test smarter, not harder?",
+      "line2": "What cases really matter?",
+      "say": "Ever wondered how to pick the right test cases, without testing every possible input? Let's break it down."
+    },
+    {
+      "id": "1-chip-equivalence",
+      "type": "chip",
+      "kicker": "Design Tip",
+      "label": "Equivalence",
+      "sub": "Group similar inputs to cut down on test cases.",
+      "say": "First up, equivalence partitioning. You group inputs that should behave the same, and test just one from each group."
+    },
+    {
+      "id": "2-rows-boundary-values",
+      "type": "rows",
+      "kicker": "Boundary Value Analysis",
+      "rows": [
+        {
+          "a": "Below range",
+          "b": "17"
+        },
+        {
+          "a": "Start of range",
+          "b": "18"
+        },
+        {
+          "a": "End of range",
+          "b": "65"
+        },
+        {
+          "a": "Above range",
+          "b": "66"
+        }
+      ],
+      "walk": true,
+      "say": "Next, boundary value analysis. You focus on the edges of valid input ranges, like seventeen, eighteen, sixty-five, and sixty-six for an age field."
+    },
+    {
+      "id": "3-compare-decision-tab",
+      "type": "compare",
+      "kicker": "Decision Table Example",
+      "left": {
+        "title": "Inputs",
+        "items": [
+          "Age over eighteen",
+          "Has ID"
+        ]
+      },
+      "right": {
+        "title": "Result",
+        "items": [
+          "Allow entry",
+          "Deny entry"
+        ]
+      },
+      "say": "For complex logic, use a decision table. Map out input combinations, like age and ID, to expected outcomes."
+    },
+    {
+      "id": "4-trap-missed-boundary",
+      "type": "trap",
+      "question": "What's a common mistake with boundaries?",
+      "wrong": "Only testing values inside the range",
+      "right": "Always test just outside and at the edges—bugs love boundaries.",
+      "say": "Don't forget: bugs love boundaries. Only testing inside the range can miss real issues. Always check just outside and at the edges."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:27:54.081Z"
+}
