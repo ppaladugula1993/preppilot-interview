@@ -1,0 +1,69 @@
+{
+  "id": "typescript-l0",
+  "title": "TypeScript Structural Typing Explained",
+  "keys": [
+    "structural",
+    "typing",
+    "shape",
+    "compatibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-structural-typi",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "Why does shape matter in TypeScript?",
+      "line2": "What is structural typing?",
+      "say": "Ever wonder why TypeScript lets you assign objects with extra properties? Let's explore how structural typing works."
+    },
+    {
+      "id": "1-chip-shape-over-name",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Shape",
+      "sub": "TypeScript checks the actual properties, not the type's name.",
+      "say": "TypeScript cares about the shape of your data, not the name of the type or interface."
+    },
+    {
+      "id": "2-code-point-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "typescript",
+      "code": "interface Point {\n  x: number;\n  y: number;\n}\nconst p = { x: 1, y: 2, z: 3 };\nlet pt: Point = p;",
+      "say": "If an object has at least the required properties, like x and y, it's compatible—even if it has extras."
+    },
+    {
+      "id": "3-compare-interface-ty",
+      "type": "compare",
+      "kicker": "Compatibility",
+      "left": {
+        "title": "Interface",
+        "items": [
+          "x and y"
+        ]
+      },
+      "right": {
+        "title": "Type Alias",
+        "items": [
+          "x and y"
+        ]
+      },
+      "say": "Interfaces and type aliases with the same structure are treated as compatible. Only the shape matters."
+    },
+    {
+      "id": "4-trap-name-vs-shape",
+      "type": "trap",
+      "question": "Does TypeScript care about type names?",
+      "wrong": "Yes, the name must match.",
+      "right": "No, only the structure matters for compatibility.",
+      "say": "Don't get caught thinking the name matters. TypeScript only checks the structure."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:40:48.091Z"
+}
