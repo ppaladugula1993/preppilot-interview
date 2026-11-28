@@ -1,0 +1,59 @@
+{
+  "id": "spring-l2",
+  "title": "Build REST APIs with Spring Boot",
+  "keys": [
+    "@RestController",
+    "Validation",
+    "Exception Handling",
+    "Spring Boot"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-rest-api",
+      "type": "hook",
+      "kicker": "Spring & Spring Boot · lesson",
+      "line1": "How do you build a REST API?",
+      "line2": "What makes it robust?",
+      "say": "Ever wonder how to build a solid REST API in Spring Boot? Let's break down what really matters."
+    },
+    {
+      "id": "1-chip-restcontroller",
+      "type": "chip",
+      "kicker": "Key Annotation",
+      "label": "@RestController",
+      "sub": "Combines controller and response body for easy REST endpoints.",
+      "say": "Start with Rest Controller. It merges controller and response body, so your endpoints return JSON by default."
+    },
+    {
+      "id": "2-code-validation",
+      "type": "code",
+      "kicker": "Input Validation",
+      "lang": "java",
+      "code": "@PostMapping\npublic User create(\n  @Valid @RequestBody User u\n) { ... }",
+      "say": "Validate input directly in your method with Valid. Add annotations like Not Null to your user object fields."
+    },
+    {
+      "id": "3-chip-exception",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "Exceptions",
+      "sub": "Centralize error handling with Controller Advice.",
+      "say": "For errors, use Controller Advice. It catches exceptions and returns consistent error responses for your whole API."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Where should you handle validation errors?",
+      "wrong": "Directly inside each controller method.",
+      "right": "In a global exception handler using Controller Advice.",
+      "say": "Don't handle validation errors in every controller. Use a global exception handler for cleaner, more reliable APIs."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:17:42.639Z"
+}
