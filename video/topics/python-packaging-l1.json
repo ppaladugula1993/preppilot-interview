@@ -1,0 +1,75 @@
+{
+  "id": "python-packaging-l1",
+  "title": "pip, Requirements, and Lock Files",
+  "keys": [
+    "pip",
+    "requirements.txt",
+    "lock file",
+    "dependencies"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pip-reqs",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "How do you avoid",
+      "line2": "dependency chaos?",
+      "say": "Ever had a project work on your laptop, but fail everywhere else? Let’s fix that."
+    },
+    {
+      "id": "1-chip-pip",
+      "type": "chip",
+      "kicker": "Core Tool",
+      "label": "pip",
+      "sub": "pip is Python’s standard package manager.",
+      "say": "Pip is the tool every Python dev uses to install packages. It’s your starting point for managing dependencies."
+    },
+    {
+      "id": "2-terminal-install-req",
+      "type": "terminal",
+      "kicker": "Install All Dependencies",
+      "title": "From a requirements file",
+      "lines": [
+        "$ pip install -r requirements.txt",
+        "Collecting requests==2.31.0",
+        "Collecting numpy>=1.24"
+      ],
+      "say": "You can install everything your project needs by running pip with your requirements file."
+    },
+    {
+      "id": "3-compare-reqs-lock",
+      "type": "compare",
+      "kicker": "Files that Matter",
+      "left": {
+        "title": "requirements.txt",
+        "items": [
+          "Lists needed packages",
+          "Can allow version ranges"
+        ]
+      },
+      "right": {
+        "title": "Lock File",
+        "items": [
+          "Records exact versions",
+          "Ensures reproducibility"
+        ]
+      },
+      "say": "Requirements files list what you need, but lock files freeze the exact versions. That means everyone gets the same setup, every time."
+    },
+    {
+      "id": "4-trap-lock-purpose",
+      "type": "trap",
+      "question": "What’s a lock file for?",
+      "wrong": "It lists only top-level packages.",
+      "right": "It records the exact versions of all dependencies, so your project runs the same everywhere.",
+      "say": "Interviewers love this one: a lock file isn’t just a list. It’s your guarantee of consistency across machines and deployments."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:54:15.703Z"
+}
