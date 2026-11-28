@@ -1,0 +1,91 @@
+{
+  "id": "scripting-l6",
+  "title": "Safe Scripts in Production",
+  "keys": [
+    "idempotent",
+    "logging",
+    "dry-run",
+    "review"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-safe-prod",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "Could your script break prod?",
+      "line2": "How do you prevent it?",
+      "say": "Could your script accidentally take down production? How do you make sure that never happens?"
+    },
+    {
+      "id": "1-rows-safety-steps",
+      "type": "rows",
+      "kicker": "Checklist",
+      "rows": [
+        {
+          "a": "Idempotent",
+          "b": "Only act if not already correct"
+        },
+        {
+          "a": "Dry-run",
+          "b": "Show what would happen, no changes"
+        },
+        {
+          "a": "Logging",
+          "b": "Record actions with timestamps"
+        },
+        {
+          "a": "Review",
+          "b": "Code in Git, peer-reviewed"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s how you keep scripts safe: check before changing anything, add a dry-run mode, log every action, and always get your code reviewed."
+    },
+    {
+      "id": "2-terminal-bash-safety",
+      "type": "terminal",
+      "kicker": "Strict Bash",
+      "title": "Error Handling",
+      "lines": [
+        "$ set -euo pipefail",
+        "$ shellcheck script.sh"
+      ],
+      "say": "Use strict error handling in Bash, and run shellcheck to catch bugs before your script hits production."
+    },
+    {
+      "id": "3-compare-secrets",
+      "type": "compare",
+      "kicker": "Secrets",
+      "left": {
+        "title": "Unsafe",
+        "items": [
+          "Hard-coded passwords",
+          "Secrets in script file"
+        ]
+      },
+      "right": {
+        "title": "Safe",
+        "items": [
+          "Secrets from environment",
+          "Vault integration"
+        ]
+      },
+      "say": "Never store secrets in your script. Pull them from the environment or a vault instead."
+    },
+    {
+      "id": "4-trap-prod-trap",
+      "type": "trap",
+      "question": "What makes a script safe in prod?",
+      "wrong": "Just test it locally first.",
+      "right": "Idempotent checks, dry-run, error handling, logging, code review, secrets from a vault.",
+      "say": "If you’re asked what makes a script safe in production, don’t just say you tested it. Mention idempotent checks, dry-run, strict error handling, logging, code review, and secure secrets."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:10:19.161Z"
+}
