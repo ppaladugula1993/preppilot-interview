@@ -1,0 +1,80 @@
+{
+  "id": "api-testing",
+  "title": "The Core of API Testing: Response Validation",
+  "keys": [
+    "status codes",
+    "schema",
+    "headers",
+    "error handling",
+    "Postman"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-api-testing",
+      "type": "hook",
+      "kicker": "API Testing · 45 seconds",
+      "line1": "What’s the one thing you must check",
+      "line2": "when testing any REST API?",
+      "say": "If you could only test one thing in a REST API, what would it be?"
+    },
+    {
+      "id": "1-chip-status",
+      "type": "chip",
+      "kicker": "Step 1 · Response",
+      "label": "Status",
+      "sub": "Check if the API returns the right status code for each operation.",
+      "say": "First, always check if the API gives you the right status code for what you asked."
+    },
+    {
+      "id": "2-rows-schema-headers",
+      "type": "rows",
+      "kicker": "Step 2 · Validation",
+      "rows": [
+        {
+          "a": "Schema",
+          "b": "Does the response match the expected shape?"
+        },
+        {
+          "a": "Headers",
+          "b": "Are content type and auth info correct?"
+        },
+        {
+          "a": "Errors",
+          "b": "Does it handle mistakes gracefully?"
+        }
+      ],
+      "walk": true,
+      "say": "Next, check the response shape, headers, and how errors are handled. These tell you if the API is reliable."
+    },
+    {
+      "id": "3-terminal-postman",
+      "type": "terminal",
+      "kicker": "Step 3 · Tools",
+      "title": "Postman Test Example",
+      "lines": [
+        "$ pm.test('Status', function() {",
+        "  pm.response.to.have.status(200);",
+        "});",
+        "$ pm.test('Schema', function() {",
+        "  pm.response.to.be.json;",
+        "});"
+      ],
+      "say": "Tools like Postman let you automate checks for status and schema, so you can catch issues fast."
+    },
+    {
+      "id": "4-trap-error-codes",
+      "type": "trap",
+      "question": "Should you only check for 200 OK?",
+      "wrong": "Yes, only 200 means success.",
+      "right": "No, you must check all relevant codes—like 201, 400, 401, and 500—to cover every scenario.",
+      "say": "Don’t just look for a two hundred code. Real tests check for all possible responses, including errors."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:30:33.042Z"
+}
