@@ -1,0 +1,81 @@
+{
+  "id": "api-testing-l5",
+  "title": "API Negative Testing Essentials",
+  "keys": [
+    "negative testing",
+    "error codes",
+    "edge cases",
+    "bad requests"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-negative-testin",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "What happens when APIs fail?",
+      "line2": "Do you test for errors?",
+      "say": "Ever wonder what happens when your API gets bad input? Do you actually test for errors, or just hope for the best?"
+    },
+    {
+      "id": "1-chip-negative",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Negative",
+      "sub": "Checks how APIs handle invalid input and errors.",
+      "say": "Negative testing means sending invalid data or making unauthorized requests to see how the API handles mistakes."
+    },
+    {
+      "id": "2-rows-error-codes",
+      "type": "rows",
+      "kicker": "Error Codes",
+      "rows": [
+        {
+          "a": "400",
+          "b": "Bad request, like missing fields"
+        },
+        {
+          "a": "401",
+          "b": "Unauthorized access attempt"
+        },
+        {
+          "a": "404",
+          "b": "Resource not found"
+        },
+        {
+          "a": "500",
+          "b": "Server error"
+        }
+      ],
+      "walk": true,
+      "say": "Look for proper error codes. Four hundred for bad requests, four oh one for unauthorized, four oh four for not found, and five hundred for server errors."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Missing Field",
+      "lines": [
+        "$ POST /users",
+        "{ name: '' }",
+        "→ 400 Bad Request",
+        "{ error: 'Name required' }"
+      ],
+      "say": "If you post a new user without a name, the API should send back a four hundred bad request with a clear error message."
+    },
+    {
+      "id": "4-trap-leak",
+      "type": "trap",
+      "question": "What if the API returns a stack trace?",
+      "wrong": "It's fine for debugging.",
+      "right": "That's a security risk—never leak details.",
+      "say": "If your API spits out a stack trace, that's not just a bug—it's a security risk. Never let error messages leak sensitive details."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:46:33.329Z"
+}
