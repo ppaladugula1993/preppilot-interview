@@ -1,0 +1,81 @@
+{
+  "id": "express-nest-l5",
+  "title": "Test APIs with Supertest and Jest",
+  "keys": [
+    "Supertest",
+    "Jest",
+    "integration",
+    "API",
+    "assertion"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-test-confidence",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "How do you test your APIs?",
+      "line2": "Are your endpoints reliable?",
+      "say": "How do you know your API endpoints actually work? Let's talk about testing them with confidence."
+    },
+    {
+      "id": "1-chip-supertest",
+      "type": "chip",
+      "kicker": "Tools",
+      "label": "Supertest",
+      "sub": "Simulates HTTP requests to your app",
+      "say": "Supertest lets you simulate real HTTP requests to your Express or NestJS app, just like a client would."
+    },
+    {
+      "id": "2-chip-jest",
+      "type": "chip",
+      "kicker": "Tools",
+      "label": "Jest",
+      "sub": "Assertions and test runner for Node apps",
+      "say": "Jest is the test runner that checks your results and gives you clear, readable assertions."
+    },
+    {
+      "id": "3-code-supertest-jest-",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "const request = require('supertest');\nconst app = require('./app');\ntest('GET /users returns 200', async () => {\n  const res = await request(app).get('/users');\n  expect(res.statusCode).toBe(200);\n});",
+      "say": "Here's how you test that the users endpoint returns a two hundred status. Supertest makes the request, and Jest checks the response."
+    },
+    {
+      "id": "4-rows-testing-benefit",
+      "type": "rows",
+      "kicker": "Why Test APIs?",
+      "rows": [
+        {
+          "a": "Catch bugs early",
+          "b": "Spot issues before release"
+        },
+        {
+          "a": "Automate checks",
+          "b": "Run tests with every change"
+        },
+        {
+          "a": "Prove reliability",
+          "b": "Show interviewers your process"
+        }
+      ],
+      "walk": false,
+      "say": "Testing your APIs means you catch bugs early, automate your checks, and prove to interviewers you care about reliability."
+    },
+    {
+      "id": "5-trap-common-mistake",
+      "type": "trap",
+      "question": "Is Supertest enough for API tests?",
+      "wrong": "Yes, Supertest alone is enough.",
+      "right": "No—Supertest sends requests, but you need Jest for assertions and running tests.",
+      "say": "A common mistake is thinking Supertest alone is enough. You need Jest to actually check results and run your tests."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:17:44.259Z"
+}
