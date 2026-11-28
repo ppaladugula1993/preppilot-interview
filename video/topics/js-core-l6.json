@@ -1,0 +1,85 @@
+{
+  "id": "js-core-l6",
+  "title": "Event Loop: Microtasks vs Macrotasks",
+  "keys": [
+    "event loop",
+    "microtasks",
+    "macrotasks",
+    "async"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-event-loop",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "Why do promises run before timeouts?",
+      "line2": "Event loop gotcha?",
+      "say": "Ever wonder why promises resolve before a timeout, even if both are set for right now? Let's break down how the event loop handles microtasks and macrotasks."
+    },
+    {
+      "id": "1-rows-event-loop-orde",
+      "type": "rows",
+      "kicker": "Execution Order",
+      "rows": [
+        {
+          "a": "Call stack clears",
+          "b": "Current code finishes"
+        },
+        {
+          "a": "Microtasks run",
+          "b": "Promises, observers execute"
+        },
+        {
+          "a": "Macrotasks run",
+          "b": "Timeouts, intervals, I/O fire"
+        }
+      ],
+      "walk": true,
+      "say": "First, the event loop waits for the stack to clear. Then, it runs all microtasks like promise callbacks. Only after that, it handles macrotasks such as timeouts and intervals."
+    },
+    {
+      "id": "2-compare-micro-macro",
+      "type": "compare",
+      "kicker": "Task Types",
+      "left": {
+        "title": "Microtasks",
+        "items": [
+          "Promise callbacks",
+          "MutationObservers"
+        ]
+      },
+      "right": {
+        "title": "Macrotasks",
+        "items": [
+          "setTimeout",
+          "setInterval",
+          "I/O events"
+        ]
+      },
+      "say": "Microtasks are for critical async logic, like promises. Macrotasks handle deferred actions, such as timers and input events."
+    },
+    {
+      "id": "3-code-event-loop-demo",
+      "type": "code",
+      "kicker": "Order Demo",
+      "lang": "js",
+      "code": "console.log('A');\nsetTimeout(() => console.log('B'), 0);\nPromise.resolve().then(() => console.log('C'));",
+      "say": "Check this example. The log prints A, then C, then B. Promise callbacks run before the timeout, even if both are set for immediate execution."
+    },
+    {
+      "id": "4-trap-order-question",
+      "type": "trap",
+      "question": "What prints first: timeout or promise?",
+      "wrong": "Timeout runs before promise.",
+      "right": "Promise callback runs before the timeout because microtasks execute before macrotasks.",
+      "say": "Here's a classic interview trap: which prints first, the timeout or the promise? Remember, microtasks always run before macrotasks."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:06:28.091Z"
+}
