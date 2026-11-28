@@ -1,0 +1,76 @@
+{
+  "id": "ml-ops-l5",
+  "title": "Data Drift, Concept Drift, Decay: MLOps",
+  "keys": [
+    "data drift",
+    "concept drift",
+    "performance decay",
+    "monitoring"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-drift",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "Why do models fail in production?",
+      "line2": "Can you spot the warning signs?",
+      "say": "Why do machine learning models break after deployment? Can you catch the early warning signs before users notice?"
+    },
+    {
+      "id": "1-chip-data-drift",
+      "type": "chip",
+      "kicker": "Problem",
+      "label": "Drift",
+      "sub": "Data drift is when input data changes over time.",
+      "say": "First up, data drift. This happens when the distribution of your input data shifts compared to what your model saw during training."
+    },
+    {
+      "id": "2-compare-drifts",
+      "type": "compare",
+      "kicker": "Spot the Difference",
+      "left": {
+        "title": "Data Drift",
+        "items": [
+          "Input data changes",
+          "Features look different"
+        ]
+      },
+      "right": {
+        "title": "Concept Drift",
+        "items": [
+          "Feature-label link changes",
+          "Same data, new patterns"
+        ]
+      },
+      "say": "Data drift is about changing inputs. Concept drift is sneakier—the relationship between features and labels shifts, even if the data looks the same."
+    },
+    {
+      "id": "3-terminal-monitoring",
+      "type": "terminal",
+      "kicker": "Monitor",
+      "title": "Detecting Drift & Decay",
+      "lines": [
+        "$ ks-test train.csv prod.csv",
+        "p-value: 0.01 (drift detected)",
+        "$ check-accuracy",
+        "accuracy: 0.85 (was 0.92)"
+      ],
+      "say": "You can run a Kolmogorov-Smirnov test to catch data drift. If your accuracy drops from ninety-two percent to eighty-five, that's performance decay."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "If accuracy drops, what do you do?",
+      "wrong": "Ignore it and hope it recovers.",
+      "right": "Set up alerts and retrain or roll back the model fast.",
+      "say": "If your model's accuracy drops, don't just hope it bounces back. Interviewers want to hear that you monitor, alert, and retrain or roll back quickly."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:04:56.189Z"
+}
