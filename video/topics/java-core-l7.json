@@ -1,0 +1,88 @@
+{
+  "id": "java-core-l7",
+  "title": "Concurrency Utilities in Core Java",
+  "keys": [
+    "ExecutorService",
+    "CompletableFuture",
+    "ConcurrentHashMap",
+    "Lock"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-concurrency",
+      "type": "hook",
+      "kicker": "Core Java · lesson",
+      "line1": "How do you manage threads safely?",
+      "line2": "Which tool fits where?",
+      "say": "Ever wondered how Java keeps your code safe and fast when many threads run at once? Let's break down the essential concurrency tools."
+    },
+    {
+      "id": "1-chip-executor",
+      "type": "chip",
+      "kicker": "Thread Pools",
+      "label": "Executor",
+      "sub": "Manages reusable threads for tasks.",
+      "say": "ExecutorService creates and manages a pool of threads, so you don’t have to handle them one by one."
+    },
+    {
+      "id": "2-chip-future",
+      "type": "chip",
+      "kicker": "Async Tasks",
+      "label": "Completable",
+      "sub": "Runs tasks asynchronously, chains results.",
+      "say": "CompletableFuture lets you run tasks in the background and chain actions when they're done. Super handy for async flows."
+    },
+    {
+      "id": "3-rows-maps",
+      "type": "rows",
+      "kicker": "Thread-Safe Collections",
+      "rows": [
+        {
+          "a": "ConcurrentHashMap",
+          "b": "Safe map for many threads"
+        },
+        {
+          "a": "HashMap",
+          "b": "Not safe for concurrency"
+        }
+      ],
+      "walk": false,
+      "say": "Need a map that many threads can use at once? Pick ConcurrentHashMap. Regular HashMap isn’t safe for that."
+    },
+    {
+      "id": "4-compare-locks",
+      "type": "compare",
+      "kicker": "Controlling Access",
+      "left": {
+        "title": "synchronized",
+        "items": [
+          "Simple syntax",
+          "Less control"
+        ]
+      },
+      "right": {
+        "title": "Lock",
+        "items": [
+          "More features",
+          "Manual unlock needed"
+        ]
+      },
+      "say": "Synchronized is simple and built-in, but Lock gives you more options—like timed locks and fairness. Just remember to always unlock manually."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "Is HashMap thread-safe for reads?",
+      "wrong": "Yes, for reads only",
+      "right": "No, HashMap isn’t thread-safe at all. Use ConcurrentHashMap instead.",
+      "say": "Here's a common trap: Is HashMap safe for reads in multiple threads? Nope. Only ConcurrentHashMap is designed for that."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:22:43.076Z"
+}
