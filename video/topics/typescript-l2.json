@@ -1,0 +1,59 @@
+{
+  "id": "typescript-l2",
+  "title": "TypeScript: Unions, Intersections & Narrowing",
+  "keys": [
+    "union types",
+    "intersection types",
+    "narrowing",
+    "discriminated union"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-union-intersect",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "How do unions and intersections work?",
+      "line2": "And why does narrowing matter?",
+      "say": "Ever wonder how TypeScript lets you model data that could be more than one shape, or maybe all at once? Let's break down unions, intersections, and narrowing."
+    },
+    {
+      "id": "1-chip-union",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Union",
+      "sub": "A value can be one of several types.",
+      "say": "A union type means a value can be one of several possible types. It's great for flexible data models."
+    },
+    {
+      "id": "2-chip-intersection",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Intersection",
+      "sub": "A value must satisfy all given types.",
+      "say": "An intersection type means a value must meet all the requirements of multiple types at once. Think of it as combining features."
+    },
+    {
+      "id": "3-code-narrowing",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "ts",
+      "code": "type Shape =\n  { kind: 'circle', r: number }\n| { kind: 'square', x: number }\n\nfunction area(s: Shape) {\n  if (s.kind === 'circle')\n    return Math.PI * s.r * s.r;\n  return s.x * s.x;\n}",
+      "say": "Here's a classic example. We use a union to define a shape that can be a circle or a square. Then, we narrow the type using the kind field for safe property access."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What's a safe way to narrow a union?",
+      "wrong": "Just check for property existence.",
+      "right": "Use a discriminant like kind for clear, type-safe narrowing.",
+      "say": "Interview trap: Don't just check if a property exists. Use a discriminated union with a kind field for safe, readable narrowing."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:46:01.533Z"
+}
