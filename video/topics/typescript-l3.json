@@ -1,0 +1,72 @@
+{
+  "id": "typescript-l3",
+  "title": "TypeScript Generics & Constraints",
+  "keys": [
+    "generics",
+    "constraints",
+    "extends",
+    "type-safe"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-generics",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "How do generics keep code reusable?",
+      "line2": "And type-safe?",
+      "say": "Ever wonder how TypeScript lets you write code that's flexible, reusable, and still type-safe? Let's break down generics and constraints."
+    },
+    {
+      "id": "1-chip-generics",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Generics",
+      "sub": "Let you write functions that work with any type.",
+      "say": "Generics are like templates. They let you write functions or classes that work with any type, making your code more reusable."
+    },
+    {
+      "id": "2-rows-constraints",
+      "type": "rows",
+      "kicker": "How constraints work",
+      "rows": [
+        {
+          "a": "Add extends",
+          "b": "Restrict generic types"
+        },
+        {
+          "a": "Require properties",
+          "b": "Like length or id"
+        },
+        {
+          "a": "Enable type safety",
+          "b": "Prevent runtime errors"
+        }
+      ],
+      "walk": true,
+      "say": "Constraints use extends to limit what types a generic can accept. This ensures your function only works with types that have the properties you need, like length."
+    },
+    {
+      "id": "3-code-getfirst",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "typescript",
+      "code": "function getFirst<T extends { length: number }>(arr: T) {\n  return arr[0];\n}\ngetFirst([1,2,3]); // OK\ngetFirst('abc'); // OK\ngetFirst(123); // Error",
+      "say": "Here's a function that gets the first item. It only works with types that have a length property, like arrays or strings. Passing a number throws an error."
+    },
+    {
+      "id": "4-trap-nonnullable",
+      "type": "trap",
+      "question": "What happens if you use NonNullable<T> with a generic that could be undefined?",
+      "wrong": "It always removes null and undefined safely.",
+      "right": "If the generic resolves to undefined, NonNullable turns it into never, losing all type info.",
+      "say": "Watch out: using NonNullable with a generic that could be undefined can wipe out your type entirely. Always constrain your generics properly."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:48:19.974Z"
+}
