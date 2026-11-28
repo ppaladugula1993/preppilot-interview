@@ -1,0 +1,84 @@
+{
+  "id": "cloud-l3",
+  "title": "Cloud Availability Options Explained",
+  "keys": [
+    "availability set",
+    "availability zone",
+    "region pair",
+    "HA"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-cloud-ha",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "How does cloud stay online?",
+      "line2": "What are your options?",
+      "say": "Ever wonder how cloud providers keep your apps running, even when hardware fails? Let's break down your options for high availability."
+    },
+    {
+      "id": "1-chip-availability-se",
+      "type": "chip",
+      "kicker": "Azure/AWS",
+      "label": "Set",
+      "sub": "Spreads VMs across racks in one datacenter",
+      "say": "First, an availability set spreads your virtual machines across multiple racks inside a single datacenter. This protects against rack failure and maintenance downtime."
+    },
+    {
+      "id": "2-compare-set-zone",
+      "type": "compare",
+      "kicker": "SLA Levels",
+      "left": {
+        "title": "Availability Set",
+        "items": [
+          "One datacenter",
+          "99.95% SLA"
+        ]
+      },
+      "right": {
+        "title": "Availability Zone",
+        "items": [
+          "Multiple datacenters",
+          "99.99% SLA"
+        ]
+      },
+      "say": "Availability zones take it further. They place your resources in separate datacenters within a region, offering even higher uptime guarantees."
+    },
+    {
+      "id": "3-rows-region-pair",
+      "type": "rows",
+      "kicker": "Disaster Recovery",
+      "rows": [
+        {
+          "a": "Region pair",
+          "b": "Backup in a second region"
+        },
+        {
+          "a": "Purpose",
+          "b": "Disaster recovery only"
+        },
+        {
+          "a": "Standard",
+          "b": "Geo-replication for backups"
+        }
+      ],
+      "walk": true,
+      "say": "For disaster recovery, region pairs are key. You back up data in a second region, so your app survives even a regional outage."
+    },
+    {
+      "id": "4-trap-set-vs-zone",
+      "type": "trap",
+      "question": "Are sets and zones the same?",
+      "wrong": "Yes, both protect from outages.",
+      "right": "No, sets are inside one datacenter; zones are across multiple datacenters.",
+      "say": "Don't mix up sets and zones. Sets only protect inside one datacenter, while zones span multiple datacenters for better resilience."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:38:42.345Z"
+}
