@@ -1,0 +1,81 @@
+{
+  "id": "android-kotlin-l2",
+  "title": "Mastering Activity & Fragment Lifecycle",
+  "keys": [
+    "Activity",
+    "Fragment",
+    "Lifecycle",
+    "onSaveInstanceState",
+    "ViewModel"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lifecycle-chall",
+      "type": "hook",
+      "kicker": "Android & Kotlin · lesson",
+      "line1": "Ever lost data on rotation?",
+      "line2": "How do you prevent it?",
+      "say": "Ever lost your app's data just by rotating your phone? How do you actually prevent that?"
+    },
+    {
+      "id": "1-rows-lifecycle-steps",
+      "type": "rows",
+      "kicker": "Lifecycle Steps",
+      "rows": [
+        {
+          "a": "onCreate",
+          "b": "Set up UI and state"
+        },
+        {
+          "a": "onStart",
+          "b": "App becomes visible"
+        },
+        {
+          "a": "onResume",
+          "b": "Ready for user input"
+        },
+        {
+          "a": "onPause",
+          "b": "Pause ongoing tasks"
+        },
+        {
+          "a": "onDestroy",
+          "b": "Clean up resources"
+        }
+      ],
+      "walk": true,
+      "say": "Activities and fragments run through key lifecycle steps. First, onCreate sets up your user interface and state. OnStart makes your app visible. OnResume means it's ready for user input. OnPause lets you pause ongoing tasks, and finally, onDestroy cleans up resources."
+    },
+    {
+      "id": "2-code-save-instance",
+      "type": "code",
+      "kicker": "Saving State",
+      "lang": "kotlin",
+      "code": "override fun onSaveInstanceState(outState: Bundle) {\n  outState.putString(\"key\", value)\n}",
+      "say": "To keep data safe during events like device rotation, override the save instance state method. This lets you store values before the activity is destroyed, so you can restore them later."
+    },
+    {
+      "id": "3-chip-viewmodel-tip",
+      "type": "chip",
+      "kicker": "Pro Tip",
+      "label": "ViewModel",
+      "sub": "Keeps data alive across config changes.",
+      "say": "I always use a ViewModel to keep data alive across configuration changes. It helps avoid leaks and keeps things smooth."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Where should you store UI data?",
+      "wrong": "Directly in the Activity",
+      "right": "In a ViewModel or saved instance state to survive configuration changes.",
+      "say": "Here's a common interview trap: Where should you store UI data? Don't just keep it in the activity. Use a ViewModel or the save instance state method so your data survives things like rotation."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:40:29.912Z"
+}
