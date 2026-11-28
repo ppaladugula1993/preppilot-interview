@@ -1,0 +1,82 @@
+{
+  "id": "selenium-playwright-l0",
+  "title": "Playwright vs Selenium vs Cypress",
+  "keys": [
+    "Playwright",
+    "Selenium",
+    "Cypress",
+    "auto-waiting",
+    "parallelization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-choose-ui-tool",
+      "type": "hook",
+      "kicker": "UI Automation (Playwright, Selenium)",
+      "line1": "Which UI test tool fits your project?",
+      "line2": "Do you know the trade-offs?",
+      "say": "Picking the right UI automation tool can make or break your test suite. Do you know how Playwright, Selenium, and Cypress compare?"
+    },
+    {
+      "id": "1-chip-playwright",
+      "type": "chip",
+      "kicker": "Frameworks",
+      "label": "Playwright",
+      "sub": "Modern, auto-waiting, runs tests in parallel easily.",
+      "say": "Playwright is modern, handles auto-waiting for you, and runs tests in parallel with little setup."
+    },
+    {
+      "id": "2-chip-selenium",
+      "type": "chip",
+      "kicker": "Frameworks",
+      "label": "Selenium",
+      "sub": "Mature, supports many languages and browsers.",
+      "say": "Selenium is the veteran. It works with many languages and browsers, but needs manual waits for elements."
+    },
+    {
+      "id": "3-chip-cypress",
+      "type": "chip",
+      "kicker": "Frameworks",
+      "label": "Cypress",
+      "sub": "Fast, JavaScript-focused, limited browser support.",
+      "say": "Cypress is fast and JavaScript-focused, but mostly supports Chrome-family browsers."
+    },
+    {
+      "id": "4-compare-playwright-s",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "Playwright",
+        "items": [
+          "Auto-waiting",
+          "Easy parallelization",
+          "Modern browser features"
+        ]
+      },
+      "right": {
+        "title": "Selenium",
+        "items": [
+          "Language flexibility",
+          "Broad browser support",
+          "Manual waits needed"
+        ]
+      },
+      "say": "Playwright gives you auto-waiting and easy parallelization. Selenium offers flexibility with languages and browsers, but you handle waits yourself."
+    },
+    {
+      "id": "5-trap-waiting",
+      "type": "trap",
+      "question": "How does Playwright handle waiting?",
+      "wrong": "You must add explicit waits.",
+      "right": "Playwright auto-waits for elements to be ready, reducing test flakiness.",
+      "say": "Here's a common interview trap: Playwright auto-waits for elements, so you rarely need manual waits."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:41:36.890Z"
+}
