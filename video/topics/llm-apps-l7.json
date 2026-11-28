@@ -1,0 +1,84 @@
+{
+  "id": "llm-apps-l7",
+  "title": "LLM Safety: Prompt Injection & PII",
+  "keys": [
+    "prompt injection",
+    "PII",
+    "content filters",
+    "mitigation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-llm-safety",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "Can LLMs be tricked?",
+      "line2": "How do you stop it?",
+      "say": "Ever wonder how large language models can be tricked—and what you can do to keep them safe?"
+    },
+    {
+      "id": "1-chip-injection",
+      "type": "chip",
+      "kicker": "Threat",
+      "label": "Injection",
+      "sub": "Malicious input can change model behavior.",
+      "say": "Prompt injection is when a crafty input changes how your model acts, sometimes with serious consequences."
+    },
+    {
+      "id": "2-rows-mitigations",
+      "type": "rows",
+      "kicker": "Mitigation Steps",
+      "rows": [
+        {
+          "a": "Validate input",
+          "b": "Check for odd or risky prompts"
+        },
+        {
+          "a": "Filter output",
+          "b": "Block unsafe or private data"
+        },
+        {
+          "a": "Use safety tools",
+          "b": "APIs that scan for threats"
+        }
+      ],
+      "walk": true,
+      "say": "To defend your app, validate inputs, filter outputs, and use safety tools or APIs that catch threats before they reach users."
+    },
+    {
+      "id": "3-compare-pii-content",
+      "type": "compare",
+      "kicker": "Risks",
+      "left": {
+        "title": "PII Exposure",
+        "items": [
+          "Leaking names or emails",
+          "Breaking privacy rules"
+        ]
+      },
+      "right": {
+        "title": "Unsafe Content",
+        "items": [
+          "Hate speech",
+          "Sensitive info"
+        ]
+      },
+      "say": "Watch out for leaking personal info like names or emails, and for generating unsafe content such as hate speech."
+    },
+    {
+      "id": "4-trap-injection",
+      "type": "trap",
+      "question": "Is input validation enough?",
+      "wrong": "Yes, that's all you need.",
+      "right": "No, you also need output filters and monitoring.",
+      "say": "Here's a common trap: is input validation enough? Nope! You also need output filters and ongoing monitoring to truly keep things safe."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:56:12.571Z"
+}
