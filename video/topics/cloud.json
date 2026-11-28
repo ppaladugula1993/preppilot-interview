@@ -1,0 +1,93 @@
+{
+  "id": "cloud",
+  "title": "Cloud Governance: The Landing Zone Secret",
+  "keys": [
+    "governance",
+    "landing zone",
+    "policy",
+    "RBAC",
+    "subscription"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-landing-zon",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · 45 seconds",
+      "line1": "How do big teams avoid cloud chaos?",
+      "line2": "What keeps apps secure by default?",
+      "say": "Ever wonder how large companies keep their cloud deployments secure and organized without slowing down app teams?"
+    },
+    {
+      "id": "1-chip-hierarchy",
+      "type": "chip",
+      "kicker": "Governance",
+      "label": "Hierarchy",
+      "sub": "Management groups, subscriptions, resource groups, resources",
+      "say": "Clouds like Azure use a strict hierarchy: management groups at the top, then subscriptions, resource groups, and finally resources. This structure keeps things tidy and scalable."
+    },
+    {
+      "id": "2-rows-inheritance",
+      "type": "rows",
+      "kicker": "Policy Inheritance",
+      "rows": [
+        {
+          "a": "Management group",
+          "b": "Top-level policies"
+        },
+        {
+          "a": "Subscription",
+          "b": "Budget and access controls"
+        },
+        {
+          "a": "Resource group",
+          "b": "App-specific resources"
+        }
+      ],
+      "walk": true,
+      "say": "Policies and access roles flow down this tree. Set a rule at the top, and everything below inherits it—so one change secures hundreds of resources."
+    },
+    {
+      "id": "3-chip-landing-zone",
+      "type": "chip",
+      "kicker": "Foundation",
+      "label": "LandingZone",
+      "sub": "Pre-built networking, identity, policy, logging",
+      "say": "A landing zone is your cloud starter kit. It comes with networking, identity, policies, and logging already set up—so app teams deploy into a safe, governed space."
+    },
+    {
+      "id": "4-compare-rbac-policy",
+      "type": "compare",
+      "kicker": "Controls",
+      "left": {
+        "title": "RBAC",
+        "items": [
+          "Who can do what",
+          "Role-based access"
+        ]
+      },
+      "right": {
+        "title": "Policy",
+        "items": [
+          "What is allowed",
+          "Enforces tags, regions"
+        ]
+      },
+      "say": "RBAC decides who can do things. Policy controls what gets created and how. Both work together and are inherited from the landing zone."
+    },
+    {
+      "id": "5-trap-landingzone",
+      "type": "trap",
+      "question": "Is a landing zone just a VNet template?",
+      "wrong": "Yes, it's a template or network.",
+      "right": "No, it's a governed environment with policies, identity, and logging.",
+      "say": "Don't fall for this: a landing zone is way more than a VNet or template. It's a full environment with guardrails for security and compliance."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:12:11.505Z"
+}
