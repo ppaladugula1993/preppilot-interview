@@ -1,0 +1,95 @@
+{
+  "id": "network",
+  "title": "How the Internet Delivers Your Request",
+  "keys": [
+    "DNS",
+    "TCP",
+    "TLS",
+    "HTTP",
+    "firewall"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-url",
+      "type": "hook",
+      "kicker": "Networking · 45 seconds",
+      "line1": "What really happens",
+      "line2": "when you open a URL?",
+      "say": "Ever wondered what actually happens when you open a web page? Let’s break down the journey your request takes across the internet."
+    },
+    {
+      "id": "1-chip-dns",
+      "type": "chip",
+      "kicker": "Step 1 · DNS",
+      "label": "DNS",
+      "sub": "Resolves the domain name to an IP address",
+      "say": "First, your browser uses DNS to turn the website name into an IP address. Without DNS, you’d need to memorize numbers instead of names."
+    },
+    {
+      "id": "2-rows-handshake",
+      "type": "rows",
+      "kicker": "Step 2 · Connections",
+      "rows": [
+        {
+          "a": "TCP handshake",
+          "b": "Opens a reliable connection"
+        },
+        {
+          "a": "TLS handshake",
+          "b": "Secures the traffic"
+        },
+        {
+          "a": "HTTP request",
+          "b": "Asks for the web page"
+        }
+      ],
+      "walk": true,
+      "say": "Next, your computer opens a TCP connection, negotiates encryption with TLS, then sends an HTTP request for the page."
+    },
+    {
+      "id": "3-chip-firewall",
+      "type": "chip",
+      "kicker": "Step 3 · Security",
+      "label": "Firewall",
+      "sub": "Controls which traffic is allowed through",
+      "say": "Along the way, firewalls check if your connection is allowed. If the rules block it, your request never reaches the server."
+    },
+    {
+      "id": "4-compare-tcpudp",
+      "type": "compare",
+      "kicker": "TCP vs UDP",
+      "left": {
+        "title": "TCP",
+        "items": [
+          "Reliable",
+          "Ordered",
+          "Web traffic"
+        ]
+      },
+      "right": {
+        "title": "UDP",
+        "items": [
+          "Faster",
+          "Unreliable",
+          "DNS, video"
+        ]
+      },
+      "say": "Most web traffic uses TCP for reliability. UDP is faster but skips error checking—great for things like DNS or streaming."
+    },
+    {
+      "id": "5-trap-firewall",
+      "type": "trap",
+      "question": "Ping works but HTTP times out. Why?",
+      "wrong": "The network path is broken",
+      "right": "A firewall blocks the port or the app isn’t listening",
+      "say": "Here’s a classic interview trap: If ping works but the app port times out, the network path is fine. The real issue is a firewall or the app isn’t running."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:36:15.484Z"
+}
