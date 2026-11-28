@@ -1,0 +1,87 @@
+{
+  "id": "js-core",
+  "title": "The Real Meaning of JavaScript Scope",
+  "keys": [
+    "scope",
+    "closure",
+    "lexical",
+    "hoisting",
+    "let"
+  ],
+  "scenes": [
+    {
+      "id": "0-js-scope-hook",
+      "type": "hook",
+      "kicker": "Core JavaScript · 50 seconds",
+      "line1": "Why do some variables",
+      "line2": "just disappear?",
+      "say": "Ever wonder why some variables work everywhere, while others vanish outside a block? Let's crack JavaScript scope."
+    },
+    {
+      "id": "1-scope-chip",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Scope",
+      "sub": "Where a variable can be accessed in your code.",
+      "say": "Scope is just where a variable can be used. It decides what you can see and change."
+    },
+    {
+      "id": "2-hoisting-rows",
+      "type": "rows",
+      "kicker": "Hoisting",
+      "rows": [
+        {
+          "a": "var",
+          "b": "Function-scoped, hoisted, undefined"
+        },
+        {
+          "a": "let/const",
+          "b": "Block-scoped, hoisted, not usable"
+        }
+      ],
+      "walk": true,
+      "say": "JavaScript hoists all variable declarations. But only var is instantly usable, set to undefined. Let and const are hoisted, but you can't touch them until their line."
+    },
+    {
+      "id": "3-closure-code",
+      "type": "code",
+      "kicker": "Closure",
+      "lang": "js",
+      "code": "function outer() {\n  let secret = 42;\n  return function inner() {\n    return secret;\n  }\n}\nconst fn = outer();\nfn();",
+      "say": "Closures are functions that remember their scope. Here, inner still knows secret, even after outer has finished."
+    },
+    {
+      "id": "4-lexical-compare",
+      "type": "compare",
+      "kicker": "Lexical Scope",
+      "left": {
+        "title": "Defined",
+        "items": [
+          "Where the function was written"
+        ]
+      },
+      "right": {
+        "title": "Called",
+        "items": [
+          "Where the function is run"
+        ]
+      },
+      "say": "JavaScript uses lexical scope. Variables are found based on where your function is written, not where you call it."
+    },
+    {
+      "id": "5-trap-tdz",
+      "type": "trap",
+      "question": "Can you use let before its line?",
+      "wrong": "Yes, it's hoisted like var",
+      "right": "No, you'll get a ReferenceError due to the temporal dead zone",
+      "say": "Don't fall for this. Let and const are hoisted, but not initialized. Accessing them before their line throws a ReferenceError. That's called the temporal dead zone."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:53:18.413Z"
+}
