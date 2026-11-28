@@ -1,0 +1,78 @@
+{
+  "id": "api-testing-l8",
+  "title": "API Headers & Metadata Validation",
+  "keys": [
+    "headers",
+    "metadata",
+    "validation",
+    "HTTP",
+    "Cache-Control"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-headers",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "Are you checking API headers?",
+      "line2": "Why does it matter?",
+      "say": "Are you double-checking API headers in your tests? Why does that even matter for interviews?"
+    },
+    {
+      "id": "1-chip-metadata",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Metadata",
+      "sub": "Headers carry info like content type, caching, and authentication.",
+      "say": "Headers carry crucial metadata—things like content type, caching rules, and authentication details."
+    },
+    {
+      "id": "2-rows-header-steps",
+      "type": "rows",
+      "kicker": "Validation Steps",
+      "rows": [
+        {
+          "a": "Check Content-Type",
+          "b": "Matches expected format"
+        },
+        {
+          "a": "Verify Cache-Control",
+          "b": "Follows caching policy"
+        },
+        {
+          "a": "Inspect Custom Headers",
+          "b": "Present and correct"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s my checklist: First, check content type matches what you expect. Next, verify cache control follows your caching policy. And don’t forget to inspect any custom headers for accuracy."
+    },
+    {
+      "id": "3-terminal-example",
+      "type": "terminal",
+      "kicker": "Sample Output",
+      "title": "API Response Headers",
+      "lines": [
+        "$ curl -I api.example.com/data",
+        "Content-Type: application/json",
+        "Cache-Control: no-cache",
+        "X-Request-ID: 12345"
+      ],
+      "say": "For example, a typical response might show content type as JSON, cache control set to no cache, and a custom request ID header."
+    },
+    {
+      "id": "4-trap-header-trap",
+      "type": "trap",
+      "question": "Is header validation just for security?",
+      "wrong": "Yes, only for security.",
+      "right": "No, it also ensures protocol compliance and correct metadata.",
+      "say": "Don’t fall for this trap: header validation isn’t just about security. It’s also about following protocol standards and making sure clients get the right metadata."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:54:31.928Z"
+}
