@@ -1,0 +1,75 @@
+{
+  "id": "jvm-l6",
+  "title": "JVM Container Awareness & Resource Limits",
+  "keys": [
+    "JVM",
+    "container",
+    "resource limits",
+    "flags"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-container-aware",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Is your JVM tuned for containers?",
+      "line2": "How does it know its limits?",
+      "say": "Ever wondered how the Java virtual machine knows what resources it can use inside a container?"
+    },
+    {
+      "id": "1-chip-maxrampercentag",
+      "type": "chip",
+      "kicker": "Container Limits",
+      "label": "Memory",
+      "sub": "JVM can size heap as a percent of RAM using MaxRAMPercentage.",
+      "say": "With the Max RAM Percentage flag, the JVM sets its heap based on the container's memory, not the host."
+    },
+    {
+      "id": "2-rows-jvm-flags",
+      "type": "rows",
+      "kicker": "Common JVM Flags",
+      "rows": [
+        {
+          "a": "MaxRAMPercentage",
+          "b": "Heap as percent of RAM"
+        },
+        {
+          "a": "ActiveProcessorCount",
+          "b": "Limits JVM CPU usage"
+        },
+        {
+          "a": "Xmx",
+          "b": "Sets max heap size"
+        }
+      ],
+      "walk": true,
+      "say": "Here are some flags I use to control memory and CPU inside containers. Max RAM Percentage, Active Processor Count, and Xmx help avoid over-allocating resources."
+    },
+    {
+      "id": "3-terminal-jvm-flags-e",
+      "type": "terminal",
+      "kicker": "Example: Container-Aware JVM",
+      "title": "Set heap & CPU for a container",
+      "lines": [
+        "$ java -XX:MaxRAMPercentage=75.0",
+        "$ java -XX:ActiveProcessorCount=2"
+      ],
+      "say": "For example, I set heap to seventy-five percent of container memory and limit the JVM to two CPUs."
+    },
+    {
+      "id": "4-trap-interview-mista",
+      "type": "trap",
+      "question": "What happens if you ignore container limits?",
+      "wrong": "JVM always fits inside the container.",
+      "right": "JVM may over-allocate, causing crashes or poor performance.",
+      "say": "If you ignore container limits, the JVM can over-allocate memory or threads, leading to crashes or instability."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:08:40.333Z"
+}
