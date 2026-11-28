@@ -1,0 +1,64 @@
+{
+  "id": "performance-testing-l2",
+  "title": "Top Performance Testing Tools Explained",
+  "keys": [
+    "k6",
+    "JMeter",
+    "Gatling",
+    "Locust"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-tools-choice",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "Which tool should you use?",
+      "line2": "How do you pick?",
+      "say": "When prepping for interviews, knowing which performance testing tool to use—and why—can make all the difference."
+    },
+    {
+      "id": "1-chip-k6",
+      "type": "chip",
+      "kicker": "Popular Tool",
+      "label": "k6",
+      "sub": "JavaScript scripting, command line use, easy CI integration",
+      "say": "k6 lets you write tests in JavaScript and run them from the command line. It’s great for continuous integration pipelines."
+    },
+    {
+      "id": "2-rows-main-tools",
+      "type": "rows",
+      "kicker": "Tool Comparison",
+      "rows": [
+        {
+          "a": "JMeter",
+          "b": "GUI, plugins, flexible test design"
+        },
+        {
+          "a": "Gatling",
+          "b": "Scala or Java, code-based scenarios"
+        },
+        {
+          "a": "Locust",
+          "b": "Python scripting, highly customizable"
+        }
+      ],
+      "walk": false,
+      "say": "JMeter offers a visual interface and plugins. Gatling uses Scala or Java for code-driven tests. Locust is Python-based and super flexible."
+    },
+    {
+      "id": "3-trap-misconception",
+      "type": "trap",
+      "question": "Is k6 always the best choice?",
+      "wrong": "Yes, it's modern and fast.",
+      "right": "No, tool choice depends on scripting needs, scalability, and integration options.",
+      "say": "Don’t assume k6 is always best. The right tool depends on your scripting needs, scalability, and how it fits into your workflow."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:05:38.467Z"
+}
