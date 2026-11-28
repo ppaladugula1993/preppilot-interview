@@ -1,0 +1,75 @@
+{
+  "id": "api-testing-l6",
+  "title": "API Security Testing: The Essentials",
+  "keys": [
+    "security",
+    "vulnerabilities",
+    "auth",
+    "validation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-security-basics",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "How safe is your API?",
+      "line2": "Can you spot weak spots?",
+      "say": "How safe is your API? Can you spot weak spots before attackers do?"
+    },
+    {
+      "id": "1-chip-vuln",
+      "type": "chip",
+      "kicker": "Security",
+      "label": "Vulnerabilities",
+      "sub": "Look for unauthorized access and data leaks.",
+      "say": "Start by looking for vulnerabilities like unauthorized access and data leaks."
+    },
+    {
+      "id": "2-rows-auth-steps",
+      "type": "rows",
+      "kicker": "Test Steps",
+      "rows": [
+        {
+          "a": "Authentication",
+          "b": "Verify login is required"
+        },
+        {
+          "a": "Authorization",
+          "b": "Check user roles block access"
+        },
+        {
+          "a": "Input Validation",
+          "b": "Reject bad or risky data"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s your checklist: verify authentication, check that user roles block access, and make sure risky data gets rejected."
+    },
+    {
+      "id": "3-terminal-unauth",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Unauthorized Access Test",
+      "lines": [
+        "$ curl /admin",
+        "HTTP 401 Unauthorized"
+      ],
+      "say": "For example, try hitting the admin endpoint without a token. You should get a 401 unauthorized response."
+    },
+    {
+      "id": "4-trap-auth-bypass",
+      "type": "trap",
+      "question": "What’s a common security test mistake?",
+      "wrong": "Only test valid logins",
+      "right": "You must test access without tokens to catch auth bypass risks.",
+      "say": "Don’t just test valid logins. Always check what happens if you skip authentication—missing this is a common interview trap."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:48:53.850Z"
+}
