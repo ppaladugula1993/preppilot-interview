@@ -1,0 +1,69 @@
+{
+  "id": "monitoring-l6",
+  "title": "Synthetic Checks & Alert Routing",
+  "keys": [
+    "synthetic",
+    "monitoring",
+    "alert",
+    "runbook",
+    "routing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-synthetic-alert",
+      "type": "hook",
+      "kicker": "Monitoring · lesson",
+      "line1": "Why do users see outages",
+      "line2": "when monitoring is green?",
+      "say": "Ever seen users complain, but your monitoring dashboard says everything's fine? Let's fix that."
+    },
+    {
+      "id": "1-chip-synthetic",
+      "type": "chip",
+      "kicker": "Outside-in",
+      "label": "Synthetic",
+      "sub": "Probes act like users: ping, login, test from multiple locations.",
+      "say": "Synthetic checks simulate real users. They ping your app, log in, and run every few minutes from different places."
+    },
+    {
+      "id": "2-rows-alert-routing",
+      "type": "rows",
+      "kicker": "Alert Routing",
+      "rows": [
+        {
+          "a": "Owner team",
+          "b": "Who fixes this alert"
+        },
+        {
+          "a": "Severity",
+          "b": "Page or ticket?"
+        },
+        {
+          "a": "Runbook link",
+          "b": "What it means, first steps"
+        },
+        {
+          "a": "Review date",
+          "b": "Delete stale alerts"
+        }
+      ],
+      "walk": true,
+      "say": "Each alert needs a clear owner, severity, a runbook link, and a review date. Otherwise, it's just noise waiting to happen."
+    },
+    {
+      "id": "3-trap-owner-runbook",
+      "type": "trap",
+      "question": "What happens if an alert has no owner?",
+      "wrong": "Someone will handle it eventually.",
+      "right": "It becomes ignored noise. Always assign an owner and link a runbook.",
+      "say": "If alerts don't have an owner and a runbook, they get ignored. Make sure every alert is actionable."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:09:02.231Z"
+}
