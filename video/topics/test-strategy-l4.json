@@ -1,0 +1,77 @@
+{
+  "id": "test-strategy-l4",
+  "title": "Shift-Left Testing & CI Explained",
+  "keys": [
+    "shift-left",
+    "CI",
+    "automated tests",
+    "quality"
+  ],
+  "scenes": [
+    {
+      "id": "0-shift-left-hook",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "Why test earlier in dev?",
+      "line2": "What does shift-left mean?",
+      "say": "Ever wonder why teams push testing earlier in the workflow? What does shift-left really mean for your code?"
+    },
+    {
+      "id": "1-shift-left-chip",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Shift-Left",
+      "sub": "Move testing to earlier stages of development.",
+      "say": "Shift-left means running tests sooner, not just at the end. We build quality in from the start."
+    },
+    {
+      "id": "2-ci-terminal",
+      "type": "terminal",
+      "kicker": "CI Example",
+      "title": "Automated Tests on Pull Requests",
+      "lines": [
+        "$ git push origin feature-branch",
+        "$ Jenkins: running unit tests...",
+        "$ GitHub Actions: integration tests...",
+        "$ All checks passed!"
+      ],
+      "say": "With continuous integration, every pull request kicks off automated tests. Tools like Jenkins or GitHub Actions catch issues before code merges."
+    },
+    {
+      "id": "3-compare-benefits",
+      "type": "compare",
+      "kicker": "Why Shift-Left?",
+      "left": {
+        "title": "Old Way",
+        "items": [
+          "Test late",
+          "Defects found after release"
+        ]
+      },
+      "right": {
+        "title": "Shift-Left",
+        "items": [
+          "Test early",
+          "Catch bugs fast",
+          "Cheaper fixes"
+        ]
+      },
+      "say": "Testing late means bugs slip through. Shift-left finds issues fast, so fixes are easier and less expensive."
+    },
+    {
+      "id": "4-trap-ci",
+      "type": "trap",
+      "question": "Is manual testing enough in CI?",
+      "wrong": "Yes, manual testing covers all cases.",
+      "right": "No, automated tests in CI catch issues early and speed up feedback.",
+      "say": "Here's a trap: is manual testing enough in continuous integration? Nope. Automated tests in CI are key to catching problems early."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:31:34.044Z"
+}
