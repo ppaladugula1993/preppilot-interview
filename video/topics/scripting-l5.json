@@ -1,0 +1,76 @@
+{
+  "id": "scripting-l5",
+  "title": "Command-Line JSON: jq & az --query",
+  "keys": [
+    "JSON",
+    "jq",
+    "az --query",
+    "JMESPath",
+    "automation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-json-cli",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "Cloud tools spit out JSON.",
+      "line2": "How do you filter it fast?",
+      "say": "Cloud tools love JSON. But how do you quickly filter that data on the command line?"
+    },
+    {
+      "id": "1-chip-jq",
+      "type": "chip",
+      "kicker": "Tool",
+      "label": "jq",
+      "sub": "jq filters and reshapes JSON from any API or CLI.",
+      "say": "Meet jq. It filters and reshapes JSON from any API or command line tool."
+    },
+    {
+      "id": "2-terminal-jq-az",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "jq & az --query in action",
+      "lines": [
+        "$ curl ... | jq '.items[] | {name, status}'",
+        "$ az vm list -d --query \"[?powerState!='VM running'].{name:name, rg:resourceGroup}\" -o table"
+      ],
+      "say": "Here are two examples. The first grabs item names and statuses from an API. The second lists Azure virtual machines that aren't running, using the query option."
+    },
+    {
+      "id": "3-rows-jq-vs-az",
+      "type": "rows",
+      "kicker": "Compare",
+      "rows": [
+        {
+          "a": "jq",
+          "b": "Works with any JSON"
+        },
+        {
+          "a": "az --query",
+          "b": "Uses JMESPath for Azure"
+        },
+        {
+          "a": "-o tsv",
+          "b": "Raw values for bash scripts"
+        }
+      ],
+      "walk": false,
+      "say": "Remember: jq works with any JSON, while az query uses JMESPath just for Azure. Output as tab-separated values is perfect for scripts."
+    },
+    {
+      "id": "4-trap-dont-grep-json",
+      "type": "trap",
+      "question": "Should you grep JSON in scripts?",
+      "wrong": "Sure, grep works fine.",
+      "right": "Never grep JSON. Use jq or az query to avoid errors and broken scripts.",
+      "say": "Here's a trap: should you ever grep JSON in your scripts? Never do it. Use jq or az query to avoid brittle, error-prone code."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:08:12.030Z"
+}
