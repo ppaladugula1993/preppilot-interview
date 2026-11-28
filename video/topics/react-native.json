@@ -1,0 +1,80 @@
+{
+  "id": "react-native",
+  "title": "React Native's New Architecture: Why It Matters",
+  "keys": [
+    "bridge",
+    "JSI",
+    "Fabric",
+    "performance",
+    "UI"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bridge-bottlene",
+      "type": "hook",
+      "kicker": "React Native · 45 seconds",
+      "line1": "Why did React Native need an upgrade?",
+      "line2": "What was the big bottleneck?",
+      "say": "Ever wonder why React Native apps used to lag or feel sluggish? Let's break down what changed—and why it matters."
+    },
+    {
+      "id": "1-chip-bridge",
+      "type": "chip",
+      "kicker": "Old Days",
+      "label": "Bridge",
+      "sub": "Messages passed between JavaScript and native code.",
+      "say": "Originally, React Native used something called the bridge. It sent messages between JavaScript and native code, but that process was slow and could block your UI."
+    },
+    {
+      "id": "2-chip-jsi",
+      "type": "chip",
+      "kicker": "Upgrade",
+      "label": "JSI",
+      "sub": "Direct, synchronous access to native APIs.",
+      "say": "The new architecture brings in the JavaScript Interface. Now, JavaScript can talk to native APIs directly and instantly. No more waiting in line."
+    },
+    {
+      "id": "3-chip-fabric",
+      "type": "chip",
+      "kicker": "UI Layer",
+      "label": "Fabric",
+      "sub": "Modern UI manager for faster, concurrent updates.",
+      "say": "Fabric is the new UI manager. It updates your app's interface faster and handles complex layouts way better, especially when lots is happening at once."
+    },
+    {
+      "id": "4-compare-performance",
+      "type": "compare",
+      "kicker": "Performance",
+      "left": {
+        "title": "Bridge",
+        "items": [
+          "Serializes messages",
+          "Slower UI updates"
+        ]
+      },
+      "right": {
+        "title": "JSI & Fabric",
+        "items": [
+          "Direct native access",
+          "Fast, smooth UI"
+        ]
+      },
+      "say": "Bottom line: the bridge slowed things down. JSI and Fabric make your app feel snappy, with smoother animations and less lag."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "Is the bridge still used in the new architecture?",
+      "wrong": "Yes, for all communication.",
+      "right": "No, JSI replaces the bridge for most native calls.",
+      "say": "Interview trap: Don't say the bridge is still the main way JavaScript talks to native code. JSI takes over for most of that now."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:55:46.999Z"
+}
