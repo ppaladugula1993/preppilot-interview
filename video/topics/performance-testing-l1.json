@@ -1,0 +1,60 @@
+{
+  "id": "performance-testing-l1",
+  "title": "Performance Testing Goals That Matter",
+  "keys": [
+    "throughput",
+    "latency",
+    "error rate",
+    "metrics"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-goals",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "How do you measure success?",
+      "line2": "What are your test goals?",
+      "say": "Ever wonder how to prove your system is fast enough? Let’s talk about setting real performance testing goals."
+    },
+    {
+      "id": "1-chip-throughput",
+      "type": "chip",
+      "kicker": "Key Metric",
+      "label": "Throughput",
+      "sub": "Requests handled per second, like 5000 reqs",
+      "say": "Throughput is all about how many requests your system can handle each second. For example, five thousand requests per second."
+    },
+    {
+      "id": "2-rows-latency-error",
+      "type": "rows",
+      "kicker": "Set Clear Targets",
+      "rows": [
+        {
+          "a": "p95 latency",
+          "b": "Less than 200 milliseconds"
+        },
+        {
+          "a": "Error rate",
+          "b": "Below zero point one percent"
+        }
+      ],
+      "walk": true,
+      "say": "I always set measurable goals before running tests. For latency, I look at the slowest five percent of requests. And I make sure the error rate stays low."
+    },
+    {
+      "id": "3-trap-metrics",
+      "type": "trap",
+      "question": "Which metric matters most?",
+      "wrong": "Only average latency",
+      "right": "Percentiles like p95 show real user impact",
+      "say": "Here’s a common trap: focusing only on average latency. But percentiles like p95 reveal what real users experience when things slow down."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:03:15.381Z"
+}
