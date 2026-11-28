@@ -1,0 +1,71 @@
+{
+  "id": "typescript-l5",
+  "title": "unknown vs any vs never in TypeScript",
+  "keys": [
+    "unknown",
+    "any",
+    "never",
+    "type safety"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-types-question",
+      "type": "hook",
+      "kicker": "TypeScript · lesson",
+      "line1": "What’s the real difference?",
+      "line2": "unknown, any, or never?",
+      "say": "You’ve seen unknown, any, and never. But when should you use each one?"
+    },
+    {
+      "id": "1-chip-any",
+      "type": "chip",
+      "kicker": "Type Safety",
+      "label": "any",
+      "sub": "Disables all type checks. Use with caution.",
+      "say": "Any turns off TypeScript’s type checking. It’s risky and can lead to runtime bugs."
+    },
+    {
+      "id": "2-compare-unknown-any",
+      "type": "compare",
+      "kicker": "Safer Types",
+      "left": {
+        "title": "unknown",
+        "items": [
+          "Requires type checks",
+          "Safer for untrusted data"
+        ]
+      },
+      "right": {
+        "title": "any",
+        "items": [
+          "No checks",
+          "Easy to misuse"
+        ]
+      },
+      "say": "Unknown is safer. You have to check the type before using it. Any lets you do anything, but that’s dangerous."
+    },
+    {
+      "id": "3-chip-never",
+      "type": "chip",
+      "kicker": "Edge Cases",
+      "label": "never",
+      "sub": "Means a value never occurs. Used for unreachable code.",
+      "say": "Never is for things that never happen, like a function that always throws or unreachable code."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What’s safer for API data?",
+      "wrong": "Just use any for flexibility.",
+      "right": "Use unknown and validate before using. That keeps your code safe.",
+      "say": "Don’t fall for the trap. Unknown is safer for external data. Always validate before you use it."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:51:56.693Z"
+}
