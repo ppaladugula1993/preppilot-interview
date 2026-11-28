@@ -1,0 +1,80 @@
+{
+  "id": "node-runtime",
+  "title": "Node.js Event Loop: Why Non-Blocking Wins",
+  "keys": [
+    "event loop",
+    "non-blocking",
+    "libuv",
+    "performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-event-loop-bloc",
+      "type": "hook",
+      "kicker": "Node.js Runtime · 45 seconds",
+      "line1": "What makes Node.js fast?",
+      "line2": "Why does it rarely freeze?",
+      "say": "Ever wondered why Node.js apps handle tons of requests without freezing up? Let's see what keeps things moving."
+    },
+    {
+      "id": "1-chip-event-loop",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "EventLoop",
+      "sub": "The event loop lets Node.js run code, handle events, and process I O—all without blocking.",
+      "say": "The secret is the event loop. It lets Node run code, handle events, and process input and output, all without blocking."
+    },
+    {
+      "id": "2-rows-event-loop-phas",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Timers",
+          "b": "Runs scheduled callbacks"
+        },
+        {
+          "a": "I/O Poll",
+          "b": "Handles incoming data"
+        },
+        {
+          "a": "Check",
+          "b": "Runs setImmediate callbacks"
+        },
+        {
+          "a": "Close",
+          "b": "Cleans up resources"
+        }
+      ],
+      "walk": true,
+      "say": "The event loop moves through phases: timers, input and output, immediate callbacks, and cleanup. Each phase handles a different kind of task."
+    },
+    {
+      "id": "3-terminal-libuv-offlo",
+      "type": "terminal",
+      "kicker": "Behind the Scenes",
+      "title": "libuv Offloads Work",
+      "lines": [
+        "$ fs.readFile('big.txt', cb)",
+        "-> Offloaded to thread pool",
+        "-> Callback queued for event loop"
+      ],
+      "say": "Heavy tasks, like reading big files, get offloaded to a background thread pool by libuv. When they're done, the event loop picks up the callback."
+    },
+    {
+      "id": "4-trap-blocking-myth",
+      "type": "trap",
+      "question": "Is Node.js always non-blocking?",
+      "wrong": "Yes, it's never blocked.",
+      "right": "Nope. Synchronous code or heavy loops can still block everything.",
+      "say": "Here's a common trap: People think Node is always non-blocking. But if you run slow, synchronous code, the event loop still gets blocked."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:57:41.994Z"
+}
