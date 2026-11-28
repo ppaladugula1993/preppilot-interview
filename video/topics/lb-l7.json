@@ -1,0 +1,77 @@
+{
+  "id": "lb-l7",
+  "title": "Designing a Good Health Check",
+  "keys": [
+    "health check",
+    "liveness",
+    "readiness",
+    "load balancer"
+  ],
+  "scenes": [
+    {
+      "id": "0-health-check-hook",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "Why do bad health checks",
+      "line2": "break everything?",
+      "say": "Ever wonder why a simple health check can take down your whole system? Let's see how to design one that keeps your app safe."
+    },
+    {
+      "id": "1-good-health-check-ch",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "Fast",
+      "sub": "Return a 200 in under 100 milliseconds, no login or redirects.",
+      "say": "A good health check is fast. It returns a two hundred in under a hundred milliseconds, with no login or redirects."
+    },
+    {
+      "id": "2-health-check-compare",
+      "type": "compare",
+      "kicker": "Good vs Bad",
+      "left": {
+        "title": "Good",
+        "items": [
+          "Dedicated health path",
+          "No authentication",
+          "Quick response"
+        ]
+      },
+      "right": {
+        "title": "Bad",
+        "items": [
+          "Redirects to login",
+          "Heavy database query",
+          "TCP port only"
+        ]
+      },
+      "say": "Compare this. A good check uses a dedicated path, skips authentication, and answers quickly. Bad checks redirect to login, hit the database hard, or just test if a port is open."
+    },
+    {
+      "id": "3-health-check-termina",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Test your check",
+      "lines": [
+        "$ curl -v --resolve app:443:VIP",
+        "  https://app/health",
+        "> 200 OK in 70 ms"
+      ],
+      "say": "You can test your health check with curl using the resolve option to target the new virtual IP before going live. Look for a fast two hundred OK."
+    },
+    {
+      "id": "4-health-check-trap",
+      "type": "trap",
+      "question": "Should health checks hit the database?",
+      "wrong": "Yes, always check every dependency.",
+      "right": "No. If the database slows down, all nodes fail at once and get pulled. Keep liveness checks cheap and local.",
+      "say": "Here's a classic trap. Should your health check hit the database? Not by default. If the database slows down, every node fails at once. Keep liveness checks cheap and local."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:49:23.801Z"
+}
