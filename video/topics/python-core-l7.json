@@ -1,0 +1,72 @@
+{
+  "id": "python-core-l7",
+  "title": "Exceptions & Custom Exceptions in Python",
+  "keys": [
+    "exceptions",
+    "try/except",
+    "custom exception",
+    "error handling"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-exceptions",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "What if code fails?",
+      "line2": "How do you handle errors?",
+      "say": "What happens when your Python code runs into trouble? How do you make sure errors don't crash your program?"
+    },
+    {
+      "id": "1-chip-try-except",
+      "type": "chip",
+      "kicker": "Basics",
+      "label": "try/except",
+      "sub": "Catch and handle errors so your app keeps running.",
+      "say": "In Python, try and except let you catch errors and handle them, so your app can keep going instead of crashing."
+    },
+    {
+      "id": "2-code-custom-exceptio",
+      "type": "code",
+      "kicker": "Custom Exceptions",
+      "lang": "python",
+      "code": "class MyError(Exception):\n    pass\ntry:\n    raise MyError('fail')\nexcept MyError as e:\n    print(e)",
+      "say": "You can make your own exceptions by creating a class that inherits from Exception. This helps you signal specific problems in your code."
+    },
+    {
+      "id": "3-rows-why-custom",
+      "type": "rows",
+      "kicker": "Why Custom Exceptions?",
+      "rows": [
+        {
+          "a": "Clarity",
+          "b": "Shows exactly what went wrong"
+        },
+        {
+          "a": "Control",
+          "b": "Handle errors by type"
+        },
+        {
+          "a": "Maintainability",
+          "b": "Easier debugging"
+        }
+      ],
+      "walk": false,
+      "say": "Custom exceptions make your error handling clear, give you more control, and make debugging much easier."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Is catching all exceptions a good idea?",
+      "wrong": "Yes, it prevents all crashes.",
+      "right": "No, catch specific exceptions to avoid hiding bugs.",
+      "say": "Here's a trap: should you catch every exception? No way. Catch only what you expect, or you might miss real bugs."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:35:52.095Z"
+}
