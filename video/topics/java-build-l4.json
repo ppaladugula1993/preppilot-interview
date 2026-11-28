@@ -1,0 +1,72 @@
+{
+  "id": "java-build-l4",
+  "title": "Dependency Conflicts & BOMs in Java",
+  "keys": [
+    "dependency conflict",
+    "BOM",
+    "Maven",
+    "Gradle"
+  ],
+  "scenes": [
+    {
+      "id": "0-conflict-hook",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "Ever had a build break",
+      "line2": "over a library version?",
+      "say": "Ever had your build break because two libraries need different versions of the same thing? Let's fix that."
+    },
+    {
+      "id": "1-why-conflicts",
+      "type": "chip",
+      "kicker": "Problem",
+      "label": "Conflicts",
+      "sub": "Multiple modules want different versions.",
+      "say": "Dependency conflicts happen when different modules want different versions of the same library. This is super common in big projects."
+    },
+    {
+      "id": "2-how-mediation",
+      "type": "rows",
+      "kicker": "Resolution",
+      "rows": [
+        {
+          "a": "Maven",
+          "b": "Picks version nearest the root"
+        },
+        {
+          "a": "Gradle",
+          "b": "Uses highest version by default"
+        },
+        {
+          "a": "BOM",
+          "b": "Locks versions across modules"
+        }
+      ],
+      "walk": true,
+      "say": "Maven picks the version closest to your main project. Gradle usually goes with the highest version. But both can use a Bill of Materials, or BOM, to lock versions across all modules."
+    },
+    {
+      "id": "3-bom-example",
+      "type": "code",
+      "kicker": "Tip",
+      "lang": "xml",
+      "code": "<dependency>\n  <groupId>org.springframework.boot</groupId>\n  <artifactId>spring-boot-dependencies</artifactId>\n  <version>2.7.0</version>\n  <type>pom</type>\n  <scope>import</scope>\n</dependency>",
+      "say": "Here's how you import a BOM in Maven. This makes sure every module uses the same versions for shared libraries."
+    },
+    {
+      "id": "4-trap-conflict",
+      "type": "trap",
+      "question": "How do you avoid version mismatches?",
+      "wrong": "Let Maven pick for me",
+      "right": "Use a BOM to enforce consistent versions",
+      "say": "In an interview, don't just say you let the build tool decide. Mention using a BOM to enforce consistent versions across your project."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:13:27.987Z"
+}
