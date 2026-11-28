@@ -1,0 +1,84 @@
+{
+  "id": "android-kotlin-l4",
+  "title": "Coroutines & Flow: Scopes and Dispatchers",
+  "keys": [
+    "coroutines",
+    "flow",
+    "scopes",
+    "dispatchers"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-coroutines-flow",
+      "type": "hook",
+      "kicker": "Android & Kotlin · lesson",
+      "line1": "How do you keep Android apps responsive?",
+      "line2": "What makes coroutines safe?",
+      "say": "Ever wondered how top Android apps stay smooth and responsive? What keeps your async code safe from leaks?"
+    },
+    {
+      "id": "1-chip-coroutine",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Coroutine",
+      "sub": "Lets you run async tasks without blocking the main thread.",
+      "say": "Coroutines help you run background tasks without freezing the user interface."
+    },
+    {
+      "id": "2-compare-scopes",
+      "type": "compare",
+      "kicker": "Scopes",
+      "left": {
+        "title": "viewModelScope",
+        "items": [
+          "Survives config changes",
+          "Tied to ViewModel"
+        ]
+      },
+      "right": {
+        "title": "lifecycleScope",
+        "items": [
+          "Ends with UI lifecycle",
+          "For UI tasks"
+        ]
+      },
+      "say": "Use viewModelScope for logic that needs to survive screen rotations. lifecycleScope is best for UI tasks that should end with the screen."
+    },
+    {
+      "id": "3-rows-dispatchers-flo",
+      "type": "rows",
+      "kicker": "Dispatchers & Flow",
+      "rows": [
+        {
+          "a": "Dispatchers.IO",
+          "b": "For network or database work"
+        },
+        {
+          "a": "Dispatchers.Main",
+          "b": "For UI updates"
+        },
+        {
+          "a": "Flow",
+          "b": "Cold, reactive data stream"
+        }
+      ],
+      "walk": true,
+      "say": "Pick Dispatchers.IO for heavy lifting, Main for UI updates. Flow streams data reactively, and only starts when collected."
+    },
+    {
+      "id": "4-trap-main-thread-blo",
+      "type": "trap",
+      "question": "How do you avoid blocking the main thread?",
+      "wrong": "Run everything in lifecycleScope.",
+      "right": "Launch coroutines with Dispatchers.IO for heavy tasks, then switch to Main for UI updates.",
+      "say": "Don’t just launch everything in lifecycleScope. Use Dispatchers.IO for background work, then switch to Main for UI updates."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:44:03.493Z"
+}
