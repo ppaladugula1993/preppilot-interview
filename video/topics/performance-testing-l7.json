@@ -1,0 +1,76 @@
+{
+  "id": "performance-testing-l7",
+  "title": "Scaling & Resource Limits in Perf Testing",
+  "keys": [
+    "scaling",
+    "resource limits",
+    "stress test",
+    "bottleneck"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-scaling-limits",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "Why do systems slow down?",
+      "line2": "Where's the real limit?",
+      "say": "Ever wonder why your app slows down under heavy load? Let's find out where the real limits are."
+    },
+    {
+      "id": "1-chip-scaling",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Scaling",
+      "sub": "Performance tests reveal if you hit CPU, memory, or network limits.",
+      "say": "Performance tests show when you hit CPU, memory, or network limits. That's when scaling matters."
+    },
+    {
+      "id": "2-compare-scaling-type",
+      "type": "compare",
+      "kicker": "Scaling Strategies",
+      "left": {
+        "title": "Horizontal",
+        "items": [
+          "Add more servers",
+          "Distribute traffic"
+        ]
+      },
+      "right": {
+        "title": "Vertical",
+        "items": [
+          "Upgrade CPU",
+          "Add more memory"
+        ]
+      },
+      "say": "You can scale horizontally by adding more servers, or vertically by upgrading hardware. Each approach has trade-offs."
+    },
+    {
+      "id": "3-terminal-stress-test",
+      "type": "terminal",
+      "kicker": "Real Example",
+      "title": "Stress Test Output",
+      "lines": [
+        "$ cpu usage: 100%",
+        "$ throughput: flat",
+        "$ added 2 app instances",
+        "$ throughput: increased"
+      ],
+      "say": "When CPU maxes out and throughput stalls, adding more app instances can boost performance. That's scaling in action."
+    },
+    {
+      "id": "4-trap-scaling-mistake",
+      "type": "trap",
+      "question": "What if you ignore resource limits?",
+      "wrong": "System stays stable anyway",
+      "right": "You risk crashes, errors, and bad user experience if you ignore resource limits.",
+      "say": "Don't ignore resource limits. Doing so can lead to crashes, errors, and unhappy users."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:27:56.773Z"
+}
