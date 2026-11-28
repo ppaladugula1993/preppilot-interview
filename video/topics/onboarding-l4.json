@@ -1,0 +1,99 @@
+{
+  "id": "onboarding-l4",
+  "title": "End-to-End VM Build for App Onboarding",
+  "keys": [
+    "VM build",
+    "IaC",
+    "hardening",
+    "agents",
+    "validation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-onboarding-vm",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "How do you build a secure VM?",
+      "line2": "What steps can't you skip?",
+      "say": "Ever wonder what it really takes to build an app-ready virtual machine, on-prem or in Azure? Let's break down the steps you can't miss."
+    },
+    {
+      "id": "1-rows-vm-steps",
+      "type": "rows",
+      "kicker": "Path A: VM Build Steps",
+      "rows": [
+        {
+          "a": "Reserve IP & DNS",
+          "b": "Set network and name"
+        },
+        {
+          "a": "Golden Image + IaC",
+          "b": "Clone with Terraform or CLI"
+        },
+        {
+          "a": "Domain & NTP",
+          "b": "Join realm, sync time"
+        },
+        {
+          "a": "Disks & LVM",
+          "b": "Configure storage layout"
+        },
+        {
+          "a": "Hardening",
+          "b": "CIS, patch, lock down"
+        },
+        {
+          "a": "Agents",
+          "b": "EDR, monitoring, backup"
+        },
+        {
+          "a": "Patch Group",
+          "b": "Assign update policy"
+        },
+        {
+          "a": "Service Account",
+          "b": "Set up identity"
+        },
+        {
+          "a": "Runtime & Deploy",
+          "b": "JDK, systemd, app code"
+        },
+        {
+          "a": "Firewall & Validate",
+          "b": "Lock ports, test health"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the flow: reserve your IP and DNS, build from a golden image using infrastructure as code, join your domain, set up time sync, configure disks, harden the OS, add agents, assign patch groups, set up service accounts, deploy your app, lock down the firewall, and validate everything."
+    },
+    {
+      "id": "2-terminal-azure-cli",
+      "type": "terminal",
+      "kicker": "Azure Example",
+      "title": "Build a VM with CLI",
+      "lines": [
+        "$ az group create ...",
+        "$ az vm create ...",
+        "$ ansible-playbook baseline.yml ...",
+        "$ ansible-playbook agents.yml ...",
+        "$ ansible-playbook app1.yml ..."
+      ],
+      "say": "In Azure, you use the command line to create your resource group and VM, then run Ansible playbooks for hardening, agents, and app setup. On-prem? Clone from a template, then run the same playbooks."
+    },
+    {
+      "id": "3-trap-missed-step",
+      "type": "trap",
+      "question": "What's often missed in onboarding?",
+      "wrong": "Skipping local firewall setup",
+      "right": "Validation—always check app health and ports after setup. Don’t just assume it works.",
+      "say": "A common trap? Skipping validation. Always check your app’s health and open ports before you call it done."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:10:52.239Z"
+}
