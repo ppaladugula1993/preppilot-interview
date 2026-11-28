@@ -1,0 +1,84 @@
+{
+  "id": "java-core-l0",
+  "title": "JDK, JRE, JVM & Java 17/21 Features",
+  "keys": [
+    "JDK",
+    "JRE",
+    "JVM",
+    "Java 17",
+    "Java 21"
+  ],
+  "scenes": [
+    {
+      "id": "0-java-platform-hook",
+      "type": "hook",
+      "kicker": "Core Java · lesson",
+      "line1": "JDK, JRE, JVM—what’s the difference?",
+      "line2": "And what’s new in Java?",
+      "say": "Ever get confused by JDK, JRE, and JVM? And what’s actually new in Java seventeen and twenty-one?"
+    },
+    {
+      "id": "1-java-stack-compare",
+      "type": "compare",
+      "kicker": "Java Stack",
+      "left": {
+        "title": "JVM",
+        "items": [
+          "Runs Java bytecode"
+        ]
+      },
+      "right": {
+        "title": "JRE & JDK",
+        "items": [
+          "JRE = JVM + libraries",
+          "JDK = JRE + dev tools"
+        ]
+      },
+      "say": "Here’s the stack: the JVM runs your compiled code. The JRE adds libraries so you can run apps. The JDK includes both, plus tools for building Java."
+    },
+    {
+      "id": "2-java17-21-features-r",
+      "type": "rows",
+      "kicker": "Java 17/21 Features",
+      "rows": [
+        {
+          "a": "Records",
+          "b": "Concise data classes"
+        },
+        {
+          "a": "Sealed classes",
+          "b": "Control inheritance"
+        },
+        {
+          "a": "Pattern matching",
+          "b": "Cleaner instanceof checks"
+        },
+        {
+          "a": "Text blocks",
+          "b": "Multi-line strings"
+        },
+        {
+          "a": "Virtual threads",
+          "b": "Lightweight concurrency"
+        }
+      ],
+      "walk": false,
+      "say": "Recent Java long-term support releases added records for simple data, sealed classes to limit inheritance, pattern matching for easier type checks, text blocks for multi-line strings, and virtual threads for scalable concurrency."
+    },
+    {
+      "id": "3-jdk-vs-jre-trap",
+      "type": "trap",
+      "question": "Can you build Java apps with just the JRE?",
+      "wrong": "Yes, the JRE is enough.",
+      "right": "No, you need the JDK for development tools like the compiler.",
+      "say": "Watch out—if you only have the JRE, you can run Java apps, but you can’t build them. You need the JDK for development."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:12:10.744Z"
+}
