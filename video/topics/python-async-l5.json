@@ -1,0 +1,73 @@
+{
+  "id": "python-async-l5",
+  "title": "Async Database & HTTP Clients in Python",
+  "keys": [
+    "async",
+    "database",
+    "http",
+    "coroutine",
+    "event loop"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-async-clients",
+      "type": "hook",
+      "kicker": "Async & Concurrency in Python · lesson",
+      "line1": "Why use async clients for I/O?",
+      "line2": "What makes them so efficient?",
+      "say": "Ever wondered why async database and HTTP clients are a must for scalable Python apps?"
+    },
+    {
+      "id": "1-chip-non-blocking",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Async",
+      "sub": "Async clients use coroutines for non-blocking network calls.",
+      "say": "Async clients rely on coroutines to avoid blocking the event loop during network operations."
+    },
+    {
+      "id": "2-code-httpx-example",
+      "type": "code",
+      "kicker": "Real Example",
+      "lang": "python",
+      "code": "import httpx\nasync with httpx.AsyncClient() as client:\n    resp = await client.get('https://example.com')",
+      "say": "Here's how you make a non-blocking HTTP request with an async client. The event loop stays free to handle other tasks."
+    },
+    {
+      "id": "3-compare-async-vs-blo",
+      "type": "compare",
+      "kicker": "Efficiency",
+      "left": {
+        "title": "Async Client",
+        "items": [
+          "Handles many requests",
+          "Doesn't block",
+          "Uses coroutines"
+        ]
+      },
+      "right": {
+        "title": "Blocking Client",
+        "items": [
+          "Stalls event loop",
+          "Limits concurrency"
+        ]
+      },
+      "say": "Async clients let you serve lots of users at once, while blocking clients slow everything down."
+    },
+    {
+      "id": "4-trap-blocking-in-cor",
+      "type": "trap",
+      "question": "Can you call blocking functions in async coroutines?",
+      "wrong": "Sure, it's fine for performance.",
+      "right": "No, it stalls the event loop and kills concurrency.",
+      "say": "Watch out! Calling blocking functions inside async coroutines ruins your concurrency and scalability."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:44:44.775Z"
+}
