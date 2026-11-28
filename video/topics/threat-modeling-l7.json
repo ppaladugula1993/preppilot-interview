@@ -1,0 +1,84 @@
+{
+  "id": "threat-modeling-l7",
+  "title": "Trust Boundaries in Threat Modeling",
+  "keys": [
+    "trust boundary",
+    "input validation",
+    "authentication",
+    "DFD"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-trust-boundarie",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "Where are systems most vulnerable?",
+      "line2": "What’s a trust boundary?",
+      "say": "Where do attackers focus first? Let's talk about trust boundaries and why they're a big deal."
+    },
+    {
+      "id": "1-chip-trust-boundary",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Boundary",
+      "sub": "A trust boundary is where data crosses between entities or privilege levels.",
+      "say": "A trust boundary is any spot where data or control jumps between two different parts of a system, like from a user to a server."
+    },
+    {
+      "id": "2-rows-trust-boundary-",
+      "type": "rows",
+      "kicker": "Common Examples",
+      "rows": [
+        {
+          "a": "User browser",
+          "b": "Web server"
+        },
+        {
+          "a": "App server",
+          "b": "Payment provider"
+        },
+        {
+          "a": "Microservice",
+          "b": "Third-party API"
+        }
+      ],
+      "walk": false,
+      "say": "You’ll see trust boundaries everywhere: between a user’s browser and the web server, between your app and a payment provider, or between microservices and external APIs."
+    },
+    {
+      "id": "3-compare-validation-a",
+      "type": "compare",
+      "kicker": "Risk Management",
+      "left": {
+        "title": "Before Boundary",
+        "items": [
+          "Assume input is safe",
+          "Minimal checks"
+        ]
+      },
+      "right": {
+        "title": "After Boundary",
+        "items": [
+          "Validate input",
+          "Authenticate users"
+        ]
+      },
+      "say": "On one side of the boundary, you might trust data. On the other side, you need to validate and authenticate—never assume it’s safe."
+    },
+    {
+      "id": "4-trap-trust-boundary-",
+      "type": "trap",
+      "question": "What’s the biggest mistake at trust boundaries?",
+      "wrong": "Assuming input is always safe",
+      "right": "Always validate and authenticate data crossing boundaries. Never trust input from outside.",
+      "say": "Interviewers love to ask: What’s the biggest mistake at trust boundaries? Don’t say you trust input—always validate and authenticate."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:06:06.658Z"
+}
