@@ -1,0 +1,72 @@
+{
+  "id": "monitoring-l3",
+  "title": "Grafana: Building Dashboards That Matter",
+  "keys": [
+    "Grafana",
+    "dashboard",
+    "panels",
+    "monitoring"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-grafana-panels",
+      "type": "hook",
+      "kicker": "Monitoring · lesson",
+      "line1": "What makes a great Grafana dashboard?",
+      "line2": "Which panels matter most?",
+      "say": "Ever been asked what panels you'd put on a Grafana dashboard? Let's break down what interviewers want to hear."
+    },
+    {
+      "id": "1-rows-webapp-dashboar",
+      "type": "rows",
+      "kicker": "Example Dashboard",
+      "rows": [
+        {
+          "a": "Up?",
+          "b": "Is the service online now"
+        },
+        {
+          "a": "Requests per second",
+          "b": "Current traffic load"
+        },
+        {
+          "a": "5xx percent",
+          "b": "Server error rate"
+        },
+        {
+          "a": "p95 latency",
+          "b": "Slowest typical response time"
+        },
+        {
+          "a": "CPU per host",
+          "b": "Resource usage details"
+        }
+      ],
+      "walk": true,
+      "say": "Start with the basics: show if the app is up, how much traffic it's handling, error rates, and latency. Add resource stats like CPU next."
+    },
+    {
+      "id": "2-chip-grafana-integra",
+      "type": "chip",
+      "kicker": "Integrations",
+      "label": "Sources",
+      "sub": "Grafana connects to Prometheus, Azure Monitor, Dynatrace, and more.",
+      "say": "Grafana isn't just for Prometheus—connect it to Azure Monitor, Dynatrace, or almost any data source you use."
+    },
+    {
+      "id": "3-trap-dashboard-mista",
+      "type": "trap",
+      "question": "What's the top row for?",
+      "wrong": "Detailed host metrics",
+      "right": "Quick answers: is it OK right now? High-level status first.",
+      "say": "Don't put detailed metrics up top. The first row should answer: is it OK right now? Save the deep dive for lower panels."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:02:38.838Z"
+}
