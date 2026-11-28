@@ -1,0 +1,79 @@
+{
+  "id": "selenium-playwright-l2",
+  "title": "Auto-waiting vs Explicit Waits",
+  "keys": [
+    "auto-waiting",
+    "explicit waits",
+    "Playwright",
+    "Selenium"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-waiting",
+      "type": "hook",
+      "kicker": "UI Automation · lesson",
+      "line1": "Why do some UI tests fail randomly?",
+      "line2": "Is it timing issues?",
+      "say": "Ever wonder why your UI tests sometimes fail for no clear reason? Could timing be the culprit?"
+    },
+    {
+      "id": "1-chip-autowait",
+      "type": "chip",
+      "kicker": "Auto-waiting",
+      "label": "Playwright",
+      "sub": "Waits for elements to be ready by default.",
+      "say": "Playwright waits for elements to be ready before interacting, so you rarely need manual waits."
+    },
+    {
+      "id": "2-chip-explicit",
+      "type": "chip",
+      "kicker": "Explicit Waits",
+      "label": "Selenium",
+      "sub": "Needs manual waits for dynamic content.",
+      "say": "Selenium expects you to add explicit waits, especially when dealing with dynamic or slow-loading elements."
+    },
+    {
+      "id": "3-compare-waits",
+      "type": "compare",
+      "kicker": "How they handle waits",
+      "left": {
+        "title": "Playwright",
+        "items": [
+          "Auto-waiting built in",
+          "Less flaky tests"
+        ]
+      },
+      "right": {
+        "title": "Selenium",
+        "items": [
+          "Explicit waits needed",
+          "More manual handling"
+        ]
+      },
+      "say": "Playwright handles most waits for you, which means fewer flaky tests. Selenium needs you to handle waits yourself, so timing bugs are more common."
+    },
+    {
+      "id": "4-code-example",
+      "type": "code",
+      "kicker": "Example: Auto-wait vs Explicit Wait",
+      "lang": "javascript",
+      "code": "await page.click('button#submit');\n\n// Selenium (Python):\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\nWebDriverWait(driver, 10).until(\n  EC.visibility_of_element_located((By.ID, 'submit'))\n)",
+      "say": "In Playwright, you just click and it waits for you. In Selenium, you need to write extra code to wait for the button to appear before clicking."
+    },
+    {
+      "id": "5-trap-interview",
+      "type": "trap",
+      "question": "Is auto-waiting always enough?",
+      "wrong": "Yes, auto-waiting solves all timing issues.",
+      "right": "No, sometimes you still need explicit waits for complex async updates.",
+      "say": "Don't fall for this: auto-waiting is great, but for complex asynchronous scenarios, you'll still need explicit waits."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:45:17.223Z"
+}
