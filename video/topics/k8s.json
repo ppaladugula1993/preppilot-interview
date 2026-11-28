@@ -1,0 +1,85 @@
+{
+  "id": "k8s",
+  "title": "Kubernetes: How Traffic Reaches Your Pods",
+  "keys": [
+    "Pod",
+    "Service",
+    "Ingress",
+    "Deployment",
+    "Cluster"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-traffic",
+      "type": "hook",
+      "kicker": "Kubernetes · 45 seconds",
+      "line1": "How does traffic reach your app?",
+      "line2": "What's the real path?",
+      "say": "Ever wondered how a request from the internet actually finds your container inside a Kubernetes cluster?"
+    },
+    {
+      "id": "1-chip-pod",
+      "type": "chip",
+      "kicker": "Step 1 · Pod",
+      "label": "Pod",
+      "sub": "One or more containers, same IP, same storage",
+      "say": "First, your code runs inside a pod. That's the smallest unit in Kubernetes, wrapping one or more containers."
+    },
+    {
+      "id": "2-chip-service",
+      "type": "chip",
+      "kicker": "Step 2 · Service",
+      "label": "Service",
+      "sub": "Stable IP and DNS in front of pods",
+      "say": "But pods come and go. So a Service gives your app a stable address, always pointing to the right pods."
+    },
+    {
+      "id": "3-chip-ingress",
+      "type": "chip",
+      "kicker": "Step 3 · Ingress",
+      "label": "Ingress",
+      "sub": "HTTP routing from outside the cluster",
+      "say": "To handle web traffic from outside, Ingress routes requests by host or path to the right Service, with TLS if you need it."
+    },
+    {
+      "id": "4-rows-request-path",
+      "type": "rows",
+      "kicker": "Request Flow",
+      "rows": [
+        {
+          "a": "DNS",
+          "b": "Cloud load balancer"
+        },
+        {
+          "a": "Ingress",
+          "b": "Routes by host and path"
+        },
+        {
+          "a": "Service",
+          "b": "Selects ready pods"
+        },
+        {
+          "a": "Pod",
+          "b": "Runs your containers"
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the real path: DNS points to a cloud load balancer, which forwards to your ingress controller. Ingress picks the Service, which sends traffic to a ready pod."
+    },
+    {
+      "id": "5-trap-service-selecto",
+      "type": "trap",
+      "question": "Service exists, but no traffic. Why?",
+      "wrong": "The Service is broken.",
+      "right": "The Service selector doesn't match any pod labels, or pods aren't ready.",
+      "say": "Interview trap: If your Service exists but traffic doesn’t reach pods, don’t blame the Service first. Check if its selector matches the pod labels, and if the pods are actually ready."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:40:11.525Z"
+}
