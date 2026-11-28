@@ -1,0 +1,76 @@
+{
+  "id": "python-async-l0",
+  "title": "Asyncio Event Loop: How Python Schedules Tasks",
+  "keys": [
+    "asyncio",
+    "event loop",
+    "coroutine",
+    "await"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-event-loop",
+      "type": "hook",
+      "kicker": "Async & Concurrency in Python · lesson",
+      "line1": "How does Python schedule async tasks?",
+      "line2": "What’s the event loop?",
+      "say": "Ever wonder how Python actually runs async code? What powers the event loop behind the scenes?"
+    },
+    {
+      "id": "1-chip-core",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Loop",
+      "sub": "The event loop manages coroutines and tasks, switching between them when waiting for input or output.",
+      "say": "The event loop is the core of Python's async world. It manages coroutines and tasks, switching between them whenever they're waiting for input or output."
+    },
+    {
+      "id": "2-rows-how-it-works",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Single thread",
+          "b": "Runs all async code in one thread"
+        },
+        {
+          "a": "Coroutines",
+          "b": "Functions that can pause and resume"
+        },
+        {
+          "a": "Await",
+          "b": "Lets the loop switch tasks efficiently"
+        },
+        {
+          "a": "I/O-bound",
+          "b": "Great for network and file operations"
+        }
+      ],
+      "walk": true,
+      "say": "It all happens in a single thread. Coroutines are special functions that can pause and resume. Using await lets the loop switch tasks efficiently, making it perfect for network or file operations."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "import asyncio\nasync def main():\n    print('Hello')\n    await asyncio.sleep(1)\n    print('World')\nasyncio.run(main())",
+      "say": "Here's a quick example. The main coroutine prints Hello, waits one second without blocking, then prints World. The event loop handles all the switching."
+    },
+    {
+      "id": "4-trap-blocking",
+      "type": "trap",
+      "question": "What happens if you block the event loop?",
+      "wrong": "Other tasks keep running as normal.",
+      "right": "Blocking stalls the loop, so no other async tasks can run until it's finished.",
+      "say": "If you block the event loop, no other async tasks can run until it's finished. That's a common interview trap."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:32:35.060Z"
+}
