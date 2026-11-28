@@ -1,0 +1,70 @@
+{
+  "id": "python-web-l3",
+  "title": "Django MVT, ORM & Migrations Explained",
+  "keys": [
+    "Django",
+    "MVT",
+    "ORM",
+    "migrations"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-mvt-magic",
+      "type": "hook",
+      "kicker": "Python Web · Django",
+      "line1": "How does Django keep code and data in sync?",
+      "line2": "What makes it so fast to build apps?",
+      "say": "Ever wonder how Django keeps your code and database working together, and why building apps feels so fast?"
+    },
+    {
+      "id": "1-chip-mvt",
+      "type": "chip",
+      "kicker": "Core Pattern",
+      "label": "MVT",
+      "sub": "Model-View-Template splits data, logic, and UI.",
+      "say": "Django uses the Model-View-Template pattern. That means your data, logic, and user interface are separate and easy to manage."
+    },
+    {
+      "id": "2-code-orm-model",
+      "type": "code",
+      "kicker": "Data Layer",
+      "lang": "python",
+      "code": "class Post(models.Model):\n    title = models.CharField(max_length=100)",
+      "say": "You define your data as Python classes. Django's ORM turns these into database tables, so you never write raw SQL."
+    },
+    {
+      "id": "3-terminal-migrations",
+      "type": "terminal",
+      "kicker": "Schema Changes",
+      "title": "Migrations in Action",
+      "lines": [
+        "$ python manage.py makemigrations",
+        "$ python manage.py migrate"
+      ],
+      "say": "When your models change, just run the migration commands. Django updates your database schema to match your code."
+    },
+    {
+      "id": "4-chip-admin",
+      "type": "chip",
+      "kicker": "Productivity",
+      "label": "Admin",
+      "sub": "Instant CRUD UI for your models.",
+      "say": "The admin interface gives you a ready-made dashboard to create, read, update, and delete data. No extra code needed."
+    },
+    {
+      "id": "5-trap-mvt-mixup",
+      "type": "trap",
+      "question": "What does the T in MVT stand for?",
+      "wrong": "Template means database model.",
+      "right": "Template handles the user interface, not the data.",
+      "say": "Here's a common mistake: thinking Template means database model. Actually, Template is all about the user interface."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:13:40.291Z"
+}
