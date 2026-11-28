@@ -1,0 +1,82 @@
+{
+  "id": "lb",
+  "title": "Load Balancers: Where TLS Should Terminate",
+  "keys": [
+    "load balancer",
+    "TLS",
+    "certificate",
+    "VIP",
+    "health check"
+  ],
+  "scenes": [
+    {
+      "id": "0-tls-termination-hook",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · 45 seconds",
+      "line1": "Where should TLS really end?",
+      "line2": "LB or backend?",
+      "say": "If you're running secure apps, where should you actually terminate TLS? At the load balancer, or all the way at the backend?"
+    },
+    {
+      "id": "1-chip-vip",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "VIP",
+      "sub": "The virtual IP is where clients connect first.",
+      "say": "The VIP, or virtual IP, is the address clients hit. It's the front door to your app."
+    },
+    {
+      "id": "2-rows-tls-ends",
+      "type": "rows",
+      "kicker": "TLS Termination",
+      "rows": [
+        {
+          "a": "At the LB",
+          "b": "LB decrypts, backends get plain HTTP"
+        },
+        {
+          "a": "End-to-End",
+          "b": "LB passes encrypted traffic through"
+        }
+      ],
+      "walk": false,
+      "say": "You can end TLS at the load balancer, so it decrypts traffic and sends plain HTTP to backends. Or, keep TLS end-to-end, so the LB just passes encrypted traffic through."
+    },
+    {
+      "id": "3-compare-why-lb",
+      "type": "compare",
+      "kicker": "Why End at LB?",
+      "left": {
+        "title": "Pros",
+        "items": [
+          "One place to manage certs",
+          "Lets WAF inspect traffic",
+          "Backends do less work"
+        ]
+      },
+      "right": {
+        "title": "Cons",
+        "items": [
+          "Traffic to backend not encrypted",
+          "May not meet compliance"
+        ]
+      },
+      "say": "Ending TLS at the load balancer means one spot to manage certificates, and your WAF can see the traffic. But, backend traffic isn't encrypted, which can be a problem for compliance."
+    },
+    {
+      "id": "4-trap-where-terminate",
+      "type": "trap",
+      "question": "TLS should always end at the backend?",
+      "wrong": "Yes, for best security.",
+      "right": "Usually, TLS ends at the LB. Only go end-to-end if compliance or policy requires it.",
+      "say": "A common trap: Should TLS always end at the backend for security? Usually, it's best at the load balancer—unless compliance says otherwise."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:33:05.795Z"
+}
