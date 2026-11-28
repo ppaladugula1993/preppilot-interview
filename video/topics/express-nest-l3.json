@@ -1,0 +1,76 @@
+{
+  "id": "express-nest-l3",
+  "title": "JWT Auth with Passport in Express & NestJS",
+  "keys": [
+    "JWT",
+    "Passport",
+    "middleware",
+    "NestJS"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-jwt-auth",
+      "type": "hook",
+      "kicker": "Express & NestJS · lesson",
+      "line1": "How does JWT auth actually work?",
+      "line2": "Why use Passport?",
+      "say": "Ever wonder how APIs keep routes secure without storing sessions? Let's break down JWT authentication with Passport."
+    },
+    {
+      "id": "1-chip-jwt",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "JWT",
+      "sub": "A signed token for stateless user auth.",
+      "say": "JWT stands for JSON Web Token. It's a signed token that lets you authenticate users without storing session data on the server."
+    },
+    {
+      "id": "2-rows-auth-flow",
+      "type": "rows",
+      "kicker": "Auth flow",
+      "rows": [
+        {
+          "a": "Login",
+          "b": "User submits credentials"
+        },
+        {
+          "a": "Token issued",
+          "b": "Server returns JWT"
+        },
+        {
+          "a": "Access",
+          "b": "Client sends JWT on requests"
+        },
+        {
+          "a": "Verify",
+          "b": "Middleware checks token"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the flow: user logs in, server issues a token, client sends it on each request, and middleware verifies it."
+    },
+    {
+      "id": "3-code-passport-jwt",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "passport.use(new JwtStrategy(opts, (jwt_payload, done) => {\n  User.findById(jwt_payload.id)\n    .then(user => done(null, user))\n    .catch(err => done(err, false));\n}));",
+      "say": "In Express or NestJS, Passport uses the JWT strategy. It checks the token, finds the user, and attaches them to the request."
+    },
+    {
+      "id": "4-trap-secret-storage",
+      "type": "trap",
+      "question": "Where should you store JWT secrets?",
+      "wrong": "Hardcoded in code",
+      "right": "Always store secrets in environment variables or a secure vault.",
+      "say": "Interview trap: never hardcode JWT secrets. Always store them securely, like in environment variables."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:14:06.585Z"
+}
