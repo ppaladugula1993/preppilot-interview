@@ -1,0 +1,87 @@
+{
+  "id": "network-l3",
+  "title": "What Happens When You Open a URL",
+  "keys": [
+    "DNS",
+    "TCP",
+    "TLS",
+    "HTTP",
+    "load balancer"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-url-open",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "What happens when you open a URL?",
+      "line2": "Can you walk through it?",
+      "say": "Ever wondered what your browser does when you hit enter on a web address? Let’s break it down step by step."
+    },
+    {
+      "id": "1-rows-url-steps",
+      "type": "rows",
+      "kicker": "Step by step",
+      "rows": [
+        {
+          "a": "DNS lookup",
+          "b": "Finds the server’s IP address"
+        },
+        {
+          "a": "TCP handshake",
+          "b": "Opens a connection"
+        },
+        {
+          "a": "TLS handshake",
+          "b": "Secures the connection"
+        },
+        {
+          "a": "HTTP request",
+          "b": "Asks for the web page"
+        },
+        {
+          "a": "Load balancer",
+          "b": "Routes to a backend server"
+        },
+        {
+          "a": "Response",
+          "b": "Server sends back data"
+        },
+        {
+          "a": "Render",
+          "b": "Browser displays the page"
+        }
+      ],
+      "walk": true,
+      "say": "First, your browser finds the server’s address using DNS. Then it opens a connection with TCP, secures it with TLS, and sends an HTTP request. Usually, a load balancer routes your request to a backend server, which sends back the data for your browser to render."
+    },
+    {
+      "id": "2-terminal-url-example",
+      "type": "terminal",
+      "kicker": "Real example",
+      "title": "curl to a web app",
+      "lines": [
+        "$ curl -v https://app.example.com",
+        "* Trying 203.0.113.10:443",
+        "* SSL connection using TLSv1.3",
+        "> GET / HTTP/2",
+        "< HTTP/2 200"
+      ],
+      "say": "Here’s what happens behind the scenes when you use a tool like curl. You can see DNS, TCP, TLS, the HTTP request, and the server’s response—all in action."
+    },
+    {
+      "id": "3-trap-load-balancer",
+      "type": "trap",
+      "question": "Is the load balancer always skipped?",
+      "wrong": "Yes, it’s not part of the flow.",
+      "right": "No, most requests hit a load balancer before reaching the backend.",
+      "say": "Here’s a common interview trap: is the load balancer always skipped? Actually, most requests go through it before hitting the backend server."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:18:40.967Z"
+}
