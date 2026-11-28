@@ -1,0 +1,72 @@
+{
+  "id": "api-testing-l7",
+  "title": "Mocking Dependencies in API Testing",
+  "keys": [
+    "mocking",
+    "dependencies",
+    "isolation",
+    "WireMock"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-mock-api",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "Can you trust your API tests?",
+      "line2": "What if the network fails?",
+      "say": "Can you really trust your API tests if the network goes down or a service crashes?"
+    },
+    {
+      "id": "1-chip-why-mock",
+      "type": "chip",
+      "kicker": "Why Mock?",
+      "label": "Isolation",
+      "sub": "Mocking keeps tests reliable and fast by simulating outside services.",
+      "say": "Mocking lets you isolate your API from outside services, so your tests stay reliable and quick."
+    },
+    {
+      "id": "2-rows-mock-steps",
+      "type": "rows",
+      "kicker": "How to Mock",
+      "rows": [
+        {
+          "a": "Pick a tool",
+          "b": "Try WireMock or Postman Mock"
+        },
+        {
+          "a": "Stub endpoints",
+          "b": "Set fake responses for test calls"
+        },
+        {
+          "a": "Test edge cases",
+          "b": "Simulate errors and rare scenarios"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works. First, pick a tool like WireMock. Then, stub your endpoints with fake responses. Now you can test edge cases and errors, all without touching real services."
+    },
+    {
+      "id": "3-code-wiremock-exampl",
+      "type": "code",
+      "kicker": "Example: WireMock",
+      "lang": "json",
+      "code": "// Stub payments endpoint\n{\n  \"request\": { \"url\": \"/payments\" },\n  \"response\": { \"status\": 200,\n    \"body\": \"Success\"\n  }\n}",
+      "say": "Here’s a WireMock example. We stub the payments endpoint to always return a success. No real payment service needed."
+    },
+    {
+      "id": "4-trap-real-vs-mock",
+      "type": "trap",
+      "question": "Should you always use real services?",
+      "wrong": "Yes, real is always better.",
+      "right": "No, mocking avoids flaky tests and lets you test edge cases safely.",
+      "say": "Here's a common trap: always using real services. In interviews, explain why mocking avoids flaky tests and helps you cover tricky scenarios."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:51:37.825Z"
+}
