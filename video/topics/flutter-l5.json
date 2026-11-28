@@ -1,0 +1,73 @@
+{
+  "id": "flutter-l5",
+  "title": "Flutter State Management: Provider, Bloc, Riverpod",
+  "keys": [
+    "Provider",
+    "Riverpod",
+    "Bloc",
+    "state management"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-state-choice",
+      "type": "hook",
+      "kicker": "Flutter · lesson",
+      "line1": "How do you pick state management?",
+      "line2": "Provider, Bloc, or Riverpod?",
+      "say": "Ever wonder which state management tool to use in Flutter? Let's break down Provider, Bloc, and Riverpod."
+    },
+    {
+      "id": "1-chip-provider",
+      "type": "chip",
+      "kicker": "Simple & Popular",
+      "label": "Provider",
+      "sub": "Great for basic state sharing across widgets.",
+      "say": "Provider is the go-to for simple apps. It's easy to set up and perfect for basic state sharing."
+    },
+    {
+      "id": "2-compare-riverpod-blo",
+      "type": "compare",
+      "kicker": "Scaling Up",
+      "left": {
+        "title": "Riverpod",
+        "items": [
+          "No widget tree limits",
+          "Easy to test",
+          "Flexible for complex apps"
+        ]
+      },
+      "right": {
+        "title": "Bloc",
+        "items": [
+          "Uses streams and events",
+          "Predictable state changes",
+          "Great for big projects"
+        ]
+      },
+      "say": "When your app grows, Riverpod and Bloc shine. Riverpod is flexible and test-friendly. Bloc uses streams and events for rock-solid state transitions."
+    },
+    {
+      "id": "3-code-provider-bloc",
+      "type": "code",
+      "kicker": "How it Looks",
+      "lang": "dart",
+      "code": "ChangeNotifierProvider(\n  create: (_) => CounterModel())\n\nBlocProvider(\n  create: (_) => CounterBloc())",
+      "say": "Here's how you set up Provider and Bloc. Both wrap your app to share state, but Bloc adds event handling."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Is Provider best for all apps?",
+      "wrong": "Yes, it's always enough.",
+      "right": "No—Provider is simple, but for complex apps, Bloc or Riverpod scale better.",
+      "say": "Don't assume Provider fits every project. For complex apps, Bloc or Riverpod are usually a better choice."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:47:53.339Z"
+}
