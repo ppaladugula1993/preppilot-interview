@@ -1,0 +1,85 @@
+{
+  "id": "react-native-l0",
+  "title": "React Native: Bridge vs New Architecture",
+  "keys": [
+    "Bridge",
+    "JSI",
+    "Fabric",
+    "Performance"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bridge-vs-new",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "Why did React Native need a new engine?",
+      "line2": "How does it boost performance?",
+      "say": "Ever wonder why React Native switched from the old bridge to a new architecture? Let's see how it actually speeds things up."
+    },
+    {
+      "id": "1-rows-bridge-flow",
+      "type": "rows",
+      "kicker": "Legacy Bridge Flow",
+      "rows": [
+        {
+          "a": "JS thread",
+          "b": "Sends message to native"
+        },
+        {
+          "a": "Native thread",
+          "b": "Processes and responds"
+        },
+        {
+          "a": "Communication",
+          "b": "Async and serialized"
+        }
+      ],
+      "walk": true,
+      "say": "With the old bridge, JavaScript and native code talked by sending messages back and forth. This was always asynchronous and needed a lot of message packing and unpacking."
+    },
+    {
+      "id": "2-chip-fabric",
+      "type": "chip",
+      "kicker": "New Architecture",
+      "label": "Fabric",
+      "sub": "Direct, synchronous native access via JSI",
+      "say": "Now, with the new architecture, JavaScript calls native functions directly using JSI and Fabric. This means less waiting and snappier UIs."
+    },
+    {
+      "id": "3-compare-why-faster",
+      "type": "compare",
+      "kicker": "Why It Matters",
+      "left": {
+        "title": "Bridge",
+        "items": [
+          "Async messages",
+          "More overhead"
+        ]
+      },
+      "right": {
+        "title": "JSI & Fabric",
+        "items": [
+          "Direct calls",
+          "Lower latency",
+          "Better concurrency"
+        ]
+      },
+      "say": "Comparing both, the bridge adds delays and overhead. JSI and Fabric cut that out, so animations and layouts feel much smoother."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Does the bridge use direct native calls?",
+      "wrong": "Yes, it calls native code directly.",
+      "right": "No, it sends async messages. Only JSI enables direct, synchronous native calls.",
+      "say": "Here's a common trap: The bridge doesn't do direct native calls. Only the new JSI setup allows that."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:58:53.915Z"
+}
