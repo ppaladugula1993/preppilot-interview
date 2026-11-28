@@ -1,0 +1,72 @@
+{
+  "id": "go-concurrency-l4",
+  "title": "Go Concurrency Primitives Explained",
+  "keys": [
+    "sync.Mutex",
+    "WaitGroup",
+    "Once",
+    "atomic"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-go-concurrency",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How does Go keep goroutines safe?",
+      "line2": "Which tool fits which job?",
+      "say": "Ever wondered how Go keeps goroutines from stepping on each other? Which tool keeps your code safe and fast?"
+    },
+    {
+      "id": "1-chip-mutex",
+      "type": "chip",
+      "kicker": "Critical Section",
+      "label": "Mutex",
+      "sub": "Locks code so only one goroutine can run it at a time.",
+      "say": "Mutex locks a section so only one goroutine can run it at once. It's your basic safety net."
+    },
+    {
+      "id": "2-rows-sync-primitives",
+      "type": "rows",
+      "kicker": "Go Primitives",
+      "rows": [
+        {
+          "a": "WaitGroup",
+          "b": "Waits for goroutines to finish"
+        },
+        {
+          "a": "Once",
+          "b": "Runs code only one time"
+        },
+        {
+          "a": "atomic",
+          "b": "Updates variables without locks"
+        }
+      ],
+      "walk": true,
+      "say": "WaitGroup waits for goroutines to finish. Once runs code just one time, even with many goroutines. Atomic lets you update variables without locks."
+    },
+    {
+      "id": "3-code-mutex-example",
+      "type": "code",
+      "kicker": "Mutex Example",
+      "lang": "go",
+      "code": "var mu sync.Mutex\nmu.Lock()\n// critical section\nmu.Unlock()",
+      "say": "Here’s the classic mutex move. Lock before the critical section, unlock after. Keeps things safe."
+    },
+    {
+      "id": "4-trap-deadlock",
+      "type": "trap",
+      "question": "What causes a mutex deadlock?",
+      "wrong": "Forgetting to use WaitGroup",
+      "right": "Locking in different orders or not unlocking",
+      "say": "A common interview trap: Deadlocks happen when goroutines lock in different orders or forget to unlock. Always lock and unlock in a consistent way."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:07:13.891Z"
+}
