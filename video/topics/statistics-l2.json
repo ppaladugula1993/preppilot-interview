@@ -1,0 +1,77 @@
+{
+  "id": "statistics-l2",
+  "title": "Sampling & Central Limit Theorem Explained",
+  "keys": [
+    "sampling",
+    "central limit theorem",
+    "population",
+    "sample mean"
+  ],
+  "scenes": [
+    {
+      "id": "0-sampling-hook",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "Can you trust a small sample?",
+      "line2": "Why does it work?",
+      "say": "If you only analyze part of your data, how can you be sure your results are reliable?"
+    },
+    {
+      "id": "1-sampling-chip",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Sampling",
+      "sub": "Pick a subset to estimate the whole population.",
+      "say": "Sampling means selecting a smaller group from a larger population to make predictions or estimates."
+    },
+    {
+      "id": "2-clt-compare",
+      "type": "compare",
+      "kicker": "Theory",
+      "left": {
+        "title": "Population",
+        "items": [
+          "Can be skewed",
+          "Unknown shape"
+        ]
+      },
+      "right": {
+        "title": "Sample Means",
+        "items": [
+          "Become normal",
+          "Reliable for inference"
+        ]
+      },
+      "say": "No matter how messy the original data is, the average of many samples starts to look normal, thanks to the central limit theorem."
+    },
+    {
+      "id": "3-clt-terminal",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Draw 100 samples from skewed data",
+      "lines": [
+        "$ sample_means = []",
+        "$ for i in range(100):",
+        "$   sample = random_sample()",
+        "$   sample_means.append(mean(sample))",
+        "$ plot(sample_means)"
+      ],
+      "say": "When you repeat sampling, those sample averages pile up into a bell curve, even if the original data is skewed."
+    },
+    {
+      "id": "4-sampling-trap",
+      "type": "trap",
+      "question": "Why does the central limit theorem matter?",
+      "wrong": "It only works for normal populations.",
+      "right": "It lets us use normal-based inference for any population if the sample is large enough.",
+      "say": "Don’t get tripped up—this theorem works even if your population isn’t normal. That’s key for confidence intervals and hypothesis tests."
+    },
+    {
+      "id": "5-sampling-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:33:23.877Z"
+}
