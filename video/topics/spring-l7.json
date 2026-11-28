@@ -1,0 +1,79 @@
+{
+  "id": "spring-l7",
+  "title": "Testing with Spring Boot: Key Patterns",
+  "keys": [
+    "@SpringBootTest",
+    "MockMvc",
+    "Testcontainers",
+    "Slices"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-testing-boot",
+      "type": "hook",
+      "kicker": "Spring & Spring Boot · lesson",
+      "line1": "How do you test Spring Boot apps?",
+      "line2": "What makes tests reliable?",
+      "say": "Testing is a must for Spring Boot. But what makes your tests reliable and fast enough for real projects?"
+    },
+    {
+      "id": "1-chip-springboottest",
+      "type": "chip",
+      "kicker": "@SpringBootTest",
+      "label": "Context",
+      "sub": "Loads the full app context for integration tests.",
+      "say": "Spring Boot Test loads your whole application. It's great for integration tests but can be slow."
+    },
+    {
+      "id": "2-compare-slices",
+      "type": "compare",
+      "kicker": "Test Slices",
+      "left": {
+        "title": "WebMvcTest",
+        "items": [
+          "Controllers",
+          "No database"
+        ]
+      },
+      "right": {
+        "title": "DataJpaTest",
+        "items": [
+          "Repositories",
+          "No web layer"
+        ]
+      },
+      "say": "Slices like Web MVC Test and Data JPA Test load only what's needed. That means faster, focused tests for controllers or repositories."
+    },
+    {
+      "id": "3-code-mockmvc",
+      "type": "code",
+      "kicker": "MockMvc",
+      "lang": "java",
+      "code": "@WebMvcTest\nclass UserControllerTest {\n  @Autowired MockMvc mvc;\n  // Simulate HTTP calls\n}",
+      "say": "Mock MVC lets you simulate HTTP requests without starting a server. It keeps your tests quick and isolated."
+    },
+    {
+      "id": "4-chip-testcontainers",
+      "type": "chip",
+      "kicker": "Testcontainers",
+      "label": "Real DB",
+      "sub": "Runs real databases for integration tests.",
+      "say": "Testcontainers spins up real databases, so your integration tests are much closer to production."
+    },
+    {
+      "id": "5-trap-slice-vs-contex",
+      "type": "trap",
+      "question": "When should you use test slices?",
+      "wrong": "Always for integration tests",
+      "right": "Use slices for unit or focused tests, full context for integration.",
+      "say": "Don't use slices for full integration tests. They're best for fast, focused checks on one layer."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:26:30.387Z"
+}
