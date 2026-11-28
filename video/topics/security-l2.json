@@ -1,0 +1,92 @@
+{
+  "id": "security-l2",
+  "title": "Mastering Change Management",
+  "keys": [
+    "change types",
+    "CAB",
+    "rollback",
+    "risk"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-care",
+      "type": "hook",
+      "kicker": "Security & Change · lesson",
+      "line1": "Why do companies need change control?",
+      "line2": "What could go wrong?",
+      "say": "Why do companies make a big deal about change control? What could really go wrong if you skip it?"
+    },
+    {
+      "id": "1-chip-change-types",
+      "type": "chip",
+      "kicker": "Change Types",
+      "label": "Standard",
+      "sub": "Pre-approved, low risk, routine work.",
+      "say": "Standard changes are pre-approved. They're low risk and routine, like patching a test server."
+    },
+    {
+      "id": "2-compare-change-appro",
+      "type": "compare",
+      "kicker": "Who Approves?",
+      "left": {
+        "title": "Normal",
+        "items": [
+          "Goes to CAB",
+          "Full risk review"
+        ]
+      },
+      "right": {
+        "title": "Emergency",
+        "items": [
+          "Fixes outages fast",
+          "Reviewed after"
+        ]
+      },
+      "say": "Normal changes go to the change advisory board for a full review. Emergency changes fix outages right away, then get reviewed after."
+    },
+    {
+      "id": "3-rows-request-details",
+      "type": "rows",
+      "kicker": "Change Request",
+      "rows": [
+        {
+          "a": "What & Why",
+          "b": "Describe the change and reason"
+        },
+        {
+          "a": "When & Who",
+          "b": "Schedule and owner"
+        },
+        {
+          "a": "Steps",
+          "b": "Exact process and validation"
+        },
+        {
+          "a": "Rollback",
+          "b": "How to undo if needed"
+        },
+        {
+          "a": "Risk & Blast",
+          "b": "Impact and communication"
+        }
+      ],
+      "walk": true,
+      "say": "Every change request covers what and why, when and who, exact steps, how to validate, rollback steps, risk, and how you'll communicate."
+    },
+    {
+      "id": "4-trap-rollback",
+      "type": "trap",
+      "question": "What's missing if you skip rollback?",
+      "wrong": "Just more risk",
+      "right": "Without rollback, you can't safely undo a failed change.",
+      "say": "Here's a trap: if your change plan skips rollback steps, you're not ready. Without rollback, you can't safely undo a failed change."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:59:54.955Z"
+}
