@@ -1,0 +1,75 @@
+{
+  "id": "llm-apps-l1",
+  "title": "Prompt Design & Structured LLM Outputs",
+  "keys": [
+    "prompt engineering",
+    "structured output",
+    "format",
+    "instructions"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-llm-prompts",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "How do you get LLMs to follow rules?",
+      "line2": "Why does prompt design matter?",
+      "say": "Ever wonder how to make language models give you exactly the output you need? Let's talk about prompt design and structured outputs."
+    },
+    {
+      "id": "1-chip-structure",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Structure",
+      "sub": "Guide LLMs by asking for clear formats, like JSON or tables.",
+      "say": "The trick is to tell the model exactly what format you want. For example, ask for JSON or a table."
+    },
+    {
+      "id": "2-terminal-example",
+      "type": "terminal",
+      "kicker": "Prompt Example",
+      "title": "Explicit Formatting",
+      "lines": [
+        "$ Extract fields and return as JSON:",
+        "{name:, date:, amount:}"
+      ],
+      "say": "Here's a prompt. It asks the model to extract fields and return them as JSON. Simple, but powerful."
+    },
+    {
+      "id": "3-rows-tips",
+      "type": "rows",
+      "kicker": "Pro Tips",
+      "rows": [
+        {
+          "a": "Be explicit",
+          "b": "State the output format you want"
+        },
+        {
+          "a": "Give examples",
+          "b": "Show the model what you expect"
+        },
+        {
+          "a": "Stay consistent",
+          "b": "Use the same structure every time"
+        }
+      ],
+      "walk": true,
+      "say": "Three quick tips: be explicit about the format, give examples, and keep your structure consistent for better results."
+    },
+    {
+      "id": "4-trap-mistake",
+      "type": "trap",
+      "question": "What's a common prompt mistake?",
+      "wrong": "Leaving output format up to the model.",
+      "right": "Not specifying structure leads to messy, unpredictable outputs.",
+      "say": "A classic interview trap: don't leave the output format up to the model. If you're not specific, you'll get messy, unpredictable results."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:40:03.652Z"
+}
