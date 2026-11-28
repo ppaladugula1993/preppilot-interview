@@ -1,0 +1,72 @@
+{
+  "id": "python-async-l7",
+  "title": "Concurrency Patterns in Python",
+  "keys": [
+    "producer-consumer",
+    "asyncio",
+    "gather",
+    "executor"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-concurrency",
+      "type": "hook",
+      "kicker": "Async & Concurrency in Python · lesson",
+      "line1": "How do you structure async code?",
+      "line2": "Which pattern fits best?",
+      "say": "How do you organize concurrent code in Python? Which pattern should you reach for in interviews?"
+    },
+    {
+      "id": "1-chip-producer-consum",
+      "type": "chip",
+      "kicker": "Pattern",
+      "label": "Producer",
+      "sub": "Use async queues to pass data between tasks.",
+      "say": "Producer-consumer is classic. Use async queues to safely pass data between tasks."
+    },
+    {
+      "id": "2-rows-patterns",
+      "type": "rows",
+      "kicker": "Common Patterns",
+      "rows": [
+        {
+          "a": "Producer-Consumer",
+          "b": "Async queue links producers & consumers"
+        },
+        {
+          "a": "Fan-Out/Fan-In",
+          "b": "Gather runs tasks, collects results"
+        },
+        {
+          "a": "Parallel Map",
+          "b": "Executors map work to threads or processes"
+        }
+      ],
+      "walk": true,
+      "say": "You’ll see three main patterns: producer-consumer, fan-out and fan-in with gather, and parallel map with executors."
+    },
+    {
+      "id": "3-code-gather",
+      "type": "code",
+      "kicker": "Fan-Out/Fan-In Example",
+      "lang": "python",
+      "code": "await asyncio.gather(\n  producer(),\n  consumer()\n)",
+      "say": "Fan-out and fan-in means running tasks at once and collecting their results with gather."
+    },
+    {
+      "id": "4-trap-pattern-choice",
+      "type": "trap",
+      "question": "When do you use an async queue?",
+      "wrong": "For CPU-bound parallelism",
+      "right": "To coordinate async producers and consumers",
+      "say": "Don’t mix up async queues with CPU-bound work. Use queues for coordinating async producers and consumers."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:47:53.614Z"
+}
