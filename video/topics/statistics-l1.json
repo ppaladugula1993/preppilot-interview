@@ -1,0 +1,74 @@
+{
+  "id": "statistics-l1",
+  "title": "Probability Rules & Bayes Theorem",
+  "keys": [
+    "addition",
+    "multiplication",
+    "conditional",
+    "Bayes"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-probability",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "How do you update beliefs with new data?",
+      "line2": "What rule helps?",
+      "say": "Ever wondered how to adjust your predictions when fresh evidence comes in? Which probability rule lets us do that?"
+    },
+    {
+      "id": "1-chip-addition",
+      "type": "chip",
+      "kicker": "Probability Rules",
+      "label": "Addition",
+      "sub": "Add probabilities for mutually exclusive events.",
+      "say": "First, the addition rule: when events can't happen together, just add their probabilities."
+    },
+    {
+      "id": "2-rows-multiplication-",
+      "type": "rows",
+      "kicker": "Probability Rules",
+      "rows": [
+        {
+          "a": "Multiplication",
+          "b": "For independent events, multiply"
+        },
+        {
+          "a": "Conditional",
+          "b": "Probability changes if one event occurs"
+        },
+        {
+          "a": "Bayes theorem",
+          "b": "Updates probability with new evidence"
+        }
+      ],
+      "walk": true,
+      "say": "Next, multiply probabilities for independent events. For conditional probability, the chance of one event depends on another. Bayes theorem? That's how we update beliefs using new evidence."
+    },
+    {
+      "id": "3-terminal-bayes-formu",
+      "type": "terminal",
+      "kicker": "Bayes Theorem",
+      "title": "Bayes Formula",
+      "lines": [
+        "$ P(A|B) = P(B|A) * P(A) / P(B)"
+      ],
+      "say": "Bayes theorem connects prior, likelihood, and evidence to give you the updated probability. It's a must for machine learning."
+    },
+    {
+      "id": "4-trap-classification",
+      "type": "trap",
+      "question": "What does Bayes theorem help with?",
+      "wrong": "Calculating sample means",
+      "right": "Updating probabilities in classification tasks",
+      "say": "Here's a trap: Bayes theorem isn't for calculating averages. It's your go-to for updating probabilities, especially in classification."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:30:55.594Z"
+}
