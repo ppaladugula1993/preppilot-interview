@@ -1,0 +1,71 @@
+{
+  "id": "performance-testing-l0",
+  "title": "Load, Stress, Spike & Soak Testing Explained",
+  "keys": [
+    "load testing",
+    "stress testing",
+    "spike testing",
+    "soak testing"
+  ],
+  "scenes": [
+    {
+      "id": "0-perf-hook",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "Can your app handle real traffic?",
+      "line2": "What test types should you know?",
+      "say": "Ever wondered how your app behaves under heavy traffic? Let's break down the four key performance tests every engineer should know."
+    },
+    {
+      "id": "1-load-chip",
+      "type": "chip",
+      "kicker": "Test Types",
+      "label": "Load",
+      "sub": "Measures performance under expected traffic.",
+      "say": "Load testing checks how your system performs with normal, expected traffic. It helps you confirm if everything runs smoothly for real users."
+    },
+    {
+      "id": "2-stress-chip",
+      "type": "chip",
+      "kicker": "Test Types",
+      "label": "Stress",
+      "sub": "Pushes system beyond normal limits.",
+      "say": "Stress testing pushes your app past its comfort zone. It's all about finding where things break and how your system recovers."
+    },
+    {
+      "id": "3-compare-spike-soak",
+      "type": "compare",
+      "kicker": "Traffic Patterns",
+      "left": {
+        "title": "Spike",
+        "items": [
+          "Sudden surge in users",
+          "Tests instant scaling"
+        ]
+      },
+      "right": {
+        "title": "Soak",
+        "items": [
+          "Sustained load for hours",
+          "Finds slow leaks and degradation"
+        ]
+      },
+      "say": "Spike testing throws a sudden flood of users at your app, while soak testing keeps steady traffic over time to catch issues like memory leaks."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What's the main goal of soak testing?",
+      "wrong": "To handle sudden traffic spikes",
+      "right": "To find issues from long-term, steady load like memory leaks or slowdowns",
+      "say": "Interviewers love asking about soak testing. Remember, its goal is to catch problems that only show up after hours of steady use—not sudden spikes."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:00:48.868Z"
+}
