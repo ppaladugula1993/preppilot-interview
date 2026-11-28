@@ -1,0 +1,72 @@
+{
+  "id": "react-native-l4",
+  "title": "FlatList: Boost List Performance",
+  "keys": [
+    "FlatList",
+    "re-renders",
+    "React.memo",
+    "keyExtractor"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-flatlist-perf",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "Why does FlatList feel so fast?",
+      "line2": "What slows it down?",
+      "say": "Ever wonder why FlatList is so quick with huge lists, but sometimes gets laggy? Let's break down how it works and what can trip you up."
+    },
+    {
+      "id": "1-chip-flatlist-views",
+      "type": "chip",
+      "kicker": "Performance",
+      "label": "FlatList",
+      "sub": "Only renders visible items and recycles views.",
+      "say": "FlatList keeps things smooth by only rendering what's on screen and recycling views as you scroll."
+    },
+    {
+      "id": "2-rows-prevent-rerende",
+      "type": "rows",
+      "kicker": "Avoid Re-renders",
+      "rows": [
+        {
+          "a": "keyExtractor",
+          "b": "Gives each item a stable key"
+        },
+        {
+          "a": "extraData",
+          "b": "Controls when list updates"
+        },
+        {
+          "a": "React.memo",
+          "b": "Skips re-render if props don't change"
+        }
+      ],
+      "walk": true,
+      "say": "To keep your list fast, use a key extractor for stable keys, pass extra data only when needed, and wrap item components with React memo."
+    },
+    {
+      "id": "3-code-flatlist-usage",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "jsx",
+      "code": "<FlatList\n  data={data}\n  renderItem={({item}) =>\n    <ItemComponent item={item} />}\n  keyExtractor={item => item.id}\n  extraData={selectedId}\n/>",
+      "say": "Here's a typical FlatList setup. Notice the key extractor and extra data props—these help control re-renders."
+    },
+    {
+      "id": "4-trap-memo-mistake",
+      "type": "trap",
+      "question": "What happens if you skip React.memo?",
+      "wrong": "List always stays fast",
+      "right": "Items may re-render too often, slowing the list",
+      "say": "If you forget React memo, your item components might re-render way more than needed, making the list feel sluggish."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:08:13.256Z"
+}
