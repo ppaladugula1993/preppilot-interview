@@ -1,0 +1,72 @@
+{
+  "id": "spring-l5",
+  "title": "Spring Security: Filter Chain & JWT/OAuth2",
+  "keys": [
+    "Spring Security",
+    "filter chain",
+    "JWT",
+    "OAuth2"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-filter-jwt-oaut",
+      "type": "hook",
+      "kicker": "Spring & Spring Boot · lesson",
+      "line1": "How does Spring secure your APIs?",
+      "line2": "What’s the filter chain?",
+      "say": "Ever wondered how Spring keeps your APIs safe? What exactly is the filter chain, and where do JWT and OAuth2 fit in?"
+    },
+    {
+      "id": "1-chip-filter-chain",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Filters",
+      "sub": "Spring Security uses a chain of filters for auth checks.",
+      "say": "Spring Security runs every request through a chain of filters. These filters handle authentication and authorization, step by step."
+    },
+    {
+      "id": "2-rows-jwt-oauth2",
+      "type": "rows",
+      "kicker": "Stateless APIs",
+      "rows": [
+        {
+          "a": "JWT",
+          "b": "Token checked on each request"
+        },
+        {
+          "a": "OAuth2",
+          "b": "Validates access tokens per call"
+        },
+        {
+          "a": "Stateless",
+          "b": "No session stored on server"
+        }
+      ],
+      "walk": true,
+      "say": "For stateless APIs, Spring often uses JWT or OAuth2. Each request brings its own token, so the server doesn't keep session data."
+    },
+    {
+      "id": "3-code-configure-secur",
+      "type": "code",
+      "kicker": "Config example",
+      "lang": "java",
+      "code": "@EnableWebSecurity\npublic class SecurityConfig extends WebSecurityConfigurerAdapter {\n  protected void configure(HttpSecurity http) throws Exception {\n    http.oauth2ResourceServer().jwt();\n  }\n}",
+      "say": "You can set up JWT or OAuth2 support in your security config. This tells Spring to expect and validate tokens on every request."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Does JWT auth require server sessions?",
+      "wrong": "Yes, to track user state.",
+      "right": "No, JWT is stateless. Each request is verified with its own token.",
+      "say": "Here's a common trap: Does JWT authentication need server sessions? Nope. JWT is stateless, so each request stands alone with its own token."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:23:21.686Z"
+}
