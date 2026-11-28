@@ -1,0 +1,86 @@
+{
+  "id": "node-runtime-l3",
+  "title": "Worker Threads vs Cluster vs Child",
+  "keys": [
+    "worker threads",
+    "cluster",
+    "child processes",
+    "concurrency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-concurrency-cho",
+      "type": "hook",
+      "kicker": "Node.js Runtime · lesson",
+      "line1": "Which Node.js concurrency tool?",
+      "line2": "When do you use each?",
+      "say": "Ever wonder which Node.js concurrency model to use? Let's break down worker threads, clusters, and child processes so you can make the right call in interviews."
+    },
+    {
+      "id": "1-chip-worker-threads",
+      "type": "chip",
+      "kicker": "Concurrency",
+      "label": "Workers",
+      "sub": "Run JavaScript in multiple threads, sharing memory for heavy CPU tasks.",
+      "say": "Worker threads let you run JavaScript in parallel threads. They're perfect for CPU-heavy tasks, and they can share memory between threads."
+    },
+    {
+      "id": "2-compare-cluster-chil",
+      "type": "compare",
+      "kicker": "Scaling & Isolation",
+      "left": {
+        "title": "Cluster",
+        "items": [
+          "Spawns Node.js processes",
+          "Shares server ports",
+          "Best for HTTP scaling"
+        ]
+      },
+      "right": {
+        "title": "Child Process",
+        "items": [
+          "Runs external programs",
+          "Full process isolation",
+          "Great for scripts or commands"
+        ]
+      },
+      "say": "Clusters create multiple Node processes for load balancing, sharing the same server port. Child processes, on the other hand, run separate programs and are fully isolated—ideal for running scripts or shell commands."
+    },
+    {
+      "id": "3-rows-when-to-use",
+      "type": "rows",
+      "kicker": "Quick Picks",
+      "rows": [
+        {
+          "a": "Worker threads",
+          "b": "CPU-bound JavaScript tasks"
+        },
+        {
+          "a": "Cluster",
+          "b": "Scaling HTTP servers"
+        },
+        {
+          "a": "Child process",
+          "b": "External scripts or commands"
+        }
+      ],
+      "walk": false,
+      "say": "Here's the cheat sheet: worker threads for CPU-bound JavaScript, clusters for scaling web servers, and child processes for running outside scripts."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Which model shares memory by default?",
+      "wrong": "Cluster",
+      "right": "Only worker threads share memory by default. Clusters and child processes do not.",
+      "say": "Quick check: which model shares memory by default? It's only worker threads. Clusters and child processes keep their memory separate."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:06:13.447Z"
+}
