@@ -1,0 +1,72 @@
+{
+  "id": "api-testing-l2",
+  "title": "Authentication Flows in API Testing",
+  "keys": [
+    "OAuth2",
+    "JWT",
+    "automation",
+    "headers"
+  ],
+  "scenes": [
+    {
+      "id": "0-auth-flow-hook",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "How do you test secure APIs?",
+      "line2": "What about authentication?",
+      "say": "APIs need security. But how do you test authentication flows without breaking your automation?"
+    },
+    {
+      "id": "1-auth-types-chip",
+      "type": "chip",
+      "kicker": "Common Auth",
+      "label": "Tokens",
+      "sub": "APIs use OAuth2 tokens or API keys for authentication.",
+      "say": "Most APIs rely on tokens or keys to authenticate requests. You’ll see OAuth2 and API keys everywhere."
+    },
+    {
+      "id": "2-auth-steps-rows",
+      "type": "rows",
+      "kicker": "User Flow",
+      "rows": [
+        {
+          "a": "Get token",
+          "b": "Call login or auth endpoint"
+        },
+        {
+          "a": "Renew token",
+          "b": "Handle expiration in tests"
+        },
+        {
+          "a": "Send token",
+          "b": "Add Authorization header"
+        }
+      ],
+      "walk": true,
+      "say": "To test authentication, first get a token, then renew it if needed, and finally send it in your request headers."
+    },
+    {
+      "id": "3-auth-code-example",
+      "type": "code",
+      "kicker": "Automation",
+      "lang": "python",
+      "code": "token = login()\nheaders = {\n  'Authorization': f'Bearer {token}'\n}\nresponse = requests.get(url, headers=headers)",
+      "say": "Automate token retrieval in your test setup. Never hardcode credentials—let your tests log in and grab the token each time."
+    },
+    {
+      "id": "4-auth-trap",
+      "type": "trap",
+      "question": "Should you hardcode tokens in tests?",
+      "wrong": "Yes, it saves time.",
+      "right": "No, automate token retrieval to keep tests secure and maintainable.",
+      "say": "Interviewers will ask if you hardcode tokens. Automate token retrieval instead—it's safer and keeps your tests reliable."
+    },
+    {
+      "id": "5-auth-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:38:04.124Z"
+}
