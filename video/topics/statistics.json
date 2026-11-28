@@ -1,0 +1,85 @@
+{
+  "id": "statistics",
+  "title": "Why the Central Limit Theorem Matters",
+  "keys": [
+    "central limit theorem",
+    "sample mean",
+    "normal distribution",
+    "confidence interval",
+    "statistical inference"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-clt",
+      "type": "hook",
+      "kicker": "Statistics & Probability · 45 seconds",
+      "line1": "Why do we use normal curves everywhere?",
+      "line2": "What's the secret behind it?",
+      "say": "Ever wonder why so many stats formulas rely on the normal curve? What's the trick that makes it work for almost any data?"
+    },
+    {
+      "id": "1-chip-sampling",
+      "type": "chip",
+      "kicker": "Step 1 · Sampling",
+      "label": "Sample",
+      "sub": "We estimate populations by randomly picking data.",
+      "say": "We don't measure everyone. We grab a random sample and use it to guess about the whole group."
+    },
+    {
+      "id": "2-rows-clt",
+      "type": "rows",
+      "kicker": "Step 2 · CLT in Action",
+      "rows": [
+        {
+          "a": "Sample means",
+          "b": "Cluster around true mean"
+        },
+        {
+          "a": "Shape",
+          "b": "Becomes bell-shaped as size grows"
+        },
+        {
+          "a": "Works for",
+          "b": "Any population, even weird ones"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the magic: as we take bigger samples, their averages start to pile up near the real mean and form a bell curve—even if the original data is messy."
+    },
+    {
+      "id": "3-compare-inference",
+      "type": "compare",
+      "kicker": "Step 3 · Inference",
+      "left": {
+        "title": "Without CLT",
+        "items": [
+          "Can't trust intervals",
+          "Tests may fail"
+        ]
+      },
+      "right": {
+        "title": "With CLT",
+        "items": [
+          "Confidence intervals work",
+          "Hypothesis tests succeed"
+        ]
+      },
+      "say": "Without the central limit theorem, our confidence intervals and hypothesis tests could flop. With it, they're reliable, even for strange data."
+    },
+    {
+      "id": "4-trap-misconception",
+      "type": "trap",
+      "question": "Does CLT require normal data?",
+      "wrong": "Yes, the data must be normal.",
+      "right": "No, CLT works for any population if the sample size is big enough.",
+      "say": "A common mistake: thinking the central limit theorem only works for normal data. Nope—it applies to any population as long as your sample is large."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:25:31.154Z"
+}
