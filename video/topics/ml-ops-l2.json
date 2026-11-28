@@ -1,0 +1,72 @@
+{
+  "id": "ml-ops-l2",
+  "title": "Feature Stores in MLOps: Why They Matter",
+  "keys": [
+    "feature store",
+    "consistency",
+    "versioning",
+    "feature leakage"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-feature-sto",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "How do you keep ML features safe?",
+      "line2": "What is a feature store?",
+      "say": "How do you keep your machine learning features consistent and safe from leakage? Let's talk about feature stores."
+    },
+    {
+      "id": "1-chip-centralized",
+      "type": "chip",
+      "kicker": "Key Idea",
+      "label": "Centralized",
+      "sub": "Feature stores are shared hubs for ML features.",
+      "say": "A feature store is a centralized hub where teams store, share, and serve features for machine learning models."
+    },
+    {
+      "id": "2-rows-benefits",
+      "type": "rows",
+      "kicker": "Why Use One?",
+      "rows": [
+        {
+          "a": "Consistency",
+          "b": "Same features for training and inference"
+        },
+        {
+          "a": "Versioning",
+          "b": "Track and update feature changes"
+        },
+        {
+          "a": "APIs",
+          "b": "Batch and real-time access"
+        }
+      ],
+      "walk": true,
+      "say": "They keep features consistent between training and inference, let you version features, and offer APIs for both batch and real-time use."
+    },
+    {
+      "id": "3-code-api",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "features = get_features(\n  ['user_age', 'purchase_history'],\n  user_id=123\n)",
+      "say": "For example, you can fetch user features by calling the feature store API with a user ID."
+    },
+    {
+      "id": "4-trap-leakage",
+      "type": "trap",
+      "question": "How does a feature store stop leakage?",
+      "wrong": "By encrypting features",
+      "right": "By enforcing versioning and data boundaries",
+      "say": "Don't confuse it with security. Feature stores prevent feature leakage by enforcing versioning and strict data boundaries, not just by encrypting data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:57:38.504Z"
+}
