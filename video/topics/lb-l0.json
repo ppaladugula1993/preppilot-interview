@@ -1,0 +1,89 @@
+{
+  "id": "lb-l0",
+  "title": "Load Balancer Vocabulary Essentials",
+  "keys": [
+    "VIP",
+    "pool",
+    "monitor",
+    "persistence",
+    "algorithm"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vocab",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "Do you know your VIPs from your pools?",
+      "line2": "What do these terms mean?",
+      "say": "Do you really know what a VIP or a pool is? Let’s break down the must-know load balancer vocabulary."
+    },
+    {
+      "id": "1-chip-vip",
+      "type": "chip",
+      "kicker": "Key Term",
+      "label": "VIP",
+      "sub": "The address clients connect to, like 10.1.1.50",
+      "say": "VIP means virtual IP. It's the address your clients actually connect to, not the backend servers."
+    },
+    {
+      "id": "2-rows-pool",
+      "type": "rows",
+      "kicker": "Backend Group",
+      "rows": [
+        {
+          "a": "Pool",
+          "b": "Set of backend servers"
+        },
+        {
+          "a": "Monitor",
+          "b": "Health check for backends"
+        },
+        {
+          "a": "Persistence",
+          "b": "Same client, same server"
+        },
+        {
+          "a": "Algorithm",
+          "b": "How requests get distributed"
+        }
+      ],
+      "walk": false,
+      "say": "The pool is your group of backend servers. The monitor checks if they’re healthy. Persistence keeps a client on the same server. And the algorithm decides who gets the next request."
+    },
+    {
+      "id": "3-compare-algo",
+      "type": "compare",
+      "kicker": "Balancing Methods",
+      "left": {
+        "title": "Round Robin",
+        "items": [
+          "Each server takes turns",
+          "Simple, even distribution"
+        ]
+      },
+      "right": {
+        "title": "Least Connections",
+        "items": [
+          "Server with fewest active",
+          "Good for uneven workloads"
+        ]
+      },
+      "say": "Round robin means every server takes turns. Least connections picks the server with the fewest active requests. Pick the right one for your app."
+    },
+    {
+      "id": "4-trap-vocab",
+      "type": "trap",
+      "question": "What does VIP stand for?",
+      "wrong": "Very Important Pool",
+      "right": "Virtual IP. It’s the address clients hit.",
+      "say": "Watch out—VIP does not mean very important pool. It stands for virtual IP, the address your clients actually use."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:35:10.833Z"
+}
