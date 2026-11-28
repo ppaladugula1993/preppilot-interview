@@ -1,0 +1,68 @@
+{
+  "id": "appsec-l0",
+  "title": "OWASP Top 10: What & Why It Matters",
+  "keys": [
+    "OWASP",
+    "Top 10",
+    "vulnerabilities",
+    "security"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-owasp-top10",
+      "type": "hook",
+      "kicker": "Application Security (OWASP) · lesson",
+      "line1": "What's the OWASP Top 10?",
+      "line2": "Why do interviewers care?",
+      "say": "Ever wondered why interviewers always ask about the OWASP Top Ten? Let’s break down what it is and why it matters."
+    },
+    {
+      "id": "1-chip-baseline",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Baseline",
+      "sub": "OWASP Top 10 lists the biggest web app risks.",
+      "say": "The OWASP Top Ten is a baseline list of the most critical security risks for web applications."
+    },
+    {
+      "id": "2-rows-top10",
+      "type": "rows",
+      "kicker": "2021 Top 10",
+      "rows": [
+        {
+          "a": "Broken Access Control",
+          "b": "Improper restrictions on actions"
+        },
+        {
+          "a": "Injection",
+          "b": "Untrusted data in commands"
+        },
+        {
+          "a": "Data Exposure",
+          "b": "Sensitive info leaks"
+        },
+        {
+          "a": "Security Misconfig",
+          "b": "Unsafe default settings"
+        }
+      ],
+      "walk": false,
+      "say": "Some top risks include broken access control, injection attacks, leaking sensitive data, and bad configuration choices."
+    },
+    {
+      "id": "3-trap-interview",
+      "type": "trap",
+      "question": "Is the Top 10 just for compliance?",
+      "wrong": "Yes, it's only a checkbox.",
+      "right": "No, it's a practical guide for real-world threats.",
+      "say": "Here's a trap: Interviewers want to know if you treat the Top Ten as just a compliance checklist. Don’t fall for it—it’s a practical guide for tackling real threats."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:32:57.039Z"
+}
