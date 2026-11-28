@@ -1,0 +1,84 @@
+{
+  "id": "python-packaging-l5",
+  "title": "Linting & Formatting in Python Projects",
+  "keys": [
+    "ruff",
+    "black",
+    "linting",
+    "formatting",
+    "CI"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lint-or-not",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "Does code style really matter?",
+      "line2": "Why do we lint and format?",
+      "say": "Ever wonder why interviewers care about code style? Let's see why linting and formatting matter."
+    },
+    {
+      "id": "1-chip-ruff",
+      "type": "chip",
+      "kicker": "Linting",
+      "label": "ruff",
+      "sub": "Catches errors and enforces code rules fast.",
+      "say": "First up, ruff. It's a lightning-fast tool that checks your code for errors and enforces style rules."
+    },
+    {
+      "id": "2-chip-black",
+      "type": "chip",
+      "kicker": "Formatting",
+      "label": "black",
+      "sub": "Auto-formats code to a consistent style.",
+      "say": "Then there's black. It automatically formats your code so everything looks consistent, no matter who wrote it."
+    },
+    {
+      "id": "3-terminal-commands",
+      "type": "terminal",
+      "kicker": "Try it",
+      "title": "Run linting and formatting",
+      "lines": [
+        "$ ruff check src/",
+        "$ black src/"
+      ],
+      "say": "Just run ruff to check for issues, and black to reformat your code. It's that simple."
+    },
+    {
+      "id": "4-rows-ci",
+      "type": "rows",
+      "kicker": "Pro tip",
+      "rows": [
+        {
+          "a": "Add to CI",
+          "b": "Automate checks for every commit"
+        },
+        {
+          "a": "Save time",
+          "b": "Fixes style before reviews"
+        },
+        {
+          "a": "Boost quality",
+          "b": "Keeps codebase clean"
+        }
+      ],
+      "walk": true,
+      "say": "I always add these tools to my continuous integration pipeline. It saves time, keeps the codebase clean, and catches problems early."
+    },
+    {
+      "id": "5-trap-mixup",
+      "type": "trap",
+      "question": "Is black a linting tool?",
+      "wrong": "Yes, it checks for errors.",
+      "right": "No, black formats code. Ruff handles linting.",
+      "say": "Don't mix them up! Black formats your code, but ruff is the one that actually checks for errors and style issues."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:16:56.079Z"
+}
