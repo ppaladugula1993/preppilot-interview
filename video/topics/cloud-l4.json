@@ -1,0 +1,88 @@
+{
+  "id": "cloud-l4",
+  "title": "Azure Governance Hierarchy Explained",
+  "keys": [
+    "management group",
+    "subscription",
+    "RBAC",
+    "landing zone"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-governance-hier",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "Who controls what in Azure?",
+      "line2": "How does hierarchy work?",
+      "say": "Ever wonder who decides what you can do in Azure, and where your app actually lands? Let's break down the governance hierarchy."
+    },
+    {
+      "id": "1-rows-hierarchy-steps",
+      "type": "rows",
+      "kicker": "Hierarchy",
+      "rows": [
+        {
+          "a": "Management groups",
+          "b": "Top-level, organize subscriptions"
+        },
+        {
+          "a": "Subscriptions",
+          "b": "Billing boundary, access control"
+        },
+        {
+          "a": "Resource groups",
+          "b": "Logical grouping of resources"
+        },
+        {
+          "a": "Resources",
+          "b": "Actual services, like VMs"
+        }
+      ],
+      "walk": true,
+      "say": "Azure is structured like a tree. Start with management groups at the top, then subscriptions, then resource groups, and finally, the actual resources like virtual machines."
+    },
+    {
+      "id": "2-compare-rbac-policy",
+      "type": "compare",
+      "kicker": "Controls",
+      "left": {
+        "title": "RBAC",
+        "items": [
+          "Who can do what",
+          "Owner, Contributor, Reader"
+        ]
+      },
+      "right": {
+        "title": "Policy",
+        "items": [
+          "What is allowed",
+          "Regions, tags, public IPs"
+        ]
+      },
+      "say": "Role-based access controls decide who can do what. Policies set what is allowed, like which regions or tags you must use. Both flow down the hierarchy."
+    },
+    {
+      "id": "3-chip-landing-zone",
+      "type": "chip",
+      "kicker": "Foundation",
+      "label": "LandingZone",
+      "sub": "Pre-built, governed environment for app teams",
+      "say": "A landing zone is a ready-made foundation with networking, identity, policy, and logging. App teams deploy into it and inherit all the guardrails."
+    },
+    {
+      "id": "4-trap-landing-zone-mi",
+      "type": "trap",
+      "question": "Is a landing zone just a network template?",
+      "wrong": "Yes, it's just a VNet or template.",
+      "right": "No, it's a governed environment with controls, not just a network or template.",
+      "say": "Don't confuse a landing zone with just a network template. It's a full governed environment, including policies and access controls."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:42:14.172Z"
+}
