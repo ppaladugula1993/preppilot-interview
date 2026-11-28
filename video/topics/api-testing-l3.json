@@ -1,0 +1,73 @@
+{
+  "id": "api-testing-l3",
+  "title": "Contract Testing with Pact · API Prep",
+  "keys": [
+    "contract",
+    "Pact",
+    "provider",
+    "consumer",
+    "integration"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-contract-pact",
+      "type": "hook",
+      "kicker": "API Testing · lesson",
+      "line1": "How does Pact prevent API breakage?",
+      "line2": "What is contract testing?",
+      "say": "Ever wondered how teams avoid nasty surprises when APIs change? Let's see how Pact keeps services in sync with contract testing."
+    },
+    {
+      "id": "1-chip-contract",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Contract",
+      "sub": "A contract defines what data and endpoints the API must provide.",
+      "say": "A contract is a clear agreement on what data and endpoints an API must offer. No guesswork, just facts."
+    },
+    {
+      "id": "2-rows-pact-steps",
+      "type": "rows",
+      "kicker": "Pact Workflow",
+      "rows": [
+        {
+          "a": "Consumer sets contract",
+          "b": "Specifies expected response shape"
+        },
+        {
+          "a": "Provider runs test",
+          "b": "Validates against contract"
+        },
+        {
+          "a": "Catch changes early",
+          "b": "Spot mismatches before deployment"
+        }
+      ],
+      "walk": true,
+      "say": "First, the consumer sets the contract, spelling out the expected data. Then, the provider runs tests to check if it matches. This way, we catch breaking changes before they hit production."
+    },
+    {
+      "id": "3-code-pact-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "const pact = require('pact');\npact({\n  consumer: 'WebApp',\n  provider: 'UserAPI',\n  interactions: [{\n    request: {method: 'GET', path: '/users'},\n    response: {status: 200, body: {id: 1, name: 'Sam'}}\n  }]\n});",
+      "say": "Here's a Pact contract. The consumer expects a user endpoint to return an ID and a name. The provider must match this structure."
+    },
+    {
+      "id": "4-trap-contract-testin",
+      "type": "trap",
+      "question": "Does contract testing check performance?",
+      "wrong": "Yes, it checks speed and load.",
+      "right": "No, contract testing only checks data structure and endpoints, not performance.",
+      "say": "Interviewers might ask if contract testing checks performance. It doesn't—it only verifies data and endpoints match the contract."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:41:04.018Z"
+}
