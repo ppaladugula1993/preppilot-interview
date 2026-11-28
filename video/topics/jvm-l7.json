@@ -1,0 +1,72 @@
+{
+  "id": "jvm-l7",
+  "title": "Essential JVM Flags for Production",
+  "keys": [
+    "JVM flags",
+    "heap",
+    "GC",
+    "diagnostics"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-jvm-flags-prod",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Which JVM flags matter most",
+      "line2": "in production?",
+      "say": "Ever wonder which JVM flags are must-haves for running Java in production?"
+    },
+    {
+      "id": "1-chip-heap-memory",
+      "type": "chip",
+      "kicker": "Memory",
+      "label": "Heap",
+      "sub": "Set heap size with Xmx and Xms for stability.",
+      "say": "First, control your heap memory. Use Xmx and Xms to set max and initial heap size. This keeps your app stable under load."
+    },
+    {
+      "id": "2-terminal-gc-heapdump",
+      "type": "terminal",
+      "kicker": "GC & Diagnostics",
+      "title": "Key JVM flags",
+      "lines": [
+        "$ java -Xmx4g -Xms4g \\",
+        "  -XX:+UseG1GC \\",
+        "  -XX:+HeapDumpOnOutOfMemoryError"
+      ],
+      "say": "Next, enable the G1 garbage collector for balanced performance, and turn on heap dumps for OutOfMemory errors. These help you troubleshoot fast."
+    },
+    {
+      "id": "3-rows-container-aware",
+      "type": "rows",
+      "kicker": "Containers",
+      "rows": [
+        {
+          "a": "MaxRAMPercentage",
+          "b": "Heap as percent of container RAM"
+        },
+        {
+          "a": "ActiveProcessorCount",
+          "b": "Limit CPU usage to container"
+        }
+      ],
+      "walk": false,
+      "say": "If you're running in containers, set MaxRAMPercentage and ActiveProcessorCount. This ensures the JVM uses only its allowed resources."
+    },
+    {
+      "id": "4-trap-heapdump",
+      "type": "trap",
+      "question": "Is heap dump on OutOfMemory optional?",
+      "wrong": "Yes, it's just for debugging.",
+      "right": "No, it's essential for post-mortem analysis.",
+      "say": "Don't skip heap dumps. In production, they're critical for analyzing memory leaks after crashes."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:10:25.512Z"
+}
