@@ -1,0 +1,72 @@
+{
+  "id": "monitoring-l5",
+  "title": "Azure Monitor, Log Analytics & KQL",
+  "keys": [
+    "Azure Monitor",
+    "Log Analytics",
+    "KQL",
+    "metrics"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-monitoring",
+      "type": "hook",
+      "kicker": "Monitoring · lesson",
+      "line1": "How does Azure Monitor help?",
+      "line2": "What is KQL for?",
+      "say": "Ever wondered how Azure tracks everything and lets you search logs across all your resources? Let's break it down."
+    },
+    {
+      "id": "1-chip-azuremonitor",
+      "type": "chip",
+      "kicker": "Core",
+      "label": "Monitor",
+      "sub": "Collects metrics, activity logs and resource logs.",
+      "say": "Azure Monitor grabs metrics, activity logs and resource logs from your cloud services."
+    },
+    {
+      "id": "2-rows-loganalytics",
+      "type": "rows",
+      "kicker": "Flow",
+      "rows": [
+        {
+          "a": "Logs collected",
+          "b": "Metrics and logs from resources"
+        },
+        {
+          "a": "Workspace",
+          "b": "Sent to Log Analytics"
+        },
+        {
+          "a": "Query",
+          "b": "Searched with KQL"
+        }
+      ],
+      "walk": true,
+      "say": "Logs land in a Log Analytics workspace, where you use KQL to search and analyze them."
+    },
+    {
+      "id": "3-code-kqlpipeline",
+      "type": "code",
+      "kicker": "KQL",
+      "lang": "kql",
+      "code": "AzureDiagnostics\n| where TimeGenerated > ago(1h)\n| where httpStatus_d >= 500\n| summarize count() by serverRouted_s",
+      "say": "KQL reads like a pipeline. You filter, summarize and group logs to answer questions fast."
+    },
+    {
+      "id": "4-trap-kqloperators",
+      "type": "trap",
+      "question": "Which KQL operator finds columns?",
+      "wrong": "summarize",
+      "right": "project selects columns, summarize groups and counts.",
+      "say": "Don't mix up project and summarize. Project picks columns, summarize groups and counts."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:07:19.713Z"
+}
