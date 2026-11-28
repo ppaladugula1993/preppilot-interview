@@ -1,0 +1,85 @@
+{
+  "id": "java-build-l5",
+  "title": "Multi-Module Builds: Maven & Gradle",
+  "keys": [
+    "multi-module",
+    "parent",
+    "dependency",
+    "settings.gradle",
+    "POM"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-multi-module",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "How do you manage big projects?",
+      "line2": "What are multi-module builds?",
+      "say": "Ever wondered how big Java projects stay organized? Let's talk about multi-module builds."
+    },
+    {
+      "id": "1-chip-parent-child",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Parent",
+      "sub": "A parent project groups related modules, sharing settings and dependencies.",
+      "say": "A parent project lets you group related modules together, so they all share the same settings and dependencies."
+    },
+    {
+      "id": "2-compare-maven-gradle",
+      "type": "compare",
+      "kicker": "How it works",
+      "left": {
+        "title": "Maven",
+        "items": [
+          "Uses a parent POM file",
+          "Lists modules in modules section"
+        ]
+      },
+      "right": {
+        "title": "Gradle",
+        "items": [
+          "Uses settings dot gradle",
+          "Includes projects with include command"
+        ]
+      },
+      "say": "In Maven, you list your modules in the parent POM file. In Gradle, you include projects in the settings file."
+    },
+    {
+      "id": "3-rows-benefits",
+      "type": "rows",
+      "kicker": "Why it matters",
+      "rows": [
+        {
+          "a": "Share dependencies",
+          "b": "Keep versions consistent"
+        },
+        {
+          "a": "Code reuse",
+          "b": "Avoid duplication"
+        },
+        {
+          "a": "Easy updates",
+          "b": "Change once, update all"
+        }
+      ],
+      "walk": false,
+      "say": "This setup keeps dependency versions consistent, avoids code duplication, and lets you update shared settings in one place."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "What does a multi-module build solve?",
+      "wrong": "It only speeds up builds",
+      "right": "It organizes code, shares dependencies, and simplifies updates",
+      "say": "Don't just say it makes builds faster. The real value is in organizing code, sharing dependencies, and making updates simple."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:17:04.334Z"
+}
