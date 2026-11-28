@@ -1,0 +1,76 @@
+{
+  "id": "appsec-l1",
+  "title": "Injection & Parameterized Queries",
+  "keys": [
+    "injection",
+    "parameterized",
+    "query",
+    "prepared statement"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-injection-sql",
+      "type": "hook",
+      "kicker": "Application Security (OWASP) · lesson",
+      "line1": "How do you stop attackers",
+      "line2": "from hacking your queries?",
+      "say": "How do you keep attackers from sneaking into your database with a simple query?"
+    },
+    {
+      "id": "1-chip-injection-risk",
+      "type": "chip",
+      "kicker": "Vulnerability",
+      "label": "Injection",
+      "sub": "Untrusted input can change commands or queries.",
+      "say": "Injection happens when untrusted input changes what your code actually does."
+    },
+    {
+      "id": "2-rows-parameterized-s",
+      "type": "rows",
+      "kicker": "Prevention",
+      "rows": [
+        {
+          "a": "Write query",
+          "b": "Use placeholders for input"
+        },
+        {
+          "a": "Prepare statement",
+          "b": "Send query to database"
+        },
+        {
+          "a": "Bind data",
+          "b": "Attach user input as values"
+        },
+        {
+          "a": "Execute",
+          "b": "Run safely, no code changes"
+        }
+      ],
+      "walk": true,
+      "say": "Parameterized queries keep code and data separate. You write the query, prepare it, bind the user input, and then execute it safely."
+    },
+    {
+      "id": "3-code-java-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "java",
+      "code": "String sql = \"SELECT * FROM users WHERE username = ?\";\nPreparedStatement ps = conn.prepareStatement(sql);\nps.setString(1, username);",
+      "say": "Here's a real Java example. The question mark is a placeholder. User data is added safely, so attackers can't inject code."
+    },
+    {
+      "id": "4-trap-concat-vs-param",
+      "type": "trap",
+      "question": "Which is safer: string concat or parameterized?",
+      "wrong": "String concatenation is fine if you escape input.",
+      "right": "Always use parameterized queries. Escaping input is risky and error-prone.",
+      "say": "Here's a common trap. Some think escaping input is enough, but parameterized queries are always safer."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:35:03.655Z"
+}
