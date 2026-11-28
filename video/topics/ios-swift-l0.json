@@ -1,0 +1,80 @@
+{
+  "id": "ios-swift-l0",
+  "title": "Swift Value vs Reference Types, Fast",
+  "keys": [
+    "struct",
+    "class",
+    "value type",
+    "reference type",
+    "copy"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-value-or-refere",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "Copied or shared?",
+      "line2": "How does Swift handle data?",
+      "say": "When you assign a variable in Swift, is it copied or shared? Let's break down value and reference types."
+    },
+    {
+      "id": "1-chip-structs-enums",
+      "type": "chip",
+      "kicker": "Value Types",
+      "label": "Structs",
+      "sub": "Structs and enums are copied on assignment.",
+      "say": "Structs and enums are value types. That means they're copied when you assign or pass them."
+    },
+    {
+      "id": "2-chip-classes",
+      "type": "chip",
+      "kicker": "Reference Types",
+      "label": "Classes",
+      "sub": "Classes share one instance in memory.",
+      "say": "Classes are reference types. Assigning a class just points to the same object in memory."
+    },
+    {
+      "id": "3-code-point-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "swift",
+      "code": "struct Point { var x: Int }\nvar a = Point(x: 1)\nvar b = a\nb.x = 2 // a.x is still 1",
+      "say": "Here's a struct called Point. If you copy it and change the copy, the original stays the same. That's value semantics in action."
+    },
+    {
+      "id": "4-compare-side-effects",
+      "type": "compare",
+      "kicker": "Why it Matters",
+      "left": {
+        "title": "Value Types",
+        "items": [
+          "Safe from side effects",
+          "Thread-safe by default"
+        ]
+      },
+      "right": {
+        "title": "Reference Types",
+        "items": [
+          "Can cause side effects",
+          "Need care with threads"
+        ]
+      },
+      "say": "Value types help you avoid accidental bugs and are thread-safe. Reference types can lead to side effects if you’re not careful."
+    },
+    {
+      "id": "5-trap-interview-gotch",
+      "type": "trap",
+      "question": "Are structs always better than classes?",
+      "wrong": "Yes, structs are always safer.",
+      "right": "No. Use structs for models, but classes for shared, mutable state.",
+      "say": "Don't fall for this interview trap. Structs are great for models, but classes are better when you need shared, mutable state."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:05:03.549Z"
+}
