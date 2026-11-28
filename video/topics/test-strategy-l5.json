@@ -1,0 +1,65 @@
+{
+  "id": "test-strategy-l5",
+  "title": "Exploratory Testing: Find Hidden Bugs",
+  "keys": [
+    "exploratory testing",
+    "unscripted",
+    "intuition",
+    "edge cases",
+    "defects"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-exploratory",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "Can you catch bugs others miss?",
+      "line2": "What is exploratory testing?",
+      "say": "Can you spot issues that scripted tests miss? What is exploratory testing, and why does it matter?"
+    },
+    {
+      "id": "1-chip-unscripted",
+      "type": "chip",
+      "kicker": "Exploratory Testing",
+      "label": "Unscripted",
+      "sub": "Testers explore apps hands-on, using intuition.",
+      "say": "Exploratory testing is unscripted. You dive in, use your experience, and actively look for bugs without following a checklist."
+    },
+    {
+      "id": "2-rows-example",
+      "type": "rows",
+      "kicker": "Real Example",
+      "rows": [
+        {
+          "a": "Signup form",
+          "b": "Try invalid email formats"
+        },
+        {
+          "a": "Unexpected crash",
+          "b": "Not covered by test cases"
+        },
+        {
+          "a": "Edge cases",
+          "b": "Found through exploration"
+        }
+      ],
+      "walk": true,
+      "say": "Imagine testing a signup form. You try weird email formats, and suddenly, you find a crash nobody expected. That’s the power of exploring."
+    },
+    {
+      "id": "3-trap-misconception",
+      "type": "trap",
+      "question": "Is exploratory testing random clicking?",
+      "wrong": "Yes, it's just clicking around.",
+      "right": "No, it's guided by experience and intuition.",
+      "say": "Don’t confuse exploratory testing with random clicking. It’s guided by your knowledge and instincts."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:32:55.875Z"
+}
