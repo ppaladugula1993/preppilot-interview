@@ -1,0 +1,85 @@
+{
+  "id": "linux",
+  "title": "The Linux Boot Process: Start to Services",
+  "keys": [
+    "firmware",
+    "GRUB",
+    "kernel",
+    "systemd",
+    "services"
+  ],
+  "scenes": [
+    {
+      "id": "0-boot-hook",
+      "type": "hook",
+      "kicker": "Linux · 45 seconds",
+      "line1": "What really happens",
+      "line2": "when Linux boots?",
+      "say": "Ever wondered what actually happens under the hood when you power on a Linux machine? Let's break down the boot process."
+    },
+    {
+      "id": "1-firmware-chip",
+      "type": "chip",
+      "kicker": "Step 1 · Firmware",
+      "label": "Firmware",
+      "sub": "Runs POST, hands off to the bootloader",
+      "say": "First, the firmware—BIOS or UEFI—runs checks and then hands control to the bootloader."
+    },
+    {
+      "id": "2-grub-kernel-terminal",
+      "type": "terminal",
+      "kicker": "Step 2 · Bootloader",
+      "title": "GRUB loads the kernel",
+      "lines": [
+        "$ grub menu appears",
+        "$ kernel and initramfs load",
+        "$ kernel boots hardware"
+      ],
+      "say": "The bootloader, usually GRUB, loads the kernel and its helpers, then the kernel wakes up your hardware."
+    },
+    {
+      "id": "3-systemd-chip",
+      "type": "chip",
+      "kicker": "Step 3 · Init",
+      "label": "systemd",
+      "sub": "Starts as PID 1, manages all services",
+      "say": "Next, the kernel launches systemd as process number one. systemd is the boss: it starts and watches over all your services."
+    },
+    {
+      "id": "4-rows-services",
+      "type": "rows",
+      "kicker": "Step 4 · Services",
+      "rows": [
+        {
+          "a": "Default target",
+          "b": "Multi-user or graphical mode"
+        },
+        {
+          "a": "Unit files",
+          "b": "Define each service"
+        },
+        {
+          "a": "Custom units",
+          "b": "Go in the systemd folder"
+        }
+      ],
+      "walk": true,
+      "say": "systemd brings up the default target, like multi-user or graphical mode. Each service is defined by a unit file, and your own units live in the systemd settings folder."
+    },
+    {
+      "id": "5-trap-boot",
+      "type": "trap",
+      "question": "What starts right after the kernel?",
+      "wrong": "The login screen",
+      "right": "systemd starts as process one, then launches services and targets.",
+      "say": "Here's a common interview trap: What starts right after the kernel? It's not the login screen—it's systemd, which then brings up everything else."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:17:44.388Z"
+}
