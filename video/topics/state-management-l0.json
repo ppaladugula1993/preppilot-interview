@@ -1,0 +1,75 @@
+{
+  "id": "state-management-l0",
+  "title": "Local vs Shared vs Server State",
+  "keys": [
+    "local state",
+    "shared state",
+    "server state",
+    "React"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-state-question",
+      "type": "hook",
+      "kicker": "Frontend State Management · lesson",
+      "line1": "Where does your data live?",
+      "line2": "And why does it matter?",
+      "say": "Where does your data live in a frontend app, and why should you care? Let's break down local, shared, and server state."
+    },
+    {
+      "id": "1-chip-local",
+      "type": "chip",
+      "kicker": "Local",
+      "label": "Component",
+      "sub": "State managed inside one component, like form input values.",
+      "say": "First, local state. This is data managed inside a single component, like a form field or a toggle."
+    },
+    {
+      "id": "2-compare-shared-serve",
+      "type": "compare",
+      "kicker": "Types of State",
+      "left": {
+        "title": "Shared",
+        "items": [
+          "Used by many components",
+          "Examples: user info, theme"
+        ]
+      },
+      "right": {
+        "title": "Server",
+        "items": [
+          "Fetched from backend",
+          "Examples: API responses"
+        ]
+      },
+      "say": "Shared state is data multiple components need, like user info or theme. Server state is fetched from the backend, like API results, and needs to stay in sync."
+    },
+    {
+      "id": "3-terminal-examples",
+      "type": "terminal",
+      "kicker": "Examples",
+      "title": "How do you manage each?",
+      "lines": [
+        "$ const [input, setInput] = useState()",
+        "$ Redux store for user info",
+        "$ useQuery('todos', fetchTodos)"
+      ],
+      "say": "For local state, use the use state hook. Shared state? Try Redux or context. For server state, use tools like React Query."
+    },
+    {
+      "id": "4-trap-misclassify",
+      "type": "trap",
+      "question": "Is API data local or server state?",
+      "wrong": "It's local state.",
+      "right": "It's server state, since it comes from the backend and may need syncing.",
+      "say": "Here's a common trap: calling API data local state. It's actually server state, because it comes from the backend and needs to stay in sync."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:01:31.114Z"
+}
