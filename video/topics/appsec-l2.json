@@ -1,0 +1,88 @@
+{
+  "id": "appsec-l2",
+  "title": "Broken Access Control & IDOR Explained",
+  "keys": [
+    "access control",
+    "IDOR",
+    "authorization",
+    "object IDs"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-broken-access",
+      "type": "hook",
+      "kicker": "Application Security (OWASP) · lesson",
+      "line1": "Can users see what they shouldn't?",
+      "line2": "How does IDOR happen?",
+      "say": "Ever wonder how attackers sneak into data they shouldn't see? Let's break down broken access control and IDOR."
+    },
+    {
+      "id": "1-chip-access-control",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Access",
+      "sub": "Broken access control means users act outside their permissions.",
+      "say": "Broken access control is when users can do things they're not supposed to, like reading or changing someone else's data."
+    },
+    {
+      "id": "2-rows-idor-example",
+      "type": "rows",
+      "kicker": "IDOR in Action",
+      "rows": [
+        {
+          "a": "Step 1",
+          "b": "User requests their profile"
+        },
+        {
+          "a": "Step 2",
+          "b": "URL has their user ID"
+        },
+        {
+          "a": "Step 3",
+          "b": "Attacker swaps in another ID"
+        },
+        {
+          "a": "Step 4",
+          "b": "Server doesn't check ownership"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how IDOR works. A user fetches their profile. The attacker changes the ID in the address. If the server doesn't check who owns that profile, the attacker gets access."
+    },
+    {
+      "id": "3-compare-prevention",
+      "type": "compare",
+      "kicker": "Prevention",
+      "left": {
+        "title": "Bad",
+        "items": [
+          "Expose raw IDs",
+          "No server checks"
+        ]
+      },
+      "right": {
+        "title": "Good",
+        "items": [
+          "Hide real IDs",
+          "Always verify permissions"
+        ]
+      },
+      "say": "To prevent these flaws, never expose real IDs in addresses, and always check permissions on the server side."
+    },
+    {
+      "id": "4-trap-idor-trick",
+      "type": "trap",
+      "question": "Is hiding IDs enough to prevent IDOR?",
+      "wrong": "Yes, if users can't see real IDs.",
+      "right": "No. You must still check permissions server-side, even if IDs are hidden.",
+      "say": "Here's a common trap: hiding IDs isn't enough. You still need server-side checks to truly prevent IDOR."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:37:31.104Z"
+}
