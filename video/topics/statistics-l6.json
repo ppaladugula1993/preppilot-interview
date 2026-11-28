@@ -1,0 +1,92 @@
+{
+  "id": "statistics-l6",
+  "title": "Correlation vs Causation Explained",
+  "keys": [
+    "correlation",
+    "causation",
+    "confounder",
+    "association"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-corr-cause",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "Does correlation mean causation?",
+      "line2": "Are they the same?",
+      "say": "If two things happen together, does one cause the other? Let's dig into correlation and causation."
+    },
+    {
+      "id": "1-chip-correlation",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Correlation",
+      "sub": "Measures how two variables move together.",
+      "say": "Correlation just means two variables change together. It doesn't tell us why."
+    },
+    {
+      "id": "2-chip-causation",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Causation",
+      "sub": "One variable directly affects another.",
+      "say": "Causation is stronger. Here, one variable actually causes the other to change."
+    },
+    {
+      "id": "3-compare-corr-cause",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "Correlation",
+        "items": [
+          "Shows association",
+          "No direct effect"
+        ]
+      },
+      "right": {
+        "title": "Causation",
+        "items": [
+          "Shows direct effect",
+          "Needs strong evidence"
+        ]
+      },
+      "say": "Correlation is about association. Causation means a direct effect. Only causation needs solid proof."
+    },
+    {
+      "id": "4-rows-ice-cream",
+      "type": "rows",
+      "kicker": "Example",
+      "rows": [
+        {
+          "a": "Ice cream sales",
+          "b": "Rise in summer"
+        },
+        {
+          "a": "Drowning rates",
+          "b": "Also rise in summer"
+        },
+        {
+          "a": "Confounder",
+          "b": "Hot weather causes both"
+        }
+      ],
+      "walk": true,
+      "say": "Here's a classic example. Ice cream sales and drowning rates both go up in summer. But it's the hot weather causing both, not ice cream causing drowning."
+    },
+    {
+      "id": "5-trap-corr-cause",
+      "type": "trap",
+      "question": "How do you prove causation?",
+      "wrong": "Look for a high correlation.",
+      "right": "Control for confounders or use experiments.",
+      "say": "Don't just look for a high correlation. To prove causation, control for confounders or run experiments."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:44:59.399Z"
+}
