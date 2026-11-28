@@ -1,0 +1,72 @@
+{
+  "id": "selenium-playwright-l6",
+  "title": "Visual & Cross-Browser Testing Basics",
+  "keys": [
+    "visual testing",
+    "cross-browser",
+    "Playwright",
+    "Selenium"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-bother",
+      "type": "hook",
+      "kicker": "UI Automation · lesson",
+      "line1": "Will your UI break in Safari?",
+      "line2": "How do you know?",
+      "say": "Ever shipped a feature that looked perfect in Chrome, but broke in Safari? How can you catch these issues before users do?"
+    },
+    {
+      "id": "1-chip-visual",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Visual",
+      "sub": "Visual testing spots layout bugs by comparing screenshots.",
+      "say": "Visual testing compares screenshots of your app to a baseline. It quickly catches layout bugs and style regressions."
+    },
+    {
+      "id": "2-rows-browsers",
+      "type": "rows",
+      "kicker": "Cross-Browser",
+      "rows": [
+        {
+          "a": "Chrome",
+          "b": "Most common for devs"
+        },
+        {
+          "a": "Firefox",
+          "b": "Great for standards"
+        },
+        {
+          "a": "Safari",
+          "b": "Catches Apple quirks"
+        }
+      ],
+      "walk": false,
+      "say": "Cross-browser testing means running your tests in Chrome, Firefox, and Safari. This helps you catch browser-specific issues before your users do."
+    },
+    {
+      "id": "3-code-playwright-conf",
+      "type": "code",
+      "kicker": "Playwright Setup",
+      "lang": "js",
+      "code": "projects: [\n  { name: 'chromium' },\n  { name: 'firefox' },\n  { name: 'webkit' }\n]",
+      "say": "With Playwright, you can set up projects for Chromium, Firefox, and WebKit. This runs your tests across all three browsers, so you spot differences fast."
+    },
+    {
+      "id": "4-trap-visual",
+      "type": "trap",
+      "question": "Is visual testing just for looks?",
+      "wrong": "Yes, it's only about colors.",
+      "right": "No, it catches layout and style bugs that break the user experience.",
+      "say": "Here's a common trap: thinking visual testing is just about colors. In reality, it catches layout and style bugs that can ruin the user experience."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:28:30.597Z"
+}
