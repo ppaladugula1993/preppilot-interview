@@ -1,0 +1,73 @@
+{
+  "id": "python-data-l1",
+  "title": "pandas Series/DataFrame & Indexing",
+  "keys": [
+    "pandas",
+    "Series",
+    "DataFrame",
+    "indexing"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-indexing-matter",
+      "type": "hook",
+      "kicker": "Python for Data (pandas, NumPy) · lesson",
+      "line1": "Labels or numbers?",
+      "line2": "How does pandas indexing work?",
+      "say": "Ever wondered if you should use labels or numbers to access your data in pandas? Let's break down how indexing really works."
+    },
+    {
+      "id": "1-chip-series-vs-df",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Series",
+      "sub": "A Series is a one-dimensional labeled array.",
+      "say": "First up, a Series is just a single column of data, but with labels for every entry."
+    },
+    {
+      "id": "2-compare-series-df",
+      "type": "compare",
+      "kicker": "Data structures",
+      "left": {
+        "title": "Series",
+        "items": [
+          "1D",
+          "Labeled",
+          "Single column"
+        ]
+      },
+      "right": {
+        "title": "DataFrame",
+        "items": [
+          "2D",
+          "Labeled axes",
+          "Rows & columns"
+        ]
+      },
+      "say": "A DataFrame is like a table with rows and columns, each with their own labels. Series is one column, DataFrame is the whole table."
+    },
+    {
+      "id": "3-code-indexing-exampl",
+      "type": "code",
+      "kicker": "Indexing",
+      "lang": "python",
+      "code": "df.loc['row1', 'colA']\ndf.iloc[0, 1]",
+      "say": "Use loc with row and column names for label-based access. Use iloc with numbers for position-based access."
+    },
+    {
+      "id": "4-trap-loc-iloc-mixup",
+      "type": "trap",
+      "question": "What happens if you mix up loc and iloc?",
+      "wrong": "It works the same either way.",
+      "right": "Mixing them up can cause errors or wrong data. Always match the method to the type of index.",
+      "say": "Don't mix up loc and iloc. Using the wrong one can give you errors or unexpected results."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:34:54.332Z"
+}
