@@ -1,0 +1,72 @@
+{
+  "id": "python-core-l3",
+  "title": "Python Decorators and Closures",
+  "keys": [
+    "decorator",
+    "closure",
+    "function",
+    "scope"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-deco-closure",
+      "type": "hook",
+      "kicker": "Core Python · lesson",
+      "line1": "Can a function remember variables?",
+      "line2": "And change other functions?",
+      "say": "Ever wonder if a function can remember variables, or even change how another function works?"
+    },
+    {
+      "id": "1-chip-decorator",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Decorator",
+      "sub": "A function that wraps another, returning a new one.",
+      "say": "A decorator is a function that wraps another function and returns a new one."
+    },
+    {
+      "id": "2-rows-closure",
+      "type": "rows",
+      "kicker": "How Closures Work",
+      "rows": [
+        {
+          "a": "Define inner function",
+          "b": "Inside another function"
+        },
+        {
+          "a": "Capture variables",
+          "b": "Keep access to outer scope"
+        },
+        {
+          "a": "Return inner function",
+          "b": "It remembers the context"
+        }
+      ],
+      "walk": true,
+      "say": "Closures are inner functions that capture variables from their outer scope, even after the outer function finishes."
+    },
+    {
+      "id": "3-code-deco-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "python",
+      "code": "def deco(f):\n  def wrapper(*a, **kw):\n    print('hi')\n    return f(*a, **kw)\n  return wrapper\n@deco\ndef foo(): pass",
+      "say": "Here, the decorator adds a greeting before calling the original function. The wrapper remembers the function it wraps, thanks to a closure."
+    },
+    {
+      "id": "4-trap-deco-vs-closure",
+      "type": "trap",
+      "question": "Are all decorators closures?",
+      "wrong": "No, decorators never use closures.",
+      "right": "Most decorators use closures to capture the wrapped function and context.",
+      "say": "Here's a common trap: are all decorators closures? Most are, since they capture the function and context they wrap."
+    },
+    {
+      "id": "5-end-pilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:29:15.177Z"
+}
