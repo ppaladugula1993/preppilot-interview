@@ -1,0 +1,72 @@
+{
+  "id": "python-packaging-l3",
+  "title": "pyproject.toml: Modern Python Packaging",
+  "keys": [
+    "pyproject.toml",
+    "build-system",
+    "Poetry",
+    "dependencies",
+    "interoperability"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pyproject-toml",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "What powers modern Python projects?",
+      "line2": "Why use pyproject.toml?",
+      "say": "Ever wonder how Python projects standardize their build and dependency setup? Why is pyproject.toml the new go-to?"
+    },
+    {
+      "id": "1-chip-centralize",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Central",
+      "sub": "pyproject.toml puts build, dependencies, and tool configs in one place.",
+      "say": "pyproject.toml centralizes your build system, dependencies, and tool settings. No more scattered config files."
+    },
+    {
+      "id": "2-compare-old-vs-new",
+      "type": "compare",
+      "kicker": "Upgrade",
+      "left": {
+        "title": "Old Setup",
+        "items": [
+          "setup.py",
+          "setup.cfg"
+        ]
+      },
+      "right": {
+        "title": "New Standard",
+        "items": [
+          "pyproject.toml",
+          "tool integration"
+        ]
+      },
+      "say": "It replaces the old setup files, making packaging easier and more interoperable with tools like Poetry and uv."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "toml",
+      "code": "[tool.poetry]\nname = \"myproject\"\nversion = \"0.1.0\"\n\n[build-system]\nrequires = [\"poetry-core\"]\nbuild-backend = \"poetry.core.masonry.api\"",
+      "say": "Here’s a typical pyproject.toml. You define your project name, version, build system, and what tools you use."
+    },
+    {
+      "id": "4-trap-setup-py",
+      "type": "trap",
+      "question": "Is setup.py required for new projects?",
+      "wrong": "Yes, you always need setup.py.",
+      "right": "No, pyproject.toml fully replaces setup.py for modern packaging.",
+      "say": "Don’t get caught thinking setup.py is still required. Modern projects use pyproject.toml instead."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:59:36.012Z"
+}
