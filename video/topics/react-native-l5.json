@@ -1,0 +1,79 @@
+{
+  "id": "react-native-l5",
+  "title": "OTA Updates vs App Store Releases",
+  "keys": [
+    "OTA",
+    "App Store",
+    "Expo",
+    "CodePush",
+    "Native"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ota-vs-store",
+      "type": "hook",
+      "kicker": "React Native · lesson",
+      "line1": "How do you ship updates fast?",
+      "line2": "OTA or App Store?",
+      "say": "Ever wondered how React Native apps get updates out quickly? Is it always through the app store, or can you push changes over the air?"
+    },
+    {
+      "id": "1-compare-ota-store",
+      "type": "compare",
+      "kicker": "Deployment Choices",
+      "left": {
+        "title": "OTA Updates",
+        "items": [
+          "Push JS and assets",
+          "No store approval",
+          "Fast rollout"
+        ]
+      },
+      "right": {
+        "title": "App Store Releases",
+        "items": [
+          "Native code changes",
+          "Store review needed",
+          "Slower deployment"
+        ]
+      },
+      "say": "Over-the-air updates let you push JavaScript and assets fast, skipping store approval. But native code changes still need a full app store release, which takes longer."
+    },
+    {
+      "id": "2-rows-ota-process",
+      "type": "rows",
+      "kicker": "How OTA Works",
+      "rows": [
+        {
+          "a": "Write JS changes",
+          "b": "Update code or assets"
+        },
+        {
+          "a": "Publish OTA",
+          "b": "Send with Expo or CodePush"
+        },
+        {
+          "a": "Users update",
+          "b": "App downloads new bundle"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how an over-the-air update goes. You make changes, publish them with Expo or CodePush, and users get the latest bundle when they open the app."
+    },
+    {
+      "id": "3-trap-native-change",
+      "type": "trap",
+      "question": "Can OTA update native code?",
+      "wrong": "Yes, OTA can update everything.",
+      "right": "No, native changes need a store release. OTA is only for JavaScript and assets.",
+      "say": "Interviewers love this one: Can you use over-the-air updates for native code? Nope, only JavaScript and assets. Native changes always need a store release."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:10:52.615Z"
+}
