@@ -1,0 +1,76 @@
+{
+  "id": "windows-l8",
+  "title": "IIS Basics for Windows Server",
+  "keys": [
+    "IIS",
+    "application pool",
+    "site binding",
+    "errors"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-iis",
+      "type": "hook",
+      "kicker": "Windows Server · lesson",
+      "line1": "What runs your .NET web apps?",
+      "line2": "How does IIS work?",
+      "say": "Ever wonder what actually serves your .NET web apps on Windows? Let's break down IIS basics."
+    },
+    {
+      "id": "1-chip-sites",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Sites",
+      "sub": "Each site binds to an IP, port, and host header.",
+      "say": "Each IIS site connects to a specific IP address, port, and host name. That's how it knows which traffic belongs where."
+    },
+    {
+      "id": "2-rows-app-pool",
+      "type": "rows",
+      "kicker": "How it runs",
+      "rows": [
+        {
+          "a": "Application Pool",
+          "b": "Isolates each app in its own worker"
+        },
+        {
+          "a": "w3wp.exe",
+          "b": "Worker process for each pool"
+        },
+        {
+          "a": "Identity",
+          "b": "Runs under its own service account"
+        }
+      ],
+      "walk": true,
+      "say": "Every app runs in its own application pool, handled by a worker process. Each pool uses its own identity, which helps with security and stability."
+    },
+    {
+      "id": "3-terminal-common-comm",
+      "type": "terminal",
+      "kicker": "Handy Commands",
+      "title": "IIS Management",
+      "lines": [
+        "$ Get-Website",
+        "$ Get-IISAppPool",
+        "$ Restart-WebAppPool -Name MyAppPool"
+      ],
+      "say": "You can list sites, check app pools, or restart a pool with these PowerShell commands. Super useful for troubleshooting."
+    },
+    {
+      "id": "4-trap-errors",
+      "type": "trap",
+      "question": "App pool keeps stopping. What next?",
+      "wrong": "Just restart the pool again.",
+      "right": "Check the Application event log for real errors—rapid-fail protection means repeated crashes.",
+      "say": "If your app pool keeps stopping, don't just restart it. Check the Application event log. IIS might be protecting you from repeated crashes."
+    },
+    {
+      "id": "5-end-iis",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:33:20.617Z"
+}
