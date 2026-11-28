@@ -1,0 +1,80 @@
+{
+  "id": "cicd-l4",
+  "title": "Terraform: IaC for Cloud Engineers",
+  "keys": [
+    "Terraform",
+    "state",
+    "plan",
+    "apply"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-terraform-iac",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · lesson",
+      "line1": "How do you automate cloud setup?",
+      "line2": "What makes Terraform unique?",
+      "say": "Ever wonder how teams automate cloud resources? What makes Terraform the go-to tool for this?"
+    },
+    {
+      "id": "1-chip-terraform-def",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Terraform",
+      "sub": "Describes and creates cloud resources using code.",
+      "say": "Terraform lets you define your cloud infrastructure as code. You write it once, and it builds everything for you."
+    },
+    {
+      "id": "2-code-tf-example",
+      "type": "code",
+      "kicker": "Example Resource",
+      "lang": "hcl",
+      "code": "resource \"azurerm_resource_group\" \"app\" {\n  name     = \"rg-app-prod\"\n  location = \"centralus\"\n}",
+      "say": "Here's a simple example. This code creates a resource group called app in Central US on Azure."
+    },
+    {
+      "id": "3-rows-tf-commands",
+      "type": "rows",
+      "kicker": "Workflow",
+      "rows": [
+        {
+          "a": "init",
+          "b": "Set up Terraform in your folder"
+        },
+        {
+          "a": "plan",
+          "b": "See what changes will happen"
+        },
+        {
+          "a": "apply",
+          "b": "Make the changes live"
+        }
+      ],
+      "walk": true,
+      "say": "The workflow is simple: initialize Terraform, plan your changes, then apply them. You always know what's about to happen."
+    },
+    {
+      "id": "4-chip-state-remote",
+      "type": "chip",
+      "kicker": "Best Practice",
+      "label": "State",
+      "sub": "Store state remotely with locking for safety.",
+      "say": "Always keep your state file in remote storage with locking. This prevents two people from making changes at the same time and breaking things."
+    },
+    {
+      "id": "5-trap-state-question",
+      "type": "trap",
+      "question": "Why keep Terraform state remote?",
+      "wrong": "It's faster than local.",
+      "right": "Remote state is shared and locked, so your team avoids conflicts and keeps resources in sync.",
+      "say": "Here's a common interview trap. Why keep Terraform state remote? It's not about speed—it's so your team shares one source of truth and avoids conflicts."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:50:00.533Z"
+}
