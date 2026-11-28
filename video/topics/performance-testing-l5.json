@@ -1,0 +1,65 @@
+{
+  "id": "performance-testing-l5",
+  "title": "Performance Testing in CI Pipelines",
+  "keys": [
+    "CI",
+    "performance test",
+    "regression",
+    "latency",
+    "automation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ci-perf",
+      "type": "hook",
+      "kicker": "Performance Testing · lesson",
+      "line1": "How do you catch slowdowns early?",
+      "line2": "Why test performance in CI?",
+      "say": "Ever wonder how teams spot performance issues before code hits production? Why do we run performance tests in continuous integration pipelines?"
+    },
+    {
+      "id": "1-chip-automation",
+      "type": "chip",
+      "kicker": "CI Pipelines",
+      "label": "Automation",
+      "sub": "Automated tests catch regressions fast, before users notice.",
+      "say": "Automating performance tests in CI means regressions get caught early, not after users complain."
+    },
+    {
+      "id": "2-rows-ci-tools",
+      "type": "rows",
+      "kicker": "Popular Tools",
+      "rows": [
+        {
+          "a": "GitHub Actions",
+          "b": "Run k6, fail if p95 latency high"
+        },
+        {
+          "a": "Jenkins",
+          "b": "Run JMeter, alert on error rate"
+        },
+        {
+          "a": "Thresholds",
+          "b": "Fail builds if metrics degrade"
+        }
+      ],
+      "walk": true,
+      "say": "You can use tools like GitHub Actions with k6, or Jenkins with JMeter. Set thresholds so builds fail if latency or error rates spike."
+    },
+    {
+      "id": "3-trap-missed-regressi",
+      "type": "trap",
+      "question": "Why automate performance tests in CI?",
+      "wrong": "It's mainly for documentation.",
+      "right": "So regressions are caught before production, not after.",
+      "say": "Here's a common interview trap: Why automate performance tests in CI? It's not just for documentation—it's to catch regressions before they reach users."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:13:27.614Z"
+}
