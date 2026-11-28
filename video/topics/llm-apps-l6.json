@@ -1,0 +1,64 @@
+{
+  "id": "llm-apps-l6",
+  "title": "LLM Cost & Latency Optimization",
+  "keys": [
+    "batching",
+    "caching",
+    "context size",
+    "model choice"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-llm-cost-latenc",
+      "type": "hook",
+      "kicker": "LLM Applications · lesson",
+      "line1": "LLMs can get pricey and slow.",
+      "line2": "How do you keep them fast?",
+      "say": "LLM apps can get expensive and laggy fast. How do you keep things quick and affordable?"
+    },
+    {
+      "id": "1-chip-batching",
+      "type": "chip",
+      "kicker": "Strategy",
+      "label": "Batching",
+      "sub": "Send multiple prompts in one request.",
+      "say": "First, batch your prompts. Sending several at once cuts down on both cost and wait time."
+    },
+    {
+      "id": "2-rows-optimize",
+      "type": "rows",
+      "kicker": "Top Tactics",
+      "rows": [
+        {
+          "a": "Cache queries",
+          "b": "Reuse answers for repeats"
+        },
+        {
+          "a": "Smaller models",
+          "b": "Use GPT-3.5 for simple tasks"
+        },
+        {
+          "a": "Trim context",
+          "b": "Shorter prompts, fewer tokens"
+        }
+      ],
+      "walk": true,
+      "say": "Cache repeated questions, switch to smaller models for easy jobs, and keep your prompts short to use fewer tokens."
+    },
+    {
+      "id": "3-trap-common-mistake",
+      "type": "trap",
+      "question": "Should you always use the biggest model?",
+      "wrong": "Yes, bigger is always better.",
+      "right": "No—smaller models are faster and cheaper for simple tasks.",
+      "say": "Here's a common trap: should you always use the biggest model? Nope. For simple tasks, smaller models are faster and way cheaper."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:53:20.731Z"
+}
