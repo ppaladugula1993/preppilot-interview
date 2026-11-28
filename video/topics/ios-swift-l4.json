@@ -1,0 +1,72 @@
+{
+  "id": "ios-swift-l4",
+  "title": "Swift Concurrency: Async, Await & Actors",
+  "keys": [
+    "async",
+    "await",
+    "actor",
+    "MainActor",
+    "thread"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-concurrency",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "What changed with async code?",
+      "line2": "Why does Swift concurrency matter?",
+      "say": "Ever wonder why Swift async code feels so much cleaner now? Let's see what concurrency brings to the table."
+    },
+    {
+      "id": "1-chip-asyncawait",
+      "type": "chip",
+      "kicker": "Swift 5.5+",
+      "label": "async/await",
+      "sub": "Async and await make asynchronous code readable and safer.",
+      "say": "Swift five point five added async and await. That means your asynchronous code is now much easier to read and debug."
+    },
+    {
+      "id": "2-compare-actor-mainac",
+      "type": "compare",
+      "kicker": "Data Safety",
+      "left": {
+        "title": "Actor",
+        "items": [
+          "Isolates shared state",
+          "Prevents race conditions"
+        ]
+      },
+      "right": {
+        "title": "MainActor",
+        "items": [
+          "Runs code on main thread",
+          "Keeps UI updates safe"
+        ]
+      },
+      "say": "Actors isolate shared data to prevent bugs. Main actor makes sure UI updates happen safely on the main thread."
+    },
+    {
+      "id": "3-code-actor-example",
+      "type": "code",
+      "kicker": "Sample Actor",
+      "lang": "swift",
+      "code": "actor Counter {\n  var value = 0\n  func inc() {\n    value += 1\n  }\n}\n@MainActor func updateUI() {}",
+      "say": "Here's an actor that safely manages a counter. And a function marked main actor, so UI changes never break thread safety."
+    },
+    {
+      "id": "4-trap-mainactor-trap",
+      "type": "trap",
+      "question": "Can you update UI from any thread?",
+      "wrong": "Yes, threads don't matter for UI.",
+      "right": "No. UI updates must happen on the main actor to avoid crashes and glitches.",
+      "say": "Interviewers love to ask about UI threads. Don't fall for it—always update user interface on the main actor."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:15:28.474Z"
+}
