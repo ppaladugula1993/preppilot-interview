@@ -1,0 +1,84 @@
+{
+  "id": "cicd-l3",
+  "title": "Deployment Strategies: Rolling, Blue/Green, Canary",
+  "keys": [
+    "rolling",
+    "blue/green",
+    "canary",
+    "load balancer"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-which-strategy",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · lesson",
+      "line1": "How do you deploy safely?",
+      "line2": "Which strategy wins?",
+      "say": "How do you roll out new code without breaking things? Which deployment strategy gives you the edge?"
+    },
+    {
+      "id": "1-chip-rolling",
+      "type": "chip",
+      "kicker": "Strategy",
+      "label": "Rolling",
+      "sub": "Update a few servers at a time behind the load balancer.",
+      "say": "Rolling updates swap out a few servers at a time, while the load balancer keeps traffic flowing."
+    },
+    {
+      "id": "2-compare-blue-green-c",
+      "type": "compare",
+      "kicker": "Two More Strategies",
+      "left": {
+        "title": "Blue/Green",
+        "items": [
+          "Two full environments",
+          "Flip load balancer to new"
+        ]
+      },
+      "right": {
+        "title": "Canary",
+        "items": [
+          "Send 5% of traffic first",
+          "Increase if healthy"
+        ]
+      },
+      "say": "Blue green runs two full environments and just flips the load balancer. Canary starts tiny, sending five percent of traffic to the new version, then ramps up if all looks good."
+    },
+    {
+      "id": "3-rows-rollback",
+      "type": "rows",
+      "kicker": "Rollback Methods",
+      "rows": [
+        {
+          "a": "Rolling",
+          "b": "Redeploy the old version"
+        },
+        {
+          "a": "Blue/Green",
+          "b": "Flip back instantly"
+        },
+        {
+          "a": "Canary",
+          "b": "Set weight to zero"
+        }
+      ],
+      "walk": true,
+      "say": "If things go wrong, rolling redeploys the old code, blue green flips back instantly, and canary just sets the new version's weight to zero."
+    },
+    {
+      "id": "4-trap-cost",
+      "type": "trap",
+      "question": "Which strategy costs double capacity?",
+      "wrong": "Rolling updates",
+      "right": "Blue green needs two environments, so it costs more.",
+      "say": "Here's a trap: which strategy costs double the capacity? It's blue green, since you need two full environments."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:47:35.061Z"
+}
