@@ -1,0 +1,76 @@
+{
+  "id": "statistics-l4",
+  "title": "Hypothesis Testing & Errors Explained",
+  "keys": [
+    "hypothesis",
+    "p-value",
+    "Type I error",
+    "Type II error",
+    "power"
+  ],
+  "scenes": [
+    {
+      "id": "0-test-your-logic",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "Can you spot a false positive?",
+      "line2": "What if you miss a real effect?",
+      "say": "Can you spot a false positive? What if you miss a real effect? Let’s break down hypothesis testing."
+    },
+    {
+      "id": "1-hypothesis-testing",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Testing",
+      "sub": "Check if your data supports a claim about a population.",
+      "say": "Hypothesis testing checks if your data really backs up a claim about a population."
+    },
+    {
+      "id": "2-p-values",
+      "type": "terminal",
+      "kicker": "Evidence Check",
+      "title": "P-value Output",
+      "lines": [
+        "$ Test run",
+        "$ p-value: 0.03",
+        "Result: Evidence against null"
+      ],
+      "say": "A p-value tells you how much evidence you have against the null hypothesis. A small p-value means strong evidence."
+    },
+    {
+      "id": "3-errors-compare",
+      "type": "compare",
+      "kicker": "Common Mistakes",
+      "left": {
+        "title": "Type I Error",
+        "items": [
+          "False positive",
+          "Rejecting a true null"
+        ]
+      },
+      "right": {
+        "title": "Type II Error",
+        "items": [
+          "False negative",
+          "Missing a real effect"
+        ]
+      },
+      "say": "Type One error is a false alarm—rejecting the null when it’s actually true. Type Two error is missing the signal—failing to reject when there’s a real effect."
+    },
+    {
+      "id": "4-trap-balance",
+      "type": "trap",
+      "question": "How do you minimize both error types?",
+      "wrong": "Just lower the significance level.",
+      "right": "Balance significance level and power to minimize both errors.",
+      "say": "Here’s a trap: Should you just lower the significance level to minimize errors? Not quite. You need to balance significance and power to keep both error types in check."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:39:33.497Z"
+}
