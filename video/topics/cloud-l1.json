@@ -1,0 +1,73 @@
+{
+  "id": "cloud-l1",
+  "title": "A Typical 3-Tier Cloud Deployment",
+  "keys": [
+    "3-tier",
+    "subnet",
+    "NSG",
+    "availability zone",
+    "private endpoint"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-3tier",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "How do you secure a 3-tier app?",
+      "line2": "What's the classic setup?",
+      "say": "You’ll get asked this a lot: how do you design a secure, classic three-tier deployment in the cloud?"
+    },
+    {
+      "id": "1-rows-structure",
+      "type": "rows",
+      "kicker": "3-Tier Structure",
+      "rows": [
+        {
+          "a": "Web tier",
+          "b": "Public subnet, app gateway, WAF"
+        },
+        {
+          "a": "App tier",
+          "b": "Private subnet, app VMs or AKS"
+        },
+        {
+          "a": "Data tier",
+          "b": "Private subnet, Azure SQL, endpoint"
+        }
+      ],
+      "walk": true,
+      "say": "Picture three layers: web, app, and data. Each lives in its own subnet. The web tier faces the world, the app tier runs your logic, and the data tier holds your database, locked down tight."
+    },
+    {
+      "id": "2-chip-nsg",
+      "type": "chip",
+      "kicker": "Network",
+      "label": "NSGs",
+      "sub": "Allow only needed ports between tiers; deny all else.",
+      "say": "Network security groups only allow the traffic you need. For example, web to app on port eighty eighty, app to data on fourteen thirty-three. Everything else is blocked."
+    },
+    {
+      "id": "3-chip-private",
+      "type": "chip",
+      "kicker": "Database",
+      "label": "Private",
+      "sub": "Private endpoints keep your database off the public net.",
+      "say": "Private endpoints make sure your database never touches the public internet. Only the app tier can reach it."
+    },
+    {
+      "id": "4-trap-az",
+      "type": "trap",
+      "question": "What if you skip availability zones?",
+      "wrong": "You still get high availability.",
+      "right": "Without zones, a datacenter outage can take down your whole app.",
+      "say": "Here's a classic trap: if you only use availability sets, you’re still at risk if a whole datacenter goes down. Always spread your web and app VMs across zones."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:17:15.433Z"
+}
