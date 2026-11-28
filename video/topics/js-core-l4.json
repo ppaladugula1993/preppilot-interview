@@ -1,0 +1,77 @@
+{
+  "id": "js-core-l4",
+  "title": "Equality, Coercion & Truthiness in JS",
+  "keys": [
+    "equality",
+    "type coercion",
+    "truthiness",
+    "strict",
+    "loose"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-equality",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "Strict or loose: does it matter?",
+      "line2": "How does JavaScript compare values?",
+      "say": "Ever wondered why JavaScript sometimes surprises you when comparing values? Let's dive into equality, coercion, and truthiness."
+    },
+    {
+      "id": "1-compare-equality",
+      "type": "compare",
+      "kicker": "Equality types",
+      "left": {
+        "title": "Loose",
+        "items": [
+          "Double equals",
+          "Type coercion"
+        ]
+      },
+      "right": {
+        "title": "Strict",
+        "items": [
+          "Triple equals",
+          "No coercion"
+        ]
+      },
+      "say": "Double equals uses type coercion, so different types can be considered equal. Triple equals checks both value and type, so it's stricter."
+    },
+    {
+      "id": "2-terminal-truthy-fals",
+      "type": "terminal",
+      "kicker": "Truthiness",
+      "title": "Truthy vs Falsy",
+      "lines": [
+        "$ !!'' // false",
+        "$ !!'hello' // true",
+        "$ !!0 // false",
+        "$ !!1 // true"
+      ],
+      "say": "Some values are always false in conditionals, like empty strings or zero. Others, like any non-empty string or one, are truthy."
+    },
+    {
+      "id": "3-code-coercion",
+      "type": "code",
+      "kicker": "Type coercion",
+      "lang": "js",
+      "code": "0 == false // true\n0 === false // false",
+      "say": "Here's a classic gotcha. Zero equals false with double equals, but not with triple equals. That's coercion in action."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Is double equals safe for comparisons?",
+      "wrong": "Yes, it's fine for most cases.",
+      "right": "No, double equals can cause bugs. Use triple equals unless you need coercion.",
+      "say": "Interviewers love asking about this. Double equals can trip you up, so stick to triple equals unless you have a good reason."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:02:40.487Z"
+}
