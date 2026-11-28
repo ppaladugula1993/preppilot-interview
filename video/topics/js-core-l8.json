@@ -1,0 +1,71 @@
+{
+  "id": "js-core-l8",
+  "title": "Immutability & Array Methods in JS",
+  "keys": [
+    "immutability",
+    "map",
+    "filter",
+    "reduce"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-immutable-array",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "Why avoid mutating arrays?",
+      "line2": "What’s the big deal?",
+      "say": "Ever wondered why interviewers care so much about mutating arrays? What makes immutability so important in JavaScript?"
+    },
+    {
+      "id": "1-chip-functional",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Immutability",
+      "sub": "Methods like map, filter, and reduce return new arrays, keeping your data unchanged.",
+      "say": "Map, filter, and reduce always give you a new array. Your original data stays untouched, which makes your code easier to reason about."
+    },
+    {
+      "id": "2-code-array-methods",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "const arr = [1,2,3]\nconst doubled = arr.map(x => x * 2)\nconst evens = arr.filter(x => x % 2 === 0)\nconst sum = arr.reduce((a, b) => a + b, 0)",
+      "say": "Here’s how I double numbers, pick out the evens, and sum them up, all without changing the original array."
+    },
+    {
+      "id": "3-compare-mutate-vs-im",
+      "type": "compare",
+      "kicker": "Interview Insight",
+      "left": {
+        "title": "Mutating",
+        "items": [
+          "Changes data",
+          "Harder to debug"
+        ]
+      },
+      "right": {
+        "title": "Immutable",
+        "items": [
+          "Keeps data safe",
+          "Predictable code"
+        ]
+      },
+      "say": "Mutating arrays can lead to bugs and confusion. Using immutable methods keeps your data safe and your code predictable."
+    },
+    {
+      "id": "4-trap-array-mutation",
+      "type": "trap",
+      "question": "Is map guaranteed to mutate the array?",
+      "wrong": "Yes, map changes the original array.",
+      "right": "Nope, map returns a new array and leaves the original untouched.",
+      "say": "Don’t fall for this: map never changes the original array. It always returns a new one."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:09:59.199Z"
+}
