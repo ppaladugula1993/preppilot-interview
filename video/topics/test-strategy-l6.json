@@ -1,0 +1,84 @@
+{
+  "id": "test-strategy-l6",
+  "title": "QA Metrics: What Matters, What Doesn't",
+  "keys": [
+    "defect leakage",
+    "test coverage",
+    "mean time to fix",
+    "vanity metrics"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-metrics",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "Which QA metrics actually matter?",
+      "line2": "And which ones don't?",
+      "say": "Which QA metrics actually matter for quality—and which ones just look good on paper?"
+    },
+    {
+      "id": "1-chip-defect-leakage",
+      "type": "chip",
+      "kicker": "Metric",
+      "label": "Leakage",
+      "sub": "Defects found after release show real gaps.",
+      "say": "Defect leakage means bugs found after release. Tracking this shows real gaps in your process."
+    },
+    {
+      "id": "2-rows-actionable",
+      "type": "rows",
+      "kicker": "Metrics That Matter",
+      "rows": [
+        {
+          "a": "Defect Leakage",
+          "b": "Bugs found in production"
+        },
+        {
+          "a": "Test Coverage",
+          "b": "How much code is tested"
+        },
+        {
+          "a": "Mean Time to Fix",
+          "b": "Speed of bug resolution"
+        }
+      ],
+      "walk": false,
+      "say": "Metrics like defect leakage, test coverage, and mean time to fix bugs actually reflect product quality."
+    },
+    {
+      "id": "3-compare-vanity",
+      "type": "compare",
+      "kicker": "Beware Vanity Metrics",
+      "left": {
+        "title": "Useful",
+        "items": [
+          "Defects in production",
+          "Coverage percentage"
+        ]
+      },
+      "right": {
+        "title": "Not Useful",
+        "items": [
+          "Test cases run",
+          "Lines of code tested"
+        ]
+      },
+      "say": "But watch out for vanity metrics. Counting test cases run or lines of code tested can be misleading if they're not tied to quality."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Which QA metric proves effectiveness?",
+      "wrong": "Number of test cases executed",
+      "right": "Defect leakage or mean time to fix show real impact.",
+      "say": "In interviews, don't fall for the trap—number of test cases isn't proof of quality. Defect leakage or mean time to fix are much stronger answers."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:34:34.951Z"
+}
