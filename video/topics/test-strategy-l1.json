@@ -1,0 +1,88 @@
+{
+  "id": "test-strategy-l1",
+  "title": "Risk-Based Testing & Prioritization",
+  "keys": [
+    "risk",
+    "prioritization",
+    "impact",
+    "likelihood"
+  ],
+  "scenes": [
+    {
+      "id": "0-risk-prioritization-",
+      "type": "hook",
+      "kicker": "Test Strategy & QA Process · lesson",
+      "line1": "How do you decide what to test first?",
+      "line2": "What matters most?",
+      "say": "How do you decide what to test first when time and resources are limited? What really matters most?"
+    },
+    {
+      "id": "1-risk-chip",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Risk",
+      "sub": "Focus on features most likely to break or cause big problems.",
+      "say": "Risk-based testing means focusing on features that are most likely to break or would cause big problems if they did."
+    },
+    {
+      "id": "2-prioritization-rows",
+      "type": "rows",
+      "kicker": "How to Prioritize",
+      "rows": [
+        {
+          "a": "Impact",
+          "b": "How bad if this fails?"
+        },
+        {
+          "a": "Likelihood",
+          "b": "How likely is a defect here?"
+        },
+        {
+          "a": "Usage",
+          "b": "How often is this used?"
+        },
+        {
+          "a": "History",
+          "b": "Has it failed before?"
+        }
+      ],
+      "walk": true,
+      "say": "I look at four things: impact if it fails, how likely it is to break, how often it's used, and if it's failed before."
+    },
+    {
+      "id": "3-compare-example",
+      "type": "compare",
+      "kicker": "Example",
+      "left": {
+        "title": "High Risk",
+        "items": [
+          "Payment processing",
+          "User login"
+        ]
+      },
+      "right": {
+        "title": "Low Risk",
+        "items": [
+          "Settings screen",
+          "Help page"
+        ]
+      },
+      "say": "For example, payment processing and login are high risk. Settings screens or help pages are usually much lower risk."
+    },
+    {
+      "id": "4-trap-question",
+      "type": "trap",
+      "question": "Should you test every feature equally?",
+      "wrong": "Yes, all features need equal testing.",
+      "right": "No, focus more on high-risk areas to catch critical issues early.",
+      "say": "Here's a trap: Should you test every feature equally? No. Focus your effort where failure would hurt most."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:26:00.019Z"
+}
