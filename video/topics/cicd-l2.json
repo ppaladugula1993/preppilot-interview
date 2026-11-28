@@ -1,0 +1,81 @@
+{
+  "id": "cicd-l2",
+  "title": "Jenkins Pipelines: CI/CD in Action",
+  "keys": [
+    "Jenkins",
+    "pipeline",
+    "CI/CD",
+    "deploy"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-jenkins",
+      "type": "hook",
+      "kicker": "CI/CD & IaC · lesson",
+      "line1": "What powers enterprise CI/CD?",
+      "line2": "Why is Jenkins everywhere?",
+      "say": "Ever wonder why Jenkins is still the go-to tool for continuous integration and delivery in big companies?"
+    },
+    {
+      "id": "1-chip-jenkins",
+      "type": "chip",
+      "kicker": "Jenkins",
+      "label": "Pipeline",
+      "sub": "Pipelines are defined in a Jenkinsfile stored in your code repo.",
+      "say": "With Jenkins, you write your pipeline steps in a Jenkinsfile right alongside your code."
+    },
+    {
+      "id": "2-rows-pipeline",
+      "type": "rows",
+      "kicker": "Pipeline Stages",
+      "rows": [
+        {
+          "a": "Build",
+          "b": "Packages your code"
+        },
+        {
+          "a": "Test",
+          "b": "Runs automated tests"
+        },
+        {
+          "a": "Deploy",
+          "b": "Pushes to target environment"
+        }
+      ],
+      "walk": true,
+      "say": "A typical Jenkins pipeline has three main stages: build, test, and deploy. Each stage automates a key part of your workflow."
+    },
+    {
+      "id": "3-terminal-jenkinsfile",
+      "type": "terminal",
+      "kicker": "Example Jenkinsfile",
+      "title": "Pipeline Definition",
+      "lines": [
+        "$ pipeline {",
+        "$   agent any",
+        "$   stages {",
+        "$     stage('Build') { steps { sh 'mvn -q package' } }",
+        "$     stage('Test') { steps { sh 'mvn -q test' } }",
+        "$     stage('Deploy') { steps { sh './deploy.sh qa' } }",
+        "$   }",
+        "$ }"
+      ],
+      "say": "Here's what a Jenkins pipeline looks like. Each stage runs a shell command for build, test, and deploy."
+    },
+    {
+      "id": "4-trap-firewall",
+      "type": "trap",
+      "question": "Why does deploy fail with connection refused?",
+      "wrong": "The build script is broken.",
+      "right": "It's often a firewall rule blocking the Jenkins agent subnet.",
+      "say": "If your deploy step fails with a connection refused error, don't just blame the script. It's usually a firewall blocking Jenkins agents."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:45:06.573Z"
+}
