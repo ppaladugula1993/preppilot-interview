@@ -1,0 +1,72 @@
+{
+  "id": "ml-ops-l6",
+  "title": "A/B vs Shadow Deployments in MLOps",
+  "keys": [
+    "A/B deployment",
+    "shadow deployment",
+    "model testing",
+    "risk"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ab-shadow",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "How do you test new models",
+      "line2": "without breaking prod?",
+      "say": "How do you safely test a new machine learning model in production, without risking user experience?"
+    },
+    {
+      "id": "1-compare-ab-shadow",
+      "type": "compare",
+      "kicker": "Deployment Styles",
+      "left": {
+        "title": "A/B",
+        "items": [
+          "Split users into groups",
+          "Each group gets a model version"
+        ]
+      },
+      "right": {
+        "title": "Shadow",
+        "items": [
+          "New model runs silently",
+          "Predictions logged, not shown"
+        ]
+      },
+      "say": "There are two main approaches. With A/B deployment, users are split and each group gets a different model version. With shadow deployment, the new model runs in parallel, but only logs predictions without affecting users."
+    },
+    {
+      "id": "2-rows-ab-shadow-examp",
+      "type": "rows",
+      "kicker": "Real-World Example",
+      "rows": [
+        {
+          "a": "A/B",
+          "b": "Half get version one, half get two"
+        },
+        {
+          "a": "Shadow",
+          "b": "New model predicts, logs only"
+        }
+      ],
+      "walk": false,
+      "say": "For example, in A/B, half your users see the old model, half see the new one. In shadow, the new model makes predictions, but they're just logged for analysis."
+    },
+    {
+      "id": "3-trap-interview-gotch",
+      "type": "trap",
+      "question": "Which is safer for new models?",
+      "wrong": "A/B, because users test it",
+      "right": "Shadow, since users never see results",
+      "say": "Here's a common interview trap. Which method is safer for testing a brand new model? It's shadow deployment, since users never see its predictions."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:07:42.598Z"
+}
