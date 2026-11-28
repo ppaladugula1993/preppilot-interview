@@ -1,0 +1,77 @@
+{
+  "id": "node-runtime-l6",
+  "title": "npm, package-lock & Supply Chain Security",
+  "keys": [
+    "npm",
+    "package-lock.json",
+    "semver",
+    "audit"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-npm-security",
+      "type": "hook",
+      "kicker": "Node.js Runtime · lesson",
+      "line1": "How do you keep npm installs safe?",
+      "line2": "What protects your code?",
+      "say": "How do you make sure your Node projects are secure and your dependencies don't break things?"
+    },
+    {
+      "id": "1-chip-npm-basics",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "npm",
+      "sub": "npm manages your project's dependencies.",
+      "say": "npm is your main tool for adding and managing dependencies in Node projects."
+    },
+    {
+      "id": "2-rows-lock-semver",
+      "type": "rows",
+      "kicker": "Dependency Control",
+      "rows": [
+        {
+          "a": "package-lock.json",
+          "b": "Locks exact versions for installs"
+        },
+        {
+          "a": "semver",
+          "b": "Defines version compatibility rules"
+        },
+        {
+          "a": "audit",
+          "b": "Checks for known vulnerabilities"
+        }
+      ],
+      "walk": true,
+      "say": "The lock file freezes exact versions, semver keeps upgrades predictable, and audit checks for security issues."
+    },
+    {
+      "id": "3-terminal-npm-audit",
+      "type": "terminal",
+      "kicker": "Security Check",
+      "title": "Audit Your Dependencies",
+      "lines": [
+        "$ npm audit",
+        "found 0 vulnerabilities",
+        "$ npm install",
+        "added 50 packages"
+      ],
+      "say": "Run the audit command to scan for vulnerable packages. It's a quick way to catch risks before they hit production."
+    },
+    {
+      "id": "4-trap-lock-trick",
+      "type": "trap",
+      "question": "Should you ignore package-lock.json?",
+      "wrong": "Yes, it's not important.",
+      "right": "No, always commit it. It locks dependencies so everyone gets the same versions.",
+      "say": "Don't skip the lock file. Leaving it out can cause version drift and unexpected bugs."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:12:12.517Z"
+}
