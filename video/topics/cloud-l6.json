@@ -1,0 +1,84 @@
+{
+  "id": "cloud-l6",
+  "title": "Private Endpoints & Private DNS in Azure",
+  "keys": [
+    "private endpoint",
+    "private DNS",
+    "VNet",
+    "CNAME"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-private-endpoin",
+      "type": "hook",
+      "kicker": "Cloud (Azure/AWS) · lesson",
+      "line1": "Why does your app still hit public IPs?",
+      "line2": "Is your DNS set up right?",
+      "say": "Ever created a private endpoint, but your app still connects to a public address? Is your DNS actually routing traffic where you want?"
+    },
+    {
+      "id": "1-chip-private-endpoin",
+      "type": "chip",
+      "kicker": "Azure",
+      "label": "Endpoint",
+      "sub": "Private endpoint gives a service a private IP in your VNet.",
+      "say": "A private endpoint assigns a private IP to a service right inside your virtual network. That keeps traffic internal and secure."
+    },
+    {
+      "id": "2-rows-dns-flow",
+      "type": "rows",
+      "kicker": "DNS Flow",
+      "rows": [
+        {
+          "a": "Client queries service name",
+          "b": "mysql01.database.windows.net"
+        },
+        {
+          "a": "DNS returns CNAME",
+          "b": "mysql01.privatelink.database.windows.net"
+        },
+        {
+          "a": "CNAME resolves",
+          "b": "Private IP like 10.60.3.4"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how DNS should work: your app asks for the service name, gets a special privatelink alias, and that resolves to the private IP."
+    },
+    {
+      "id": "3-compare-endpoints",
+      "type": "compare",
+      "kicker": "Endpoint Types",
+      "left": {
+        "title": "Service Endpoint",
+        "items": [
+          "Keeps public IP",
+          "Traffic stays on Azure backbone"
+        ]
+      },
+      "right": {
+        "title": "Private Endpoint",
+        "items": [
+          "Gets private IP in VNet",
+          "Needs private DNS zone"
+        ]
+      },
+      "say": "Service endpoints keep the public IP and stay on Azure's backbone. Private endpoints give you a private IP, but you need private DNS for name resolution."
+    },
+    {
+      "id": "4-trap-dns-misconfig",
+      "type": "trap",
+      "question": "App still hits public IP after endpoint?",
+      "wrong": "Private endpoint alone is enough.",
+      "right": "You must link the private DNS zone to your VNet, or set up DNS forwarding from on-prem to Azure DNS.",
+      "say": "Here's a classic interview trap: creating a private endpoint isn't enough. If DNS isn't set up, your app still connects to the public IP."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:47:37.796Z"
+}
