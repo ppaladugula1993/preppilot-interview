@@ -1,0 +1,72 @@
+{
+  "id": "android-kotlin-l5",
+  "title": "MVVM, ViewModel, Repository & Hilt",
+  "keys": [
+    "MVVM",
+    "ViewModel",
+    "Repository",
+    "Hilt"
+  ],
+  "scenes": [
+    {
+      "id": "0-mvvm-hook",
+      "type": "hook",
+      "kicker": "Android & Kotlin · lesson",
+      "line1": "How do you keep code clean?",
+      "line2": "And testable in Android apps?",
+      "say": "How do you keep your Android code clean and testable, even as your app grows?"
+    },
+    {
+      "id": "1-mvvm-steps",
+      "type": "rows",
+      "kicker": "MVVM in action",
+      "rows": [
+        {
+          "a": "View",
+          "b": "Handles UI and user input"
+        },
+        {
+          "a": "ViewModel",
+          "b": "Manages UI state and logic"
+        },
+        {
+          "a": "Repository",
+          "b": "Abstracts data sources"
+        }
+      ],
+      "walk": true,
+      "say": "MVVM splits your app into three parts. The View handles the user interface. The ViewModel manages UI state and business logic. The Repository abstracts your data sources, like databases or APIs."
+    },
+    {
+      "id": "2-hilt-chip",
+      "type": "chip",
+      "kicker": "Hilt",
+      "label": "Hilt",
+      "sub": "Injects dependencies into ViewModels & Repos",
+      "say": "Hilt is a dependency injection tool. It automatically provides things like repositories to your ViewModels, making your code less tangled and easier to test."
+    },
+    {
+      "id": "3-hilt-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "kotlin",
+      "code": "@HiltViewModel\nclass MyViewModel @Inject constructor(\n  private val repo: UserRepository\n) : ViewModel()",
+      "say": "Here, Hilt injects a user repository into your ViewModel. No manual wiring needed—just clean, testable code."
+    },
+    {
+      "id": "4-trap-mistake",
+      "type": "trap",
+      "question": "What does ViewModel survive?",
+      "wrong": "Only activity restarts",
+      "right": "It survives configuration changes, like rotation, so you don't lose UI state.",
+      "say": "Don't trip up in interviews: ViewModel survives configuration changes, not just activity restarts. That's how your UI state stays safe."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:47:07.477Z"
+}
