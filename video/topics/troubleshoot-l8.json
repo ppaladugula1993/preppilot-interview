@@ -1,0 +1,84 @@
+{
+  "id": "troubleshoot-l8",
+  "title": "Azure Connectivity: Hidden Pitfalls",
+  "keys": [
+    "NSG",
+    "SNAT",
+    "Private Endpoint",
+    "Peering"
+  ],
+  "scenes": [
+    {
+      "id": "0-azure-gotchas-hook",
+      "type": "hook",
+      "kicker": "Troubleshooting: Connectivity, Latency, Throughput · lesson",
+      "line1": "Why does Azure break your network?",
+      "line2": "What trips up pros?",
+      "say": "Ever wonder why your app works on-prem but fails in Azure? Let's break down the hidden Azure networking gotchas that trip up even experienced engineers."
+    },
+    {
+      "id": "1-icmp-blocked-chip",
+      "type": "chip",
+      "kicker": "Azure Quirk",
+      "label": "ICMP",
+      "sub": "Ping often fails—test with TCP tools instead.",
+      "say": "First, ping is usually blocked in Azure. So, don't trust it for connectivity tests. Use TCP tools like Netcat or Test-NetConnection instead."
+    },
+    {
+      "id": "2-peering-rows",
+      "type": "rows",
+      "kicker": "Peering Pitfall",
+      "rows": [
+        {
+          "a": "Peering isn't transitive",
+          "b": "Spoke-to-spoke needs hub firewall"
+        },
+        {
+          "a": "UDRs needed",
+          "b": "User-defined routes connect spokes"
+        },
+        {
+          "a": "Firewall required",
+          "b": "Traffic must pass through hub"
+        }
+      ],
+      "walk": true,
+      "say": "Peering isn't transitive in Azure. If you want two spokes to talk, you need user-defined routes and a hub firewall. Just connecting spokes isn't enough."
+    },
+    {
+      "id": "3-snat-compare",
+      "type": "compare",
+      "kicker": "Throughput Trap",
+      "left": {
+        "title": "On-Prem",
+        "items": [
+          "Stable outbound",
+          "No SNAT port limits"
+        ]
+      },
+      "right": {
+        "title": "Azure",
+        "items": [
+          "SNAT port exhaustion",
+          "Intermittent timeouts under load"
+        ]
+      },
+      "say": "On-prem, outbound connections are stable. In Azure, you can hit SNAT port exhaustion, causing random timeouts when traffic spikes. Watch for this if your app opens lots of connections."
+    },
+    {
+      "id": "4-private-endpoint-dns",
+      "type": "trap",
+      "question": "Why does a private endpoint fail?",
+      "wrong": "NSG is blocking traffic.",
+      "right": "Wrong DNS makes clients use the public IP, which fails.",
+      "say": "Here's a classic interview trap: a private endpoint fails, but the network security group isn't the problem. The real issue is usually DNS—if clients resolve the wrong address, they hit the public IP and get blocked."
+    },
+    {
+      "id": "5-azure-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:11:41.304Z"
+}
