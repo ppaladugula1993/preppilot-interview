@@ -1,0 +1,74 @@
+{
+  "id": "ml-ops-l3",
+  "title": "Batch vs Online Serving & Latency",
+  "keys": [
+    "batch",
+    "online",
+    "latency",
+    "API"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-batch-online",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "Batch or online serving?",
+      "line2": "How does latency shape your choice?",
+      "say": "When should you use batch serving, and when does online serving make sense? Latency is the key factor."
+    },
+    {
+      "id": "1-compare-batch-online",
+      "type": "compare",
+      "kicker": "Serving Modes",
+      "left": {
+        "title": "Batch",
+        "items": [
+          "Scheduled jobs",
+          "Large datasets",
+          "Not time-sensitive"
+        ]
+      },
+      "right": {
+        "title": "Online",
+        "items": [
+          "Real-time APIs",
+          "Low latency",
+          "High availability"
+        ]
+      },
+      "say": "Batch serving runs on a schedule and handles big datasets. Online serving responds instantly through APIs and needs low latency."
+    },
+    {
+      "id": "2-rows-latency-example",
+      "type": "rows",
+      "kicker": "Latency Matters",
+      "rows": [
+        {
+          "a": "Batch",
+          "b": "Nightly churn prediction"
+        },
+        {
+          "a": "Online",
+          "b": "Fraud detection under 100ms"
+        }
+      ],
+      "walk": true,
+      "say": "For batch, think about predicting churn overnight. For online, imagine catching fraud in real time with less than 100 milliseconds delay."
+    },
+    {
+      "id": "3-trap-serving-choice",
+      "type": "trap",
+      "question": "How do you pick batch or online?",
+      "wrong": "Always use online for speed.",
+      "right": "Match serving to latency and business needs. Batch works for non-urgent jobs, online for instant results.",
+      "say": "Don't just default to online serving. Choose based on latency requirements and what the business needs."
+    },
+    {
+      "id": "4-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:59:49.837Z"
+}
