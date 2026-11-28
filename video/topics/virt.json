@@ -1,0 +1,86 @@
+{
+  "id": "virt",
+  "title": "Snapshots Aren't Backups: Know the Difference",
+  "keys": [
+    "snapshot",
+    "backup",
+    "datastore",
+    "restore",
+    "vSphere"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-snap-vs-backup",
+      "type": "hook",
+      "kicker": "VMware & Storage · 45 seconds",
+      "line1": "Snapshots or backups?",
+      "line2": "Which keeps your data safe?",
+      "say": "Snapshots or backups? Which one actually protects your VMs when disaster hits?"
+    },
+    {
+      "id": "1-chip-snapshot",
+      "type": "chip",
+      "kicker": "Key Term",
+      "label": "Snapshot",
+      "sub": "A point-in-time delta on the same storage",
+      "say": "A snapshot is just a point-in-time delta, saved on the same datastore as your VM."
+    },
+    {
+      "id": "2-chip-backup",
+      "type": "chip",
+      "kicker": "Key Term",
+      "label": "Backup",
+      "sub": "A separate copy on different storage",
+      "say": "A backup is a separate copy, stored on different storage, often offsite or in the cloud."
+    },
+    {
+      "id": "3-compare-snap-vs-back",
+      "type": "compare",
+      "kicker": "Compare",
+      "left": {
+        "title": "Snapshot",
+        "items": [
+          "Quick rollback",
+          "Stays on same datastore",
+          "Grows and slows VM"
+        ]
+      },
+      "right": {
+        "title": "Backup",
+        "items": [
+          "Restores after disaster",
+          "Stored elsewhere",
+          "Long-term retention"
+        ]
+      },
+      "say": "Snapshots let you roll back a patch fast, but they stay on the same storage and can slow things down. Backups are for real disaster recovery—they live elsewhere and stick around."
+    },
+    {
+      "id": "4-terminal-restore",
+      "type": "terminal",
+      "kicker": "Restore Demo",
+      "title": "Restoring from backup",
+      "lines": [
+        "$ backup-tool restore vm01",
+        "Restoring VM to new storage...",
+        "Restore complete!"
+      ],
+      "say": "Restoring from backup means you can recover your VM even if the original datastore is gone."
+    },
+    {
+      "id": "5-trap-snap-is-backup",
+      "type": "trap",
+      "question": "Are snapshots a backup?",
+      "wrong": "Yes, snapshots are backups.",
+      "right": "No, snapshots aren't backups. They're just deltas on the same storage and vanish if the datastore fails.",
+      "say": "Here's a classic trap: are snapshots a backup? Nope. If your datastore fails, your snapshots vanish too."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:20:13.402Z"
+}
