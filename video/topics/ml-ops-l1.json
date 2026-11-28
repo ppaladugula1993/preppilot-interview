@@ -1,0 +1,76 @@
+{
+  "id": "ml-ops-l1",
+  "title": "MLflow: Track Experiments & Manage Models",
+  "keys": [
+    "MLflow",
+    "experiment tracking",
+    "model registry",
+    "reproducibility"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-track-or-lose",
+      "type": "hook",
+      "kicker": "MLOps · lesson",
+      "line1": "Can you track every model change?",
+      "line2": "Why does it matter?",
+      "say": "If you can't track every tweak, how will you know which model actually works? Let's see why experiment tracking and model registries matter."
+    },
+    {
+      "id": "1-chip-track",
+      "type": "chip",
+      "kicker": "Core concept",
+      "label": "Tracking",
+      "sub": "Records parameters, metrics, and artifacts for each run.",
+      "say": "Experiment tracking logs what you tried, your settings, and results for every model run. That makes comparing and reproducing experiments easy."
+    },
+    {
+      "id": "2-rows-registry",
+      "type": "rows",
+      "kicker": "Model registry",
+      "rows": [
+        {
+          "a": "Versioned models",
+          "b": "Store and track each model version"
+        },
+        {
+          "a": "Metadata",
+          "b": "Keep details like metrics and params"
+        },
+        {
+          "a": "Lifecycle stages",
+          "b": "Move models from staging to production"
+        }
+      ],
+      "walk": true,
+      "say": "A model registry keeps your models organized. It stores versions, their details, and lets you promote models safely from staging to production."
+    },
+    {
+      "id": "3-terminal-mlflow",
+      "type": "terminal",
+      "kicker": "MLflow in action",
+      "title": "Track and register models",
+      "lines": [
+        "$ mlflow.log_param('lr', 0.01)",
+        "$ Model v1: Staging",
+        "$ Model v2: Production"
+      ],
+      "say": "With MLflow, you log experiment settings and manage model versions. You can promote models to production right from the registry."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Why use a model registry?",
+      "wrong": "To store training data.",
+      "right": "To manage model versions, metadata, and lifecycle stages for safe deployment.",
+      "say": "Interviewers want to know you use a registry to manage model versions and promote models safely, not just to store data."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:55:12.613Z"
+}
