@@ -1,0 +1,74 @@
+{
+  "id": "jvm",
+  "title": "JVM Memory: Heap vs Stack Demystified",
+  "keys": [
+    "heap",
+    "stack",
+    "garbage collection",
+    "thread",
+    "memory"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-memory-question",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · 45s",
+      "line1": "Why does JVM split memory?",
+      "line2": "Heap vs stack?",
+      "say": "Ever wonder why the JVM splits memory into heap and stack? Let's break down what matters most for your interview."
+    },
+    {
+      "id": "1-chip-heap",
+      "type": "chip",
+      "kicker": "Memory Area",
+      "label": "Heap",
+      "sub": "Stores objects, managed by garbage collection.",
+      "say": "First up, the heap. This is where your objects live, and the garbage collector keeps it tidy."
+    },
+    {
+      "id": "2-chip-stack",
+      "type": "chip",
+      "kicker": "Memory Area",
+      "label": "Stack",
+      "sub": "Holds method calls and local variables, per thread.",
+      "say": "The stack is different. Each thread gets its own stack for method calls and local variables. It's fast, but limited in size."
+    },
+    {
+      "id": "3-compare-heap-stack",
+      "type": "compare",
+      "kicker": "Key Differences",
+      "left": {
+        "title": "Heap",
+        "items": [
+          "Shared by threads",
+          "Bigger, slower",
+          "Garbage collected"
+        ]
+      },
+      "right": {
+        "title": "Stack",
+        "items": [
+          "Thread-local",
+          "Smaller, faster",
+          "Auto-cleared on return"
+        ]
+      },
+      "say": "Heap is shared and managed by garbage collection, but it's slower. Stack is thread-local, much faster, and gets cleared automatically when methods return."
+    },
+    {
+      "id": "4-trap-memory-confusio",
+      "type": "trap",
+      "question": "Are objects stored on the stack?",
+      "wrong": "Yes, small objects can be on the stack.",
+      "right": "No, all objects go on the heap. Stack only holds references and primitives.",
+      "say": "Here's a classic trap: Are objects ever stored on the stack? Nope. Only references and primitives live there. Objects always go on the heap."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:24:21.288Z"
+}
