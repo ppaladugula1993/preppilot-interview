@@ -1,0 +1,81 @@
+{
+  "id": "ml-ops",
+  "title": "MLOps: Keep Your Models Fresh & Reliable",
+  "keys": [
+    "MLOps",
+    "pipeline",
+    "serving",
+    "monitoring",
+    "drift"
+  ],
+  "scenes": [
+    {
+      "id": "0-mlops-hook",
+      "type": "hook",
+      "kicker": "MLOps · 45 seconds",
+      "line1": "Why do ML models fail silently?",
+      "line2": "What stops silent decay?",
+      "say": "Ever wonder why machine learning models can work great one day, and quietly fail the next? What keeps them reliable in production?"
+    },
+    {
+      "id": "1-lifecycle-rows",
+      "type": "rows",
+      "kicker": "ML Lifecycle",
+      "rows": [
+        {
+          "a": "Collect data",
+          "b": "Gather raw info to train on"
+        },
+        {
+          "a": "Train model",
+          "b": "Learn patterns from data"
+        },
+        {
+          "a": "Serve model",
+          "b": "Make predictions in production"
+        },
+        {
+          "a": "Monitor",
+          "b": "Track performance and data drift"
+        }
+      ],
+      "walk": true,
+      "say": "A machine learning project isn’t done after training. You collect data, train a model, serve it to users, and then—crucially—monitor what happens next."
+    },
+    {
+      "id": "2-pipeline-chip",
+      "type": "chip",
+      "kicker": "Pipeline",
+      "label": "Automate",
+      "sub": "CI/CD pipelines test, train, and deploy models fast",
+      "say": "MLOps brings automation. Continuous integration and delivery pipelines test, train, and deploy models so updates are quick and reproducible."
+    },
+    {
+      "id": "3-monitor-terminal",
+      "type": "terminal",
+      "kicker": "Drift Watch",
+      "title": "Detecting Data Drift",
+      "lines": [
+        "$ compare train_data prod_data",
+        "Drift detected: feature_3",
+        "Alert: retraining triggered"
+      ],
+      "say": "But here’s the key: monitoring for drift. Automated checks compare new data to training data. If things change, you get an alert and can retrain before users notice problems."
+    },
+    {
+      "id": "4-trap-drift",
+      "type": "trap",
+      "question": "Is monitoring just about accuracy?",
+      "wrong": "Yes, only accuracy matters",
+      "right": "No, you must track data and concept drift too",
+      "say": "Interview trap: Is monitoring just about accuracy? Nope. You also need to watch for data drift and concept drift, not just performance numbers."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:49:31.109Z"
+}
