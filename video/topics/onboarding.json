@@ -1,0 +1,117 @@
+{
+  "id": "onboarding",
+  "title": "App Onboarding: One Process, Every Time",
+  "keys": [
+    "intake",
+    "requirements",
+    "build",
+    "network",
+    "go-live",
+    "handover"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lifecycle",
+      "type": "hook",
+      "kicker": "App Onboarding · 45 seconds",
+      "line1": "What makes onboarding bulletproof?",
+      "line2": "Why does the order matter?",
+      "say": "Ever wonder why app onboarding always follows the same steps, no matter where it runs? Let’s break down the one idea that keeps launches smooth."
+    },
+    {
+      "id": "1-rows-phases",
+      "type": "rows",
+      "kicker": "Phases · End to End",
+      "rows": [
+        {
+          "a": "Intake",
+          "b": "Get all requirements upfront"
+        },
+        {
+          "a": "Build",
+          "b": "VM or container, hardened and ready"
+        },
+        {
+          "a": "Network",
+          "b": "Flow matrix, firewall, DNS"
+        },
+        {
+          "a": "Expose",
+          "b": "Load balancer and TLS certs"
+        },
+        {
+          "a": "Monitor",
+          "b": "Logs, alerts, runbooks"
+        },
+        {
+          "a": "Go-live",
+          "b": "Cutover, rollback, hypercare"
+        },
+        {
+          "a": "Handover",
+          "b": "Runbook, KT, sign-off"
+        }
+      ],
+      "walk": true,
+      "say": "Every onboarding, whether on-prem or in Azure, moves through these phases. The tools change, but the order never does."
+    },
+    {
+      "id": "2-chip-intake",
+      "type": "chip",
+      "kicker": "Step 1 · Intake",
+      "label": "Intake",
+      "sub": "Owner, criticality, users, stack, sizing, ports, NFRs",
+      "say": "Start with a full intake. Ask the app team about ownership, criticality, user base, tech stack, sizing, every port and dependency, and non-functional requirements."
+    },
+    {
+      "id": "3-compare-build",
+      "type": "compare",
+      "kicker": "Step 2 · Build",
+      "left": {
+        "title": "VM",
+        "items": [
+          "Golden image",
+          "Domain join",
+          "Hardening"
+        ]
+      },
+      "right": {
+        "title": "Container",
+        "items": [
+          "Image build",
+          "Scan & push",
+          "AKS/Container Apps"
+        ]
+      },
+      "say": "Choose the platform based on the app’s needs. VM for full OS control, container for agility. Build and secure before anything else."
+    },
+    {
+      "id": "4-terminal-network",
+      "type": "terminal",
+      "kicker": "Step 3 · Network",
+      "title": "Flow Matrix Example",
+      "lines": [
+        "$ source: app subnet",
+        "$ dest: DB subnet",
+        "$ port: 1433",
+        "$ protocol: TCP"
+      ],
+      "say": "Map every connection in a flow matrix. It guides firewall rules, security reviews, and troubleshooting. Build it early to avoid surprises."
+    },
+    {
+      "id": "5-trap-order",
+      "type": "trap",
+      "question": "Can you skip phases if you’re in Azure?",
+      "wrong": "Yes, Azure handles most steps.",
+      "right": "No, every phase matters. Azure changes tools, not the process.",
+      "say": "Don’t assume cloud platforms let you skip steps. Azure shifts the tools, but the process stays the same. Missing a phase means trouble at go-live."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:58:30.558Z"
+}
