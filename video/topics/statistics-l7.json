@@ -1,0 +1,72 @@
+{
+  "id": "statistics-l7",
+  "title": "Linear Regression Interpretation Basics",
+  "keys": [
+    "linear regression",
+    "coefficient",
+    "predictor",
+    "assumptions"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-coefficient",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "What does a regression coefficient mean?",
+      "line2": "Can you explain it simply?",
+      "say": "Ever wondered what a regression coefficient really tells you? Let's break it down so you can explain it in any interview."
+    },
+    {
+      "id": "1-chip-coefficient",
+      "type": "chip",
+      "kicker": "Key Fact",
+      "label": "Coefficient",
+      "sub": "Shows the expected change in the outcome for a one-unit increase in the predictor.",
+      "say": "A coefficient shows how much the outcome changes when the predictor goes up by one, with everything else held constant."
+    },
+    {
+      "id": "2-rows-interpret-examp",
+      "type": "rows",
+      "kicker": "Example",
+      "rows": [
+        {
+          "a": "Equation",
+          "b": "y = 2x + 5"
+        },
+        {
+          "a": "Coefficient",
+          "b": "2"
+        },
+        {
+          "a": "Interpretation",
+          "b": "y increases by 2 for each x"
+        }
+      ],
+      "walk": true,
+      "say": "Take this example. The equation y equals two x plus five means for every step x takes, y jumps by two. That's your coefficient in action."
+    },
+    {
+      "id": "3-chip-assumptions",
+      "type": "chip",
+      "kicker": "Pro Tip",
+      "label": "Assumptions",
+      "sub": "Check for linearity and equal error spread—called homoscedasticity.",
+      "say": "Always check that your data fits the model. Look for a straight-line relationship and make sure errors are spread out evenly."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Does the coefficient show correlation?",
+      "wrong": "Yes, it measures correlation strength.",
+      "right": "No, it shows expected change in the outcome per unit change in the predictor, not correlation strength.",
+      "say": "Watch out—coefficients tell you about expected change, not the overall correlation between variables."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:47:39.576Z"
+}
