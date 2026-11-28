@@ -1,0 +1,80 @@
+{
+  "id": "ios-swift",
+  "title": "Value vs Reference Types in Swift",
+  "keys": [
+    "struct",
+    "class",
+    "value type",
+    "reference",
+    "memory"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-value-vs-refere",
+      "type": "hook",
+      "kicker": "iOS & Swift · 45 seconds",
+      "line1": "Struct or class?",
+      "line2": "Why does it matter?",
+      "say": "Ever wonder why Swift has both structs and classes? Let's see why this difference matters for your code."
+    },
+    {
+      "id": "1-chip-struct-value",
+      "type": "chip",
+      "kicker": "Swift",
+      "label": "Struct",
+      "sub": "Value type: copied when assigned or passed",
+      "say": "A struct in Swift is a value type. That means when you assign or pass it, you get a fresh copy."
+    },
+    {
+      "id": "2-chip-class-reference",
+      "type": "chip",
+      "kicker": "Swift",
+      "label": "Class",
+      "sub": "Reference type: points to same instance",
+      "say": "A class, on the other hand, is a reference type. Assign it, and you just point to the same instance in memory."
+    },
+    {
+      "id": "3-code-copying",
+      "type": "code",
+      "kicker": "Memory",
+      "lang": "swift",
+      "code": "struct Point { var x: Int }\nvar a = Point(x: 1)\nvar b = a\nb.x = 2",
+      "say": "Here, changing b does not change a. Each variable owns its own copy, so no surprises."
+    },
+    {
+      "id": "4-compare-side-effects",
+      "type": "compare",
+      "kicker": "Side Effects",
+      "left": {
+        "title": "Struct",
+        "items": [
+          "Safe copies",
+          "No shared state"
+        ]
+      },
+      "right": {
+        "title": "Class",
+        "items": [
+          "Shared state",
+          "Possible side effects"
+        ]
+      },
+      "say": "With structs, you avoid hidden side effects and get thread safety by default. Classes share state, so changes can leak across your app."
+    },
+    {
+      "id": "5-trap-inheritance",
+      "type": "trap",
+      "question": "Can structs inherit from other structs?",
+      "wrong": "Yes, like classes",
+      "right": "Nope—only classes support inheritance in Swift.",
+      "say": "Here's a common trap: only classes support inheritance in Swift. Structs can't inherit from other structs."
+    },
+    {
+      "id": "6-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:02:12.256Z"
+}
