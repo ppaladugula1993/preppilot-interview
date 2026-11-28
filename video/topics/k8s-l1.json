@@ -1,0 +1,80 @@
+{
+  "id": "k8s-l1",
+  "title": "Kubernetes Pods: Core Building Block",
+  "keys": [
+    "pod",
+    "container",
+    "node",
+    "deployment",
+    "IP"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-pods",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "What's a pod, really?",
+      "line2": "Why do pods matter?",
+      "say": "Ever wondered what pods actually are in Kubernetes? Why are they the foundation for everything else?"
+    },
+    {
+      "id": "1-chip-smallest-unit",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Pod",
+      "sub": "Smallest unit in Kubernetes. Holds one or more containers.",
+      "say": "A pod is the smallest unit in Kubernetes. It can hold one or more containers, grouped together."
+    },
+    {
+      "id": "2-rows-pod-basics",
+      "type": "rows",
+      "kicker": "Pod basics",
+      "rows": [
+        {
+          "a": "Shares IP",
+          "b": "All containers use one address"
+        },
+        {
+          "a": "Shares storage",
+          "b": "Containers access same volumes"
+        },
+        {
+          "a": "Same node",
+          "b": "Containers run together"
+        },
+        {
+          "a": "Disposable",
+          "b": "Pods can be replaced anytime"
+        }
+      ],
+      "walk": true,
+      "say": "Pods share an IP address, storage volumes, and always run together on the same node. They're disposable—Kubernetes replaces them as needed."
+    },
+    {
+      "id": "3-terminal-pod-command",
+      "type": "terminal",
+      "kicker": "Hands-on",
+      "title": "Pod creation & inspection",
+      "lines": [
+        "$ kubectl apply -f pod.yaml",
+        "$ kubectl get pods -o wide"
+      ],
+      "say": "You can create a pod with a simple YAML file and check its details with a command. But in practice, deployments handle pod creation for you."
+    },
+    {
+      "id": "4-trap-pod-vs-containe",
+      "type": "trap",
+      "question": "Is a pod just a container?",
+      "wrong": "Yes, they're the same thing.",
+      "right": "No, a pod wraps one or more containers. It shares network and storage, and is managed as a unit.",
+      "say": "Here's a common interview trap: Is a pod just a container? No, a pod wraps one or more containers, sharing network and storage."
+    },
+    {
+      "id": "5-end-podp",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:45:06.570Z"
+}
