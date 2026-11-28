@@ -1,0 +1,80 @@
+{
+  "id": "flutter",
+  "title": "Flutter's Three Trees: UI Magic Explained",
+  "keys": [
+    "widget tree",
+    "element tree",
+    "render tree",
+    "state"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-trees",
+      "type": "hook",
+      "kicker": "Flutter · 45 seconds",
+      "line1": "How does Flutter update UI so fast?",
+      "line2": "What's the secret?",
+      "say": "Ever wonder how Flutter keeps your app's interface snappy, even when things change? Let's break down the secret."
+    },
+    {
+      "id": "1-chip-widget-tree",
+      "type": "chip",
+      "kicker": "Step 1 · Structure",
+      "label": "Widget",
+      "sub": "The widget tree defines the UI layout and structure.",
+      "say": "First, the widget tree lays out what your app looks like. It’s just a blueprint for the interface."
+    },
+    {
+      "id": "2-chip-element-tree",
+      "type": "chip",
+      "kicker": "Step 2 · State",
+      "label": "Element",
+      "sub": "The element tree manages widget instances and their state.",
+      "say": "Next, the element tree keeps track of widget instances and their state. This is where changes actually happen."
+    },
+    {
+      "id": "3-chip-render-tree",
+      "type": "chip",
+      "kicker": "Step 3 · Paint",
+      "label": "Render",
+      "sub": "The render tree handles layout and painting.",
+      "say": "Finally, the render tree is in charge of drawing and laying out everything on screen."
+    },
+    {
+      "id": "4-rows-update",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "State changes",
+          "b": "Element tree updates"
+        },
+        {
+          "a": "Widget tree rebuilt",
+          "b": "UI structure refreshed"
+        },
+        {
+          "a": "Render tree repaints",
+          "b": "Only affected parts drawn"
+        }
+      ],
+      "walk": true,
+      "say": "When state changes, Flutter updates the element tree, rebuilds the widget tree, and repaints only the parts of the render tree that need it. That’s how it stays fast."
+    },
+    {
+      "id": "5-trap-tree-confusion",
+      "type": "trap",
+      "question": "Does Flutter redraw the whole UI?",
+      "wrong": "Yes, every widget gets redrawn.",
+      "right": "No, only affected parts of the render tree are updated. The rest stays untouched for performance.",
+      "say": "A common mistake is thinking Flutter redraws everything. Actually, it only updates what’s changed, keeping things efficient."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:37:10.540Z"
+}
