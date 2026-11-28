@@ -1,0 +1,79 @@
+{
+  "id": "ml-fundamentals-l0",
+  "title": "Supervised vs Unsupervised vs RL",
+  "keys": [
+    "supervised",
+    "unsupervised",
+    "reinforcement",
+    "labeled data"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ml-paradigms",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "Three ways machines learn:",
+      "line2": "Can you name them?",
+      "say": "There are three main ways machines learn. Can you name them all?"
+    },
+    {
+      "id": "1-chip-supervised",
+      "type": "chip",
+      "kicker": "Paradigm 1",
+      "label": "Supervised",
+      "sub": "Learns from labeled data, like spam detection.",
+      "say": "First, supervised learning. It learns from labeled data, like classifying emails as spam or not."
+    },
+    {
+      "id": "2-chip-unsupervised",
+      "type": "chip",
+      "kicker": "Paradigm 2",
+      "label": "Unsupervised",
+      "sub": "Finds patterns in unlabeled data, like clustering.",
+      "say": "Next, unsupervised learning. It finds patterns in unlabeled data, such as grouping customers by their behavior."
+    },
+    {
+      "id": "3-chip-rl",
+      "type": "chip",
+      "kicker": "Paradigm 3",
+      "label": "Reinforce",
+      "sub": "Learns by trial and error, using rewards.",
+      "say": "Finally, reinforcement learning. Here, an agent learns by trial and error, getting rewards or penalties from its environment. Think of a robot learning to walk."
+    },
+    {
+      "id": "4-compare-supervised-u",
+      "type": "compare",
+      "kicker": "Quick Compare",
+      "left": {
+        "title": "Supervised",
+        "items": [
+          "Needs labeled data",
+          "Predicts outcomes"
+        ]
+      },
+      "right": {
+        "title": "Unsupervised",
+        "items": [
+          "No labels needed",
+          "Finds structure"
+        ]
+      },
+      "say": "Supervised learning needs labeled data and predicts outcomes. Unsupervised doesn't use labels, but finds structure in the data."
+    },
+    {
+      "id": "5-trap-clarify-problem",
+      "type": "trap",
+      "question": "What should you do before modeling?",
+      "wrong": "Jump straight into coding",
+      "right": "Clarify the problem type to pick the right approach.",
+      "say": "Here's a common trap: jumping straight into coding. Always clarify the problem type first, so you choose the right learning approach."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:57:05.631Z"
+}
