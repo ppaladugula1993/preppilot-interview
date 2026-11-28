@@ -1,0 +1,94 @@
+{
+  "id": "onboarding-l0",
+  "title": "App Onboarding: Full Lifecycle Snapshot",
+  "keys": [
+    "onboarding",
+    "phases",
+    "lifecycle",
+    "application",
+    "interview"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-lifecycle",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "Can you walk through every phase?",
+      "line2": "What comes after setup?",
+      "say": "Most engineers stop at building the server. But what happens next? Can you walk through the whole onboarding lifecycle?"
+    },
+    {
+      "id": "1-rows-phases",
+      "type": "rows",
+      "kicker": "Lifecycle Phases",
+      "rows": [
+        {
+          "a": "Intake",
+          "b": "Owner, users, deadline, compliance"
+        },
+        {
+          "a": "Design",
+          "b": "Hosting, network, security, review"
+        },
+        {
+          "a": "Provision",
+          "b": "VMs, storage, identities, IaC"
+        },
+        {
+          "a": "Expose",
+          "b": "DNS, load balancer, firewall, TLS"
+        },
+        {
+          "a": "Observe",
+          "b": "Monitoring, logs, alerts, runbooks"
+        },
+        {
+          "a": "Protect",
+          "b": "Backups, patching, DR plan"
+        },
+        {
+          "a": "Handover",
+          "b": "Runbook, KT, CMDB, support"
+        }
+      ],
+      "walk": true,
+      "say": "Onboarding follows clear phases, from intake and design, to provisioning and exposing the app, then observing, protecting, and finally handing over to support."
+    },
+    {
+      "id": "2-compare-junior-senio",
+      "type": "compare",
+      "kicker": "Interview Insight",
+      "left": {
+        "title": "Junior",
+        "items": [
+          "Build server",
+          "Install runtime"
+        ]
+      },
+      "right": {
+        "title": "Senior",
+        "items": [
+          "Monitor alerts",
+          "Patch, backup",
+          "Support handover"
+        ]
+      },
+      "say": "Juniors stop at setup. Seniors go further—they monitor, patch, and hand off support. Interviewers want to hear the full lifecycle."
+    },
+    {
+      "id": "3-trap-lifecycle",
+      "type": "trap",
+      "question": "What phase do most candidates skip?",
+      "wrong": "Provisioning and configuration",
+      "right": "Observation, protection, and handover—these show you understand real-world support.",
+      "say": "Most candidates skip the later phases. But observing, protecting, and handing over are what set you apart."
+    },
+    {
+      "id": "4-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:00:48.074Z"
+}
