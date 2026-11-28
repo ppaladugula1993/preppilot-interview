@@ -1,0 +1,85 @@
+{
+  "id": "js-core-l0",
+  "title": "Var, Let, Const & Hoisting: No Surprises",
+  "keys": [
+    "var",
+    "let",
+    "const",
+    "hoisting",
+    "temporal dead zone"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-varletconst",
+      "type": "hook",
+      "kicker": "Core JavaScript · lesson",
+      "line1": "Why do some variables throw errors",
+      "line2": "while others are just undefined?",
+      "say": "Ever wonder why some variables throw errors before they're declared, but others just show up as undefined?"
+    },
+    {
+      "id": "1-compare-scopes",
+      "type": "compare",
+      "kicker": "Scopes & Hoisting",
+      "left": {
+        "title": "var",
+        "items": [
+          "Function-scoped",
+          "Hoisted & initialized"
+        ]
+      },
+      "right": {
+        "title": "let / const",
+        "items": [
+          "Block-scoped",
+          "Hoisted but not initialized"
+        ]
+      },
+      "say": "Here's the deal: var is function-scoped and gets hoisted and initialized. Let and const are block-scoped, also hoisted, but not initialized right away."
+    },
+    {
+      "id": "2-rows-tdz",
+      "type": "rows",
+      "kicker": "Temporal Dead Zone",
+      "rows": [
+        {
+          "a": "Enter block",
+          "b": "let and const are hoisted"
+        },
+        {
+          "a": "Before declaration",
+          "b": "Access throws ReferenceError"
+        },
+        {
+          "a": "After declaration",
+          "b": "Now they're usable"
+        }
+      ],
+      "walk": true,
+      "say": "Between entering a block and actually declaring let or const, you hit the temporal dead zone. Try to use them early, and you'll get a Reference Error."
+    },
+    {
+      "id": "3-code-example",
+      "type": "code",
+      "kicker": "Example in Action",
+      "lang": "js",
+      "code": "console.log(a);\nconsole.log(b);\nvar a = 1;\nlet b = 2;",
+      "say": "Check this out. Logging a before it's declared gives you undefined, but logging b throws a Reference Error. That's hoisting and the temporal dead zone in action."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "Which is safer for new code?",
+      "wrong": "Use var for everything.",
+      "right": "Stick to let and const to avoid bugs from hoisting and scope confusion.",
+      "say": "In interviews, don't fall for the trap—using let and const helps you avoid subtle bugs from hoisting and scoping issues."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:55:11.342Z"
+}
