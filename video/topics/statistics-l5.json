@@ -1,0 +1,82 @@
+{
+  "id": "statistics-l5",
+  "title": "A/B Test Design and Pitfalls",
+  "keys": [
+    "A/B test",
+    "peeking",
+    "randomization",
+    "multiple comparisons"
+  ],
+  "scenes": [
+    {
+      "id": "0-ab-hook",
+      "type": "hook",
+      "kicker": "Statistics & Probability · lesson",
+      "line1": "Can you trust your A/B test results?",
+      "line2": "What can go wrong?",
+      "say": "Think your A/B test is bulletproof? Let's see what can trip you up."
+    },
+    {
+      "id": "1-ab-steps",
+      "type": "rows",
+      "kicker": "A/B Test Design",
+      "rows": [
+        {
+          "a": "Randomize users",
+          "b": "Assign users to A or B group"
+        },
+        {
+          "a": "Set sample size",
+          "b": "Decide before starting"
+        },
+        {
+          "a": "Predefine rules",
+          "b": "Plan when to stop and analyze"
+        }
+      ],
+      "walk": true,
+      "say": "Start by randomizing users, decide your sample size up front, and always set clear stopping rules before you begin."
+    },
+    {
+      "id": "2-ab-chip-peeking",
+      "type": "chip",
+      "kicker": "Pitfall",
+      "label": "Peeking",
+      "sub": "Checking results early can fool you",
+      "say": "Peeking at results before the test ends can make you think you've found a winner when it's just random noise."
+    },
+    {
+      "id": "3-ab-compare-multicomp",
+      "type": "compare",
+      "kicker": "Multiple Comparisons",
+      "left": {
+        "title": "1 Variant",
+        "items": [
+          "Low false positive risk"
+        ]
+      },
+      "right": {
+        "title": "10 Variants",
+        "items": [
+          "High false positive risk"
+        ]
+      },
+      "say": "Testing more variants increases your chance of a false positive. Ten variants? Way riskier than just one."
+    },
+    {
+      "id": "4-ab-trap",
+      "type": "trap",
+      "question": "Should you peek at A/B test results?",
+      "wrong": "Yes, to stop early if it looks good",
+      "right": "No, peeking inflates false positives and misleads results",
+      "say": "Interview trap: peeking sounds efficient, but it breaks your test and leads to bad decisions."
+    },
+    {
+      "id": "5-ab-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:41:59.332Z"
+}
