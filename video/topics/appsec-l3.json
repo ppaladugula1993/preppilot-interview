@@ -1,0 +1,79 @@
+{
+  "id": "appsec-l3",
+  "title": "Authentication & Session Security",
+  "keys": [
+    "authentication",
+    "session",
+    "secure cookie",
+    "expiration"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-auth-session",
+      "type": "hook",
+      "kicker": "Application Security (OWASP) · lesson",
+      "line1": "What keeps user sessions safe?",
+      "line2": "Could yours be hijacked?",
+      "say": "Ever wonder what really keeps user sessions safe? Could your app's sessions get hijacked?"
+    },
+    {
+      "id": "1-chip-auth-vs-session",
+      "type": "chip",
+      "kicker": "Key Concepts",
+      "label": "Auth vs Session",
+      "sub": "Authentication checks who you are. Session security keeps your access safe after login.",
+      "say": "Authentication checks who you are. Session security keeps your access safe after you log in."
+    },
+    {
+      "id": "2-rows-best-practices",
+      "type": "rows",
+      "kicker": "Best Practices",
+      "rows": [
+        {
+          "a": "Strong passwords",
+          "b": "Enforce length and complexity"
+        },
+        {
+          "a": "Multi-factor auth",
+          "b": "Add a second verification step"
+        },
+        {
+          "a": "Secure cookies",
+          "b": "Use Secure and HttpOnly flags"
+        },
+        {
+          "a": "Session timeouts",
+          "b": "Expire sessions after inactivity"
+        }
+      ],
+      "walk": true,
+      "say": "Here's what I always do: enforce strong passwords, add multi-factor authentication, use secure cookies, and make sessions expire after inactivity."
+    },
+    {
+      "id": "3-terminal-cookie-exam",
+      "type": "terminal",
+      "kicker": "Secure Session Cookie",
+      "title": "Example Cookie Settings",
+      "lines": [
+        "$ Set-Cookie: sessionid=abc123;",
+        "  HttpOnly; Secure; SameSite=Strict"
+      ],
+      "say": "For sessions, set cookies with Secure, HttpOnly, and SameSite set to strict. This blocks most hijacking tricks."
+    },
+    {
+      "id": "4-trap-session-expiry",
+      "type": "trap",
+      "question": "What's often missed in session security?",
+      "wrong": "Using only strong passwords",
+      "right": "Forgetting to set session expiration leaves sessions open to hijacking.",
+      "say": "Here's a common interview trap: many forget to set session expiration. Without it, sessions stay open and can be hijacked."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:39:40.056Z"
+}
