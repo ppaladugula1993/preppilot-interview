@@ -1,0 +1,93 @@
+{
+  "id": "performance-testing",
+  "title": "Performance Testing: Metrics Matter Most",
+  "keys": [
+    "load",
+    "stress",
+    "latency",
+    "throughput",
+    "APM"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-metrics",
+      "type": "hook",
+      "kicker": "Performance Testing · 45 seconds",
+      "line1": "What makes a test meaningful?",
+      "line2": "How do you measure success?",
+      "say": "When you run a performance test, what tells you if your system actually passes? Let's break down the single most important idea."
+    },
+    {
+      "id": "1-chip-throughput",
+      "type": "chip",
+      "kicker": "Step 1 · Metric",
+      "label": "Throughput",
+      "sub": "Requests handled per second. Reveals capacity.",
+      "say": "Throughput is the number of requests your system handles each second. It's the best indicator of capacity under load."
+    },
+    {
+      "id": "2-chip-latency",
+      "type": "chip",
+      "kicker": "Step 2 · Metric",
+      "label": "Latency",
+      "sub": "How fast responses return. Use p95 or p99.",
+      "say": "Latency measures how fast your system responds. Focus on the ninety-fifth or ninety-ninth percentile—those slowest requests matter for real users."
+    },
+    {
+      "id": "3-rows-error-rate",
+      "type": "rows",
+      "kicker": "Step 3 · Metrics",
+      "rows": [
+        {
+          "a": "Throughput",
+          "b": "Requests per second"
+        },
+        {
+          "a": "Latency",
+          "b": "Response time, p95/p99"
+        },
+        {
+          "a": "Error Rate",
+          "b": "Failed requests percentage"
+        }
+      ],
+      "walk": true,
+      "say": "Combine throughput, latency, and error rate. These three define your performance testing goals and show if your system meets expectations."
+    },
+    {
+      "id": "4-compare-load-stress",
+      "type": "compare",
+      "kicker": "Step 4 · Types",
+      "left": {
+        "title": "Load",
+        "items": [
+          "Expected traffic",
+          "Normal conditions"
+        ]
+      },
+      "right": {
+        "title": "Stress",
+        "items": [
+          "Beyond limits",
+          "Find breaking points"
+        ]
+      },
+      "say": "Load tests check how your system performs under normal traffic. Stress tests push it past its limits to find where it breaks."
+    },
+    {
+      "id": "5-trap-latency",
+      "type": "trap",
+      "question": "Why not just average latency?",
+      "wrong": "Average is enough for users.",
+      "right": "Averages hide outliers. Percentiles show real user impact.",
+      "say": "Don't rely only on average latency. It hides outliers. Use percentiles to see how real users experience your system."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:57:54.582Z"
+}
