@@ -1,0 +1,85 @@
+{
+  "id": "threat-modeling-l3",
+  "title": "Risk Rating Methods in Threat Modeling",
+  "keys": [
+    "DREAD",
+    "CVSS",
+    "likelihood",
+    "impact",
+    "prioritization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-risk-rating",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "How do you decide which threats",
+      "line2": "fix first?",
+      "say": "Ever wonder how security teams pick which threats to tackle first? Let's break down risk rating methods."
+    },
+    {
+      "id": "1-chip-dread",
+      "type": "chip",
+      "kicker": "Method",
+      "label": "DREAD",
+      "sub": "Scores threats by damage, exploitability, and more.",
+      "say": "DREAD is a classic model. It scores each threat by damage, how easy it is to exploit, and other factors."
+    },
+    {
+      "id": "2-compare-cvss-matrix",
+      "type": "compare",
+      "kicker": "Other Methods",
+      "left": {
+        "title": "CVSS",
+        "items": [
+          "Industry standard",
+          "Complex scoring"
+        ]
+      },
+      "right": {
+        "title": "Likelihood x Impact",
+        "items": [
+          "Simple matrix",
+          "Quick to use"
+        ]
+      },
+      "say": "CVSS is an industry standard with detailed scoring. Or, you might use a quick matrix that multiplies likelihood by impact."
+    },
+    {
+      "id": "3-rows-prioritize",
+      "type": "rows",
+      "kicker": "Prioritization",
+      "rows": [
+        {
+          "a": "High DREAD score",
+          "b": "Fix immediately"
+        },
+        {
+          "a": "Medium score",
+          "b": "Schedule soon"
+        },
+        {
+          "a": "Low score",
+          "b": "Defer if needed"
+        }
+      ],
+      "walk": true,
+      "say": "A high DREAD score means fix it now. Medium scores get scheduled soon. Low scores can be deferred if resources are tight."
+    },
+    {
+      "id": "4-trap-risk-rating",
+      "type": "trap",
+      "question": "Why do we use risk rating?",
+      "wrong": "To list every possible threat",
+      "right": "To focus on the most critical threats first",
+      "say": "Don't just list threats. Risk rating helps you focus on the most critical issues first."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:57:19.665Z"
+}
