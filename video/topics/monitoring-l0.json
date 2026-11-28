@@ -1,0 +1,76 @@
+{
+  "id": "monitoring-l0",
+  "title": "What to Monitor: Four Golden Signals",
+  "keys": [
+    "latency",
+    "traffic",
+    "errors",
+    "saturation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-golden-signals",
+      "type": "hook",
+      "kicker": "Monitoring · lesson",
+      "line1": "What should you monitor?",
+      "line2": "Know the golden signals.",
+      "say": "If you're launching a new app, what should you actually monitor? Let's break down the golden signals that every engineer should know."
+    },
+    {
+      "id": "1-chip-latency",
+      "type": "chip",
+      "kicker": "Signal",
+      "label": "Latency",
+      "sub": "How fast does your app respond to users?",
+      "say": "First up, latency. This is how quickly your app responds. Users notice when things get slow."
+    },
+    {
+      "id": "2-rows-four-signals",
+      "type": "rows",
+      "kicker": "Golden Signals",
+      "rows": [
+        {
+          "a": "Latency",
+          "b": "Response time for requests"
+        },
+        {
+          "a": "Traffic",
+          "b": "Requests per second"
+        },
+        {
+          "a": "Errors",
+          "b": "Failures and bad responses"
+        },
+        {
+          "a": "Saturation",
+          "b": "Resource limits, like CPU"
+        }
+      ],
+      "walk": true,
+      "say": "The four golden signals are latency, traffic, errors, and saturation. Together, they show how your system is really doing."
+    },
+    {
+      "id": "3-chip-host-basics",
+      "type": "chip",
+      "kicker": "Basics",
+      "label": "Host Health",
+      "sub": "Check if servers are up, disk space, certs, backups",
+      "say": "Don't forget the basics: is the server up, is there enough disk space, are certificates and backups good?"
+    },
+    {
+      "id": "4-trap-alerting",
+      "type": "trap",
+      "question": "What should you alert on first?",
+      "wrong": "CPU usage spikes",
+      "right": "User-facing issues, like errors or slowdowns",
+      "say": "Here's a common trap: alerting on CPU spikes. It's better to alert on what users actually feel, like errors or slow response times."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:56:42.296Z"
+}
