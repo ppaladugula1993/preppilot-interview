@@ -1,0 +1,71 @@
+{
+  "id": "node-runtime-l7",
+  "title": "Node.js: Config & Secrets Best Practices",
+  "keys": [
+    "environment",
+    "dotenv",
+    "secrets",
+    "config"
+  ],
+  "scenes": [
+    {
+      "id": "0-env-hook",
+      "type": "hook",
+      "kicker": "Node.js Runtime · lesson",
+      "line1": "Where should secrets live?",
+      "line2": "What’s the safest way?",
+      "say": "Ever wondered where your API keys should go in Node? What's the safest way to store secrets?"
+    },
+    {
+      "id": "1-env-chip",
+      "type": "chip",
+      "kicker": "Config",
+      "label": "Separation",
+      "sub": "Keep settings out of code using environment variables or config files.",
+      "say": "Keep your settings separate from your code. Use environment variables or config files for flexibility."
+    },
+    {
+      "id": "2-env-code",
+      "type": "code",
+      "kicker": "Secrets",
+      "lang": "js",
+      "code": "require('dotenv').config();\nconst dbPassword = process.env.DB_PASSWORD;",
+      "say": "Load secrets like database passwords from environment variables with tools like dotenv. This keeps sensitive data out of your codebase."
+    },
+    {
+      "id": "3-env-compare",
+      "type": "compare",
+      "kicker": "Security",
+      "left": {
+        "title": "Bad",
+        "items": [
+          "Hard-coded keys",
+          "Exposed secrets"
+        ]
+      },
+      "right": {
+        "title": "Good",
+        "items": [
+          "Environment variables",
+          "Secret managers"
+        ]
+      },
+      "say": "Hard-coding keys exposes secrets. Using environment variables or secret managers keeps them secure and easy to rotate."
+    },
+    {
+      "id": "4-env-trap",
+      "type": "trap",
+      "question": "Should secrets be in your code?",
+      "wrong": "Yes, it’s easier for access.",
+      "right": "No, always keep secrets out of code. Use environment variables or secret managers instead.",
+      "say": "Never store secrets directly in your code. Always use environment variables or secret managers to protect them."
+    },
+    {
+      "id": "5-env-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:14:21.194Z"
+}
