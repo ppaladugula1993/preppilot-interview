@@ -1,0 +1,80 @@
+{
+  "id": "lb-l2",
+  "title": "Nginx as a Reverse Proxy: Fast Setup",
+  "keys": [
+    "nginx",
+    "reverse proxy",
+    "upstream",
+    "ssl",
+    "proxy_pass"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-nginx-reverse",
+      "type": "hook",
+      "kicker": "Load Balancers & TLS · lesson",
+      "line1": "Why is Nginx everywhere?",
+      "line2": "What does a reverse proxy do?",
+      "say": "Ever wonder why Nginx pops up in so many interviews? What does it actually do as a reverse proxy?"
+    },
+    {
+      "id": "1-chip-reverse-proxy",
+      "type": "chip",
+      "kicker": "Nginx Basics",
+      "label": "Proxy",
+      "sub": "Nginx forwards client requests to backend servers.",
+      "say": "Nginx acts as a middleman, sending client requests to backend servers. That's the essence of a reverse proxy."
+    },
+    {
+      "id": "2-rows-nginx-steps",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "Client connects",
+          "b": "Nginx listens for traffic"
+        },
+        {
+          "a": "SSL handshake",
+          "b": "Secures the connection"
+        },
+        {
+          "a": "Proxy pass",
+          "b": "Forwards to upstream servers"
+        },
+        {
+          "a": "Headers set",
+          "b": "Preserves host and client IP"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the flow: Nginx listens, secures with SSL, forwards traffic to upstream servers, and sets headers to keep host and client info."
+    },
+    {
+      "id": "3-terminal-nginx-reloa",
+      "type": "terminal",
+      "kicker": "Zero Downtime Tip",
+      "title": "Reload Nginx Safely",
+      "lines": [
+        "$ nginx -t",
+        "$ systemctl reload nginx"
+      ],
+      "say": "Always test your config before reloading Nginx. Reload keeps your app running without downtime. Restarting does not."
+    },
+    {
+      "id": "4-trap-x-forwarded-for",
+      "type": "trap",
+      "question": "Why log the X-Forwarded-For header?",
+      "wrong": "To track backend server health.",
+      "right": "To capture the real client IP address, not just the proxy's.",
+      "say": "Here's a trap: Why log the X-Forwarded-For header? It's not for backend health. It's so you see the real client IP, not just the proxy."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:39:09.812Z"
+}
