@@ -1,0 +1,59 @@
+{
+  "id": "java-core-l4",
+  "title": "Streams, Lambdas & Optional Essentials",
+  "keys": [
+    "streams",
+    "lambdas",
+    "optional",
+    "null-safe"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-stream-lambda",
+      "type": "hook",
+      "kicker": "Core Java · lesson",
+      "line1": "Ready to modernize your Java code?",
+      "line2": "How do streams and lambdas help?",
+      "say": "Want to write cleaner, safer Java? Let's see how streams, lambdas, and Optional make code modern and concise."
+    },
+    {
+      "id": "1-chip-streams",
+      "type": "chip",
+      "kicker": "Streams",
+      "label": "Streams",
+      "sub": "Functional operations on collections.",
+      "say": "Streams let you process collections with functional-style operations, making your code expressive and readable."
+    },
+    {
+      "id": "2-code-lambda",
+      "type": "code",
+      "kicker": "Lambdas",
+      "lang": "java",
+      "code": "names.stream()\n  .filter(s -> s.length() > 0)\n  .forEach(System.out::println);",
+      "say": "Lambdas simplify logic. Here, we filter and print names inline, without extra classes or methods."
+    },
+    {
+      "id": "3-chip-optional",
+      "type": "chip",
+      "kicker": "Optional",
+      "label": "Optional",
+      "sub": "Avoids null checks, signals missing values.",
+      "say": "Optional is a container for values that might be missing. It helps you avoid messy null checks and reduces errors."
+    },
+    {
+      "id": "4-trap-stream-exceptio",
+      "type": "trap",
+      "question": "Can streams catch exceptions natively?",
+      "wrong": "Yes, streams handle exceptions for you.",
+      "right": "No, you must handle exceptions inside lambdas or collect them separately when using streams.",
+      "say": "Streams don't catch exceptions for you. Handle errors inside your lambdas or collect them to keep things safe."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:18:25.187Z"
+}
