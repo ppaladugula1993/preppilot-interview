@@ -1,0 +1,83 @@
+{
+  "id": "k8s-l5",
+  "title": "Kubernetes ConfigMaps & Secrets",
+  "keys": [
+    "ConfigMap",
+    "Secret",
+    "envFrom",
+    "encryption"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-config-vs-secre",
+      "type": "hook",
+      "kicker": "Kubernetes · lesson",
+      "line1": "ConfigMaps or Secrets?",
+      "line2": "What's the real difference?",
+      "say": "Do you know when to use a ConfigMap or a Secret in Kubernetes? Let's clear it up."
+    },
+    {
+      "id": "1-chip-configmap",
+      "type": "chip",
+      "kicker": "Config",
+      "label": "ConfigMap",
+      "sub": "Holds plain settings, like log level or feature flags.",
+      "say": "A ConfigMap is for plain settings, like log level or feature flags. Nothing sensitive here."
+    },
+    {
+      "id": "2-chip-secret",
+      "type": "chip",
+      "kicker": "Sensitive",
+      "label": "Secret",
+      "sub": "Stores passwords, tokens, or keys. Can be encrypted.",
+      "say": "A Secret is for sensitive data, like passwords or tokens. It can be encrypted for extra safety."
+    },
+    {
+      "id": "3-rows-injecting",
+      "type": "rows",
+      "kicker": "Inject into Pods",
+      "rows": [
+        {
+          "a": "ConfigMap",
+          "b": "Mount as file or env variable"
+        },
+        {
+          "a": "Secret",
+          "b": "Mount as file or env variable"
+        },
+        {
+          "a": "Secret",
+          "b": "Can use encryption at rest"
+        }
+      ],
+      "walk": false,
+      "say": "Both ConfigMaps and Secrets can be mounted as files or environment variables in your pods. Only Secrets can be encrypted at rest."
+    },
+    {
+      "id": "4-terminal-example",
+      "type": "terminal",
+      "kicker": "Example",
+      "title": "Create and use",
+      "lines": [
+        "$ kubectl create configmap app-cfg --from-literal=LOG_LEVEL=info",
+        "$ kubectl create secret generic db-pass --from-literal=password=S3cret"
+      ],
+      "say": "Here’s how you create a ConfigMap for log level, and a Secret for a database password."
+    },
+    {
+      "id": "5-trap-base64",
+      "type": "trap",
+      "question": "Are Secrets always encrypted?",
+      "wrong": "Yes, Kubernetes encrypts them by default.",
+      "right": "No, by default they're just base sixty-four encoded. Encryption needs extra setup.",
+      "say": "Careful—by default, Secrets are only base sixty-four encoded, not truly encrypted. You need to set up encryption or use a vault."
+    },
+    {
+      "id": "6-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:55:53.035Z"
+}
