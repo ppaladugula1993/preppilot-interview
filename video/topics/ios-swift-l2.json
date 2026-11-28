@@ -1,0 +1,72 @@
+{
+  "id": "ios-swift-l2",
+  "title": "ARC & Retain Cycles in Swift",
+  "keys": [
+    "ARC",
+    "retain cycle",
+    "weak",
+    "memory leak"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-arc-cycles",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "Why do retain cycles cause leaks?",
+      "line2": "And how do you fix them?",
+      "say": "Ever wonder why your app's memory keeps growing? What causes retain cycles, and how do you break them?"
+    },
+    {
+      "id": "1-chip-arc",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "ARC",
+      "sub": "Swift tracks strong references to free memory.",
+      "say": "Automatic Reference Counting, or ARC, tracks how many strong references point to a class instance. When there are none left, memory is freed."
+    },
+    {
+      "id": "2-rows-retain-cycle",
+      "type": "rows",
+      "kicker": "Retain Cycle",
+      "rows": [
+        {
+          "a": "Object A",
+          "b": "Strongly references B"
+        },
+        {
+          "a": "Object B",
+          "b": "Strongly references A"
+        },
+        {
+          "a": "Result",
+          "b": "Neither gets deallocated"
+        }
+      ],
+      "walk": true,
+      "say": "But if two objects strongly reference each other, neither can be released. That's a retain cycle, and it causes memory leaks."
+    },
+    {
+      "id": "3-code-weak",
+      "type": "code",
+      "kicker": "Breaking the Cycle",
+      "lang": "swift",
+      "code": "class A { var b: B? }\nclass B { weak var a: A? }",
+      "say": "To fix this, make one side a weak reference. In this example, B holds a weak reference to A, so both can be deallocated."
+    },
+    {
+      "id": "4-trap-delegate",
+      "type": "trap",
+      "question": "How do you avoid cycles with delegates?",
+      "wrong": "Use strong references for delegates.",
+      "right": "Use weak or unowned for delegate properties.",
+      "say": "Here's a classic interview trap: Always use weak or unowned for delegate properties to avoid retain cycles."
+    },
+    {
+      "id": "5-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:10:00.467Z"
+}
