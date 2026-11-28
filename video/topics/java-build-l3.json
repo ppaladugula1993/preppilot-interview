@@ -1,0 +1,76 @@
+{
+  "id": "java-build-l3",
+  "title": "Scopes & Transitive Deps in Maven/Gradle",
+  "keys": [
+    "scope",
+    "transitive",
+    "conflict",
+    "dependency"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-scope-trouble",
+      "type": "hook",
+      "kicker": "Maven & Gradle · lesson",
+      "line1": "Ever had a build break",
+      "line2": "from a hidden dependency?",
+      "say": "Ever had your build suddenly break because of a dependency you never added yourself? Let's fix that."
+    },
+    {
+      "id": "1-chip-scope",
+      "type": "chip",
+      "kicker": "Scopes",
+      "label": "compile",
+      "sub": "Available everywhere—compile, test, and run.",
+      "say": "The compile scope means a dependency is available for compiling, testing, and running your code."
+    },
+    {
+      "id": "2-rows-common-scopes",
+      "type": "rows",
+      "kicker": "Common Scopes",
+      "rows": [
+        {
+          "a": "compile",
+          "b": "Used everywhere"
+        },
+        {
+          "a": "test",
+          "b": "Only for test code"
+        },
+        {
+          "a": "runtime",
+          "b": "Needed just to run"
+        },
+        {
+          "a": "provided",
+          "b": "Supplied by the environment"
+        }
+      ],
+      "walk": true,
+      "say": "Other scopes include test, for tests only; runtime, for running but not compiling; and provided, which means the environment supplies it."
+    },
+    {
+      "id": "3-chip-transitive",
+      "type": "chip",
+      "kicker": "Transitive",
+      "label": "Transitive",
+      "sub": "Dependencies pulled in by your dependencies.",
+      "say": "Transitive dependencies are the ones your dependencies need. They come along for the ride, whether you want them or not."
+    },
+    {
+      "id": "4-trap-conflict",
+      "type": "trap",
+      "question": "What can transitive dependencies cause?",
+      "wrong": "Faster builds",
+      "right": "They can cause version conflicts or classpath issues.",
+      "say": "Here's a trap: transitive dependencies can cause version conflicts or classpath problems if you're not careful."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:34:37.029Z"
+}
