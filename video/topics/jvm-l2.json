@@ -1,0 +1,75 @@
+{
+  "id": "jvm-l2",
+  "title": "Diagnosing JVM OutOfMemoryError Fast",
+  "keys": [
+    "OutOfMemoryError",
+    "heap dump",
+    "jcmd",
+    "memory leak"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-oom-jvm",
+      "type": "hook",
+      "kicker": "JVM Internals & Performance · lesson",
+      "line1": "Why does JVM run out of memory?",
+      "line2": "How do you spot the cause?",
+      "say": "Ever seen your Java app crash with an out-of-memory error? How would you figure out what's behind it?"
+    },
+    {
+      "id": "1-chip-oom-types",
+      "type": "chip",
+      "kicker": "Types of OutOfMemoryError",
+      "label": "Kinds",
+      "sub": "Heap space, Metaspace, and GC overhead limit exceeded are the main types.",
+      "say": "Out-of-memory can hit your heap, metaspace, or just overwhelm garbage collection. Each needs a different fix."
+    },
+    {
+      "id": "2-terminal-heap-dump",
+      "type": "terminal",
+      "kicker": "Heap Dump in Action",
+      "title": "Capture the Problem",
+      "lines": [
+        "$ jcmd 1234 GC.heap_dump /tmp/dump.hprof",
+        "$ jmap -dump:format=b,file=dump.hprof 1234"
+      ],
+      "say": "Grab a heap dump using jcmd or jmap. This snapshot lets you see exactly which objects are hogging memory."
+    },
+    {
+      "id": "3-rows-diagnosis-steps",
+      "type": "rows",
+      "kicker": "Diagnosing OutOfMemoryError",
+      "rows": [
+        {
+          "a": "Enable heap dumps",
+          "b": "Set the heap dump flag"
+        },
+        {
+          "a": "Collect dump",
+          "b": "Capture after error hits"
+        },
+        {
+          "a": "Analyze",
+          "b": "Use Eclipse MAT to spot leaks"
+        }
+      ],
+      "walk": true,
+      "say": "First, turn on heap dumps. Then, grab the dump when the error happens. Finally, open it in Eclipse MAT to hunt for leaks."
+    },
+    {
+      "id": "4-trap-metaspace-mista",
+      "type": "trap",
+      "question": "What causes Metaspace OutOfMemoryError?",
+      "wrong": "Too many threads running",
+      "right": "Class loader leaks or dynamic class creation fill up metaspace.",
+      "say": "Here's a classic interview trap: Metaspace errors aren't about threads—they're usually from class loader leaks or too many dynamic classes."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:00:51.623Z"
+}
