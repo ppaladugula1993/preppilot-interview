@@ -1,0 +1,95 @@
+{
+  "id": "selenium-playwright",
+  "title": "The Secret to Reliable UI Automation",
+  "keys": [
+    "Playwright",
+    "Selenium",
+    "Locators",
+    "Waits",
+    "Flakiness"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-locators",
+      "type": "hook",
+      "kicker": "UI Automation · 45 seconds",
+      "line1": "Why do UI tests break so often?",
+      "line2": "What's the root cause?",
+      "say": "Ever wonder why your UI tests fail randomly, even when the app looks fine? Let’s solve the biggest cause of flakiness."
+    },
+    {
+      "id": "1-chip-locator",
+      "type": "chip",
+      "kicker": "Step 1 · Locator",
+      "label": "Locator",
+      "sub": "Locators target UI elements for automation.",
+      "say": "Locators are how your tests find buttons, fields, and links on the screen. Get them wrong, and your tests crumble."
+    },
+    {
+      "id": "2-rows-resilient",
+      "type": "rows",
+      "kicker": "Step 2 · Resilient Selectors",
+      "rows": [
+        {
+          "a": "ID",
+          "b": "Unique and stable"
+        },
+        {
+          "a": "Data Attribute",
+          "b": "Custom, reliable"
+        },
+        {
+          "a": "Accessible Role",
+          "b": "Consistent across UI"
+        },
+        {
+          "a": "Dynamic Class",
+          "b": "Fragile, avoid"
+        },
+        {
+          "a": "nth-child",
+          "b": "Breaks with UI changes"
+        }
+      ],
+      "walk": true,
+      "say": "The best selectors use IDs, custom data attributes, or accessible roles. Avoid dynamic classes or nth-child—they break when the UI shifts."
+    },
+    {
+      "id": "3-compare-waits",
+      "type": "compare",
+      "kicker": "Step 3 · Waits",
+      "left": {
+        "title": "Auto-waiting",
+        "items": [
+          "Framework handles waits",
+          "Less manual code",
+          "Reduces flakiness"
+        ]
+      },
+      "right": {
+        "title": "Explicit Waits",
+        "items": [
+          "You code the waits",
+          "More control",
+          "Can miss timing issues"
+        ]
+      },
+      "say": "Playwright and Cypress auto-wait for elements, making tests more stable. Selenium needs explicit waits, which can be tricky and cause flakiness if missed."
+    },
+    {
+      "id": "4-trap-selector",
+      "type": "trap",
+      "question": "Should you use nth-child for selectors?",
+      "wrong": "Yes, it's quick and easy.",
+      "right": "No, nth-child is fragile; use stable IDs or data attributes instead.",
+      "say": "In interviews, don’t say you use nth-child or dynamic classes. Those selectors break easily. Always go for stable attributes."
+    },
+    {
+      "id": "5-endcard",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:39:40.745Z"
+}
