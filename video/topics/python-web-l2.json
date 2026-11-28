@@ -1,0 +1,72 @@
+{
+  "id": "python-web-l2",
+  "title": "Dependency Injection in FastAPI",
+  "keys": [
+    "FastAPI",
+    "Depends",
+    "dependency injection",
+    "modular code"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-di-fastapi",
+      "type": "hook",
+      "kicker": "Python Web (FastAPI, Django, Flask) · lesson",
+      "line1": "How does FastAPI keep code modular?",
+      "line2": "What is dependency injection?",
+      "say": "Ever wonder how FastAPI keeps your code clean and modular? Let's talk about dependency injection."
+    },
+    {
+      "id": "1-chip-di-why",
+      "type": "chip",
+      "kicker": "Why it matters",
+      "label": "Modular",
+      "sub": "Dependency injection lets you separate logic, making code testable and maintainable.",
+      "say": "Dependency injection separates your logic. That means your code is easier to test, maintain, and reuse."
+    },
+    {
+      "id": "2-code-di-example",
+      "type": "code",
+      "kicker": "How it works",
+      "lang": "python",
+      "code": "def get_db():\n    db = Session()\n    try:\n        yield db\n    finally:\n        db.close()\n@app.get('/users/')\ndef list_users(db=Depends(get_db)):\n    ...",
+      "say": "Here's how it looks. You define a function to get a database session, then inject it into your endpoint using Depends. FastAPI handles creating and cleaning up resources for you."
+    },
+    {
+      "id": "3-rows-di-uses",
+      "type": "rows",
+      "kicker": "Common uses",
+      "rows": [
+        {
+          "a": "Database sessions",
+          "b": "Manage connections per request"
+        },
+        {
+          "a": "Authentication",
+          "b": "Check user credentials"
+        },
+        {
+          "a": "Config objects",
+          "b": "Share settings easily"
+        }
+      ],
+      "walk": false,
+      "say": "I use dependency injection for things like database sessions, authentication checks, and sharing configuration objects."
+    },
+    {
+      "id": "4-trap-di-mistake",
+      "type": "trap",
+      "question": "What if you skip Depends in endpoints?",
+      "wrong": "FastAPI still injects dependencies.",
+      "right": "Without Depends, FastAPI won't inject anything. You'll have to manage resources yourself.",
+      "say": "Here's a trap: if you forget to use Depends, FastAPI won't inject your resources. You'll need to handle everything manually."
+    },
+    {
+      "id": "5-end-di",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:45:16.355Z"
+}
