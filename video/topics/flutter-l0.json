@@ -1,0 +1,51 @@
+{
+  "id": "flutter-l0",
+  "title": "Dart Null Safety: No More Sneaky Nulls",
+  "keys": [
+    "null safety",
+    "nullable",
+    "compile-time",
+    "Dart"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-null-safety",
+      "type": "hook",
+      "kicker": "Flutter · Dart Null Safety",
+      "line1": "Can variables be null by default?",
+      "line2": "What happens if they are?",
+      "say": "Ever had an app crash because something was unexpectedly empty? Can variables in Dart be null by default? Let's find out."
+    },
+    {
+      "id": "1-chip-nullable",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Nullable",
+      "sub": "Variables can't be null unless you add a question mark.",
+      "say": "In Dart, variables can't be empty unless you mark them as nullable with a question mark. This catches mistakes early."
+    },
+    {
+      "id": "2-code-null-safety",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "dart",
+      "code": "String? name;\nint age = 30;\nname = null;\nage = null; // Error",
+      "say": "Here, name can be empty because it's marked as nullable. But age can't, so trying to set age to empty throws a compile-time error."
+    },
+    {
+      "id": "3-trap-common-error",
+      "type": "trap",
+      "question": "Can all variables be null in Dart?",
+      "wrong": "Yes, unless initialized.",
+      "right": "No, only variables marked as nullable with a question mark can be null.",
+      "say": "Watch out! Not every variable can be empty in Dart. Only those you explicitly mark as nullable can hold a null value."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:39:23.273Z"
+}
