@@ -1,0 +1,64 @@
+{
+  "id": "threat-modeling-l0",
+  "title": "Threat Modeling: An Interview Must-Know",
+  "keys": [
+    "threat modeling",
+    "security",
+    "design phase",
+    "risk"
+  ],
+  "scenes": [
+    {
+      "id": "0-threat-modeling-hook",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "When do you start thinking",
+      "line2": "about security?",
+      "say": "When do you actually start thinking about security in your projects? Is it early enough?"
+    },
+    {
+      "id": "1-what-is-threat-model",
+      "type": "chip",
+      "kicker": "Core Concept",
+      "label": "Modeling",
+      "sub": "Structured process to spot and handle threats early",
+      "say": "Threat modeling is a structured process to spot and handle security threats before they become real problems."
+    },
+    {
+      "id": "2-when-to-do-it",
+      "type": "rows",
+      "kicker": "Timing Matters",
+      "rows": [
+        {
+          "a": "Design phase",
+          "b": "Start as soon as architecture is drafted"
+        },
+        {
+          "a": "Major changes",
+          "b": "Update with new features or changes"
+        },
+        {
+          "a": "Ongoing",
+          "b": "Revisit as the system evolves"
+        }
+      ],
+      "walk": true,
+      "say": "Do it during the design phase, update it with big changes, and keep revisiting it as your system grows."
+    },
+    {
+      "id": "3-trap-timing",
+      "type": "trap",
+      "question": "When should threat modeling start?",
+      "wrong": "After development is complete",
+      "right": "During design, and update with major changes",
+      "say": "Here's a common trap: waiting until after development to do threat modeling. The right move is to start during design and update it with every major change."
+    },
+    {
+      "id": "4-threat-modeling-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:50:15.670Z"
+}
