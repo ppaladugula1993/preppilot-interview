@@ -1,0 +1,92 @@
+{
+  "id": "threat-modeling-l5",
+  "title": "Threat Modeling a Web App",
+  "keys": [
+    "threat modeling",
+    "STRIDE",
+    "risk rating",
+    "web app"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-threat-model-we",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "How do you threat model",
+      "line2": "a web app?",
+      "say": "How do you actually threat model a web app in practice?"
+    },
+    {
+      "id": "1-rows-threat-model-st",
+      "type": "rows",
+      "kicker": "Step by Step",
+      "rows": [
+        {
+          "a": "Map architecture",
+          "b": "Draw a data flow diagram"
+        },
+        {
+          "a": "Find trust boundaries",
+          "b": "Spot where data crosses zones"
+        },
+        {
+          "a": "Apply STRIDE",
+          "b": "Check each component for threats"
+        },
+        {
+          "a": "Rate risks",
+          "b": "Score impact and likelihood"
+        },
+        {
+          "a": "Plan mitigations",
+          "b": "Decide how to address threats"
+        }
+      ],
+      "walk": true,
+      "say": "Start by mapping your app’s architecture with a data flow diagram. Mark trust boundaries where data crosses between users, servers, or services. Then, apply the STRIDE categories to each part. Rate the risks and plan how to fix or reduce them."
+    },
+    {
+      "id": "2-chip-stride-example",
+      "type": "chip",
+      "kicker": "STRIDE in Action",
+      "label": "Spoofing",
+      "sub": "Credential stuffing targets user logins",
+      "say": "For example, credential stuffing is a spoofing threat against your login system."
+    },
+    {
+      "id": "3-compare-threats-miti",
+      "type": "compare",
+      "kicker": "Examples",
+      "left": {
+        "title": "Threat",
+        "items": [
+          "SQL injection",
+          "Data leakage"
+        ]
+      },
+      "right": {
+        "title": "Mitigation",
+        "items": [
+          "Input validation",
+          "Encrypt sensitive data"
+        ]
+      },
+      "say": "SQL injection is a tampering threat, so use input validation. Data leakage means information disclosure, so encrypt sensitive data."
+    },
+    {
+      "id": "4-trap-missing-step",
+      "type": "trap",
+      "question": "What step do devs often skip?",
+      "wrong": "Applying STRIDE to each flow",
+      "right": "Updating the threat model as the app evolves",
+      "say": "A common trap? Forgetting to update your threat model when the app changes. Interviewers want to see you catch this."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T03:01:43.874Z"
+}
