@@ -1,0 +1,76 @@
+{
+  "id": "python-data-l6",
+  "title": "Plotting & Notebook Hygiene in Python",
+  "keys": [
+    "pandas",
+    "plotting",
+    "matplotlib",
+    "notebook hygiene"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-plotting-hygien",
+      "type": "hook",
+      "kicker": "Python for Data · pandas & NumPy",
+      "line1": "How do you make plots clear?",
+      "line2": "And keep notebooks tidy?",
+      "say": "Ever wonder how to make your plots stand out and keep your notebooks clean for interviews?"
+    },
+    {
+      "id": "1-chip-pandas-plot",
+      "type": "chip",
+      "kicker": "Plotting Basics",
+      "label": "pandas",
+      "sub": "pandas works with matplotlib to plot data easily.",
+      "say": "With pandas, you can quickly create charts using built-in methods that connect to matplotlib."
+    },
+    {
+      "id": "2-code-plot-hist",
+      "type": "code",
+      "kicker": "Example Plot",
+      "lang": "python",
+      "code": "df['sales'].plot(kind='hist')\nplt.xlabel('Sales')\nplt.title('Sales Distribution')",
+      "say": "Here's a simple histogram of sales, with labels and a title for clarity. Always annotate your plots."
+    },
+    {
+      "id": "3-rows-notebook-hygien",
+      "type": "rows",
+      "kicker": "Notebook Hygiene",
+      "rows": [
+        {
+          "a": "Restart notebook",
+          "b": "Run all cells for fresh output"
+        },
+        {
+          "a": "Clear outputs",
+          "b": "Remove clutter and confusion"
+        },
+        {
+          "a": "Add comments",
+          "b": "Explain code and results"
+        },
+        {
+          "a": "Set random seeds",
+          "b": "Make results reproducible"
+        }
+      ],
+      "walk": true,
+      "say": "To keep notebooks clean, restart and run all cells, clear extra outputs, add comments, and set random seeds."
+    },
+    {
+      "id": "4-trap-interview-mista",
+      "type": "trap",
+      "question": "What's a common notebook mistake?",
+      "wrong": "Leaving messy outputs and unclear code.",
+      "right": "Not restarting and running all cells before sharing. Always do this for reproducibility.",
+      "say": "Interviewers notice if you forget to restart and run all cells. Messy outputs or unclear code can cost you."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:46:43.348Z"
+}
