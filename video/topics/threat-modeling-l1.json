@@ -1,0 +1,78 @@
+{
+  "id": "threat-modeling-l1",
+  "title": "DFDs: Map Data, Spot Threats Fast",
+  "keys": [
+    "DFD",
+    "trust boundary",
+    "process",
+    "data flow"
+  ],
+  "scenes": [
+    {
+      "id": "0-dfd-hook",
+      "type": "hook",
+      "kicker": "Threat Modeling · lesson",
+      "line1": "How do you spot risk in a system?",
+      "line2": "What shows you where to look?",
+      "say": "How do you quickly find where threats might pop up in a system? What tool shows you exactly where to look?"
+    },
+    {
+      "id": "1-dfd-essentials",
+      "type": "chip",
+      "kicker": "DFD Basics",
+      "label": "DFD",
+      "sub": "Shows how data moves: processes, stores, entities, flows",
+      "say": "A data flow diagram maps out how data moves. It shows processes, storage, outside users, and the paths data takes."
+    },
+    {
+      "id": "2-dfd-trust-boundary",
+      "type": "rows",
+      "kicker": "Key Feature",
+      "rows": [
+        {
+          "a": "User to Server",
+          "b": "Trust boundary here"
+        },
+        {
+          "a": "Server to Database",
+          "b": "Usually trusted"
+        },
+        {
+          "a": "External API",
+          "b": "Another trust boundary"
+        }
+      ],
+      "walk": true,
+      "say": "The most important part? Trust boundaries. For example, between the user's browser and your backend, or when you call an outside API. These are where attackers love to strike."
+    },
+    {
+      "id": "3-dfd-example",
+      "type": "terminal",
+      "kicker": "Example DFD",
+      "title": "Login System",
+      "lines": [
+        "$ User Browser",
+        "$  |",
+        "$ Web Server",
+        "$  |",
+        "$ Database"
+      ],
+      "say": "Picture a login system. The user talks to the web server, which connects to a database. The trust boundary sits between the browser and the server."
+    },
+    {
+      "id": "4-dfd-trap",
+      "type": "trap",
+      "question": "What do trust boundaries show?",
+      "wrong": "Where data is stored",
+      "right": "Where trust changes—focus threat analysis here",
+      "say": "Here's a trap: Trust boundaries don't just show where data is stored. They show where trust changes. That's where you need to focus your threat analysis."
+    },
+    {
+      "id": "5-dfd-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:52:35.832Z"
+}
