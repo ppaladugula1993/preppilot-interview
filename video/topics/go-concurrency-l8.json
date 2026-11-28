@@ -1,0 +1,72 @@
+{
+  "id": "go-concurrency-l8",
+  "title": "Go Goroutine Management Best Practices",
+  "keys": [
+    "goroutine",
+    "context",
+    "WaitGroup",
+    "leak"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-best-goroutine",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How do you avoid goroutine chaos?",
+      "line2": "What keeps them under control?",
+      "say": "Ever wondered how to keep goroutines from spiraling out of control? Let's break down the best ways to manage them."
+    },
+    {
+      "id": "1-chip-limit",
+      "type": "chip",
+      "kicker": "Tip",
+      "label": "Limit",
+      "sub": "Too many goroutines can overload memory and CPU.",
+      "say": "First, limit how many goroutines run at once. Launching too many can overload your system and cause performance issues."
+    },
+    {
+      "id": "2-rows-coordination",
+      "type": "rows",
+      "kicker": "Steps",
+      "rows": [
+        {
+          "a": "Add WaitGroup",
+          "b": "Track goroutine completion"
+        },
+        {
+          "a": "Use context",
+          "b": "Cancel long-running tasks"
+        },
+        {
+          "a": "Monitor leaks",
+          "b": "Check for stuck goroutines"
+        }
+      ],
+      "walk": true,
+      "say": "Coordinate goroutines with WaitGroups, use context to cancel them cleanly, and always monitor for leaks."
+    },
+    {
+      "id": "3-code-wg-context",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "go",
+      "code": "wg := sync.WaitGroup{}\nfor i := 0; i < n; i++ {\n  wg.Add(1)\n  go func() {\n    defer wg.Done()\n    // work\n  }()\n}\nwg.Wait()",
+      "say": "Here's how you use a WaitGroup to make sure every goroutine finishes before moving on."
+    },
+    {
+      "id": "4-trap-leak",
+      "type": "trap",
+      "question": "What happens if you forget to call Done?",
+      "wrong": "Goroutines exit normally.",
+      "right": "WaitGroup never completes, causing deadlocks or leaks.",
+      "say": "If you forget to signal completion, your WaitGroup will hang, leading to deadlocks or goroutine leaks. Don't miss this step in interviews."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:15:07.687Z"
+}
