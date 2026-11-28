@@ -1,0 +1,89 @@
+{
+  "id": "scenarios",
+  "title": "Nail Any Senior Scenario Question",
+  "keys": [
+    "clarify",
+    "trade-offs",
+    "evidence",
+    "risk",
+    "automation"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-senior-scenario",
+      "type": "hook",
+      "kicker": "Senior Scenarios · 45 seconds",
+      "line1": "What's the secret to",
+      "line2": "acing senior design questions?",
+      "say": "Ever freeze up when asked a big 'what would you do' question in an interview? Let's break down the one approach that works every time."
+    },
+    {
+      "id": "1-chip-clarify",
+      "type": "chip",
+      "kicker": "Step 1",
+      "label": "Clarify",
+      "sub": "Always ask for goals, constraints, and risks first.",
+      "say": "First, clarify. Always ask about goals, constraints, and risks before you start solving. This shows you think like a real engineer."
+    },
+    {
+      "id": "2-rows-steps",
+      "type": "rows",
+      "kicker": "4 Steps · Every Scenario",
+      "rows": [
+        {
+          "a": "1. Clarify",
+          "b": "What's the real problem?"
+        },
+        {
+          "a": "2. Structure",
+          "b": "Lay out your approach."
+        },
+        {
+          "a": "3. Trade-offs",
+          "b": "Weigh options out loud."
+        },
+        {
+          "a": "4. Decide",
+          "b": "Pick and justify your path."
+        }
+      ],
+      "walk": true,
+      "say": "Here’s the four-step method: clarify the real problem, structure your approach, talk through trade-offs, then decide and justify."
+    },
+    {
+      "id": "3-compare-evidence-vs-",
+      "type": "compare",
+      "kicker": "Evidence Beats Blame",
+      "left": {
+        "title": "Blame",
+        "items": [
+          "Assumptions",
+          "Finger-pointing"
+        ]
+      },
+      "right": {
+        "title": "Evidence",
+        "items": [
+          "Data first",
+          "Share findings"
+        ]
+      },
+      "say": "When things go wrong, skip the blame game. Lead with data and evidence, not opinions. That’s how senior engineers earn trust."
+    },
+    {
+      "id": "4-trap-jump-to-solutio",
+      "type": "trap",
+      "question": "What’s the biggest trap in scenarios?",
+      "wrong": "Jumping right to a solution",
+      "right": "Not clarifying goals and constraints first. Always ask questions up front.",
+      "say": "The biggest trap? Jumping straight to a solution. Instead, always clarify the goals and constraints before you build or fix anything."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:07:11.893Z"
+}
