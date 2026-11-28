@@ -1,0 +1,65 @@
+{
+  "id": "ml-fundamentals-l2",
+  "title": "Train, Validation, Test & Cross-Validation",
+  "keys": [
+    "train set",
+    "validation set",
+    "test set",
+    "cross-validation",
+    "data leakage"
+  ],
+  "scenes": [
+    {
+      "id": "0-split-matters",
+      "type": "hook",
+      "kicker": "ML Fundamentals · lesson",
+      "line1": "Why split your data three ways?",
+      "line2": "And what is cross-validation?",
+      "say": "Why do we split our data into train, validation, and test sets? And what makes cross-validation so useful?"
+    },
+    {
+      "id": "1-purpose-splits",
+      "type": "rows",
+      "kicker": "Data Splits",
+      "rows": [
+        {
+          "a": "Train set",
+          "b": "Teaches the model patterns"
+        },
+        {
+          "a": "Validation set",
+          "b": "Tunes hyperparameters"
+        },
+        {
+          "a": "Test set",
+          "b": "Checks final performance"
+        }
+      ],
+      "walk": true,
+      "say": "We use the train set to teach the model, the validation set to tune its settings, and the test set to see how it performs on new data."
+    },
+    {
+      "id": "2-cross-val",
+      "type": "chip",
+      "kicker": "Technique",
+      "label": "Cross-Val",
+      "sub": "Rotates validation sets for robust estimates",
+      "say": "Cross-validation, like five-fold, rotates which part of the data is used for validation. This gives us a more reliable measure of model performance."
+    },
+    {
+      "id": "3-leakage-trap",
+      "type": "trap",
+      "question": "What is data leakage?",
+      "wrong": "Using all data for feature engineering",
+      "right": "It's when info from outside training data sneaks into the model, making results look better than they are.",
+      "say": "Watch out for data leakage. That's when information from outside the training set sneaks into your model, making it seem smarter than it really is."
+    },
+    {
+      "id": "4-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:02:26.040Z"
+}
