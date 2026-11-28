@@ -1,0 +1,76 @@
+{
+  "id": "scripting-l2",
+  "title": "Run Checks Across Many Hosts",
+  "keys": [
+    "SSH",
+    "xargs",
+    "Ansible",
+    "parallel"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-many-hosts",
+      "type": "hook",
+      "kicker": "Scripting & Automation · lesson",
+      "line1": "How do you check 200 servers fast?",
+      "line2": "What’s your go-to script?",
+      "say": "Ever been asked how you’d check something across hundreds of servers? Let’s see how to do it efficiently."
+    },
+    {
+      "id": "1-chip-xargs",
+      "type": "chip",
+      "kicker": "Parallel Checks",
+      "label": "xargs",
+      "sub": "Run port checks on many hosts at once.",
+      "say": "Use xargs to test ports in parallel. It’s quick for small lists, and you control how many run at a time."
+    },
+    {
+      "id": "2-terminal-ssh-loop",
+      "type": "terminal",
+      "kicker": "SSH Loop",
+      "title": "Run commands over SSH",
+      "lines": [
+        "$ while read -r h; do",
+        "$   ssh -o BatchMode=yes $h ...",
+        "$   echo \"$h: output\"",
+        "$ done < hosts.txt"
+      ],
+      "say": "Loop with SSH to run commands on each host. Batch mode skips password prompts, so the script won’t hang."
+    },
+    {
+      "id": "3-compare-ansible-scal",
+      "type": "compare",
+      "kicker": "Scale Up",
+      "left": {
+        "title": "Scripts",
+        "items": [
+          "Quick for 10-50 hosts",
+          "Manual error handling"
+        ]
+      },
+      "right": {
+        "title": "Ansible",
+        "items": [
+          "Handles hundreds easily",
+          "Built-in parallelism"
+        ]
+      },
+      "say": "For real fleets, switch to Ansible. It’s built for scale and handles errors and parallelism for you."
+    },
+    {
+      "id": "4-trap-ssh-eats-stdin",
+      "type": "trap",
+      "question": "Why does your SSH loop stop after one host?",
+      "wrong": "SSH closes the loop automatically.",
+      "right": "SSH eats standard input; use SSH dash n or read from a different file descriptor to fix it.",
+      "say": "Watch out: SSH can consume the input stream, causing your loop to stop early. Know how to avoid that."
+    },
+    {
+      "id": "5-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:01:48.312Z"
+}
