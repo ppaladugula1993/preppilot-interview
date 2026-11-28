@@ -1,0 +1,84 @@
+{
+  "id": "virt-l2",
+  "title": "VM Performance: Key Metrics & Pitfalls",
+  "keys": [
+    "CPU ready",
+    "ballooning",
+    "datastore latency",
+    "vCPU"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-vm-performance",
+      "type": "hook",
+      "kicker": "VMware & Storage · lesson",
+      "line1": "Why is my VM running slow?",
+      "line2": "Which metrics matter most?",
+      "say": "Ever wondered why your virtual machine drags, even when the host looks healthy? Let's break down the real causes."
+    },
+    {
+      "id": "1-chip-cpu-ready",
+      "type": "chip",
+      "kicker": "Metric",
+      "label": "CPU Ready",
+      "sub": "VM waits for a physical core; over 5 percent means trouble.",
+      "say": "First, check CPU ready. If it's above five percent, your VM is waiting too long for a physical processor."
+    },
+    {
+      "id": "2-rows-memory-storage",
+      "type": "rows",
+      "kicker": "Common Bottlenecks",
+      "rows": [
+        {
+          "a": "Ballooning",
+          "b": "Host is low on memory"
+        },
+        {
+          "a": "Datastore latency",
+          "b": "Storage slows VM, over 20 ms"
+        },
+        {
+          "a": "Long snapshot chain",
+          "b": "Every read is slower"
+        }
+      ],
+      "walk": true,
+      "say": "Memory ballooning, high datastore latency, and long snapshot chains are classic signs of trouble. Each one slows your VM in a different way."
+    },
+    {
+      "id": "3-compare-vcpu-rightsi",
+      "type": "compare",
+      "kicker": "vCPU Count",
+      "left": {
+        "title": "Too Many",
+        "items": [
+          "Harder to schedule",
+          "Can slow VM"
+        ]
+      },
+      "right": {
+        "title": "Right-Sized",
+        "items": [
+          "Easier to schedule",
+          "Often faster"
+        ]
+      },
+      "say": "Giving a VM too many virtual CPUs can actually make it slower. Right-sizing down usually boosts performance."
+    },
+    {
+      "id": "4-trap-metrics",
+      "type": "trap",
+      "question": "Which metric best shows storage issues?",
+      "wrong": "CPU ready over five percent",
+      "right": "Datastore latency over twenty milliseconds",
+      "say": "Here's a common interview trap: CPU ready shows processor waits, but datastore latency tells you if storage is the bottleneck."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:29:07.048Z"
+}
