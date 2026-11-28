@@ -1,0 +1,79 @@
+{
+  "id": "flutter-l2",
+  "title": "Stateless vs Stateful Widgets in Flutter",
+  "keys": [
+    "stateless",
+    "stateful",
+    "immutable",
+    "rebuild"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-diff-widgets",
+      "type": "hook",
+      "kicker": "Flutter · lesson",
+      "line1": "Stateless or stateful?",
+      "line2": "Why does it matter?",
+      "say": "Which widget type should you use, stateless or stateful, and why does it matter in Flutter?"
+    },
+    {
+      "id": "1-chip-stateless",
+      "type": "chip",
+      "kicker": "Widget Types",
+      "label": "Stateless",
+      "sub": "Immutable. No internal state. UI updates only if input changes.",
+      "say": "Stateless widgets are immutable. They don't store any state and only update when their input data changes."
+    },
+    {
+      "id": "2-chip-stateful",
+      "type": "chip",
+      "kicker": "Widget Types",
+      "label": "Stateful",
+      "sub": "Holds mutable state. Rebuilds when state changes.",
+      "say": "Stateful widgets hold mutable state. If that state changes, the widget rebuilds to show the new data."
+    },
+    {
+      "id": "3-compare-when-use",
+      "type": "compare",
+      "kicker": "When to Use",
+      "left": {
+        "title": "Stateless",
+        "items": [
+          "Static content",
+          "No user interaction"
+        ]
+      },
+      "right": {
+        "title": "Stateful",
+        "items": [
+          "Interactive UI",
+          "Data changes over time"
+        ]
+      },
+      "say": "Use stateless widgets for static screens. Choose stateful when your UI needs to react to user input or data changes."
+    },
+    {
+      "id": "4-code-examples",
+      "type": "code",
+      "kicker": "Example Code",
+      "lang": "dart",
+      "code": "class MyStateless extends StatelessWidget {\n  @override\n  Widget build(BuildContext ctx) => Text('Hello');\n}\nclass MyStateful extends StatefulWidget {\n  @override\n  State<MyStateful> createState() => _MyStatefulState();\n}\nclass _MyStatefulState extends State<MyStateful> {\n  int counter = 0;\n  @override\n  Widget build(BuildContext ctx) => Text('\u001b[0m$counter');\n}",
+      "say": "Here's what the code looks like for each type. Stateless widgets have no state, while stateful widgets can update their UI when their state changes."
+    },
+    {
+      "id": "5-trap-rebuild",
+      "type": "trap",
+      "question": "When does a StatelessWidget rebuild?",
+      "wrong": "Only when its parent changes.",
+      "right": "Whenever its input parameters change, even from external data.",
+      "say": "Careful—stateless widgets can rebuild if their input changes, not just when the parent changes."
+    },
+    {
+      "id": "6-end-card",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:42:59.874Z"
+}
