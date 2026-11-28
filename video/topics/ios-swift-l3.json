@@ -1,0 +1,73 @@
+{
+  "id": "ios-swift-l3",
+  "title": "SwiftUI State vs UIKit: Key Differences",
+  "keys": [
+    "SwiftUI",
+    "State",
+    "UIKit",
+    "Property Wrapper"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-swiftui-state",
+      "type": "hook",
+      "kicker": "iOS & Swift · lesson",
+      "line1": "Why does SwiftUI use @State?",
+      "line2": "UIKit doesn't—so what's up?",
+      "say": "Why does SwiftUI use property wrappers like State, but UIKit doesn't? Let's break it down."
+    },
+    {
+      "id": "1-chip-swiftui",
+      "type": "chip",
+      "kicker": "SwiftUI",
+      "label": "Reactive",
+      "sub": "State changes update the UI automatically.",
+      "say": "In SwiftUI, state changes automatically update your user interface. No extra code needed."
+    },
+    {
+      "id": "2-compare-state-mgmt",
+      "type": "compare",
+      "kicker": "State Management",
+      "left": {
+        "title": "SwiftUI",
+        "items": [
+          "Uses property wrappers",
+          "Less boilerplate",
+          "UI always in sync"
+        ]
+      },
+      "right": {
+        "title": "UIKit",
+        "items": [
+          "Manual updates",
+          "Delegates & callbacks",
+          "Risk of inconsistencies"
+        ]
+      },
+      "say": "SwiftUI uses wrappers like State and ObservedObject for clean, reactive updates. UIKit relies on manual updates and delegates, which can get messy fast."
+    },
+    {
+      "id": "3-code-state-example",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "swift",
+      "code": "struct Counter: View {\n  @State var count = 0\n  var body: some View {\n    Button(\"Inc\", action: { count += 1 })\n  }\n}",
+      "say": "Here's a simple SwiftUI counter. When you tap the button, the count goes up and the display updates, all thanks to State."
+    },
+    {
+      "id": "4-trap-interview",
+      "type": "trap",
+      "question": "How does UIKit handle state updates?",
+      "wrong": "It updates automatically like SwiftUI.",
+      "right": "You must update the UI manually, often using delegates.",
+      "say": "Careful in interviews! UIKit doesn't update the UI for you. You have to handle state changes and UI updates yourself, usually with delegates."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:12:53.698Z"
+}
