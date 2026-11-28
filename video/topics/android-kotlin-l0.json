@@ -1,0 +1,72 @@
+{
+  "id": "android-kotlin-l0",
+  "title": "Kotlin Null Safety for Android Interviews",
+  "keys": [
+    "null safety",
+    "nullable types",
+    "safe calls",
+    "Elvis operator"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-null-crash",
+      "type": "hook",
+      "kicker": "Android & Kotlin · lesson",
+      "line1": "Ever crashed an app with null?",
+      "line2": "How does Kotlin prevent this?",
+      "say": "Have you ever crashed an app because of a null reference? Let’s see how Kotlin helps you avoid that."
+    },
+    {
+      "id": "1-chip-type-system",
+      "type": "chip",
+      "kicker": "Null Safety",
+      "label": "Types",
+      "sub": "Kotlin distinguishes between nullable and non-nullable types.",
+      "say": "Kotlin’s type system separates types that can be null from those that can’t. This is a big step in preventing runtime errors."
+    },
+    {
+      "id": "2-code-safe-calls",
+      "type": "code",
+      "kicker": "Safe Calls",
+      "lang": "kotlin",
+      "code": "val name: String? = getName()\nval length = name?.length ?: 0",
+      "say": "Here’s how you safely access a property. If name is null, length becomes zero instead of crashing your app."
+    },
+    {
+      "id": "3-rows-null-handling",
+      "type": "rows",
+      "kicker": "Null Handling",
+      "rows": [
+        {
+          "a": "Declare nullable type",
+          "b": "Add a question mark"
+        },
+        {
+          "a": "Safe call",
+          "b": "Use question mark and dot"
+        },
+        {
+          "a": "Elvis operator",
+          "b": "Provide a default value"
+        }
+      ],
+      "walk": true,
+      "say": "First, add a question mark to make a type nullable. Next, use the safe call operator to access properties. Finally, use the Elvis operator to set a default value if it’s null."
+    },
+    {
+      "id": "4-trap-null-pointer",
+      "type": "trap",
+      "question": "Can you ignore null safety in Kotlin?",
+      "wrong": "Yes, it’s optional.",
+      "right": "No, Kotlin enforces null safety at compile time to prevent crashes.",
+      "say": "Don’t fall for this trap. Kotlin’s null safety isn’t optional—it’s built into the language to catch errors before your code runs."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:35:51.667Z"
+}
