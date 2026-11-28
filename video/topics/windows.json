@@ -1,0 +1,97 @@
+{
+  "id": "windows",
+  "title": "Active Directory: The Heart of Windows Server",
+  "keys": [
+    "Active Directory",
+    "Domain Controller",
+    "Group Policy",
+    "DNS",
+    "PowerShell"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-ad-core",
+      "type": "hook",
+      "kicker": "Windows Server · 45 seconds",
+      "line1": "What's the backbone of Windows domains?",
+      "line2": "Why does AD matter?",
+      "say": "Ever wonder what really holds a Windows domain together? Let's break down why Active Directory is the core of everything."
+    },
+    {
+      "id": "1-chip-dc",
+      "type": "chip",
+      "kicker": "Key Role",
+      "label": "DC",
+      "sub": "Domain controllers authenticate users and replicate changes.",
+      "say": "Domain controllers are the servers that handle logins and keep the directory in sync across your network."
+    },
+    {
+      "id": "2-rows-ad-dns",
+      "type": "rows",
+      "kicker": "How It Works",
+      "rows": [
+        {
+          "a": "User logs in",
+          "b": "Client finds DC using DNS"
+        },
+        {
+          "a": "DC checks credentials",
+          "b": "Authenticates and applies policy"
+        },
+        {
+          "a": "Changes made",
+          "b": "Replicated to other DCs"
+        }
+      ],
+      "walk": true,
+      "say": "When a user logs in, their computer finds a domain controller through DNS. The controller checks their credentials, applies group policy, and any changes get copied to other controllers."
+    },
+    {
+      "id": "3-compare-ou-group",
+      "type": "compare",
+      "kicker": "Organizing Objects",
+      "left": {
+        "title": "OU",
+        "items": [
+          "Organizes users",
+          "Links group policy"
+        ]
+      },
+      "right": {
+        "title": "Group",
+        "items": [
+          "Grants permissions",
+          "Not for GPO links"
+        ]
+      },
+      "say": "Remember, an organizational unit is for organizing and linking group policies, while a security group is for giving permissions."
+    },
+    {
+      "id": "4-terminal-powershell",
+      "type": "terminal",
+      "kicker": "Admin Tools",
+      "title": "PowerShell: Your AD Swiss Army Knife",
+      "lines": [
+        "$ Get-ADUser alice",
+        "$ Get-ADGroupMember admins",
+        "$ New-ADUser bob"
+      ],
+      "say": "PowerShell is the admin's Swiss Army knife. You can search users, check group members, and create accounts all from the command line."
+    },
+    {
+      "id": "5-trap-dns",
+      "type": "trap",
+      "question": "What breaks if DNS fails in AD?",
+      "wrong": "Just name lookups break",
+      "right": "Domain logins and finding controllers fail too.",
+      "say": "Here's a classic trap: if DNS breaks, it's not just names that stop working. Clients can't find domain controllers, so logins and group policy fail as well."
+    },
+    {
+      "id": "6-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:13:14.671Z"
+}
