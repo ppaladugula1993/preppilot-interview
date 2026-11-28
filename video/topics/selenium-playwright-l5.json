@@ -1,0 +1,76 @@
+{
+  "id": "selenium-playwright-l5",
+  "title": "Parallel Runs, Test Data, CI Integration",
+  "keys": [
+    "parallel",
+    "test data",
+    "CI",
+    "Playwright",
+    "Selenium"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-parallel-ci",
+      "type": "hook",
+      "kicker": "UI Automation · Playwright, Selenium",
+      "line1": "How do you scale test automation?",
+      "line2": "What speeds up feedback?",
+      "say": "Want your UI tests to run faster and give quick feedback? Let’s break down parallel runs, test data, and CI integration."
+    },
+    {
+      "id": "1-chip-parallel",
+      "type": "chip",
+      "kicker": "Parallel Runs",
+      "label": "Speed",
+      "sub": "Playwright and Cypress run tests in parallel easily. Selenium needs extra setup.",
+      "say": "Playwright and Cypress make parallel test runs simple. Selenium takes more work to set up."
+    },
+    {
+      "id": "2-rows-test-data",
+      "type": "rows",
+      "kicker": "Test Data",
+      "rows": [
+        {
+          "a": "Isolation",
+          "b": "Keep tests from interfering"
+        },
+        {
+          "a": "Repeatability",
+          "b": "Same results every time"
+        },
+        {
+          "a": "Cleanup",
+          "b": "Remove data after each run"
+        }
+      ],
+      "walk": true,
+      "say": "Managing test data is key. Isolate tests, make them repeatable, and clean up after each run."
+    },
+    {
+      "id": "3-terminal-ci",
+      "type": "terminal",
+      "kicker": "CI Integration",
+      "title": "Automate Test Runs",
+      "lines": [
+        "$ npx playwright test --workers=4",
+        "$ npx playwright test"
+      ],
+      "say": "CI tools like GitHub Actions or Jenkins run your tests automatically when code changes. Set up parallel runs for fast feedback."
+    },
+    {
+      "id": "4-trap-selenium-parall",
+      "type": "trap",
+      "question": "Does Selenium run tests in parallel natively?",
+      "wrong": "Yes, it’s built-in.",
+      "right": "No, Selenium needs extra setup for parallel execution.",
+      "say": "Interviewers might ask if Selenium runs tests in parallel by default. It doesn’t—extra setup is needed."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:25:41.124Z"
+}
