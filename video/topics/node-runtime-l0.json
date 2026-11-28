@@ -1,0 +1,77 @@
+{
+  "id": "node-runtime-l0",
+  "title": "Node.js Event Loop Phases Explained",
+  "keys": [
+    "event loop",
+    "phases",
+    "timers",
+    "check",
+    "libuv"
+  ],
+  "scenes": [
+    {
+      "id": "0-event-loop-hook",
+      "type": "hook",
+      "kicker": "Node.js Runtime · lesson",
+      "line1": "Ever wonder how Node.js",
+      "line2": "handles async tasks?",
+      "say": "Ever wonder how Node.js keeps your code fast and non-blocking, even with lots of async tasks?"
+    },
+    {
+      "id": "1-event-loop-rows",
+      "type": "rows",
+      "kicker": "Event Loop Phases",
+      "rows": [
+        {
+          "a": "Timers",
+          "b": "Runs timer callbacks"
+        },
+        {
+          "a": "Pending Callbacks",
+          "b": "Handles system events"
+        },
+        {
+          "a": "Poll",
+          "b": "Processes I O events"
+        },
+        {
+          "a": "Check",
+          "b": "Runs setImmediate callbacks"
+        }
+      ],
+      "walk": true,
+      "say": "The event loop has several phases. Timers run scheduled callbacks. Pending callbacks handle system events. Poll waits for I O. Check runs setImmediate callbacks."
+    },
+    {
+      "id": "2-event-loop-chip",
+      "type": "chip",
+      "kicker": "Key Detail",
+      "label": "libuv",
+      "sub": "libuv lets Node.js handle heavy I O in the background.",
+      "say": "Libuv is the secret sauce. It lets Node.js offload heavy I O work to a thread pool, so the main loop stays fast."
+    },
+    {
+      "id": "3-event-loop-code",
+      "type": "code",
+      "kicker": "Example",
+      "lang": "js",
+      "code": "setTimeout(() => console.log('timer'), 0);\nsetImmediate(() => console.log('immediate'));",
+      "say": "Here's a classic example. Timer and immediate callbacks run in different phases. But their order isn't guaranteed—especially if you call them inside I O callbacks."
+    },
+    {
+      "id": "4-event-loop-trap",
+      "type": "trap",
+      "question": "Does setTimeout always run before setImmediate?",
+      "wrong": "Yes, timers always run first.",
+      "right": "No, their order can vary depending on context, especially after I O.",
+      "say": "Interview trap: Does setTimeout always run before setImmediate? Nope! Their order can change, especially after I O."
+    },
+    {
+      "id": "5-event-loop-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:00:17.536Z"
+}
