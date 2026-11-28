@@ -1,0 +1,80 @@
+{
+  "id": "ml-fundamentals",
+  "title": "The Bias-Variance Trade-off, Demystified",
+  "keys": [
+    "bias",
+    "variance",
+    "overfitting",
+    "underfitting",
+    "regularization"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-bias-variance",
+      "type": "hook",
+      "kicker": "ML Fundamentals · 45 seconds",
+      "line1": "Why do ML models fail on new data?",
+      "line2": "What's the real reason?",
+      "say": "Ever wonder why machine learning models nail the training set, but flop on new data? Let's break down the real reason."
+    },
+    {
+      "id": "1-chip-bias",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Bias",
+      "sub": "Error from wrong assumptions; causes underfitting.",
+      "say": "First, bias. This is error from overly simple assumptions. High bias means your model misses important patterns and underfits."
+    },
+    {
+      "id": "2-chip-variance",
+      "type": "chip",
+      "kicker": "Concept",
+      "label": "Variance",
+      "sub": "Error from sensitivity to data; causes overfitting.",
+      "say": "Now, variance. This is error from being too sensitive to the quirks of your training data. High variance means your model overfits and can't generalize."
+    },
+    {
+      "id": "3-compare-bias-varianc",
+      "type": "compare",
+      "kicker": "Trade-off",
+      "left": {
+        "title": "High Bias",
+        "items": [
+          "Too simple",
+          "Misses patterns"
+        ]
+      },
+      "right": {
+        "title": "High Variance",
+        "items": [
+          "Too complex",
+          "Memorizes noise"
+        ]
+      },
+      "say": "It's a balancing act. Too much bias, and you miss the big picture. Too much variance, and you memorize noise. The sweet spot is in between."
+    },
+    {
+      "id": "4-chip-regularization",
+      "type": "chip",
+      "kicker": "Solution",
+      "label": "Regularize",
+      "sub": "Penalizes complexity to reduce overfitting.",
+      "say": "Regularization helps. It adds a penalty for complexity, pushing your model to focus on what matters and ignore the noise."
+    },
+    {
+      "id": "5-trap-overfitting",
+      "type": "trap",
+      "question": "How do you fix overfitting?",
+      "wrong": "Just add more layers",
+      "right": "Use regularization or simplify the model",
+      "say": "Interview trap: If your model overfits, just adding more layers won't help. Instead, use regularization or simplify the model."
+    },
+    {
+      "id": "6-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:53:56.595Z"
+}
