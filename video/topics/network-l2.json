@@ -1,0 +1,76 @@
+{
+  "id": "network-l2",
+  "title": "DNS: How Domain Names Resolve",
+  "keys": [
+    "DNS",
+    "resolver",
+    "TTL",
+    "records"
+  ],
+  "scenes": [
+    {
+      "id": "0-dns-mystery",
+      "type": "hook",
+      "kicker": "Networking · lesson",
+      "line1": "Why do websites sometimes not load?",
+      "line2": "Could it be DNS?",
+      "say": "Ever wonder why a site won't load, even when the server's fine? Could it be DNS?"
+    },
+    {
+      "id": "1-dns-steps",
+      "type": "rows",
+      "kicker": "How DNS works",
+      "rows": [
+        {
+          "a": "Step 1",
+          "b": "Resolver asks the root server"
+        },
+        {
+          "a": "Step 2",
+          "b": "Root points to the TLD server"
+        },
+        {
+          "a": "Step 3",
+          "b": "TLD points to the domain's server"
+        },
+        {
+          "a": "Step 4",
+          "b": "Authoritative server gives the answer"
+        }
+      ],
+      "walk": true,
+      "say": "DNS works in steps. Your resolver asks the root server. The root points to the top-level domain server, like dot com. That server points to the domain's authoritative server, which gives the final answer."
+    },
+    {
+      "id": "2-dns-records",
+      "type": "chip",
+      "kicker": "Record Types",
+      "label": "A",
+      "sub": "Maps a name to an IPv4 address",
+      "say": "An A record maps a name to an I P version four address. There are other types, like CNAME for aliases, MX for mail, and PTR for reverse lookups."
+    },
+    {
+      "id": "3-dns-ttl-tip",
+      "type": "chip",
+      "kicker": "Pro tip",
+      "label": "TTL",
+      "sub": "Time to live controls how long DNS is cached",
+      "say": "TTL, or time to live, controls how long DNS answers are cached. Lower the TTL a day before a planned I P change so updates spread faster."
+    },
+    {
+      "id": "4-dns-trap",
+      "type": "trap",
+      "question": "What does lowering TTL before a change do?",
+      "wrong": "It speeds up DNS lookups.",
+      "right": "It ensures clients get updated records quickly after a change.",
+      "say": "Here's a common trap: Lowering the TTL doesn't make lookups faster. It makes sure clients get the new answer quickly after a change."
+    },
+    {
+      "id": "5-dns-end",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:16:33.198Z"
+}
