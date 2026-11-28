@@ -1,0 +1,88 @@
+{
+  "id": "onboarding-l3",
+  "title": "Choosing Where Your App Runs",
+  "keys": [
+    "VM",
+    "App Service",
+    "Container",
+    "AKS"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-where-run",
+      "type": "hook",
+      "kicker": "App Onboarding (End to End) · lesson",
+      "line1": "Where should your app run?",
+      "line2": "How do you decide?",
+      "say": "How do you pick the best place for your app to run? It's a key decision you’ll face in interviews."
+    },
+    {
+      "id": "1-rows-options",
+      "type": "rows",
+      "kicker": "Main options",
+      "rows": [
+        {
+          "a": "VM",
+          "b": "Full control, manage OS tasks"
+        },
+        {
+          "a": "App Service",
+          "b": "Managed web apps, less OS access"
+        },
+        {
+          "a": "Container Apps",
+          "b": "For containerized apps, easy scale"
+        },
+        {
+          "a": "AKS/OpenShift",
+          "b": "Kubernetes for microservices"
+        }
+      ],
+      "walk": true,
+      "say": "You’ve got options: virtual machines for full control, App Service for managed web apps, Container Apps for containers, and Kubernetes for big microservice setups."
+    },
+    {
+      "id": "2-compare-tradeoffs",
+      "type": "compare",
+      "kicker": "Trade-offs",
+      "left": {
+        "title": "VMs",
+        "items": [
+          "You patch and secure OS",
+          "Full access and flexibility"
+        ]
+      },
+      "right": {
+        "title": "Managed",
+        "items": [
+          "Platform handles patching",
+          "Less OS control, faster setup"
+        ]
+      },
+      "say": "With VMs, you own patching and security but get full access. Managed options like App Service handle that for you, but limit OS-level tweaks."
+    },
+    {
+      "id": "3-chip-examples",
+      "type": "chip",
+      "kicker": "Examples",
+      "label": "Scenario",
+      "sub": "Vendor app? VM. Web API? App Service. Few containers? Container Apps. Lots of microservices? AKS.",
+      "say": "For example, a vendor app goes on a VM. A web API fits App Service. A few containers? Use Container Apps. Tons of microservices? Go with Kubernetes."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "Should you always pick VMs for control?",
+      "wrong": "Yes, more control is always better.",
+      "right": "No, managed services save effort if they meet your needs.",
+      "say": "Don’t fall for this: more control isn’t always better. Managed services can save you a ton of work if they fit your app."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:08:07.788Z"
+}
