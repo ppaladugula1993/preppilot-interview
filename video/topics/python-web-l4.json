@@ -1,0 +1,72 @@
+{
+  "id": "python-web-l4",
+  "title": "Django ORM: select_related vs prefetch",
+  "keys": [
+    "Django",
+    "ORM",
+    "select_related",
+    "prefetch_related",
+    "N+1"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-n1-query",
+      "type": "hook",
+      "kicker": "Python Web (FastAPI, Django, Flask) · lesson",
+      "line1": "Why does your Django app feel slow?",
+      "line2": "What is the N plus 1 problem?",
+      "say": "Ever wonder why your Django app sometimes crawls? Let's talk about the N plus 1 query problem."
+    },
+    {
+      "id": "1-chip-n1-explained",
+      "type": "chip",
+      "kicker": "ORM Pitfall",
+      "label": "N+1",
+      "sub": "One query for posts, then one more for each author.",
+      "say": "The N plus 1 problem means your code makes one query for posts, then a separate query for each related author. That adds up fast."
+    },
+    {
+      "id": "2-code-selectrelated",
+      "type": "code",
+      "kicker": "Django ORM",
+      "lang": "python",
+      "code": "posts = Post.objects.select_related('author').all()",
+      "say": "To fix it, use select related to fetch posts and their authors in a single query."
+    },
+    {
+      "id": "3-compare-select-vs-pr",
+      "type": "compare",
+      "kicker": "Which to Use?",
+      "left": {
+        "title": "select_related",
+        "items": [
+          "Foreign Key",
+          "One-to-one"
+        ]
+      },
+      "right": {
+        "title": "prefetch_related",
+        "items": [
+          "Many-to-many",
+          "Reverse relations"
+        ]
+      },
+      "say": "Use select related for foreign keys or one-to-one fields. Use prefetch related for many-to-many or reverse relationships."
+    },
+    {
+      "id": "4-trap-common-mistake",
+      "type": "trap",
+      "question": "What does select_related fetch?",
+      "wrong": "It works for all relationships.",
+      "right": "It only works for foreign key and one-to-one fields. Use prefetch related for many-to-many.",
+      "say": "Don't mix them up. Select related is only for foreign key or one-to-one fields. For many-to-many, you need prefetch related."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:17:14.468Z"
+}
