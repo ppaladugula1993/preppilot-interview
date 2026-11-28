@@ -1,0 +1,76 @@
+{
+  "id": "k8s-l4",
+  "title": "Kubernetes Ingress: HTTP Routing",
+  "keys": [
+    "Ingress",
+    "HTTP",
+    "TLS",
+    "Controller"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-why-ingress",
+      "type": "hook",
+      "kicker": "Kubernetes · Ingress",
+      "line1": "How does traffic reach your app?",
+      "line2": "What does Ingress do?",
+      "say": "Ever wonder how outside users get to your Kubernetes app? Let's break down what Ingress really does."
+    },
+    {
+      "id": "1-chip-what-ingress",
+      "type": "chip",
+      "kicker": "Core Idea",
+      "label": "Ingress",
+      "sub": "Routes HTTP traffic by host and path, with TLS support.",
+      "say": "Ingress handles HTTP routing by host and path, and even adds TLS for secure connections."
+    },
+    {
+      "id": "2-rows-ingress-flow",
+      "type": "rows",
+      "kicker": "How Traffic Flows",
+      "rows": [
+        {
+          "a": "Internet",
+          "b": "Hits cloud load balancer"
+        },
+        {
+          "a": "Load balancer",
+          "b": "Forwards to ingress controller"
+        },
+        {
+          "a": "Ingress controller",
+          "b": "Routes to the right Service"
+        },
+        {
+          "a": "Service",
+          "b": "Sends request to a pod"
+        }
+      ],
+      "walk": true,
+      "say": "Here's the path: traffic comes from the internet, hits your cloud load balancer, passes to the ingress controller, then gets routed to the right Service and finally to a pod."
+    },
+    {
+      "id": "3-code-ingress-example",
+      "type": "code",
+      "kicker": "Example Ingress",
+      "lang": "yaml",
+      "code": "apiVersion: networking.k8s.io/v1\nkind: Ingress\nmetadata:\n  name: app\nspec:\n  ingressClassName: nginx\n  tls:\n  - hosts: [app.example.com]\n    secretName: app-tls\n  rules:\n  - host: app.example.com\n    http:\n      paths:\n      - path: /api\n        pathType: Prefix\n        backend:\n          service:\n            name: api\n            port:\n              number: 80\n      - path: /\n        pathType: Prefix\n        backend:\n          service:\n            name: web\n            port:\n              number: 80",
+      "say": "This sample Ingress sends traffic for app dot example dot com. Requests to slash API go to the API service. Everything else goes to the web service. TLS is enabled for secure traffic."
+    },
+    {
+      "id": "4-trap-controller-requ",
+      "type": "trap",
+      "question": "Does Ingress work with no controller?",
+      "wrong": "Yes, it just works out of the box.",
+      "right": "No, you need an ingress controller like Nginx or Traefik for it to function.",
+      "say": "Careful: Ingress doesn't work alone. You need an ingress controller, like Nginx or Traefik, to actually route the traffic."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:53:07.368Z"
+}
