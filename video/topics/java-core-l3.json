@@ -1,0 +1,74 @@
+{
+  "id": "java-core-l3",
+  "title": "Java Generics, Wildcards & Type Erasure",
+  "keys": [
+    "generics",
+    "wildcards",
+    "type erasure",
+    "API"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-generic-power",
+      "type": "hook",
+      "kicker": "Core Java · lesson",
+      "line1": "How do generics keep Java safe?",
+      "line2": "And what's lost at runtime?",
+      "say": "Ever wonder how Java generics make your code safer, but also limit what you can do at runtime?"
+    },
+    {
+      "id": "1-chip-type-safety",
+      "type": "chip",
+      "kicker": "Fact",
+      "label": "Generics",
+      "sub": "Generics let you build type-safe collections.",
+      "say": "Generics help you avoid runtime errors by enforcing type safety for collections and APIs."
+    },
+    {
+      "id": "2-compare-wildcards",
+      "type": "compare",
+      "kicker": "Wildcards",
+      "left": {
+        "title": "Reading",
+        "items": [
+          "? extends Number",
+          "Accepts any subtype"
+        ]
+      },
+      "right": {
+        "title": "Writing",
+        "items": [
+          "? super Integer",
+          "Accepts any supertype"
+        ]
+      },
+      "say": "Wildcards make APIs flexible. Use extends for reading, and super for writing to collections."
+    },
+    {
+      "id": "3-terminal-type-erasur",
+      "type": "terminal",
+      "kicker": "Type Erasure",
+      "title": "What happens at runtime?",
+      "lines": [
+        "$ List<String> list = ...",
+        "$ if (list instanceof List<?>) {...}"
+      ],
+      "say": "At runtime, Java erases generic types. Both lists of strings and integers are just lists, so type checks are limited."
+    },
+    {
+      "id": "4-trap-erasure-pitfall",
+      "type": "trap",
+      "question": "Can you check List<String> at runtime?",
+      "wrong": "Yes, with instanceof.",
+      "right": "No. Type erasure means you can't check generic types like List of strings at runtime.",
+      "say": "Here's a common trap: You can't check for a list of strings at runtime, because type erasure removes that info."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T01:17:04.618Z"
+}
