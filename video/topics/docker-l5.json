@@ -1,0 +1,79 @@
+{
+  "id": "docker-l5",
+  "title": "Docker Networking & Ports Explained",
+  "keys": [
+    "bridge",
+    "user-defined",
+    "DNS",
+    "publish"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-networks",
+      "type": "hook",
+      "kicker": "Docker · lesson",
+      "line1": "How do containers talk?",
+      "line2": "What about ports?",
+      "say": "Ever wondered how Docker containers find each other, or how ports get mapped? Let's break it down."
+    },
+    {
+      "id": "1-chip-bridge",
+      "type": "chip",
+      "kicker": "Default Network",
+      "label": "Bridge",
+      "sub": "Each container gets a private IP on the bridge network.",
+      "say": "By default, Docker gives each container its own private address on a bridge network."
+    },
+    {
+      "id": "2-rows-user-dns",
+      "type": "rows",
+      "kicker": "User Networks",
+      "rows": [
+        {
+          "a": "Create network",
+          "b": "docker network create appnet"
+        },
+        {
+          "a": "Run database",
+          "b": "docker run with appnet, name db"
+        },
+        {
+          "a": "Run API",
+          "b": "docker run with appnet, name api"
+        },
+        {
+          "a": "API finds DB",
+          "b": "by using db as the host name"
+        }
+      ],
+      "walk": true,
+      "say": "With your own networks, containers can find each other by name. The API can reach the database just by using its name."
+    },
+    {
+      "id": "3-terminal-port-publis",
+      "type": "terminal",
+      "kicker": "Port Mapping",
+      "title": "Publish a port",
+      "lines": [
+        "$ docker run -p 8080:8000 myapp",
+        "Host port 8080 goes to container 8000"
+      ],
+      "say": "To let outside traffic in, publish a port. Here, host port eighty eighty connects to container port eight thousand."
+    },
+    {
+      "id": "4-trap-port-mixup",
+      "type": "trap",
+      "question": "What does -p 8080:8000 do?",
+      "wrong": "It exposes port 8080 inside the container.",
+      "right": "It connects host port eighty eighty to container port eight thousand.",
+      "say": "Watch out: publishing a port links the host and container ports, not just exposes a port inside the container."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:32:03.260Z"
+}
