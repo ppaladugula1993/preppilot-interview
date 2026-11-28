@@ -1,0 +1,73 @@
+{
+  "id": "go-concurrency-l2",
+  "title": "Go Concurrency: Select & Worker Pools",
+  "keys": [
+    "select",
+    "timeout",
+    "fan-in",
+    "fan-out",
+    "worker pool"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-select-concurre",
+      "type": "hook",
+      "kicker": "Go Concurrency · lesson",
+      "line1": "How do you juggle channels",
+      "line2": "without blocking forever?",
+      "say": "How can you manage multiple channels in Go without risking a deadlock or endless wait?"
+    },
+    {
+      "id": "1-chip-select-timeout",
+      "type": "chip",
+      "kicker": "Key Pattern",
+      "label": "select",
+      "sub": "Waits on multiple channels, enabling timeouts.",
+      "say": "The select statement lets you listen to several channels at once. It's perfect for handling timeouts and multiplexing."
+    },
+    {
+      "id": "2-code-select-timeout",
+      "type": "code",
+      "kicker": "Timeout Example",
+      "lang": "go",
+      "code": "select {\ncase v := <-ch1:\n  fmt.Println(v)\ncase <-time.After(time.Second):\n  fmt.Println(\"timeout\")\n}",
+      "say": "Here, select waits for a value or a timeout. If nothing arrives in one second, it prints timeout."
+    },
+    {
+      "id": "3-rows-fan-patterns",
+      "type": "rows",
+      "kicker": "Concurrency Patterns",
+      "rows": [
+        {
+          "a": "Fan-in",
+          "b": "Merge channels into one"
+        },
+        {
+          "a": "Fan-out",
+          "b": "Distribute work to goroutines"
+        },
+        {
+          "a": "Worker Pool",
+          "b": "Multiple workers share jobs"
+        }
+      ],
+      "walk": true,
+      "say": "Fan-in combines results from many sources. Fan-out splits tasks across goroutines. Worker pools use both to scale efficiently."
+    },
+    {
+      "id": "4-trap-leak",
+      "type": "trap",
+      "question": "How do you avoid goroutine leaks?",
+      "wrong": "Just close the output channel",
+      "right": "Close the job channel or use context to signal workers to exit cleanly.",
+      "say": "Here's a common trap. It's not enough to close output channels. Make sure your workers know when to stop, or you'll leak goroutines."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T00:03:19.250Z"
+}
