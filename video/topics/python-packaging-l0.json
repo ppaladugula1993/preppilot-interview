@@ -1,0 +1,77 @@
+{
+  "id": "python-packaging-l0",
+  "title": "Python Virtual Environments Explained",
+  "keys": [
+    "virtualenv",
+    "venv",
+    "isolation",
+    "dependencies",
+    "activate"
+  ],
+  "scenes": [
+    {
+      "id": "0-hook-venv-why",
+      "type": "hook",
+      "kicker": "Python Packaging & Tooling · lesson",
+      "line1": "Ever had one project break another?",
+      "line2": "How do you stop dependency chaos?",
+      "say": "Ever had one Python project break another? How do you stop dependency chaos for good?"
+    },
+    {
+      "id": "1-chip-venv-what",
+      "type": "chip",
+      "kicker": "Key Concept",
+      "label": "Isolation",
+      "sub": "Virtual environments keep each project's packages separate.",
+      "say": "Virtual environments keep each project's packages completely separate from the rest of your system."
+    },
+    {
+      "id": "2-rows-venv-steps",
+      "type": "rows",
+      "kicker": "How to Use venv",
+      "rows": [
+        {
+          "a": "Create",
+          "b": "Make a new environment"
+        },
+        {
+          "a": "Activate",
+          "b": "Switch your shell to use it"
+        },
+        {
+          "a": "Install",
+          "b": "Add packages just for this project"
+        }
+      ],
+      "walk": true,
+      "say": "Here's how it works: First, create an environment. Next, activate it so your shell uses the right Python. Then, install packages just for this project."
+    },
+    {
+      "id": "3-terminal-venv-demo",
+      "type": "terminal",
+      "kicker": "Demo",
+      "title": "Creating and using venv",
+      "lines": [
+        "$ python -m venv myenv",
+        "$ source myenv/bin/activate",
+        "$ pip install requests"
+      ],
+      "say": "You make a new environment, activate it, and install your dependencies. This keeps your global Python clean."
+    },
+    {
+      "id": "4-trap-global-mistake",
+      "type": "trap",
+      "question": "What's a common mistake with venv?",
+      "wrong": "Installing everything globally.",
+      "right": "Always activate your environment first, or you risk polluting your system Python and breaking other projects.",
+      "say": "A common mistake? Installing everything globally. Always activate your environment first, or you risk polluting your system Python and breaking other projects."
+    },
+    {
+      "id": "5-end-preppilot",
+      "type": "end",
+      "say": "Get interview ready with PrepPilot."
+    }
+  ],
+  "voice": "en-US-AndrewMultilingualNeural",
+  "rendered": "2026-11-28T02:51:51.272Z"
+}
